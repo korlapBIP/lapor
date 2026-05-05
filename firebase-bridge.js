@@ -9,8 +9,10 @@
     return Boolean(config && config.apiKey && config.projectId && !String(config.apiKey).includes(PLACEHOLDER_WORD) && !String(config.projectId).includes(PLACEHOLDER_WORD));
   }
   function normalizeUser(docId, data){
+    const username=String(data.username || data.userName || docId || data.nip || '').trim();
     return {
-      nip: String(data.nip || docId || '').trim(),
+      username,
+      nip: String(data.nip || username || docId || '').trim(),
       name: String(data.name || data.nama || 'Koordinator').trim(),
       role: String(data.role || 'koordinator').trim(),
       unit: String(data.unit || data.bagian || 'Muatan Breeder').trim(),
@@ -34,22 +36,25 @@
       const api = {
         enabled:true,
         db,
-        async loginCoordinator(nip, password){
-          const cleanNip=String(nip||'').trim();
-          const snap=await fs.getDoc(fs.doc(db, coordinatorPath, cleanNip));
-          if(!snap.exists()) return null;
+        async loginCoordinator(username, password){
+          const cleanUsername=String(username||'').trim();
+          const q=fs.query(fs.collection(db, coordinatorPath), fs.where('username','==',cleanUsername), fs.limit(1));
+          const qs=await fs.getDocs(q);
+          if(qs.empty) return null;
+          const snap=qs.docs[0];
           const data=snap.data() || {};
-          const user=normalizeUser(cleanNip, data);
+          const user=normalizeUser(snap.id || cleanUsername, data);
           if(!user.active) return null;
           if(String(data.password || '') !== String(password || '')) return null;
-          await fs.setDoc(fs.doc(db, coordinatorPath, cleanNip), { lastLoginAt: fs.serverTimestamp() }, { merge:true });
+          await fs.setDoc(fs.doc(db, coordinatorPath, snap.id || cleanUsername), { lastLoginAt: fs.serverTimestamp() }, { merge:true });
           return user;
         },
         async saveCoordinator(user, adminUser){
-          const cleanNip=String(user && user.nip || '').trim();
-          if(!cleanNip) throw new Error('NIP koordinator kosong.');
-          await fs.setDoc(fs.doc(db, coordinatorPath, cleanNip), {
-            nip: cleanNip,
+          const cleanUsername=String(user && (user.username || user.nip) || '').trim();
+          if(!cleanUsername) throw new Error('Username akun kosong.');
+          await fs.setDoc(fs.doc(db, coordinatorPath, cleanUsername), {
+            username: cleanUsername,
+            nip: String(user.nip || cleanUsername).trim(),
             name: String(user.name || '').trim(),
             password: String(user.password || '').trim(),
             role: String(user.role || 'koordinator').trim(),
@@ -57,9 +62,9 @@
             active: user.active !== false,
             updatedAt: fs.serverTimestamp(),
             updatedAtLocal: serverTimeFallback(),
-            updatedBy: adminUser ? { nip:adminUser.nip, name:adminUser.name, role:adminUser.role } : null
+            updatedBy: adminUser ? { username:adminUser.username || adminUser.nip, nip:adminUser.nip, name:adminUser.name, role:adminUser.role } : null
           }, { merge:true });
-          return { id: cleanNip };
+          return { id: cleanUsername };
         },
         async loadAppState(unitKey){
           const snap=await fs.getDoc(fs.doc(db, appDataPath, unitKey));
@@ -74,7 +79,7 @@
             allowEmptyWorkers: Boolean(state && state.allowEmptyWorkers),
             updatedAt: fs.serverTimestamp(),
             updatedAtLocal: serverTimeFallback(),
-            updatedBy: user ? { nip:user.nip, name:user.name, unit:user.unit } : null
+            updatedBy: user ? { username:user.username || user.nip, nip:user.nip, name:user.name, unit:user.unit } : null
           }, { merge:true });
         },
         async saveAttendance(payload){
