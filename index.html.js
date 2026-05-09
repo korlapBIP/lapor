@@ -720,6 +720,7 @@ const COMMERCIAL_DRAFT_KEY = 'absensi_bip_commercial_draft_v1';
 let commercialScheduleRowsCache = [];
 let commercialActivityRowsCache = {};
 let bahanBakuOverzakRowsCache = [];
+let bahanBakuActivityConflictRowsCache = {};
 const BAHAN_BAKU_PAGI_KEY = 'bongkaran_bahan_baku_pagi';
 const BAHAN_BAKU_MALAM_KEY = 'bongkaran_bahan_baku_malam';
 const SILO_KEY = 'silo';
@@ -1053,7 +1054,7 @@ async function auditLog(action, moduleName, details={}, before=null, after=null,
   }catch(err){ console.warn('Audit log gagal disimpan.', err); return false; }
 }
 
-// v72: Overzak masuk dropdown kegiatan, validasi anti dobel shift antar Bongkaran/Silo/Overzak, laporan gabungan tetap menyatu; v71 setting akun tetap dipertahankan.
+// v73: Overzak memakai pool pekerja Bahan Baku yang sama, validasi anti dobel lintas kegiatan per tanggal+shift+pekerja diperkuat; v72 dan v71 tetap dipertahankan.
 function safeLocalGetJSON(key, fallback=null){
   try{ const raw=localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; }catch(err){ return fallback; }
 }
@@ -1234,15 +1235,52 @@ function todayISO(){ return new Date().toISOString().slice(0,10); }
 function yesterdayISO(){ const d=new Date(); d.setDate(d.getDate()-1); return d.toISOString().slice(0,10); }
 function defaultWorkersForUnit(unitKeyValue){ return unitKeyValue === 'muatan_breeder' ? JSON.parse(JSON.stringify(defaultWorkers)) : []; }
 function ensureBaseWorkers(){ if(!state.reportDate) state.reportDate=todayISO(); if(state.allowEmptyWorkers) { normalizeNo(); return; } if(activeUnitKey()==='muatan_breeder'){ const first=state.workers.find(w=>String(w.nip)==='133'); if(!first){ state.workers.unshift({no:1,nip:'133',name:'Moch. Sholeh',s1:false,s2:false}); } else { first.name='Moch. Sholeh'; } } normalizeNo(); }
+async function loadBahanBakuSharedWorkerSource(sourceKey){
+  let result=null;
+  const bridge=await waitFirebase();
+  if(bridge && bridge.enabled && bridge.loadAppState){
+    try{
+      const remote=await bridge.loadAppState(sourceKey);
+      if(remote && Array.isArray(remote.workers)) result=remote;
+    }catch(err){ console.warn('Data pekerja pool Bahan Baku dari Firestore gagal dibaca: '+sourceKey, err); }
+  }
+  if(!result){
+    try{
+      const cached=unwrapCacheEnvelope(safeLocalGetJSON(`${STORAGE_KEY}_${sourceKey}`, null));
+      if(cached && Array.isArray(cached.workers)) result=cached;
+    }catch(err){ console.warn('Cache pekerja pool Bahan Baku gagal dibaca: '+sourceKey, err); }
+  }
+  return result || {workers:[], allowEmptyWorkers:false};
+}
+async function loadBahanBakuSharedWorkerPool(activityKey){
+  const sources=[BAHAN_BAKU_PAGI_KEY];
+  if(activityKey && !sources.includes(activityKey)) sources.push(activityKey);
+  let allowEmpty=false;
+  const merged=[];
+  const seen=new Set();
+  for(const sourceKey of sources){
+    try{
+      const base=await loadBahanBakuSharedWorkerSource(sourceKey);
+      if(base && base.allowEmptyWorkers) allowEmpty=true;
+      normalizeWorkersForUnit((base && base.workers) || [], sourceKey).forEach(w=>{
+        const nip=String(w.nip||'').trim();
+        if(!nip || seen.has(nip)) return;
+        seen.add(nip);
+        merged.push({...w, no:merged.length+1, s1:false, s2:false, s3:false});
+      });
+    }catch(err){
+      console.warn('Data pekerja pool Bahan Baku gagal dibaca dari '+sourceKey+'.', err);
+    }
+  }
+  return {workers:merged, allowEmpty};
+}
 async function loadSiloActivityState(){
   const currentDate=state.reportDate || todayISO();
   let baseWorkers=[];
   let allowEmpty=false;
-  try{
-    const base=await loadUnitStateForImport(SILO_KEY);
-    baseWorkers=normalizeWorkersForUnit((base && base.workers) || [], SILO_KEY).map((w,i)=>({...w, no:i+1, s1:false, s2:false, s3:false, kegiatan:'Silo'}));
-    allowEmpty=Boolean(base && base.allowEmptyWorkers);
-  }catch(err){ console.warn('Data pekerja Silo gagal dibaca.', err); }
+  const sharedPool=await loadBahanBakuSharedWorkerPool(SILO_KEY);
+  baseWorkers=(sharedPool.workers || []).map((w,i)=>({...w, no:i+1, s1:false, s2:false, s3:false, kegiatan:'Silo'}));
+  allowEmpty=Boolean(sharedPool.allowEmpty);
   let saved=null;
   try{ saved=unwrapCacheEnvelope(safeLocalGetJSON(`${STORAGE_KEY}_${SILO_KEY}`, null)); }catch(err){ saved=null; }
   const bridge=await waitFirebase();
@@ -1253,7 +1291,7 @@ async function loadSiloActivityState(){
   if(saved && Array.isArray(saved.workers)){
     saved.workers.map(cleanWorker).forEach(w=>selectedByNip.set(String(w.nip), {s1:Boolean(w.s1), s2:Boolean(w.s2), s3:Boolean(w.s3)}));
   }
-  const workers=baseWorkers.map(w=>{ const selected=selectedByNip.get(String(w.nip)) || {}; return {...w, s1:Boolean(selected.s1), s2:Boolean(selected.s2)}; });
+  const workers=baseWorkers.map(w=>{ const selected=selectedByNip.get(String(w.nip)) || {}; return {...w, s1:Boolean(selected.s1), s2:Boolean(selected.s2), s3:Boolean(selected.s3), kegiatan:'Silo'}; });
   return { company:'PT. BUDI INTI PERKASA', reportDate:(saved && saved.reportDate) || currentDate, workers, allowEmptyWorkers:allowEmpty };
 }
 function getBlockedOverzakWorkerNips(dateValue){
@@ -1277,11 +1315,9 @@ async function loadOverzakActivityState(){
   const currentDate=state.reportDate || todayISO();
   let baseWorkers=[];
   let allowEmpty=false;
-  try{
-    const base=await loadUnitStateForImport(OVERZAK_KEY);
-    baseWorkers=normalizeWorkersForUnit((base && base.workers) || [], OVERZAK_KEY).map((w,i)=>({...w, no:i+1, s1:false, s2:false, s3:false, kegiatan:'Overzak'}));
-    allowEmpty=Boolean(base && base.allowEmptyWorkers);
-  }catch(err){ console.warn('Data pekerja Overzak gagal dibaca.', err); }
+  const sharedPool=await loadBahanBakuSharedWorkerPool(OVERZAK_KEY);
+  baseWorkers=(sharedPool.workers || []).map((w,i)=>({...w, no:i+1, s1:false, s2:false, s3:false, kegiatan:'Overzak'}));
+  allowEmpty=Boolean(sharedPool.allowEmpty);
   let saved=null;
   try{ saved=unwrapCacheEnvelope(safeLocalGetJSON(`${STORAGE_KEY}_${OVERZAK_KEY}`, null)); }catch(err){ saved=null; }
   const bridge=await waitFirebase();
@@ -1300,12 +1336,14 @@ async function loadState(){
   if(isSiloKey(unitKeyValue)){
     state=await loadSiloActivityState();
     ensureBaseWorkers();
+    await refreshBahanBakuActivityConflictCache();
     syncPendingAttendanceOnline().catch(err=>console.warn('Sinkron antrian absensi gagal.', err));
     return;
   }
   if(isOverzakKey(unitKeyValue)){
     state=await loadOverzakActivityState();
     ensureBaseWorkers();
+    await refreshBahanBakuActivityConflictCache();
     syncPendingAttendanceOnline().catch(err=>console.warn('Sinkron antrian absensi gagal.', err));
     return;
   }
@@ -1333,6 +1371,7 @@ async function loadState(){
   if(!isAdmin() && isCommercialKey(unitKeyValue)) await refreshCommercialDraftFromFirestore();
   if(!isAdmin() && activeUnitKey()===BAHAN_BAKU_PAGI_KEY) await refreshBahanBakuOverzakDraftFromFirestore();
   enforceSingleShiftInputRule();
+  await refreshBahanBakuActivityConflictCache();
   syncPendingAttendanceOnline().catch(err=>console.warn('Sinkron antrian absensi gagal.', err));
 }
 function saveState(){
@@ -1732,6 +1771,41 @@ function rowsFromSavedAttendance(unitKeyValue, dateValue){
     return rowsFromAttendancePayload(data).map(r=>({...r, sourceUnitKey:unitKeyValue, kegiatan:r.kegiatan || bahanBakuActivityLabelFromKey(unitKeyValue)}));
   }catch(err){ console.warn('Baca absensi kegiatan gagal:', unitKeyValue, err); return []; }
 }
+async function loadBahanBakuRowsForConflict(unitKeyValue, dateValue){
+  let rows=[];
+  const bridge=await waitFirebase();
+  if(bridge && bridge.enabled && bridge.loadAppState){
+    try{
+      const remote=await bridge.loadAppState(unitKeyValue);
+      if(remote && Array.isArray(remote.workers) && (!remote.reportDate || remote.reportDate===dateValue)){
+        rows=remote.workers.map((w,i)=>({...cleanWorker(w,i), kegiatan:w.kegiatan || bahanBakuActivityLabelFromKey(unitKeyValue), sourceUnitKey:unitKeyValue}));
+      }
+    }catch(err){ console.warn('Baca jadwal Firestore untuk validasi gagal:', unitKeyValue, err); }
+  }
+  if(!rows.length) rows=rowsFromSavedActivityState(unitKeyValue);
+  if(bridge && bridge.enabled && bridge.loadAttendance){
+    try{
+      const payload=await bridge.loadAttendance(unitKeyValue, dateValue);
+      if(payload) rows=rows.concat(rowsFromAttendancePayload(payload).map(r=>({...r, sourceUnitKey:unitKeyValue, kegiatan:r.kegiatan || bahanBakuActivityLabelFromKey(unitKeyValue)})));
+    }catch(err){ console.warn('Baca absensi Firestore untuk validasi gagal:', unitKeyValue, err); }
+  }else{
+    rows=rows.concat(rowsFromSavedAttendance(unitKeyValue, dateValue));
+  }
+  return rows;
+}
+async function refreshBahanBakuActivityConflictCache(){
+  if(!coordinatorCanChooseBahanBakuActivity()) return;
+  const dateValue=state.reportDate || todayISO();
+  const cache={};
+  for(const unitKeyValue of getBahanBakuActivityUnitKeys()){
+    if(unitKeyValue===activeUnitKey()){
+      cache[unitKeyValue]=(state.workers||[]).map((w,i)=>({...cleanWorker(w,i), kegiatan:w.kegiatan || bahanBakuActivityLabelFromKey(unitKeyValue), sourceUnitKey:unitKeyValue}));
+    }else{
+      cache[unitKeyValue]=await loadBahanBakuRowsForConflict(unitKeyValue, dateValue);
+    }
+  }
+  bahanBakuActivityConflictRowsCache=cache;
+}
 function getBahanBakuShiftConflict(nipValue, shiftKey, excludeUnitKey){
   const nip=String(nipValue || '').trim();
   if(!nip || !shiftKey) return null;
@@ -1739,7 +1813,8 @@ function getBahanBakuShiftConflict(nipValue, shiftKey, excludeUnitKey){
   const ownKey=excludeUnitKey || activeUnitKey();
   for(const unitKeyValue of getBahanBakuActivityUnitKeys()){
     if(unitKeyValue===ownKey) continue;
-    const rows=[...rowsFromSavedActivityState(unitKeyValue), ...rowsFromSavedAttendance(unitKeyValue, dateValue)];
+    let rows=Array.isArray(bahanBakuActivityConflictRowsCache[unitKeyValue]) ? bahanBakuActivityConflictRowsCache[unitKeyValue] : [];
+    if(!rows.length) rows=[...rowsFromSavedActivityState(unitKeyValue), ...rowsFromSavedAttendance(unitKeyValue, dateValue)];
     const hit=rows.find(r=>String(r.nip||'').trim()===nip && Boolean(r[shiftKey]));
     if(hit){
       return { unitKey:unitKeyValue, label:bahanBakuActivityLabelFromKey(unitKeyValue), row:hit, shiftLabel:shiftKey==='s1'?'Shift 1':(shiftKey==='s2'?'Shift 2':'Shift 3') };
@@ -1753,8 +1828,16 @@ function validateBahanBakuShiftChange(worker, shiftKey, checked){
   if(!getBahanBakuActivityUnitKeys().includes(activeUnitKey())) return true;
   const conflict=getBahanBakuShiftConflict(worker && worker.nip, shiftKey, activeUnitKey());
   if(!conflict) return true;
-  alert(`Pekerja ${worker && worker.name ? worker.name : worker && worker.nip ? worker.nip : ''} sudah terjadwal pada ${conflict.shiftLabel} sebagai ${conflict.label}.\n\nSatu pekerja hanya boleh punya 1 kegiatan pada tanggal dan shift yang sama. Jika ingin memindahkan, buka kegiatan ${conflict.label}, hapus checklist shift tersebut, lalu pilih di kegiatan baru.`);
+  alert(`Pekerja ${worker && worker.name ? worker.name : worker && worker.nip ? worker.nip : ''} sudah terjadwal pada ${conflict.shiftLabel} sebagai ${conflict.label}.
+
+Satu pekerja hanya boleh punya 1 kegiatan pada tanggal dan shift yang sama. Jika ingin memindahkan, buka kegiatan ${conflict.label}, hapus checklist shift tersebut, lalu pilih di kegiatan baru.`);
   return false;
+}
+function bahanBakuShiftDisabledAttrs(worker, shiftKey){
+  if(!coordinatorCanChooseBahanBakuActivity() || !getBahanBakuActivityUnitKeys().includes(activeUnitKey())) return '';
+  const conflict=getBahanBakuShiftConflict(worker && worker.nip, shiftKey, activeUnitKey());
+  if(!conflict) return '';
+  return ` disabled title="Sudah terjadwal di ${safeText(conflict.label)} ${safeText(conflict.shiftLabel)}"`;
 }
 async function renderWorkers(){
   if(coordinatorSingleShiftMode()) enforceSingleShiftInputRule();
@@ -1791,9 +1874,9 @@ async function renderWorkers(){
     div.dataset.no=worker.no;
     const type=workerType(worker).toUpperCase();
     const reguText=worker.regu ? ` • Regu ${safeText(worker.regu)}` : '';
-    const shift1Html=`<label class="shift-toggle s1">S1 <input type="checkbox" data-shift="s1" data-no="${worker.no}" ${worker.s1?'checked':''}><span class="checkmark">✓</span></label>`;
-    const shift2Html=`<label class="shift-toggle s2">S2 <input type="checkbox" data-shift="s2" data-no="${worker.no}" ${worker.s2?'checked':''}><span class="checkmark">✓</span></label>`;
-    const shift3Html=`<label class="shift-toggle s3">S3 <input type="checkbox" data-shift="s3" data-no="${worker.no}" ${worker.s3?'checked':''}><span class="checkmark">✓</span></label>`;
+    const shift1Html=`<label class="shift-toggle s1">S1 <input type="checkbox" data-shift="s1" data-no="${worker.no}" ${worker.s1?'checked':''}${bahanBakuShiftDisabledAttrs(worker,'s1')}><span class="checkmark">✓</span></label>`;
+    const shift2Html=`<label class="shift-toggle s2">S2 <input type="checkbox" data-shift="s2" data-no="${worker.no}" ${worker.s2?'checked':''}${bahanBakuShiftDisabledAttrs(worker,'s2')}><span class="checkmark">✓</span></label>`;
+    const shift3Html=`<label class="shift-toggle s3">S3 <input type="checkbox" data-shift="s3" data-no="${worker.no}" ${worker.s3?'checked':''}${bahanBakuShiftDisabledAttrs(worker,'s3')}><span class="checkmark">✓</span></label>`;
     const shiftHtml=allowed==='s1' ? shift1Html : (allowed==='s2' ? shift2Html : (allowed==='s3' ? shift3Html : shift1Html + shift2Html + shift3Html));
     const shiftRowClass=allowed ? 'shift-row single-shift-row' : 'shift-row';
     div.innerHTML=`<div class="worker-top"><div class="worker-nip">NIP ${safeText(worker.nip || '-')}</div><div class="worker-name">${safeText(worker.name)}</div><div class="worker-status">${type}${reguText}</div></div><div class="${shiftRowClass}">${shiftHtml}</div>`;
@@ -3068,7 +3151,9 @@ document.addEventListener('change', e=>{
       if(allowed==='s2'){ w.s1=false; w.s3=false; }
       if(allowed==='s3'){ w.s1=false; w.s2=false; }
       saveState();
+      bahanBakuActivityConflictRowsCache[activeUnitKey()]=(state.workers||[]).map((row,idx)=>({...cleanWorker(row,idx), kegiatan:row.kegiatan || bahanBakuActivityLabelFromKey(activeUnitKey()), sourceUnitKey:activeUnitKey()}));
       renderReport();
+      renderWorkers();
       updateCounts();
     }
   }
