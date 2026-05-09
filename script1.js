@@ -482,7 +482,7 @@
     </section>
 
     <section class="frame data no-print"><div class="frame-head"><div><div class="frame-kicker">Frame 1</div><h2>Input Jadwal Pekerja</h2></div><div class="frame-number">1</div></div>
-      <div class="card"><div class="card-head"><h3>Pilih Jadwal Shift</h3><span><span id="workerShownCount">0</span> data tampil</span></div><div class="card-body"><div class="field"><label for="reportDate">Tanggal Jadwal</label><input id="reportDate" type="date"></div><div class="field" id="activityField" style="display:none;margin-top:10px"><label for="activitySelect">Kegiatan</label><select id="activitySelect"><option value="bongkaran_bahan_baku_pagi">Bongkaran Bahan Baku - Shift 1, Shift 2 &amp; Shift 3</option><option value="silo">Silo - Shift 1, Shift 2 &amp; Shift 3</option></select></div><div class="commercial-tools" id="commercialScheduleTools"><div class="commercial-summary" id="commercialScheduleSummary">Pilih tanggal, lalu checklist Shift 1 / Shift 2 / Shift 3 berdasarkan LD dan Regu.</div><div class="commercial-matrix" id="commercialScheduleMatrix"></div></div><div class="search-row"><input id="workerFilter" type="search" placeholder="Cari NIP, nama, PKWT, atau Freelance..."></div><div class="stats inside-stats"><div class="stat"><div class="label">Shift 1</div><div class="num" id="countS1">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 2</div><div class="num" id="countS2">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 3</div><div class="num" id="countS3">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Total</div><div class="num" id="countTotal">0</div><div class="desc">terpilih</div></div></div></div></div>
+      <div class="card"><div class="card-head"><h3>Pilih Jadwal Shift</h3><span><span id="workerShownCount">0</span> data tampil</span></div><div class="card-body"><div class="field"><label for="reportDate">Tanggal Jadwal</label><input id="reportDate" type="date"></div><div class="field" id="activityField" style="display:none;margin-top:10px"><label for="activitySelect">Kegiatan</label><select id="activitySelect"><option value="bongkaran_bahan_baku_pagi">Bongkaran Bahan Baku - Shift 1, Shift 2 &amp; Shift 3</option><option value="silo">Silo - Shift 1, Shift 2 &amp; Shift 3</option><option value="overzak">Overzak - Shift 1, Shift 2 &amp; Shift 3</option></select></div><div class="commercial-tools" id="commercialScheduleTools"><div class="commercial-summary" id="commercialScheduleSummary">Pilih tanggal, lalu checklist Shift 1 / Shift 2 / Shift 3 berdasarkan LD dan Regu.</div><div class="commercial-matrix" id="commercialScheduleMatrix"></div></div><div class="search-row"><input id="workerFilter" type="search" placeholder="Cari NIP, nama, PKWT, atau Freelance..."></div><div class="stats inside-stats"><div class="stat"><div class="label">Shift 1</div><div class="num" id="countS1">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 2</div><div class="num" id="countS2">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 3</div><div class="num" id="countS3">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Total</div><div class="num" id="countTotal">0</div><div class="desc">terpilih</div></div></div></div></div>
       <div class="worker-list" id="workerList"></div>
       <div class="schedule-actions"><button class="btn primary" id="btnSaveSchedule">💾 Simpan</button><button class="btn danger" id="btnResetShift">Reset</button></div>
     </section>
@@ -1001,16 +1001,18 @@ function enforceRoleUi(){
   document.querySelectorAll('[data-report-setting]').forEach(el=>{ if(el.hasAttribute('contenteditable')) el.setAttribute('contenteditable', hasPermission('manageSettings') ? 'true' : 'false'); });
 }
 function coordinatorCanChooseSilo(){ return Boolean(currentUser && isCoordinator() && unitKey(currentUser.unit)===BAHAN_BAKU_PAGI_KEY); }
-function normalizeBahanBakuActivityChoice(value){ return isSiloKey(value) ? SILO_KEY : BAHAN_BAKU_PAGI_KEY; }
-function loadCoordinatorActivityChoice(){ if(coordinatorCanChooseSilo()){ const saved=localStorage.getItem(COORDINATOR_ACTIVITY_CHOICE_KEY); coordinatorActivityKey = normalizeBahanBakuActivityChoice(saved); } else { coordinatorActivityKey = currentUser && currentUser.unit ? unitKey(currentUser.unit) : BAHAN_BAKU_PAGI_KEY; } }
-function currentCoordinatorUnitKey(){ if(coordinatorCanChooseSilo()) return normalizeBahanBakuActivityChoice(coordinatorActivityKey); return currentUser && currentUser.unit ? unitKey(currentUser.unit) : 'muatan_breeder'; }
+function coordinatorCanChooseBahanBakuActivity(){ return coordinatorCanChooseSilo(); }
+function isBahanBakuSelectableActivityKey(value){ return [BAHAN_BAKU_PAGI_KEY, SILO_KEY, OVERZAK_KEY].includes(String(value || '')); }
+function normalizeBahanBakuActivityChoice(value){ return isBahanBakuSelectableActivityKey(value) ? String(value) : BAHAN_BAKU_PAGI_KEY; }
+function loadCoordinatorActivityChoice(){ if(coordinatorCanChooseBahanBakuActivity()){ const saved=localStorage.getItem(COORDINATOR_ACTIVITY_CHOICE_KEY); coordinatorActivityKey = normalizeBahanBakuActivityChoice(saved); } else { coordinatorActivityKey = currentUser && currentUser.unit ? unitKey(currentUser.unit) : BAHAN_BAKU_PAGI_KEY; } }
+function currentCoordinatorUnitKey(){ if(coordinatorCanChooseBahanBakuActivity()) return normalizeBahanBakuActivityChoice(coordinatorActivityKey); return currentUser && currentUser.unit ? unitKey(currentUser.unit) : 'muatan_breeder'; }
 function activeUnitName(){ return isAdmin() ? unitNameFromKey(adminManagedUnitKey) : unitNameFromKey(currentCoordinatorUnitKey()); }
 function adminGlobalTitle(){ return 'Admin Absensi BIP'; }
 function adminGlobalLabel(){ return 'Global Semua Bagian'; }
 function currentAbsensiTitle(){ return isAdmin() ? adminGlobalTitle() : `Absensi ${activeUnitName()}`; }
 function activeUnitKey(){ return isAdmin() ? adminManagedUnitKey : currentCoordinatorUnitKey(); }
-function updateCoordinatorActivityUI(){ const field=$('activityField'); const select=$('activitySelect'); const show=coordinatorCanChooseSilo(); if(field) field.style.display=show ? '' : 'none'; if(select){ select.value=normalizeBahanBakuActivityChoice(coordinatorActivityKey); } }
-async function changeCoordinatorActivity(value){ if(!coordinatorCanChooseSilo()) return; coordinatorActivityKey = normalizeBahanBakuActivityChoice(value); localStorage.setItem(COORDINATOR_ACTIVITY_CHOICE_KEY, coordinatorActivityKey); updateAuthUI(); await loadState(); renderAll(); }
+function updateCoordinatorActivityUI(){ const field=$('activityField'); const select=$('activitySelect'); const show=coordinatorCanChooseBahanBakuActivity(); if(field) field.style.display=show ? '' : 'none'; if(select){ select.value=normalizeBahanBakuActivityChoice(coordinatorActivityKey); } }
+async function changeCoordinatorActivity(value){ if(!coordinatorCanChooseBahanBakuActivity()) return; saveState(); coordinatorActivityKey = normalizeBahanBakuActivityChoice(value); localStorage.setItem(COORDINATOR_ACTIVITY_CHOICE_KEY, coordinatorActivityKey); updateAuthUI(); await loadState(); renderAll(); }
 function isBahanBakuPagiKey(key){ return String(key || '') === BAHAN_BAKU_PAGI_KEY; }
 function isBahanBakuMalamKey(key){ return String(key || '') === BAHAN_BAKU_MALAM_KEY; }
 function isBahanBakuPagiMalamKey(key){ return isBahanBakuPagiKey(key) || isBahanBakuMalamKey(key); }
@@ -1051,7 +1053,7 @@ async function auditLog(action, moduleName, details={}, before=null, after=null,
   }catch(err){ console.warn('Audit log gagal disimpan.', err); return false; }
 }
 
-// v71: menu setting akun koordinator dan fitur hapus akun; v70 optimasi performa laporan Firestore tetap dipertahankan.
+// v72: Overzak masuk dropdown kegiatan, validasi anti dobel shift antar Bongkaran/Silo/Overzak, laporan gabungan tetap menyatu; v71 setting akun tetap dipertahankan.
 function safeLocalGetJSON(key, fallback=null){
   try{ const raw=localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; }catch(err){ return fallback; }
 }
@@ -1290,14 +1292,19 @@ async function loadOverzakActivityState(){
   if(saved && Array.isArray(saved.workers)){
     saved.workers.map(cleanWorker).forEach(w=>selectedByNip.set(String(w.nip), {s1:Boolean(w.s1), s2:Boolean(w.s2), s3:Boolean(w.s3)}));
   }
-  const blocked=getBlockedOverzakWorkerNips(currentDate);
-  const workers=baseWorkers.filter(w=>!blocked.has(String(w.nip||'').trim())).map(w=>{ const selected=selectedByNip.get(String(w.nip||'')) || {}; return {...w, s1:Boolean(selected.s1), s2:Boolean(selected.s2), s3:Boolean(selected.s3), kegiatan:'Overzak'}; });
+  const workers=baseWorkers.map(w=>{ const selected=selectedByNip.get(String(w.nip||'')) || {}; return {...w, s1:Boolean(selected.s1), s2:Boolean(selected.s2), s3:Boolean(selected.s3), kegiatan:'Overzak'}; });
   return { company:'PT. BUDI INTI PERKASA', reportDate:(saved && saved.reportDate) || currentDate, workers, allowEmptyWorkers:allowEmpty };
 }
 async function loadState(){
   const unitKeyValue=activeUnitKey();
   if(isSiloKey(unitKeyValue)){
     state=await loadSiloActivityState();
+    ensureBaseWorkers();
+    syncPendingAttendanceOnline().catch(err=>console.warn('Sinkron antrian absensi gagal.', err));
+    return;
+  }
+  if(isOverzakKey(unitKeyValue)){
+    state=await loadOverzakActivityState();
     ensureBaseWorkers();
     syncPendingAttendanceOnline().catch(err=>console.warn('Sinkron antrian absensi gagal.', err));
     return;
@@ -1329,7 +1336,6 @@ async function loadState(){
   syncPendingAttendanceOnline().catch(err=>console.warn('Sinkron antrian absensi gagal.', err));
 }
 function saveState(){
-  if(!isAdmin() && activeUnitKey()===BAHAN_BAKU_PAGI_KEY){ saveBahanBakuOverzakDraftSelection(); }
   if(!isAdmin() && isCommercialKey(activeUnitKey())){ saveCommercialDraftSelection(); return; }
   safeLocalSetJSON(stateStorageKey(), cacheEnvelope(state, 'pending_or_cache'));
   const bridge=window.AbsensiFirebase;
@@ -1410,15 +1416,15 @@ function renderBahanBakuOverzakSection(){
         <label class="shift-toggle s3">S3 <input type="checkbox" data-overzak-shift="s3" data-nip="${nip}" ${w.s3?'checked':''}><span class="checkmark">✓</span></label>
       </div>
     </div>`;
-  }).join('')}</div>` : '<div class="empty">Tidak ada pekerja tersedia untuk Overzak. Import pekerja Overzak dari Admin > Import Data. Pekerja yang sudah terpilih di Bongkaran Shift 1 atau Silo Shift 1 tidak ditampilkan.</div>';
+  }).join('')}</div>` : '<div class="empty">Tidak ada pekerja tersedia untuk Overzak. Import pekerja Overzak dari Admin > Import Data.</div>';
   return `<div class="commercial-activity-section bahan-baku-overzak overzak-card-section"><div class="commercial-activity-title">Input Jadwal Kegiatan Overzak - Shift 1, Shift 2 &amp; Shift 3</div>${body}</div>`;
 }
 
 function selectedWorkers(){
   if(!isAdmin() && isCommercialKey(activeUnitKey())) return selectedCommercialReportRows();
-  const base=(state.workers||[]).filter(w => w.s1 || w.s2 || w.s3).sort((a,b)=>(Number(a.no)||0)-(Number(b.no)||0)).map(w=>({...w, kegiatan:w.kegiatan || (activeUnitKey()===BAHAN_BAKU_PAGI_KEY ? 'Bongkaran' : '')}));
-  if(!isAdmin() && activeUnitKey()===BAHAN_BAKU_PAGI_KEY){ return [...base, ...selectedBahanBakuOverzakRows()].map((w,i)=>({...w,no:i+1})); }
-  return base;
+  const key=activeUnitKey();
+  const defaultKegiatan=isOverzakKey(key) ? 'Overzak' : (isSiloKey(key) ? 'Silo' : (key===BAHAN_BAKU_PAGI_KEY ? 'Bongkaran' : ''));
+  return (state.workers||[]).filter(w => w.s1 || w.s2 || w.s3).sort((a,b)=>(Number(a.no)||0)-(Number(b.no)||0)).map((w,i)=>({...w, no:i+1, kegiatan:w.kegiatan || defaultKegiatan}));
 }
 
 function formatLongDate(dateValue){ if(!dateValue) return 'HARI - TANGGAL'; const date = new Date(dateValue + 'T00:00:00'); const hari=['MINGGU','SENIN','SELASA','RABU','KAMIS','JUMAT','SABTU'][date.getDay()]; const bulan=['JANUARI','FEBRUARI','MARET','APRIL','MEI','JUNI','JULI','AGUSTUS','SEPTEMBER','OKTOBER','NOVEMBER','DESEMBER'][date.getMonth()]; return `HARI ${hari} - TANGGAL ${String(date.getDate()).padStart(2,'0')} ${bulan} ${date.getFullYear()}`; }
@@ -1442,19 +1448,7 @@ function syncInputs(){ if($('reportDate')) $('reportDate').value = state.reportD
 function renderDropdowns(){ const pkwt = state.workers.filter(w=>workerType(w)==='PKWT').sort((a,b)=>a.no-b.no); const free = state.workers.filter(w=>workerType(w)==='Freelance').sort((a,b)=>a.no-b.no); $('pkwtCount').textContent = `${pkwt.length} data`; $('freelanceCount').textContent = `${free.length} data`; const make = (rows, text) => '<option value="">'+text+'</option>' + rows.map(w=>`<option value="${w.no}">${safeText(w.nip)} - ${safeText(w.name)}</option>`).join(''); $('selectPkwt').innerHTML = make(pkwt, 'Pilih pekerja PKWT'); $('selectFreelance').innerHTML = make(free, 'Pilih pekerja Freelance'); }
 
 function getBlockedSiloShift1WorkerNips(){
-  try{
-    if(!coordinatorCanChooseSilo()) return new Set();
-    if(isSiloKey(activeUnitKey())) return new Set();
-    if(activeUnitKey() !== BAHAN_BAKU_PAGI_KEY) return new Set();
-    const dateValue=state.reportDate || todayISO();
-    const siloData=unwrapCacheEnvelope(safeLocalGetJSON(`${ATTENDANCE_KEY}_${SILO_KEY}_${dateValue}`, null));
-    if(!siloData) return new Set();
-    const rows=rowsFromAttendancePayload(siloData);
-    return new Set(rows.filter(w=>w && w.s1).map(w=>String(w.nip || '').trim()).filter(Boolean));
-  }catch(err){
-    console.warn('Filter pekerja SILO Shift 1 gagal diproses.', err);
-    return new Set();
-  }
+  return new Set();
 }
 
 function getLocalLoadingDocks(){
@@ -1714,6 +1708,54 @@ async function adminAddDock(){ if(!requirePermission('manageDocks','Fitur Loadin
 async function adminResetDocks(){ if(!isAdmin()) return; if(!confirm('Reset Loading Dock ke default 01, 02, 03?')) return; await saveLoadingDocks(['01','02','03']); await renderAdminLoadingDocks(); adminLog('Loading Dock direset ke default 01, 02, 03.'); }
 async function adminDeleteDock(value){ if(!requirePermission('manageDocks','Fitur Loading Dock hanya untuk admin.')) return; const dock=normalizeDockName(value); if(!dock) return; if(!confirm('Hapus '+dockLabel(dock)+'?')) return; await saveLoadingDocks(getLocalLoadingDocks().filter(d=>d!==dock)); await renderAdminLoadingDocks(); adminLog('Loading Dock dihapus: '+dockLabel(dock)); }
 
+function bahanBakuActivityLabelFromKey(key){
+  if(isOverzakKey(key)) return 'Overzak';
+  if(isSiloKey(key)) return 'Silo';
+  if(String(key || '')===BAHAN_BAKU_PAGI_KEY) return 'Bongkaran';
+  return unitNameFromKey(key);
+}
+function getBahanBakuActivityUnitKeys(){ return [BAHAN_BAKU_PAGI_KEY, SILO_KEY, OVERZAK_KEY]; }
+function rowsFromSavedActivityState(unitKeyValue){
+  try{
+    const cached=unwrapCacheEnvelope(safeLocalGetJSON(`${STORAGE_KEY}_${unitKeyValue}`, null));
+    if(cached && Array.isArray(cached.workers)){
+      const dateValue=state.reportDate || todayISO();
+      if(cached.reportDate && cached.reportDate !== dateValue) return [];
+      return cached.workers.map((w,i)=>({...cleanWorker(w,i), kegiatan:w.kegiatan || bahanBakuActivityLabelFromKey(unitKeyValue), sourceUnitKey:unitKeyValue}));
+    }
+  }catch(err){ console.warn('Baca state kegiatan gagal:', unitKeyValue, err); }
+  return [];
+}
+function rowsFromSavedAttendance(unitKeyValue, dateValue){
+  try{
+    const data=unwrapCacheEnvelope(safeLocalGetJSON(`${ATTENDANCE_KEY}_${unitKeyValue}_${dateValue}`, null));
+    return rowsFromAttendancePayload(data).map(r=>({...r, sourceUnitKey:unitKeyValue, kegiatan:r.kegiatan || bahanBakuActivityLabelFromKey(unitKeyValue)}));
+  }catch(err){ console.warn('Baca absensi kegiatan gagal:', unitKeyValue, err); return []; }
+}
+function getBahanBakuShiftConflict(nipValue, shiftKey, excludeUnitKey){
+  const nip=String(nipValue || '').trim();
+  if(!nip || !shiftKey) return null;
+  const dateValue=state.reportDate || todayISO();
+  const ownKey=excludeUnitKey || activeUnitKey();
+  for(const unitKeyValue of getBahanBakuActivityUnitKeys()){
+    if(unitKeyValue===ownKey) continue;
+    const rows=[...rowsFromSavedActivityState(unitKeyValue), ...rowsFromSavedAttendance(unitKeyValue, dateValue)];
+    const hit=rows.find(r=>String(r.nip||'').trim()===nip && Boolean(r[shiftKey]));
+    if(hit){
+      return { unitKey:unitKeyValue, label:bahanBakuActivityLabelFromKey(unitKeyValue), row:hit, shiftLabel:shiftKey==='s1'?'Shift 1':(shiftKey==='s2'?'Shift 2':'Shift 3') };
+    }
+  }
+  return null;
+}
+function validateBahanBakuShiftChange(worker, shiftKey, checked){
+  if(!checked) return true;
+  if(!coordinatorCanChooseBahanBakuActivity()) return true;
+  if(!getBahanBakuActivityUnitKeys().includes(activeUnitKey())) return true;
+  const conflict=getBahanBakuShiftConflict(worker && worker.nip, shiftKey, activeUnitKey());
+  if(!conflict) return true;
+  alert(`Pekerja ${worker && worker.name ? worker.name : worker && worker.nip ? worker.nip : ''} sudah terjadwal pada ${conflict.shiftLabel} sebagai ${conflict.label}.\n\nSatu pekerja hanya boleh punya 1 kegiatan pada tanggal dan shift yang sama. Jika ingin memindahkan, buka kegiatan ${conflict.label}, hapus checklist shift tersebut, lalu pilih di kegiatan baru.`);
+  return false;
+}
 async function renderWorkers(){
   if(coordinatorSingleShiftMode()) enforceSingleShiftInputRule();
   const isCommercialMatrix = await updateCommercialScheduleUI();
@@ -1727,7 +1769,6 @@ async function renderWorkers(){
   }
   renderDropdowns();
   updateSingleShiftUI();
-  if(activeUnitKey()===BAHAN_BAKU_PAGI_KEY){ await loadBahanBakuOverzakMasterRows(); }
   const allowed=coordinatorAllowedShift();
   const q=$('workerFilter').value.trim().toLowerCase();
   const blockedSiloShift1Nips=getBlockedSiloShift1WorkerNips();
@@ -1759,11 +1800,6 @@ async function renderWorkers(){
     div.addEventListener('click', e=>{ if(e.target.closest('.shift-toggle')) return; fillForm(worker.no); window.scrollTo({top:0, behavior:'smooth'}); });
     list.appendChild(div);
   });
-  if(activeUnitKey()===BAHAN_BAKU_PAGI_KEY){
-    const wrap=document.createElement('div');
-    wrap.innerHTML=renderBahanBakuOverzakSection();
-    while(wrap.firstChild) list.appendChild(wrap.firstChild);
-  }
   updateCounts();
 }
 function renderMobileReportGeneric(rows, emptyMsg){
@@ -2034,14 +2070,15 @@ function normalizeAttendancePayload(payload){
 function makeAttendancePayload(){
   if(coordinatorSingleShiftMode()) enforceSingleShiftInputRule();
   const rowsForPayload=selectedWorkers();
-  const workersRaw=rowsForPayload.map(w=>({nip:String(w.nip),name:String(w.name),ldRegu:w.ldRegu || commercialLdReguLabel(w.loadingDock,w.regu) || '',s1:Boolean(w.s1),s2:Boolean(w.s2),s3:Boolean(w.s3),type:w.type || workerType(w),activityKey:w.activityKey||'',activityLabel:w.activityLabel||'',kegiatan:isOverzakKey(activeUnitKey())?'Overzak':(w.kegiatan||''),sourceUnitKey:activeUnitKey(),sourceUnitName:activeUnitName(),regu:w.regu||'',loadingDock:w.loadingDock||'',checkIn:isCommercialTfActivityRow(w)?'':(w.checkIn||''),checkOut:isCommercialTfActivityRow(w)?'':(w.checkOut||'')}));
+  const currentKey=activeUnitKey();
+  const workersRaw=rowsForPayload.map(w=>({nip:String(w.nip),name:String(w.name),ldRegu:w.ldRegu || commercialLdReguLabel(w.loadingDock,w.regu) || '',s1:Boolean(w.s1),s2:Boolean(w.s2),s3:Boolean(w.s3),type:w.type || workerType(w),activityKey:w.activityKey||'',activityLabel:w.activityLabel||'',kegiatan:isOverzakKey(currentKey)?'Overzak':(isSiloKey(currentKey)?'Silo':(w.kegiatan||'')),sourceUnitKey:currentKey,sourceUnitName:activeUnitName(),regu:w.regu||'',loadingDock:w.loadingDock||'',checkIn:isCommercialTfActivityRow(w)?'':(w.checkIn||''),checkOut:isCommercialTfActivityRow(w)?'':(w.checkOut||'')}));
   const isCommercial=isCommercialKey(activeUnitKey());
   const commercialRows=isCommercial ? getCommercialAssignmentRows().filter(r=>normalizeRegu(r.regu) && (r.s1 || r.s2 || r.s3)).map(r=>({dock:normalizeDockName(r.dock),regu:normalizeRegu(r.regu),s1:Boolean(r.s1),s2:Boolean(r.s2),s3:Boolean(r.s3)})) : [];
   const commercialActivities=isCommercial ? COMMERCIAL_ACTIVITY_DEFS.map(def=>{
     const activityWorkers=dedupeAttendanceWorkers(selectedCommercialActivityReportRows().filter(w=>w.activityKey===def.key).map(w=>({nip:w.nip,name:w.name,s1:Boolean(w.s1),s2:Boolean(w.s2),s3:Boolean(w.s3),activityKey:def.key,activityLabel:def.label,sourceUnitKey:activeUnitKey()})));
     return {key:def.key,label:def.label,workers:activityWorkers.map(w=>({rowId:w.rowId,nip:w.nip,name:w.name,s1:Boolean(w.s1),s2:Boolean(w.s2),s3:Boolean(w.s3)}))};
   }) : [];
-  return normalizeAttendancePayload({ id:null, reportDate:state.reportDate || todayISO(), company:'PT. BUDI INTI PERKASA', unit:activeUnitName(), unitKey:activeUnitKey(), loadingDock:'', regu:'', commercialAssignments:commercialRows, commercialActivities, scheduleKey:'', inputBy:currentUser ? {username:String(currentUser.username || currentUser.nip || ''),nip:String(currentUser.nip || ''),name:String(currentUser.name),role:String(currentUser.role || 'koordinator'),unit:currentUser.unit || activeUnitName(),activity:activeUnitName()} : null, workers:workersRaw, savedFrom:'pwa', inputMode: isCommercial ? 'commercial_loading_dock_regu_shift' : (isSiloKey(activeUnitKey()) ? 'silo_shift_1_2' : (coordinatorSingleShiftMode() ? (coordinatorAllowedShift()==='s2' ? 'single_shift_2' : 'single_shift_1') : 'normal')) });
+  return normalizeAttendancePayload({ id:null, reportDate:state.reportDate || todayISO(), company:'PT. BUDI INTI PERKASA', unit:activeUnitName(), unitKey:activeUnitKey(), loadingDock:'', regu:'', commercialAssignments:commercialRows, commercialActivities, scheduleKey:'', inputBy:currentUser ? {username:String(currentUser.username || currentUser.nip || ''),nip:String(currentUser.nip || ''),name:String(currentUser.name),role:String(currentUser.role || 'koordinator'),unit:currentUser.unit || activeUnitName(),activity:activeUnitName()} : null, workers:workersRaw, savedFrom:'pwa', inputMode: isCommercial ? 'commercial_loading_dock_regu_shift' : (isOverzakKey(activeUnitKey()) ? 'overzak_shift_1_2_3' : (isSiloKey(activeUnitKey()) ? 'silo_shift_1_2_3' : (coordinatorSingleShiftMode() ? (coordinatorAllowedShift()==='s2' ? 'single_shift_2' : 'single_shift_1') : 'normal'))) });
 }
 function saveAttendanceLocal(payload){ const data={...normalizeAttendancePayload(payload), savedAtLocal:new Date().toISOString(), onlineStatus:'local_cache'}; safeLocalSetJSON(attendanceStorageKey(data), cacheEnvelope(data, 'pending_or_cache')); return data; }
 function getPendingAttendance(){ try{ const raw=localStorage.getItem(PENDING_ATTENDANCE_KEY); const arr=raw?JSON.parse(raw):[]; return Array.isArray(arr)?arr:[]; }catch(err){ return []; } }
@@ -2182,16 +2219,17 @@ function sourceRowsAsShift(payload, targetShift, sourceUnitKey){
 function mergeRowsByNip(rows){
   const map=new Map();
   rows.forEach(row=>{
-    const key=String(row.nip||'');
-    if(!key) return;
-    const prev=map.get(key) || { nip:key, name:row.name || '', s1:false, s2:false, s3:false, type:row.type || '', kegiatan:'', checkIn:'', checkOut:'', sourceUnitKey:'', sourceUnitName:'' };
+    const nip=String(row.nip||'').trim();
+    if(!nip) return;
+    const kegiatanLabel=String(row.kegiatan || '').toLowerCase().includes('overzak') ? 'Overzak' : (String(row.kegiatan || '').toLowerCase().includes('silo') ? 'Silo' : (row.kegiatan || 'Bongkaran'));
+    const key=nip + '__' + stableIdPart(kegiatanLabel);
+    const prev=map.get(key) || { nip:nip, name:row.name || '', s1:false, s2:false, s3:false, type:row.type || '', kegiatan:kegiatanLabel, checkIn:'', checkOut:'', sourceUnitKey:'', sourceUnitName:'' };
     prev.name = prev.name || row.name || '';
     prev.type = prev.type || row.type || '';
     prev.s1 = Boolean(prev.s1 || row.s1);
     prev.s2 = Boolean(prev.s2 || row.s2);
     prev.s3 = Boolean(prev.s3 || row.s3);
-    prev.kegiatan = prev.kegiatan || row.kegiatan || '';
-    if(String(row.kegiatan||'').toLowerCase().includes('overzak')) prev.kegiatan='Overzak';
+    prev.kegiatan = kegiatanLabel;
     prev.checkIn = row.checkIn || prev.checkIn || '';
     prev.checkOut = row.checkOut || prev.checkOut || '';
     prev.sourceUnitKey = [prev.sourceUnitKey, row.sourceUnitKey].filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(',');
@@ -3024,12 +3062,12 @@ document.addEventListener('change', e=>{
     if(allowed && shift!==allowed){ e.target.checked=false; return; }
     const w=state.workers.find(x=>x.no===no);
     if(w){
+      if(!validateBahanBakuShiftChange(w, shift, e.target.checked)){ e.target.checked=false; return; }
       w[shift]=e.target.checked;
       if(allowed==='s1'){ w.s2=false; w.s3=false; }
       if(allowed==='s2'){ w.s1=false; w.s3=false; }
       if(allowed==='s3'){ w.s1=false; w.s2=false; }
       saveState();
-      if(activeUnitKey()===BAHAN_BAKU_PAGI_KEY){ renderWorkers(); }
       renderReport();
       updateCounts();
     }
