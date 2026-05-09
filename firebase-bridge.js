@@ -321,6 +321,29 @@
           }, { merge:true });
           return { id: cleanUsername };
         },
+        async deleteCoordinator(username, adminUser){
+          const cleanUsername=String(username || '').trim();
+          if(!cleanUsername) throw new Error('Username akun kosong.');
+          const ref=fs.doc(db, coordinatorPath, cleanUsername);
+          const snap=await fs.getDoc(ref);
+          if(snap.exists()){
+            const data=snap.data() || {};
+            if(normalizeRole(data.role || 'koordinator') === 'admin') throw new Error('Akun admin tidak bisa dihapus dari menu koordinator.');
+          }
+          await fs.deleteDoc(ref);
+          try{ await fs.deleteDoc(fs.doc(db, 'active_sessions', cleanUsername)); }catch(err){}
+          if(adminUser){
+            await fs.addDoc(fs.collection(db, auditLogsPath), {
+              type:'account_delete',
+              username:cleanUsername,
+              deletedBy:{ username:adminUser.username || adminUser.nip || '', nip:adminUser.nip || adminUser.username || '', name:adminUser.name || '', role:adminUser.role || '' },
+              createdAt:fs.serverTimestamp(),
+              createdAtLocal:serverTimeFallback(),
+              appVersion:'v70'
+            }).catch(()=>{});
+          }
+          return { id: cleanUsername, deleted:true };
+        },
         async loadAppState(unitKey){
           const snap=await fs.getDoc(fs.doc(db, appDataPath, unitKey));
           if(!snap.exists()) return null;

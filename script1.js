@@ -555,7 +555,7 @@
               <div class="admin-actions-row"><button class="btn primary" id="btnAdminSaveAdminAccount">💾 Simpan Admin</button><button class="btn secondary" id="btnAdminResetAdminAccountForm">↻ Reset Form</button></div>
             </div>
             <div class="admin-sub-frame">
-              <div class="admin-sub-title"><div><h4>Menu Setting Akun Koordinator / Payroll / Viewer</h4></div><small>Frame 2</small></div>
+              <div class="admin-sub-title"><div><h4>Menu Setting Akun Koordinator</h4></div><small>Frame 2</small></div>
               <div class="grid-form">
                 <div class="field span-2"><label for="adminCoordinatorSelect">Pilih Akun Non-Admin</label><select id="adminCoordinatorSelect"></select></div>
                 <div class="field"><label for="adminCoordNip">Username</label><input id="adminCoordNip" type="text" autocomplete="username" placeholder="contoh: breeder"></div>
@@ -565,7 +565,7 @@
                 <div class="field span-2"><label for="adminCoordPassword">Password Baru</label><input id="adminCoordPassword" type="text" placeholder="Isi password baru"></div>
               </div>
               <label class="admin-checkline"><input id="adminCoordActive" type="checkbox" checked> Aktifkan akun koordinator</label>
-              <div class="admin-actions-row"><button class="btn primary" id="btnAdminSaveCoordinator">💾 Simpan Akun</button><button class="btn secondary" id="btnAdminResetCoordinatorForm">↻ Reset Form</button></div>
+              <div class="admin-actions-row three"><button class="btn primary" id="btnAdminSaveCoordinator">💾 Simpan Akun</button><button class="btn danger" id="btnAdminDeleteCoordinator">🗑 Hapus Akun</button><button class="btn secondary" id="btnAdminResetCoordinatorForm">↻ Reset Form</button></div>
             </div>
           </div>
         </div></div>
@@ -826,6 +826,14 @@ function upsertAccountToCache(user){
   return cached;
 }
 function saveLocalCoordinatorAccount(user){ if(!user) return; const role=normalizeRole(user.role || 'koordinator'); upsertAccountToCache({ ...user, role:role==='admin' ? 'koordinator' : role, active:user.active !== false }); }
+function deleteLocalCoordinatorAccount(username){
+  const key=String(username || '').trim();
+  if(!key) return getAllLoginUsers();
+  const rows=getAllLoginUsers().filter(row=>accountUsername(row)!==key);
+  const cached=writeCachedCoordinatorAccounts(rows, accountDataSource==='firestore' ? 'firestore_cache' : 'local_cache');
+  setAccountCache(cached, accountDataSource==='firestore' ? 'firestore' : 'local_cache');
+  return cached;
+}
 function saveLocalAdminAccount(user){ if(!user) return; upsertAccountToCache({ ...user, role:'admin', unit:'Admin', active:true }); }
 function mergeCloudAccountsToLocal(users){
   const rows=uniqueLoginUsers(users);
@@ -858,6 +866,15 @@ async function refreshAccountsFromFirestore(force=false){
   }
 }
 function coordinatorBaseUsers(){ return getAllLoginUsers().filter(u=>normalizeRole(u.role)!=='admin'); }
+function renderCoordinatorAccountOptions(selectedValue){
+  const sel=$('adminCoordinatorSelect');
+  if(!sel) return;
+  const users=coordinatorBaseUsers();
+  sel.innerHTML=users.map(u=>`<option value="${safeText(accountUsername(u))}">${safeText(accountUsername(u))} - ${safeText(u.name)} (${safeText(roleLabel(u.role))})</option>`).join('');
+  const wanted=String(selectedValue || sel.value || '').trim();
+  if(wanted && users.some(u=>accountUsername(u)===wanted)) sel.value=wanted;
+  else if(users[0]) sel.value=accountUsername(users[0]);
+}
 function adminLoginUser(){ return getAllLoginUsers().find(u=>u.role==='admin') || getFallbackLoginUsers().find(u=>u.role==='admin') || getFallbackLoginUsers()[0]; }
 function coordinatorByUsername(username){ const key=String(username||'').trim(); const rows=coordinatorBaseUsers(); return rows.find(u=>accountUsername(u)===key) || rows[0] || null; }
 async function syncCloudSession(user){
@@ -1034,7 +1051,7 @@ async function auditLog(action, moduleName, details={}, before=null, after=null,
   }catch(err){ console.warn('Audit log gagal disimpan.', err); return false; }
 }
 
-// v70: optimasi performa laporan Firestore; v69 backup/export dan role permission tetap dipertahankan.
+// v71: menu setting akun koordinator dan fitur hapus akun; v70 optimasi performa laporan Firestore tetap dipertahankan.
 function safeLocalGetJSON(key, fallback=null){
   try{ const raw=localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; }catch(err){ return fallback; }
 }
@@ -2512,8 +2529,7 @@ function initAdminTools(){
   ['adminClearWorkersUnit'].forEach(id=>{ const sel=$(id); if(sel){ sel.innerHTML=optionUnits(true); sel.value=adminManagedUnitKey; } });
   const deleteAttendanceSel=$('adminDeleteAttendanceUnit');
   if(deleteAttendanceSel){ deleteAttendanceSel.innerHTML=optionUnits(true); deleteAttendanceSel.value=adminManagedUnitKey; }
-  const coordSel=$('adminCoordinatorSelect');
-  if(coordSel){ coordSel.innerHTML=coordinatorBaseUsers().map(u=>`<option value="${safeText(accountUsername(u))}">${safeText(accountUsername(u))} - ${safeText(u.name)}</option>`).join(''); }
+  renderCoordinatorAccountOptions();
   const today=todayISO();
   if($('adminDeleteStart') && !$('adminDeleteStart').value) $('adminDeleteStart').value=today;
   if($('adminDeleteEnd') && !$('adminDeleteEnd').value) $('adminDeleteEnd').value=today;
@@ -2591,7 +2607,13 @@ async function saveAdminAccountSetting(){
 function renderCoordinatorSettingForm(){
   const sel=$('adminCoordinatorSelect');
   const user=coordinatorByUsername(sel ? sel.value : 'breeder');
-  if(!user) return;
+  if(!user){
+    if($('adminCoordNip')) $('adminCoordNip').value='';
+    if($('adminCoordName')) $('adminCoordName').value='';
+    if($('adminCoordPassword')) $('adminCoordPassword').value='';
+    if($('adminCoordActive')) $('adminCoordActive').checked=true;
+    return;
+  }
   const username=accountUsername(user);
   if(sel) sel.value=username;
   if($('adminCoordNip')) $('adminCoordNip').value=username || '';
@@ -2619,6 +2641,7 @@ async function saveCoordinatorSetting(){
     if(bridge && bridge.enabled && bridge.saveCoordinator){ await bridge.saveCoordinator(payload, currentUser); }
     saveLocalCoordinatorAccount(payload);
     initAdminTools();
+    renderCoordinatorAccountOptions(username);
     const sel=$('adminCoordinatorSelect'); if(sel) sel.value=username;
     renderCoordinatorSettingForm();
     adminLog(`Akun ${roleLabel(payload.role)} berhasil disimpan: ${name} / Username ${username} / ${unitNameFromKey(unitKeyValue)}.`);
@@ -2628,6 +2651,41 @@ async function saveCoordinatorSetting(){
     alert('Simpan akun koordinator gagal: ' + (err && err.message ? err.message : err));
   }finally{
     if(btn){ btn.disabled=false; btn.textContent=old || '💾 Simpan Akun'; }
+  }
+}
+
+async function deleteCoordinatorSetting(){
+  if(!requirePermission('manageAccounts','Hapus akun hanya untuk admin.')) return;
+  const sel=$('adminCoordinatorSelect');
+  const selected=sel ? String(sel.value || '').trim() : '';
+  const typed=String($('adminCoordNip') ? $('adminCoordNip').value : '').trim();
+  const username=selected || typed;
+  const user=coordinatorByUsername(username);
+  if(!username || !user){ alert('Pilih akun yang akan dihapus terlebih dahulu.'); return; }
+  const role=normalizeRole(user.role || 'koordinator');
+  if(role==='admin'){ alert('Akun admin tidak bisa dihapus dari menu ini.'); return; }
+  const label=`${user.name || username} / Username ${username} / Role ${roleLabel(role)}`;
+  if(!confirm(`Hapus akun ini?
+
+${label}
+
+Tindakan ini menghapus akses login akun tersebut. Data absensi/pekerja lama tidak ikut dihapus.`)) return;
+  const btn=$('btnAdminDeleteCoordinator'); const old=btn?btn.textContent:'';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Menghapus...'; }
+    const bridge=await waitFirebase();
+    if(bridge && bridge.enabled && bridge.deleteCoordinator){ await bridge.deleteCoordinator(username, currentUser); }
+    deleteLocalCoordinatorAccount(username);
+    initAdminTools();
+    renderCoordinatorAccountOptions();
+    renderCoordinatorSettingForm();
+    adminLog(`Akun ${roleLabel(role)} berhasil dihapus: ${label}.`);
+    alert('Akun berhasil dihapus.');
+  }catch(err){
+    console.error(err);
+    alert('Hapus akun gagal: ' + (err && err.message ? err.message : err));
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=old || '🗑 Hapus Akun'; }
   }
 }
 
@@ -3010,7 +3068,7 @@ syncAdminAttendanceOptionCheckboxes(); refreshAdminAttendanceOptionsFromFirestor
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); $('btnShareWa').addEventListener('click', shareWhatsapp); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', updateGlobalCheckInfo); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); $('btnShareWa').addEventListener('click', shareWhatsapp); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', updateGlobalCheckInfo); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
 let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu install belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }
 window.addEventListener('load', ()=>{ setTimeout(hideSplash,650); });
