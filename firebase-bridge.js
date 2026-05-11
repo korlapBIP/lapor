@@ -23,6 +23,10 @@
       unit: String(data.unit || data.bagian || 'Muatan Breeder').trim(),
       active: data.active !== false,
       password: String(data.password || '').trim(),
+      coordinatorNip: String(data.coordinatorNip || data.workerNip || data.employeeNip || data.coordinator_nip || data.worker_nip || '').trim(),
+      coordinatorName: String(data.coordinatorName || data.workerName || data.employeeName || data.coordinator_name || data.worker_name || '').trim(),
+      workerNip: String(data.workerNip || data.coordinatorNip || data.employeeNip || data.coordinator_nip || data.worker_nip || '').trim(),
+      workerName: String(data.workerName || data.coordinatorName || data.employeeName || data.coordinator_name || data.worker_name || '').trim(),
       id: String(docId || username || '').trim()
     };
   }
@@ -189,6 +193,10 @@
             name:String(user.name || '').trim(),
             role:normalizeRole(user.role || 'koordinator'),
             unit:String(user.unit || '').trim(),
+            coordinatorNip:String(user.coordinatorNip || user.workerNip || '').trim(),
+            coordinatorName:String(user.coordinatorName || user.workerName || '').trim(),
+            workerNip:String(user.workerNip || user.coordinatorNip || '').trim(),
+            workerName:String(user.workerName || user.coordinatorName || '').trim(),
             active:true,
             loginAt: fs.serverTimestamp(),
             loginAtLocal: serverTimeFallback(),
@@ -314,6 +322,10 @@
             password: String(user.password || '').trim(),
             role: normalizeRole(user.role || 'koordinator'),
             unit: String(user.unit || '').trim(),
+            coordinatorNip: String(user.coordinatorNip || user.workerNip || '').trim(),
+            coordinatorName: String(user.coordinatorName || user.workerName || '').trim(),
+            workerNip: String(user.workerNip || user.coordinatorNip || '').trim(),
+            workerName: String(user.workerName || user.coordinatorName || '').trim(),
             active: user.active !== false,
             updatedAt: fs.serverTimestamp(),
             updatedAtLocal: serverTimeFallback(),
@@ -467,11 +479,17 @@
         },
         async deleteAttendanceRange(unitKey, startDate, endDate){
           const rows=[];
-          const start=new Date(String(startDate)+'T00:00:00');
-          const end=new Date(String(endDate)+'T00:00:00');
+          const makeDate=(v)=>{
+            const m=String(v||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+            return m ? new Date(Number(m[1]), Number(m[2])-1, Number(m[3])) : new Date(String(v||'')+'T00:00:00');
+          };
+          const two=n=>String(n).padStart(2,'0');
+          const fmt=d=>`${d.getFullYear()}-${two(d.getMonth()+1)}-${two(d.getDate())}`;
+          const start=makeDate(startDate);
+          const end=makeDate(endDate);
           if(isNaN(start) || isNaN(end) || start>end) return { deleted:0 };
-          for(const d=new Date(start); d<=end; d.setDate(d.getDate()+1)){
-            rows.push(d.toISOString().slice(0,10));
+          for(const d=new Date(start.getFullYear(),start.getMonth(),start.getDate()); d<=end; d.setDate(d.getDate()+1)){
+            rows.push(fmt(d));
           }
           let deleted=0;
           for(let i=0;i<rows.length;i+=225){
