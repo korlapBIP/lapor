@@ -28,7 +28,7 @@
     .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 14px}.stat{background:rgba(255,255,255,.96);border:1px solid rgba(188,202,221,.66);border-radius:22px;padding:13px;box-shadow:0 10px 26px rgba(20,38,72,.07)}.stat .label{font-size:10px;color:#71829b;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.stat .num{font-size:24px;font-weight:950;margin-top:4px;line-height:1}.stat .desc{font-size:11px;color:#728198;margin-top:3px;font-weight:750}.panel{display:none}.panel.active{display:block}
     .frame{border-radius:28px;padding:15px;border:1px solid rgba(188,202,221,.55);box-shadow:var(--shadow);position:relative;overflow:hidden;margin-bottom:14px}.frame:before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--frame-accent)}.frame.worker{--frame-accent:var(--worker-accent);background:linear-gradient(135deg,#f7fbff 0%,var(--worker-bg) 100%)}.frame.data{--frame-accent:var(--data-accent);background:linear-gradient(135deg,#fbfffc 0%,var(--data-bg) 100%)}.frame.report-frame{--frame-accent:var(--report-accent);background:linear-gradient(135deg,#fffdf8 0%,var(--report-bg) 100%)}.frame-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin:8px 4px 14px}.frame-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--frame-accent)}.frame-head h2{margin:3px 0 5px;font-size:20px;font-weight:900}.frame-head p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}.frame-number{width:42px;height:42px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--frame-accent);font-weight:900;box-shadow:0 10px 24px rgba(20,38,72,.09);border:1px solid rgba(188,202,221,.55)}
     .card{background:var(--panel);border:1px solid rgba(188,202,221,.66);border-radius:22px;box-shadow:0 10px 26px rgba(20,38,72,.08);overflow:hidden;margin-bottom:12px}.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 15px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#f9fbfe)}.card-head h3{margin:0;font-size:16px;font-weight:900}.card-head span{font-size:12px;color:var(--muted);font-weight:800}.card-body{padding:15px}.grid-form{display:grid;grid-template-columns:88px 1fr;gap:10px}.field label{display:block;color:#3d4f68;font-size:12px;font-weight:900;margin-bottom:6px}input,select{width:100%;min-height:48px;border:1px solid #d5e0ee;border-radius:16px;background:#fff;padding:10px 12px;color:var(--ink);outline:none}input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(37,88,217,.12)}.span-2{grid-column:span 2}.actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.btn{min-height:48px;border-radius:16px;font-weight:950;padding:10px 12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center}.primary{background:linear-gradient(135deg,var(--primary),#65a2ff);color:#fff}.success{background:#e8f8ee;color:#15803d}.warning{background:#fff4df;color:#b45309}.danger{background:#ffe8e4;color:#b42318}.secondary{background:#f4f7fb;color:#42526c;border:1px solid #e4edf8}.dark{background:#172033;color:#fff}.full{grid-column:1/-1}.note{margin-top:12px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:10px 12px;border-radius:16px;font-size:12px;line-height:1.45;font-weight:750}
-    .split-grid{display:grid;grid-template-columns:1fr;gap:12px}.type-box{border:1px solid #dfe8f5;background:#f8fbff;border-radius:20px;padding:12px}.type-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}.type-title strong{font-size:13px}.type-title span{font-size:11px;font-weight:900;color:#687892}.search-row{display:grid;grid-template-columns:1fr;gap:10px;align-items:center}.schedule-bar{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;margin-bottom:10px}.worker-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.worker-card{border:1px solid var(--line);border-radius:22px;background:#fff;padding:14px;box-shadow:0 8px 20px rgba(15,23,42,.04)}.worker-card.pkwt{background:linear-gradient(135deg,#eef7ff,#ffffff);border-color:#b9dcff}.worker-card.freelance{background:linear-gradient(135deg,#fff7e8,#ffffff);border-color:#f4d39c}.worker-top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;margin-bottom:12px}.worker-nip{font-size:12px;color:#516179;font-weight:950;background:rgba(255,255,255,.68);border:1px solid rgba(188,202,221,.55);border-radius:999px;padding:7px 9px;white-space:nowrap}.worker-name{font-weight:950;font-size:19px;line-height:1.15;text-align:center}.worker-status{font-size:11px;font-weight:950;border-radius:999px;padding:7px 9px;white-space:nowrap}.worker-card.pkwt .worker-status{background:#dff0ff;color:#1d4ed8}.worker-card.freelance .worker-status{background:#fff0d3;color:#b45309}.shift-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.shift-toggle{position:relative;display:flex;align-items:center;gap:8px;justify-content:space-between;min-height:52px;border-radius:17px;border:1px solid #e5e7eb;background:#f9fafb;padding:9px 10px;font-weight:950;font-size:13px;user-select:none}.shift-toggle input{position:absolute;opacity:0;pointer-events:none}.shift-toggle.shift-disabled{opacity:.55;background:#f1f5f9!important;border-color:#cbd5e1!important;color:#64748b!important;cursor:not-allowed}.shift-toggle.shift-disabled .checkmark{background:#e2e8f0!important;border-color:#cbd5e1!important;color:#e2e8f0!important}.checkmark{width:27px;height:27px;border-radius:10px;border:2px solid #cbd5e1;display:grid;place-items:center;color:#fff;font-weight:950;background:#fff}.shift-toggle.s1 input:checked + .checkmark{background:#2563eb;border-color:#2563eb}.shift-toggle.s1:has(input:checked){background:#eaf2ff;border-color:#a9c8ff;color:#1e3a8a}.shift-toggle.s2 input:checked + .checkmark{background:#ea580c;border-color:#ea580c}.shift-toggle.s2:has(input:checked){background:#fff1e8;border-color:#fdba74;color:#9a3412}.shift-toggle.s3 input:checked + .checkmark{background:#16a34a;border-color:#16a34a}.shift-toggle.s3:has(input:checked){background:#ecfdf5;border-color:#86efac;color:#166534}.empty{padding:18px;text-align:center;color:var(--muted);border:1px dashed #cbd5e1;border-radius:20px;background:#f8fafc;font-size:13px;font-weight:800}
+    .split-grid{display:grid;grid-template-columns:1fr;gap:12px}.type-box{border:1px solid #dfe8f5;background:#f8fbff;border-radius:20px;padding:12px}.type-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}.type-title strong{font-size:13px}.type-title span{font-size:11px;font-weight:900;color:#687892}.search-row{display:grid;grid-template-columns:1fr;gap:10px;align-items:center}.schedule-bar{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;margin-bottom:10px}.worker-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.worker-card{border:1px solid var(--line);border-radius:22px;background:#fff;padding:14px;box-shadow:0 8px 20px rgba(15,23,42,.04)}.worker-card.pkwt{background:linear-gradient(135deg,#eef7ff,#ffffff);border-color:#b9dcff}.worker-card.freelance{background:linear-gradient(135deg,#fff7e8,#ffffff);border-color:#f4d39c}.worker-top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;margin-bottom:12px}.worker-nip{font-size:12px;color:#516179;font-weight:950;background:rgba(255,255,255,.68);border:1px solid rgba(188,202,221,.55);border-radius:999px;padding:7px 9px;white-space:nowrap}.worker-name{font-weight:950;font-size:19px;line-height:1.15;text-align:center}.worker-status{font-size:11px;font-weight:950;border-radius:999px;padding:7px 9px;white-space:nowrap}.worker-card.pkwt .worker-status{background:#dff0ff;color:#1d4ed8}.worker-card.freelance .worker-status{background:#fff0d3;color:#b45309}.shift-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.shift-toggle{position:relative;display:flex;align-items:center;gap:8px;justify-content:space-between;min-height:52px;border-radius:17px;border:1px solid #e5e7eb;background:#f9fafb;padding:9px 10px;font-weight:950;font-size:13px;user-select:none}.shift-toggle input{position:absolute;opacity:0;pointer-events:none}.shift-toggle.shift-disabled{opacity:.55;background:#f1f5f9!important;border-color:#cbd5e1!important;color:#64748b!important;cursor:not-allowed}.shift-toggle.shift-disabled .checkmark{background:#e2e8f0!important;border-color:#cbd5e1!important;color:#e2e8f0!important}.checkmark{width:27px;height:27px;border-radius:10px;border:2px solid #cbd5e1;display:grid;place-items:center;color:#fff;font-weight:950;background:#fff}.shift-toggle.s1 input:checked + .checkmark{background:#2563eb;border-color:#2563eb}.shift-toggle.s1:has(input:checked){background:#eaf2ff;border-color:#a9c8ff;color:#1e3a8a}.shift-toggle.s2 input:checked + .checkmark{background:#ea580c;border-color:#ea580c}.shift-toggle.s2:has(input:checked){background:#fff1e8;border-color:#fdba74;color:#9a3412}.shift-toggle.s3 input:checked + .checkmark{background:#16a34a;border-color:#16a34a}.shift-toggle.s3:has(input:checked){background:#ecfdf5;border-color:#86efac;color:#166534}.empty{padding:18px;text-align:center;color:var(--muted);border:1px dashed #cbd5e1;border-radius:20px;background:#f8fafc;font-size:13px;font-weight:800}.schedule-safety-status{margin-top:10px;border:1px solid #dbeafe;background:#eff6ff;color:#1e3a8a;border-radius:18px;padding:10px 12px;font-size:12px;font-weight:900;line-height:1.35}.schedule-safety-status.warn{border-color:#fed7aa;background:#fff7ed;color:#9a3412}.schedule-safety-status.locked{border-color:#bbf7d0;background:#f0fdf4;color:#166534}.schedule-safety-status .small{display:block;margin-top:3px;font-weight:800;color:#64748b}.schedule-safety-status .status-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.schedule-edit-note{margin-top:8px;padding:8px 10px;border-radius:14px;background:rgba(255,255,255,.7);font-weight:900}.schedule-locked-mask{position:relative}.schedule-locked-mask:after{content:"Jadwal terkunci. Klik Edit Jadwal Tanggal Ini untuk mengubah.";display:block;margin-top:8px;font-size:12px;font-weight:900;color:#9a3412}.schedule-history-panel{margin-top:12px;border:1px solid #e5e7eb;background:#fff;border-radius:20px;padding:12px;box-shadow:0 8px 20px rgba(15,23,42,.04)}.schedule-history-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px}.schedule-history-head strong{font-size:13px}.schedule-history-head span{display:block;margin-top:3px;font-size:11px;font-weight:850;color:#64748b}.schedule-history-list{display:grid;grid-template-columns:1fr;gap:8px}.schedule-history-item{border:1px solid #edf2f7;background:#f8fafc;border-radius:16px;padding:10px;font-size:12px;font-weight:850}.schedule-history-item .meta{color:#475569;line-height:1.35}.schedule-history-item .changes{margin-top:6px;color:#0f172a;font-weight:900}.schedule-history-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.schedule-history-empty{border:1px dashed #cbd5e1;background:#f8fafc;border-radius:16px;padding:12px;color:#64748b;font-size:12px;font-weight:900;text-align:center}.btn:disabled{opacity:.55;cursor:not-allowed}
     .control-report{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px;border-radius:24px;background:linear-gradient(135deg,#ffffff,#fff7e8);border:1px solid #f3d6a2;box-shadow:0 14px 30px rgba(217,119,6,.10);margin-bottom:12px}.control-info{display:flex;align-items:center;gap:12px}.control-icon{width:48px;height:48px;border-radius:18px;background:#fff4df;display:grid;place-items:center;font-size:22px}.control-info h3{margin:0;font-size:16px;font-weight:950}.control-info p{margin:4px 0 0;color:#7c5a23;font-size:12px;font-weight:850}.control-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.attendance-list{display:grid;grid-template-columns:1fr;gap:12px}.shift-section{background:#fff;border:1px solid rgba(188,202,221,.75);border-radius:24px;box-shadow:0 10px 24px rgba(15,23,42,.06);overflow:hidden}.shift-section-head{display:flex;align-items:center;justify-content:space-between;padding:14px 15px;font-weight:950}.shift-section.s1 .shift-section-head{background:#eaf2ff;color:#1e3a8a}.shift-section.s2 .shift-section-head{background:#fff1e8;color:#9a3412}.shift-section.s3 .shift-section-head{background:#ecfdf5;color:#166534}.shift-count{font-size:12px;border-radius:999px;background:rgba(255,255,255,.75);padding:6px 10px}.shift-table{width:100%;border-collapse:separate;border-spacing:0}.shift-table th{font-size:11px;color:#64748b;text-align:left;background:#f8fafc;padding:9px 10px}.shift-table td{padding:10px;border-top:1px solid #edf2f7;font-weight:850}.shift-table td:first-child,.shift-table th:first-child{text-align:center;width:54px}.shift-table td:nth-child(2),.shift-table th:nth-child(2){width:82px}.print-sheet{background:#fff;border-radius:18px;overflow:visible;width:100%;max-width:920px;margin:0 auto}.print-title{text-align:center;line-height:1.2;padding:12px 6px 8px}.print-title .main{font-weight:900;text-transform:uppercase}.print-title .company,.print-title .date{text-transform:uppercase;font-size:13px}.table-wrap{width:100%;overflow:auto;display:flex;justify-content:center}.report-table{width:100%;max-width:820px;margin:0 auto;border-collapse:collapse;font-size:12px;table-layout:fixed}.report-table th,.report-table td{border:1px solid #111;padding:5px 6px;text-align:center;white-space:normal;word-break:break-word}.report-table th{background:#f3f4f6}.report-table td.name{text-align:left;min-width:0;width:40%}.report-table th:nth-child(1),.report-table td:nth-child(1){width:46px}.report-table th:nth-child(2),.report-table td:nth-child(2){width:68px}.report-table th:nth-child(4),.report-table td:nth-child(4),.report-table th:nth-child(5),.report-table td:nth-child(5){width:72px}.report-table th:nth-child(6),.report-table td:nth-child(6),.report-table th:nth-child(7),.report-table td:nth-child(7){width:104px}.tick{color:var(--success);font-weight:950;font-size:17px}.summary-table{width:330px;max-width:100%;margin:10px auto 8px;border-collapse:collapse;font-size:12px}.summary-table td,.summary-table th{border:1px solid #111;padding:5px;text-align:center}.summary-table .left-label{font-weight:950}.summary-table .total{font-weight:950;font-size:14px}.check-input{min-height:34px;border-radius:10px;padding:5px 7px;font-size:12px;text-align:center}.check-source{font-size:11px;font-weight:900;color:#64748b}.report-footer{max-width:820px;margin:12px auto 8px;font-size:12px}.signature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center;margin:12px 0 8px}.signature-title{font-weight:950;min-height:22px}.signature-line{border-bottom:1px solid #111;margin:28px auto 0;width:80%}.editable-report{display:inline-block;min-width:60px;padding:2px 4px;border-radius:6px}.auth-admin .editable-report{outline:1px dashed #cbd5e1;background:#f8fafc}.note-area{margin-top:6px}.note-title{font-weight:950;margin-bottom:4px}.worktime-table{border-collapse:collapse;width:300px;max-width:100%;font-size:10px;margin-top:4px}.worktime-table th,.worktime-table td{border:1px solid #111;padding:5px;text-align:center}.worktime-table td.editable-report{display:table-cell;min-width:0;padding:5px;border-radius:0}.worktime-table .worktime-main .editable-report{display:inline;min-width:0;padding:0;border-radius:0}.auth-admin .worktime-table td.editable-report{outline:0;background:#fff}.auth-admin .worktime-table .worktime-main .editable-report{outline:1px dashed #cbd5e1;background:#f8fafc}.worktime-table .worktime-main{font-weight:950;text-transform:uppercase}.bottom-print-actions{display:flex;justify-content:center;margin:14px 0 4px}.note-save-row{display:flex;justify-content:flex-start;margin-top:8px}body:not(.auth-admin) .report-footer,body:not(.auth-admin) .bottom-print-actions{display:none!important}.desktop-print-preview{display:none}.report-preview{display:block;margin:12px auto 0}.schedule-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.inside-stats{margin:12px 0 0}
     .install-sheet{position:fixed;left:50%;bottom:82px;transform:translateX(-50%) translateY(18px);width:min(94vw,460px);z-index:80;opacity:0;pointer-events:none;transition:.28s ease}.install-sheet.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}.install-sheet-card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.98));border:1px solid rgba(188,202,221,.8);box-shadow:0 22px 48px rgba(20,38,72,.16);border-radius:24px;padding:18px 18px 16px}.install-sheet-top{display:flex;gap:14px;align-items:center}.install-sheet-logo{width:56px;height:56px;object-fit:contain;border-radius:18px;background:#fff;padding:6px;box-shadow:0 10px 18px rgba(37,88,217,.12);flex:0 0 auto}.install-sheet-text small{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#2558d9;margin-bottom:4px}.install-sheet-text strong{display:block;font-size:18px;line-height:1.2;color:#20355b}.install-sheet-text p{margin:6px 0 0;color:#64748b;font-size:12px;line-height:1.55;font-weight:700}.install-sheet-actions{display:flex;gap:10px;margin-top:13px}.install-sheet-actions .btn{flex:1}.install-sheet-close{position:absolute;right:14px;top:14px;width:32px;height:32px;border-radius:12px;border:1px solid #d7e3f7;background:#fff;color:#50647f;font-weight:900;cursor:pointer}
     @keyframes spin{to{transform:rotate(360deg)}}@keyframes progressMove{0%{transform:translateX(-70%)}50%{transform:translateX(90%)}100%{transform:translateX(230%)}}@keyframes floatOrb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.05)}}
@@ -882,9 +882,9 @@
     </section>
 
     <section class="frame data no-print"><div class="frame-head"><div><div class="frame-kicker">Frame 1</div><h2>Input Jadwal Pekerja</h2></div><div class="frame-number">1</div></div>
-      <div class="card"><div class="card-head"><h3>Pilih Jadwal Shift</h3><span><span id="workerShownCount">0</span> data tampil</span></div><div class="card-body"><div class="field"><label for="reportDate">Tanggal Jadwal</label><input id="reportDate" type="date"></div><div class="field" id="activityField" style="display:none;margin-top:10px"><label for="activitySelect">Kegiatan</label><select id="activitySelect"><option value="bongkaran_bahan_baku_pagi">Bongkaran Bahan Baku Pagi - Shift 1</option><option value="silo">Silo - Shift 1, Shift 2 &amp; Shift 3</option><option value="overzak">Overzak - Shift 1, Shift 2 &amp; Shift 3</option></select></div><div class="commercial-tools" id="commercialScheduleTools"><div class="commercial-summary" id="commercialScheduleSummary" style="display:none"></div><div class="commercial-matrix" id="commercialScheduleMatrix"></div></div><div class="search-row"><input id="workerFilter" type="search" placeholder="Cari NIP, nama, PKWT, atau Freelance..."></div><div class="stats inside-stats"><div class="stat"><div class="label">Shift 1</div><div class="num" id="countS1">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 2</div><div class="num" id="countS2">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 3</div><div class="num" id="countS3">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Total</div><div class="num" id="countTotal">0</div><div class="desc">terpilih</div></div></div></div></div>
+      <div class="card"><div class="card-head"><h3>Pilih Jadwal Shift</h3><span><span id="workerShownCount">0</span> data tampil</span></div><div class="card-body"><div class="field"><label for="reportDate">Tanggal Jadwal</label><input id="reportDate" type="date"></div><div id="scheduleSafetyStatus" class="schedule-safety-status warn">Mode: Tanggal belum dipilih<span class="small">Pilih tanggal dulu sebelum memilih shift dan menyimpan jadwal.</span></div><div class="field" id="activityField" style="display:none;margin-top:10px"><label for="activitySelect">Kegiatan</label><select id="activitySelect"><option value="bongkaran_bahan_baku_pagi">Bongkaran Bahan Baku Pagi - Shift 1</option><option value="silo">Silo - Shift 1, Shift 2 &amp; Shift 3</option><option value="overzak">Overzak - Shift 1, Shift 2 &amp; Shift 3</option></select></div><div class="commercial-tools" id="commercialScheduleTools"><div class="commercial-summary" id="commercialScheduleSummary" style="display:none"></div><div class="commercial-matrix" id="commercialScheduleMatrix"></div></div><div class="search-row"><input id="workerFilter" type="search" placeholder="Cari NIP, nama, PKWT, atau Freelance..."></div><div class="stats inside-stats"><div class="stat"><div class="label">Shift 1</div><div class="num" id="countS1">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 2</div><div class="num" id="countS2">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 3</div><div class="num" id="countS3">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Total</div><div class="num" id="countTotal">0</div><div class="desc">terpilih</div></div></div></div></div>
       <div class="worker-list" id="workerList"></div>
-      <div class="schedule-actions"><button class="btn primary" id="btnSaveSchedule">💾 Simpan</button><button class="btn danger" id="btnResetShift">Reset</button></div>
+      <div class="schedule-actions"><button class="btn primary" id="btnSaveSchedule">💾 Simpan</button><button class="btn dark" id="btnEditSchedule" type="button" style="display:none">✏️ Edit Jadwal Tanggal Ini</button><button class="btn danger" id="btnCancelSchedule" type="button" style="display:none">Batal</button><button class="btn danger" id="btnResetShift">Reset</button></div><div id="scheduleHistoryPanel" class="schedule-history-panel"><div class="schedule-history-empty">Pilih tanggal untuk melihat riwayat perubahan dan backup jadwal.</div></div>
     </section>
   </section>
 
@@ -1454,6 +1454,7 @@ function enforceRoleUi(){
   ['btnSaveSchedule','btnAddWorker','btnUpdateWorker','btnDeleteWorker','btnResetShift','btnShareWa'].forEach(id=>{ const el=$(id); if(!el) return; if(id==='btnShareWa') el.disabled=!hasPermission('shareReports'); else el.disabled=!hasPermission(id==='btnSaveSchedule'?'saveAttendance':'manageWorkers'); });
   document.querySelectorAll('input[data-shift],[data-commercial-shift],[data-commercial-dock-plan],[data-commercial-regu-select],[data-commercial-activity-shift],[data-commercial-coordinator-shift],[data-overzak-shift]').forEach(el=>{ const allowed=hasPermission('inputAttendance'); el.disabled=!allowed || el.dataset.bahanBakuConflict==='1' || el.dataset.commercialPlanDisabled==='1'; });
   document.querySelectorAll('[data-report-setting]').forEach(el=>{ if(el.hasAttribute('contenteditable')) el.setAttribute('contenteditable', hasPermission('manageSettings') ? 'true' : 'false'); });
+  updateScheduleSafetyUI();
 }
 function coordinatorCanChooseSilo(){ return Boolean(currentUser && isCoordinator() && unitKey(currentUser.unit)===BAHAN_BAKU_PAGI_KEY); }
 function coordinatorCanChooseBahanBakuActivity(){ return coordinatorCanChooseSilo(); }
@@ -2037,6 +2038,425 @@ function renderBahanBakuOverzakSection(){
   return `<div class="commercial-activity-section bahan-baku-overzak overzak-card-section"><div class="commercial-activity-title">Input Jadwal Kegiatan Overzak - Shift 1, Shift 2 &amp; Shift 3</div>${body}</div>`;
 }
 
+
+function shiftLabelFromKey(shiftKey){ return shiftKey==='s1' ? 'Shift 1' : (shiftKey==='s2' ? 'Shift 2' : 'Shift 3'); }
+function scheduleDateSelected(){ const el=$('reportDate'); const value=el ? String(el.value || '').trim() : String(state.reportDate || '').trim(); return value; }
+function scheduleDateRequiredMessage(){ return 'Tanggal jadwal wajib dipilih sebelum memilih shift atau menyimpan.'; }
+let scheduleActiveDateStatus={unitKey:'',date:'',state:'idle',savedCount:0,checkedAt:0,source:''};
+let scheduleActiveDateStatusSeq=0;
+let scheduleEditSession={unitKey:'',date:'',unlocked:false,dirty:false,baselineState:null,baselineDrafts:null};
+function clonePlain(value){ try{ return value===undefined ? undefined : JSON.parse(JSON.stringify(value)); }catch(err){ return value; } }
+function scheduleActiveKey(){ return `${activeUnitKey()}__${scheduleDateSelected() || ''}`; }
+function resetScheduleEditSession(){ scheduleEditSession={unitKey:activeUnitKey(),date:scheduleDateSelected() || '',unlocked:false,dirty:false,baselineState:null,baselineDrafts:null}; }
+function scheduleStatusInfoForActiveDate(){ const dateValue=scheduleDateSelected(); return (scheduleActiveDateStatus && scheduleActiveDateStatus.unitKey===activeUnitKey() && scheduleActiveDateStatus.date===dateValue) ? scheduleActiveDateStatus : null; }
+function scheduleHasExistingDataActive(){ const info=scheduleStatusInfoForActiveDate(); return Boolean(info && info.state==='has_data'); }
+function scheduleEditUnlockedForActiveDate(){ return Boolean(scheduleEditSession && scheduleEditSession.unlocked && scheduleEditSession.unitKey===activeUnitKey() && scheduleEditSession.date===scheduleDateSelected()); }
+function scheduleInputLocked(){ return Boolean(scheduleHasExistingDataActive() && !scheduleEditUnlockedForActiveDate()); }
+function scheduleHasUnsavedChanges(){ return Boolean(scheduleEditSession && scheduleEditSession.dirty && scheduleEditSession.unitKey===activeUnitKey() && scheduleEditSession.date===scheduleDateSelected()); }
+function currentScheduleDraftSnapshot(){
+  const drafts={};
+  try{ drafts.stateStorageKey=stateStorageKey(); drafts.stateValue=localStorage.getItem(drafts.stateStorageKey); }catch(err){}
+  try{ drafts.commercialKey=commercialDraftStorageKey(); drafts.commercialValue=localStorage.getItem(drafts.commercialKey); }catch(err){}
+  try{ drafts.overzakKey=bahanBakuOverzakDraftKey(); drafts.overzakValue=localStorage.getItem(drafts.overzakKey); }catch(err){}
+  return drafts;
+}
+function restoreScheduleDraftSnapshot(drafts){
+  if(!drafts) return;
+  [['stateStorageKey','stateValue'],['commercialKey','commercialValue'],['overzakKey','overzakValue']].forEach(pair=>{
+    const key=drafts[pair[0]], value=drafts[pair[1]];
+    if(!key) return;
+    try{ if(value===null || value===undefined) localStorage.removeItem(key); else localStorage.setItem(key,value); }catch(err){}
+  });
+}
+function ensureScheduleEditBaseline(){ if(!scheduleDateSelected()) return; if(!scheduleEditSession || scheduleEditSession.unitKey!==activeUnitKey() || scheduleEditSession.date!==scheduleDateSelected() || (!scheduleEditSession.baselineState && !scheduleEditSession.baselineDrafts)){ scheduleEditSession={unitKey:activeUnitKey(),date:scheduleDateSelected(),unlocked:scheduleEditUnlockedForActiveDate() || !scheduleHasExistingDataActive(),dirty:false,baselineState:clonePlain(state),baselineDrafts:currentScheduleDraftSnapshot()}; } }
+function markScheduleDirty(){ if(scheduleInputLocked()) return; if(!scheduleDateSelected()) return; ensureScheduleEditBaseline(); scheduleEditSession.dirty=true; updateScheduleSafetyUI(); }
+function scheduleExistingLockedDisabledAttr(){ return scheduleInputLocked() ? ' disabled data-schedule-locked="1" title="Jadwal tanggal ini terkunci. Klik Edit Jadwal Tanggal Ini untuk mengubah."' : ''; }
+function applyScheduleInputLockUI(){
+  const locked=scheduleInputLocked();
+  document.body.classList.toggle('schedule-existing-locked', locked);
+  document.querySelectorAll('input[data-shift],[data-commercial-shift],[data-commercial-dock-plan],[data-commercial-regu-select],[data-commercial-activity-shift],[data-commercial-coordinator-shift],[data-overzak-shift],#activitySelect').forEach(el=>{
+    const allowed=hasPermission('inputAttendance');
+    const baseBlocked=!allowed || el.dataset.bahanBakuConflict==='1' || el.dataset.commercialPlanDisabled==='1';
+    el.disabled=baseBlocked || locked;
+    if(locked) el.dataset.scheduleLocked='1'; else delete el.dataset.scheduleLocked;
+  });
+  const editBtn=$('btnEditSchedule'); if(editBtn) editBtn.style.display=(scheduleHasExistingDataActive() && !scheduleEditUnlockedForActiveDate() && hasPermission('inputAttendance')) ? '' : 'none';
+  const cancelBtn=$('btnCancelSchedule'); if(cancelBtn) cancelBtn.style.display=(scheduleEditUnlockedForActiveDate() || scheduleHasUnsavedChanges()) ? '' : 'none';
+}
+function beginEditSchedule(){
+  const dateValue=assertScheduleDateSelected(); if(!dateValue) return;
+  if(!scheduleHasExistingDataActive()){ alert('Tanggal aktif masih kosong. Jadwal baru bisa langsung diisi tanpa menekan tombol Edit.'); return; }
+  const ok=confirm(`Jadwal pada tanggal aktif sudah ada.
+
+Tanggal: ${formatLongDate(dateValue)}
+
+Klik OK jika Anda memang ingin membuka mode edit untuk mengubah jadwal tanggal ini.`);
+  if(!ok) return;
+  scheduleEditSession={unitKey:activeUnitKey(),date:dateValue,unlocked:true,dirty:false,baselineState:clonePlain(state),baselineDrafts:currentScheduleDraftSnapshot()};
+  updateScheduleSafetyUI();
+  auditLog('open_edit_existing_schedule','attendance',{message:'Koordinator membuka mode edit jadwal tersimpan', unitKey:activeUnitKey(), unitName:activeUnitName(), reportDate:dateValue}).catch(()=>{});
+}
+async function cancelScheduleChanges(){
+  const dateValue=scheduleDateSelected();
+  const hasDirty=scheduleHasUnsavedChanges();
+  const ok=!hasDirty || confirm(`Batalkan perubahan jadwal yang belum disimpan untuk ${formatLongDate(dateValue)}?
+
+Data akan dikembalikan ke kondisi saat tombol Edit dibuka.`);
+  if(!ok) return;
+  const hadBaseline=Boolean(scheduleEditSession && scheduleEditSession.baselineState);
+  if(scheduleEditSession && scheduleEditSession.baselineDrafts) restoreScheduleDraftSnapshot(scheduleEditSession.baselineDrafts);
+  if(scheduleEditSession && scheduleEditSession.baselineState) state=clonePlain(scheduleEditSession.baselineState);
+  if(dateValue) state.reportDate=dateValue;
+  if(hadBaseline && !isCommercialKey(activeUnitKey())) await saveState();
+  resetScheduleEditSession();
+  if(!hadBaseline) await loadState({reportDate:dateValue});
+  state.reportDate=dateValue || state.reportDate;
+  await renderAll();
+  await refreshScheduleActiveDateStatus(state.reportDate, {force:true});
+  auditLog('cancel_schedule_edit','attendance',{message:'Perubahan jadwal dibatalkan sebelum simpan', unitKey:activeUnitKey(), unitName:activeUnitName(), reportDate:dateValue}).catch(()=>{});
+}
+function confirmLeaveUnsavedScheduleChanges(){
+  if(!scheduleHasUnsavedChanges()) return true;
+  return confirm(`Ada perubahan jadwal yang belum disimpan untuk ${formatLongDate(scheduleDateSelected())}.
+
+Jika lanjut, perubahan yang belum disimpan bisa hilang. Lanjutkan?`);
+}
+function scheduleSummaryTextFromPayload(payload){
+  const rows=compactScheduleRowsFromPayload(payload || {});
+  const dateText=formatLongDate(payload && payload.reportDate);
+  const unitText=(payload && (payload.unitName || payload.unit)) || activeUnitName();
+  const lineForShift=(key,label)=>{
+    const names=rows.filter(r=>r[key]).map(r=>`${r.name || r.nip}${r.kegiatan ? ' - '+r.kegiatan : ''}${r.loadingDock ? ' - LD '+r.loadingDock : ''}`);
+    const preview=names.slice(0,18).map(x=>`- ${x}`).join('\n') || '- Kosong';
+    const more=names.length>18 ? `\n...dan ${names.length-18} lainnya` : '';
+    return `${label} (${names.length}):
+${preview}${more}`;
+  };
+  return `Ringkasan jadwal sebelum simpan
+
+Unit/Kegiatan: ${unitText}
+Tanggal: ${dateText}
+Total baris terpilih: ${rows.length}
+
+${lineForShift('s1','Shift 1')}
+
+${lineForShift('s2','Shift 2')}
+
+${lineForShift('s3','Shift 3')}
+
+Lanjut simpan jadwal ini?`;
+}
+function confirmScheduleSaveSummary(payload){ return confirm(scheduleSummaryTextFromPayload(payload)); }
+function scheduleHasSavedRows(payload){ return rowsFromAttendancePayload(payload || {}).some(r=>r && (r.s1 || r.s2 || r.s3)); }
+function scheduleSavedRowsCount(payload){ return rowsFromAttendancePayload(payload || {}).filter(r=>r && (r.s1 || r.s2 || r.s3)).length; }
+function resetScheduleActiveDateStatus(){ scheduleActiveDateStatus={unitKey:activeUnitKey(),date:'',state:'idle',savedCount:0,checkedAt:Date.now(),source:''}; resetScheduleEditSession(); }
+async function refreshScheduleActiveDateStatus(dateValue, opt={}){
+  const date=String(dateValue || scheduleDateSelected() || '').trim();
+  const unitKeyValue=activeUnitKey();
+  const seq=++scheduleActiveDateStatusSeq;
+  if(!date){ resetScheduleActiveDateStatus(); updateScheduleSafetyUI(); return scheduleActiveDateStatus; }
+  if(!opt.silent){
+    scheduleActiveDateStatus={unitKey:unitKeyValue,date,state:'checking',savedCount:0,checkedAt:Date.now(),source:''};
+    updateScheduleSafetyUI();
+  }
+  try{
+    const existing=await getExistingAttendanceForDate(unitKeyValue, date);
+    if(seq!==scheduleActiveDateStatusSeq || unitKeyValue!==activeUnitKey() || date!==scheduleDateSelected()) return scheduleActiveDateStatus;
+    const hasData=scheduleHasSavedRows(existing);
+    scheduleActiveDateStatus={unitKey:unitKeyValue,date,state:hasData?'has_data':'empty',savedCount:hasData?scheduleSavedRowsCount(existing):0,checkedAt:Date.now(),source:existing?'local_or_firestore':''};
+  }catch(err){
+    console.warn('Cek status jadwal tanggal aktif gagal.', err);
+    if(seq===scheduleActiveDateStatusSeq) scheduleActiveDateStatus={unitKey:unitKeyValue,date,state:'error',savedCount:0,checkedAt:Date.now(),source:''};
+  }
+  updateScheduleSafetyUI();
+  return scheduleActiveDateStatus;
+}
+function updateScheduleSafetyUI(){
+  const dateValue=scheduleDateSelected();
+  const status=$('scheduleSafetyStatus');
+  const btn=$('btnSaveSchedule');
+  const canSave=hasPermission('saveAttendance');
+  if(status){
+    if(!dateValue){
+      status.className='schedule-safety-status warn';
+      status.innerHTML='Tanggal aktif: Belum dipilih<span class="small">Status jadwal: BELUM BISA DICEK. Pilih tanggal dulu sebelum memilih shift dan menyimpan jadwal. Tombol Simpan dikunci untuk mencegah data tanggal lama berubah tanpa sengaja.</span>';
+    }else{
+      const selectedCount=selectedWorkers().length;
+      const statusInfo=scheduleStatusInfoForActiveDate();
+      const dirtyNote=scheduleHasUnsavedChanges() ? '<div class="schedule-edit-note">Ada perubahan yang belum disimpan.</div>' : '';
+      if(!statusInfo || statusInfo.state==='checking'){
+        status.className='schedule-safety-status';
+        status.innerHTML=`Tanggal aktif: ${safeText(formatLongDate(dateValue))}<span class="small">Status jadwal: SEDANG DICEK... Sistem sedang memeriksa apakah tanggal aktif sudah punya data.</span>${dirtyNote}`;
+      }else if(statusInfo.state==='has_data'){
+        status.className='schedule-safety-status warn';
+        const modeText=scheduleEditUnlockedForActiveDate() ? 'Mode: EDIT JADWAL TERSIMPAN. Periksa perubahan sebelum simpan.' : 'Mode: TERKUNCI. Klik tombol Edit Jadwal Tanggal Ini sebelum mengubah.';
+        status.innerHTML=`Tanggal aktif: ${safeText(formatLongDate(dateValue))}<span class="small">Status jadwal: SUDAH ADA DATA (${Number(statusInfo.savedCount||0)} baris tersimpan). ${modeText}</span>${dirtyNote}`;
+      }else if(statusInfo.state==='empty'){
+        status.className='schedule-safety-status locked';
+        status.innerHTML=`Tanggal aktif: ${safeText(formatLongDate(dateValue))}<span class="small">Status jadwal: MASIH KOSONG. Mode: ${selectedCount ? 'Tambah Jadwal Baru - ada pilihan pekerja yang belum disimpan' : 'Tambah Jadwal Baru'}.</span>${dirtyNote}`;
+      }else{
+        status.className='schedule-safety-status warn';
+        status.innerHTML=`Tanggal aktif: ${safeText(formatLongDate(dateValue))}<span class="small">Status jadwal: BELUM BERHASIL DICEK. Simpan tetap aman karena sistem akan mengecek ulang dan meminta konfirmasi jika data tanggal ini sudah ada.</span>${dirtyNote}`;
+      }
+    }
+  }
+  if(btn){ btn.disabled = !canSave || !dateValue || isSavingSchedule || scheduleInputLocked(); btn.title = !dateValue ? scheduleDateRequiredMessage() : (scheduleInputLocked() ? 'Jadwal tanggal ini terkunci. Klik Edit Jadwal Tanggal Ini untuk mengubah.' : ''); }
+  applyScheduleInputLockUI();
+  renderScheduleHistoryPanel();
+}
+function assertScheduleDateSelected(){
+  const dateValue=scheduleDateSelected();
+  if(!dateValue){ alert(scheduleDateRequiredMessage()); const el=$('reportDate'); if(el) el.focus(); updateScheduleSafetyUI(); return ''; }
+  state.reportDate=dateValue;
+  return dateValue;
+}
+function clearScheduleSelectionsOnly(){
+  if(!isAdmin() && isCommercialKey(activeUnitKey())){
+    document.querySelectorAll('[data-commercial-activity-shift],[data-commercial-coordinator-shift],[data-commercial-dock-plan]').forEach(el=>{ el.checked=false; });
+    document.querySelectorAll('[data-commercial-shift]').forEach(el=>{ el.checked=false; el.disabled=true; el.dataset.commercialPlanDisabled='1'; });
+    commercialScheduleRowsCache=(commercialScheduleRowsCache||[]).map(r=>({...r,schedulePlan:'',s1:false,s2:false,s3:false}));
+    Object.keys(commercialActivityRowsCache||{}).forEach(k=>{ commercialActivityRowsCache[k]=(commercialActivityRowsCache[k]||[]).map(r=>({...r,s1:false,s2:false,s3:false})); });
+    saveCommercialDraftSelection();
+    return;
+  }
+  (state.workers||[]).forEach(w=>{ w.s1=false; w.s2=false; w.s3=false; });
+}
+async function resetScheduleFormAfterSave(savedDate){
+  clearScheduleSelectionsOnly();
+  state.reportDate=savedDate || state.reportDate || '';
+  await saveState();
+  state.reportDate='';
+  const dateEl=$('reportDate'); if(dateEl) dateEl.value='';
+  resetScheduleActiveDateStatus();
+  resetScheduleEditSession();
+  updateScheduleSafetyUI();
+  auditLog('reset_schedule_form_after_save','attendance',{message:'Form jadwal dikosongkan otomatis setelah simpan', savedReportDate:savedDate, unitKey:activeUnitKey(), unitName:activeUnitName()}).catch(()=>{});
+}
+function scheduleHistoryLocalKey(){ return 'absensi_muatan_breeder_schedule_change_history_v1'; }
+function compactScheduleRowsFromPayload(payload){ return rowsFromAttendancePayload(payload).filter(r=>r && (r.s1 || r.s2 || r.s3)).map(r=>({nip:String(r.nip||''),name:String(r.name||''),s1:Boolean(r.s1),s2:Boolean(r.s2),s3:Boolean(r.s3),activityKey:r.activityKey||'',kegiatan:r.kegiatan||'',loadingDock:r.loadingDock||'',regu:r.regu||''})); }
+function scheduleRowsDiff(beforePayload, afterPayload){
+  const beforeRows=compactScheduleRowsFromPayload(beforePayload || {});
+  const afterRows=compactScheduleRowsFromPayload(afterPayload || {});
+  const keyOf=r=>[String(r.nip||''),String(r.activityKey||r.kegiatan||''),String(r.loadingDock||''),String(r.regu||'')].join('__');
+  const beforeMap=new Map(beforeRows.map(r=>[keyOf(r),r]));
+  const afterMap=new Map(afterRows.map(r=>[keyOf(r),r]));
+  const changes=[];
+  const keys=new Set([...beforeMap.keys(),...afterMap.keys()]);
+  keys.forEach(k=>{
+    const b=beforeMap.get(k); const a=afterMap.get(k);
+    if(!b && a){ changes.push({type:'ditambah', nip:a.nip, name:a.name, shiftAfter:['s1','s2','s3'].filter(x=>a[x]).map(shiftLabelFromKey).join(', ')}); return; }
+    if(b && !a){ changes.push({type:'dihapus', nip:b.nip, name:b.name, shiftBefore:['s1','s2','s3'].filter(x=>b[x]).map(shiftLabelFromKey).join(', ')}); return; }
+    if(b && a && (Boolean(b.s1)!==Boolean(a.s1) || Boolean(b.s2)!==Boolean(a.s2) || Boolean(b.s3)!==Boolean(a.s3))){
+      changes.push({type:'diubah', nip:a.nip || b.nip, name:a.name || b.name, shiftBefore:['s1','s2','s3'].filter(x=>b[x]).map(shiftLabelFromKey).join(', '), shiftAfter:['s1','s2','s3'].filter(x=>a[x]).map(shiftLabelFromKey).join(', ')});
+    }
+  });
+  return {beforeCount:beforeRows.length, afterCount:afterRows.length, changes};
+}
+function saveScheduleChangeHistoryLocal(entry){
+  try{
+    const key=scheduleHistoryLocalKey();
+    const rows=safeLocalGetJSON(key, []);
+    const arr=Array.isArray(rows)?rows:[];
+    arr.unshift(entry);
+    safeLocalSetJSON(key, arr.slice(0,300));
+  }catch(err){ console.warn('Riwayat perubahan jadwal lokal gagal disimpan.', err); }
+}
+function scheduleBackupLocalKey(){ return 'absensi_muatan_breeder_schedule_backup_before_overwrite_v1'; }
+function scheduleBackupDocId(unitKeyValue, dateValue, backupId){
+  return ['schedule_backup', unitKeyValue || 'unit', dateValue || 'date', backupId || Date.now()].join('_').replace(/[^A-Za-z0-9_\-]/g,'_');
+}
+function saveScheduleBackupLocal(entry){
+  try{
+    const key=scheduleBackupLocalKey();
+    const rows=safeLocalGetJSON(key, []);
+    const arr=Array.isArray(rows)?rows:[];
+    arr.unshift(entry);
+    return safeLocalSetJSON(key, arr.slice(0,500));
+  }catch(err){
+    console.warn('Backup jadwal lokal sebelum overwrite gagal disimpan.', err);
+    return false;
+  }
+}
+async function createScheduleBackupBeforeOverwrite(existingPayload, newPayload, diff){
+  if(!existingPayload || !scheduleHasSavedRows(existingPayload)) return {ok:true, skipped:true, entry:null, online:false};
+  const normalizedExisting=normalizeAttendancePayload(existingPayload);
+  const normalizedIncoming=normalizeAttendancePayload(newPayload);
+  const backupId='schbak_'+Date.now();
+  const entry={
+    id:backupId,
+    backupCreatedAt:new Date().toISOString(),
+    reason:'before_overwrite_schedule',
+    unitKey:normalizedIncoming.unitKey || normalizedExisting.unitKey || activeUnitKey(),
+    unitName:normalizedIncoming.unitName || normalizedIncoming.unit || normalizedExisting.unitName || normalizedExisting.unit || activeUnitName(),
+    reportDate:normalizedIncoming.reportDate || normalizedExisting.reportDate || scheduleDateSelected(),
+    attendanceDocId:attendanceDocId(normalizedExisting),
+    actor:currentAuditActor(),
+    beforeCount:scheduleSavedRowsCount(normalizedExisting),
+    incomingCount:scheduleSavedRowsCount(normalizedIncoming),
+    changedRows:diff && Array.isArray(diff.changes) ? diff.changes.length : null,
+    diffPreview:diff && Array.isArray(diff.changes) ? diff.changes.slice(0,120) : [],
+    previousPayload:normalizedExisting
+  };
+  const localOk=saveScheduleBackupLocal(entry);
+  if(!localOk) return {ok:false, skipped:false, entry, online:false, reason:'local_backup_failed'};
+  let online=false;
+  try{
+    const cloud=await saveMasterDataFirestoreFirst(scheduleBackupDocId(entry.unitKey, entry.reportDate, backupId), scheduleBackupLocalKey()+'_'+backupId, entry);
+    online=Boolean(cloud && cloud.online);
+  }catch(err){
+    console.warn('Backup jadwal ke Firestore gagal, backup lokal tetap tersedia.', err);
+  }
+  auditLog('schedule_backup_before_overwrite','attendance',{message:'Backup otomatis dibuat sebelum jadwal lama ditimpa', backupId, unitKey:entry.unitKey, unitName:entry.unitName, reportDate:entry.reportDate, attendanceDocId:entry.attendanceDocId, beforeCount:entry.beforeCount, incomingCount:entry.incomingCount, changedRows:entry.changedRows, online}, normalizedExisting, null).catch(()=>{});
+  return {ok:true, skipped:false, entry, online};
+}
+
+function readScheduleChangeHistoryLocal(){
+  try{ const rows=safeLocalGetJSON(scheduleHistoryLocalKey(), []); return Array.isArray(rows) ? rows : []; }catch(err){ return []; }
+}
+function readScheduleBackupsLocal(){
+  try{ const rows=safeLocalGetJSON(scheduleBackupLocalKey(), []); return Array.isArray(rows) ? rows : []; }catch(err){ return []; }
+}
+function scheduleHistoryActorName(actor){
+  if(!actor) return '-';
+  return safeText(actor.name || actor.username || actor.nip || '-');
+}
+function formatDateTimeLocal(iso){
+  if(!iso) return '-';
+  try{ const d=new Date(iso); if(isNaN(d.getTime())) return safeText(iso); return d.toLocaleString('id-ID',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}); }catch(err){ return safeText(iso); }
+}
+function scheduleHistoryRowsForActiveDate(){
+  const dateValue=scheduleDateSelected();
+  const unitKeyValue=activeUnitKey();
+  if(!dateValue) return {history:[], backups:[]};
+  const match=x=>x && String(x.unitKey||'')===String(unitKeyValue||'') && String(x.reportDate||'')===String(dateValue||'');
+  const history=readScheduleChangeHistoryLocal().filter(match).slice(0,8);
+  const backups=readScheduleBackupsLocal().filter(match).slice(0,8);
+  return {history, backups};
+}
+function renderScheduleHistoryPanel(){
+  const panel=$('scheduleHistoryPanel');
+  if(!panel) return;
+  const dateValue=scheduleDateSelected();
+  if(!dateValue){ panel.innerHTML='<div class="schedule-history-empty">Pilih tanggal untuk melihat riwayat perubahan dan backup jadwal.</div>'; return; }
+  const data=scheduleHistoryRowsForActiveDate();
+  const history=data.history || [];
+  const backups=data.backups || [];
+  const historyHtml=history.length ? history.map(h=>{
+    const changes=Array.isArray(h.changes) ? h.changes : [];
+    const preview=changes.slice(0,3).map(c=>{
+      if(c.type==='ditambah') return `+ ${safeText(c.name || c.nip)} (${safeText(c.shiftAfter || '')})`;
+      if(c.type==='dihapus') return `- ${safeText(c.name || c.nip)} (${safeText(c.shiftBefore || '')})`;
+      return `~ ${safeText(c.name || c.nip)}: ${safeText(c.shiftBefore || '-')} → ${safeText(c.shiftAfter || '-')}`;
+    }).join('<br>');
+    const more=changes.length>3 ? `<br>...dan ${changes.length-3} perubahan lainnya.` : '';
+    return `<div class="schedule-history-item"><div class="meta"><b>${safeText(formatDateTimeLocal(h.changedAt))}</b> · ${safeText(h.unitName || activeUnitName())}<br>Oleh: ${scheduleHistoryActorName(h.actor)} · Sebelum: ${Number(h.beforeCount||0)} baris · Sesudah: ${Number(h.afterCount||0)} baris</div><div class="changes">${preview || 'Jadwal disimpan ulang.'}${more}</div></div>`;
+  }).join('') : '<div class="schedule-history-empty">Belum ada riwayat perubahan lokal untuk tanggal aktif ini.</div>';
+  const backupHtml=backups.length ? backups.map(b=>{
+    const preview=Array.isArray(b.diffPreview) ? b.diffPreview.slice(0,3).map(c=>{
+      if(c.type==='ditambah') return `+ ${safeText(c.name || c.nip)} (${safeText(c.shiftAfter || '')})`;
+      if(c.type==='dihapus') return `- ${safeText(c.name || c.nip)} (${safeText(c.shiftBefore || '')})`;
+      return `~ ${safeText(c.name || c.nip)}: ${safeText(c.shiftBefore || '-')} → ${safeText(c.shiftAfter || '-')}`;
+    }).join('<br>') : '';
+    const disabled=!hasPermission('saveAttendance') ? ' disabled title="Role ini tidak boleh memulihkan jadwal."' : '';
+    return `<div class="schedule-history-item"><div class="meta"><b>Backup sebelum overwrite</b> · ${safeText(formatDateTimeLocal(b.backupCreatedAt))}<br>Oleh: ${scheduleHistoryActorName(b.actor)} · Data lama: ${Number(b.beforeCount||0)} baris · Data pengganti: ${Number(b.incomingCount||0)} baris</div><div class="changes">${preview || 'Backup data lama tersedia.'}</div><div class="schedule-history-actions"><button class="btn secondary" type="button" data-restore-schedule-backup="${safeText(b.id)}"${disabled}>Pulihkan Jadwal Sebelumnya</button></div></div>`;
+  }).join('') : '<div class="schedule-history-empty">Belum ada backup overwrite untuk tanggal aktif ini.</div>';
+  panel.innerHTML=`<div class="schedule-history-head"><div><strong>Riwayat Perubahan Jadwal</strong><span>${safeText(formatLongDate(dateValue))}</span></div><button class="btn secondary" type="button" id="btnRefreshScheduleHistory">Refresh</button></div><div class="schedule-history-list"><div><b>Riwayat simpan/perubahan</b></div>${historyHtml}<div style="margin-top:4px"><b>Backup untuk pemulihan</b></div>${backupHtml}</div>`;
+}
+async function applyRestoredAttendanceToInputState(restoredPayload){
+  const restored=normalizeAttendancePayload(restoredPayload || {});
+  if(!restored.reportDate) return;
+  await loadState({reportDate:restored.reportDate});
+  state.reportDate=restored.reportDate;
+  const rows=rowsFromAttendancePayload(restored);
+  if(!isAdmin() && !isCommercialKey(activeUnitKey())){
+    const overzakRows=[];
+    const selected=new Map();
+    rows.forEach(r=>{
+      const kegiatan=String(r.kegiatan || r.activityLabel || r.activityKey || '').toLowerCase();
+      if(activeUnitKey()===BAHAN_BAKU_PAGI_KEY && kegiatan.includes('overzak')){ overzakRows.push(r); return; }
+      if(r && r.nip) selected.set(String(r.nip).trim(), {s1:Boolean(r.s1), s2:Boolean(r.s2), s3:Boolean(r.s3)});
+    });
+    (state.workers||[]).forEach(w=>{
+      const saved=selected.get(String(w.nip||'').trim()) || {};
+      w.s1=Boolean(saved.s1);
+      w.s2=Boolean(saved.s2);
+      w.s3=Boolean(saved.s3);
+      if(activeUnitKey()===BAHAN_BAKU_MALAM_KEY) w.s1=false;
+    });
+    await saveState();
+    if(activeUnitKey()===BAHAN_BAKU_PAGI_KEY){
+      const payload={reportDate:state.reportDate, rows:overzakRows.map(r=>({nip:String(r.nip||''), s1:Boolean(r.s1), s2:Boolean(r.s2), s3:Boolean(r.s3)})), updatedAt:new Date().toISOString(), restoredFrom:true};
+      try{ await saveMasterDataFirestoreFirst(overzakDraftDocId(), bahanBakuOverzakDraftKey(), payload); }catch(err){ console.warn('Restore draft Overzak gagal disinkronkan, data laporan tetap sudah dipulihkan.', err); }
+    }
+  }
+}
+async function restoreScheduleBackup(backupId){
+  if(!requirePermission('saveAttendance','Akses ditolak. Role ini tidak boleh memulihkan jadwal.')) return;
+  const backups=readScheduleBackupsLocal();
+  const entry=backups.find(b=>String(b && b.id)===String(backupId));
+  if(!entry || !entry.previousPayload){ alert('Backup jadwal tidak ditemukan atau tidak lengkap.'); renderScheduleHistoryPanel(); return; }
+  const previous=normalizeAttendancePayload(entry.previousPayload);
+  const dateValue=previous.reportDate || entry.reportDate || scheduleDateSelected();
+  const unitKeyValue=previous.unitKey || entry.unitKey || activeUnitKey();
+  if(String(unitKeyValue)!==String(activeUnitKey())){ alert('Backup ini bukan untuk unit yang sedang aktif. Pilih unit yang sesuai terlebih dahulu.'); return; }
+  const ok=confirm(`Pulihkan jadwal sebelumnya untuk ${formatLongDate(dateValue)}?
+
+Data aktif saat ini akan ditimpa dengan backup lama (${scheduleSavedRowsCount(previous)} baris).
+Sistem akan membuat backup kondisi saat ini terlebih dahulu sebelum pemulihan.`);
+  if(!ok) return;
+  const current=await getExistingAttendanceForDate(unitKeyValue, dateValue);
+  if(current && scheduleHasSavedRows(current)){
+    const safetyDiff=scheduleRowsDiff(current, previous);
+    const safety=await createScheduleBackupBeforeOverwrite(current, previous, safetyDiff);
+    if(!safety.ok){ alert('Backup kondisi saat ini gagal dibuat. Pemulihan dibatalkan agar data aktif tetap aman.'); return; }
+  }
+  const restored=saveAttendanceLocal({...previous, restoredAt:new Date().toISOString(), restoredFromBackupId:entry.id});
+  let online=false;
+  try{ const result=await saveAttendanceOnline(restored); online=Boolean(result && result.online); }catch(err){ console.warn('Pulihkan jadwal ke Firebase gagal, masuk antrian sinkron.', err); queuePendingAttendance(restored, err && err.message ? err.message : err); }
+  if(!online){ queuePendingAttendance(restored, 'Firebase belum online saat restore'); } else { await syncPendingAttendanceOnline(); }
+  const diff=scheduleRowsDiff(current || null, restored);
+  const historyEntry={id:'sch_restore_'+Date.now(), changedAt:new Date().toISOString(), unitKey:restored.unitKey, unitName:restored.unitName, reportDate:restored.reportDate, attendanceDocId:restored.id, actor:currentAuditActor(), beforeCount:diff.beforeCount, afterCount:diff.afterCount, changes:diff.changes.slice(0,80), restoreFromBackupId:entry.id, online};
+  saveScheduleChangeHistoryLocal(historyEntry);
+  auditLog('restore_schedule_from_backup','attendance',{message:'Jadwal dipulihkan dari backup sebelumnya', backupId:entry.id, unitKey:restored.unitKey, unitName:restored.unitName, reportDate:restored.reportDate, attendanceDocId:restored.id, beforeCount:diff.beforeCount, afterCount:diff.afterCount, changedRows:diff.changes.length, online}, current, restored).catch(()=>{});
+  resetScheduleEditSession();
+  await applyRestoredAttendanceToInputState(restored);
+  await renderAll();
+  await refreshScheduleActiveDateStatus(restored.reportDate,{force:true});
+  renderScheduleHistoryPanel();
+  alert(`${online ? 'Jadwal berhasil dipulihkan dan tersimpan online.' : 'Jadwal berhasil dipulihkan secara lokal dan masuk antrian sinkron.'}\n\nSilakan cek ulang laporan tanggal aktif.`);
+}
+function confirmEmptyScheduleBlocked(){
+  alert(`Simpan jadwal dibatalkan untuk keamanan.
+
+Tidak ada pekerja yang dipilih pada tanggal aktif. Sistem tidak mengizinkan penyimpanan jadwal kosong agar data lama tidak terhapus karena salah klik.
+
+Jika memang ingin mengosongkan jadwal tanggal ini, lakukan melalui prosedur khusus/admin setelah memastikan backup tersedia.`);
+  return false;
+}
+async function getExistingAttendanceForDate(unitKeyValue, dateValue){
+  let payload=null;
+  try{ payload=unwrapCacheEnvelope(safeLocalGetJSON(`${ATTENDANCE_KEY}_${unitKeyValue}_${dateValue}`, null)); }catch(err){ payload=null; }
+  const bridge=await waitFirebase();
+  if(bridge && bridge.enabled && bridge.loadAttendance){
+    try{ const remote=await bridge.loadAttendance(unitKeyValue,dateValue); if(remote) payload=remote; }catch(err){ console.warn('Cek data jadwal tersimpan gagal, memakai cache lokal jika ada.', err); }
+  }
+  return payload;
+}
+async function confirmOverwriteIfNeeded(newPayload){
+  const existing=await getExistingAttendanceForDate(newPayload.unitKey, newPayload.reportDate);
+  if(existing && rowsFromAttendancePayload(existing).some(r=>r && (r.s1 || r.s2 || r.s3))){
+    const diff=scheduleRowsDiff(existing, newPayload);
+    const preview=diff.changes.slice(0,8).map(c=>{
+      if(c.type==='ditambah') return `+ ${c.name || c.nip} masuk ${c.shiftAfter}`;
+      if(c.type==='dihapus') return `- ${c.name || c.nip} dihapus dari ${c.shiftBefore}`;
+      return `~ ${c.name || c.nip}: ${c.shiftBefore || '-'} menjadi ${c.shiftAfter || '-'}`;
+    }).join('\n');
+    const more=diff.changes.length>8 ? `\n...dan ${diff.changes.length-8} perubahan lainnya.` : '';
+    const ok=confirm(`Jadwal untuk tanggal ${formatLongDate(newPayload.reportDate)} sudah pernah disimpan.\n\nAnda yakin ingin memperbarui data tanggal ini?\n\nRingkasan perubahan:\n${preview || 'Data akan disimpan ulang tanpa perubahan pekerja yang besar.'}${more}`);
+    return {ok, existing, diff};
+  }
+  return {ok:true, existing:null, diff:null};
+}
 function selectedWorkers(){
   if(!isAdmin() && isCommercialKey(activeUnitKey())) return selectedCommercialReportRows();
   const key=activeUnitKey();
@@ -2065,7 +2485,7 @@ function updateCounts(){
   ['countTotal','sumTotal','selectedCountBadge'].forEach(id=>{ if($(id)) $(id).textContent=total; });
   updateSingleShiftUI();
 }
-function syncInputs(){ if($('reportDate')) $('reportDate').value = state.reportDate || todayISO(); updateCoordinatorActivityUI(); }
+function syncInputs(){ if($('reportDate')) $('reportDate').value = (state.reportDate === '' ? '' : (state.reportDate || todayISO())); updateCoordinatorActivityUI(); updateScheduleSafetyUI(); }
 function renderDropdowns(){ const pkwt = state.workers.filter(w=>workerType(w)==='PKWT').sort((a,b)=>a.no-b.no); const free = state.workers.filter(w=>workerType(w)==='Freelance').sort((a,b)=>a.no-b.no); $('pkwtCount').textContent = `${pkwt.length} data`; $('freelanceCount').textContent = `${free.length} data`; const make = (rows, text) => '<option value="">'+text+'</option>' + rows.map(w=>`<option value="${w.no}">${safeText(w.nip)} - ${safeText(w.name)}</option>`).join(''); $('selectPkwt').innerHTML = make(pkwt, 'Pilih pekerja PKWT'); $('selectFreelance').innerHTML = make(free, 'Pilih pekerja Freelance'); }
 
 function getBlockedSiloShift1WorkerNips(){
@@ -2982,7 +3402,7 @@ async function renderReport(){
   renderReportTable(activeUnitName(), state.reportDate, selectedWorkers(), 'Belum ada pekerja yang dipilih.');
   updateCounts();
 }
-async function renderAll(){ syncInputs(); await renderWorkers(); renderReport(); if(isAdmin()) renderAdminDashboard(); enforceRoleUi(); }
+async function renderAll(){ syncInputs(); await renderWorkers(); renderReport(); renderScheduleHistoryPanel(); if(isAdmin()) renderAdminDashboard(); enforceRoleUi(); }
 function nextNo(){ return state.workers.reduce((m,w)=>Math.max(m, Number(w.no)||0),0)+1; }
 function getFormData(){ return { no:Number($('workerNo').value)||nextNo(), nip:$('workerNip').value.trim(), name:$('workerName').value.trim() }; }
 function clearForm(){ ['workerNo','workerNip','workerName'].forEach(id=>$(id).value=''); $('selectPkwt').value=''; $('selectFreelance').value=''; $('workerName').focus(); }
@@ -2991,7 +3411,23 @@ function normalizeNo(){ state.workers.sort((a,b)=>{ if(String(a.nip)==='133') re
 function addWorker(){ if(!requirePermission('manageWorkers','Akses ditolak. Role ini tidak boleh menambah data pekerja.')) return; const d=getFormData(); if(!d.name){ alert('Nama pekerja wajib diisi.'); return; } if(!d.nip){ alert('NIP wajib diisi agar sistem bisa memisahkan PKWT / Freelance.'); return; } if(state.workers.some(w=>w.no===d.no)) d.no=nextNo(); state.workers.push({...d, s1:false, s2:false, s3:false}); normalizeNo(); saveState(); renderAll(); clearForm(); }
 function updateWorker(){ if(!requirePermission('manageWorkers','Akses ditolak. Role ini tidak boleh mengubah data pekerja.')) return; const d=getFormData(); const w=state.workers.find(x=>x.no===d.no); if(!w){ alert('Pilih pekerja dari dropdown atau kartu terlebih dahulu.'); return; } if(!d.name){ alert('Nama pekerja wajib diisi.'); return; } if(!d.nip){ alert('NIP wajib diisi.'); return; } w.nip=d.nip; w.name=d.name; saveState(); renderAll(); clearForm(); }
 function deleteWorker(){ if(!requirePermission('manageWorkers','Akses ditolak. Role ini tidak boleh menghapus data pekerja.')) return; const no=Number($('workerNo').value); const w=state.workers.find(x=>x.no===no); if(!w){ alert('Pilih pekerja yang akan dihapus.'); return; } if(!confirm(`Hapus pekerja: ${w.name}?`)) return; state.workers=state.workers.filter(x=>x.no!==no); normalizeNo(); saveState(); renderAll(); clearForm(); }
-function resetShift(){ if(!isAdmin() && isCommercialKey(activeUnitKey())){ if(!confirm('Reset semua pilihan Shift 1, Shift 2, dan Shift 3 untuk jadwal Muatan Commercial?')) return; document.querySelectorAll('[data-commercial-activity-shift],[data-commercial-coordinator-shift],[data-commercial-dock-plan]').forEach(el=>{ el.checked=false; }); document.querySelectorAll('[data-commercial-shift]').forEach(el=>{ el.checked=false; el.disabled=true; el.dataset.commercialPlanDisabled='1'; }); commercialScheduleRowsCache=(commercialScheduleRowsCache||[]).map(r=>({...r,schedulePlan:'',s1:false,s2:false,s3:false})); Object.keys(commercialActivityRowsCache||{}).forEach(k=>{ commercialActivityRowsCache[k]=(commercialActivityRowsCache[k]||[]).map(r=>({...r,s1:false,s2:false,s3:false})); }); saveCommercialDraftSelection(); renderReport(); updateCounts(); return; } const msg=coordinatorSingleShiftMode() ? `Reset semua pilihan ${coordinatorAllowedShiftLabel()}?` : 'Reset semua pilihan Shift 1, Shift 2, dan Shift 3?'; if(!confirm(msg)) return; state.workers.forEach(w=>{w.s1=false; w.s2=false; w.s3=false;}); saveState(); renderAll(); }
+function resetShift(){
+  if(scheduleInputLocked()){ alert('Jadwal tanggal ini terkunci. Klik Edit Jadwal Tanggal Ini sebelum melakukan reset.'); updateScheduleSafetyUI(); return; }
+  if(!assertScheduleDateSelected()) return;
+  ensureScheduleEditBaseline();
+  if(!isAdmin() && isCommercialKey(activeUnitKey())){
+    if(!confirm('Reset semua pilihan Shift 1, Shift 2, dan Shift 3 untuk jadwal Muatan Commercial?')) return;
+    document.querySelectorAll('[data-commercial-activity-shift],[data-commercial-coordinator-shift],[data-commercial-dock-plan]').forEach(el=>{ el.checked=false; });
+    document.querySelectorAll('[data-commercial-shift]').forEach(el=>{ el.checked=false; el.disabled=true; el.dataset.commercialPlanDisabled='1'; });
+    commercialScheduleRowsCache=(commercialScheduleRowsCache||[]).map(r=>({...r,schedulePlan:'',s1:false,s2:false,s3:false}));
+    Object.keys(commercialActivityRowsCache||{}).forEach(k=>{ commercialActivityRowsCache[k]=(commercialActivityRowsCache[k]||[]).map(r=>({...r,s1:false,s2:false,s3:false})); });
+    markScheduleDirty(); saveCommercialDraftSelection(); renderReport(); updateCounts(); return;
+  }
+  const msg=coordinatorSingleShiftMode() ? `Reset semua pilihan ${coordinatorAllowedShiftLabel()}?` : 'Reset semua pilihan Shift 1, Shift 2, dan Shift 3?';
+  if(!confirm(msg)) return;
+  state.workers.forEach(w=>{w.s1=false; w.s2=false; w.s3=false;});
+  markScheduleDirty(); saveState(); renderAll();
+}
 function stableIdPart(value){ return String(value || '').trim().toLowerCase().replace(/[^a-z0-9_-]+/g,'_').replace(/^_+|_+$/g,'') || 'default'; }
 function attendanceStorageKey(payload){ const docId=attendanceDocId(payload); return `${ATTENDANCE_KEY}_${docId}`; }
 function attendanceDocId(payload){
@@ -3095,25 +3531,49 @@ let isSavingSchedule=false;
 async function saveSchedule(){
   if(!requirePermission('saveAttendance','Akses ditolak. Role ini tidak boleh menyimpan absensi.')) return;
   if(isSavingSchedule) return;
+  const selectedDate=assertScheduleDateSelected();
+  if(!selectedDate) return;
+  if(scheduleInputLocked()){ alert('Jadwal pada tanggal aktif sudah ada dan masih terkunci. Klik tombol Edit Jadwal Tanggal Ini sebelum menyimpan perubahan.'); updateScheduleSafetyUI(); return; }
   if(coordinatorSingleShiftMode() || coordinatorBahanBakuMalamMode()) enforceSingleShiftInputRule();
   const rows=selectedWorkers();
-  if(rows.length===0){ alert(!isAdmin() && isCommercialKey(activeUnitKey()) ? 'Simpan belum bisa diproses. Pilih minimal 1 Loading Dock, 1 Regu, dan Shift 1, Shift 2, atau Shift 3.' : (coordinatorBahanBakuMalamMode() ? 'Simpan belum bisa diproses. Pilih minimal 1 pekerja pada Shift 2 atau Shift 3.' : (coordinatorSingleShiftMode() ? `Simpan belum bisa diproses. Pilih minimal 1 pekerja pada ${coordinatorAllowedShiftLabel()} atau pilih S1/S2/S3 untuk koordinator khusus.` : 'Simpan belum bisa diproses. Pilih minimal 1 pekerja pada Shift 1, Shift 2, atau Shift 3.'))); return; }
+  if(rows.length===0){ confirmEmptyScheduleBlocked(); return; }
   const duplicateCheck=await validateBahanBakuNoDuplicateSelection();
   if(!duplicateCheck.ok){ await renderWorkers(); renderReport(); updateCounts(); return; }
   const btn=$('btnSaveSchedule'); const oldText=btn ? btn.textContent : '';
   try{
     isSavingSchedule=true;
-    if(btn){ btn.disabled=true; btn.textContent='Menyimpan...'; }
+    if(btn){ btn.disabled=true; btn.textContent='Mengecek data tersimpan...'; }
     await saveState();
     await refreshBahanBakuActivityConflictCache({force:true});
-    const payload=saveAttendanceLocal(makeAttendancePayload());
+    const candidatePayload=makeAttendancePayload();
+    if(!confirmScheduleSaveSummary(candidatePayload)) return;
+    const overwriteCheck=await confirmOverwriteIfNeeded(candidatePayload);
+    if(!overwriteCheck.ok) return;
+    if(overwriteCheck.existing && scheduleHasSavedRows(overwriteCheck.existing)){
+      if(btn){ btn.textContent='Membuat backup data lama...'; }
+      const backupResult=await createScheduleBackupBeforeOverwrite(overwriteCheck.existing, candidatePayload, overwriteCheck.diff);
+      if(!backupResult.ok){
+        alert('Backup otomatis sebelum overwrite gagal dibuat. Proses simpan dibatalkan agar data lama tetap aman. Coba ulangi simpan, atau hubungi admin jika pesan ini terus muncul.');
+        return;
+      }
+    }
+    if(btn){ btn.textContent='Menyimpan...'; }
+    const payload=saveAttendanceLocal(candidatePayload);
     let online=false;
     try{ const result=await saveAttendanceOnline(payload); online=Boolean(result && result.online); }catch(err){ console.warn('Simpan absensi Firebase gagal, masuk antrian sinkron.', err); queuePendingAttendance(payload, err && err.message ? err.message : err); }
     if(!online){ queuePendingAttendance(payload, 'Firebase belum online'); } else { await syncPendingAttendanceOnline(); }
-    renderAll();
+    const diff=overwriteCheck.diff || scheduleRowsDiff(null, payload);
+    const historyEntry={id:'sch_'+Date.now(), changedAt:new Date().toISOString(), unitKey:payload.unitKey, unitName:payload.unitName, reportDate:payload.reportDate, attendanceDocId:payload.id, actor:currentAuditActor(), beforeCount:diff.beforeCount, afterCount:diff.afterCount, changes:diff.changes.slice(0,80), online};
+    saveScheduleChangeHistoryLocal(historyEntry);
+    auditLog('schedule_change_history','attendance',{message:'Riwayat perubahan jadwal pekerja', unitKey:payload.unitKey, unitName:payload.unitName, reportDate:payload.reportDate, attendanceDocId:payload.id, beforeCount:diff.beforeCount, afterCount:diff.afterCount, changedRows:diff.changes.length, online}, overwriteCheck.existing, payload).catch(()=>{});
+    scheduleEditSession.dirty=false;
+    await resetScheduleFormAfterSave(payload.reportDate);
+    await renderAll();
     auditLog('save_attendance','attendance',{message: online ? 'Absensi tersimpan online ke Firebase' : 'Absensi tersimpan lokal dan masuk antrean sync', unitKey:payload.unitKey, unitName:payload.unitName, reportDate:payload.reportDate, attendanceDocId:payload.id, totalRows:(payload.workers||[]).length, online}).catch(()=>{});
-    alert(online ? 'Jadwal pekerja sudah disimpan online ke Firebase.' : 'Jadwal pekerja tersimpan lokal dan masuk antrian sinkron. Saat Firebase online, data akan dikirim otomatis.');
-  } finally { isSavingSchedule=false; if(btn){ btn.disabled=false; btn.textContent=oldText || '💾 Simpan'; } }
+    alert((online ? 'Jadwal pekerja sudah disimpan online ke Firebase.' : 'Jadwal pekerja tersimpan lokal dan masuk antrian sinkron. Saat Firebase online, data akan dikirim otomatis.') + `
+
+Form sudah dikosongkan otomatis. Untuk input atau edit jadwal berikutnya, pilih tanggal lagi terlebih dahulu.`);
+  } finally { isSavingSchedule=false; if(btn){ btn.textContent=oldText || '💾 Simpan'; } updateScheduleSafetyUI(); }
 }
 function printReport(){ if(!requirePermission('printReports','Akses ditolak. Role ini tidak boleh mencetak laporan.')) return; if(selectedWorkers().length===0){ alert('Print / PDF belum bisa dicetak. Pilih minimal 1 pekerja terlebih dahulu.'); return; } window.print(); }
 
@@ -4344,12 +4804,15 @@ function exportExcel(){
   const a=document.createElement('a'); a.href=url; a.download=`absensi_${activeUnitKey()}_${state.reportDate || 'tanggal'}.xls`;
   document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
 }
+window.addEventListener('beforeunload', e=>{ if(scheduleHasUnsavedChanges()){ e.preventDefault(); e.returnValue=''; } });
+document.addEventListener('focusin', e=>{ if(e.target && e.target.matches('#reportDate')) e.target.dataset.prevValue=e.target.value || state.reportDate || ''; });
 document.addEventListener('input', e=>{ if(e.target && e.target.matches('[data-report-setting]')){ if(hasPermission('manageSettings')) saveReportSettings(); } });
 document.addEventListener('blur', e=>{ if(e.target && e.target.matches('[data-report-setting]')){ if(hasPermission('manageSettings')) saveReportSettings(); } }, true);
-document.addEventListener('click', e=>{ const sectionBtn=e.target.closest('[data-admin-section]'); if(sectionBtn){ if(!requirePermission('adminPanel','Panel admin hanya untuk admin.')) return; showAdminSection(sectionBtn.dataset.adminSection); if(sectionBtn.dataset.adminSection==='worker-crud') renderAdminWorkerCrud(); if(sectionBtn.dataset.adminSection==='summary') renderAdminDashboard(); if(sectionBtn.dataset.adminSection==='import-data'){ updateGlobalCheckInfo(); renderGlobalCheckImportHistory(); } if(sectionBtn.dataset.adminSection==='loading-dock') renderAdminLoadingDocks(); if(sectionBtn.dataset.adminSection==='sync-status') renderAdminSyncStatus(); return; } const syncBtn=e.target.closest('[data-pending-sync]'); if(syncBtn){ syncOnePendingAttendance(syncBtn.dataset.pendingSync); return; } const pendingDel=e.target.closest('[data-pending-delete]'); if(pendingDel){ deleteOnePendingAttendance(pendingDel.dataset.pendingDelete); return; } const dockDel=e.target.closest('[data-dock-delete]'); if(dockDel){ adminDeleteDock(dockDel.dataset.dockDelete); return; } const editBtn=e.target.closest('[data-admin-worker-edit]'); if(editBtn){ adminFillWorkerForm(editBtn.dataset.adminWorkerEdit); return; } const delBtn=e.target.closest('[data-admin-worker-delete]'); if(delBtn){ adminDeleteWorkerCrud(delBtn.dataset.adminWorkerDelete); return; } const btn=e.target.closest('.tab-btn'); if(btn){ if(isAdmin() && btn.dataset.panel==='panelWorkers') return; document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active')); document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active')); document.querySelectorAll(`.tab-btn[data-panel="${btn.dataset.panel}"]`).forEach(b=>b.classList.add('active')); $(btn.dataset.panel).classList.add('active'); renderReport(); if(btn.dataset.panel==='panelAdmin') renderAdminDashboard(); } });
+document.addEventListener('click', e=>{ const restoreBackupBtn=e.target.closest('[data-restore-schedule-backup]'); if(restoreBackupBtn){ restoreScheduleBackup(restoreBackupBtn.dataset.restoreScheduleBackup); return; } const refreshHistoryBtn=e.target.closest('#btnRefreshScheduleHistory'); if(refreshHistoryBtn){ renderScheduleHistoryPanel(); return; } const editScheduleBtn=e.target.closest('#btnEditSchedule'); if(editScheduleBtn){ beginEditSchedule(); return; } const cancelScheduleBtn=e.target.closest('#btnCancelSchedule'); if(cancelScheduleBtn){ cancelScheduleChanges(); return; } const sectionBtn=e.target.closest('[data-admin-section]'); if(sectionBtn){ if(!requirePermission('adminPanel','Panel admin hanya untuk admin.')) return; showAdminSection(sectionBtn.dataset.adminSection); if(sectionBtn.dataset.adminSection==='worker-crud') renderAdminWorkerCrud(); if(sectionBtn.dataset.adminSection==='summary') renderAdminDashboard(); if(sectionBtn.dataset.adminSection==='import-data'){ updateGlobalCheckInfo(); renderGlobalCheckImportHistory(); } if(sectionBtn.dataset.adminSection==='loading-dock') renderAdminLoadingDocks(); if(sectionBtn.dataset.adminSection==='sync-status') renderAdminSyncStatus(); return; } const syncBtn=e.target.closest('[data-pending-sync]'); if(syncBtn){ syncOnePendingAttendance(syncBtn.dataset.pendingSync); return; } const pendingDel=e.target.closest('[data-pending-delete]'); if(pendingDel){ deleteOnePendingAttendance(pendingDel.dataset.pendingDelete); return; } const dockDel=e.target.closest('[data-dock-delete]'); if(dockDel){ adminDeleteDock(dockDel.dataset.dockDelete); return; } const editBtn=e.target.closest('[data-admin-worker-edit]'); if(editBtn){ adminFillWorkerForm(editBtn.dataset.adminWorkerEdit); return; } const delBtn=e.target.closest('[data-admin-worker-delete]'); if(delBtn){ adminDeleteWorkerCrud(delBtn.dataset.adminWorkerDelete); return; } const btn=e.target.closest('.tab-btn'); if(btn){ if(isAdmin() && btn.dataset.panel==='panelWorkers') return; document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active')); document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active')); document.querySelectorAll(`.tab-btn[data-panel="${btn.dataset.panel}"]`).forEach(b=>b.classList.add('active')); $(btn.dataset.panel).classList.add('active'); renderReport(); if(btn.dataset.panel==='panelAdmin') renderAdminDashboard(); } });
 document.addEventListener('change', async e=>{
   if(e.target.matches('input[data-shift]') && !hasPermission('inputAttendance')){ e.target.checked=!e.target.checked; requirePermission('inputAttendance','Akses ditolak. Role ini tidak boleh mengubah input absensi.'); return; }
   if(e.target.matches('input[data-shift]')){
+    if(!assertScheduleDateSelected()){ e.target.checked=!e.target.checked; return; }
     const no=Number(e.target.dataset.no), shift=e.target.dataset.shift;
     const w=state.workers.find(x=>x.no===no);
     const allowed=coordinatorAllowedShift();
@@ -4357,6 +4820,7 @@ document.addEventListener('change', async e=>{
     if(w){
       if(e.target.checked && coordinatorCanChooseBahanBakuActivity() && getBahanBakuActivityUnitKeys().includes(activeUnitKey())) await refreshBahanBakuActivityConflictCache({force:true});
       if(!validateBahanBakuShiftChange(w, shift, e.target.checked)){ e.target.checked=false; return; }
+      ensureScheduleEditBaseline();
       w[shift]=e.target.checked;
       if(coordinatorBahanBakuMalamMode()){
         w.s1=false;
@@ -4365,6 +4829,7 @@ document.addEventListener('change', async e=>{
         if(allowed==='s2'){ w.s1=false; w.s3=false; }
         if(allowed==='s3'){ w.s1=false; w.s2=false; }
       }
+      markScheduleDirty();
       await saveState();
       bahanBakuActivityConflictRowsCache[activeUnitKey()]=(state.workers||[]).map((row,idx)=>({...cleanWorker(row,idx), kegiatan:row.kegiatan || bahanBakuActivityLabelFromKey(activeUnitKey()), sourceUnitKey:activeUnitKey()}));
       renderReport();
@@ -4372,7 +4837,7 @@ document.addEventListener('change', async e=>{
       updateCounts();
     }
   }
-  if(e.target.matches('#reportDate')){ if(!hasPermission('inputAttendance') && !hasPermission('viewReports')) return; state.reportDate=e.target.value; if(isCommercialKey(activeUnitKey()) && !isAdmin()) applyCommercialDraftSelection(); await saveState(); await refreshBahanBakuActivityConflictCache({force:true}); renderAll(); }
+  if(e.target.matches('#reportDate')){ if(!hasPermission('inputAttendance') && !hasPermission('viewReports')) return; const previous=e.target.dataset.prevValue || state.reportDate || ''; if(!confirmLeaveUnsavedScheduleChanges()){ e.target.value=previous; return; } scheduleEditSession.dirty=false; state.reportDate=e.target.value || ''; resetScheduleActiveDateStatus(); if(isCommercialKey(activeUnitKey()) && !isAdmin()) applyCommercialDraftSelection(); await saveState(); await refreshBahanBakuActivityConflictCache({force:true}); renderAll(); await refreshScheduleActiveDateStatus(state.reportDate, {force:true}); }
   if(e.target.matches('#activitySelect')){
     if(coordinatorCanChooseCommercialActivity()){
       changeCommercialInputActivity(e.target.value).catch(err=>{ console.error(err); alert('Gagal mengganti kegiatan Commercial: ' + (err && err.message ? err.message : err)); });
@@ -4381,6 +4846,7 @@ document.addEventListener('change', async e=>{
     }
   }
   if(e.target.matches('[data-commercial-dock-plan]')){
+    if(!assertScheduleDateSelected()){ e.target.checked=!e.target.checked; return; }
     if(!requirePermission('inputAttendance','Akses ditolak. Role ini tidak boleh mengubah aturan jadwal Loading Dock.')){ e.target.checked=!e.target.checked; return; }
     const dock=normalizeDockName(e.target.dataset.dock);
     const plan=normalizeCommercialDockPlan(e.target.value || e.target.dataset.commercialDockPlan);
@@ -4389,22 +4855,25 @@ document.addEventListener('change', async e=>{
     }else{
       applyCommercialDockPlanToInputs(dock, '');
     }
-    saveCommercialDraftSelection(); renderReport(); updateCounts();
+    markScheduleDirty(); saveCommercialDraftSelection(); renderReport(); updateCounts();
   }
   if(e.target.matches('[data-commercial-shift]')){
+    if(!assertScheduleDateSelected()){ e.target.checked=!e.target.checked; return; }
     if(!requirePermission('inputAttendance','Akses ditolak. Role ini tidak boleh mengubah input Commercial.')){ e.target.checked=!e.target.checked; return; }
-    saveCommercialDraftSelection(); renderReport(); updateCounts();
+    markScheduleDirty(); saveCommercialDraftSelection(); renderReport(); updateCounts();
   }
-  if(e.target.matches('[data-commercial-regu-select]')){ if(!requirePermission('inputAttendance','Akses ditolak. Role ini tidak boleh mengubah Regu Commercial.')) return; enforceUniqueCommercialReguSelection(e.target); refreshCommercialReguSelectOptions(); saveCommercialDraftSelection(); renderReport(); updateCounts(); }
+  if(e.target.matches('[data-commercial-regu-select]')){ if(!assertScheduleDateSelected()){ renderAll(); return; } if(!requirePermission('inputAttendance','Akses ditolak. Role ini tidak boleh mengubah Regu Commercial.')) return; enforceUniqueCommercialReguSelection(e.target); refreshCommercialReguSelectOptions(); markScheduleDirty(); saveCommercialDraftSelection(); renderReport(); updateCounts(); }
   if(e.target.matches('[data-commercial-coordinator-shift]')){
+    if(!assertScheduleDateSelected()){ e.target.checked=!e.target.checked; return; }
     if(!requirePermission('inputAttendance','Akses ditolak. Role ini tidak boleh mengubah jadwal koordinator Muatan Commercial.')){ e.target.checked=!e.target.checked; return; }
-    saveCommercialDraftSelection(); renderReport(); updateCounts();
+    markScheduleDirty(); saveCommercialDraftSelection(); renderReport(); updateCounts();
   }
   if(e.target.matches('[data-commercial-activity-shift]')){
+    if(!assertScheduleDateSelected()){ e.target.checked=!e.target.checked; return; }
     if(!requirePermission('inputAttendance','Akses ditolak. Role ini tidak boleh mengubah input aktivitas Commercial.')){ e.target.checked=!e.target.checked; return; }
-    saveCommercialDraftSelection(); renderReport(); updateCounts();
+    markScheduleDirty(); saveCommercialDraftSelection(); renderReport(); updateCounts();
   }
-  if(e.target.matches('[data-overzak-shift]')){ if(!requirePermission('inputAttendance','Akses ditolak. Role ini tidak boleh mengubah input Overzak.')){ e.target.checked=!e.target.checked; return; } saveBahanBakuOverzakDraftSelection(); renderReport(); updateCounts(); }
+  if(e.target.matches('[data-overzak-shift]')){ if(!assertScheduleDateSelected()){ e.target.checked=!e.target.checked; return; } if(!requirePermission('inputAttendance','Akses ditolak. Role ini tidak boleh mengubah input Overzak.')){ e.target.checked=!e.target.checked; return; } markScheduleDirty(); saveBahanBakuOverzakDraftSelection(); renderReport(); updateCounts(); }
   if(e.target.matches('#selectPkwt') && e.target.value){ fillForm(e.target.value); }
   if(e.target.matches('#selectFreelance') && e.target.value){ fillForm(e.target.value); }
 });
@@ -4428,6 +4897,7 @@ async function bootApp(){
     initAdminTools();
     await loadState();
     await renderAll();
+    await refreshScheduleActiveDateStatus(scheduleDateSelected(), {silent:true});
     if(isAdmin()) { switchToPanel('panelAdmin'); showAdminSection('summary'); }
     updateFirebaseStatusUI();
   }catch(err){
