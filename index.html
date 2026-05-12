@@ -29,7 +29,7 @@
     .frame{border-radius:28px;padding:15px;border:1px solid rgba(188,202,221,.55);box-shadow:var(--shadow);position:relative;overflow:hidden;margin-bottom:14px}.frame:before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--frame-accent)}.frame.worker{--frame-accent:var(--worker-accent);background:linear-gradient(135deg,#f7fbff 0%,var(--worker-bg) 100%)}.frame.data{--frame-accent:var(--data-accent);background:linear-gradient(135deg,#fbfffc 0%,var(--data-bg) 100%)}.frame.report-frame{--frame-accent:var(--report-accent);background:linear-gradient(135deg,#fffdf8 0%,var(--report-bg) 100%)}.frame-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin:8px 4px 14px}.frame-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--frame-accent)}.frame-head h2{margin:3px 0 5px;font-size:20px;font-weight:900}.frame-head p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}.frame-number{width:42px;height:42px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--frame-accent);font-weight:900;box-shadow:0 10px 24px rgba(20,38,72,.09);border:1px solid rgba(188,202,221,.55)}
     .card{background:var(--panel);border:1px solid rgba(188,202,221,.66);border-radius:22px;box-shadow:0 10px 26px rgba(20,38,72,.08);overflow:hidden;margin-bottom:12px}.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 15px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#f9fbfe)}.card-head h3{margin:0;font-size:16px;font-weight:900}.card-head span{font-size:12px;color:var(--muted);font-weight:800}.card-body{padding:15px}.grid-form{display:grid;grid-template-columns:88px 1fr;gap:10px}.field label{display:block;color:#3d4f68;font-size:12px;font-weight:900;margin-bottom:6px}input,select{width:100%;min-height:48px;border:1px solid #d5e0ee;border-radius:16px;background:#fff;padding:10px 12px;color:var(--ink);outline:none}input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(37,88,217,.12)}.span-2{grid-column:span 2}.actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.btn{min-height:48px;border-radius:16px;font-weight:950;padding:10px 12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center}.primary{background:linear-gradient(135deg,var(--primary),#65a2ff);color:#fff}.success{background:#e8f8ee;color:#15803d}.warning{background:#fff4df;color:#b45309}.danger{background:#ffe8e4;color:#b42318}.secondary{background:#f4f7fb;color:#42526c;border:1px solid #e4edf8}.dark{background:#172033;color:#fff}.full{grid-column:1/-1}.note{margin-top:12px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:10px 12px;border-radius:16px;font-size:12px;line-height:1.45;font-weight:750}
     .split-grid{display:grid;grid-template-columns:1fr;gap:12px}.type-box{border:1px solid #dfe8f5;background:#f8fbff;border-radius:20px;padding:12px}.type-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}.type-title strong{font-size:13px}.type-title span{font-size:11px;font-weight:900;color:#687892}.search-row{display:grid;grid-template-columns:1fr;gap:10px;align-items:center}.schedule-bar{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;margin-bottom:10px}.worker-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.worker-card{border:1px solid var(--line);border-radius:22px;background:#fff;padding:14px;box-shadow:0 8px 20px rgba(15,23,42,.04)}.worker-card.pkwt{background:linear-gradient(135deg,#eef7ff,#ffffff);border-color:#b9dcff}.worker-card.freelance{background:linear-gradient(135deg,#fff7e8,#ffffff);border-color:#f4d39c}.worker-top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;margin-bottom:12px}.worker-nip{font-size:12px;color:#516179;font-weight:950;background:rgba(255,255,255,.68);border:1px solid rgba(188,202,221,.55);border-radius:999px;padding:7px 9px;white-space:nowrap}.worker-name{font-weight:950;font-size:19px;line-height:1.15;text-align:center}.worker-status{font-size:11px;font-weight:950;border-radius:999px;padding:7px 9px;white-space:nowrap}.worker-card.pkwt .worker-status{background:#dff0ff;color:#1d4ed8}.worker-card.freelance .worker-status{background:#fff0d3;color:#b45309}.shift-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.shift-toggle{position:relative;display:flex;align-items:center;gap:8px;justify-content:space-between;min-height:52px;border-radius:17px;border:1px solid #e5e7eb;background:#f9fafb;padding:9px 10px;font-weight:950;font-size:13px;user-select:none}.shift-toggle input{position:absolute;opacity:0;pointer-events:none}.shift-toggle.shift-disabled{opacity:.55;background:#f1f5f9!important;border-color:#cbd5e1!important;color:#64748b!important;cursor:not-allowed}.shift-toggle.shift-disabled .checkmark{background:#e2e8f0!important;border-color:#cbd5e1!important;color:#e2e8f0!important}.checkmark{width:27px;height:27px;border-radius:10px;border:2px solid #cbd5e1;display:grid;place-items:center;color:#fff;font-weight:950;background:#fff}.shift-toggle.s1 input:checked + .checkmark{background:#2563eb;border-color:#2563eb}.shift-toggle.s1:has(input:checked){background:#eaf2ff;border-color:#a9c8ff;color:#1e3a8a}.shift-toggle.s2 input:checked + .checkmark{background:#ea580c;border-color:#ea580c}.shift-toggle.s2:has(input:checked){background:#fff1e8;border-color:#fdba74;color:#9a3412}.shift-toggle.s3 input:checked + .checkmark{background:#16a34a;border-color:#16a34a}.shift-toggle.s3:has(input:checked){background:#ecfdf5;border-color:#86efac;color:#166534}.empty{padding:18px;text-align:center;color:var(--muted);border:1px dashed #cbd5e1;border-radius:20px;background:#f8fafc;font-size:13px;font-weight:800}.schedule-safety-status{margin-top:10px;border:1px solid #dbeafe;background:#eff6ff;color:#1e3a8a;border-radius:18px;padding:10px 12px;font-size:12px;font-weight:900;line-height:1.35}.schedule-safety-status.warn{border-color:#fed7aa;background:#fff7ed;color:#9a3412}.schedule-safety-status.locked{border-color:#bbf7d0;background:#f0fdf4;color:#166534}.schedule-safety-status .small{display:block;margin-top:3px;font-weight:800;color:#64748b}.schedule-safety-status .status-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.schedule-edit-note{margin-top:8px;padding:8px 10px;border-radius:14px;background:rgba(255,255,255,.7);font-weight:900}.schedule-locked-mask{position:relative}.schedule-locked-mask:after{content:"Jadwal terkunci. Klik Edit Jadwal Tanggal Ini untuk mengubah.";display:block;margin-top:8px;font-size:12px;font-weight:900;color:#9a3412}.schedule-history-panel{margin-top:12px;border:1px solid #e5e7eb;background:#fff;border-radius:20px;padding:12px;box-shadow:0 8px 20px rgba(15,23,42,.04)}.schedule-history-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px}.schedule-history-head strong{font-size:13px}.schedule-history-head span{display:block;margin-top:3px;font-size:11px;font-weight:850;color:#64748b}.schedule-history-list{display:grid;grid-template-columns:1fr;gap:8px}.schedule-history-item{border:1px solid #edf2f7;background:#f8fafc;border-radius:16px;padding:10px;font-size:12px;font-weight:850}.schedule-history-item .meta{color:#475569;line-height:1.35}.schedule-history-item .changes{margin-top:6px;color:#0f172a;font-weight:900}.schedule-history-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.schedule-history-empty{border:1px dashed #cbd5e1;background:#f8fafc;border-radius:16px;padding:12px;color:#64748b;font-size:12px;font-weight:900;text-align:center}.btn:disabled{opacity:.55;cursor:not-allowed}
-    .control-report{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px;border-radius:24px;background:linear-gradient(135deg,#ffffff,#fff7e8);border:1px solid #f3d6a2;box-shadow:0 14px 30px rgba(217,119,6,.10);margin-bottom:12px}.control-info{display:flex;align-items:center;gap:12px}.control-icon{width:48px;height:48px;border-radius:18px;background:#fff4df;display:grid;place-items:center;font-size:22px}.control-info h3{margin:0;font-size:16px;font-weight:950}.control-info p{margin:4px 0 0;color:#7c5a23;font-size:12px;font-weight:850}.control-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.attendance-list{display:grid;grid-template-columns:1fr;gap:12px}.shift-section{background:#fff;border:1px solid rgba(188,202,221,.75);border-radius:24px;box-shadow:0 10px 24px rgba(15,23,42,.06);overflow:hidden}.shift-section-head{display:flex;align-items:center;justify-content:space-between;padding:14px 15px;font-weight:950}.shift-section.s1 .shift-section-head{background:#eaf2ff;color:#1e3a8a}.shift-section.s2 .shift-section-head{background:#fff1e8;color:#9a3412}.shift-section.s3 .shift-section-head{background:#ecfdf5;color:#166534}.shift-count{font-size:12px;border-radius:999px;background:rgba(255,255,255,.75);padding:6px 10px}.shift-table{width:100%;border-collapse:separate;border-spacing:0}.shift-table th{font-size:11px;color:#64748b;text-align:left;background:#f8fafc;padding:9px 10px}.shift-table td{padding:10px;border-top:1px solid #edf2f7;font-weight:850}.shift-table td:first-child,.shift-table th:first-child{text-align:center;width:54px}.shift-table td:nth-child(2),.shift-table th:nth-child(2){width:82px}.print-sheet{background:#fff;border-radius:18px;overflow:visible;width:100%;max-width:920px;margin:0 auto}.print-title{text-align:center;line-height:1.2;padding:12px 6px 8px}.print-title .main{font-weight:900;text-transform:uppercase}.print-title .company,.print-title .date{text-transform:uppercase;font-size:13px}.table-wrap{width:100%;overflow:auto;display:flex;justify-content:center}.report-table{width:100%;max-width:820px;margin:0 auto;border-collapse:collapse;font-size:12px;table-layout:fixed}.report-table th,.report-table td{border:1px solid #111;padding:5px 6px;text-align:center;white-space:normal;word-break:break-word}.report-table th{background:#f3f4f6}.report-table td.name{text-align:left;min-width:0;width:40%}.report-table th:nth-child(1),.report-table td:nth-child(1){width:46px}.report-table th:nth-child(2),.report-table td:nth-child(2){width:68px}.report-table th:nth-child(4),.report-table td:nth-child(4),.report-table th:nth-child(5),.report-table td:nth-child(5){width:72px}.report-table th:nth-child(6),.report-table td:nth-child(6),.report-table th:nth-child(7),.report-table td:nth-child(7){width:104px}.tick{color:var(--success);font-weight:950;font-size:17px}.summary-table{width:330px;max-width:100%;margin:10px auto 8px;border-collapse:collapse;font-size:12px}.summary-table td,.summary-table th{border:1px solid #111;padding:5px;text-align:center}.summary-table .left-label{font-weight:950}.summary-table .total{font-weight:950;font-size:14px}.check-input{min-height:34px;border-radius:10px;padding:5px 7px;font-size:12px;text-align:center}.check-source{font-size:11px;font-weight:900;color:#64748b}.report-footer{max-width:820px;margin:12px auto 8px;font-size:12px}.signature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center;margin:12px 0 8px}.signature-title{font-weight:950;min-height:22px}.signature-line{border-bottom:1px solid #111;margin:28px auto 0;width:80%}.editable-report{display:inline-block;min-width:60px;padding:2px 4px;border-radius:6px}.auth-admin .editable-report{outline:1px dashed #cbd5e1;background:#f8fafc}.note-area{margin-top:6px}.note-title{font-weight:950;margin-bottom:4px}.worktime-table{border-collapse:collapse;width:300px;max-width:100%;font-size:10px;margin-top:4px}.worktime-table th,.worktime-table td{border:1px solid #111;padding:5px;text-align:center}.worktime-table td.editable-report{display:table-cell;min-width:0;padding:5px;border-radius:0}.worktime-table .worktime-main .editable-report{display:inline;min-width:0;padding:0;border-radius:0}.auth-admin .worktime-table td.editable-report{outline:0;background:#fff}.auth-admin .worktime-table .worktime-main .editable-report{outline:1px dashed #cbd5e1;background:#f8fafc}.worktime-table .worktime-main{font-weight:950;text-transform:uppercase}.bottom-print-actions{display:flex;justify-content:center;margin:14px 0 4px}.note-save-row{display:flex;justify-content:flex-start;margin-top:8px}body:not(.auth-admin) .report-footer,body:not(.auth-admin) .bottom-print-actions{display:none!important}.desktop-print-preview{display:none}.report-preview{display:block;margin:12px auto 0}.schedule-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.inside-stats{margin:12px 0 0}
+    .control-report{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px;border-radius:24px;background:linear-gradient(135deg,#ffffff,#fff7e8);border:1px solid #f3d6a2;box-shadow:0 14px 30px rgba(217,119,6,.10);margin-bottom:12px}.control-info{display:flex;align-items:center;gap:12px}.control-icon{width:48px;height:48px;border-radius:18px;background:#fff4df;display:grid;place-items:center;font-size:22px}.control-info h3{margin:0;font-size:16px;font-weight:950}.control-info p{margin:4px 0 0;color:#7c5a23;font-size:12px;font-weight:850}.control-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.attendance-list{display:grid;grid-template-columns:1fr;gap:12px}.shift-section{background:#fff;border:1px solid rgba(188,202,221,.75);border-radius:24px;box-shadow:0 10px 24px rgba(15,23,42,.06);overflow:hidden}.shift-section-head{display:flex;align-items:center;justify-content:space-between;padding:14px 15px;font-weight:950}.shift-section.s1 .shift-section-head{background:#eaf2ff;color:#1e3a8a}.shift-section.s2 .shift-section-head{background:#fff1e8;color:#9a3412}.shift-section.s3 .shift-section-head{background:#ecfdf5;color:#166534}.shift-count{font-size:12px;border-radius:999px;background:rgba(255,255,255,.75);padding:6px 10px}.shift-table{width:100%;border-collapse:separate;border-spacing:0}.shift-table th{font-size:11px;color:#64748b;text-align:left;background:#f8fafc;padding:9px 10px}.shift-table td{padding:10px;border-top:1px solid #edf2f7;font-weight:850}.shift-table td:first-child,.shift-table th:first-child{text-align:center;width:54px}.shift-table td:nth-child(2),.shift-table th:nth-child(2){width:82px}.print-sheet{background:#fff;border-radius:18px;overflow:visible;width:100%;max-width:920px;margin:0 auto}.print-title{text-align:center;line-height:1.2;padding:12px 6px 8px}.print-title .main{font-weight:900;text-transform:uppercase}.print-title .company,.print-title .date{text-transform:uppercase;font-size:13px}.print-title .coordinator{font-size:12px;font-weight:900;color:#172033;margin-top:3px;text-transform:uppercase;letter-spacing:.1px}.table-wrap{width:100%;overflow:auto;display:flex;justify-content:center}.report-table{width:100%;max-width:820px;margin:0 auto;border-collapse:collapse;font-size:12px;table-layout:fixed}.report-table th,.report-table td{border:1px solid #111;padding:5px 6px;text-align:center;white-space:normal;word-break:break-word}.report-table th{background:#f3f4f6}.report-table td.name{text-align:left;min-width:0;width:40%}.report-table th:nth-child(1),.report-table td:nth-child(1){width:46px}.report-table th:nth-child(2),.report-table td:nth-child(2){width:68px}.report-table th:nth-child(4),.report-table td:nth-child(4),.report-table th:nth-child(5),.report-table td:nth-child(5){width:72px}.report-table th:nth-child(6),.report-table td:nth-child(6),.report-table th:nth-child(7),.report-table td:nth-child(7){width:104px}.tick{color:var(--success);font-weight:950;font-size:17px}.summary-table{width:330px;max-width:100%;margin:10px auto 8px;border-collapse:collapse;font-size:12px}.summary-table td,.summary-table th{border:1px solid #111;padding:5px;text-align:center}.summary-table .left-label{font-weight:950}.summary-table .total{font-weight:950;font-size:14px}.check-input{min-height:34px;border-radius:10px;padding:5px 7px;font-size:12px;text-align:center}.check-source{font-size:11px;font-weight:900;color:#64748b}.report-footer{max-width:820px;margin:12px auto 8px;font-size:12px}.signature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center;margin:12px 0 8px}.signature-title{font-weight:950;min-height:22px}.signature-line{border-bottom:1px solid #111;margin:28px auto 0;width:80%}.editable-report{display:inline-block;min-width:60px;padding:2px 4px;border-radius:6px}.auth-admin .editable-report{outline:1px dashed #cbd5e1;background:#f8fafc}.note-area{margin-top:6px}.note-title{font-weight:950;margin-bottom:4px}.worktime-table{border-collapse:collapse;width:300px;max-width:100%;font-size:10px;margin-top:4px}.worktime-table th,.worktime-table td{border:1px solid #111;padding:5px;text-align:center}.worktime-table td.editable-report{display:table-cell;min-width:0;padding:5px;border-radius:0}.worktime-table .worktime-main .editable-report{display:inline;min-width:0;padding:0;border-radius:0}.auth-admin .worktime-table td.editable-report{outline:0;background:#fff}.auth-admin .worktime-table .worktime-main .editable-report{outline:1px dashed #cbd5e1;background:#f8fafc}.worktime-table .worktime-main{font-weight:950;text-transform:uppercase}.bottom-print-actions{display:flex;justify-content:center;margin:14px 0 4px}.note-save-row{display:flex;justify-content:flex-start;margin-top:8px}body:not(.auth-admin) .report-footer,body:not(.auth-admin) .bottom-print-actions{display:none!important}.desktop-print-preview{display:none}.report-preview{display:block;margin:12px auto 0}.schedule-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.inside-stats{margin:12px 0 0}
     .install-sheet{position:fixed;left:50%;bottom:82px;transform:translateX(-50%) translateY(18px);width:min(94vw,460px);z-index:80;opacity:0;pointer-events:none;transition:.28s ease}.install-sheet.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}.install-sheet-card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.98));border:1px solid rgba(188,202,221,.8);box-shadow:0 22px 48px rgba(20,38,72,.16);border-radius:24px;padding:18px 18px 16px}.install-sheet-top{display:flex;gap:14px;align-items:center}.install-sheet-logo{width:56px;height:56px;object-fit:contain;border-radius:18px;background:#fff;padding:6px;box-shadow:0 10px 18px rgba(37,88,217,.12);flex:0 0 auto}.install-sheet-text small{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#2558d9;margin-bottom:4px}.install-sheet-text strong{display:block;font-size:18px;line-height:1.2;color:#20355b}.install-sheet-text p{margin:6px 0 0;color:#64748b;font-size:12px;line-height:1.55;font-weight:700}.install-sheet-actions{display:flex;gap:10px;margin-top:13px}.install-sheet-actions .btn{flex:1}.install-sheet-close{position:absolute;right:14px;top:14px;width:32px;height:32px;border-radius:12px;border:1px solid #d7e3f7;background:#fff;color:#50647f;font-weight:900;cursor:pointer}
     @keyframes spin{to{transform:rotate(360deg)}}@keyframes progressMove{0%{transform:translateX(-70%)}50%{transform:translateX(90%)}100%{transform:translateX(230%)}}@keyframes floatOrb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.05)}}
 
@@ -43,7 +43,7 @@
     .firebase-status{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);font-size:12px;font-weight:900;color:#fff}
     .firebase-status.local{background:rgba(255,255,255,.12)}.firebase-status.online{background:rgba(21,128,61,.22)}.firebase-status.error{background:rgba(192,57,43,.22)}
     @page{size:215mm 330mm;margin:6mm 7mm 6mm 7mm}
-    @media print{body{background:#fff;padding:0}.no-print,.hero,.tabs,.stats,.mobile-only,.install-sheet,.app-splash,.login-view,.user-strip{display:none!important}.wrap{max-width:none}.panel{display:none!important}#panelReport{display:block!important}.frame,.card{box-shadow:none;border:0;border-radius:0;margin:0;padding:0;background:#fff}.frame:before,.frame-head,.card-head{display:none}.card-body{padding:0}.desktop-print-preview{display:block!important}.print-sheet{border-radius:0;overflow:visible;width:100%;max-width:197mm;margin:0 auto;padding:0}.report-preview{margin:0 auto}.table-wrap{overflow:visible;display:block}.report-table{font-size:9px;table-layout:fixed;width:100%;max-width:100%;margin:0 auto}.report-table th,.report-table td{padding:2px 3px;line-height:1.05}.report-table th:nth-child(1),.report-table td:nth-child(1){width:24px}.report-table th:nth-child(2),.report-table td:nth-child(2){width:42px}.report-table th:nth-child(3),.report-table td:nth-child(3){width:128px}.report-table th:nth-child(4),.report-table td:nth-child(4),.report-table th:nth-child(5),.report-table td:nth-child(5){width:52px}.report-table th:nth-child(6),.report-table td:nth-child(6),.report-table th:nth-child(7),.report-table td:nth-child(7){width:58px}.report-table td.name{min-width:0;width:auto}.summary-table{width:220px;font-size:9px;margin:6px auto 4px}.summary-table td,.summary-table th{padding:2px 3px}.summary-table .total{font-size:11px}.print-title{padding:0 0 4px;line-height:1.08}.print-title .main{font-size:13px}.print-title .company,.print-title .date{font-size:9px}.report-footer{font-size:9px;margin:8px auto 0;max-width:100%}.signature-grid{margin:6px 0 6px;gap:8px}.signature-title{min-height:16px}.signature-line{margin-top:18px;width:80%}.note-area{margin-top:2px}.note-title{margin-bottom:3px}.worktime-table{width:250px;font-size:8px;margin-top:3px}.worktime-table th,.worktime-table td{padding:3px}.summary-table,.signature-grid,.note-area,.worktime-table{page-break-inside:avoid;break-inside:avoid}.check-input{border:0;padding:0;min-height:0;width:100%;font-size:9px;background:transparent}.auth-admin .editable-report{outline:0;background:transparent}.editable-report{padding:0;min-width:0}.bottom-print-actions{display:none!important}body.print-report-only *{visibility:hidden!important}body.print-report-only .print-sheet,body.print-report-only .print-sheet *{visibility:visible!important}body.print-report-only .print-sheet{position:absolute!important;left:0;top:0;width:100%!important;max-width:none!important;margin:0!important;padding:0!important}body.print-report-only .print-sheet .no-print{display:none!important;visibility:hidden!important}}
+    @media print{body{background:#fff;padding:0}.no-print,.hero,.tabs,.stats,.mobile-only,.install-sheet,.app-splash,.login-view,.user-strip{display:none!important}.wrap{max-width:none}.panel{display:none!important}#panelReport{display:block!important}.frame,.card{box-shadow:none;border:0;border-radius:0;margin:0;padding:0;background:#fff}.frame:before,.frame-head,.card-head{display:none}.card-body{padding:0}.desktop-print-preview{display:block!important}.print-sheet{border-radius:0;overflow:visible;width:100%;max-width:197mm;margin:0 auto;padding:0}.report-preview{margin:0 auto}.table-wrap{overflow:visible;display:block}.report-table{font-size:9px;table-layout:fixed;width:100%;max-width:100%;margin:0 auto}.report-table th,.report-table td{padding:2px 3px;line-height:1.05}.report-table th:nth-child(1),.report-table td:nth-child(1){width:24px}.report-table th:nth-child(2),.report-table td:nth-child(2){width:42px}.report-table th:nth-child(3),.report-table td:nth-child(3){width:128px}.report-table th:nth-child(4),.report-table td:nth-child(4),.report-table th:nth-child(5),.report-table td:nth-child(5){width:52px}.report-table th:nth-child(6),.report-table td:nth-child(6),.report-table th:nth-child(7),.report-table td:nth-child(7){width:58px}.report-table td.name{min-width:0;width:auto}.summary-table{width:220px;font-size:9px;margin:6px auto 4px}.summary-table td,.summary-table th{padding:2px 3px}.summary-table .total{font-size:11px}.print-title{padding:0 0 4px;line-height:1.08}.print-title .main{font-size:13px}.print-title .company,.print-title .date,.print-title .coordinator{font-size:9px}.report-footer{font-size:9px;margin:8px auto 0;max-width:100%}.signature-grid{margin:6px 0 6px;gap:8px}.signature-title{min-height:16px}.signature-line{margin-top:18px;width:80%}.note-area{margin-top:2px}.note-title{margin-bottom:3px}.worktime-table{width:250px;font-size:8px;margin-top:3px}.worktime-table th,.worktime-table td{padding:3px}.summary-table,.signature-grid,.note-area,.worktime-table{page-break-inside:avoid;break-inside:avoid}.check-input{border:0;padding:0;min-height:0;width:100%;font-size:9px;background:transparent}.auth-admin .editable-report{outline:0;background:transparent}.editable-report{padding:0;min-width:0}.bottom-print-actions{display:none!important}body.print-report-only *{visibility:hidden!important}body.print-report-only .print-sheet,body.print-report-only .print-sheet *{visibility:visible!important}body.print-report-only .print-sheet{position:absolute!important;left:0;top:0;width:100%!important;max-width:none!important;margin:0!important;padding:0!important}body.print-report-only .print-sheet .no-print{display:none!important;visibility:hidden!important}}
 
     /* UPDATE 23 - PRINT A4-SAFE + F4-READY */
     @media print{
@@ -89,7 +89,8 @@
       }
       body.print-report-only .print-title .main{font-size:12px!important}
       body.print-report-only .print-title .company,
-      body.print-report-only .print-title .date{font-size:8.2px!important}
+      body.print-report-only .print-title .date,
+      body.print-report-only .print-title .coordinator{font-size:8.2px!important}
       body.print-report-only .summary-table{
         width:205px!important;
         font-size:8px!important;
@@ -234,8 +235,10 @@
 
       .print-title .company,
       .print-title .date,
+      .print-title .coordinator,
       body.print-report-only .print-title .company,
-      body.print-report-only .print-title .date{
+      body.print-report-only .print-title .date,
+      body.print-report-only .print-title .coordinator{
         font-size:16px!important; /* 12pt */
       }
 
@@ -768,6 +771,36 @@
         min-width:860px;
       }
     }
+    /* v131: Admin > Import Cek In/Out layout preview/ringkasan dibenahi */
+    .admin-section-card[data-admin-panel="import-data"] .admin-check-import-top-grid{
+      grid-template-columns:1fr 1fr !important;
+      align-items:end;
+    }
+    .admin-section-card[data-admin-panel="import-data"] .admin-check-summary-grid{
+      grid-template-columns:1fr !important;
+      margin-top:12px;
+    }
+    .admin-section-card[data-admin-panel="import-data"] .admin-check-summary-grid .span-2{
+      grid-column:auto !important;
+    }
+    .admin-section-card[data-admin-panel="import-data"] .admin-actions-row.single{
+      grid-template-columns:minmax(220px,1fr) !important;
+    }
+    .admin-section-card[data-admin-panel="import-data"] .admin-actions-row.summary-actions,
+    .admin-section-card[data-admin-panel="import-data"] .admin-actions-row.history-actions{
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) !important;
+    }
+    .admin-section-card[data-admin-panel="import-data"] .btn{
+      white-space:normal;
+      line-height:1.25;
+      min-width:0;
+    }
+    @media (max-width:760px){
+      .admin-section-card[data-admin-panel="import-data"] .admin-check-import-top-grid{
+        grid-template-columns:1fr !important;
+      }
+    }
+
 
     /* v99: Import mesin global tanpa pilihan bagian preview */
     .all-schedule-preview-box{
@@ -925,8 +958,8 @@
         <div class="import-help" id="adminAttendanceInfo">Cek In / Cek Out bisa diisi manual, otomatis, atau mengambil Ringkasan Preview Mesin berdasarkan Bagian dari menu Admin &gt; Import Data.</div>
       </div></div>
       <div class="attendance-list no-print" id="mobileReportList"></div>
-      <div class="card print-sheet report-preview"><div class="card-head no-print"><h3>Tabel Hasil Input</h3><span><strong id="selectedCountBadge">0</strong> pekerja dipilih</span></div><div class="print-title"><div class="main" id="reportMainTitle">ABSENSI KEGIATAN MUATAN BREEDER</div><div class="company" id="reportCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="reportDateText">HARI - TANGGAL</div></div><div class="table-wrap"><table class="report-table" id="reportTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><th>CEK IN</th><th>CEK OUT</th></tr></thead><tbody id="reportBody"></tbody><tfoot class="report-summary"><tr><td class="summary-empty" colspan="3"></td><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><td class="summary-empty" colspan="2"></td></tr><tr><td class="left-label" colspan="3">JUMLAH PEKERJA</td><td id="sumS1">0</td><td id="sumS2">0</td><td id="sumS3">0</td><td class="summary-empty" colspan="2"></td></tr><tr><td class="summary-empty" colspan="3"></td><td class="total" colspan="3"><span id="sumTotal">0</span> Orang</td><td class="summary-empty" colspan="2"></td></tr></tfoot></table></div><div class="report-footer" id="reportFooter"><div class="signature-grid"><div><div class="signature-title editable-report" data-report-setting="signBip" contenteditable="true">B I P</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signGudang" contenteditable="true">Bagian Gudang</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signKasie" contenteditable="true">Kasie Muatan Breeder</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signPga" contenteditable="true">Bagian P&amp;GA</div><div class="signature-line"></div></div></div><div class="note-area"><div class="note-title">NOTE :</div><div class="editable-report" data-report-setting="note" contenteditable="true"></div><table class="worktime-table"><tr><th colspan="3" class="worktime-main">ABSENSI SIDIK JARI<br><span class="editable-report" data-report-setting="workTitle" contenteditable="true">JAM KERJA CEK IN dan CEK OUT</span></th></tr><tr><th>JADWAL</th><th colspan="2">JAM KERJA</th></tr><tr><th>KERJA</th><th>CEK IN</th><th>CEK OUT</th></tr><tr><td class="editable-report" data-report-setting="shiftPagiLabel" contenteditable="true">SHIFT 1</td><td class="editable-report" data-report-setting="shiftPagiIn" contenteditable="true">07:00</td><td class="editable-report" data-report-setting="shiftPagiOut" contenteditable="true">17:00</td></tr><tr><td class="editable-report" data-report-setting="shiftSiangLabel" contenteditable="true">SHIFT 2</td><td class="editable-report" data-report-setting="shiftSiangIn" contenteditable="true">17:00</td><td class="editable-report" data-report-setting="shiftSiangOut" contenteditable="true">23:00</td></tr><tr><td class="editable-report" data-report-setting="shiftMalamLabel" contenteditable="true">SHIFT 3</td><td class="editable-report" data-report-setting="shiftMalamIn" contenteditable="true">23:00</td><td class="editable-report" data-report-setting="shiftMalamOut" contenteditable="true">07:00</td></tr></table><div class="note-save-row no-print"><button type="button" class="btn primary" id="btnSaveReportFormat">💾 Simpan NOTE / Jam Kerja</button></div></div></div><div class="bottom-print-actions no-print"><button type="button" class="btn dark" id="btnBottomPrintAttendance">👁 Preview</button></div></div>
-      <div class="control-report no-print coordinator-only"><div class="control-info"><div class="control-icon">📲</div><div><h3>Share Laporan Absensi</h3><p>Bagikan gambar tabel via WhatsApp.</p></div></div><div class="control-actions"><button class="btn success full" id="btnShareWa">Lapor BIP via WA</button></div></div>
+      <div class="card print-sheet report-preview"><div class="card-head no-print"><h3>Tabel Hasil Input</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span><strong id="selectedCountBadge">0</strong> pekerja dipilih</span><button type="button" class="btn small" id="btnToggleReportPreview">Tampilkan</button></div></div><div id="reportPreviewBody" style="display:none;"><div class="print-title"><div class="main" id="reportMainTitle">ABSENSI KEGIATAN MUATAN BREEDER</div><div class="company" id="reportCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="reportDateText">HARI - TANGGAL</div><div class="coordinator" id="reportCoordinatorText"></div></div><div class="table-wrap"><table class="report-table" id="reportTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><th>CEK IN</th><th>CEK OUT</th></tr></thead><tbody id="reportBody"></tbody><tfoot class="report-summary"><tr><td class="summary-empty" colspan="3"></td><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><td class="summary-empty" colspan="2"></td></tr><tr><td class="left-label" colspan="3">JUMLAH PEKERJA</td><td id="sumS1">0</td><td id="sumS2">0</td><td id="sumS3">0</td><td class="summary-empty" colspan="2"></td></tr><tr><td class="summary-empty" colspan="3"></td><td class="total" colspan="3"><span id="sumTotal">0</span> Orang</td><td class="summary-empty" colspan="2"></td></tr></tfoot></table></div><div class="report-footer" id="reportFooter"><div class="signature-grid"><div><div class="signature-title editable-report" data-report-setting="signBip" contenteditable="true">B I P</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signGudang" contenteditable="true">Bagian Gudang</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signKasie" contenteditable="true">Kasie Muatan Breeder</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signPga" contenteditable="true">Bagian P&amp;GA</div><div class="signature-line"></div></div></div><div class="note-area"><div class="note-title">NOTE :</div><div class="editable-report" data-report-setting="note" contenteditable="true"></div><table class="worktime-table"><tr><th colspan="3" class="worktime-main">ABSENSI SIDIK JARI<br><span class="editable-report" data-report-setting="workTitle" contenteditable="true">JAM KERJA CEK IN dan CEK OUT</span></th></tr><tr><th>JADWAL</th><th colspan="2">JAM KERJA</th></tr><tr><th>KERJA</th><th>CEK IN</th><th>CEK OUT</th></tr><tr><td class="editable-report" data-report-setting="shiftPagiLabel" contenteditable="true">SHIFT 1</td><td class="editable-report" data-report-setting="shiftPagiIn" contenteditable="true">07:00</td><td class="editable-report" data-report-setting="shiftPagiOut" contenteditable="true">17:00</td></tr><tr><td class="editable-report" data-report-setting="shiftSiangLabel" contenteditable="true">SHIFT 2</td><td class="editable-report" data-report-setting="shiftSiangIn" contenteditable="true">17:00</td><td class="editable-report" data-report-setting="shiftSiangOut" contenteditable="true">23:00</td></tr><tr><td class="editable-report" data-report-setting="shiftMalamLabel" contenteditable="true">SHIFT 3</td><td class="editable-report" data-report-setting="shiftMalamIn" contenteditable="true">23:00</td><td class="editable-report" data-report-setting="shiftMalamOut" contenteditable="true">07:00</td></tr></table><div class="note-save-row no-print"><button type="button" class="btn primary" id="btnSaveReportFormat">💾 Simpan NOTE / Jam Kerja</button></div></div></div><div class="bottom-print-actions no-print"><button type="button" class="btn dark" id="btnBottomPrintAttendance">👁 Preview</button></div></div></div>
+      <div class="control-report no-print coordinator-only"><div class="control-info"><div class="control-icon">📄</div><div><h3>Download Laporan Absensi</h3></div></div><div class="control-actions"><button class="btn primary full" id="btnDownloadPdf">download PDF</button></div></div>
     </section>
   </section>
 
@@ -997,22 +1030,29 @@
             </div>
             <div class="admin-sub-frame">
               <div class="admin-sub-title"><div><h4>Menu Import Cek In/Out</h4></div><small>Frame 2</small></div>
-              <div class="grid-form">
-                <div class="field span-2"><label for="adminGlobalCheckDate">Tanggal Data Mesin / Jadwal</label><input id="adminGlobalCheckDate" type="date"></div>
-                <div class="field span-2"><label for="adminGlobalCheckFile">File Excel / CSV</label><input id="adminGlobalCheckFile" type="file" accept=".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv"></div>
-                <div class="field span-2"><label for="adminCheckSummaryUnitSelect">Bagian Ringkasan Cek In/Out</label><select id="adminCheckSummaryUnitSelect"></select></div>
+              <div class="grid-form admin-check-import-top-grid">
+                <div class="field"><label for="adminGlobalCheckDate">Tanggal Data Mesin / Jadwal</label><input id="adminGlobalCheckDate" type="date"></div>
+                <div class="field"><label for="adminGlobalCheckFile">File Excel / CSV</label><input id="adminGlobalCheckFile" type="file" accept=".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv"></div>
               </div>
               <div class="import-file-name" id="adminGlobalCheckFileName">Belum ada file dipilih.</div>
-              <div class="admin-actions-row three"><button class="btn secondary" id="btnAdminPreviewMachineImport">🔎 Preview Import Data Mesin</button><button class="btn warning" id="btnAdminImportGlobalCheckTimes">📥 Import Rekap Cek In/Out</button><button class="btn danger" id="btnAdminClearGlobalCheckTimes">🗑 Hapus Data Tanggal Ini</button></div>
-              <div class="admin-actions-row" style="grid-template-columns:1fr"><button class="btn primary" id="btnAdminPreviewAllSchedules">📋 Preview Jadwal Semua Kegiatan</button></div>
-              <div class="admin-actions-row" style="grid-template-columns:1fr"><button class="btn success" id="btnAdminImportMachinePreview">📥 Import Hasil Preview Mesin ke Cek In/Out</button></div>
-              <div class="admin-actions-row"><button class="btn primary" id="btnAdminCheckInOutSummary">📊 Cek Ringkasan Cek In/Out Berdasarkan Bagian</button><button class="btn secondary" id="btnAdminUseCheckSummary">↘️ Pakai Ringkasan Bagian ke Form Cek In/Out</button></div>
-              <div class="import-help" id="adminGlobalCheckInfo">Import Rekap Cek In/Out memakai file rekap berkolom <b>NIP</b>, <b>Cek In</b>, dan <b>Cek Out</b>. Untuk file mentah mesin berkolom <b>No.ID</b>, <b>Tgl/Waktu</b>, dan <b>Lokasi ID</b>, gunakan <b>Preview Import Data Mesin</b>, lalu klik <b>Import Hasil Preview Mesin ke Cek In/Out</b>. Jam disimpan format <b>HH:MM:SS</b>.</div>
-              <div class="machine-preview-box" id="adminCheckSummaryBox" style="display:none"></div>
-              <div class="machine-preview-box" id="adminMachinePreviewBox" style="display:none"></div>
+              <div class="admin-actions-row single"><button class="btn primary" id="btnAdminPreviewAllSchedules">📋 Preview Jadwal Semua Kegiatan</button></div>
               <div class="all-schedule-preview-box" id="adminAllSchedulePreviewBox" style="display:none"></div>
-              <div class="admin-sub-title" style="margin-top:14px"><div><h4>Riwayat Import Cek In/Out</h4></div><small>v70</small></div>
-              <div class="admin-actions-row"><button class="btn secondary" id="btnAdminRefreshCheckImportHistory">🔄 Refresh Riwayat</button><button class="btn secondary" type="button" disabled>Firestore</button></div>
+              <div class="admin-actions-row single"><button class="btn success" id="btnAdminImportMachinePreview">📥 Import Hasil Preview Mesin ke Cek In/Out</button></div>
+              <div class="grid-form admin-check-summary-grid">
+                <div class="field span-2"><label for="adminCheckSummaryUnitSelect">Bagian Ringkasan Cek In/Out</label><select id="adminCheckSummaryUnitSelect"></select></div>
+              </div>
+              <div class="admin-actions-row summary-actions"><button class="btn primary" id="btnAdminCheckInOutSummary">📊 Cek Ringkasan Cek In/Out Berdasarkan Bagian</button><button class="btn secondary" id="btnAdminUseCheckSummary">↘️ Pakai Ringkasan Bagian ke Form Cek In/Out</button></div>
+              <div class="machine-preview-box" id="adminCheckSummaryBox" style="display:none"></div>
+              <div class="admin-actions-row single"><button class="btn secondary" id="btnAdminPreviewMachineImport">🔎 Preview Import Data Mesin</button></div>
+              <div class="machine-preview-box" id="adminMachinePreviewBox" style="display:none"></div>
+              <div class="import-help" id="adminGlobalCheckInfo">Untuk file mentah mesin berkolom <b>No.ID</b>, <b>Tgl/Waktu</b>, dan <b>Lokasi ID</b>, gunakan urutan: <b>Preview Jadwal Semua Kegiatan</b>, <b>Cek Ringkasan Cek In/Out Berdasarkan Bagian</b>, <b>Preview Import Data Mesin</b>, lalu <b>Import Hasil Preview Mesin ke Cek In/Out</b>. Jam disimpan format <b>HH:MM:SS</b>.</div>
+              <div class="admin-sub-title" style="margin-top:14px"><div><h4>Hapus Data Cek In/Out Hasil Import</h4></div><small>Admin</small></div>
+              <div class="admin-danger-box">
+                <div class="import-help" style="margin-top:0;background:#fff7f5;border-color:#ffd0c8;color:#b42318">Fungsi ini menghapus data Cek In/Out hasil import pada tanggal yang dipilih di atas. Jadwal pekerja, master pekerja, dan absensi kegiatan tidak ikut dihapus.</div>
+                <div class="admin-actions-row single"><button class="btn danger" id="btnAdminClearGlobalCheckTimes">🗑 Hapus Data Cek In/Out Hasil Import</button></div>
+              </div>
+              <div class="admin-sub-title" style="margin-top:14px"><div><h4>Riwayat Import Cek In/Out</h4></div><small>v132</small></div>
+              <div class="admin-actions-row history-actions"><button class="btn secondary" id="btnAdminRefreshCheckImportHistory">🔄 Refresh Riwayat</button><button class="btn danger" id="btnAdminClearCheckImportHistory">🗑 Hapus Riwayat Import Cek In/Out</button></div>
               <div class="sync-pending-list" id="adminCheckImportHistory"><div class="empty-admin-list">Belum ada riwayat import Cek In/Out.</div></div>
             </div>
           </div>
@@ -1464,7 +1504,7 @@ function enforceRoleUi(){
   document.body.classList.toggle('role-readonly', role==='viewer');
   document.body.classList.toggle('role-payroll', role==='payroll');
   document.querySelectorAll('[data-role-write]').forEach(el=>{ el.style.display=hasPermission('inputAttendance') ? '' : 'none'; });
-  ['btnSaveSchedule','btnAddWorker','btnUpdateWorker','btnDeleteWorker','btnResetShift','btnShareWa'].forEach(id=>{ const el=$(id); if(!el) return; if(id==='btnShareWa') el.disabled=!hasPermission('shareReports'); else el.disabled=!hasPermission(id==='btnSaveSchedule'?'saveAttendance':'manageWorkers'); });
+  ['btnSaveSchedule','btnAddWorker','btnUpdateWorker','btnDeleteWorker','btnResetShift','btnDownloadPdf'].forEach(id=>{ const el=$(id); if(!el) return; if(id==='btnDownloadPdf') el.disabled=!hasPermission('shareReports'); else el.disabled=!hasPermission(id==='btnSaveSchedule'?'saveAttendance':'manageWorkers'); });
   document.querySelectorAll('input[data-shift],[data-commercial-shift],[data-commercial-dock-plan],[data-commercial-regu-select],[data-commercial-activity-shift],[data-commercial-coordinator-shift],[data-overzak-shift]').forEach(el=>{ const allowed=hasPermission('inputAttendance'); el.disabled=!allowed || el.dataset.bahanBakuConflict==='1' || el.dataset.commercialPlanDisabled==='1'; });
   document.querySelectorAll('[data-report-setting]').forEach(el=>{ if(el.hasAttribute('contenteditable')) el.setAttribute('contenteditable', hasPermission('manageSettings') ? 'true' : 'false'); });
   updateScheduleSafetyUI();
@@ -1713,6 +1753,7 @@ function updateAuthUI(){
     if($('activeUserBadge')) $('activeUserBadge').textContent=isAdmin()?`👤 Admin • Global`:`👤 ${roleLabel(currentRole())} • ${activeUnitName()}`;
     enforceRoleUi();
   }
+  syncReportPreviewDefaultForRole();
   updateFirebaseStatusUI();
 }
 async function updateFirebaseStatusUI(){ const bridge=await waitFirebase(); if(bridge && bridge.enabled){ setFirebaseStatus('online','☁️ Firebase Online'); } else if(bridge && bridge.error){ setFirebaseStatus('error','⚠️ Firebase Error'); } else { setFirebaseStatus('local','💾 Data Lokal'); } updateSyncBadges(); }
@@ -3184,6 +3225,45 @@ function rowsFromAttendancePayload(payload){
   return Array.from(map.values());
 }
 
+
+function normalizeCoordinatorDisplayName(value){
+  return String(value || '').replace(/\s+/g,' ').trim();
+}
+function coordinatorNameFromPayload(payload){
+  if(!payload || !payload.inputBy) return '';
+  return normalizeCoordinatorDisplayName(payload.inputBy.name || payload.inputBy.username || payload.inputBy.nip || '');
+}
+function combinedCoordinatorDisplay(payload){
+  if(!payload || !payload.combinedAttendance) return '';
+  const src=payload.coordinatorNames || {};
+  const items=[
+    ['Oper2 BB', src.oper],
+    ['Bongkaran Pagi', src.pagi],
+    ['Bongkaran Malam', src.malam],
+    ['Overzak', src.overzak]
+  ].map(pair=>{
+    const name=normalizeCoordinatorDisplayName(pair[1]);
+    return name ? `${pair[0]}: ${name}` : '';
+  }).filter(Boolean);
+  if(items.length) return items.join(' | ');
+  return coordinatorNameFromPayload(payload);
+}
+function currentReportCoordinatorDisplay(){
+  if(isAdmin()){
+    if(adminReportData && adminReportData.combinedAttendance) return combinedCoordinatorDisplay(adminReportData);
+    return coordinatorNameFromPayload(adminReportData);
+  }
+  return normalizeCoordinatorDisplayName(currentUser && (currentUser.name || currentUser.username || currentUser.nip));
+}
+function reportCoordinatorLineText(){
+  const name=currentReportCoordinatorDisplay();
+  return name ? `Koordinator: ${name}` : '';
+}
+function updateReportCoordinatorLine(){
+  const el=$('reportCoordinatorText');
+  if(el) el.textContent=reportCoordinatorLineText();
+}
+
 function getReportUnitKeyForSettings(){ return isAdmin() ? (($('adminReportUnitSelect') && $('adminReportUnitSelect').value) || adminManagedUnitKey) : activeUnitKey(); }
 function defaultReportSettings(unitName){ return { signBip:'B I P', signGudang:'Bagian Gudang', signKasie:`Kasie ${unitName || 'Muatan Breeder'}`, signPga:'Bagian P&GA', note:'', workTitle:'JAM KERJA CEK IN dan CEK OUT', shiftPagiLabel:'SHIFT 1', shiftPagiIn:'07:00', shiftPagiOut:'17:00', shiftSiangLabel:'SHIFT 2', shiftSiangIn:'17:00', shiftSiangOut:'23:00', shiftMalamLabel:'SHIFT 3', shiftMalamIn:'23:00', shiftMalamOut:'07:00' }; }
 function reportSettingsStorageKey(unitKeyValue){ return `${REPORT_SETTINGS_KEY}_${unitKeyValue || 'global'}`; }
@@ -3281,6 +3361,7 @@ function renderReportTable(unitName, dateValue, rows, emptyMsg){
   if($('reportMainTitle')) $('reportMainTitle').textContent =`ABSENSI KEGIATAN ${String(unitName||'').replace(/PAGI/gi,'').replace(/MALAM/gi,'').replace(/\//g,'').replace(/\s+/g,' ').trim().toUpperCase()}`;
   if($('reportCompanyText')) $('reportCompanyText').textContent = 'PT. BUDI INTI PERKASA';
   if($('reportDateText')) $('reportDateText').textContent = formatLongDate(dateValue);
+  updateReportCoordinatorLine();
   renderMobileReportGeneric(rows, emptyMsg);
   renderReportSettings(getReportUnitKeyForSettings(), unitName);
   const table=$('reportTable');
@@ -3359,7 +3440,7 @@ function createWaProgressOverlay(){
     overlay=document.createElement('div');
     overlay.id='waShareProgressOverlay';
     overlay.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(15,23,42,.72);display:flex;align-items:center;justify-content:center;padding:22px;backdrop-filter:blur(4px);';
-    overlay.innerHTML='<div style="width:min(92vw,430px);background:#ffffff;border-radius:26px;padding:24px 20px;text-align:center;box-shadow:0 26px 70px rgba(0,0,0,.32);font-family:Arial, sans-serif;"><div id="waProgressNumber" style="width:92px;height:92px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;background:#2558d9;color:#fff;font-size:42px;font-weight:950;">1</div><div id="waProgressTitle" style="font-size:18px;font-weight:950;color:#111827;margin-bottom:8px;">Tahap 1 / 7</div><div id="waProgressText" style="font-size:13px;font-weight:800;color:#475569;line-height:1.45;">Mohon tunggu, gambar sedang diproses.</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12px;font-weight:900;color:#2558d9;"><span id="waProgressPercent">5%</span><span>WA Ultra HD Max</span></div><div style="height:12px;border-radius:999px;background:#e5e7eb;overflow:hidden;margin-top:10px;"><div id="waProgressBar" style="height:100%;width:5%;background:#2558d9;border-radius:999px;transition:width .18s ease;"></div></div></div>';
+    overlay.innerHTML='<div style="width:min(92vw,430px);background:#ffffff;border-radius:26px;padding:24px 20px;text-align:center;box-shadow:0 26px 70px rgba(0,0,0,.32);font-family:Arial, sans-serif;"><div id="waProgressNumber" style="width:92px;height:92px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;background:#2558d9;color:#fff;font-size:42px;font-weight:950;">1</div><div id="waProgressTitle" style="font-size:18px;font-weight:950;color:#111827;margin-bottom:8px;">Tahap 1 / 7</div><div id="waProgressText" style="font-size:13px;font-weight:800;color:#475569;line-height:1.45;">Mohon tunggu, file sedang diproses.</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12px;font-weight:900;color:#2558d9;"><span id="waProgressPercent">5%</span><span>Download PDF</span></div><div style="height:12px;border-radius:999px;background:#e5e7eb;overflow:hidden;margin-top:10px;"><div id="waProgressBar" style="height:100%;width:5%;background:#2558d9;border-radius:999px;transition:width .18s ease;"></div></div></div>';
     document.body.appendChild(overlay);
   }
   overlay.style.display='flex';
@@ -3376,7 +3457,7 @@ function setWaProgress(step, message, percent, totalSteps){
   const pct=Math.max(5, Math.min(100, Number(percent)||5));
   if(num) num.textContent=String(safeStep);
   if(title) title.textContent=`Tahap ${safeStep} / ${total}`;
-  if(text) text.textContent=message || 'Mohon tunggu, gambar sedang diproses.';
+  if(text) text.textContent=message || 'Mohon tunggu, file sedang diproses.';
   if(bar) bar.style.width=pct+'%';
   if(percentText) percentText.textContent=`${Math.round(pct)}%`;
 }
@@ -3470,7 +3551,7 @@ async function reportImageBlob(onProgress){
 
   const marginX=58;
   const topPad=40;
-  const headerBlockH=136;
+  const headerBlockH=166;
   const tableHeadH=Math.max(66, layout.rowH);
   const summaryTopGap=30;
   const summaryBlockH=100;
@@ -3520,6 +3601,8 @@ async function reportImageBlob(onProgress){
     ctx.font=`800 ${layout.dateFont}px Arial`;
     ctx.fillStyle='#334155';
     ctx.fillText(formatLongDate(state.reportDate), cssWidth/2, topPad+108);
+    const coordinatorLine=reportCoordinatorLineText();
+    if(coordinatorLine){ ctx.font=`900 ${Math.max(22, layout.dateFont-2)}px Arial`; ctx.fillText(fitCanvasText(ctx, coordinatorLine.toUpperCase(), cssWidth-120), cssWidth/2, topPad+140); }
 
     ctx.fillStyle='#e8f0fe';
     ctx.fillRect(left, tableTop, tableWidth, tableHeadH);
@@ -3657,12 +3740,259 @@ async function reportImageBlob(onProgress){
   progress(6,'PNG Ultra HD berhasil dibuat.',94,totalSteps); await waitMs(140);
   return blob;
 }
+
+
+let reportPreviewVisible=false;
+let reportPreviewUserToggled=false;
+function syncReportPreviewDefaultForRole(){
+  if(!currentUser){ setReportPreviewVisible(false); return; }
+  if(reportPreviewUserToggled) return;
+  setReportPreviewVisible(isAdmin());
+}
+function setReportPreviewVisible(visible){
+  reportPreviewVisible=!!visible;
+  const body=$('reportPreviewBody');
+  const btn=$('btnToggleReportPreview');
+  if(body) body.style.display=reportPreviewVisible ? '' : 'none';
+  if(btn) btn.textContent=reportPreviewVisible ? 'Sembunyikan' : 'Tampilkan';
+}
+function toggleReportPreview(){ reportPreviewUserToggled=true; setReportPreviewVisible(!reportPreviewVisible); }
+
+function pdfSafeText(value){
+  return String(value===undefined || value===null ? '' : value)
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^\x20-\x7E]/g,' ')
+    .replace(/\s+/g,' ').trim();
+}
+function pdfEscape(value){
+  return pdfSafeText(value).replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)');
+}
+function pdfApproxWidth(text, fontSize){
+  return pdfSafeText(text).length * fontSize * 0.52;
+}
+function pdfFitText(text, maxWidth, fontSize){
+  let value=pdfSafeText(text);
+  if(!value) return '';
+  if(pdfApproxWidth(value,fontSize)<=maxWidth) return value;
+  while(value.length>0 && pdfApproxWidth(value+'...',fontSize)>maxWidth){ value=value.slice(0,-1); }
+  return (value||'').trim()+'...';
+}
+function pdfExportLayoutMeta(rowCount, columnCount){
+  const count=Math.max(0, Number(rowCount)||0);
+  let rowH=52, bodyFont=17, nameFont=21, headFont=17, titleFont=34, subTitleFont=23, dateFont=20, summaryFont=18, totalFont=22, checkFont=18;
+  if(count>60){ rowH=48; bodyFont=16; nameFont=19; headFont=16; titleFont=32; subTitleFont=22; dateFont=19; summaryFont=17; totalFont=21; checkFont=17; }
+  if(count>90){ rowH=44; bodyFont=14.5; nameFont=17.5; headFont=15; titleFont=30; subTitleFont=20; dateFont=18; summaryFont=16; totalFont=20; checkFont=16; }
+  if(count>120){ rowH=42; bodyFont=13.5; nameFont=16.5; headFont=14; titleFont=28; subTitleFont=19; dateFont=17; summaryFont=15; totalFont=18; checkFont=15; }
+  if(columnCount>=7){ bodyFont=Math.max(13, bodyFont-0.25); nameFont=Math.max(bodyFont+2.5, nameFont-0.25); }
+  return {rowH, bodyFont, nameFont, headFont, titleFont, subTitleFont, dateFont, summaryFont, totalFont, checkFont};
+}
+function makePdfBlob(pageW, pageH, content){
+  const enc=new TextEncoder();
+  const safePageW=Math.max(320, Number(pageW)||842);
+  const safePageH=Math.max(320, Number(pageH)||595);
+  const streamText=String(content||'');
+  const streamLength=enc.encode(streamText).length;
+  const objects=[
+    '<< /Type /Catalog /Pages 2 0 R >>',
+    '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
+    `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${safePageW.toFixed(2)} ${safePageH.toFixed(2)}] /Resources << /ProcSet [/PDF /Text] /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>`,
+    '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>',
+    '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>',
+    `<< /Length ${streamLength} >>\nstream\n${streamText}\nendstream`
+  ];
+  let pdf='%PDF-1.4\n%\xE2\xE3\xCF\xD3\n';
+  const offsets=[0];
+  objects.forEach((obj,i)=>{
+    offsets.push(enc.encode(pdf).length);
+    pdf += `${i+1} 0 obj\n${obj}\nendobj\n`;
+  });
+  const xrefPos=enc.encode(pdf).length;
+  pdf += `xref\n0 ${objects.length+1}\n0000000000 65535 f \n`;
+  for(let i=1;i<offsets.length;i++){ pdf += String(offsets[i]).padStart(10,'0')+' 00000 n \n'; }
+  pdf += `trailer\n<< /Size ${objects.length+1} /Root 1 0 R >>\nstartxref\n${xrefPos}\n%%EOF`;
+  return new Blob([pdf], {type:'application/pdf'});
+}
+async function reportPdfBlob(onProgress){
+  const progress=typeof onProgress==='function' ? onProgress : ()=>{};
+  const totalSteps=6;
+  const rows=selectedWorkers();
+  const cfg=waExportReportConfig(rows);
+  const columns=(cfg.columns || []).map(col=>Object.assign({}, col));
+  const unitLabel=cfg.unitLabel;
+  const layout=pdfExportLayoutMeta(rows.length, columns.length);
+  progress(1,'Menyiapkan data PDF laporan...',8,totalSteps); await nextAnimationFrame();
+
+  const marginX=44;
+  const topPad=44;
+  const headerBlockH=150;
+  const tableHeadH=Math.max(56, layout.rowH);
+  const summaryTopGap=30;
+  const summaryBlockH=84;
+  const bottomPad=42;
+  const tableWidth=columns.reduce((sum,col)=>sum+Number(col.width||0),0);
+  const pageW=tableWidth + marginX*2;
+  const pageH=topPad + headerBlockH + tableHeadH + Math.max(1, rows.length)*layout.rowH + summaryTopGap + summaryBlockH + bottomPad;
+  const cmds=[];
+  const yPdf=(yTop,h=0)=>pageH-yTop-h;
+  const num=n=>Number(n||0).toFixed(2);
+  const setFill=(r,g,b)=>cmds.push(`${r} ${g} ${b} rg`);
+  const setStroke=(r,g,b)=>cmds.push(`${r} ${g} ${b} RG`);
+  const rect=(x,y,w,h,mode)=>cmds.push(`${num(x)} ${num(yPdf(y,h))} ${num(w)} ${num(h)} re ${mode}`);
+  const line=(x1,y1,x2,y2)=>cmds.push(`${num(x1)} ${num(yPdf(y1))} m ${num(x2)} ${num(yPdf(y2))} l S`);
+  const text=(x,y,size,value,font='F1',align='left',maxW=0)=>{
+    let clean=pdfSafeText(value);
+    if(maxW) clean=pdfFitText(clean,maxW,size);
+    let tx=x;
+    if(align==='center') tx=x-(pdfApproxWidth(clean,size)/2);
+    if(align==='right') tx=x-pdfApproxWidth(clean,size);
+    cmds.push(`BT /${font} ${num(size)} Tf ${num(tx)} ${num(yPdf(y))} Td (${pdfEscape(clean)}) Tj ET`);
+  };
+
+  progress(2,'Menyusun halaman PDF landscape super lebar...',18,totalSteps); await nextAnimationFrame();
+  setFill(1,1,1); rect(0,0,pageW,pageH,'f');
+  const titleText=`ABSENSI KEGIATAN ${pdfSafeText(String(unitLabel||'').replace(/PAGI/gi,'').replace(/MALAM/gi,'').replace(/\//g,'').replace(/\s+/g,' ').trim().toUpperCase())}`;
+  setFill(0.05,0.09,0.16);
+  text(pageW/2, topPad+30, layout.titleFont, titleText, 'F2', 'center', pageW-80);
+  text(pageW/2, topPad+68, layout.subTitleFont, 'PT. BUDI INTI PERKASA', 'F2', 'center');
+  setFill(0.2,0.25,0.33);
+  text(pageW/2, topPad+100, layout.dateFont, formatLongDate(state.reportDate), 'F2', 'center');
+  const coordinatorLine=reportCoordinatorLineText();
+  if(coordinatorLine) text(pageW/2, topPad+128, Math.max(18, layout.dateFont-3), coordinatorLine.toUpperCase(), 'F2', 'center', pageW-100);
+
+  const left=marginX;
+  const tableTop=topPad+headerBlockH;
+  let cursor=left;
+  const colLefts=[];
+  columns.forEach(col=>{ colLefts.push(cursor); cursor += Number(col.width||0); });
+  const tableRight=left+tableWidth;
+
+  progress(3,'Membuat header tabel PDF...',32,totalSteps); await nextAnimationFrame();
+  setFill(0.91,0.95,1); rect(left,tableTop,tableWidth,tableHeadH,'f');
+  setStroke(0.05,0.09,0.16); cmds.push('1.2 w');
+  rect(left,tableTop,tableWidth,tableHeadH,'S');
+  columns.forEach((col,idx)=>{
+    const x=colLefts[idx];
+    if(idx>0) line(x,tableTop,x,tableTop+tableHeadH);
+    setFill(0.05,0.09,0.16);
+    const label=pdfFitText(col.label, Number(col.width||0)-16, layout.headFont);
+    text(col.align==='left'?x+12:x+Number(col.width||0)/2, tableTop+tableHeadH/2+layout.headFont/3, layout.headFont, label, 'F2', col.align==='left'?'left':'center');
+  });
+  line(tableRight,tableTop,tableRight,tableTop+tableHeadH);
+
+  const dataRows=rows.length ? rows : [{}];
+  const updateEvery=Math.max(1, Math.ceil(Math.max(1, rows.length)/10));
+  progress(4, rows.length ? `Menggambar tabel PDF 0 / ${rows.length}...` : 'Menyiapkan tabel PDF...',45,totalSteps); await nextAnimationFrame();
+  for(let idx=0; idx<dataRows.length; idx++){
+    const row=dataRows[idx];
+    const y=tableTop+tableHeadH+idx*layout.rowH;
+    setFill(idx%2===0 ? 1 : 0.975, idx%2===0 ? 1 : 0.985, 1);
+    rect(left,y,tableWidth,layout.rowH,'f');
+    setStroke(0.12,0.16,0.23); cmds.push('0.8 w');
+    rect(left,y,tableWidth,layout.rowH,'S');
+    columns.forEach((col,colIdx)=>{
+      const x=colLefts[colIdx];
+      const w=Number(col.width||0);
+      if(colIdx>0) line(x,y,x,y+layout.rowH);
+      let value=rows.length ? waExportFieldValue(row,col.key,idx) : (col.key==='name' ? 'Belum ada pekerja yang dipilih.' : '');
+      if(col.type==='check') value = value ? 'X' : '';
+      const isName=col.emphasis==='name' || col.key==='name';
+      const size = col.type==='check' ? layout.checkFont : (isName ? layout.nameFont : layout.bodyFont);
+      const font = isName || col.type==='check' ? 'F2' : 'F1';
+      setFill(0.05,0.09,0.16);
+      const tx=col.align==='left' ? x+12 : x+w/2;
+      text(tx, y+layout.rowH/2+size/3, size, value, font, col.align==='left'?'left':'center', w-20);
+    });
+    line(tableRight,y,tableRight,y+layout.rowH);
+    if(rows.length && ((idx+1)%updateEvery===0 || idx===rows.length-1)){
+      const pct=45+Math.round(((idx+1)/Math.max(1, rows.length))*32);
+      progress(4, `Menggambar tabel PDF ${idx+1} / ${rows.length}...`, pct, totalSteps);
+      await nextAnimationFrame();
+    }
+  }
+
+  progress(5,'Menyelesaikan ringkasan PDF...',84,totalSteps); await nextAnimationFrame();
+  const summaryTop=tableTop+tableHeadH+dataRows.length*layout.rowH+summaryTopGap;
+  const s1=rows.filter(w=>w && w.s1).length;
+  const s2=rows.filter(w=>w && w.s2).length;
+  const s3=rows.filter(w=>w && w.s3).length;
+  const total=rows.length;
+  const gap=18;
+  const boxW=(tableWidth-gap*3)/4;
+  const items=[`SHIFT 1 : ${s1} pekerja`,`SHIFT 2 : ${s2} pekerja`,`SHIFT 3 : ${s3} pekerja`,`TOTAL : ${total} Orang`];
+  items.forEach((label,idx)=>{
+    const x=left+idx*(boxW+gap);
+    if(idx===3) setFill(0.86,0.92,1); else setFill(0.97,0.98,0.99);
+    rect(x,summaryTop,boxW,summaryBlockH,'f');
+    setStroke(idx===3?0.15:0.8, idx===3?0.35:0.84, idx===3?0.85:0.9);
+    rect(x,summaryTop,boxW,summaryBlockH,'S');
+    setFill(idx===3?0.12:0.05, idx===3?0.30:0.09, idx===3?0.75:0.16);
+    text(x+boxW/2, summaryTop+summaryBlockH/2+(idx===3?layout.totalFont:layout.summaryFont)/3, idx===3?layout.totalFont:layout.summaryFont, label, 'F2', 'center', boxW-20);
+  });
+
+  progress(6,'Membuat file PDF dokumen...',94,totalSteps); await nextAnimationFrame();
+  const blob=makePdfBlob(pageW,pageH,cmds.join('\n'));
+  await waitMs(120);
+  return blob;
+}
+function downloadBackupFile(blob, filename){
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),2500);
+}
+function reportDownloadDateStamp(){
+  const dateValue=state.reportDate || todayISO();
+  const date=new Date(dateValue+'T00:00:00');
+  if(isNaN(date.getTime())) return String(dateValue || 'tanggal').replace(/-/g,'.');
+  const dd=String(date.getDate()).padStart(2,'0');
+  const mm=String(date.getMonth()+1).padStart(2,'0');
+  const yyyy=date.getFullYear();
+  return `${dd}.${mm}.${yyyy}`;
+}
+function safeDownloadPart(value){
+  const text=String(value || '').replace(/\s+/g,' ').trim() || 'Laporan';
+  return text.replace(/[\\/:*?"<>|]+/g,'').replace(/[^\w\-.\s()]+/g,'').replace(/\s+/g,'_').replace(/_+/g,'_').replace(/^_+|_+$/g,'') || 'Laporan';
+}
+function reportPdfFilename(){
+  const unitName=(!isAdmin() && isOverzakKey(activeUnitKey()) ? BAHAN_BAKU_GABUNGAN_NAME : activeUnitName());
+  const kegiatan=safeDownloadPart(unitName || 'Absensi_BIP');
+  return `${kegiatan}_${reportDownloadDateStamp()}.pdf`;
+}
+async function downloadReportPdf(){
+  if(!requirePermission('shareReports','Akses ditolak. Role ini tidak boleh download laporan PDF.')) return;
+  const rows=selectedWorkers();
+  if(rows.length===0){ alert('Download PDF belum bisa dibuat. Pilih minimal 1 pekerja terlebih dahulu.'); return; }
+  const btn=$('btnDownloadPdf');
+  const originalText=btn ? btn.textContent : '';
+  createWaProgressOverlay();
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Membuat PDF...'; }
+    const blob=await reportPdfBlob((step,msg,pct,total)=>{ setWaProgress(step,msg,pct,total); if(btn) btn.textContent=`PDF ${Math.min(total||6, step)}...`; });
+    if(!blob){ alert('PDF laporan gagal dibuat. Silakan coba lagi.'); return; }
+    const filename=reportPdfFilename();
+    downloadBackupFile(blob, filename);
+    setWaProgress(6,`PDF berhasil diunduh: ${filename}`,100,6);
+    await waitMs(350);
+  }catch(err){
+    console.error(err);
+    alert('Download PDF gagal diproses. Coba ulangi sekali lagi.');
+  }finally{
+    hideWaProgressOverlay();
+    if(btn){ btn.disabled=false; btn.textContent=originalText || 'download PDF'; }
+  }
+}
+async function shareWhatsappPdf(){ return downloadReportPdf(); }
+
 function shareTextWhatsapp(){ if(selectedWorkers().length===0){ alert('Share belum bisa dikirim. Pilih minimal 1 pekerja terlebih dahulu.'); return; } window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank'); }
 function backupPathInfo(){ const dateValue=state.reportDate || todayISO(); const date=new Date(dateValue+'T00:00:00'); const dd=String(date.getDate()).padStart(2,'0'); const mm=String(date.getMonth()+1).padStart(2,'0'); const yyyy=date.getFullYear(); const monthFolder=`${mm}-${yyyy}`; const filename=`${dd}-${mm}-${yyyy}.png`; return {mainFolder:'Absensi Mt Breeder', monthFolder, filename, downloadPath:`Absensi Mt Breeder/${monthFolder}/${filename}`}; }
 function downloadBackupImage(blob, filename){ const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),2500); }
 async function saveBackupImage(blob){ const info=backupPathInfo(); let savedWithFolder=false; if(window.showDirectoryPicker){ try{ const rootHandle=await window.showDirectoryPicker({id:'absensi-mt-breeder-backup', mode:'readwrite'}); const mainHandle=await rootHandle.getDirectoryHandle(info.mainFolder,{create:true}); const monthHandle=await mainHandle.getDirectoryHandle(info.monthFolder,{create:true}); const fileHandle=await monthHandle.getFileHandle(info.filename,{create:true}); const writable=await fileHandle.createWritable(); await writable.write(blob); await writable.close(); savedWithFolder=true; }catch(err){ console.warn('Simpan ke folder khusus tidak didukung atau dibatalkan, lanjut download biasa.', err); } } if(!savedWithFolder){ downloadBackupImage(blob, info.downloadPath); } return info; }
 function openWhatsappWithText(text){ window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank'); }
-async function shareWhatsapp(){ if(!requirePermission('shareReports','Akses ditolak. Role ini tidak boleh share laporan via WhatsApp.')) return; const rows=selectedWorkers(); if(rows.length===0){ alert('Lapor BIP belum bisa dikirim. Pilih minimal 1 pekerja terlebih dahulu.'); return; } const btn=$('btnShareWa'); const originalText=btn ? btn.textContent : ''; createWaProgressOverlay(); try{ if(btn){ btn.disabled=true; btn.textContent='Membuat WA Ultra HD Max...'; } const blob=await reportImageBlob((step,msg,pct,total)=>{ setWaProgress(step,msg,pct,total); if(btn) btn.textContent=`Tahap ${Math.min(total||6, step)}...`; }); if(!blob){ alert('Gambar laporan gagal dibuat. Silakan coba lagi.'); return; } const filename=`laporan-${new Date().getTime()}.png`; const file=new File([blob],filename,{type:'image/png'}); await waitMs(250); setWaProgress(7,'Menyiapkan link share ke WhatsApp...',97,7); if(btn) btn.textContent='Membuka WhatsApp...'; if(navigator.canShare && navigator.canShare({files:[file]}) && navigator.share){ try{ await navigator.share({title:`Absensi ${(!isAdmin() && isOverzakKey(activeUnitKey()) ? BAHAN_BAKU_GABUNGAN_NAME : activeUnitName())}`,text:`Laporan absensi ${formatLongDate(state.reportDate)}`,files:[file]}); setWaProgress(7,'Share WhatsApp berhasil dibuka.',100,7); await waitMs(220); return; }catch(err){ if(err && err.name==='AbortError') return; console.warn('Share gambar gagal.', err); } } await saveBackupImage(blob); openWhatsappWithText(`Laporan absensi ${(!isAdmin() && isOverzakKey(activeUnitKey()) ? BAHAN_BAKU_GABUNGAN_NAME : activeUnitName())} tanggal ${formatLongDate(state.reportDate)} sudah dibuat. Silakan lampirkan gambar PNG yang baru diunduh jika WhatsApp belum menerima file otomatis.`); setWaProgress(7,'WhatsApp dibuka. Jika file belum ikut terlampir otomatis, gunakan gambar PNG yang baru diunduh.',100,7); await waitMs(260); }catch(err){ console.error(err); alert('Lapor BIP gagal diproses. Coba ulangi sekali lagi.'); }finally{ hideWaProgressOverlay(); if(btn){ btn.disabled=false; btn.textContent=originalText || 'Lapor BIP via WA'; } } }
+async function shareWhatsapp(){ if(!requirePermission('shareReports','Akses ditolak. Role ini tidak boleh share laporan via WhatsApp.')) return; const rows=selectedWorkers(); if(rows.length===0){ alert('Lapor BIP belum bisa dikirim. Pilih minimal 1 pekerja terlebih dahulu.'); return; } const btn=$('btnShareWa'); const originalText=btn ? btn.textContent : ''; createWaProgressOverlay(); try{ if(btn){ btn.disabled=true; btn.textContent='Membuat Download PDF...'; } const blob=await reportImageBlob((step,msg,pct,total)=>{ setWaProgress(step,msg,pct,total); if(btn) btn.textContent=`Tahap ${Math.min(total||6, step)}...`; }); if(!blob){ alert('Gambar laporan gagal dibuat. Silakan coba lagi.'); return; } const filename=`laporan-${new Date().getTime()}.png`; const file=new File([blob],filename,{type:'image/png'}); await waitMs(250); setWaProgress(7,'Menyiapkan link share ke WhatsApp...',97,7); if(btn) btn.textContent='Membuka WhatsApp...'; if(navigator.canShare && navigator.canShare({files:[file]}) && navigator.share){ try{ await navigator.share({title:`Absensi ${(!isAdmin() && isOverzakKey(activeUnitKey()) ? BAHAN_BAKU_GABUNGAN_NAME : activeUnitName())}`,text:`Laporan absensi ${formatLongDate(state.reportDate)}`,files:[file]}); setWaProgress(7,'Share WhatsApp berhasil dibuka.',100,7); await waitMs(220); return; }catch(err){ if(err && err.name==='AbortError') return; console.warn('Share gambar gagal.', err); } } await saveBackupImage(blob); openWhatsappWithText(`Laporan absensi ${(!isAdmin() && isOverzakKey(activeUnitKey()) ? BAHAN_BAKU_GABUNGAN_NAME : activeUnitName())} tanggal ${formatLongDate(state.reportDate)} sudah dibuat. Silakan lampirkan gambar PNG yang baru diunduh jika WhatsApp belum menerima file otomatis.`); setWaProgress(7,'WhatsApp dibuka. Jika file belum ikut terlampir otomatis, gunakan gambar PNG yang baru diunduh.',100,7); await waitMs(260); }catch(err){ console.error(err); alert('Lapor BIP gagal diproses. Coba ulangi sekali lagi.'); }finally{ hideWaProgressOverlay(); if(btn){ btn.disabled=false; btn.textContent=originalText || 'Lapor BIP via WA'; } } }
 
 let coordinatorCombinedReportToken=0;
 function liveOverzakAttendancePayload(dateValue){
@@ -4052,6 +4382,12 @@ function buildBahanBakuCombinedPayload(pagiPayload, malamPayload, dateValue, ove
     shift2:rows.filter(r=>r.s2).map(r=>({nip:r.nip,name:r.name,kegiatan:bahanBakuKegiatanLabel(r),checkIn:r.checkIn||'',checkOut:r.checkOut||'',sourceUnitKey:r.sourceUnitKey||'',sourceUnitName:r.sourceUnitName||''})),
     shift3:rows.filter(r=>r.s3).map(r=>({nip:r.nip,name:r.name,kegiatan:bahanBakuKegiatanLabel(r),checkIn:r.checkIn||'',checkOut:r.checkOut||'',sourceUnitKey:r.sourceUnitKey||'',sourceUnitName:r.sourceUnitName||''})),
     sources:{ oper:Boolean(operPayload), pagi:Boolean(pagiPayload), malam:Boolean(malamPayload), overzak:Boolean(overzakPayload) || overzakFromPagi.length>0 },
+    coordinatorNames:{
+      oper: coordinatorNameFromPayload(operPayload),
+      pagi: coordinatorNameFromPayload(pagiPayload),
+      malam: coordinatorNameFromPayload(malamPayload),
+      overzak: coordinatorNameFromPayload(overzakPayload) || coordinatorNameFromPayload(pagiPayload)
+    },
     savedFrom:'combined_admin_view'
   };
 }
@@ -4195,6 +4531,7 @@ function printAdminAttendance(){
     unitName: unitNameForPrint || 'Muatan Breeder',
     reportDate: (adminReportData && adminReportData.reportDate) || (($('adminReportDate') && $('adminReportDate').value) || todayISO()),
     dateText: $('reportDateText') ? $('reportDateText').textContent : '',
+    coordinatorLine: $('reportCoordinatorText') ? $('reportCoordinatorText').textContent : reportCoordinatorLineText(),
     title: $('reportMainTitle') ? $('reportMainTitle').textContent : 'ABSENSI KEGIATAN MUATAN BREEDER',
     company: $('reportCompanyText') ? $('reportCompanyText').textContent : 'PT. BUDI INTI PERKASA',
     showDuration: isDurationReportEnabled(),
@@ -4222,7 +4559,7 @@ function formatImportedTime(value){ if(value===null || value===undefined) return
 function normalizeImportDate(value, fallbackDate){ const fallback=fallbackDate || todayISO(); if(value===null || value===undefined || value==='') return fallback; if(value instanceof Date && !isNaN(value)) return value.toISOString().slice(0,10); if(typeof value==='number' && Number.isFinite(value) && value>20000 && value<80000){ const base=new Date(Date.UTC(1899,11,30)); base.setUTCDate(base.getUTCDate()+Math.floor(value)); return base.toISOString().slice(0,10); } const raw=String(value).trim(); if(!raw) return fallback; let m=raw.match(/^(\d{4})[-/](\d{1,2})[-/](\d{1,2})/); if(m) return `${m[1]}-${twoDigits(m[2])}-${twoDigits(m[3])}`; m=raw.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{4})/); if(m) return `${m[3]}-${twoDigits(m[2])}-${twoDigits(m[1])}`; const d=new Date(raw); if(!isNaN(d)) return d.toISOString().slice(0,10); return fallback; }
 function checkMapFromImportRows(rows, fallbackDate){ const byDate={}; const skipped=[]; const duplicates=[]; let imported=0; (rows||[]).forEach((row,idx)=>{ const nip=String(findCell(row,['NIP','No Induk','Nomor Induk','ID','PIN','Kode'])||'').trim(); const checkIn=formatImportedTime(findCell(row,['Cek In','Check In','Jam Masuk','Masuk','IN','Clock In'])); const checkOut=formatImportedTime(findCell(row,['Cek Out','Check Out','Jam Keluar','Keluar','OUT','Clock Out'])); const dateValue=normalizeImportDate(findCell(row,['Tanggal','Tgl','Date','Tanggal Absensi','Hari Tanggal']), fallbackDate); if(!nip || (!checkIn && !checkOut)){ skipped.push(idx+2); return; } if(!byDate[dateValue]) byDate[dateValue]={}; if(byDate[dateValue][nip]) duplicates.push({row:idx+2,date:dateValue,nip}); byDate[dateValue][nip]={checkIn,checkOut,source:'global_import',updatedAtLocal:new Date().toISOString()}; imported++; }); const dateCounts={}; Object.keys(byDate).forEach(date=>{ dateCounts[date]=Object.keys(byDate[date]||{}).length; }); return {byDate, imported, skipped, duplicates, dateCounts, totalRows:(rows||[]).length}; }
 function countGlobalCheckRows(dateValue){ const map=getGlobalCheckTimesForDate(dateValue); return Object.keys(map || {}).length; }
-async function updateGlobalCheckInfo(message){ const dateValue=($('adminGlobalCheckDate') && $('adminGlobalCheckDate').value) || todayISO(); const map=await loadGlobalCheckTimesForDate(dateValue, true); const count=Object.keys(map || {}).length; const base=`Data global tanggal ${dateValue}: ${count} NIP tersimpan. Data ini dipakai untuk semua kegiatan berdasarkan NIP pekerja.`; if($('adminGlobalCheckInfo')) $('adminGlobalCheckInfo').textContent=message ? `${message} ${base}` : base; }
+async function updateGlobalCheckInfo(message){ const dateValue=($('adminGlobalCheckDate') && $('adminGlobalCheckDate').value) || todayISO(); const map=await loadGlobalCheckTimesForDate(dateValue, true); const count=Object.keys(map || {}).length; const base=`Data global tanggal ${dateValue}: ${count} NIP tersimpan.`; if($('adminGlobalCheckInfo')) $('adminGlobalCheckInfo').textContent=message ? `${message} ${base}` : base; }
 
 function getCachedCheckImportHistory(){ const rows=safeLocalGetJSON(IMPORT_HISTORY_CACHE_KEY, []); return Array.isArray(rows) ? rows : []; }
 function setCachedCheckImportHistory(rows){ safeLocalSetJSON(IMPORT_HISTORY_CACHE_KEY, (Array.isArray(rows)?rows:[]).slice(0,50)); }
@@ -4231,6 +4568,28 @@ function cacheImportHistoryEntry(entry){ const rows=getCachedCheckImportHistory(
 async function recordCheckImportHistory(entry){ const payload={...(entry||{}), importedAtLocal:(entry&&entry.importedAtLocal)||new Date().toISOString()}; try{ const bridge=await waitFirebase(); if(bridge && bridge.enabled && bridge.saveCheckImportHistory){ const saved=await bridge.saveCheckImportHistory(payload, currentUser); cacheImportHistoryEntry({...payload, id:saved.id, localOnly:false}); return saved; } }catch(err){ console.warn('Riwayat import Firestore gagal, disimpan cache lokal.', err); payload.status=payload.status || 'local_cache'; payload.errorMessage=payload.errorMessage || (err && err.message ? err.message : String(err)); } payload.localOnly=true; return cacheImportHistoryEntry(payload); }
 async function loadCheckImportHistory(force=false){ if(!force){ const cached=getCachedCheckImportHistory(); if(cached.length) return cached; } try{ const bridge=await waitFirebase(); if(bridge && bridge.enabled && bridge.loadCheckImportHistory){ const rows=await bridge.loadCheckImportHistory(30); setCachedCheckImportHistory(rows || []); return rows || []; } }catch(err){ console.warn('Load riwayat import gagal, pakai cache lokal.', err); } return getCachedCheckImportHistory(); }
 async function renderGlobalCheckImportHistory(force=true){ const el=$('adminCheckImportHistory'); if(!el) return; el.innerHTML='<div class="empty-admin-list">Memuat riwayat import...</div>'; const rows=await loadCheckImportHistory(force); if(!rows.length){ el.innerHTML='<div class="empty-admin-list">Belum ada riwayat import Cek In/Out.</div>'; return; } el.innerHTML=rows.slice(0,20).map(row=>{ const status=String(row.status||'success'); const badge=status==='success'?'✅ Berhasil':(status==='cleared'?'🗑 Dihapus':(row.localOnly?'💾 Cache lokal':'⚠️ '+status)); const file=row.fileName || (status==='cleared' ? 'Hapus data tanggal' : '-'); const counts=`Valid: ${Number(row.importedRows||0)} | Unik: ${Object.values(row.dateCounts||{}).reduce((a,b)=>a+Number(b||0),0)} | Lewat: ${Number(row.skippedRows||0)} | Dobel: ${Number(row.duplicateRows||0)}`; return `<div class="sync-pending-item"><div><b>${safeText(badge)}</b> <span class="muted">${safeText(new Date(row.importedAtLocal||Date.now()).toLocaleString('id-ID'))}</span></div><div><b>File:</b> ${safeText(file)}</div><div><b>Tanggal:</b> ${safeText(summarizeCheckImportDates(row))}</div><div><b>Ringkasan:</b> ${safeText(counts)}${row.appliedRows!==undefined ? ` | Cocok laporan: ${Number(row.appliedRows||0)}` : ''}</div>${row.importedBy&&row.importedBy.username?`<div><b>User:</b> ${safeText(row.importedBy.name||row.importedBy.username)} (${safeText(row.importedBy.role||'')})</div>`:''}${row.errorMessage?`<div class="muted">Error: ${safeText(row.errorMessage)}</div>`:''}</div>`; }).join(''); }
+async function clearGlobalCheckImportHistory(){
+  if(!requirePermission('deleteData','Hapus riwayat import hanya untuk admin.')) return;
+  if(!confirm('Hapus semua Riwayat Import Cek In/Out yang tampil/tersimpan? Data Cek In/Out yang sudah diimpor tidak ikut terhapus.')) return;
+  const btn=$('btnAdminClearCheckImportHistory'); const old=btn ? btn.textContent : '';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Menghapus riwayat...'; }
+    safeLocalSetJSON(IMPORT_HISTORY_CACHE_KEY, []);
+    let deleted=0;
+    const bridge=await waitFirebase();
+    if(bridge && bridge.enabled && bridge.deleteCheckImportHistory){
+      const res=await bridge.deleteCheckImportHistory(100);
+      deleted=Number(res && res.deleted || 0);
+    }
+    await renderGlobalCheckImportHistory(true);
+    adminLog(`Riwayat Import Cek In/Out dihapus. Firestore: ${deleted} data. Cache lokal dibersihkan.`);
+  }catch(err){
+    console.error(err);
+    alert('Hapus Riwayat Import Cek In/Out gagal: '+(err && err.message ? err.message : err));
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=old || '🗑 Hapus Riwayat Import Cek In/Out'; }
+  }
+}
 
 function payloadRowFromReportRow(r){
   return {nip:r.nip,name:r.name,ldRegu:r.ldRegu||commercialLdReguLabel(r.loadingDock,r.regu)||'',s1:Boolean(r.s1),s2:Boolean(r.s2),s3:Boolean(r.s3),type:r.type||'',activityKey:r.activityKey||'',activityLabel:r.activityLabel||'',kegiatan:r.kegiatan||r.activityLabel||'',sourceUnitKey:r.sourceUnitKey||'',sourceUnitName:r.sourceUnitName||'',regu:r.regu||'',loadingDock:r.loadingDock||'',checkIn:isCommercialTfActivityRow(r)?'':normalizeTimeToHMS(r.checkIn||''),checkOut:isCommercialTfActivityRow(r)?'':normalizeTimeToHMS(r.checkOut||'')};
@@ -4579,10 +4938,7 @@ function renderCheckInOutSummary(summary){
     return `<tr><td>${safeText(r.label||key)}</td><td>${safeText(displaySummaryTime(r.minIn))}</td><td>${safeText(displaySummaryTime(r.maxOut))}</td><td><span class="machine-status ${cls}">${safeText(ket)}</span></td></tr>`;
   }).join('');
   const titleUnit=meta.unitName || unitNameFromKey(meta.unitKey || getSelectedCheckSummaryUnitKey());
-  const note=meta.noSchedule
-    ? `Jadwal kegiatan <b>${safeText(titleUnit)}</b> untuk tanggal ini belum ditemukan. Ringkasan tidak memakai data global.`
-    : `Ringkasan ini hanya memakai NIP pekerja yang ada di jadwal <b>${safeText(titleUnit)}</b> dan dihitung per shift masing-masing. Jadwal: <b>${safeText(meta.scheduledRows||0)}</b> pekerja/baris, ditemukan di mesin: <b>${safeText(meta.foundMachineRows||0)}</b>, tidak ditemukan: <b>${safeText(meta.notFoundRows||0)}</b>.`;
-  box.innerHTML=`<div class="machine-preview-head"><span>📊 Ringkasan Cek In/Out dari Preview Mesin - ${safeText(titleUnit)}</span><span>Sederhana: Min Cek In dan Max Cek Out per shift</span></div><div class="machine-preview-table-wrap"><table class="machine-preview-table"><thead><tr><th>Shift</th><th>Min Cek In</th><th>Max Cek Out</th><th>Keterangan</th></tr></thead><tbody>${body}</tbody></table></div><div class="all-schedule-preview-note">${note}<br>Tombol <b>↘️ Pakai Ringkasan ke Form Cek In/Out</b> mengisi form dari <b>Min Cek In</b> dan <b>Max Cek Out</b> khusus bagian/shift ini. Proses simpan tetap memakai tombol <b>💾 Simpan Cek In / Cek Out</b>.</div>`;
+  box.innerHTML=`<div class="machine-preview-head"><span>📊 Ringkasan Cek In/Out dari Preview Mesin - ${safeText(titleUnit)}</span><span>Min Cek In dan Max Cek Out per shift</span></div><div class="machine-preview-table-wrap"><table class="machine-preview-table"><thead><tr><th>Shift</th><th>Min Cek In</th><th>Max Cek Out</th><th>Keterangan</th></tr></thead><tbody>${body}</tbody></table></div>`;
 }
 async function ensureMachinePreviewSummary(){
   const input=$('adminGlobalCheckFile');
@@ -4606,7 +4962,7 @@ async function ensureMachinePreviewSummary(){
 async function adminCheckInOutSummary(){
   if(!requirePermission('importData','Cek ringkasan Cek In/Out hanya untuk admin.')) return;
   const btn=$('btnAdminCheckInOutSummary'); const old=btn?btn.textContent:'';
-  try{ if(btn){ btn.disabled=true; btn.textContent='Menghitung...'; } const summary=await ensureMachinePreviewSummary(); if(summary){ updateGlobalCheckInfo(`Ringkasan Cek In/Out ${summary._meta && summary._meta.unitName ? summary._meta.unitName : ''} berhasil dihitung dari hasil preview mesin.`); } }
+  try{ if(btn){ btn.disabled=true; btn.textContent='Menghitung...'; } await ensureMachinePreviewSummary(); }
   catch(err){ console.error(err); alert('Cek Ringkasan Cek In/Out gagal: '+(err && err.message ? err.message : err)); }
   finally{ if(btn){ btn.disabled=false; btn.textContent=old || '📊 Cek Ringkasan Cek In/Out Berdasarkan Bagian'; } }
 }
@@ -4703,7 +5059,7 @@ function renderAllSchedulesPreview(result){
   const unmatched=result && result.unmatched !== undefined ? Number(result.unmatched)||0 : 0;
   box.style.display='block';
   const body=rows.length ? rows.map(r=>`<tr><td>${safeText(r.date)}</td><td>${safeText(r.unit)}</td><td>${safeText(r.scheduled)}</td><td><span class="machine-status ok">${safeText(r.ok)}</span></td><td><span class="machine-status err">${safeText(r.noData)}</span></td><td><span class="machine-status warn">${safeText(r.noIn)}</span></td><td><span class="machine-status warn">${safeText(r.noOut)}</span></td><td>${safeText(r.scanNips)}</td></tr>`).join('') : '<tr><td colspan="8" style="text-align:center;color:#64748b">Belum ada data jadwal untuk tanggal ini.</td></tr>';
-  box.innerHTML=`<div class="all-schedule-preview-head"><span>Preview Jadwal Semua Kegiatan</span><span>${safeText(summary)}</span></div><div class="all-schedule-preview-table-wrap"><table class="all-schedule-preview-table"><thead><tr><th>Tanggal</th><th>Bagian / Kegiatan</th><th>Jumlah Terjadwal</th><th>Cocok Mesin</th><th>Tidak Ada Data Mesin</th><th>Cek In Tidak Ditemukan</th><th>Cek Out Tidak Ditemukan</th><th>NIP Mesin Terdeteksi</th></tr></thead><tbody>${body}</tbody></table></div><div class="all-schedule-preview-note">Catatan: Preview ini hanya membaca jadwal dan file mesin untuk pengecekan. Data belum diterapkan ke laporan. NIP mesin yang tidak masuk jadwal semua kegiatan: <b>${safeText(unmatched)}</b>.</div>`;
+  box.innerHTML=`<div class="all-schedule-preview-head"><span>Preview Jadwal Semua Kegiatan</span><span>${safeText(summary)}</span></div><div class="all-schedule-preview-table-wrap"><table class="all-schedule-preview-table"><thead><tr><th>Tanggal</th><th>Bagian / Kegiatan</th><th>Jumlah Terjadwal</th><th>Cocok Mesin</th><th>Tidak Ada Data Mesin</th><th>Cek In Tidak Ditemukan</th><th>Cek Out Tidak Ditemukan</th><th>NIP Mesin Terdeteksi</th></tr></thead><tbody>${body}</tbody></table></div>`;
 }
 async function adminPreviewAllSchedules(){
   if(!requirePermission('importData','Preview jadwal semua kegiatan hanya untuk admin.')) return;
@@ -4948,9 +5304,47 @@ async function adminImportGlobalCheckTimes(){
     alert('Import Rekap Cek In/Out gagal: '+(err && err.message ? err.message : err));
   }finally{ if(btn){ btn.disabled=false; btn.textContent=old || '📥 Import Rekap Cek In/Out'; } }
 }
-async function adminClearGlobalCheckTimes(){ if(!requirePermission('deleteData','Hapus Cek In/Out hanya untuk admin.')) return; const dateValue=($('adminGlobalCheckDate') && $('adminGlobalCheckDate').value) || todayISO(); if(!confirm(`Hapus data Cek In/Out global tanggal ${dateValue}?
+async function adminClearGlobalCheckTimes(){
+  if(!requirePermission('deleteData','Hapus Cek In/Out hanya untuk admin.')) return;
+  const dateValue=($('adminGlobalCheckDate') && $('adminGlobalCheckDate').value) || todayISO();
+  const existing=await loadGlobalCheckTimesForDate(dateValue, true);
+  const count=Object.keys(existing || {}).length;
+  if(!count){
+    alert(`Tidak ada data Cek In/Out hasil import/global untuk tanggal ${dateValue}.`);
+    await updateGlobalCheckInfo('Tidak ada data yang perlu dihapus.');
+    return;
+  }
+  if(!confirm(`Hapus data Cek In/Out hasil import tanggal ${dateValue}?
 
-Data absensi yang sudah pernah disimpan tidak ikut dihapus.`)) return; await saveGlobalCheckTimesForDate(dateValue, {}); await recordCheckImportHistory({action:'clear', status:'cleared', fallbackDate:dateValue, dates:[dateValue], dateCounts:{[dateValue]:0}, importedRows:0, skippedRows:0, duplicateRows:0, totalRows:0, appliedRows:0, note:'Admin menghapus data Cek In/Out global tanggal '+dateValue}); await renderGlobalCheckImportHistory(false); await updateGlobalCheckInfo('Data tanggal ini sudah dihapus.'); adminLog(`Data Cek In/Out global dihapus untuk tanggal ${dateValue}. Riwayat penghapusan tersimpan.`); }
+Jumlah NIP tersimpan: ${count}
+
+Yang dihapus hanya data Cek In/Out hasil import/global pada tanggal ini. Jadwal pekerja, master pekerja, dan absensi kegiatan tidak ikut dihapus.`)) return;
+  const btn=$('btnAdminClearGlobalCheckTimes'); const old=btn ? btn.textContent : '';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Menghapus data...'; }
+    await saveGlobalCheckTimesForDate(dateValue, {});
+    const store=getGlobalCheckStore();
+    if(store && Object.prototype.hasOwnProperty.call(store,dateValue)){
+      store[dateValue]={};
+      setGlobalCheckStore(store);
+    }
+    await recordCheckImportHistory({action:'clear_imported_check_times', status:'cleared', fallbackDate:dateValue, dates:[dateValue], dateCounts:{[dateValue]:0}, importedRows:0, skippedRows:0, duplicateRows:0, totalRows:count, appliedRows:0, note:'Admin menghapus data Cek In/Out hasil import/global tanggal '+dateValue});
+    if(lastMachineImportPreviewResult && lastMachineImportPreviewResult.dateValue===dateValue){ lastMachineImportPreviewResult=null; }
+    lastCheckInOutSummaryResult=null;
+    renderCheckInOutSummary(null);
+    await renderGlobalCheckImportHistory(false);
+    await updateGlobalCheckInfo(`Data Cek In/Out hasil import tanggal ${dateValue} sudah dihapus. ${count} NIP dibersihkan.`);
+    adminLog(`Data Cek In/Out hasil import/global dihapus untuk tanggal ${dateValue}. Jumlah NIP: ${count}. Riwayat penghapusan tersimpan.`);
+    alert(`Data Cek In/Out hasil import tanggal ${dateValue} berhasil dihapus.
+
+Jumlah NIP dibersihkan: ${count}`);
+  }catch(err){
+    console.error(err);
+    alert('Hapus Data Cek In/Out Hasil Import gagal: '+(err && err.message ? err.message : err));
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=old || '🗑 Hapus Data Cek In/Out Hasil Import'; }
+  }
+}
 function adminSaveReportFormat(){ if(!requirePermission('manageSettings','Simpan format laporan hanya untuk admin.')) return; saveReportSettings(); const settings=getReportSettings(getReportUnitKeyForSettings(), unitNameFromKey(getReportUnitKeyForSettings())); syncAdminAutoShiftInputs(settings); adminLog('Format NOTE dan tabel Jam Kerja berhasil disimpan.'); alert('NOTE dan tabel Jam Kerja berhasil disimpan.'); }
 async function adminSaveCheckTimes(){
   if(!requirePermission('editCheckTimes','Simpan cek in/out hanya untuk admin.')) return;
@@ -5652,7 +6046,7 @@ syncAdminAttendanceOptionCheckboxes(); refreshAdminAttendanceOptionsFromFirestor
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); $('btnShareWa').addEventListener('click', shareWhatsapp); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
 document.addEventListener('input', e=>{ if(e && e.target && e.target.matches && e.target.matches('[data-check-nip]')) setAdminCheckTimesSourceInfo('Manual'); });
 let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu install belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }

@@ -15,7 +15,7 @@
     .sheet{width:100%;max-width:207mm;margin:0 auto;background:#fff}
     .print-title{text-align:center;line-height:1.08;padding:0 0 4px}
     .print-title .main{font-weight:900;text-transform:uppercase;font-size:16px}
-    .print-title .company,.print-title .date{text-transform:uppercase;font-size:16px}
+    .print-title .company,.print-title .date{text-transform:uppercase;font-size:16px}.print-title .coordinator{text-transform:uppercase;font-size:13px;font-weight:900;margin-top:2px}
     .table-wrap{width:100%;overflow:visible;display:block}
     .report-table{width:100%;max-width:100%;margin:0 auto;border-collapse:collapse;table-layout:fixed;font-size:16px}
     .report-table th,.report-table td{border:1px solid #111;padding:1.6px 2.4px;text-align:center;white-space:normal;word-break:break-word;line-height:1}
@@ -105,6 +105,7 @@
       font-weight:400!important;
     }
     .print-title .main,
+    .print-title .coordinator,
     .report-table th,
     .report-table td,
     .report-table .report-summary th,
@@ -137,6 +138,7 @@
         font-weight:400!important;
       }
       .print-title .main,
+      .print-title .coordinator,
       .report-table th,
       .report-table td,
       .report-table .report-summary th,
@@ -504,6 +506,7 @@
         <div class="main">${esc(payload.title || 'ABSENSI KEGIATAN MUATAN BREEDER')}</div>
         <div class="company">${esc(payload.company || 'PT. BUDI INTI PERKASA')}</div>
         <div class="date">${esc(normalizeDateText(payload))}</div>
+        ${payload.coordinatorLine ? `<div class="coordinator">${esc(payload.coordinatorLine)}</div>` : ``}
       </section>
       <div class="table-wrap">
         <table class="${tableClass}">

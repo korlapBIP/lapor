@@ -415,6 +415,22 @@
           qs.forEach(snap=>{ const data=snap.data() || {}; if(!data.type || data.type==='global_check_times') rows.push({ id:snap.id, ...data }); });
           return rows;
         },
+        async deleteCheckImportHistory(limitCount){
+          const max=Math.max(1, Math.min(Number(limitCount || 100), 500));
+          const q=fs.query(fs.collection(db, attendanceImportsPath), fs.orderBy('importedAtLocal','desc'), fs.limit(max));
+          const qs=await fs.getDocs(q);
+          const batch=fs.writeBatch(db);
+          let deleted=0;
+          qs.forEach(snap=>{
+            const data=snap.data() || {};
+            if(!data.type || data.type==='global_check_times'){
+              batch.delete(fs.doc(db, attendanceImportsPath, snap.id));
+              deleted++;
+            }
+          });
+          if(deleted>0) await batch.commit();
+          return { deleted };
+        },
         async saveAppState(unitKey, state, user){
           await fs.setDoc(fs.doc(db, appDataPath, unitKey), {
             company:'PT. BUDI INTI PERKASA',
