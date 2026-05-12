@@ -3359,7 +3359,7 @@ function createWaProgressOverlay(){
     overlay=document.createElement('div');
     overlay.id='waShareProgressOverlay';
     overlay.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(15,23,42,.72);display:flex;align-items:center;justify-content:center;padding:22px;backdrop-filter:blur(4px);';
-    overlay.innerHTML='<div style="width:min(92vw,430px);background:#ffffff;border-radius:26px;padding:24px 20px;text-align:center;box-shadow:0 26px 70px rgba(0,0,0,.32);font-family:Arial, sans-serif;"><div id="waProgressNumber" style="width:92px;height:92px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;background:#2558d9;color:#fff;font-size:42px;font-weight:950;">1</div><div id="waProgressTitle" style="font-size:18px;font-weight:950;color:#111827;margin-bottom:8px;">Tahap 1 / 6</div><div id="waProgressText" style="font-size:13px;font-weight:800;color:#475569;line-height:1.45;">Mohon tunggu, gambar sedang diproses.</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12px;font-weight:900;color:#2558d9;"><span id="waProgressPercent">5%</span><span>WA Super HD</span></div><div style="height:12px;border-radius:999px;background:#e5e7eb;overflow:hidden;margin-top:10px;"><div id="waProgressBar" style="height:100%;width:5%;background:#2558d9;border-radius:999px;transition:width .18s ease;"></div></div></div>';
+    overlay.innerHTML='<div style="width:min(92vw,430px);background:#ffffff;border-radius:26px;padding:24px 20px;text-align:center;box-shadow:0 26px 70px rgba(0,0,0,.32);font-family:Arial, sans-serif;"><div id="waProgressNumber" style="width:92px;height:92px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;background:#2558d9;color:#fff;font-size:42px;font-weight:950;">1</div><div id="waProgressTitle" style="font-size:18px;font-weight:950;color:#111827;margin-bottom:8px;">Tahap 1 / 7</div><div id="waProgressText" style="font-size:13px;font-weight:800;color:#475569;line-height:1.45;">Mohon tunggu, gambar sedang diproses.</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12px;font-weight:900;color:#2558d9;"><span id="waProgressPercent">5%</span><span>WA Ultra HD Max</span></div><div style="height:12px;border-radius:999px;background:#e5e7eb;overflow:hidden;margin-top:10px;"><div id="waProgressBar" style="height:100%;width:5%;background:#2558d9;border-radius:999px;transition:width .18s ease;"></div></div></div>';
     document.body.appendChild(overlay);
   }
   overlay.style.display='flex';
@@ -3411,31 +3411,31 @@ function waExportReportConfig(rows){
   const isBahanBakuRows=!isCommercialRows && (String(unitKey||'')===BAHAN_BAKU_GABUNGAN_KEY || isBahanBakuPagiMalamKey(unitKey) || isOverzakKey(unitKey) || rows.some(w=>w && (w.kegiatan || w.activityLabel || w.sourceUnitKey || w.sourceUnitName)));
   const columns=isCommercialRows
     ? [
-        {key:'no', label:'NO', width:100, align:'center'},
-        {key:'ldRegu', label:'LD-REGU', width:320, align:'left'},
-        {key:'nip', label:'NIP', width:210, align:'center'},
-        {key:'name', label:'NAMA PEKERJA', width:860, align:'left'},
-        {key:'s1', label:'SHIFT 1', width:210, align:'center', type:'check'},
-        {key:'s2', label:'SHIFT 2', width:210, align:'center', type:'check'},
-        {key:'s3', label:'SHIFT 3', width:210, align:'center', type:'check'}
+        {key:'no', label:'NO', width:110, align:'center'},
+        {key:'ldRegu', label:'LD-REGU', width:370, align:'left'},
+        {key:'nip', label:'NIP', width:230, align:'center'},
+        {key:'name', label:'NAMA PEKERJA', width:1120, align:'left', emphasis:'name'},
+        {key:'s1', label:'SHIFT 1', width:230, align:'center', type:'check'},
+        {key:'s2', label:'SHIFT 2', width:230, align:'center', type:'check'},
+        {key:'s3', label:'SHIFT 3', width:230, align:'center', type:'check'}
       ]
     : (isBahanBakuRows
       ? [
-          {key:'no', label:'NO', width:100, align:'center'},
-          {key:'nip', label:'NIP', width:220, align:'center'},
-          {key:'name', label:'NAMA PEKERJA', width:760, align:'left'},
-          {key:'kegiatan', label:'KEGIATAN', width:300, align:'left'},
-          {key:'s1', label:'SHIFT 1', width:200, align:'center', type:'check'},
-          {key:'s2', label:'SHIFT 2', width:200, align:'center', type:'check'},
-          {key:'s3', label:'SHIFT 3', width:200, align:'center', type:'check'}
-        ]
-      : [
-          {key:'no', label:'NO', width:100, align:'center'},
-          {key:'nip', label:'NIP', width:220, align:'center'},
-          {key:'name', label:'NAMA PEKERJA', width:940, align:'left'},
+          {key:'no', label:'NO', width:110, align:'center'},
+          {key:'nip', label:'NIP', width:240, align:'center'},
+          {key:'name', label:'NAMA PEKERJA', width:960, align:'left', emphasis:'name'},
+          {key:'kegiatan', label:'KEGIATAN', width:360, align:'left'},
           {key:'s1', label:'SHIFT 1', width:220, align:'center', type:'check'},
           {key:'s2', label:'SHIFT 2', width:220, align:'center', type:'check'},
           {key:'s3', label:'SHIFT 3', width:220, align:'center', type:'check'}
+        ]
+      : [
+          {key:'no', label:'NO', width:110, align:'center'},
+          {key:'nip', label:'NIP', width:240, align:'center'},
+          {key:'name', label:'NAMA PEKERJA', width:1240, align:'left', emphasis:'name'},
+          {key:'s1', label:'SHIFT 1', width:240, align:'center', type:'check'},
+          {key:'s2', label:'SHIFT 2', width:240, align:'center', type:'check'},
+          {key:'s3', label:'SHIFT 3', width:240, align:'center', type:'check'}
         ]);
   return {unitLabel, isCommercialRows, isBahanBakuRows, columns};
 }
@@ -3450,51 +3450,46 @@ function waExportFieldValue(row, key, index){
 }
 function waExportLayoutMeta(rowCount, columnCount){
   const count=Math.max(0, Number(rowCount)||0);
-  let rowH=68, bodyFont=27, headFont=24, titleFont=39, subTitleFont=25, dateFont=23, summaryFont=24, totalFont=29, checkFont=33;
-  if(count>24){ rowH=66; bodyFont=26; headFont=23; titleFont=38; subTitleFont=24; dateFont=22; summaryFont=23; totalFont=28; checkFont=32; }
-  if(count>36){ rowH=63; bodyFont=24.5; headFont=22.5; titleFont=37; subTitleFont=24; dateFont=21.5; summaryFont=22.5; totalFont=27; checkFont=30; }
-  if(count>48){ rowH=60; bodyFont=23; headFont=21.5; titleFont=35; subTitleFont=23; dateFont=21; summaryFont=21.5; totalFont=26; checkFont=29; }
-  if(count>60){ rowH=57; bodyFont=21.5; headFont=20.5; titleFont=34; subTitleFont=22; dateFont=20; summaryFont=20.5; totalFont=25; checkFont=28; }
-  if(count>75){ rowH=54; bodyFont=20; headFont=19.5; titleFont=32; subTitleFont=21; dateFont=19; summaryFont=19.5; totalFont=24; checkFont=27; }
-  if(columnCount>=7){ bodyFont=Math.max(19, bodyFont-0.5); }
-  return {rowH, bodyFont, headFont, titleFont, subTitleFont, dateFont, summaryFont, totalFont, checkFont};
+  let rowH=70, bodyFont=28, nameFont=31, headFont=25, titleFont=40, subTitleFont=26, dateFont=24, summaryFont=24, totalFont=30, checkFont=34;
+  if(count>24){ rowH=67; bodyFont=26.5; nameFont=29.5; headFont=24; titleFont=39; subTitleFont=25; dateFont=23; summaryFont=23.5; totalFont=29; checkFont=33; }
+  if(count>40){ rowH=63; bodyFont=24.5; nameFont=27.5; headFont=23; titleFont=37; subTitleFont=24; dateFont=22; summaryFont=22.5; totalFont=28; checkFont=31; }
+  if(count>60){ rowH=58; bodyFont=22; nameFont=25.5; headFont=22; titleFont=35; subTitleFont=23; dateFont=21; summaryFont=21.5; totalFont=27; checkFont=29; }
+  if(count>85){ rowH=54; bodyFont=19.5; nameFont=23; headFont=20.5; titleFont=33; subTitleFont=21.5; dateFont=19.5; summaryFont=20; totalFont=25; checkFont=27; }
+  if(count>110){ rowH=50; bodyFont=18; nameFont=21; headFont=19.5; titleFont=31; subTitleFont=20.5; dateFont=18.5; summaryFont=19; totalFont=24; checkFont=25; }
+  if(columnCount>=7){ bodyFont=Math.max(17.5, bodyFont-0.25); nameFont=Math.max(bodyFont+2, nameFont-0.25); }
+  return {rowH, bodyFont, nameFont, headFont, titleFont, subTitleFont, dateFont, summaryFont, totalFont, checkFont};
 }
 async function reportImageBlob(onProgress){
   const progress=typeof onProgress==='function' ? onProgress : ()=>{};
-  const totalSteps=6;
+  const totalSteps=7;
   const rows=selectedWorkers();
   const {unitLabel, columns}=waExportReportConfig(rows);
-  progress(1,'Menyiapkan data laporan...',8,totalSteps); await nextAnimationFrame();
+  progress(1,'Menyiapkan data laporan...',6,totalSteps); await nextAnimationFrame();
   const layout=waExportLayoutMeta(rows.length, columns.length);
-  progress(2,'Menyusun layout export WA khusus...',20,totalSteps); await nextAnimationFrame();
-  const marginX=52;
-  const topPad=38;
-  const headerBlockH=132;
-  const tableHeadH=Math.max(64, layout.rowH);
+  progress(2,'Menyusun layout horizontal super lebar...',15,totalSteps); await nextAnimationFrame();
+
+  const marginX=58;
+  const topPad=40;
+  const headerBlockH=136;
+  const tableHeadH=Math.max(66, layout.rowH);
   const summaryTopGap=30;
-  const summaryBlockH=96;
-  const bottomPad=42;
+  const summaryBlockH=100;
+  const bottomPad=44;
   const tableWidth=columns.reduce((sum,col)=>sum+col.width,0);
   const cssWidth=tableWidth + marginX*2;
   const cssHeight=topPad + headerBlockH + tableHeadH + Math.max(1, rows.length)*layout.rowH + summaryTopGap + summaryBlockH + bottomPad;
-  const maxPixels=68000000;
-  const maxDimension=14000;
-  const preferredScale=rows.length>75 ? 2.8 : (rows.length>55 ? 3.0 : 3.2);
-  let scale=Math.sqrt(maxPixels/(cssWidth*cssHeight));
-  if(!Number.isFinite(scale)) scale=preferredScale;
-  scale=Math.min(preferredScale, Math.max(2.35, scale));
-  const scaleByDim=Math.min(maxDimension/cssWidth, maxDimension/cssHeight);
-  scale=Math.max(1.9, Math.min(scale, scaleByDim));
-  const canvas=document.createElement('canvas');
-  canvas.width=Math.max(1, Math.round(cssWidth*scale));
-  canvas.height=Math.max(1, Math.round(cssHeight*scale));
-  const ctx=canvas.getContext('2d',{alpha:false});
-  ctx.scale(scale,scale);
-  ctx.fillStyle='#ffffff';
-  ctx.fillRect(0,0,cssWidth,cssHeight);
-  if('imageSmoothingEnabled' in ctx) ctx.imageSmoothingEnabled=true;
-  if('imageSmoothingQuality' in ctx) ctx.imageSmoothingQuality='high';
-  progress(3,'Meningkatkan ketajaman, ukuran font, dan lebar tabel...',34,totalSteps); await nextAnimationFrame();
+
+  const deviceMem=(navigator && navigator.deviceMemory) ? Number(navigator.deviceMemory) : 4;
+  const maxPixels=deviceMem>=8 ? 145000000 : (deviceMem>=6 ? 130000000 : (deviceMem>=4 ? 115000000 : 98000000));
+  const maxDimension=deviceMem>=8 ? 18000 : 16384;
+  const preferredScale=rows.length>120 ? 2.65 : (rows.length>100 ? 2.8 : (rows.length>80 ? 3.0 : (rows.length>60 ? 3.25 : 3.55)));
+  let qualityScale=Math.sqrt(maxPixels/(cssWidth*cssHeight));
+  if(!Number.isFinite(qualityScale)) qualityScale=preferredScale;
+  qualityScale=Math.min(preferredScale, Math.max(2.2, qualityScale));
+  const dimScale=Math.min(maxDimension/cssWidth, maxDimension/cssHeight);
+  qualityScale=Math.max(2.0, Math.min(qualityScale, dimScale));
+  const scaleCandidates=[qualityScale, Math.max(2.0, qualityScale-0.18), Math.max(1.9, qualityScale-0.35), Math.max(1.8, qualityScale-0.52)].filter((v,i,a)=>a.indexOf(v)===i);
+  progress(3,`Mengaktifkan mode Ultra HD${qualityScale>3.1 ? '++' : '+'}...`,26,totalSteps); await nextAnimationFrame();
 
   const left=marginX;
   const tableTop=topPad + headerBlockH;
@@ -3504,128 +3499,162 @@ async function reportImageBlob(onProgress){
   const tableRight=left+tableWidth;
   const titleText=`ABSENSI KEGIATAN ${String(unitLabel||'').replace(/PAGI/gi,'').replace(/MALAM/gi,'').replace(/\//g,'').replace(/\s+/g,' ').trim().toUpperCase()}`;
 
-  ctx.fillStyle='#0f172a';
-  ctx.textAlign='center';
-  ctx.font=`900 ${layout.titleFont}px Arial`;
-  ctx.fillText(titleText, cssWidth/2, topPad+34);
-  ctx.font=`800 ${layout.subTitleFont}px Arial`;
-  ctx.fillText('PT. BUDI INTI PERKASA', cssWidth/2, topPad+72);
-  ctx.font=`800 ${layout.dateFont}px Arial`;
-  ctx.fillStyle='#334155';
-  ctx.fillText(formatLongDate(state.reportDate), cssWidth/2, topPad+104);
+  function drawCanvasAtScale(scale){
+    const canvas=document.createElement('canvas');
+    canvas.width=Math.max(1, Math.round(cssWidth*scale));
+    canvas.height=Math.max(1, Math.round(cssHeight*scale));
+    const ctx=canvas.getContext('2d',{alpha:false});
+    if(!ctx) throw new Error('Canvas context tidak tersedia');
+    ctx.scale(scale,scale);
+    ctx.fillStyle='#ffffff';
+    ctx.fillRect(0,0,cssWidth,cssHeight);
+    if('imageSmoothingEnabled' in ctx) ctx.imageSmoothingEnabled=true;
+    if('imageSmoothingQuality' in ctx) ctx.imageSmoothingQuality='high';
 
-  ctx.fillStyle='#e8f0fe';
-  ctx.fillRect(left, tableTop, tableWidth, tableHeadH);
-  ctx.strokeStyle='#0f172a';
-  ctx.lineWidth=1.4;
-  ctx.strokeRect(left, tableTop, tableWidth, tableHeadH);
-  ctx.font=`900 ${layout.headFont}px Arial`;
-  ctx.fillStyle='#0f172a';
-  columns.forEach((col, idx)=>{
-    const cellX=columnLefts[idx];
-    const midX=cellX + (col.width/2);
-    ctx.textAlign=col.align==='left' ? 'left' : 'center';
-    const textX=col.align==='left' ? cellX+14 : midX;
-    const label=fitCanvasText(ctx, col.label, col.width-18);
-    ctx.fillText(label, textX, tableTop + (tableHeadH/2) + (layout.headFont*0.34));
-    if(idx>0){
-      ctx.beginPath();
-      ctx.moveTo(cellX, tableTop);
-      ctx.lineTo(cellX, tableTop + tableHeadH);
-      ctx.stroke();
-    }
-  });
-  ctx.beginPath();
-  ctx.moveTo(tableRight, tableTop);
-  ctx.lineTo(tableRight, tableTop + tableHeadH);
-  ctx.stroke();
+    ctx.fillStyle='#0f172a';
+    ctx.textAlign='center';
+    ctx.font=`900 ${layout.titleFont}px Arial`;
+    ctx.fillText(titleText, cssWidth/2, topPad+36);
+    ctx.font=`800 ${layout.subTitleFont}px Arial`;
+    ctx.fillText('PT. BUDI INTI PERKASA', cssWidth/2, topPad+76);
+    ctx.font=`800 ${layout.dateFont}px Arial`;
+    ctx.fillStyle='#334155';
+    ctx.fillText(formatLongDate(state.reportDate), cssWidth/2, topPad+108);
 
-  progress(4, rows.length ? `Menggambar isi tabel 0 / ${rows.length}...` : 'Menyiapkan isi tabel...',52,totalSteps);
-  await nextAnimationFrame();
-  const dataRows=rows.length ? rows : [{}];
-  const updateEvery=Math.max(1, Math.ceil(Math.max(1, rows.length)/12));
-  for(let idx=0; idx<dataRows.length; idx++){
-    const row=dataRows[idx];
-    const y=tableTop + tableHeadH + idx*layout.rowH;
-    ctx.fillStyle=idx%2===0 ? '#ffffff' : '#f8fbff';
-    ctx.fillRect(left,y,tableWidth,layout.rowH);
-    ctx.strokeStyle='#1e293b';
-    ctx.lineWidth=1;
-    ctx.strokeRect(left,y,tableWidth,layout.rowH);
-    columns.forEach((col, colIdx)=>{
-      const cellX=columnLefts[colIdx];
-      if(colIdx>0){
+    ctx.fillStyle='#e8f0fe';
+    ctx.fillRect(left, tableTop, tableWidth, tableHeadH);
+    ctx.strokeStyle='#0f172a';
+    ctx.lineWidth=1.45;
+    ctx.strokeRect(left, tableTop, tableWidth, tableHeadH);
+    ctx.font=`900 ${layout.headFont}px Arial`;
+    ctx.fillStyle='#0f172a';
+    columns.forEach((col, idx)=>{
+      const cellX=columnLefts[idx];
+      const midX=cellX + (col.width/2);
+      ctx.textAlign=col.align==='left' ? 'left' : 'center';
+      const textX=col.align==='left' ? cellX+16 : midX;
+      const label=fitCanvasText(ctx, col.label, col.width-20);
+      ctx.fillText(label, textX, tableTop + (tableHeadH/2) + (layout.headFont*0.34));
+      if(idx>0){
         ctx.beginPath();
-        ctx.moveTo(cellX, y);
-        ctx.lineTo(cellX, y + layout.rowH);
+        ctx.moveTo(cellX, tableTop);
+        ctx.lineTo(cellX, tableTop + tableHeadH);
         ctx.stroke();
-      }
-      const value=rows.length ? waExportFieldValue(row,col.key,idx) : (colIdx===0 ? '' : (col.key==='name' ? 'Belum ada pekerja yang dipilih.' : ''));
-      const textBaseY=y + (layout.rowH/2) + (layout.bodyFont*0.34);
-      if(col.type==='check'){
-        ctx.textAlign='center';
-        ctx.font=`900 ${layout.checkFont}px Arial`;
-        ctx.fillStyle='#0f172a';
-        if(value) ctx.fillText(value, cellX + (col.width/2), y + (layout.rowH/2) + (layout.checkFont*0.34));
-      }else{
-        ctx.font=`${col.key==='name' ? '800' : '700'} ${layout.bodyFont}px Arial`;
-        ctx.fillStyle=rows.length ? '#0f172a' : '#64748b';
-        if(col.align==='left'){
-          ctx.textAlign='left';
-          const fitted=fitCanvasText(ctx, value, col.width-26);
-          ctx.fillText(fitted, cellX+14, textBaseY);
-        }else{
-          ctx.textAlign='center';
-          const fitted=fitCanvasText(ctx, value, col.width-18);
-          ctx.fillText(fitted, cellX + (col.width/2), textBaseY);
-        }
       }
     });
     ctx.beginPath();
-    ctx.moveTo(tableRight, y);
-    ctx.lineTo(tableRight, y + layout.rowH);
+    ctx.moveTo(tableRight, tableTop);
+    ctx.lineTo(tableRight, tableTop + tableHeadH);
     ctx.stroke();
-    if(rows.length && ((idx+1)%updateEvery===0 || idx===rows.length-1)){
-      const pct=52 + Math.round(((idx+1)/Math.max(1, rows.length))*28);
-      progress(4, `Menggambar isi tabel ${idx+1} / ${rows.length}...`, pct, totalSteps);
-      await nextAnimationFrame();
+
+    const dataRows=rows.length ? rows : [{}];
+    const updateEvery=Math.max(1, Math.ceil(Math.max(1, rows.length)/12));
+    for(let idx=0; idx<dataRows.length; idx++){
+      const row=dataRows[idx];
+      const y=tableTop + tableHeadH + idx*layout.rowH;
+      ctx.fillStyle=idx%2===0 ? '#ffffff' : '#f7fbff';
+      ctx.fillRect(left,y,tableWidth,layout.rowH);
+      ctx.strokeStyle='#1e293b';
+      ctx.lineWidth=1.0;
+      ctx.strokeRect(left,y,tableWidth,layout.rowH);
+      columns.forEach((col, colIdx)=>{
+        const cellX=columnLefts[colIdx];
+        if(colIdx>0){
+          ctx.beginPath();
+          ctx.moveTo(cellX, y);
+          ctx.lineTo(cellX, y + layout.rowH);
+          ctx.stroke();
+        }
+        const value=rows.length ? waExportFieldValue(row,col.key,idx) : (colIdx===0 ? '' : (col.key==='name' ? 'Belum ada pekerja yang dipilih.' : ''));
+        if(col.type==='check'){
+          ctx.textAlign='center';
+          ctx.font=`900 ${layout.checkFont}px Arial`;
+          ctx.fillStyle='#0f172a';
+          if(value) ctx.fillText(value, cellX + (col.width/2), y + (layout.rowH/2) + (layout.checkFont*0.34));
+        }else{
+          const isName=col.emphasis==='name';
+          const useFont=isName ? layout.nameFont : layout.bodyFont;
+          ctx.font=`${isName ? '900' : '700'} ${useFont}px Arial`;
+          ctx.fillStyle=rows.length ? '#0f172a' : '#64748b';
+          const textBaseY=y + (layout.rowH/2) + (useFont*0.34);
+          if(col.align==='left'){
+            ctx.textAlign='left';
+            const fitted=fitCanvasText(ctx, value, col.width-(isName ? 30 : 26));
+            ctx.fillText(fitted, cellX+16, textBaseY);
+          }else{
+            ctx.textAlign='center';
+            const fitted=fitCanvasText(ctx, value, col.width-20);
+            ctx.fillText(fitted, cellX + (col.width/2), textBaseY);
+          }
+        }
+      });
+      ctx.beginPath();
+      ctx.moveTo(tableRight, y);
+      ctx.lineTo(tableRight, y + layout.rowH);
+      ctx.stroke();
+      if(rows.length && ((idx+1)%updateEvery===0 || idx===rows.length-1)){
+        const pct=42 + Math.round(((idx+1)/Math.max(1, rows.length))*32);
+        progress(5, `Menggambar isi tabel ${idx+1} / ${rows.length}...`, pct, totalSteps);
+      }
     }
+
+    const summaryTop=tableTop + tableHeadH + dataRows.length*layout.rowH + summaryTopGap;
+    const s1=rows.filter(w=>w && w.s1).length;
+    const s2=rows.filter(w=>w && w.s2).length;
+    const s3=rows.filter(w=>w && w.s3).length;
+    const total=rows.length;
+    const boxGap=18;
+    const boxWidth=(tableWidth - boxGap*3)/4;
+    const summaryItems=[`SHIFT 1 : ${s1} pekerja`,`SHIFT 2 : ${s2} pekerja`,`SHIFT 3 : ${s3} pekerja`,`TOTAL : ${total} Orang`];
+    summaryItems.forEach((label, idx)=>{
+      const x=left + idx*(boxWidth+boxGap);
+      ctx.fillStyle=idx===3 ? '#dbeafe' : '#f8fafc';
+      ctx.strokeStyle=idx===3 ? '#2558d9' : '#cbd5e1';
+      ctx.lineWidth=1.8;
+      const radius=12;
+      ctx.beginPath();
+      ctx.moveTo(x+radius, summaryTop);
+      ctx.arcTo(x+boxWidth, summaryTop, x+boxWidth, summaryTop+summaryBlockH, radius);
+      ctx.arcTo(x+boxWidth, summaryTop+summaryBlockH, x, summaryTop+summaryBlockH, radius);
+      ctx.arcTo(x, summaryTop+summaryBlockH, x, summaryTop, radius);
+      ctx.arcTo(x, summaryTop, x+boxWidth, summaryTop, radius);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle=idx===3 ? '#1d4ed8' : '#0f172a';
+      ctx.font=`900 ${idx===3 ? layout.totalFont : layout.summaryFont}px Arial`;
+      ctx.textAlign='center';
+      const fitted=fitCanvasText(ctx, label, boxWidth-22);
+      ctx.fillText(fitted, x + boxWidth/2, summaryTop + summaryBlockH/2 + ((idx===3 ? layout.totalFont : layout.summaryFont)*0.34));
+    });
+    return canvas;
   }
 
-  progress(5,'Menyempurnakan gambar PNG Super HD++...',86,totalSteps); await nextAnimationFrame();
-  const summaryTop=tableTop + tableHeadH + dataRows.length*layout.rowH + summaryTopGap;
-  const s1=rows.filter(w=>w && w.s1).length;
-  const s2=rows.filter(w=>w && w.s2).length;
-  const s3=rows.filter(w=>w && w.s3).length;
-  const total=rows.length;
-  const boxGap=18;
-  const boxCount=4;
-  const boxWidth=(tableWidth - boxGap*(boxCount-1))/boxCount;
-  const summaryItems=[`SHIFT 1 : ${s1} pekerja`,`SHIFT 2 : ${s2} pekerja`,`SHIFT 3 : ${s3} pekerja`,`TOTAL : ${total} Orang`];
-  summaryItems.forEach((label, idx)=>{
-    const x=left + idx*(boxWidth+boxGap);
-    ctx.fillStyle=idx===3 ? '#dbeafe' : '#f8fafc';
-    ctx.strokeStyle=idx===3 ? '#2558d9' : '#cbd5e1';
-    ctx.lineWidth=1.7;
-    const radius=12;
-    ctx.beginPath();
-    ctx.moveTo(x+radius, summaryTop);
-    ctx.arcTo(x+boxWidth, summaryTop, x+boxWidth, summaryTop+summaryBlockH, radius);
-    ctx.arcTo(x+boxWidth, summaryTop+summaryBlockH, x, summaryTop+summaryBlockH, radius);
-    ctx.arcTo(x, summaryTop+summaryBlockH, x, summaryTop, radius);
-    ctx.arcTo(x, summaryTop, x+boxWidth, summaryTop, radius);
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
-    ctx.fillStyle=idx===3 ? '#1d4ed8' : '#0f172a';
-    ctx.font=`900 ${idx===3 ? layout.totalFont : layout.summaryFont}px Arial`;
-    ctx.textAlign='center';
-    const fitted=fitCanvasText(ctx, label, boxWidth-18);
-    ctx.fillText(fitted, x + boxWidth/2, summaryTop + summaryBlockH/2 + ((idx===3 ? layout.totalFont : layout.summaryFont)*0.34));
-  });
+  progress(4,'Menyiapkan canvas render super tajam...',34,totalSteps); await nextAnimationFrame();
+  let renderedCanvas=null;
+  let usedScale=scaleCandidates[scaleCandidates.length-1] || 2;
+  let renderError=null;
+  for(let i=0;i<scaleCandidates.length;i++){
+    const attemptScale=scaleCandidates[i];
+    try{
+      progress(4,`Mencoba render kualitas ${i+1}/${scaleCandidates.length} pada skala ${attemptScale.toFixed(2)}x...`,36 + (i*2), totalSteps);
+      await nextAnimationFrame();
+      renderedCanvas=drawCanvasAtScale(attemptScale);
+      usedScale=attemptScale;
+      renderError=null;
+      break;
+    }catch(err){
+      renderError=err;
+      renderedCanvas=null;
+      console.warn('Render WA Ultra HD gagal pada skala', attemptScale, err);
+      await waitMs(90);
+    }
+  }
+  if(!renderedCanvas){ throw renderError || new Error('Render canvas gagal'); }
+  progress(6,`Menyempurnakan PNG Ultra HD pada skala ${usedScale.toFixed(2)}x...`,82,totalSteps); await nextAnimationFrame();
   await waitMs(120);
-  const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png',1));
-  progress(5,'PNG Super HD++ selesai dibuat.',94,totalSteps); await waitMs(150);
+  const blob=await new Promise((resolve,reject)=>renderedCanvas.toBlob(b=>b ? resolve(b) : reject(new Error('PNG gagal dibuat')),'image/png',1));
+  progress(6,'PNG Ultra HD berhasil dibuat.',94,totalSteps); await waitMs(140);
   return blob;
 }
 function shareTextWhatsapp(){ if(selectedWorkers().length===0){ alert('Share belum bisa dikirim. Pilih minimal 1 pekerja terlebih dahulu.'); return; } window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank'); }
@@ -3633,7 +3662,7 @@ function backupPathInfo(){ const dateValue=state.reportDate || todayISO(); const
 function downloadBackupImage(blob, filename){ const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),2500); }
 async function saveBackupImage(blob){ const info=backupPathInfo(); let savedWithFolder=false; if(window.showDirectoryPicker){ try{ const rootHandle=await window.showDirectoryPicker({id:'absensi-mt-breeder-backup', mode:'readwrite'}); const mainHandle=await rootHandle.getDirectoryHandle(info.mainFolder,{create:true}); const monthHandle=await mainHandle.getDirectoryHandle(info.monthFolder,{create:true}); const fileHandle=await monthHandle.getFileHandle(info.filename,{create:true}); const writable=await fileHandle.createWritable(); await writable.write(blob); await writable.close(); savedWithFolder=true; }catch(err){ console.warn('Simpan ke folder khusus tidak didukung atau dibatalkan, lanjut download biasa.', err); } } if(!savedWithFolder){ downloadBackupImage(blob, info.downloadPath); } return info; }
 function openWhatsappWithText(text){ window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank'); }
-async function shareWhatsapp(){ if(!requirePermission('shareReports','Akses ditolak. Role ini tidak boleh share laporan via WhatsApp.')) return; const rows=selectedWorkers(); if(rows.length===0){ alert('Lapor BIP belum bisa dikirim. Pilih minimal 1 pekerja terlebih dahulu.'); return; } const btn=$('btnShareWa'); const originalText=btn ? btn.textContent : ''; createWaProgressOverlay(); try{ if(btn){ btn.disabled=true; btn.textContent='Membuat WA Super HD...'; } const blob=await reportImageBlob((step,msg,pct,total)=>{ setWaProgress(step,msg,pct,total); if(btn) btn.textContent=`Tahap ${Math.min(total||6, step)}...`; }); if(!blob){ alert('Gambar laporan gagal dibuat. Silakan coba lagi.'); return; } const filename=`laporan-${new Date().getTime()}.png`; const file=new File([blob],filename,{type:'image/png'}); await waitMs(250); setWaProgress(6,'Menyiapkan link share ke WhatsApp...',97,6); if(btn) btn.textContent='Membuka WhatsApp...'; if(navigator.canShare && navigator.canShare({files:[file]}) && navigator.share){ try{ await navigator.share({title:`Absensi ${(!isAdmin() && isOverzakKey(activeUnitKey()) ? BAHAN_BAKU_GABUNGAN_NAME : activeUnitName())}`,text:`Laporan absensi ${formatLongDate(state.reportDate)}`,files:[file]}); setWaProgress(6,'Share WhatsApp berhasil dibuka.',100,6); await waitMs(220); return; }catch(err){ if(err && err.name==='AbortError') return; console.warn('Share gambar gagal.', err); } } await saveBackupImage(blob); openWhatsappWithText(`Laporan absensi ${(!isAdmin() && isOverzakKey(activeUnitKey()) ? BAHAN_BAKU_GABUNGAN_NAME : activeUnitName())} tanggal ${formatLongDate(state.reportDate)} sudah dibuat. Silakan lampirkan gambar PNG yang baru diunduh jika WhatsApp belum menerima file otomatis.`); setWaProgress(6,'WhatsApp dibuka. Jika file belum ikut terlampir otomatis, gunakan gambar PNG yang baru diunduh.',100,6); await waitMs(260); }catch(err){ console.error(err); alert('Lapor BIP gagal diproses. Coba ulangi sekali lagi.'); }finally{ hideWaProgressOverlay(); if(btn){ btn.disabled=false; btn.textContent=originalText || 'Lapor BIP via WA'; } } }
+async function shareWhatsapp(){ if(!requirePermission('shareReports','Akses ditolak. Role ini tidak boleh share laporan via WhatsApp.')) return; const rows=selectedWorkers(); if(rows.length===0){ alert('Lapor BIP belum bisa dikirim. Pilih minimal 1 pekerja terlebih dahulu.'); return; } const btn=$('btnShareWa'); const originalText=btn ? btn.textContent : ''; createWaProgressOverlay(); try{ if(btn){ btn.disabled=true; btn.textContent='Membuat WA Ultra HD Max...'; } const blob=await reportImageBlob((step,msg,pct,total)=>{ setWaProgress(step,msg,pct,total); if(btn) btn.textContent=`Tahap ${Math.min(total||6, step)}...`; }); if(!blob){ alert('Gambar laporan gagal dibuat. Silakan coba lagi.'); return; } const filename=`laporan-${new Date().getTime()}.png`; const file=new File([blob],filename,{type:'image/png'}); await waitMs(250); setWaProgress(7,'Menyiapkan link share ke WhatsApp...',97,7); if(btn) btn.textContent='Membuka WhatsApp...'; if(navigator.canShare && navigator.canShare({files:[file]}) && navigator.share){ try{ await navigator.share({title:`Absensi ${(!isAdmin() && isOverzakKey(activeUnitKey()) ? BAHAN_BAKU_GABUNGAN_NAME : activeUnitName())}`,text:`Laporan absensi ${formatLongDate(state.reportDate)}`,files:[file]}); setWaProgress(7,'Share WhatsApp berhasil dibuka.',100,7); await waitMs(220); return; }catch(err){ if(err && err.name==='AbortError') return; console.warn('Share gambar gagal.', err); } } await saveBackupImage(blob); openWhatsappWithText(`Laporan absensi ${(!isAdmin() && isOverzakKey(activeUnitKey()) ? BAHAN_BAKU_GABUNGAN_NAME : activeUnitName())} tanggal ${formatLongDate(state.reportDate)} sudah dibuat. Silakan lampirkan gambar PNG yang baru diunduh jika WhatsApp belum menerima file otomatis.`); setWaProgress(7,'WhatsApp dibuka. Jika file belum ikut terlampir otomatis, gunakan gambar PNG yang baru diunduh.',100,7); await waitMs(260); }catch(err){ console.error(err); alert('Lapor BIP gagal diproses. Coba ulangi sekali lagi.'); }finally{ hideWaProgressOverlay(); if(btn){ btn.disabled=false; btn.textContent=originalText || 'Lapor BIP via WA'; } } }
 
 let coordinatorCombinedReportToken=0;
 function liveOverzakAttendancePayload(dateValue){
