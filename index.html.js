@@ -36,7 +36,7 @@
     .login-view{min-height:calc(100vh - 30px);display:flex;align-items:center;justify-content:center;padding:18px 0 34px}.auth-ok .login-view{display:none!important}.auth-pending .wrap,.auth-pending .tabs,.auth-pending .install-sheet{display:none!important}.login-shell{width:min(100%,460px);position:relative}.login-card{border-radius:32px;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.96));border:1px solid rgba(188,202,221,.72);box-shadow:0 28px 70px rgba(20,38,72,.16);overflow:hidden}.login-top{position:relative;overflow:hidden;background:linear-gradient(135deg,#11285f 0%,#2558d9 58%,#65a2ff 100%);padding:24px 20px 22px;color:#fff}.login-top:before,.login-top:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.10)}.login-top:before{width:170px;height:170px;right:-48px;top:-42px}.login-top:after{width:130px;height:130px;right:54px;bottom:-68px}.login-brand{position:relative;z-index:1;display:flex;align-items:center;gap:14px}.login-logo{width:68px;height:68px;border-radius:20px;background:#fff;padding:8px;object-fit:contain;box-shadow:0 14px 28px rgba(12,28,69,.24)}.login-brand small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:950;color:rgba(255,255,255,.78)}.login-brand h1{margin:3px 0 0;font-size:22px;font-weight:950}.login-body{padding:18px}.login-note{margin:0 0 14px;padding:12px 13px;border-radius:18px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;font-size:12px;font-weight:850;line-height:1.5}.login-form{display:grid;gap:12px}.password-wrap{position:relative}.password-wrap input{padding-right:54px}.mini-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:42px;height:36px;border-radius:12px;background:#eef5ff;color:#2558d9;font-weight:950}.login-error{display:none;margin-top:2px;padding:11px 12px;border-radius:16px;background:#ffe8e4;color:#b42318;border:1px solid #ffc8c0;font-size:12px;font-weight:850}.login-error.show{display:block}.demo-box{margin-top:14px;border:1px dashed #bfd0ea;border-radius:20px;background:#fbfdff;padding:13px}.demo-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px;color:#20355b;font-weight:950;font-size:13px}.demo-list{display:grid;gap:8px}.demo-user{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:#fff;border:1px solid #e1eaf6;border-radius:16px;padding:10px 11px}.demo-user strong{display:block;font-size:12px;color:#20355b}.demo-user span{display:block;font-size:11px;color:#65758b;font-weight:800;margin-top:2px}.demo-user code{font-family:Consolas,monospace;font-size:11px;background:#eef5ff;color:#2558d9;padding:6px 7px;border-radius:10px;font-weight:900}.user-strip{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;padding:11px 13px;border-radius:20px;background:rgba(255,255,255,.94);border:1px solid rgba(188,202,221,.66);box-shadow:0 10px 26px rgba(20,38,72,.07)}.user-strip-left{display:flex;align-items:center;gap:10px;min-width:0}.user-avatar{width:42px;height:42px;border-radius:15px;background:linear-gradient(135deg,#2558d9,#65a2ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:950;box-shadow:0 10px 18px rgba(37,88,217,.18);flex:0 0 auto}.user-name{font-weight:950;color:#20355b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.user-unit{font-size:12px;color:#65758b;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.logout-btn{min-height:40px;border-radius:14px;background:#ffe8e4;color:#b42318;padding:8px 12px;font-size:12px;font-weight:950;flex:0 0 auto}.hero-user{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.25)}.admin-only{display:none!important}.auth-admin .admin-only{display:block!important}.auth-admin .panel.admin-only{display:none!important}.auth-admin .panel.admin-only.active{display:block!important}.admin-import-grid{display:grid;grid-template-columns:1fr;gap:10px}.admin-import-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.import-help{margin-top:12px;border-radius:16px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;padding:11px 12px;font-size:12px;font-weight:800;line-height:1.55}.import-file-name{margin-top:8px;color:#64748b;font-size:12px;font-weight:800}.machine-preview-box{margin-top:12px;border:1px solid #dfe8f5;background:#fff;border-radius:18px;overflow:hidden}.machine-preview-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 12px;background:#f8fafc;border-bottom:1px solid #e5edf7;font-size:12px;font-weight:950;color:#20355b}.machine-preview-table-wrap{width:100%;overflow:auto}.machine-preview-table{width:100%;border-collapse:collapse;font-size:12px;min-width:900px}.machine-preview-table th,.machine-preview-table td{border:1px solid #e5edf7;padding:7px 8px;text-align:left;white-space:nowrap}.machine-preview-table th{background:#eef5ff;color:#2558d9;font-weight:950}.machine-status{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:950}.machine-status.ok{background:#dcfce7;color:#166534}.machine-status.warn{background:#fff7ed;color:#9a3412}.machine-status.err{background:#fee2e2;color:#991b1b}.machine-status.muted{background:#f1f5f9;color:#475569}.auth-admin .tabs{grid-template-columns:repeat(2,1fr)}.auth-admin .tab-worker{display:none!important}.auth-admin #panelWorkers{display:none!important}.auth-admin .coordinator-only{display:none!important}.role-readonly .input-only,.role-readonly #panelWorkers,.role-readonly .tab-worker,.role-payroll .input-only,.role-payroll #panelWorkers,.role-payroll .tab-worker{display:none!important}.role-readonly [data-role-write],.role-payroll [data-role-write]{display:none!important}.permission-note{margin-top:12px;border:1px solid #f8d98b;background:#fff8df;color:#7a4b00;border-radius:16px;padding:11px 12px;font-size:12px;font-weight:850;line-height:1.5}.admin-panel-grid{display:grid;grid-template-columns:1fr;gap:12px}.admin-mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.admin-mini{border:1px solid #dfe8f5;background:#fff;border-radius:18px;padding:12px;box-shadow:0 8px 20px rgba(20,38,72,.06)}.admin-mini .label{font-size:10px;color:#71829b;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.admin-mini .value{font-size:22px;font-weight:950;margin-top:4px;color:#20355b}.admin-danger-box{border:1px solid #ffd0c8;background:#fff7f5;border-radius:20px;padding:12px}.admin-safe-box{border:1px solid #d9e7ff;background:#fbfdff;border-radius:20px;padding:12px}.admin-log{margin-top:12px;border-radius:16px;background:#0f172a;color:#e5edf8;padding:12px;font-size:12px;line-height:1.55;white-space:pre-wrap;max-height:180px;overflow:auto}.admin-actions-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.admin-actions-row.three{grid-template-columns:1fr 1fr 1fr}.admin-checkline{display:flex;align-items:center;gap:10px;margin-top:10px;padding:12px;border:1px solid #dfe8f5;border-radius:16px;background:#fff;font-size:13px;font-weight:900;color:#20355b}.admin-checkline input{width:20px;height:20px;accent-color:#2558d9}
 
 
-    .admin-admin-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;margin-bottom:12px}.admin-section-btn{min-height:44px;border-radius:16px;background:#f4f7fb;color:#42526c;border:1px solid #dfe8f5;font-weight:950;padding:9px 10px}.admin-section-btn.active{background:linear-gradient(135deg,var(--primary),#65a2ff);color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(37,88,217,.20)}.admin-section-card{display:none}.admin-section-card.active{display:block;grid-column:1/-1}.admin-frame-grid{display:grid;grid-template-columns:1fr;gap:12px}.admin-sub-frame{border:1px solid #dfe8f5;background:#fbfdff;border-radius:20px;padding:12px}.admin-sub-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}.admin-sub-title small{display:inline-flex;align-items:center;justify-content:center;min-width:64px;padding:6px 9px;border-radius:999px;background:#eef5ff;color:#2558d9;font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:.08em}.admin-sub-title h4{margin:0;font-size:15px;color:#20355b;font-weight:950}.admin-worker-crud{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}.admin-worker-form{display:grid;grid-template-columns:1fr;gap:10px}.admin-worker-tools{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-worker-list{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff}.admin-worker-row{display:grid;grid-template-columns:80px 1fr auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.admin-worker-row:last-child{border-bottom:0}.admin-worker-row .nip{font-weight:950;color:#2558d9}.admin-worker-row .name{font-weight:900;color:#20355b}.admin-worker-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:2px}.admin-worker-row .row-actions{display:flex;gap:6px}.admin-worker-row .row-actions button{min-height:34px;border-radius:12px;padding:7px 9px;font-size:12px}.empty-admin-list{padding:14px;text-align:center;color:#64748b;font-weight:850;font-size:12px}.admin-worker-count{font-size:12px;color:#64748b;font-weight:900;margin-top:8px}.commercial-tools{display:none;grid-template-columns:1fr;gap:10px;margin-top:10px}.commercial-tools.show{display:grid}.commercial-summary{border:1px solid #dfe8f5;border-radius:16px;background:#fbfdff;padding:10px;font-size:12px;color:#42526c;font-weight:850}.commercial-summary b{color:#20355b}.commercial-matrix{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff}.commercial-matrix-head,.commercial-matrix-row{display:grid;grid-template-columns:1.2fr 1fr 90px 90px;gap:8px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.commercial-matrix-head{background:#f4f7fb;color:#20355b;font-weight:950;font-size:12px}.commercial-matrix-row:last-child{border-bottom:0}.commercial-matrix-row .dock-name{font-weight:950;color:#2558d9}.commercial-matrix-row .regu-name{font-weight:900;color:#20355b}.commercial-matrix-row label{display:flex;align-items:center;justify-content:center;gap:6px;font-weight:950;color:#334155}.commercial-matrix-row input[type="checkbox"]{width:18px;height:18px;accent-color:#2558d9}.commercial-regu-select{width:100%;min-height:40px;border:1px solid #dfe8f5;border-radius:12px;background:#fff;padding:8px 10px;font-weight:900;color:#20355b}.commercial-regu-select option[disabled]{color:#94a3b8}.commercial-matrix-row select:invalid{color:#64748b}@media(max-width:640px){.commercial-matrix-head,.commercial-matrix-row{grid-template-columns:54px minmax(96px,1fr) 56px 56px;gap:5px;padding:10px 7px}.commercial-matrix-head{font-size:10px}.commercial-matrix-row .dock-name{font-size:16px;line-height:1.1;white-space:normal}.commercial-regu-select{min-height:42px;border-radius:14px;padding:6px 20px 6px 6px;font-size:13px;min-width:0}.commercial-matrix-row label{font-size:16px;gap:4px}.commercial-matrix-row input[type="checkbox"]{width:20px;height:20px}}.commercial-worker-hidden-note{margin-top:10px;border:1px dashed #cbd5e1;border-radius:16px;background:#f8fafc;padding:12px;text-align:center;color:#64748b;font-weight:850;font-size:12px}.dock-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.dock-row:last-child{border-bottom:0}.dock-row .name{font-weight:950;color:#20355b}.dock-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:2px}.dock-list{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff;margin-top:12px}.sync-status-box{border:1px solid #dfe8f5;border-radius:20px;background:#fbfdff;padding:12px;margin-bottom:12px}.sync-status-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}.sync-status-title h4{margin:0;color:#20355b;font-size:15px;font-weight:950}.sync-chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:950;background:#eef5ff;color:#2558d9}.sync-chip.ok{background:#dcfce7;color:#166534}.sync-chip.warn{background:#fff7ed;color:#9a3412}.sync-chip.err{background:#fee2e2;color:#991b1b}.sync-pending-list{border:1px solid #dfe8f5;border-radius:18px;background:#fff;overflow:hidden}.sync-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:11px 12px;border-bottom:1px solid #edf2f8}.sync-row:last-child{border-bottom:0}.sync-row .main{font-weight:950;color:#20355b}.sync-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:3px;line-height:1.45}.sync-row .row-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.sync-row .row-actions button{min-height:34px;border-radius:12px;padding:7px 9px;font-size:12px}.sync-cache-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.sync-cache-card{border:1px solid #dfe8f5;border-radius:16px;background:#fff;padding:10px}.sync-cache-card .label{font-size:11px;color:#64748b;font-weight:900}.sync-cache-card .value{font-size:20px;color:#20355b;font-weight:950;margin-top:4px}@media(max-width:640px){.sync-row{grid-template-columns:1fr}.sync-row .row-actions{justify-content:stretch}.sync-row .row-actions button{flex:1}}
+    .admin-admin-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;margin-bottom:12px}.admin-section-btn{min-height:44px;border-radius:16px;background:#f4f7fb;color:#42526c;border:1px solid #dfe8f5;font-weight:950;padding:9px 10px}.admin-section-btn.active{background:linear-gradient(135deg,var(--primary),#65a2ff);color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(37,88,217,.20)}.admin-section-card{display:none}.admin-section-card.active{display:block;grid-column:1/-1}.admin-frame-grid{display:grid;grid-template-columns:1fr;gap:12px}.admin-sub-frame{border:1px solid #dfe8f5;background:#fbfdff;border-radius:20px;padding:12px}.admin-sub-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}.admin-sub-title small{display:inline-flex;align-items:center;justify-content:center;min-width:64px;padding:6px 9px;border-radius:999px;background:#eef5ff;color:#2558d9;font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:.08em}.admin-sub-title h4{margin:0;font-size:15px;color:#20355b;font-weight:950}.admin-worker-crud{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}.admin-worker-form{display:grid;grid-template-columns:1fr;gap:10px}.admin-worker-tools{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-worker-list{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff}.admin-worker-row{display:grid;grid-template-columns:80px 1fr auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.admin-worker-row:last-child{border-bottom:0}.admin-worker-row .nip{font-weight:950;color:#2558d9}.admin-worker-row .name{font-weight:900;color:#20355b}.admin-worker-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:2px}.admin-worker-row .row-actions{display:flex;gap:6px}.admin-worker-row .row-actions button{min-height:34px;border-radius:12px;padding:7px 9px;font-size:12px}.empty-admin-list{padding:14px;text-align:center;color:#64748b;font-weight:850;font-size:12px}.admin-worker-count{font-size:12px;color:#64748b;font-weight:900;margin-top:8px}.commercial-tools{display:none;grid-template-columns:1fr;gap:10px;margin-top:10px}.commercial-tools.show{display:grid}.commercial-summary{border:1px solid #dfe8f5;border-radius:16px;background:#fbfdff;padding:10px;font-size:12px;color:#42526c;font-weight:850}.commercial-summary b{color:#20355b}.commercial-matrix{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff}.commercial-matrix-head,.commercial-matrix-row{display:grid;grid-template-columns:1.2fr 1fr 90px 90px;gap:8px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.commercial-matrix-head{background:#f4f7fb;color:#20355b;font-weight:950;font-size:12px}.commercial-matrix-row:last-child{border-bottom:0}.commercial-matrix-row .dock-name{font-weight:950;color:#2558d9}.commercial-matrix-row .regu-name{font-weight:900;color:#20355b}.commercial-matrix-row label{display:flex;align-items:center;justify-content:center;gap:6px;font-weight:950;color:#334155}.commercial-matrix-row input[type="checkbox"]{width:18px;height:18px;accent-color:#2558d9}.commercial-regu-select{width:100%;min-height:40px;border:1px solid #dfe8f5;border-radius:12px;background:#fff;padding:8px 10px;font-weight:900;color:#20355b}.commercial-regu-select option[disabled]{color:#94a3b8}.commercial-matrix-row select:invalid{color:#64748b}@media(max-width:640px){.commercial-matrix-head,.commercial-matrix-row{grid-template-columns:54px minmax(96px,1fr) 56px 56px;gap:5px;padding:10px 7px}.commercial-matrix-head{font-size:10px}.commercial-matrix-row .dock-name{font-size:16px;line-height:1.1;white-space:normal}.commercial-regu-select{min-height:42px;border-radius:14px;padding:6px 20px 6px 6px;font-size:13px;min-width:0}.commercial-matrix-row label{font-size:16px;gap:4px}.commercial-matrix-row input[type="checkbox"]{width:20px;height:20px}}.commercial-worker-hidden-note{margin-top:10px;border:1px dashed #cbd5e1;border-radius:16px;background:#f8fafc;padding:12px;text-align:center;color:#64748b;font-weight:850;font-size:12px}.dock-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.dock-row:last-child{border-bottom:0}.dock-row .name{font-weight:950;color:#20355b}.dock-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:2px}.dock-list{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff;margin-top:12px}.sync-status-box{border:1px solid #dfe8f5;border-radius:20px;background:#fbfdff;padding:12px;margin-bottom:12px}.sync-status-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}.sync-status-title h4{margin:0;color:#20355b;font-size:15px;font-weight:950}.sync-chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:950;background:#eef5ff;color:#2558d9}.sync-chip.ok{background:#dcfce7;color:#166534}.sync-chip.warn{background:#fff7ed;color:#9a3412}.sync-chip.err{background:#fee2e2;color:#991b1b}.sync-pending-list{border:1px solid #dfe8f5;border-radius:18px;background:#fff;overflow:hidden}.sync-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:11px 12px;border-bottom:1px solid #edf2f8}.sync-row:last-child{border-bottom:0}.sync-row .main{font-weight:950;color:#20355b}.sync-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:3px;line-height:1.45}.sync-row .row-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.sync-row .row-actions button{min-height:34px;border-radius:12px;padding:7px 9px;font-size:12px}.sync-cache-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.sync-cache-card{border:1px solid #dfe8f5;border-radius:16px;background:#fff;padding:10px}.sync-cache-card .label{font-size:11px;color:#64748b;font-weight:900}.sync-cache-card .value{font-size:20px;color:#20355b;font-weight:950;margin-top:4px}.usage-meter{margin-top:8px;height:9px;border-radius:999px;background:#eef2f7;overflow:hidden}.usage-meter-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#22c55e,#f59e0b)}.usage-detail{font-size:11px;color:#64748b;font-weight:800;margin-top:6px;line-height:1.45}.usage-table-wrap{width:100%;overflow:auto;margin-top:10px}.usage-table{width:100%;border-collapse:collapse;font-size:12px;min-width:620px}.usage-table th,.usage-table td{border:1px solid #e5edf7;padding:8px;text-align:left}.usage-table th{background:#f8fafc;color:#20355b}.usage-warn{color:#b45309;font-weight:950}.usage-ok{color:#15803d;font-weight:950}@media(max-width:640px){.sync-row{grid-template-columns:1fr}.sync-row .row-actions{justify-content:stretch}.sync-row .row-actions button{flex:1}}
     @media(min-width:900px){body{padding-bottom:26px}.admin-panel-grid{grid-template-columns:1fr 1fr}.admin-frame-grid{grid-template-columns:1fr 1fr}.admin-sub-frame .grid-form{grid-template-columns:1fr 1fr}.admin-sub-frame .span-2{grid-column:span 2}.admin-sub-frame .name-field{grid-column:auto}.tabs{position:static;display:flex;justify-content:flex-end;background:transparent;border:0;box-shadow:none;padding:0;margin-bottom:14px}.tab-btn{min-width:180px}.grid-form{grid-template-columns:90px 130px 1fr 150px}.span-2{grid-column:auto}.name-field{grid-column:span 1}.actions{grid-template-columns:repeat(4,1fr)}.split-grid{grid-template-columns:1fr 1fr}.desktop-print-preview{display:block}.mobile-only{display:none!important}.install-sheet{bottom:16px}}
     @media(max-width:540px){.inside-stats{grid-template-columns:repeat(3,1fr);margin-top:12px}body{padding-left:8px;padding-right:8px}.hero{border-radius:24px;padding:18px 14px}.hero-logo{width:56px;height:56px}.hero h1{font-size:18px}.hero p{font-size:12px}.stats{gap:8px}.stat{padding:10px;border-radius:18px}.stat .num{font-size:21px}.worker-list,.attendance-list{grid-template-columns:1fr}.frame{padding:12px;border-radius:24px}.card-body{padding:13px}.actions{grid-template-columns:1fr 1fr}.control-report{grid-template-columns:1fr}.control-actions{grid-template-columns:1fr}.schedule-bar{grid-template-columns:1fr auto}.btn{min-height:48px}.search-row{grid-template-columns:1fr}.install-sheet-actions{display:grid;grid-template-columns:1fr 1fr}.app-splash-title{font-size:24px}}
 
@@ -919,8 +919,10 @@
             <label><input id="adminShowDurationReport" type="checkbox"> Durasi</label>
           </div>
           <button type="button" class="btn success full" id="btnAdminApplyAutoCheckTimes">⚙️ Isi Otomatis Cek In / Cek Out</button>
+          <button type="button" class="btn primary full" id="btnAdminUseCheckSummaryReport" style="margin-top:10px">↘️ Pakai Ringkasan Bagian ke Form Cek In/Out</button>
+          <div class="import-help" id="adminCheckTimesSourceLabel">ℹ️ Sumber pengisian terakhir: Manual / belum ada pengisian otomatis.</div>
         </div>
-        <div class="import-help" id="adminAttendanceInfo">Cek In / Cek Out bisa diisi manual, otomatis, atau mengambil data global dari menu Admin &gt; Import Data.</div>
+        <div class="import-help" id="adminAttendanceInfo">Cek In / Cek Out bisa diisi manual, otomatis, atau mengambil Ringkasan Preview Mesin berdasarkan Bagian dari menu Admin &gt; Import Data.</div>
       </div></div>
       <div class="attendance-list no-print" id="mobileReportList"></div>
       <div class="card print-sheet report-preview"><div class="card-head no-print"><h3>Tabel Hasil Input</h3><span><strong id="selectedCountBadge">0</strong> pekerja dipilih</span></div><div class="print-title"><div class="main" id="reportMainTitle">ABSENSI KEGIATAN MUATAN BREEDER</div><div class="company" id="reportCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="reportDateText">HARI - TANGGAL</div></div><div class="table-wrap"><table class="report-table" id="reportTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><th>CEK IN</th><th>CEK OUT</th></tr></thead><tbody id="reportBody"></tbody><tfoot class="report-summary"><tr><td class="summary-empty" colspan="3"></td><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><td class="summary-empty" colspan="2"></td></tr><tr><td class="left-label" colspan="3">JUMLAH PEKERJA</td><td id="sumS1">0</td><td id="sumS2">0</td><td id="sumS3">0</td><td class="summary-empty" colspan="2"></td></tr><tr><td class="summary-empty" colspan="3"></td><td class="total" colspan="3"><span id="sumTotal">0</span> Orang</td><td class="summary-empty" colspan="2"></td></tr></tfoot></table></div><div class="report-footer" id="reportFooter"><div class="signature-grid"><div><div class="signature-title editable-report" data-report-setting="signBip" contenteditable="true">B I P</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signGudang" contenteditable="true">Bagian Gudang</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signKasie" contenteditable="true">Kasie Muatan Breeder</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signPga" contenteditable="true">Bagian P&amp;GA</div><div class="signature-line"></div></div></div><div class="note-area"><div class="note-title">NOTE :</div><div class="editable-report" data-report-setting="note" contenteditable="true"></div><table class="worktime-table"><tr><th colspan="3" class="worktime-main">ABSENSI SIDIK JARI<br><span class="editable-report" data-report-setting="workTitle" contenteditable="true">JAM KERJA CEK IN dan CEK OUT</span></th></tr><tr><th>JADWAL</th><th colspan="2">JAM KERJA</th></tr><tr><th>KERJA</th><th>CEK IN</th><th>CEK OUT</th></tr><tr><td class="editable-report" data-report-setting="shiftPagiLabel" contenteditable="true">SHIFT 1</td><td class="editable-report" data-report-setting="shiftPagiIn" contenteditable="true">07:00</td><td class="editable-report" data-report-setting="shiftPagiOut" contenteditable="true">17:00</td></tr><tr><td class="editable-report" data-report-setting="shiftSiangLabel" contenteditable="true">SHIFT 2</td><td class="editable-report" data-report-setting="shiftSiangIn" contenteditable="true">17:00</td><td class="editable-report" data-report-setting="shiftSiangOut" contenteditable="true">23:00</td></tr><tr><td class="editable-report" data-report-setting="shiftMalamLabel" contenteditable="true">SHIFT 3</td><td class="editable-report" data-report-setting="shiftMalamIn" contenteditable="true">23:00</td><td class="editable-report" data-report-setting="shiftMalamOut" contenteditable="true">07:00</td></tr></table><div class="note-save-row no-print"><button type="button" class="btn primary" id="btnSaveReportFormat">💾 Simpan NOTE / Jam Kerja</button></div></div></div><div class="bottom-print-actions no-print"><button type="button" class="btn dark" id="btnBottomPrintAttendance">👁 Preview</button></div></div>
@@ -998,12 +1000,15 @@
               <div class="grid-form">
                 <div class="field span-2"><label for="adminGlobalCheckDate">Tanggal Data Mesin / Jadwal</label><input id="adminGlobalCheckDate" type="date"></div>
                 <div class="field span-2"><label for="adminGlobalCheckFile">File Excel / CSV</label><input id="adminGlobalCheckFile" type="file" accept=".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv"></div>
+                <div class="field span-2"><label for="adminCheckSummaryUnitSelect">Bagian Ringkasan Cek In/Out</label><select id="adminCheckSummaryUnitSelect"></select></div>
               </div>
               <div class="import-file-name" id="adminGlobalCheckFileName">Belum ada file dipilih.</div>
               <div class="admin-actions-row three"><button class="btn secondary" id="btnAdminPreviewMachineImport">🔎 Preview Import Data Mesin</button><button class="btn warning" id="btnAdminImportGlobalCheckTimes">📥 Import Rekap Cek In/Out</button><button class="btn danger" id="btnAdminClearGlobalCheckTimes">🗑 Hapus Data Tanggal Ini</button></div>
               <div class="admin-actions-row" style="grid-template-columns:1fr"><button class="btn primary" id="btnAdminPreviewAllSchedules">📋 Preview Jadwal Semua Kegiatan</button></div>
               <div class="admin-actions-row" style="grid-template-columns:1fr"><button class="btn success" id="btnAdminImportMachinePreview">📥 Import Hasil Preview Mesin ke Cek In/Out</button></div>
+              <div class="admin-actions-row"><button class="btn primary" id="btnAdminCheckInOutSummary">📊 Cek Ringkasan Cek In/Out Berdasarkan Bagian</button><button class="btn secondary" id="btnAdminUseCheckSummary">↘️ Pakai Ringkasan Bagian ke Form Cek In/Out</button></div>
               <div class="import-help" id="adminGlobalCheckInfo">Import Rekap Cek In/Out memakai file rekap berkolom <b>NIP</b>, <b>Cek In</b>, dan <b>Cek Out</b>. Untuk file mentah mesin berkolom <b>No.ID</b>, <b>Tgl/Waktu</b>, dan <b>Lokasi ID</b>, gunakan <b>Preview Import Data Mesin</b>, lalu klik <b>Import Hasil Preview Mesin ke Cek In/Out</b>. Jam disimpan format <b>HH:MM:SS</b>.</div>
+              <div class="machine-preview-box" id="adminCheckSummaryBox" style="display:none"></div>
               <div class="machine-preview-box" id="adminMachinePreviewBox" style="display:none"></div>
               <div class="all-schedule-preview-box" id="adminAllSchedulePreviewBox" style="display:none"></div>
               <div class="admin-sub-title" style="margin-top:14px"><div><h4>Riwayat Import Cek In/Out</h4></div><small>v70</small></div>
@@ -1080,6 +1085,13 @@
             <div class="admin-sub-frame">
               <div class="admin-sub-title"><div><h4>Ringkasan Cache Lokal</h4></div><small>Info</small></div>
               <div class="sync-cache-grid" id="syncCacheSummary"><div class="empty-admin-list">Belum ada ringkasan cache.</div></div>
+            </div>
+            <div class="admin-sub-frame">
+              <div class="admin-sub-title"><div><h4>Monitor Estimasi Penggunaan Firestore</h4></div><small>Kuota Gratis</small></div>
+              <div class="admin-actions-row"><button class="btn primary" id="btnAdminRefreshFirestoreUsage">📊 Hitung Estimasi</button></div>
+              <div class="import-help">Estimasi dihitung dari dokumen yang bisa dibaca aplikasi. Angka ini membantu memantau kuota gratis Firestore, bukan angka billing resmi Google Cloud.</div>
+              <div class="sync-cache-grid" id="firestoreUsageSummary"><div class="empty-admin-list">Klik Hitung Estimasi untuk melihat penggunaan Firestore.</div></div>
+              <div class="usage-table-wrap" id="firestoreUsageDetails"></div>
             </div>
           </div>
         </div></div>
@@ -3967,21 +3979,28 @@ function adminApplyAutoCheckTimes(){
   const cekInMaxBefore=randomOpts.inMax;
   const cekOutMinAfter=randomOpts.outMin;
   const cekOutMaxAfter=randomOpts.outMax;
+  let filledIn=0, filledOut=0, skippedExisting=0, skippedNoShift=0, skippedTf=0;
   rows.forEach(r=>{
-    if(isCommercialTfActivityRow(r)){ r.checkIn=''; r.checkOut=''; return; }
+    if(isCommercialTfActivityRow(r)){ skippedTf++; return; }
     const autoS1=!!r.s1;
     const autoS2=!!r.s2;
     const autoS3=useS3 && !!r.s3;
-    if(autoS1 && (autoS2 || autoS3)){ r.checkIn=randomBeforeWorkTime(s1In,cekInMinBefore,cekInMaxBefore); r.checkOut=randomAfterWorkTime(autoS3?s3Out:s2Out,cekOutMinAfter,cekOutMaxAfter); }
-    else if(autoS2 && autoS3){ r.checkIn=randomBeforeWorkTime(s2In,cekInMinBefore,cekInMaxBefore); r.checkOut=randomAfterWorkTime(s3Out,cekOutMinAfter,cekOutMaxAfter); }
-    else if(autoS1){ r.checkIn=randomBeforeWorkTime(s1In,cekInMinBefore,cekInMaxBefore); r.checkOut=randomAfterWorkTime(s1Out,cekOutMinAfter,cekOutMaxAfter); }
-    else if(autoS2){ r.checkIn=randomBeforeWorkTime(s2In,cekInMinBefore,cekInMaxBefore); r.checkOut=randomAfterWorkTime(s2Out,cekOutMinAfter,cekOutMaxAfter); }
-    else if(autoS3){ r.checkIn=randomBeforeWorkTime(s3In,cekInMinBefore,cekInMaxBefore); r.checkOut=randomAfterWorkTime(s3Out,cekOutMinAfter,cekOutMaxAfter); }
-    else { r.checkIn=''; r.checkOut=''; }
+    let nextIn='', nextOut='';
+    if(autoS1 && (autoS2 || autoS3)){ nextIn=randomBeforeWorkTime(s1In,cekInMinBefore,cekInMaxBefore); nextOut=randomAfterWorkTime(autoS3?s3Out:s2Out,cekOutMinAfter,cekOutMaxAfter); }
+    else if(autoS2 && autoS3){ nextIn=randomBeforeWorkTime(s2In,cekInMinBefore,cekInMaxBefore); nextOut=randomAfterWorkTime(s3Out,cekOutMinAfter,cekOutMaxAfter); }
+    else if(autoS1){ nextIn=randomBeforeWorkTime(s1In,cekInMinBefore,cekInMaxBefore); nextOut=randomAfterWorkTime(s1Out,cekOutMinAfter,cekOutMaxAfter); }
+    else if(autoS2){ nextIn=randomBeforeWorkTime(s2In,cekInMinBefore,cekInMaxBefore); nextOut=randomAfterWorkTime(s2Out,cekOutMinAfter,cekOutMaxAfter); }
+    else if(autoS3){ nextIn=randomBeforeWorkTime(s3In,cekInMinBefore,cekInMaxBefore); nextOut=randomAfterWorkTime(s3Out,cekOutMinAfter,cekOutMaxAfter); }
+    else { skippedNoShift++; return; }
+    const hasIn=!!normalizeTimeToHMS(r.checkIn || '');
+    const hasOut=!!normalizeTimeToHMS(r.checkOut || '');
+    if(!hasIn && nextIn){ r.checkIn=nextIn; filledIn++; } else if(hasIn){ skippedExisting++; }
+    if(!hasOut && nextOut){ r.checkOut=nextOut; filledOut++; } else if(hasOut){ skippedExisting++; }
   });
   updateAdminReportRowsWithCheckTimes(rows);
   renderReport();
-  alert(`Cek In / Cek Out otomatis sudah diisi acak dari jam shift admin. Cek In dibuat ${cekInMinBefore}-${cekInMaxBefore} menit sebelum jam dasar, Cek Out dibuat ${cekOutMinAfter}-${cekOutMaxAfter} menit sesudah jam dasar, lengkap sampai detik. Kegiatan Stapel (TF) dan Malleti (TF) tetap dikosongkan. Klik Simpan Cek In / Cek Out untuk menyimpan ke database.`);
+  setAdminCheckTimesSourceInfo('Isi Otomatis Berdasarkan Aturan Menit - hanya mengisi field kosong');
+  alert(`Isi Otomatis selesai. Field yang sudah berisi data tidak ditimpa. Terisi: Cek In ${filledIn}, Cek Out ${filledOut}. Dilewati karena sudah ada isi: ${skippedExisting}. Cek In dibuat ${cekInMinBefore}-${cekInMaxBefore} menit sebelum jam dasar, Cek Out dibuat ${cekOutMinAfter}-${cekOutMaxAfter} menit sesudah jam dasar, lengkap sampai detik. Kegiatan Stapel (TF) dan Malleti (TF) tidak diisi otomatis. Klik Simpan Cek In / Cek Out untuk menyimpan ke database.`);
 }
 
 function parseISODateUTC(dateValue){
@@ -4022,11 +4041,18 @@ function parseMachineDateTime(value, fallbackDate){
   if(!dateValue || !timeValue) return null;
   return {date:dateValue, time:timeValue};
 }
+function normalizeNipForMatch(value){
+  const raw=String(value===null || value===undefined ? '' : value).trim();
+  if(!raw) return '';
+  const digits=raw.replace(/\D/g,'');
+  if(digits) return digits.replace(/^0+/,'') || '0';
+  return raw.toLowerCase();
+}
 function parseMachineImportRows(rows, fallbackDate){
   const scans=[];
   const skipped=[];
   (rows||[]).forEach((row,idx)=>{
-    const nip=String(findCell(row,['No.ID','No ID','NIP','PIN','ID'])||'').trim();
+    const nip=normalizeNipForMatch(findCell(row,['No.ID','No ID','NIP','PIN','ID']));
     const dt=parseMachineDateTime(findCell(row,['Tgl/Waktu','Tanggal Waktu','Tgl Waktu','Date Time','Datetime','Waktu']), fallbackDate);
     const locRaw=String(findCell(row,['Lokasi ID','LokasiID','Location ID','Status','Mode'])||'').trim();
     const locMatch=locRaw.match(/\d+/);
@@ -4063,6 +4089,45 @@ function shiftWindowSeconds(row, dateValue, settings){
   });
   return {start:start===null ? -1 : start, end:end===null ? 86400 : end};
 }
+function shiftWindowSecondsForShift(shiftKey, dateValue, settings){
+  let inTime='', outTime='';
+  if(shiftKey==='s1'){ inTime=settings.shiftPagiIn; outTime=settings.shiftPagiOut; }
+  else if(shiftKey==='s2'){ inTime=settings.shiftSiangIn; outTime=settings.shiftSiangOut; }
+  else if(shiftKey==='s3'){ inTime=settings.shiftMalamIn; outTime=settings.shiftMalamOut; }
+  let a=parseAttendanceTimeToSeconds(inTime);
+  let b=parseAttendanceTimeToSeconds(outTime);
+  if(a===null || b===null) return {start:-1,end:86400};
+  if(b<=a) b+=86400;
+  return {start:a-(4*3600), end:b+(8*3600)};
+}
+function activeShiftKeysForScheduleRow(row){
+  const keys=[];
+  if(row && row.s1) keys.push('s1');
+  if(row && row.s2) keys.push('s2');
+  if(row && row.s3) keys.push('s3');
+  return keys;
+}
+function machineCheckForShift(scansByNip, nip, shiftKey, dateValue, settings){
+  const win=shiftWindowSecondsForShift(shiftKey, dateValue, settings);
+  const scans=(scansByNip[nip]||[])
+    .map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)}))
+    .filter(scan=>scan.abs>=win.start && scan.abs<=win.end);
+  const ins=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs);
+  const outs=scans.filter(scan=>String(scan.loc)==='2').sort((a,b)=>b.abs-a.abs);
+  const firstIn=ins[0] || null;
+  const lastOut=outs[0] || null;
+  return {
+    checkIn:firstIn ? normalizeTimeToHMS(firstIn.time) : '',
+    checkOut:lastOut ? normalizeTimeToHMS(lastOut.time) : '',
+    inAbs:firstIn ? firstIn.abs : null,
+    outAbs:lastOut ? lastOut.abs : null,
+    scanCount:scans.length
+  };
+}
+function displaySummaryTime(value){
+  const hms=normalizeTimeToHMS(value || '');
+  return hms ? hms.replace(/:/g,'.') : '0';
+}
 function machineScanAbsSeconds(scan, baseDate){
   return dateDiffDays(scan.date, baseDate)*86400 + (Number(scan.seconds)||0);
 }
@@ -4091,6 +4156,212 @@ function statusClassMachine(status){
 let lastMachineImportPreviewResult=null;
 function machineImportAllowedStatus(status){ return ['Cocok','Cek In tidak ditemukan','Cek Out tidak ditemukan'].includes(String(status||'')); }
 function validMachinePreviewRows(rows){ return (rows||[]).filter(r=>r && machineImportAllowedStatus(r.status) && String(r.nip||'').trim() && (normalizeTimeToHMS(r.checkIn||'') || normalizeTimeToHMS(r.checkOut||''))); }
+let lastCheckInOutSummaryResult=null;
+function setAdminCheckTimesSourceInfo(message){
+  const text=message || 'Manual / belum ada pengisian otomatis.';
+  const label=$('adminCheckTimesSourceLabel');
+  if(label) label.textContent='ℹ️ Sumber pengisian terakhir: '+text;
+}
+function getSelectedCheckSummaryUnitKey(){
+  const summarySel=$('adminCheckSummaryUnitSelect');
+  if(summarySel && summarySel.value) return summarySel.value;
+  const reportSel=$('adminReportUnitSelect');
+  if(reportSel && reportSel.value) return reportSel.value;
+  return adminManagedUnitKey || 'muatan_breeder';
+}
+function syncCheckSummaryUnitFromReport(){
+  const reportSel=$('adminReportUnitSelect');
+  const summarySel=$('adminCheckSummaryUnitSelect');
+  if(summarySel && reportSel && reportSel.value){ summarySel.value=reportSel.value; }
+}
+function machineSummaryShiftKeysForRow(row){
+  // v119: ringkasan per shift harus memakai pekerja yang masuk shift itu saja.
+  // Jika satu pekerja/baris terjadwal di lebih dari satu shift, baris tersebut tidak
+  // dipakai untuk ringkasan shift tunggal agar jam Shift 1 tidak masuk ke Shift 2
+  // atau sebaliknya. Contoh yang dipakai Shift 2 adalah baris dengan label tepat
+  // "Shift 2", bukan "Shift 1, Shift 2".
+  const active=row && (row.s1 || row.s2 || row.s3) ? activeShiftKeysForScheduleRow(row) : [];
+  if(active.length===1) return active;
+  if(active.length>1) return [];
+  const label=String(row && row.shift || '').toLowerCase().replace(/\s+/g,' ').trim();
+  if(/^shift\s*1$/.test(label)) return ['s1'];
+  if(/^shift\s*2$/.test(label)) return ['s2'];
+  if(/^shift\s*3$/.test(label)) return ['s3'];
+  return [];
+}
+function machineSummaryWeightedTime(value, shiftKey, kind){
+  const hms=normalizeTimeToHMS(value || '');
+  const seconds=parseAttendanceTimeToSeconds(hms);
+  if(!hms || seconds===null) return null;
+  let weight=seconds;
+  if(shiftKey==='s3' && seconds < 12*3600) weight+=86400;
+  return {time:hms, weight, kind};
+}
+function machineSummaryPick(values, mode){
+  const rows=(values||[]).filter(Boolean).sort((a,b)=>a.weight-b.weight);
+  if(!rows.length) return '';
+  return (mode==='max' ? rows[rows.length-1] : rows[0]).time;
+}
+function checkSummaryRowMatchesSelected(row, selectedUnitKey){
+  const key=String(selectedUnitKey || '');
+  const rowUnit=String(row && row.unitKey || '');
+  const rowSource=String(row && row.sourceUnitKey || '');
+  const rowActivity=String(row && row.activityKey || '');
+  const rowKegiatan=String(row && row.kegiatan || row && row.activityLabel || '').toLowerCase();
+  if(key===BAHAN_BAKU_GABUNGAN_KEY){
+    return [BAHAN_BAKU_PAGI_KEY, BAHAN_BAKU_MALAM_KEY, OVERZAK_KEY, 'oper_oper_bahan_baku', BAHAN_BAKU_GABUNGAN_KEY].includes(rowUnit) || [BAHAN_BAKU_PAGI_KEY, BAHAN_BAKU_MALAM_KEY, OVERZAK_KEY, 'oper_oper_bahan_baku'].includes(rowSource);
+  }
+  if(key===STAPEL_TF_KEY) return rowActivity===STAPEL_TF_KEY || rowKegiatan.includes('stapel');
+  if(key===MALLETI_TF_KEY) return rowActivity===MALLETI_TF_KEY || rowKegiatan.includes('malleti') || rowKegiatan.includes('mallet');
+  return rowUnit===key || rowSource===key;
+}
+function machineSummaryValueFromShift(row, shiftKey, type){
+  const checks=row && row._shiftChecks && row._shiftChecks[shiftKey] ? row._shiftChecks[shiftKey] : null;
+  if(checks) return type==='in' ? checks.checkIn : checks.checkOut;
+  return type==='in' ? (row && row.checkIn) : (row && row.checkOut);
+}
+function buildCheckInOutSummaryFromPreview(rows, opts={}){
+  const selectedUnitKey=opts.unitKey || getSelectedCheckSummaryUnitKey();
+  const selectedUnitName=unitNameFromKey(selectedUnitKey);
+  const allRows=Array.isArray(rows) ? rows : [];
+  const unitRows=allRows.filter(row=>checkSummaryRowMatchesSelected(row, selectedUnitKey));
+  const summary={
+    _meta:{ unitKey:selectedUnitKey, unitName:selectedUnitName, totalPreviewRows:allRows.length, scheduledRows:unitRows.length, foundMachineRows:0, notFoundRows:0, noInRows:0, noOutRows:0, validImportRows:0, noSchedule:unitRows.length===0 },
+    s1:{label:'Shift 1',inValues:[],outValues:[],scheduledRows:0,validRows:0,missingIn:0,missingOut:0,invalidRows:0},
+    s2:{label:'Shift 2',inValues:[],outValues:[],scheduledRows:0,validRows:0,missingIn:0,missingOut:0,invalidRows:0},
+    s3:{label:'Shift 3',inValues:[],outValues:[],scheduledRows:0,validRows:0,missingIn:0,missingOut:0,invalidRows:0}
+  };
+  unitRows.forEach(row=>{
+    const keys=machineSummaryShiftKeysForRow(row);
+    if(!keys.length) return;
+    const status=String(row.status || '');
+    if(status==='Tidak ada data mesin') summary._meta.notFoundRows+=1;
+    if(status==='Cek In tidak ditemukan') summary._meta.noInRows+=1;
+    if(status==='Cek Out tidak ditemukan') summary._meta.noOutRows+=1;
+    if(status!=='Tidak ada data mesin' && status!=='NIP tidak ada di jadwal') summary._meta.foundMachineRows+=1;
+    keys.forEach(key=>{
+      const bucket=summary[key];
+      bucket.scheduledRows+=1;
+      const inRaw=machineSummaryValueFromShift(row, key, 'in');
+      const outRaw=machineSummaryValueFromShift(row, key, 'out');
+      const inVal=machineSummaryWeightedTime(inRaw, key, 'in');
+      const outVal=machineSummaryWeightedTime(outRaw, key, 'out');
+      const hasAny=Boolean(inVal || outVal);
+      if(hasAny){ bucket.validRows+=1; summary._meta.validImportRows+=1; } else { bucket.invalidRows+=1; }
+      if(inVal) bucket.inValues.push(inVal); else bucket.missingIn+=1;
+      if(outVal) bucket.outValues.push(outVal); else bucket.missingOut+=1;
+    });
+  });
+  Object.keys(summary).filter(k=>k[0]==='s').forEach(key=>{
+    const b=summary[key];
+    b.minIn=machineSummaryPick(b.inValues,'min');
+    b.maxOut=machineSummaryPick(b.outValues,'max');
+    b.maxIn=machineSummaryPick(b.inValues,'max');
+    b.minOut=machineSummaryPick(b.outValues,'min');
+    if(!b.scheduledRows) b.status='Tidak ada jadwal shift ini';
+    else if(!b.validRows) b.status='Tidak ada data mesin valid';
+    else if(b.missingIn || b.missingOut) b.status=`Perlu dicek: Cek In kosong ${b.missingIn}, Cek Out kosong ${b.missingOut}`;
+    else b.status=key==='s3' ? 'Normal - mode lintas tengah malam' : 'Normal';
+  });
+  return summary;
+}
+function renderCheckInOutSummary(summary){
+  const box=$('adminCheckSummaryBox');
+  if(!box) return;
+  const data=summary || lastCheckInOutSummaryResult;
+  if(!data){ box.style.display='none'; return; }
+  box.style.display='block';
+  const meta=data._meta || {};
+  const body=['s1','s2','s3'].map(key=>{
+    const r=data[key] || {};
+    const cls=String(r.status||'').startsWith('Normal') ? 'ok' : (r.validRows ? 'warn' : 'muted');
+    const ket=!r.scheduledRows ? 'Tidak ada jadwal shift ini' : `Sumber Cek In Cek Out dari pekerja yang masuk ${String(r.label||key).toLowerCase()} saja${r.status && !String(r.status).startsWith('Normal') ? ' • '+r.status : ''}`;
+    return `<tr><td>${safeText(r.label||key)}</td><td>${safeText(displaySummaryTime(r.minIn))}</td><td>${safeText(displaySummaryTime(r.maxOut))}</td><td><span class="machine-status ${cls}">${safeText(ket)}</span></td></tr>`;
+  }).join('');
+  const titleUnit=meta.unitName || unitNameFromKey(meta.unitKey || getSelectedCheckSummaryUnitKey());
+  const note=meta.noSchedule
+    ? `Jadwal kegiatan <b>${safeText(titleUnit)}</b> untuk tanggal ini belum ditemukan. Ringkasan tidak memakai data global.`
+    : `Ringkasan ini hanya memakai NIP pekerja yang ada di jadwal <b>${safeText(titleUnit)}</b> dan dihitung per shift masing-masing. Jadwal: <b>${safeText(meta.scheduledRows||0)}</b> pekerja/baris, ditemukan di mesin: <b>${safeText(meta.foundMachineRows||0)}</b>, tidak ditemukan: <b>${safeText(meta.notFoundRows||0)}</b>.`;
+  box.innerHTML=`<div class="machine-preview-head"><span>📊 Ringkasan Cek In/Out dari Preview Mesin - ${safeText(titleUnit)}</span><span>Sederhana: Min Cek In dan Max Cek Out per shift</span></div><div class="machine-preview-table-wrap"><table class="machine-preview-table"><thead><tr><th>Shift</th><th>Min Cek In</th><th>Max Cek Out</th><th>Keterangan</th></tr></thead><tbody>${body}</tbody></table></div><div class="all-schedule-preview-note">${note}<br>Tombol <b>↘️ Pakai Ringkasan ke Form Cek In/Out</b> mengisi form dari <b>Min Cek In</b> dan <b>Max Cek Out</b> khusus bagian/shift ini. Proses simpan tetap memakai tombol <b>💾 Simpan Cek In / Cek Out</b>.</div>`;
+}
+async function ensureMachinePreviewSummary(){
+  const input=$('adminGlobalCheckFile');
+  const file=input && input.files && input.files[0];
+  const dateValue=($('adminGlobalCheckDate') && $('adminGlobalCheckDate').value) || todayISO();
+  const unitKey=getSelectedCheckSummaryUnitKey();
+  let result=lastMachineImportPreviewResult;
+  if(!result || result.dateValue!==dateValue || (file && result.fileName!==(file.name||''))){
+    if(!file){ alert('Pilih file Excel/CSV data mesin absensi dan jalankan Preview Import Data Mesin terlebih dahulu.'); return null; }
+    result=await buildMachineImportPreviewFromFile(file, dateValue);
+    lastMachineImportPreviewResult={...result, fileName:file.name || '', fileSize:file.size || 0, fileType:file.type || '', generatedAtLocal:new Date().toISOString()};
+    renderMachineImportPreview(result);
+  }
+  lastCheckInOutSummaryResult=buildCheckInOutSummaryFromPreview(result.rows || [], {unitKey});
+  renderCheckInOutSummary(lastCheckInOutSummaryResult);
+  if(lastCheckInOutSummaryResult._meta && lastCheckInOutSummaryResult._meta.noSchedule){
+    alert(`Jadwal kegiatan ${lastCheckInOutSummaryResult._meta.unitName} untuk tanggal ${dateValue} belum ditemukan. Silakan input jadwal koordinator terlebih dahulu.`);
+  }
+  return lastCheckInOutSummaryResult;
+}
+async function adminCheckInOutSummary(){
+  if(!requirePermission('importData','Cek ringkasan Cek In/Out hanya untuk admin.')) return;
+  const btn=$('btnAdminCheckInOutSummary'); const old=btn?btn.textContent:'';
+  try{ if(btn){ btn.disabled=true; btn.textContent='Menghitung...'; } const summary=await ensureMachinePreviewSummary(); if(summary){ updateGlobalCheckInfo(`Ringkasan Cek In/Out ${summary._meta && summary._meta.unitName ? summary._meta.unitName : ''} berhasil dihitung dari hasil preview mesin.`); } }
+  catch(err){ console.error(err); alert('Cek Ringkasan Cek In/Out gagal: '+(err && err.message ? err.message : err)); }
+  finally{ if(btn){ btn.disabled=false; btn.textContent=old || '📊 Cek Ringkasan Cek In/Out Berdasarkan Bagian'; } }
+}
+function summaryShiftValue(summary, key, type){ const row=summary && summary[key] || {}; return normalizeTimeToHMS(row[type] || ''); }
+function applySummaryToLoadedReport(summary){
+  if(!adminReportData) return {changed:0, skippedNoReport:true, skippedS3:0};
+  const useS3=isAdminAutoShift3Enabled();
+  const rows=rowsFromAttendancePayload(adminReportData);
+  let changed=0, skippedS3=0;
+  const order=['s1','s2','s3'];
+  rows.forEach(r=>{
+    if(isCommercialTfActivityRow(r)){ r.checkIn=''; r.checkOut=''; return; }
+    const shifts=[];
+    if(r.s1) shifts.push('s1');
+    if(r.s2) shifts.push('s2');
+    if(r.s3){ if(useS3) shifts.push('s3'); else skippedS3+=1; }
+    const active=order.filter(k=>shifts.includes(k) && summary && summary[k]);
+    if(!active.length) return;
+    const first=active[0], last=active[active.length-1];
+    const nextIn=summaryShiftValue(summary, first, 'minIn');
+    const nextOut=summaryShiftValue(summary, last, 'maxOut');
+    const beforeIn=r.checkIn || '', beforeOut=r.checkOut || '';
+    if(nextIn) r.checkIn=nextIn;
+    if(nextOut) r.checkOut=nextOut;
+    if((r.checkIn||'')!==beforeIn || (r.checkOut||'')!==beforeOut) changed+=1;
+  });
+  updateAdminReportRowsWithCheckTimes(rows);
+  renderReport();
+  return {changed, skippedNoReport:false, skippedS3};
+}
+async function adminUseCheckSummaryToForm(){
+  if(!requirePermission('editCheckTimes','Pakai ringkasan ke form Cek In/Out hanya untuk admin.')) return;
+  const btn=$('btnAdminUseCheckSummary') || $('btnAdminUseCheckSummaryReport'); const old=btn?btn.textContent:'';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Menerapkan...'; }
+    const summary=lastCheckInOutSummaryResult || await ensureMachinePreviewSummary();
+    if(!summary) return;
+    const meta=summary._meta || {};
+    if(meta.noSchedule){ alert(`Ringkasan belum bisa dipakai karena jadwal ${meta.unitName || 'bagian ini'} belum ditemukan.`); return; }
+    const reportUnit=(($('adminReportUnitSelect') && $('adminReportUnitSelect').value) || '');
+    if(reportUnit && meta.unitKey && reportUnit!==meta.unitKey){
+      if(!confirm(`Bagian laporan yang sedang dipilih berbeda dengan Bagian Ringkasan.\n\nLaporan: ${unitNameFromKey(reportUnit)}\nRingkasan: ${meta.unitName}\n\nLanjutkan mengisi form dari ringkasan ${meta.unitName}?`)) return;
+    }
+    const useS3=isAdminAutoShift3Enabled();
+    const pairs=[['adminAutoS1In','s1','minIn'],['adminAutoS1Out','s1','maxOut'],['adminAutoS2In','s2','minIn'],['adminAutoS2Out','s2','maxOut']];
+    if(useS3){ pairs.push(['adminAutoS3In','s3','minIn'],['adminAutoS3Out','s3','maxOut']); }
+    pairs.forEach(([id,key,type])=>{ const val=summaryShiftValue(summary,key,type); const el=$(id); if(el && val){ el.value=val; el.dataset.userEdited='1'; } });
+    const applied=applySummaryToLoadedReport(summary);
+    setAdminCheckTimesSourceInfo(`Ringkasan Import Mesin - ${meta.unitName || unitNameFromKey(meta.unitKey || '')}`);
+    const s3Note=useS3 ? '' : '\nShift 3 tidak diterapkan karena checkbox Shift 3 belum aktif.';
+    const reportNote=applied.skippedNoReport ? '\nData absensi belum ditampilkan, jadi yang diisi baru form jam Shift 1/2/3. Buka Absensi lalu klik Tampilkan jika ingin menerapkan ke baris pekerja.' : `\n${applied.changed} baris pekerja pada laporan yang sedang dibuka ikut diperbarui.`;
+    alert(`Ringkasan Cek In/Out ${meta.unitName || ''} sudah dipakai ke form.\n\nShift 1/2/3 diisi dari Min Cek In dan Max Cek Out hasil preview mesin khusus bagian ini.`+reportNote+s3Note+'\n\nPeriksa kembali, lalu klik 💾 Simpan Cek In / Cek Out untuk menyimpan.');
+  }catch(err){ console.error(err); alert('Pakai Ringkasan ke Form Cek In/Out gagal: '+(err && err.message ? err.message : err)); }
+  finally{ if(btn){ btn.disabled=false; btn.textContent=old || '↘️ Pakai Ringkasan Bagian ke Form Cek In/Out'; } }
+}
 function renderMachineImportPreview(result){
   const box=$('adminMachinePreviewBox');
   if(!box) return;
@@ -4146,7 +4417,7 @@ async function adminPreviewAllSchedules(){
     const rows=await readImportRows(file);
     const parsed=parseMachineImportRows(rows, dateValue);
     const scansByNip={};
-    parsed.scans.forEach(scan=>{ if(!scansByNip[scan.nip]) scansByNip[scan.nip]=[]; scansByNip[scan.nip].push(scan); });
+    parsed.scans.forEach(scan=>{ const k=normalizeNipForMatch(scan.nip); scan.nip=k; if(!scansByNip[k]) scansByNip[k]=[]; scansByNip[k].push(scan); });
     const bridge=await waitFirebase();
     const previewRows=[];
     const scheduledNipSet=new Set();
@@ -4154,13 +4425,13 @@ async function adminPreviewAllSchedules(){
     for(const unitKeyValue of allSchedulePreviewUnitKeys()){
       const payload=await loadAttendanceForMachinePreview(unitKeyValue, dateValue);
       const scheduleRows=rowsFromAttendancePayload(payload).filter(r=>r && r.nip && (r.s1 || r.s2 || r.s3));
-      scheduleRows.forEach(r=>scheduledNipSet.add(String(r.nip||'')));
+      scheduleRows.forEach(r=>scheduledNipSet.add(normalizeNipForMatch(r.nip)));
       const unitName=(payload && payload.unit) || unitNameFromKey(unitKeyValue);
       const settings=getReportSettings(unitKeyValue, unitName);
       const counts=machinePreviewCountsForRows(scheduleRows, dateValue, settings, scansByNip);
       totalScheduled+=counts.scheduled; totalOk+=counts.ok; totalNoData+=counts.noData; totalNoIn+=counts.noIn; totalNoOut+=counts.noOut;
-      const nipsInUnit=new Set(scheduleRows.map(r=>String(r.nip||'')).filter(Boolean));
-      const scanNips=Object.keys(scansByNip).filter(nip=>nipsInUnit.has(String(nip))).length;
+      const nipsInUnit=new Set(scheduleRows.map(r=>normalizeNipForMatch(r.nip)).filter(Boolean));
+      const scanNips=Object.keys(scansByNip).filter(nip=>nipsInUnit.has(normalizeNipForMatch(nip))).length;
       previewRows.push({date:dateValue, unit:unitNameFromKey(unitKeyValue), scheduled:counts.scheduled, ok:counts.ok, noData:counts.noData, noIn:counts.noIn, noOut:counts.noOut, scanNips});
     }
     const unmatched=Object.keys(scansByNip).filter(nip=>!scheduledNipSet.has(String(nip))).length;
@@ -4175,7 +4446,7 @@ async function buildMachineImportPreviewFromFile(file, dateValue){
   const rows=await readImportRows(file);
   const parsed=parseMachineImportRows(rows, dateValue);
   const scansByNip={};
-  parsed.scans.forEach(scan=>{ if(!scansByNip[scan.nip]) scansByNip[scan.nip]=[]; scansByNip[scan.nip].push(scan); });
+  parsed.scans.forEach(scan=>{ const k=normalizeNipForMatch(scan.nip); scan.nip=k; if(!scansByNip[k]) scansByNip[k]=[]; scansByNip[k].push(scan); });
   const preview=[];
   const scheduledNips=new Set();
   let totalSchedules=0;
@@ -4186,8 +4457,11 @@ async function buildMachineImportPreviewFromFile(file, dateValue){
     const settings=getReportSettings(unitKeyValue, unitName);
     totalSchedules+=scheduleRows.length;
     scheduleRows.forEach(row=>{
-      const nip=String(row.nip||'');
+      const originalNip=String(row.nip||'').trim();
+      const nip=normalizeNipForMatch(originalNip);
       scheduledNips.add(nip);
+      const perShiftChecks={};
+      activeShiftKeysForScheduleRow(row).forEach(shiftKey=>{ perShiftChecks[shiftKey]=machineCheckForShift(scansByNip, nip, shiftKey, dateValue, settings); });
       const win=shiftWindowSeconds(row, dateValue, settings);
       const scans=(scansByNip[nip]||[]).map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)})).filter(scan=>scan.abs>=win.start && scan.abs<=win.end);
       const ins=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs);
@@ -4200,9 +4474,19 @@ async function buildMachineImportPreviewFromFile(file, dateValue){
       else if(!lastOut) status='Cek Out tidak ditemukan';
       preview.push({
         date:dateValue,
-        nip,
+        unitKey:row.sourceUnitKey || unitKeyValue,
+        unitName:unitNameFromKey(row.sourceUnitKey || unitKeyValue),
+        sourceUnitKey:row.sourceUnitKey || unitKeyValue,
+        activityKey:row.activityKey || '',
+        activityLabel:row.activityLabel || '',
+        s1:Boolean(row.s1),
+        s2:Boolean(row.s2),
+        s3:Boolean(row.s3),
+        _shiftChecks:perShiftChecks,
+        nip:originalNip || nip,
+        matchNip:nip,
         name:row.name || '',
-        kegiatan:row.kegiatan || row.activityLabel || unitNameFromKey(unitKeyValue) || '',
+        kegiatan:row.kegiatan || row.activityLabel || unitNameFromKey(row.sourceUnitKey || unitKeyValue) || '',
         shift:shiftLabelsForRow(row),
         checkIn:firstIn ? normalizeTimeToHMS(firstIn.time) : '',
         checkOut:lastOut ? normalizeTimeToHMS(lastOut.time) : '',
@@ -4212,14 +4496,14 @@ async function buildMachineImportPreviewFromFile(file, dateValue){
     });
   }
   Object.keys(scansByNip).sort((a,b)=>(parseInt(a,10)||999999)-(parseInt(b,10)||999999)).forEach(nip=>{
-    if(scheduledNips.has(nip)) return;
+    if(scheduledNips.has(normalizeNipForMatch(nip))) return;
     const scans=scansByNip[nip].map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)})).filter(scan=>scan.date===dateValue || dateDiffDays(scan.date,dateValue)===1);
     if(!scans.length) return;
     const ins=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs);
     const outs=scans.filter(scan=>String(scan.loc)==='2').sort((a,b)=>b.abs-a.abs);
     const firstIn=ins[0] || null;
     const lastOut=outs[0] || null;
-    preview.push({date:dateValue,nip,name:'-',kegiatan:'-',shift:'-',checkIn:firstIn?normalizeTimeToHMS(firstIn.time):'',checkOut:lastOut?normalizeTimeToHMS(lastOut.time):'',duration:(firstIn&&lastOut)?formatDurationAbsHMS(firstIn.abs,lastOut.abs):'',status:'NIP tidak ada di jadwal'});
+    preview.push({date:dateValue,unitKey:'',unitName:'-',nip,name:'-',kegiatan:'-',shift:'-',checkIn:firstIn?normalizeTimeToHMS(firstIn.time):'',checkOut:lastOut?normalizeTimeToHMS(lastOut.time):'',duration:(firstIn&&lastOut)?formatDurationAbsHMS(firstIn.abs,lastOut.abs):'',status:'NIP tidak ada di jadwal'});
   });
   const ok=preview.filter(r=>r.status==='Cocok').length;
   const noIn=preview.filter(r=>r.status==='Cek In tidak ditemukan').length;
@@ -4239,6 +4523,8 @@ async function adminPreviewMachineImport(){
     if(btn){ btn.disabled=true; btn.textContent='Preview global...'; }
     const result=await buildMachineImportPreviewFromFile(file, dateValue);
     lastMachineImportPreviewResult={...result, fileName:file.name || '', fileSize:file.size || 0, fileType:file.type || '', generatedAtLocal:new Date().toISOString()};
+    lastCheckInOutSummaryResult=null;
+    renderCheckInOutSummary(null);
     renderMachineImportPreview(result);
     adminLog(`Preview import mesin absensi global selesai. Tanggal: ${dateValue}. Scan terbaca: ${result.parsed.scans.length}. Jadwal: ${result.totalSchedules}. Cocok: ${result.ok}. Siap import: ${result.validImport}. Data belum disimpan ke laporan.`);
   }catch(err){
@@ -4384,10 +4670,13 @@ async function adminSaveCheckTimes(){
 
 function optionUnits(includeAll=false){ return (includeAll?'<option value="ALL">Semua Bagian</option>':'') + UNITS.map(u=>`<option value="${u.key}">${safeText(u.name)}</option>`).join(''); }
 function optionReportUnits(){ const rows=[{key:'muatan_breeder',name:'Muatan Breeder'},{key:BAHAN_BAKU_GABUNGAN_KEY,name:'Bongkaran Bahan Baku'},{key:SILO_KEY,name:SILO_NAME},{key:'oper_oper_bahan_baku',name:'Oper Oper Bahan Baku'},{key:COMMERCIAL_KEY,name:'Muatan Commercial'}]; return rows.map(u=>`<option value="${u.key}">${safeText(u.name)}</option>`).join(''); }
+function optionCheckSummaryUnits(){ const rows=[{key:'muatan_breeder',name:'Muatan Breeder'},{key:BAHAN_BAKU_GABUNGAN_KEY,name:'Bongkaran Bahan Baku - Gabungan'},...UNITS.filter(u=>u.key!=='muatan_breeder')]; return rows.map(u=>`<option value="${u.key}">${safeText(u.name)}</option>`).join(''); }
 function initAdminTools(){
   ['adminUnitSelect','adminPanelUnitSelect','adminWorkerUnitSelect'].forEach(id=>{ const sel=$(id); if(sel){ sel.innerHTML=optionUnits(false); sel.value=adminManagedUnitKey; } }); const dashSel=$('adminDashUnitSelect'); if(dashSel){ dashSel.innerHTML=optionUnits(true); dashSel.value='ALL'; }
   const reportSel=$('adminReportUnitSelect');
   if(reportSel){ const current=reportSel.value || adminManagedUnitKey; reportSel.innerHTML=optionReportUnits(); const allowedReportKeys=['muatan_breeder',BAHAN_BAKU_GABUNGAN_KEY,SILO_KEY,'oper_oper_bahan_baku',COMMERCIAL_KEY]; reportSel.value=allowedReportKeys.includes(current) ? current : 'muatan_breeder'; }
+  const checkSummarySel=$('adminCheckSummaryUnitSelect');
+  if(checkSummarySel){ const current=checkSummarySel.value || (reportSel && reportSel.value) || adminManagedUnitKey; checkSummarySel.innerHTML=optionCheckSummaryUnits(); checkSummarySel.value=current || 'muatan_breeder'; }
   ['adminCoordUnit'].forEach(id=>{ const sel=$(id); if(sel){ sel.innerHTML=optionUnits(false); } });
   ['adminClearWorkersUnit'].forEach(id=>{ const sel=$(id); if(sel){ sel.innerHTML=optionUnits(true); sel.value=adminManagedUnitKey; } });
   const deleteAttendanceSel=$('adminDeleteAttendanceUnit');
@@ -4817,6 +5106,95 @@ function renderPendingList(){
     return `<div class="sync-row"><div><div class="main">${safeText(row.unit || unitNameFromKey(row.unitKey))} - ${safeText(row.reportDate)} <span class="sync-chip warn">Pending</span></div><div class="meta">ID: ${safeText(row.id)} • ${total} baris • Dibuat: ${safeText(formatSyncTime(row.queuedAtLocal || row.savedAtLocal))}</div>${err}</div><div class="row-actions"><button class="btn success" data-pending-sync="${safeText(row.id)}">Sync</button><button class="btn danger" data-pending-delete="${safeText(row.id)}">Hapus</button></div></div>`;
   }).join('');
 }
+
+const FIRESTORE_FREE_QUOTA = {
+  storageBytes: 1024 * 1024 * 1024,
+  readsPerDay: 50000,
+  writesPerDay: 20000,
+  deletesPerDay: 20000,
+  outboundBytesPerMonth: 10 * 1024 * 1024 * 1024
+};
+const FIRESTORE_USAGE_COLLECTIONS = ['coordinators','active_sessions','app_data','attendance','master_data','attendance_imports','audit_logs','backup_exports'];
+function bytesFromText(value){ try{ return new Blob([String(value || '')]).size; }catch(err){ return String(value || '').length; } }
+function formatBytesID(bytes){ const n=Number(bytes || 0); if(n < 1024) return `${n} B`; if(n < 1024*1024) return `${(n/1024).toFixed(1)} KB`; if(n < 1024*1024*1024) return `${(n/1024/1024).toFixed(2)} MB`; return `${(n/1024/1024/1024).toFixed(2)} GB`; }
+function pctOfQuota(value, quota){ if(!quota) return 0; return Math.max(0, Math.min(100, (Number(value || 0) / quota) * 100)); }
+function quotaCard(label, valueText, detailText, pct, warnAt=80){ const cls=pct>=warnAt ? 'usage-warn' : 'usage-ok'; return `<div class="sync-cache-card"><div class="label">${safeText(label)}</div><div class="value ${cls}">${safeText(valueText)}</div><div class="usage-meter"><div class="usage-meter-fill" style="width:${Math.min(100, Math.max(0, pct)).toFixed(2)}%"></div></div><div class="usage-detail">${safeText(detailText)}</div></div>`; }
+function firstDateValue(row, keys){ for(const key of keys){ const v=row && row[key]; if(v){ const s=String(v).slice(0,10); if(/^\d{4}-\d{2}-\d{2}$/.test(s)) return s; } } return ''; }
+function isFirestoreDocToday(collectionName, row, today){ const keys=['createdAtLocal','savedAtLocal','updatedAtLocal','importedAtLocal','exportedAtLocal','loginAtLocal']; const direct=firstDateValue(row, keys); if(direct) return direct===today; if(collectionName==='attendance' && String(row && row.reportDate || '').slice(0,10)===today) return true; return false; }
+async function collectFirestoreUsageEstimate(){
+  const bridge=window.AbsensiFirebase || await waitFirebase();
+  if(!(bridge && bridge.enabled && bridge.exportCollectionDocs)) throw new Error('Firebase belum online atau fungsi exportCollectionDocs tidak tersedia.');
+  const today=todayISO();
+  const collections=[];
+  let totalDocs=0, totalBytes=0, todayWritesEstimate=0;
+  for(const name of FIRESTORE_USAGE_COLLECTIONS){
+    let rows=[];
+    try{
+      const max=name==='attendance' ? 10000 : (name==='audit_logs' ? 3000 : 2000);
+      rows=await bridge.exportCollectionDocs(name, max);
+    }catch(err){
+      collections.push({ name, docs:0, bytes:0, todayWrites:0, error:String(err && err.message ? err.message : err) });
+      continue;
+    }
+    const json=JSON.stringify(rows || []);
+    const bytes=bytesFromText(json);
+    const todayWrites=(rows || []).filter(row=>isFirestoreDocToday(name, row, today)).length;
+    totalDocs += rows.length;
+    totalBytes += bytes;
+    todayWritesEstimate += todayWrites;
+    collections.push({ name, docs:rows.length, bytes, todayWrites, error:'' });
+  }
+  return {
+    generatedAt:new Date().toISOString(),
+    today,
+    collections,
+    totalDocs,
+    totalBytes,
+    estimatedReadsThisRefresh:totalDocs,
+    todayWritesEstimate,
+    storagePct:pctOfQuota(totalBytes, FIRESTORE_FREE_QUOTA.storageBytes),
+    readsPct:pctOfQuota(totalDocs, FIRESTORE_FREE_QUOTA.readsPerDay),
+    writesPct:pctOfQuota(todayWritesEstimate, FIRESTORE_FREE_QUOTA.writesPerDay)
+  };
+}
+function renderFirestoreUsageEstimate(data, errorMessage){
+  const summary=$('firestoreUsageSummary');
+  const detail=$('firestoreUsageDetails');
+  if(errorMessage){
+    if(summary) summary.innerHTML=`<div class="empty-admin-list">${safeText(errorMessage)}</div>`;
+    if(detail) detail.innerHTML='';
+    return;
+  }
+  if(!data){ return; }
+  if(summary){
+    summary.innerHTML=[
+      quotaCard('Estimasi Storage', formatBytesID(data.totalBytes), `${data.storagePct.toFixed(3)}% dari kuota gratis 1 GiB`, data.storagePct),
+      quotaCard('Total Dokumen Terbaca', String(data.totalDocs), `Estimasi read untuk refresh ini: ${data.estimatedReadsThisRefresh} / 50.000 per hari`, data.readsPct),
+      quotaCard('Estimasi Write Hari Ini', String(data.todayWritesEstimate), `${data.writesPct.toFixed(3)}% dari kuota gratis 20.000 write/hari`, data.writesPct),
+      quotaCard('Status Estimasi', data.storagePct < 70 && data.readsPct < 70 && data.writesPct < 70 ? 'Aman' : 'Perlu Dipantau', `Dihitung: ${formatSyncTime(data.generatedAt)}`, Math.max(data.storagePct,data.readsPct,data.writesPct))
+    ].join('');
+  }
+  if(detail){
+    const rows=(data.collections || []).map(c=>`<tr><td>${safeText(c.name)}</td><td>${safeText(c.docs)}</td><td>${safeText(formatBytesID(c.bytes))}</td><td>${safeText(c.todayWrites)}</td><td>${c.error ? safeText(c.error) : 'OK'}</td></tr>`).join('');
+    detail.innerHTML=`<table class="usage-table"><thead><tr><th>Collection</th><th>Dokumen</th><th>Estimasi Ukuran JSON</th><th>Estimasi Write Hari Ini</th><th>Status</th></tr></thead><tbody>${rows}</tbody></table><div class="usage-detail">Catatan: Firestore tidak menyediakan angka kuota resmi langsung dari aplikasi client. Untuk angka billing resmi, cek Firebase Console / Google Cloud Billing. Fitur ini hanya estimasi praktis dari data yang berhasil dibaca aplikasi.</div>`;
+  }
+}
+async function refreshFirestoreUsageEstimate(){
+  if(!isAdmin()) return;
+  const btn=$('btnAdminRefreshFirestoreUsage'); const old=btn ? btn.textContent : '';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Menghitung...'; }
+    renderFirestoreUsageEstimate(null, 'Menghitung estimasi penggunaan Firestore...');
+    const data=await collectFirestoreUsageEstimate();
+    renderFirestoreUsageEstimate(data, '');
+    adminLog(`Estimasi Firestore dihitung. Dokumen: ${data.totalDocs}, storage: ${formatBytesID(data.totalBytes)}, write hari ini: ${data.todayWritesEstimate}.`);
+  }catch(err){
+    console.error(err);
+    renderFirestoreUsageEstimate(null, 'Gagal menghitung estimasi Firestore: '+(err && err.message ? err.message : err));
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=old || '📊 Hitung Estimasi'; }
+  }
+}
 async function renderAdminSyncStatus(refreshConnection=true){
   if(!isAdmin()) return;
   if(refreshConnection) await updateFirebaseStatusUI();
@@ -4974,7 +5352,8 @@ syncAdminAttendanceOptionCheckboxes(); refreshAdminAttendanceOptionsFromFirestor
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); $('btnShareWa').addEventListener('click', shareWhatsapp); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; updateGlobalCheckInfo(); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); $('btnShareWa').addEventListener('click', shareWhatsapp); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
+document.addEventListener('input', e=>{ if(e && e.target && e.target.matches && e.target.matches('[data-check-nip]')) setAdminCheckTimesSourceInfo('Manual'); });
 let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu install belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }
 window.addEventListener('load', ()=>{ setTimeout(hideSplash,650); });
