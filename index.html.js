@@ -3411,31 +3411,31 @@ function waExportReportConfig(rows){
   const isBahanBakuRows=!isCommercialRows && (String(unitKey||'')===BAHAN_BAKU_GABUNGAN_KEY || isBahanBakuPagiMalamKey(unitKey) || isOverzakKey(unitKey) || rows.some(w=>w && (w.kegiatan || w.activityLabel || w.sourceUnitKey || w.sourceUnitName)));
   const columns=isCommercialRows
     ? [
-        {key:'no', label:'NO', width:90, align:'center'},
-        {key:'ldRegu', label:'LD-REGU', width:270, align:'left'},
-        {key:'nip', label:'NIP', width:170, align:'center'},
-        {key:'name', label:'NAMA PEKERJA', width:630, align:'left'},
-        {key:'s1', label:'SHIFT 1', width:170, align:'center', type:'check'},
-        {key:'s2', label:'SHIFT 2', width:170, align:'center', type:'check'},
-        {key:'s3', label:'SHIFT 3', width:170, align:'center', type:'check'}
+        {key:'no', label:'NO', width:100, align:'center'},
+        {key:'ldRegu', label:'LD-REGU', width:320, align:'left'},
+        {key:'nip', label:'NIP', width:210, align:'center'},
+        {key:'name', label:'NAMA PEKERJA', width:860, align:'left'},
+        {key:'s1', label:'SHIFT 1', width:210, align:'center', type:'check'},
+        {key:'s2', label:'SHIFT 2', width:210, align:'center', type:'check'},
+        {key:'s3', label:'SHIFT 3', width:210, align:'center', type:'check'}
       ]
     : (isBahanBakuRows
       ? [
-          {key:'no', label:'NO', width:90, align:'center'},
-          {key:'nip', label:'NIP', width:180, align:'center'},
-          {key:'name', label:'NAMA PEKERJA', width:560, align:'left'},
-          {key:'kegiatan', label:'KEGIATAN', width:260, align:'left'},
-          {key:'s1', label:'SHIFT 1', width:160, align:'center', type:'check'},
-          {key:'s2', label:'SHIFT 2', width:160, align:'center', type:'check'},
-          {key:'s3', label:'SHIFT 3', width:160, align:'center', type:'check'}
+          {key:'no', label:'NO', width:100, align:'center'},
+          {key:'nip', label:'NIP', width:220, align:'center'},
+          {key:'name', label:'NAMA PEKERJA', width:760, align:'left'},
+          {key:'kegiatan', label:'KEGIATAN', width:300, align:'left'},
+          {key:'s1', label:'SHIFT 1', width:200, align:'center', type:'check'},
+          {key:'s2', label:'SHIFT 2', width:200, align:'center', type:'check'},
+          {key:'s3', label:'SHIFT 3', width:200, align:'center', type:'check'}
         ]
       : [
-          {key:'no', label:'NO', width:90, align:'center'},
-          {key:'nip', label:'NIP', width:180, align:'center'},
-          {key:'name', label:'NAMA PEKERJA', width:720, align:'left'},
-          {key:'s1', label:'SHIFT 1', width:190, align:'center', type:'check'},
-          {key:'s2', label:'SHIFT 2', width:190, align:'center', type:'check'},
-          {key:'s3', label:'SHIFT 3', width:190, align:'center', type:'check'}
+          {key:'no', label:'NO', width:100, align:'center'},
+          {key:'nip', label:'NIP', width:220, align:'center'},
+          {key:'name', label:'NAMA PEKERJA', width:940, align:'left'},
+          {key:'s1', label:'SHIFT 1', width:220, align:'center', type:'check'},
+          {key:'s2', label:'SHIFT 2', width:220, align:'center', type:'check'},
+          {key:'s3', label:'SHIFT 3', width:220, align:'center', type:'check'}
         ]);
   return {unitLabel, isCommercialRows, isBahanBakuRows, columns};
 }
@@ -3450,12 +3450,13 @@ function waExportFieldValue(row, key, index){
 }
 function waExportLayoutMeta(rowCount, columnCount){
   const count=Math.max(0, Number(rowCount)||0);
-  let rowH=60, bodyFont=24, headFont=22, titleFont=34, subTitleFont=22, dateFont=20, summaryFont=22, totalFont=26, checkFont=28;
-  if(count>28){ rowH=56; bodyFont=22; headFont=21; titleFont=33; summaryFont=21; totalFont=25; checkFont=27; }
-  if(count>40){ rowH=54; bodyFont=21; headFont=20; titleFont=32; subTitleFont=21; dateFont=19; summaryFont=20; totalFont=24; checkFont=26; }
-  if(count>55){ rowH=50; bodyFont=19.5; headFont=19; titleFont=30; subTitleFont=20; dateFont=18; summaryFont=19; totalFont=23; checkFont=24; }
-  if(count>70){ rowH=47; bodyFont=18; headFont=18; titleFont=28; subTitleFont=19; dateFont=17; summaryFont=18; totalFont=22; checkFont=23; }
-  if(columnCount>=7){ bodyFont=Math.max(17.5, bodyFont-0.5); }
+  let rowH=68, bodyFont=27, headFont=24, titleFont=39, subTitleFont=25, dateFont=23, summaryFont=24, totalFont=29, checkFont=33;
+  if(count>24){ rowH=66; bodyFont=26; headFont=23; titleFont=38; subTitleFont=24; dateFont=22; summaryFont=23; totalFont=28; checkFont=32; }
+  if(count>36){ rowH=63; bodyFont=24.5; headFont=22.5; titleFont=37; subTitleFont=24; dateFont=21.5; summaryFont=22.5; totalFont=27; checkFont=30; }
+  if(count>48){ rowH=60; bodyFont=23; headFont=21.5; titleFont=35; subTitleFont=23; dateFont=21; summaryFont=21.5; totalFont=26; checkFont=29; }
+  if(count>60){ rowH=57; bodyFont=21.5; headFont=20.5; titleFont=34; subTitleFont=22; dateFont=20; summaryFont=20.5; totalFont=25; checkFont=28; }
+  if(count>75){ rowH=54; bodyFont=20; headFont=19.5; titleFont=32; subTitleFont=21; dateFont=19; summaryFont=19.5; totalFont=24; checkFont=27; }
+  if(columnCount>=7){ bodyFont=Math.max(19, bodyFont-0.5); }
   return {rowH, bodyFont, headFont, titleFont, subTitleFont, dateFont, summaryFont, totalFont, checkFont};
 }
 async function reportImageBlob(onProgress){
@@ -3466,19 +3467,24 @@ async function reportImageBlob(onProgress){
   progress(1,'Menyiapkan data laporan...',8,totalSteps); await nextAnimationFrame();
   const layout=waExportLayoutMeta(rows.length, columns.length);
   progress(2,'Menyusun layout export WA khusus...',20,totalSteps); await nextAnimationFrame();
-  const marginX=44;
-  const topPad=34;
-  const headerBlockH=116;
-  const tableHeadH=Math.max(54, layout.rowH);
-  const summaryTopGap=28;
-  const summaryBlockH=86;
-  const bottomPad=36;
+  const marginX=52;
+  const topPad=38;
+  const headerBlockH=132;
+  const tableHeadH=Math.max(64, layout.rowH);
+  const summaryTopGap=30;
+  const summaryBlockH=96;
+  const bottomPad=42;
   const tableWidth=columns.reduce((sum,col)=>sum+col.width,0);
   const cssWidth=tableWidth + marginX*2;
   const cssHeight=topPad + headerBlockH + tableHeadH + Math.max(1, rows.length)*layout.rowH + summaryTopGap + summaryBlockH + bottomPad;
-  const maxPixels=34000000;
-  let scale=Math.min(2.6, Math.max(1.9, Math.sqrt(maxPixels/(cssWidth*cssHeight))));
-  if(!Number.isFinite(scale)) scale=2;
+  const maxPixels=68000000;
+  const maxDimension=14000;
+  const preferredScale=rows.length>75 ? 2.8 : (rows.length>55 ? 3.0 : 3.2);
+  let scale=Math.sqrt(maxPixels/(cssWidth*cssHeight));
+  if(!Number.isFinite(scale)) scale=preferredScale;
+  scale=Math.min(preferredScale, Math.max(2.35, scale));
+  const scaleByDim=Math.min(maxDimension/cssWidth, maxDimension/cssHeight);
+  scale=Math.max(1.9, Math.min(scale, scaleByDim));
   const canvas=document.createElement('canvas');
   canvas.width=Math.max(1, Math.round(cssWidth*scale));
   canvas.height=Math.max(1, Math.round(cssHeight*scale));
@@ -3487,7 +3493,8 @@ async function reportImageBlob(onProgress){
   ctx.fillStyle='#ffffff';
   ctx.fillRect(0,0,cssWidth,cssHeight);
   if('imageSmoothingEnabled' in ctx) ctx.imageSmoothingEnabled=true;
-  progress(3,'Menghitung ukuran font, row height, dan lebar tabel...',34,totalSteps); await nextAnimationFrame();
+  if('imageSmoothingQuality' in ctx) ctx.imageSmoothingQuality='high';
+  progress(3,'Meningkatkan ketajaman, ukuran font, dan lebar tabel...',34,totalSteps); await nextAnimationFrame();
 
   const left=marginX;
   const tableTop=topPad + headerBlockH;
@@ -3496,29 +3503,31 @@ async function reportImageBlob(onProgress){
   columns.forEach(col=>{ columnLefts.push(cursor); cursor+=col.width; });
   const tableRight=left+tableWidth;
   const titleText=`ABSENSI KEGIATAN ${String(unitLabel||'').replace(/PAGI/gi,'').replace(/MALAM/gi,'').replace(/\//g,'').replace(/\s+/g,' ').trim().toUpperCase()}`;
+
   ctx.fillStyle='#0f172a';
   ctx.textAlign='center';
   ctx.font=`900 ${layout.titleFont}px Arial`;
-  ctx.fillText(titleText, cssWidth/2, topPad+30);
-  ctx.font=`700 ${layout.subTitleFont}px Arial`;
-  ctx.fillText('PT. BUDI INTI PERKASA', cssWidth/2, topPad+60);
-  ctx.font=`700 ${layout.dateFont}px Arial`;
+  ctx.fillText(titleText, cssWidth/2, topPad+34);
+  ctx.font=`800 ${layout.subTitleFont}px Arial`;
+  ctx.fillText('PT. BUDI INTI PERKASA', cssWidth/2, topPad+72);
+  ctx.font=`800 ${layout.dateFont}px Arial`;
   ctx.fillStyle='#334155';
-  ctx.fillText(formatLongDate(state.reportDate), cssWidth/2, topPad+88);
+  ctx.fillText(formatLongDate(state.reportDate), cssWidth/2, topPad+104);
 
-  ctx.fillStyle='#e9eff8';
+  ctx.fillStyle='#e8f0fe';
   ctx.fillRect(left, tableTop, tableWidth, tableHeadH);
   ctx.strokeStyle='#0f172a';
-  ctx.lineWidth=1.2;
+  ctx.lineWidth=1.4;
   ctx.strokeRect(left, tableTop, tableWidth, tableHeadH);
-  ctx.font=`800 ${layout.headFont}px Arial`;
+  ctx.font=`900 ${layout.headFont}px Arial`;
   ctx.fillStyle='#0f172a';
   columns.forEach((col, idx)=>{
     const cellX=columnLefts[idx];
     const midX=cellX + (col.width/2);
     ctx.textAlign=col.align==='left' ? 'left' : 'center';
-    const textX=col.align==='left' ? cellX+12 : midX;
-    ctx.fillText(col.label, textX, tableTop + (tableHeadH/2) + 7);
+    const textX=col.align==='left' ? cellX+14 : midX;
+    const label=fitCanvasText(ctx, col.label, col.width-18);
+    ctx.fillText(label, textX, tableTop + (tableHeadH/2) + (layout.headFont*0.34));
     if(idx>0){
       ctx.beginPath();
       ctx.moveTo(cellX, tableTop);
@@ -3534,14 +3543,14 @@ async function reportImageBlob(onProgress){
   progress(4, rows.length ? `Menggambar isi tabel 0 / ${rows.length}...` : 'Menyiapkan isi tabel...',52,totalSteps);
   await nextAnimationFrame();
   const dataRows=rows.length ? rows : [{}];
-  const updateEvery=Math.max(1, Math.ceil(Math.max(1, rows.length)/10));
+  const updateEvery=Math.max(1, Math.ceil(Math.max(1, rows.length)/12));
   for(let idx=0; idx<dataRows.length; idx++){
     const row=dataRows[idx];
     const y=tableTop + tableHeadH + idx*layout.rowH;
     ctx.fillStyle=idx%2===0 ? '#ffffff' : '#f8fbff';
     ctx.fillRect(left,y,tableWidth,layout.rowH);
     ctx.strokeStyle='#1e293b';
-    ctx.lineWidth=0.9;
+    ctx.lineWidth=1;
     ctx.strokeRect(left,y,tableWidth,layout.rowH);
     columns.forEach((col, colIdx)=>{
       const cellX=columnLefts[colIdx];
@@ -3559,15 +3568,15 @@ async function reportImageBlob(onProgress){
         ctx.fillStyle='#0f172a';
         if(value) ctx.fillText(value, cellX + (col.width/2), y + (layout.rowH/2) + (layout.checkFont*0.34));
       }else{
-        ctx.font=`${col.key==='name' ? '700' : '600'} ${layout.bodyFont}px Arial`;
+        ctx.font=`${col.key==='name' ? '800' : '700'} ${layout.bodyFont}px Arial`;
         ctx.fillStyle=rows.length ? '#0f172a' : '#64748b';
         if(col.align==='left'){
           ctx.textAlign='left';
-          const fitted=fitCanvasText(ctx, value, col.width-22);
-          ctx.fillText(fitted, cellX+12, textBaseY);
+          const fitted=fitCanvasText(ctx, value, col.width-26);
+          ctx.fillText(fitted, cellX+14, textBaseY);
         }else{
           ctx.textAlign='center';
-          const fitted=fitCanvasText(ctx, value, col.width-16);
+          const fitted=fitCanvasText(ctx, value, col.width-18);
           ctx.fillText(fitted, cellX + (col.width/2), textBaseY);
         }
       }
@@ -3583,13 +3592,13 @@ async function reportImageBlob(onProgress){
     }
   }
 
-  progress(5,'Menyempurnakan gambar PNG Super HD...',86,totalSteps); await nextAnimationFrame();
+  progress(5,'Menyempurnakan gambar PNG Super HD++...',86,totalSteps); await nextAnimationFrame();
   const summaryTop=tableTop + tableHeadH + dataRows.length*layout.rowH + summaryTopGap;
   const s1=rows.filter(w=>w && w.s1).length;
   const s2=rows.filter(w=>w && w.s2).length;
   const s3=rows.filter(w=>w && w.s3).length;
   const total=rows.length;
-  const boxGap=16;
+  const boxGap=18;
   const boxCount=4;
   const boxWidth=(tableWidth - boxGap*(boxCount-1))/boxCount;
   const summaryItems=[`SHIFT 1 : ${s1} pekerja`,`SHIFT 2 : ${s2} pekerja`,`SHIFT 3 : ${s3} pekerja`,`TOTAL : ${total} Orang`];
@@ -3597,8 +3606,8 @@ async function reportImageBlob(onProgress){
     const x=left + idx*(boxWidth+boxGap);
     ctx.fillStyle=idx===3 ? '#dbeafe' : '#f8fafc';
     ctx.strokeStyle=idx===3 ? '#2558d9' : '#cbd5e1';
-    ctx.lineWidth=1.5;
-    const radius=10;
+    ctx.lineWidth=1.7;
+    const radius=12;
     ctx.beginPath();
     ctx.moveTo(x+radius, summaryTop);
     ctx.arcTo(x+boxWidth, summaryTop, x+boxWidth, summaryTop+summaryBlockH, radius);
@@ -3612,11 +3621,11 @@ async function reportImageBlob(onProgress){
     ctx.font=`900 ${idx===3 ? layout.totalFont : layout.summaryFont}px Arial`;
     ctx.textAlign='center';
     const fitted=fitCanvasText(ctx, label, boxWidth-18);
-    ctx.fillText(fitted, x + boxWidth/2, summaryTop + summaryBlockH/2 + (idx===3 ? layout.totalFont : layout.summaryFont)*0.34);
+    ctx.fillText(fitted, x + boxWidth/2, summaryTop + summaryBlockH/2 + ((idx===3 ? layout.totalFont : layout.summaryFont)*0.34));
   });
   await waitMs(120);
   const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png',1));
-  progress(5,'PNG Super HD selesai dibuat.',94,totalSteps); await waitMs(150);
+  progress(5,'PNG Super HD++ selesai dibuat.',94,totalSteps); await waitMs(150);
   return blob;
 }
 function shareTextWhatsapp(){ if(selectedWorkers().length===0){ alert('Share belum bisa dikirim. Pilih minimal 1 pekerja terlebih dahulu.'); return; } window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank'); }
