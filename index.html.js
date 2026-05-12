@@ -923,7 +923,7 @@
         <div class="import-help" id="adminAttendanceInfo">Cek In / Cek Out bisa diisi manual, otomatis, atau mengambil data global dari menu Admin &gt; Import Data.</div>
       </div></div>
       <div class="attendance-list no-print" id="mobileReportList"></div>
-      <div class="card print-sheet report-preview"><div class="card-head no-print"><h3>Tabel Hasil Input</h3><span><strong id="selectedCountBadge">0</strong> pekerja dipilih</span></div><div class="print-title"><div class="main" id="reportMainTitle">ABSENSI KEGIATAN MUATAN BREEDER</div><div class="company" id="reportCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="reportDateText">HARI - TANGGAL</div></div><div class="table-wrap"><table class="report-table" id="reportTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><th>CEK IN</th><th>CEK OUT</th></tr></thead><tbody id="reportBody"></tbody><tfoot class="report-summary"><tr><td class="summary-empty" colspan="3"></td><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><td class="summary-empty" colspan="2"></td></tr><tr><td class="left-label" colspan="3">JUMLAH PEKERJA</td><td id="sumS1">0</td><td id="sumS2">0</td><td id="sumS3">0</td><td class="summary-empty" colspan="2"></td></tr><tr><td class="summary-empty" colspan="3"></td><td class="total" colspan="3"><span id="sumTotal">0</span> Orang</td><td class="summary-empty" colspan="2"></td></tr></tfoot></table></div><div class="report-footer" id="reportFooter"><div class="signature-grid"><div><div class="signature-title editable-report" data-report-setting="signBip" contenteditable="true">B I P</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signGudang" contenteditable="true">Bagian Gudang</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signKasie" contenteditable="true">Kasie Muatan Breeder</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signPga" contenteditable="true">Bagian P&amp;GA</div><div class="signature-line"></div></div></div><div class="note-area"><div class="note-title">NOTE :</div><div class="editable-report" data-report-setting="note" contenteditable="true"></div><table class="worktime-table"><tr><th colspan="3" class="worktime-main">ABSENSI SIDIK JARI<br><span class="editable-report" data-report-setting="workTitle" contenteditable="true">JAM KERJA CEK IN dan CEK OUT</span></th></tr><tr><th>JADWAL</th><th colspan="2">JAM KERJA</th></tr><tr><th>KERJA</th><th>CEK IN</th><th>CEK OUT</th></tr><tr><td class="editable-report" data-report-setting="shiftPagiLabel" contenteditable="true">SHIFT 1</td><td class="editable-report" data-report-setting="shiftPagiIn" contenteditable="true">07:00:00</td><td class="editable-report" data-report-setting="shiftPagiOut" contenteditable="true">17:00:00</td></tr><tr><td class="editable-report" data-report-setting="shiftSiangLabel" contenteditable="true">SHIFT 2</td><td class="editable-report" data-report-setting="shiftSiangIn" contenteditable="true">17:00:00</td><td class="editable-report" data-report-setting="shiftSiangOut" contenteditable="true">23:00:00</td></tr><tr><td class="editable-report" data-report-setting="shiftMalamLabel" contenteditable="true">SHIFT 3</td><td class="editable-report" data-report-setting="shiftMalamIn" contenteditable="true">23:00:00</td><td class="editable-report" data-report-setting="shiftMalamOut" contenteditable="true">07:00:00</td></tr></table><div class="note-save-row no-print"><button type="button" class="btn primary" id="btnSaveReportFormat">💾 Simpan NOTE / Jam Kerja</button></div></div></div><div class="bottom-print-actions no-print"><button type="button" class="btn dark" id="btnBottomPrintAttendance">👁 Preview</button></div></div>
+      <div class="card print-sheet report-preview"><div class="card-head no-print"><h3>Tabel Hasil Input</h3><span><strong id="selectedCountBadge">0</strong> pekerja dipilih</span></div><div class="print-title"><div class="main" id="reportMainTitle">ABSENSI KEGIATAN MUATAN BREEDER</div><div class="company" id="reportCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="reportDateText">HARI - TANGGAL</div></div><div class="table-wrap"><table class="report-table" id="reportTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><th>CEK IN</th><th>CEK OUT</th></tr></thead><tbody id="reportBody"></tbody><tfoot class="report-summary"><tr><td class="summary-empty" colspan="3"></td><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><td class="summary-empty" colspan="2"></td></tr><tr><td class="left-label" colspan="3">JUMLAH PEKERJA</td><td id="sumS1">0</td><td id="sumS2">0</td><td id="sumS3">0</td><td class="summary-empty" colspan="2"></td></tr><tr><td class="summary-empty" colspan="3"></td><td class="total" colspan="3"><span id="sumTotal">0</span> Orang</td><td class="summary-empty" colspan="2"></td></tr></tfoot></table></div><div class="report-footer" id="reportFooter"><div class="signature-grid"><div><div class="signature-title editable-report" data-report-setting="signBip" contenteditable="true">B I P</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signGudang" contenteditable="true">Bagian Gudang</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signKasie" contenteditable="true">Kasie Muatan Breeder</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signPga" contenteditable="true">Bagian P&amp;GA</div><div class="signature-line"></div></div></div><div class="note-area"><div class="note-title">NOTE :</div><div class="editable-report" data-report-setting="note" contenteditable="true"></div><table class="worktime-table"><tr><th colspan="3" class="worktime-main">ABSENSI SIDIK JARI<br><span class="editable-report" data-report-setting="workTitle" contenteditable="true">JAM KERJA CEK IN dan CEK OUT</span></th></tr><tr><th>JADWAL</th><th colspan="2">JAM KERJA</th></tr><tr><th>KERJA</th><th>CEK IN</th><th>CEK OUT</th></tr><tr><td class="editable-report" data-report-setting="shiftPagiLabel" contenteditable="true">SHIFT 1</td><td class="editable-report" data-report-setting="shiftPagiIn" contenteditable="true">07:00</td><td class="editable-report" data-report-setting="shiftPagiOut" contenteditable="true">17:00</td></tr><tr><td class="editable-report" data-report-setting="shiftSiangLabel" contenteditable="true">SHIFT 2</td><td class="editable-report" data-report-setting="shiftSiangIn" contenteditable="true">17:00</td><td class="editable-report" data-report-setting="shiftSiangOut" contenteditable="true">23:00</td></tr><tr><td class="editable-report" data-report-setting="shiftMalamLabel" contenteditable="true">SHIFT 3</td><td class="editable-report" data-report-setting="shiftMalamIn" contenteditable="true">23:00</td><td class="editable-report" data-report-setting="shiftMalamOut" contenteditable="true">07:00</td></tr></table><div class="note-save-row no-print"><button type="button" class="btn primary" id="btnSaveReportFormat">💾 Simpan NOTE / Jam Kerja</button></div></div></div><div class="bottom-print-actions no-print"><button type="button" class="btn dark" id="btnBottomPrintAttendance">👁 Preview</button></div></div>
       <div class="control-report no-print coordinator-only"><div class="control-info"><div class="control-icon">📲</div><div><h3>Share Laporan Absensi</h3><p>Bagikan gambar tabel via WhatsApp.</p></div></div><div class="control-actions"><button class="btn success full" id="btnShareWa">Lapor BIP via WA</button></div></div>
     </section>
   </section>
@@ -1002,7 +1002,8 @@
               <div class="import-file-name" id="adminGlobalCheckFileName">Belum ada file dipilih.</div>
               <div class="admin-actions-row three"><button class="btn secondary" id="btnAdminPreviewMachineImport">🔎 Preview Import Data Mesin</button><button class="btn warning" id="btnAdminImportGlobalCheckTimes">📥 Import Rekap Cek In/Out</button><button class="btn danger" id="btnAdminClearGlobalCheckTimes">🗑 Hapus Data Tanggal Ini</button></div>
               <div class="admin-actions-row" style="grid-template-columns:1fr"><button class="btn primary" id="btnAdminPreviewAllSchedules">📋 Preview Jadwal Semua Kegiatan</button></div>
-              <div class="import-help" id="adminGlobalCheckInfo">Import Rekap Cek In/Out memakai file rekap berkolom <b>NIP</b>, <b>Cek In</b>, dan <b>Cek Out</b>. Preview Data Mesin memakai file mentah berkolom <b>No.ID</b>, <b>Tgl/Waktu</b>, dan <b>Lokasi ID</b> tanpa langsung menyimpan ke laporan.</div>
+              <div class="admin-actions-row" style="grid-template-columns:1fr"><button class="btn success" id="btnAdminImportMachinePreview">📥 Import Hasil Preview Mesin ke Cek In/Out</button></div>
+              <div class="import-help" id="adminGlobalCheckInfo">Import Rekap Cek In/Out memakai file rekap berkolom <b>NIP</b>, <b>Cek In</b>, dan <b>Cek Out</b>. Untuk file mentah mesin berkolom <b>No.ID</b>, <b>Tgl/Waktu</b>, dan <b>Lokasi ID</b>, gunakan <b>Preview Import Data Mesin</b>, lalu klik <b>Import Hasil Preview Mesin ke Cek In/Out</b>. Jam disimpan format <b>HH:MM:SS</b>.</div>
               <div class="machine-preview-box" id="adminMachinePreviewBox" style="display:none"></div>
               <div class="all-schedule-preview-box" id="adminAllSchedulePreviewBox" style="display:none"></div>
               <div class="admin-sub-title" style="margin-top:14px"><div><h4>Riwayat Import Cek In/Out</h4></div><small>v70</small></div>
@@ -3172,9 +3173,9 @@ function rowsFromAttendancePayload(payload){
 }
 
 function getReportUnitKeyForSettings(){ return isAdmin() ? (($('adminReportUnitSelect') && $('adminReportUnitSelect').value) || adminManagedUnitKey) : activeUnitKey(); }
-function defaultReportSettings(unitName){ return { signBip:'B I P', signGudang:'Bagian Gudang', signKasie:`Kasie ${unitName || 'Muatan Breeder'}`, signPga:'Bagian P&GA', note:'', workTitle:'JAM KERJA CEK IN dan CEK OUT', shiftPagiLabel:'SHIFT 1', shiftPagiIn:'07:00:00', shiftPagiOut:'17:00:00', shiftSiangLabel:'SHIFT 2', shiftSiangIn:'17:00:00', shiftSiangOut:'23:00:00', shiftMalamLabel:'SHIFT 3', shiftMalamIn:'23:00:00', shiftMalamOut:'07:00:00' }; }
+function defaultReportSettings(unitName){ return { signBip:'B I P', signGudang:'Bagian Gudang', signKasie:`Kasie ${unitName || 'Muatan Breeder'}`, signPga:'Bagian P&GA', note:'', workTitle:'JAM KERJA CEK IN dan CEK OUT', shiftPagiLabel:'SHIFT 1', shiftPagiIn:'07:00', shiftPagiOut:'17:00', shiftSiangLabel:'SHIFT 2', shiftSiangIn:'17:00', shiftSiangOut:'23:00', shiftMalamLabel:'SHIFT 3', shiftMalamIn:'23:00', shiftMalamOut:'07:00' }; }
 function reportSettingsStorageKey(unitKeyValue){ return `${REPORT_SETTINGS_KEY}_${unitKeyValue || 'global'}`; }
-function normalizeReportSettings(settings, unitName){ const def=defaultReportSettings(unitName); const merged={ ...def, ...(settings || {}) }; if(String(merged.shiftPagiLabel||'').toUpperCase()==='PAGI') merged.shiftPagiLabel='SHIFT 1'; if(String(merged.shiftSiangLabel||'').toUpperCase()==='SIANG') merged.shiftSiangLabel='SHIFT 2'; if(!merged.shiftMalamLabel) merged.shiftMalamLabel='SHIFT 3'; if(!merged.shiftMalamIn) merged.shiftMalamIn='23:00:00'; if(!merged.shiftMalamOut) merged.shiftMalamOut='07:00:00'; if(String(merged.workTitle||'').toUpperCase().startsWith('JAM KERJA ')) merged.workTitle='JAM KERJA CEK IN dan CEK OUT'; if(merged.shiftPagiOut==='15.00' && merged.shiftSiangIn==='15.00'){ merged.shiftPagiOut='17:00:00'; merged.shiftSiangIn='17:00:00'; } ['shiftPagiIn','shiftPagiOut','shiftSiangIn','shiftSiangOut','shiftMalamIn','shiftMalamOut'].forEach(k=>{ merged[k]=normalizeTimeToHMS(merged[k]) || normalizeTimeToHMS(def[k]) || ''; }); return merged; }
+function normalizeReportSettings(settings, unitName){ const def=defaultReportSettings(unitName); const merged={ ...def, ...(settings || {}) }; if(String(merged.shiftPagiLabel||'').toUpperCase()==='PAGI') merged.shiftPagiLabel='SHIFT 1'; if(String(merged.shiftSiangLabel||'').toUpperCase()==='SIANG') merged.shiftSiangLabel='SHIFT 2'; if(!merged.shiftMalamLabel) merged.shiftMalamLabel='SHIFT 3'; if(!merged.shiftMalamIn) merged.shiftMalamIn='23:00'; if(!merged.shiftMalamOut) merged.shiftMalamOut='07:00'; if(String(merged.workTitle||'').toUpperCase().startsWith('JAM KERJA ')) merged.workTitle='JAM KERJA CEK IN dan CEK OUT'; if(merged.shiftPagiOut==='15.00' && merged.shiftSiangIn==='15.00'){ merged.shiftPagiOut='17:00'; merged.shiftSiangIn='17:00'; } ['shiftPagiIn','shiftPagiOut','shiftSiangIn','shiftSiangOut','shiftMalamIn','shiftMalamOut'].forEach(k=>{ merged[k]=normalizeTimeToHM(merged[k]) || normalizeTimeToHM(def[k]) || ''; }); return merged; }
 function getReportSettings(unitKeyValue, unitName){
   const key=unitKeyValue || 'global';
   if(reportSettingsCloudCache[key]) return normalizeReportSettings(reportSettingsCloudCache[key], unitName);
@@ -3192,7 +3193,7 @@ function renderReportSettings(unitKeyValue, unitName){
   }).catch(err=>console.warn('Load format laporan Firestore gagal.', err));
 }
 function syncAdminAutoShiftInputs(settings){ if(!isAdmin() || !settings) return; const pairs={adminAutoS1In:'shiftPagiIn',adminAutoS1Out:'shiftPagiOut',adminAutoS2In:'shiftSiangIn',adminAutoS2Out:'shiftSiangOut',adminAutoS3In:'shiftMalamIn',adminAutoS3Out:'shiftMalamOut'}; Object.keys(pairs).forEach(id=>{ const el=$(id); if(el && !el.dataset.userEdited){ el.value=settings[pairs[id]] || el.value || ''; } }); }
-function collectReportSettings(){ const data={}; document.querySelectorAll('[data-report-setting]').forEach(el=>{ const key=el.dataset.reportSetting; if(key) data[key]=el.textContent.trim(); }); return data; }
+function collectReportSettings(){ const data={}; const timeKeys=new Set(['shiftPagiIn','shiftPagiOut','shiftSiangIn','shiftSiangOut','shiftMalamIn','shiftMalamOut']); document.querySelectorAll('[data-report-setting]').forEach(el=>{ const key=el.dataset.reportSetting; if(key) data[key]=timeKeys.has(key) ? normalizeTimeToHM(el.textContent.trim()) : el.textContent.trim(); }); return data; }
 function saveReportSettings(){ if(!isAdmin()) return; const unitKeyValue=getReportUnitKeyForSettings(); const settings=collectReportSettings(); saveReportSettingsToFirestore(unitKeyValue, settings).catch(err=>console.warn('Simpan format laporan Firestore gagal.', err)); }
 function normalizeAdminRandomMinutes(value, fallback){ const n=Math.floor(Number(value)); if(!Number.isFinite(n) || n<0) return Number(fallback)||0; return n; }
 function isAdminAutoShift3Enabled(){ const el=$('adminAutoUseS3'); if(el) return !!el.checked; return !!adminAttendanceOptions.autoShift3; }
@@ -3232,6 +3233,12 @@ function normalizeTimeToHMS(value){
   const d=new Date(raw);
   if(!isNaN(d) && /\d{1,2}:\d{1,2}/.test(raw)) return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}:${String(d.getSeconds()).padStart(2,'0')}`;
   return raw;
+}
+function normalizeTimeToHM(value){
+  const hms=normalizeTimeToHMS(value);
+  const m=String(hms||'').match(/^(\d{2}):(\d{2})(?::\d{2})?$/);
+  if(m) return `${m[1]}:${m[2]}`;
+  return hms || String(value||'').trim();
 }
 function parseAttendanceTimeToSeconds(value){ const hms=normalizeTimeToHMS(value); const m=String(hms||'').match(/^(\d{2}):(\d{2}):(\d{2})$/); if(!m) return null; const h=Number(m[1]); const min=Number(m[2]); const sec=Number(m[3]); if(!Number.isFinite(h)||!Number.isFinite(min)||!Number.isFinite(sec)||h<0||h>23||min<0||min>59||sec<0||sec>59) return null; return h*3600+min*60+sec; }
 function parseAttendanceTimeToMinutes(value){ const seconds=parseAttendanceTimeToSeconds(value); return seconds===null ? null : Math.floor(seconds/60); }
@@ -3924,7 +3931,7 @@ function updateAdminReportDataFromRows(rows){
   adminReportData.counts={shift1:rows.filter(r=>r.s1).length,shift2:rows.filter(r=>r.s2).length,shift3:rows.filter(r=>r.s3).length,total:rows.length};
   adminReportData.checkTimes=Object.fromEntries(rows.map(r=>[String(r.nip),{checkIn:r.checkIn||'',checkOut:r.checkOut||''}]));
 }
-function applyCheckTimesToAdminReport(checkMap, options){ if(!isAdmin() || !adminReportData) return 0; const opts=options || {}; const rows=rowsFromAttendancePayload(adminReportData); let changed=0; rows.forEach(row=>{ if(isCommercialTfActivityRow(row)){ row.checkIn=''; row.checkOut=''; return; } const key=String(row.nip||''); const data=checkMap && checkMap[key]; if(!data) return; const importedIn=normalizeTimeToHMS(data.checkIn || data.cekIn || ''); const importedOut=normalizeTimeToHMS(data.checkOut || data.cekOut || ''); if(!importedIn && !importedOut) return; if(opts.overwrite===false){ if(importedIn && !row.checkIn) row.checkIn=importedIn; if(importedOut && !row.checkOut) row.checkOut=importedOut; }else{ if(importedIn) row.checkIn=importedIn; if(importedOut) row.checkOut=importedOut; } changed++; }); updateAdminReportDataFromRows(rows); if(opts.render!==false) renderReport(); return changed; }
+function applyCheckTimesToAdminReport(checkMap, options){ if(!isAdmin() || !adminReportData) return 0; const opts=options || {}; const rows=rowsFromAttendancePayload(adminReportData); let changed=0; rows.forEach(row=>{ if(isCommercialTfActivityRow(row)){ row.checkIn=''; row.checkOut=''; return; } const key=String(row.nip||''); const data=checkMap && checkMap[key]; if(!data) return; const importedIn=normalizeTimeToHMS(data.checkIn || data.cekIn || ''); const importedOut=normalizeTimeToHMS(data.checkOut || data.cekOut || ''); if(!importedIn && !importedOut) return; const beforeIn=row.checkIn || ''; const beforeOut=row.checkOut || ''; if(opts.overwrite===false){ if(importedIn && !row.checkIn) row.checkIn=importedIn; if(importedOut && !row.checkOut) row.checkOut=importedOut; }else{ if(importedIn || opts.clearMissing) row.checkIn=importedIn; if(importedOut || opts.clearMissing) row.checkOut=importedOut; } if((row.checkIn||'')!==beforeIn || (row.checkOut||'')!==beforeOut) changed++; }); updateAdminReportDataFromRows(rows); if(opts.render!==false) renderReport(); return changed; }
 function updateAdminReportRowsWithCheckTimes(rows){ updateAdminReportDataFromRows(rows); }
 function parseWorkTimeToMinutes(value){ const seconds=parseAttendanceTimeToSeconds(value); return seconds===null ? 0 : Math.floor(seconds/60); }
 function formatMinutesToWorkTime(total){ return formatSecondsToHMS((Number(total)||0)*60); }
@@ -4081,14 +4088,18 @@ function statusClassMachine(status){
   if(status==='Tidak ada data mesin') return 'err';
   return 'warn';
 }
+let lastMachineImportPreviewResult=null;
+function machineImportAllowedStatus(status){ return ['Cocok','Cek In tidak ditemukan','Cek Out tidak ditemukan'].includes(String(status||'')); }
+function validMachinePreviewRows(rows){ return (rows||[]).filter(r=>r && machineImportAllowedStatus(r.status) && String(r.nip||'').trim() && (normalizeTimeToHMS(r.checkIn||'') || normalizeTimeToHMS(r.checkOut||''))); }
 function renderMachineImportPreview(result){
   const box=$('adminMachinePreviewBox');
   if(!box) return;
   const rows=result && Array.isArray(result.rows) ? result.rows : [];
   const summary=result && result.summary ? result.summary : '';
+  const validCount=validMachinePreviewRows(rows).length;
   box.style.display='block';
   const body=rows.length ? rows.map(r=>`<tr><td>${safeText(r.date)}</td><td>${safeText(r.nip)}</td><td>${safeText(r.name)}</td><td>${safeText(r.kegiatan)}</td><td>${safeText(r.shift)}</td><td>${safeText(r.checkIn)}</td><td>${safeText(r.checkOut)}</td><td>${safeText(r.duration)}</td><td><span class="machine-status ${statusClassMachine(r.status)}">${safeText(r.status)}</span></td></tr>`).join('') : '<tr><td colspan="9" style="text-align:center;color:#64748b">Belum ada data preview.</td></tr>';
-  box.innerHTML=`<div class="machine-preview-head"><span>Preview Import Data Mesin Absensi</span><span>${safeText(summary)}</span></div><div class="machine-preview-table-wrap"><table class="machine-preview-table"><thead><tr><th>Tanggal</th><th>NIP</th><th>Nama</th><th>Kegiatan</th><th>Shift</th><th>Cek In Mesin</th><th>Cek Out Mesin</th><th>Durasi</th><th>Status</th></tr></thead><tbody>${body}</tbody></table></div>`;
+  box.innerHTML=`<div class="machine-preview-head"><span>Preview Import Data Mesin Absensi</span><span>${safeText(summary)} • Siap import ${validCount}</span></div><div class="machine-preview-table-wrap"><table class="machine-preview-table"><thead><tr><th>Tanggal</th><th>NIP</th><th>Nama</th><th>Kegiatan</th><th>Shift</th><th>Cek In Mesin</th><th>Cek Out Mesin</th><th>Durasi</th><th>Status</th></tr></thead><tbody>${body}</tbody></table></div><div class="all-schedule-preview-note">Status yang boleh diimpor: <b>Cocok</b>, <b>Cek In tidak ditemukan</b>, dan <b>Cek Out tidak ditemukan</b>. Jam disimpan format <b>HH:MM:SS</b>.</div>`;
 }
 
 function allSchedulePreviewUnitKeys(){
@@ -4160,6 +4171,63 @@ async function adminPreviewAllSchedules(){
     alert('Preview jadwal semua kegiatan gagal: '+(err && err.message ? err.message : err));
   }finally{ if(btn){ btn.disabled=false; btn.textContent=old || '📋 Preview Jadwal Semua Kegiatan'; } }
 }
+async function buildMachineImportPreviewFromFile(file, dateValue){
+  const rows=await readImportRows(file);
+  const parsed=parseMachineImportRows(rows, dateValue);
+  const scansByNip={};
+  parsed.scans.forEach(scan=>{ if(!scansByNip[scan.nip]) scansByNip[scan.nip]=[]; scansByNip[scan.nip].push(scan); });
+  const preview=[];
+  const scheduledNips=new Set();
+  let totalSchedules=0;
+  for(const unitKeyValue of allSchedulePreviewUnitKeys()){
+    const payload=await loadAttendanceForMachinePreview(unitKeyValue, dateValue);
+    const scheduleRows=rowsFromAttendancePayload(payload).filter(r=>r && r.nip && (r.s1 || r.s2 || r.s3));
+    const unitName=(payload && payload.unit) || unitNameFromKey(unitKeyValue);
+    const settings=getReportSettings(unitKeyValue, unitName);
+    totalSchedules+=scheduleRows.length;
+    scheduleRows.forEach(row=>{
+      const nip=String(row.nip||'');
+      scheduledNips.add(nip);
+      const win=shiftWindowSeconds(row, dateValue, settings);
+      const scans=(scansByNip[nip]||[]).map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)})).filter(scan=>scan.abs>=win.start && scan.abs<=win.end);
+      const ins=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs);
+      const outs=scans.filter(scan=>String(scan.loc)==='2').sort((a,b)=>b.abs-a.abs);
+      const firstIn=ins[0] || null;
+      const lastOut=outs[0] || null;
+      let status='Cocok';
+      if(!firstIn && !lastOut) status='Tidak ada data mesin';
+      else if(!firstIn) status='Cek In tidak ditemukan';
+      else if(!lastOut) status='Cek Out tidak ditemukan';
+      preview.push({
+        date:dateValue,
+        nip,
+        name:row.name || '',
+        kegiatan:row.kegiatan || row.activityLabel || unitNameFromKey(unitKeyValue) || '',
+        shift:shiftLabelsForRow(row),
+        checkIn:firstIn ? normalizeTimeToHMS(firstIn.time) : '',
+        checkOut:lastOut ? normalizeTimeToHMS(lastOut.time) : '',
+        duration:(firstIn && lastOut) ? formatDurationAbsHMS(firstIn.abs, lastOut.abs) : '',
+        status
+      });
+    });
+  }
+  Object.keys(scansByNip).sort((a,b)=>(parseInt(a,10)||999999)-(parseInt(b,10)||999999)).forEach(nip=>{
+    if(scheduledNips.has(nip)) return;
+    const scans=scansByNip[nip].map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)})).filter(scan=>scan.date===dateValue || dateDiffDays(scan.date,dateValue)===1);
+    if(!scans.length) return;
+    const ins=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs);
+    const outs=scans.filter(scan=>String(scan.loc)==='2').sort((a,b)=>b.abs-a.abs);
+    const firstIn=ins[0] || null;
+    const lastOut=outs[0] || null;
+    preview.push({date:dateValue,nip,name:'-',kegiatan:'-',shift:'-',checkIn:firstIn?normalizeTimeToHMS(firstIn.time):'',checkOut:lastOut?normalizeTimeToHMS(lastOut.time):'',duration:(firstIn&&lastOut)?formatDurationAbsHMS(firstIn.abs,lastOut.abs):'',status:'NIP tidak ada di jadwal'});
+  });
+  const ok=preview.filter(r=>r.status==='Cocok').length;
+  const noIn=preview.filter(r=>r.status==='Cek In tidak ditemukan').length;
+  const noOut=preview.filter(r=>r.status==='Cek Out tidak ditemukan').length;
+  const validImport=validMachinePreviewRows(preview).length;
+  const warn=preview.filter(r=>r.status!=='Cocok').length;
+  return { rows:preview, parsed, totalSchedules, ok, noIn, noOut, validImport, warn, dateValue, summary:`Global semua kegiatan • Jadwal ${totalSchedules} • Scan ${parsed.scans.length} • Cocok ${ok} • In kosong ${noIn} • Out kosong ${noOut} • Siap import ${validImport} • Perlu cek ${warn}` };
+}
 async function adminPreviewMachineImport(){
   if(!requirePermission('importData','Preview import mesin absensi hanya untuk admin.')) return;
   const input=$('adminGlobalCheckFile');
@@ -4169,64 +4237,88 @@ async function adminPreviewMachineImport(){
   const btn=$('btnAdminPreviewMachineImport'); const old=btn?btn.textContent:'';
   try{
     if(btn){ btn.disabled=true; btn.textContent='Preview global...'; }
-    const rows=await readImportRows(file);
-    const parsed=parseMachineImportRows(rows, dateValue);
-    const scansByNip={};
-    parsed.scans.forEach(scan=>{ if(!scansByNip[scan.nip]) scansByNip[scan.nip]=[]; scansByNip[scan.nip].push(scan); });
-    const preview=[];
-    const scheduledNips=new Set();
-    let totalSchedules=0;
-    for(const unitKeyValue of allSchedulePreviewUnitKeys()){
-      const payload=await loadAttendanceForMachinePreview(unitKeyValue, dateValue);
-      const scheduleRows=rowsFromAttendancePayload(payload).filter(r=>r && r.nip && (r.s1 || r.s2 || r.s3));
-      const unitName=(payload && payload.unit) || unitNameFromKey(unitKeyValue);
-      const settings=getReportSettings(unitKeyValue, unitName);
-      totalSchedules+=scheduleRows.length;
-      scheduleRows.forEach(row=>{
-        const nip=String(row.nip||'');
-        scheduledNips.add(nip);
-        const win=shiftWindowSeconds(row, dateValue, settings);
-        const scans=(scansByNip[nip]||[]).map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)})).filter(scan=>scan.abs>=win.start && scan.abs<=win.end);
-        const ins=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs);
-        const outs=scans.filter(scan=>String(scan.loc)==='2').sort((a,b)=>b.abs-a.abs);
-        const firstIn=ins[0] || null;
-        const lastOut=outs[0] || null;
-        let status='Cocok';
-        if(!firstIn && !lastOut) status='Tidak ada data mesin';
-        else if(!firstIn) status='Cek In tidak ditemukan';
-        else if(!lastOut) status='Cek Out tidak ditemukan';
-        preview.push({
-          date:dateValue,
-          nip,
-          name:row.name || '',
-          kegiatan:row.kegiatan || row.activityLabel || unitNameFromKey(unitKeyValue) || '',
-          shift:shiftLabelsForRow(row),
-          checkIn:firstIn ? firstIn.time : '',
-          checkOut:lastOut ? lastOut.time : '',
-          duration:(firstIn && lastOut) ? formatDurationAbsHMS(firstIn.abs, lastOut.abs) : '',
-          status
-        });
-      });
-    }
-    Object.keys(scansByNip).sort((a,b)=>(parseInt(a,10)||999999)-(parseInt(b,10)||999999)).forEach(nip=>{
-      if(scheduledNips.has(nip)) return;
-      const scans=scansByNip[nip].map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)})).filter(scan=>scan.date===dateValue || dateDiffDays(scan.date,dateValue)===1);
-      if(!scans.length) return;
-      const ins=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs);
-      const outs=scans.filter(scan=>String(scan.loc)==='2').sort((a,b)=>b.abs-a.abs);
-      const firstIn=ins[0] || null;
-      const lastOut=outs[0] || null;
-      preview.push({date:dateValue,nip,name:'-',kegiatan:'-',shift:'-',checkIn:firstIn?firstIn.time:'',checkOut:lastOut?lastOut.time:'',duration:(firstIn&&lastOut)?formatDurationAbsHMS(firstIn.abs,lastOut.abs):'',status:'NIP tidak ada di jadwal'});
-    });
-    const ok=preview.filter(r=>r.status==='Cocok').length;
-    const warn=preview.filter(r=>r.status!=='Cocok').length;
-    renderMachineImportPreview({rows:preview, summary:`Global semua kegiatan • Jadwal ${totalSchedules} • Scan ${parsed.scans.length} • Cocok ${ok} • Perlu cek ${warn}`});
-    adminLog(`Preview import mesin absensi global selesai. Tanggal: ${dateValue}. Scan terbaca: ${parsed.scans.length}. Jadwal: ${totalSchedules}. Cocok: ${ok}. Perlu cek: ${warn}. Data belum disimpan ke laporan.`);
+    const result=await buildMachineImportPreviewFromFile(file, dateValue);
+    lastMachineImportPreviewResult={...result, fileName:file.name || '', fileSize:file.size || 0, fileType:file.type || '', generatedAtLocal:new Date().toISOString()};
+    renderMachineImportPreview(result);
+    adminLog(`Preview import mesin absensi global selesai. Tanggal: ${dateValue}. Scan terbaca: ${result.parsed.scans.length}. Jadwal: ${result.totalSchedules}. Cocok: ${result.ok}. Siap import: ${result.validImport}. Data belum disimpan ke laporan.`);
   }catch(err){
     console.error(err);
     alert('Preview import data mesin gagal: '+(err && err.message ? err.message : err));
   }finally{ if(btn){ btn.disabled=false; btn.textContent=old || '🔎 Preview Import Data Mesin'; } }
 }
+
+async function adminImportMachinePreviewToCheckTimes(){
+  if(!requirePermission('importData','Import hasil preview mesin hanya untuk admin.')) return;
+  const input=$('adminGlobalCheckFile');
+  const file=input && input.files && input.files[0];
+  const dateValue=($('adminGlobalCheckDate') && $('adminGlobalCheckDate').value) || todayISO();
+  if(!file){ alert('Pilih file Excel/CSV data mesin absensi terlebih dahulu.'); return; }
+  const btn=$('btnAdminImportMachinePreview'); const old=btn?btn.textContent:'';
+  let historyPayload=null;
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Mengimpor hasil preview...'; }
+    let result=lastMachineImportPreviewResult;
+    if(!result || result.dateValue!==dateValue || result.fileName!==(file.name||'')){
+      result=await buildMachineImportPreviewFromFile(file, dateValue);
+      lastMachineImportPreviewResult={...result, fileName:file.name || '', fileSize:file.size || 0, fileType:file.type || '', generatedAtLocal:new Date().toISOString()};
+      renderMachineImportPreview(result);
+    }
+    const validRows=validMachinePreviewRows(result.rows);
+    const skippedRows=(result.rows||[]).length-validRows.length;
+    const byDate={};
+    const duplicates=[];
+    validRows.forEach((row,idx)=>{
+      const d=row.date || dateValue;
+      const nip=String(row.nip||'').trim();
+      if(!byDate[d]) byDate[d]={};
+      if(byDate[d][nip]) duplicates.push({row:idx+1,date:d,nip});
+      byDate[d][nip]={checkIn:normalizeTimeToHMS(row.checkIn||''), checkOut:normalizeTimeToHMS(row.checkOut||''), source:'machine_preview_import', status:row.status || '', updatedAtLocal:new Date().toISOString()};
+    });
+    const dateCounts={};
+    Object.keys(byDate).forEach(d=>{ dateCounts[d]=Object.keys(byDate[d]||{}).length; });
+    historyPayload={
+      action:'import_machine_preview', status:'success', fileName:file.name || '', fileSize:file.size || 0, fileType:file.type || '', fallbackDate:dateValue,
+      dates:Object.keys(byDate), dateCounts, importedRows:validRows.length, skippedRows, duplicateRows:duplicates.length,
+      totalRows:(result.rows||[]).length, appliedRows:0,
+      note:'Import hasil Preview Data Mesin ke Cek In/Out. Status valid: Cocok, Cek In tidak ditemukan, Cek Out tidak ditemukan. Format jam HH:MM:SS.'
+    };
+    if(!validRows.length){
+      historyPayload.status='failed'; historyPayload.errorMessage='Tidak ada baris preview dengan status valid yang bisa diimpor.';
+      await recordCheckImportHistory(historyPayload); await renderGlobalCheckImportHistory(false);
+      alert('Tidak ada hasil preview yang bisa diimpor. Status yang boleh masuk: Cocok, Cek In tidak ditemukan, dan Cek Out tidak ditemukan.');
+      return;
+    }
+    if(!confirm(`Import hasil Preview Data Mesin ke Cek In/Out?
+
+Tanggal: ${dateValue}
+Siap import: ${validRows.length} NIP
+Dilewati: ${skippedRows}
+
+Jam akan disimpan dalam format HH:MM:SS.`)) return;
+    for(const d of Object.keys(byDate)){
+      const existing=await loadGlobalCheckTimesForDate(d, true);
+      await saveGlobalCheckTimesForDate(d, {...existing, ...byDate[d]});
+    }
+    let applied=0;
+    const reportDate=(adminReportData && adminReportData.reportDate) || (($('adminReportDate') && $('adminReportDate').value) || '');
+    if(reportDate && byDate[reportDate]) applied=applyCheckTimesToAdminReport(byDate[reportDate], {overwrite:true, clearMissing:true});
+    historyPayload.appliedRows=applied;
+    await recordCheckImportHistory(historyPayload);
+    await renderGlobalCheckImportHistory(false);
+    await updateGlobalCheckInfo(`Import hasil preview mesin selesai. ${validRows.length} NIP valid disimpan. ${applied} pekerja diterapkan ke laporan yang sedang dibuka.`);
+    adminLog(`Import hasil Preview Data Mesin selesai. Tanggal: ${Object.keys(byDate).join(', ')}. Valid: ${validRows.length}. Dilewati: ${skippedRows}. Riwayat import tersimpan.`);
+    alert(`Import hasil Preview Data Mesin selesai.
+
+${validRows.length} NIP valid disimpan.
+${applied} pekerja diterapkan ke laporan yang sedang dibuka.
+Riwayat import tersimpan.`);
+  }catch(err){
+    console.error(err);
+    if(historyPayload){ historyPayload.status='failed'; historyPayload.errorMessage=err && err.message ? err.message : String(err); await recordCheckImportHistory(historyPayload).catch(()=>{}); await renderGlobalCheckImportHistory(false).catch(()=>{}); }
+    alert('Import hasil Preview Data Mesin gagal: '+(err && err.message ? err.message : err));
+  }finally{ if(btn){ btn.disabled=false; btn.textContent=old || '📥 Import Hasil Preview Mesin ke Cek In/Out'; } }
+}
+
 
 async function adminImportGlobalCheckTimes(){
   if(!requirePermission('importData','Import Cek In/Out hanya untuk admin.')) return;
@@ -4284,9 +4376,10 @@ async function adminSaveCheckTimes(){
   updateAdminReportDataFromRows(rows);
   adminReportData.updatedByAdmin=currentUser ? {username:currentUser.username||'', name:currentUser.name||'', role:currentUser.role||''} : null;
   adminReportData.updatedAtLocal=new Date().toISOString();
-  saveReportSettings();
+  // Aman: tombol Simpan Cek In / Cek Out hanya menyimpan data absensi pekerja.
+  // Jangan panggil saveReportSettings() di sini agar NOTE / JAM KERJA bawah laporan tidak ikut berubah.
   const btn=$('btnAdminSaveCheckTimes'); const old=btn?btn.textContent:'';
-  try{ if(btn){ btn.disabled=true; btn.textContent='Menyimpan...'; } adminReportData.unitKey = adminReportData.unitKey || (($('adminReportUnitSelect') && $('adminReportUnitSelect').value) || adminManagedUnitKey); adminReportData.reportDate = adminReportData.reportDate || (($('adminReportDate') && $('adminReportDate').value) || todayISO()); safeLocalSetJSON(`${ATTENDANCE_KEY}_${adminReportData.unitKey}_${adminReportData.reportDate}`, cacheEnvelope(adminReportData, 'pending_or_cache')); const bridge=await waitFirebase(); if(bridge && bridge.enabled && bridge.saveAttendance && !adminReportData.combinedAttendance){ await bridge.saveAttendance(adminReportData); clearAdminAttendanceCache(adminReportData.unitKey, adminReportData.reportDate); } if(adminReportData.combinedAttendance){ const savedGlobal=await saveCombinedRowsToGlobalCheckTimes(adminReportData.reportDate, rows); if(savedGlobal && $('adminGlobalCheckDate')){ $('adminGlobalCheckDate').value=adminReportData.reportDate; updateGlobalCheckInfo('Data manual gabungan tersimpan.'); } } alert('Cek In / Cek Out dan format tanda tangan berhasil disimpan.'); renderReport(); }catch(err){ console.error(err); alert('Simpan Cek In / Cek Out gagal: '+(err && err.message ? err.message : err)); }finally{ if(btn){ btn.disabled=false; btn.textContent=old || '💾 Simpan Cek In / Cek Out'; } }
+  try{ if(btn){ btn.disabled=true; btn.textContent='Menyimpan...'; } adminReportData.unitKey = adminReportData.unitKey || (($('adminReportUnitSelect') && $('adminReportUnitSelect').value) || adminManagedUnitKey); adminReportData.reportDate = adminReportData.reportDate || (($('adminReportDate') && $('adminReportDate').value) || todayISO()); safeLocalSetJSON(`${ATTENDANCE_KEY}_${adminReportData.unitKey}_${adminReportData.reportDate}`, cacheEnvelope(adminReportData, 'pending_or_cache')); const bridge=await waitFirebase(); if(bridge && bridge.enabled && bridge.saveAttendance && !adminReportData.combinedAttendance){ await bridge.saveAttendance(adminReportData); clearAdminAttendanceCache(adminReportData.unitKey, adminReportData.reportDate); } if(adminReportData.combinedAttendance){ const savedGlobal=await saveCombinedRowsToGlobalCheckTimes(adminReportData.reportDate, rows); if(savedGlobal && $('adminGlobalCheckDate')){ $('adminGlobalCheckDate').value=adminReportData.reportDate; updateGlobalCheckInfo('Data manual gabungan tersimpan.'); } } alert('Cek In / Cek Out berhasil disimpan. NOTE / JAM KERJA bawah laporan tidak diubah.'); renderReport(); }catch(err){ console.error(err); alert('Simpan Cek In / Cek Out gagal: '+(err && err.message ? err.message : err)); }finally{ if(btn){ btn.disabled=false; btn.textContent=old || '💾 Simpan Cek In / Cek Out'; } }
 }
 
 function optionUnits(includeAll=false){ return (includeAll?'<option value="ALL">Semua Bagian</option>':'') + UNITS.map(u=>`<option value="${u.key}">${safeText(u.name)}</option>`).join(''); }
@@ -4881,7 +4974,7 @@ syncAdminAttendanceOptionCheckboxes(); refreshAdminAttendanceOptionsFromFirestor
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); $('btnShareWa').addEventListener('click', shareWhatsapp); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', updateGlobalCheckInfo); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); $('btnShareWa').addEventListener('click', shareWhatsapp); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; updateGlobalCheckInfo(); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
 let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu install belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }
 window.addEventListener('load', ()=>{ setTimeout(hideSplash,650); });

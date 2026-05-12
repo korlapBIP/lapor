@@ -290,14 +290,14 @@
       note:'',
       workTitle:'JAM KERJA CEK IN dan CEK OUT',
       shiftPagiLabel:'SHIFT 1',
-      shiftPagiIn:'07:00:00',
-      shiftPagiOut:'17:00:00',
+      shiftPagiIn:'07:00',
+      shiftPagiOut:'17:00',
       shiftSiangLabel:'SHIFT 2',
-      shiftSiangIn:'17:00:00',
-      shiftSiangOut:'23:00:00',
+      shiftSiangIn:'17:00',
+      shiftSiangOut:'23:00',
       shiftMalamLabel:'SHIFT 3',
-      shiftMalamIn:'23:00:00',
-      shiftMalamOut:'07:00:00'
+      shiftMalamIn:'23:00',
+      shiftMalamOut:'07:00'
     };
   }
 
@@ -315,6 +315,12 @@
     m = compact.match(/^(\d{1,2})$/);
     if(m){ const h=Number(m[1]); if(h>=0&&h<=23) return `${String(h).padStart(2,'0')}:00:00`; }
     return raw;
+  }
+  function normalizeTimeToHM(value){
+    const hms = normalizeTimeToHMS(value);
+    const m = String(hms || '').match(/^(\d{2}):(\d{2})(?::\d{2})?$/);
+    if(m) return `${m[1]}:${m[2]}`;
+    return hms || String(value || '').trim();
   }
   function printCheckTime(value){ return normalizeTimeToHMS(value); }
 
@@ -383,10 +389,10 @@
     if(String(settings.shiftPagiLabel||'').toUpperCase()==='PAGI') settings.shiftPagiLabel='SHIFT 1';
     if(String(settings.shiftSiangLabel||'').toUpperCase()==='SIANG') settings.shiftSiangLabel='SHIFT 2';
     if(!settings.shiftMalamLabel) settings.shiftMalamLabel='SHIFT 3';
-    if(!settings.shiftMalamIn) settings.shiftMalamIn='23:00:00';
-    if(!settings.shiftMalamOut) settings.shiftMalamOut='07:00:00';
+    if(!settings.shiftMalamIn) settings.shiftMalamIn='23:00';
+    if(!settings.shiftMalamOut) settings.shiftMalamOut='07:00';
     if(String(settings.workTitle||'').toUpperCase().startsWith('JAM KERJA ')) settings.workTitle='JAM KERJA CEK IN dan CEK OUT';
-    ['shiftPagiIn','shiftPagiOut','shiftSiangIn','shiftSiangOut','shiftMalamIn','shiftMalamOut'].forEach(k=>{ settings[k]=normalizeTimeToHMS(settings[k]); });
+    ['shiftPagiIn','shiftPagiOut','shiftSiangIn','shiftSiangOut','shiftMalamIn','shiftMalamOut'].forEach(k=>{ settings[k]=normalizeTimeToHM(settings[k]); });
     const rows = payload.rows;
     const showDuration = !!payload.showDuration;
     const durationHeader = showDuration ? '<th class="duration-col">DURASI</th>' : '';

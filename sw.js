@@ -1,4 +1,4 @@
-const CACHE_NAME = 'absensi-bip-v106_audit_fix_import_preview_mobile_print';
+const CACHE_NAME = 'absensi-bip-v114_machine_preview_import_hhmmss';
 const APP_ASSETS=['./','./index.html','./manifest.json','./firebase-config.js','./firebase-bridge.js','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-master-transparent.png'];
 self.addEventListener('install', event=>{ event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_ASSETS))); self.skipWaiting(); });
 self.addEventListener('activate', event=>{ event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k))))); self.clients.claim(); });
