@@ -859,7 +859,16 @@
       line-height:1.5;
     }
 
-  </style>
+  
+.upah-control-stack{display:flex;flex-direction:column;gap:14px}
+.upah-filter-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:end}
+.upah-action-row{display:flex;justify-content:flex-start}
+.upah-action-row .btn{min-width:190px}
+.upah-tonase-box{display:grid;grid-template-columns:minmax(180px,320px);gap:12px;max-width:360px}
+.upah-tonase-box .btn{width:100%}
+.upah-calc-preview{margin-top:16px}
+@media(max-width:720px){.upah-filter-row{grid-template-columns:1fr}.upah-action-row .btn,.upah-tonase-box{width:100%;max-width:none}}
+</style>
 </head>
 <body class="auth-pending">
 <div class="app-splash" id="appSplash">
@@ -892,7 +901,7 @@
     <div class="hero-brand"><img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo"><div><small>BiP Productivity App</small><h1 id="appUnitTitle">Absensi Muatan Breeder</h1></div></div>
     <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Install Android</button></div>
   </section>
-  <nav class="tabs no-print" aria-label="Navigasi aplikasi"><button class="tab-btn admin-only" data-panel="panelAdmin">🛠 Admin</button><button class="tab-btn active tab-worker coordinator-only" data-panel="panelWorkers">✅ Jadwal</button><button class="tab-btn" data-panel="panelReport">📝 Absensi</button></nav>
+  <nav class="tabs no-print" aria-label="Navigasi aplikasi"><button class="tab-btn admin-only" data-panel="panelAdmin">🛠 Admin</button><button class="tab-btn" data-panel="panelReport">📝 Absensi</button><button class="tab-btn admin-only" data-panel="panelUpah">💰 Upah</button><button class="tab-btn active tab-worker coordinator-only" data-panel="panelWorkers">✅ Jadwal</button></nav>
   <section id="panelWorkers" class="panel active">
     <section class="frame worker no-print" id="legacyWorkerMasterFrame" style="display:none!important" aria-hidden="true"><div class="frame-head"><div><div class="frame-kicker">Frame Lama</div><h2>Daftar Pekerja</h2></div><div class="frame-number">-</div></div>
       <div class="card"><div class="card-head"><h3>Add / Edit / Hapus</h3><span>Master data pekerja</span></div><div class="card-body">
@@ -960,6 +969,27 @@
       <div class="attendance-list no-print" id="mobileReportList"></div>
       <div class="card print-sheet report-preview"><div class="card-head no-print"><h3>Tabel Hasil Input</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span><strong id="selectedCountBadge">0</strong> pekerja dipilih</span><button type="button" class="btn small" id="btnToggleReportPreview">Tampilkan</button></div></div><div id="reportPreviewBody" style="display:none;"><div class="print-title"><div class="main" id="reportMainTitle">ABSENSI KEGIATAN MUATAN BREEDER</div><div class="company" id="reportCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="reportDateText">HARI - TANGGAL</div><div class="coordinator" id="reportCoordinatorText"></div></div><div class="table-wrap"><table class="report-table" id="reportTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><th>CEK IN</th><th>CEK OUT</th></tr></thead><tbody id="reportBody"></tbody><tfoot class="report-summary"><tr><td class="summary-empty" colspan="3"></td><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><td class="summary-empty" colspan="2"></td></tr><tr><td class="left-label" colspan="3">JUMLAH PEKERJA</td><td id="sumS1">0</td><td id="sumS2">0</td><td id="sumS3">0</td><td class="summary-empty" colspan="2"></td></tr><tr><td class="summary-empty" colspan="3"></td><td class="total" colspan="3"><span id="sumTotal">0</span> Orang</td><td class="summary-empty" colspan="2"></td></tr></tfoot></table></div><div class="report-footer" id="reportFooter"><div class="signature-grid"><div><div class="signature-title editable-report" data-report-setting="signBip" contenteditable="true">B I P</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signGudang" contenteditable="true">Bagian Gudang</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signKasie" contenteditable="true">Kasie Muatan Breeder</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signPga" contenteditable="true">Bagian P&amp;GA</div><div class="signature-line"></div></div></div><div class="note-area"><div class="note-title">NOTE :</div><div class="editable-report" data-report-setting="note" contenteditable="true"></div><table class="worktime-table"><tr><th colspan="3" class="worktime-main">ABSENSI SIDIK JARI<br><span class="editable-report" data-report-setting="workTitle" contenteditable="true">JAM KERJA CEK IN dan CEK OUT</span></th></tr><tr><th>JADWAL</th><th colspan="2">JAM KERJA</th></tr><tr><th>KERJA</th><th>CEK IN</th><th>CEK OUT</th></tr><tr><td class="editable-report" data-report-setting="shiftPagiLabel" contenteditable="true">SHIFT 1</td><td class="editable-report" data-report-setting="shiftPagiIn" contenteditable="true">07:00</td><td class="editable-report" data-report-setting="shiftPagiOut" contenteditable="true">17:00</td></tr><tr><td class="editable-report" data-report-setting="shiftSiangLabel" contenteditable="true">SHIFT 2</td><td class="editable-report" data-report-setting="shiftSiangIn" contenteditable="true">17:00</td><td class="editable-report" data-report-setting="shiftSiangOut" contenteditable="true">23:00</td></tr><tr><td class="editable-report" data-report-setting="shiftMalamLabel" contenteditable="true">SHIFT 3</td><td class="editable-report" data-report-setting="shiftMalamIn" contenteditable="true">23:00</td><td class="editable-report" data-report-setting="shiftMalamOut" contenteditable="true">07:00</td></tr></table><div class="note-save-row no-print"><button type="button" class="btn primary" id="btnSaveReportFormat">💾 Simpan NOTE / Jam Kerja</button></div></div></div><div class="bottom-print-actions no-print"><button type="button" class="btn dark" id="btnBottomPrintAttendance">👁 Preview</button></div></div></div>
       <div class="control-report no-print coordinator-only"><div class="control-info"><div class="control-icon">📄</div><div><h3>Download Laporan Absensi</h3></div></div><div class="control-actions"><button class="btn primary full" id="btnDownloadPdf">download PDF</button></div></div>
+    </section>
+  </section>
+
+  <section id="panelUpah" class="panel admin-only">
+    <section class="frame report-frame"><div class="frame-head no-print"><div><div class="frame-kicker">Frame 3</div><h2>Absensi Kegiatan</h2></div><div class="frame-number">3</div></div>
+      <div class="card admin-only no-print" id="adminUpahCard"><div class="card-body">
+        <div class="upah-control-stack">
+          <div class="upah-filter-row">
+            <div class="field"><label for="adminUpahUnitSelect">Pilih Bagian / Koordinator</label><select id="adminUpahUnitSelect"></select></div>
+            <div class="field"><label for="adminUpahDate">Pilih Tanggal Absensi</label><input id="adminUpahDate" type="date"></div>
+          </div>
+          <div class="upah-action-row"><button type="button" class="btn primary" id="btnAdminLoadUpah">🔍 Tampilkan</button></div>
+          <div class="upah-tonase-box">
+            <div class="field"><label for="adminUpahTonaseS1">Tonase Pagi</label><input id="adminUpahTonaseS1" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+            <div class="field"><label for="adminUpahTonaseS2">Tonase Siang</label><input id="adminUpahTonaseS2" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+            <button type="button" class="btn dark" id="btnCalculateUpah">Calculate</button>
+          </div>
+        </div>
+      </div></div>
+      <div class="card print-sheet report-preview upah-preview"><div class="card-head no-print"><h3>Ketentuan Naik 1 Naik 2</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span><strong id="upahSelectedCountBadge">0</strong> pekerja</span></div></div><div id="upahPreviewBody"><div class="print-title"><div class="main" id="upahMainTitle">KETENTUAN NAIK 1 NAIK 2</div><div class="company" id="upahCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="upahDateText">HARI - TANGGAL</div><div class="coordinator" id="upahCoordinatorText"></div></div><div class="table-wrap"><table class="report-table" id="upahTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th></tr></thead><tbody id="upahBody"><tr><td colspan="6" style="height:42px;color:#65758b">Pilih Bagian / Koordinator dan Tanggal Absensi, lalu klik Tampilkan.</td></tr></tbody><tfoot class="report-summary upah-summary" id="upahFoot"><tr><td class="left-label" colspan="3">TOTAL</td><td id="upahSumS1">0</td><td id="upahSumS2">0</td><td id="upahSumS3">0</td></tr></tfoot></table></div></div></div>
+      <div class="card print-sheet report-preview upah-calc-preview" id="upahCalcCard" style="display:none"><div class="card-head no-print"><h3>Tabel Hasil Perhitungan Upah</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><button type="button" class="btn primary small" id="btnExportUpahExcel">Export to Excel</button></div></div><div class="import-help no-print" id="upahCalcInfo"></div><div class="table-wrap"><table class="report-table" id="upahCalcTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>NILAI UPAH SHIFT 1</th><th>NILAI UPAH SHIFT 2</th><th>TOTAL UPAH</th></tr></thead><tbody id="upahCalcBody"></tbody><tfoot class="report-summary"><tr><td class="left-label" colspan="3">TOTAL</td><td id="upahCalcTotalS1">0</td><td id="upahCalcTotalS2">0</td><td id="upahCalcTotalPayS1">0</td><td id="upahCalcTotalPayS2">0</td><td id="upahCalcGrandTotal">0</td></tr></tfoot></table></div></div>
     </section>
   </section>
 
@@ -1260,6 +1290,9 @@ const defaultWorkers = [
 ];
 let state = { company:'PT. BUDI INTI PERKASA', reportDate:new Date().toISOString().slice(0,10), workers: JSON.parse(JSON.stringify(defaultWorkers)), allowEmptyWorkers:false };
 let adminReportData = null;
+let adminUpahData = null;
+let adminUpahRows = [];
+let adminUpahCalculationRows = [];
 const adminAttendanceCache = new Map();
 const adminAttendanceCacheMeta = { hits:0, misses:0, lastSource:'' };
 const $ = (id) => document.getElementById(id);
@@ -3430,6 +3463,195 @@ function renderAdminReport(){
     }
   }
 }
+
+function upahCoordinatorDisplay(payload){
+  if(!payload) return '';
+  if(payload.combinedAttendance) return combinedCoordinatorDisplay(payload);
+  return coordinatorNameFromPayload(payload);
+}
+function isOperOperBahanBakuUpah(){
+  const selectedKey=$('adminUpahUnitSelect') ? $('adminUpahUnitSelect').value : adminManagedUnitKey;
+  const payloadUnit=adminUpahData && (adminUpahData.unitKey || adminUpahData.key || adminUpahData.sourceUnitKey || adminUpahData.unit || '');
+  const keyText=String(selectedKey || '').toLowerCase();
+  const unitText=String(payloadUnit || '').toLowerCase();
+  return keyText==='oper_oper_bahan_baku' || unitText.includes('oper oper bahan baku');
+}
+function upahNumberForShift(row, shift){
+  if(!row || !row[shift]) return '';
+  const nip=String(row.nip || '').trim();
+  if(shift==='s1' && isOperOperBahanBakuUpah() && nip==='2') return '2';
+  if(shift==='s1' && !isOperOperBahanBakuUpah() && nip==='133') return '2';
+  return '1';
+}
+function upahNumberValue(row, shift){
+  const value=Number(upahNumberForShift(row, shift));
+  return Number.isFinite(value) ? value : 0;
+}
+function buildUpahRows(rows){
+  const sourceRows=Array.isArray(rows) ? rows : [];
+  const isOperOperBB=isOperOperBahanBakuUpah();
+  const normalized=sourceRows.filter(w=>{
+    const nip=String(w && w.nip || '').trim();
+    return nip!=='1' && nip.toUpperCase()!=='BIP';
+  }).map(w=>{
+    const copy={...w};
+    const nip=String(copy.nip || '').trim();
+    if(isOperOperBB && nip==='2'){
+      copy.nip='2';
+      copy.name='Bambang Kiswoyo';
+      copy.s1=true;
+      copy.s2=true;
+      copy.s3=false;
+    }else if(!isOperOperBB && nip==='133'){
+      copy.nip='133';
+      copy.name='Moch. Sholeh';
+      copy.s1=true;
+    }
+    return copy;
+  });
+  const manualBipRow=isOperOperBB
+    ? { no:0, nip:'BIP', name:'BIP', s1:true, s2:false, s3:false, isManualUpahRow:true }
+    : { no:0, nip:'1', name:'BIP', s1:true, s2:true, s3:false, isManualUpahRow:true };
+  return [manualBipRow, ...normalized];
+}
+function formatUpahNumber(value){
+  const num=Number(value || 0);
+  if(!Number.isFinite(num)) return '0';
+  return num.toLocaleString('id-ID', {maximumFractionDigits:2});
+}
+function readUpahTonase(id){
+  const el=$(id);
+  if(!el) return 0;
+  let raw=String(el.value || '').trim();
+  if(!raw) return 0;
+  if(raw.includes(',') && raw.includes('.')) raw=raw.replace(/\./g,'').replace(',', '.');
+  else if(raw.includes(',')) raw=raw.replace(',', '.');
+  else if(/^\d{1,3}(\.\d{3})+$/.test(raw)) raw=raw.replace(/\./g,'');
+  const num=Number(raw);
+  return Number.isFinite(num) ? num : 0;
+}
+function hideUpahCalculation(){
+  adminUpahCalculationRows=[];
+  if($('upahCalcCard')) $('upahCalcCard').style.display='none';
+  if($('upahCalcBody')) $('upahCalcBody').innerHTML='';
+}
+function renderUpahTable(unitName, dateValue, rows, emptyMsg, options){
+  const opts=options || {};
+  if($('upahMainTitle')) $('upahMainTitle').textContent = `KETENTUAN NAIK 1 NAIK 2 ${String(unitName||'').replace(/PAGI/gi,'').replace(/MALAM/gi,'').replace(/\//g,'').replace(/\s+/g,' ').trim().toUpperCase()}`;
+  if($('upahCompanyText')) $('upahCompanyText').textContent = 'PT. BUDI INTI PERKASA';
+  if($('upahDateText')) $('upahDateText').textContent = formatLongDate(dateValue);
+  if($('upahCoordinatorText')){
+    const coord=upahCoordinatorDisplay(adminUpahData);
+    $('upahCoordinatorText').textContent = coord ? `Koordinator: ${coord}` : '';
+  }
+  const body=$('upahBody');
+  if(!body) return;
+  const upahRows=opts.addManualRows===false ? (Array.isArray(rows)?rows:[]) : buildUpahRows(rows);
+  adminUpahRows=upahRows;
+  hideUpahCalculation();
+  body.innerHTML='';
+  upahRows.forEach((w,i)=>{
+    const tr=document.createElement('tr');
+    const no=(w && w.isManualUpahRow) ? 0 : i;
+    tr.innerHTML = `<td>${no}</td><td>${safeText(w.nip)}</td><td class="name">${safeText(w.name)}</td><td>${upahNumberForShift(w,'s1')}</td><td>${upahNumberForShift(w,'s2')}</td><td>${upahNumberForShift(w,'s3')}</td>`;
+    body.appendChild(tr);
+  });
+  if(!upahRows.length){ body.innerHTML=`<tr><td colspan="6" style="height:42px;color:#65758b">${safeText(emptyMsg || 'Data absensi belum berisi pekerja.')}</td></tr>`; }
+  const sumS1=upahRows.reduce((sum,w)=>sum+upahNumberValue(w,'s1'),0);
+  const sumS2=upahRows.reduce((sum,w)=>sum+upahNumberValue(w,'s2'),0);
+  const sumS3=upahRows.reduce((sum,w)=>sum+upahNumberValue(w,'s3'),0);
+  if($('upahSumS1')) $('upahSumS1').textContent=sumS1;
+  if($('upahSumS2')) $('upahSumS2').textContent=sumS2;
+  if($('upahSumS3')) $('upahSumS3').textContent=sumS3;
+  if($('upahSelectedCountBadge')) $('upahSelectedCountBadge').textContent=upahRows.length;
+}
+function calculateAdminUpah(){
+  if(!adminUpahRows || !adminUpahRows.length){ alert('Tampilkan Tabel Upah terlebih dahulu.'); return; }
+  const totalS1=adminUpahRows.reduce((sum,w)=>sum+upahNumberValue(w,'s1'),0);
+  const totalS2=adminUpahRows.reduce((sum,w)=>sum+upahNumberValue(w,'s2'),0);
+  const tonaseS1=readUpahTonase('adminUpahTonaseS1');
+  const tonaseS2=readUpahTonase('adminUpahTonaseS2');
+  const nilaiS1=totalS1 ? tonaseS1 / totalS1 : 0;
+  const nilaiS2=totalS2 ? tonaseS2 / totalS2 : 0;
+  adminUpahCalculationRows=adminUpahRows.map((w,i)=>{
+    const shift1=upahNumberValue(w,'s1');
+    const shift2=upahNumberValue(w,'s2');
+    const payS1=nilaiS1 * shift1;
+    const payS2=nilaiS2 * shift2;
+    return { no:(w && w.isManualUpahRow) ? 0 : i, nip:String(w.nip || ''), nama:String(w.name || ''), shift1, shift2, nilaiUpahShift1:payS1, nilaiUpahShift2:payS2, totalUpah:payS1+payS2 };
+  });
+  const body=$('upahCalcBody');
+  if(body){
+    body.innerHTML='';
+    adminUpahCalculationRows.forEach(row=>{
+      const tr=document.createElement('tr');
+      tr.innerHTML=`<td>${row.no}</td><td>${safeText(row.nip)}</td><td class="name">${safeText(row.nama)}</td><td>${row.shift1 || ''}</td><td>${row.shift2 || ''}</td><td>${formatUpahNumber(row.nilaiUpahShift1)}</td><td>${formatUpahNumber(row.nilaiUpahShift2)}</td><td>${formatUpahNumber(row.totalUpah)}</td>`;
+      body.appendChild(tr);
+    });
+  }
+  if($('upahCalcTotalS1')) $('upahCalcTotalS1').textContent=totalS1;
+  if($('upahCalcTotalS2')) $('upahCalcTotalS2').textContent=totalS2;
+  if($('upahCalcTotalPayS1')) $('upahCalcTotalPayS1').textContent=formatUpahNumber(adminUpahCalculationRows.reduce((s,r)=>s+r.nilaiUpahShift1,0));
+  if($('upahCalcTotalPayS2')) $('upahCalcTotalPayS2').textContent=formatUpahNumber(adminUpahCalculationRows.reduce((s,r)=>s+r.nilaiUpahShift2,0));
+  if($('upahCalcGrandTotal')) $('upahCalcGrandTotal').textContent=formatUpahNumber(adminUpahCalculationRows.reduce((s,r)=>s+r.totalUpah,0));
+  if($('upahCalcInfo')) $('upahCalcInfo').textContent=`Nilai Upah Shift 1: ${formatUpahNumber(nilaiS1)}. Nilai Upah Shift 2: ${formatUpahNumber(nilaiS2)}.`;
+  if($('upahCalcCard')) $('upahCalcCard').style.display='block';
+}
+function upahExcelFilename(){
+  const unitKeyValue=$('adminUpahUnitSelect') ? $('adminUpahUnitSelect').value : adminManagedUnitKey;
+  const unitName=(adminUpahData && adminUpahData.unit) || unitNameFromKey(unitKeyValue) || 'kegiatan';
+  const dateValue=$('adminUpahDate') ? $('adminUpahDate').value : todayISO();
+  const date=new Date((dateValue || todayISO())+'T00:00:00');
+  const dd=String(date.getDate()).padStart(2,'0');
+  const mm=String(date.getMonth()+1).padStart(2,'0');
+  const yyyy=date.getFullYear();
+  const kegiatan=safeDownloadPart(unitName).toLowerCase() || 'kegiatan';
+  return `${kegiatan}_${dd}_${mm}_${yyyy}.xlsx`;
+}
+function exportAdminUpahExcel(){
+  if(!adminUpahCalculationRows || !adminUpahCalculationRows.length){ alert('Klik Calculate terlebih dahulu.'); return; }
+  if(!window.XLSX){ alert('Library Excel belum dimuat. Pastikan internet aktif lalu coba lagi.'); return; }
+  const rows=adminUpahCalculationRows.map(r=>({ NO:r.no, NIP:r.nip, NAMA:r.nama, 'SHIFT 1':r.shift1, 'SHIFT 2':r.shift2, 'NILAI UPAH SHIFT 1':r.nilaiUpahShift1, 'NILAI UPAH SHIFT 2':r.nilaiUpahShift2, 'TOTAL UPAH':r.totalUpah }));
+  const total={ NO:'', NIP:'', NAMA:'TOTAL', 'SHIFT 1':adminUpahRows.reduce((s,w)=>s+upahNumberValue(w,'s1'),0), 'SHIFT 2':adminUpahRows.reduce((s,w)=>s+upahNumberValue(w,'s2'),0), 'NILAI UPAH SHIFT 1':adminUpahCalculationRows.reduce((s,r)=>s+r.nilaiUpahShift1,0), 'NILAI UPAH SHIFT 2':adminUpahCalculationRows.reduce((s,r)=>s+r.nilaiUpahShift2,0), 'TOTAL UPAH':adminUpahCalculationRows.reduce((s,r)=>s+r.totalUpah,0) };
+  const wb=window.XLSX.utils.book_new();
+  const ws=window.XLSX.utils.json_to_sheet([...rows,total]);
+  window.XLSX.utils.book_append_sheet(wb, ws, 'Upah');
+  window.XLSX.writeFile(wb, upahExcelFilename());
+}
+function renderAdminUpah(){
+  const unitKeyValue=$('adminUpahUnitSelect') ? $('adminUpahUnitSelect').value : adminManagedUnitKey;
+  const dateValue=$('adminUpahDate') ? $('adminUpahDate').value : todayISO();
+  const unitName=(String(unitKeyValue || '')===BAHAN_BAKU_GABUNGAN_KEY || isBahanBakuPagiMalamKey(unitKeyValue)) ? BAHAN_BAKU_GABUNGAN_NAME : unitNameFromKey(unitKeyValue);
+  if(!adminUpahData){
+    renderUpahTable(unitName, dateValue, [], 'Pilih Bagian / Koordinator dan Tanggal Absensi, lalu klik Tampilkan.', {addManualRows:false});
+    return;
+  }
+  const rows=rowsFromAttendancePayload(adminUpahData);
+  renderUpahTable(adminUpahData.unit || unitName, adminUpahData.reportDate || dateValue, rows, 'Data absensi belum berisi pekerja.');
+}
+async function loadAdminUpah(event){
+  if(!requirePermission('viewReports','Tampilkan tabel upah hanya untuk admin/role laporan yang diizinkan.')) return;
+  if(!isAdmin()) return;
+  const unitKeyValue=$('adminUpahUnitSelect') ? $('adminUpahUnitSelect').value : adminManagedUnitKey;
+  const dateValue=$('adminUpahDate') ? $('adminUpahDate').value : todayISO();
+  const btn=(event && event.currentTarget) || $('btnAdminLoadUpah');
+  const old=btn?btn.textContent:'';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Memuat...'; }
+    adminUpahData=null;
+    const bridge=await waitFirebase();
+    if(String(unitKeyValue || '')===BAHAN_BAKU_GABUNGAN_KEY || isBahanBakuPagiMalamKey(unitKeyValue)){
+      adminUpahData=await loadBahanBakuCombinedAttendance(dateValue, bridge, {force:false});
+    }else{
+      adminUpahData=await readAttendancePayloadForUnit(unitKeyValue, dateValue, bridge, {force:false});
+    }
+    renderAdminUpah();
+    if(!adminUpahData) alert('Data absensi untuk tabel upah tidak ditemukan pada bagian dan tanggal yang dipilih.');
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=old || '🔍 Tampilkan'; }
+  }
+}
+
 function shareText(){ const d=formatLongDate(state.reportDate); const rows=selectedWorkers(); const s1=rows.filter(w=>w.s1).sort((a,b)=>a.no-b.no).map(w=>w.nip); const s2=rows.filter(w=>w.s2).sort((a,b)=>a.no-b.no).map(w=>w.nip); const s3=rows.filter(w=>w.s3).sort((a,b)=>a.no-b.no).map(w=>w.nip); return d + '\n\nShift 1\n' + (s1.length ? s1.join('\n') : '-') + '\n\nShift 2\n' + (s2.length ? s2.join('\n') : '-') + '\n\nShift 3\n' + (s3.length ? s3.join('\n') : '-'); }
 function nextAnimationFrame(){ return new Promise(resolve=>requestAnimationFrame(resolve)); }
 function waitMs(ms){ return new Promise(resolve=>setTimeout(resolve,ms)); }
@@ -4935,10 +5157,10 @@ function renderCheckInOutSummary(summary){
     const r=data[key] || {};
     const cls=String(r.status||'').startsWith('Normal') ? 'ok' : (r.validRows ? 'warn' : 'muted');
     const ket=!r.scheduledRows ? 'Tidak ada jadwal shift ini' : `Sumber Cek In Cek Out dari pekerja yang masuk ${String(r.label||key).toLowerCase()} saja${r.status && !String(r.status).startsWith('Normal') ? ' • '+r.status : ''}`;
-    return `<tr><td>${safeText(r.label||key)}</td><td>${safeText(displaySummaryTime(r.minIn))}</td><td>${safeText(displaySummaryTime(r.maxOut))}</td><td><span class="machine-status ${cls}">${safeText(ket)}</span></td></tr>`;
+    return `<tr><td>${safeText(r.label||key)}</td><td>${safeText(displaySummaryTime(r.maxIn))}</td><td>${safeText(displaySummaryTime(r.minOut))}</td><td><span class="machine-status ${cls}">${safeText(ket)}</span></td></tr>`;
   }).join('');
   const titleUnit=meta.unitName || unitNameFromKey(meta.unitKey || getSelectedCheckSummaryUnitKey());
-  box.innerHTML=`<div class="machine-preview-head"><span>📊 Ringkasan Cek In/Out dari Preview Mesin - ${safeText(titleUnit)}</span><span>Min Cek In dan Max Cek Out per shift</span></div><div class="machine-preview-table-wrap"><table class="machine-preview-table"><thead><tr><th>Shift</th><th>Min Cek In</th><th>Max Cek Out</th><th>Keterangan</th></tr></thead><tbody>${body}</tbody></table></div>`;
+  box.innerHTML=`<div class="machine-preview-head"><span>📊 Ringkasan Cek In/Out dari Preview Mesin - ${safeText(titleUnit)}</span><span>Max Cek In dan Min Cek Out per shift</span></div><div class="machine-preview-table-wrap"><table class="machine-preview-table"><thead><tr><th>Shift</th><th>Max Cek In</th><th>Min Cek Out</th><th>Keterangan</th></tr></thead><tbody>${body}</tbody></table></div>`;
 }
 async function ensureMachinePreviewSummary(){
   const input=$('adminGlobalCheckFile');
@@ -4982,8 +5204,8 @@ function applySummaryToLoadedReport(summary){
     const active=order.filter(k=>shifts.includes(k) && summary && summary[k]);
     if(!active.length) return;
     const first=active[0], last=active[active.length-1];
-    const nextIn=summaryShiftValue(summary, first, 'minIn');
-    const nextOut=summaryShiftValue(summary, last, 'maxOut');
+    const nextIn=summaryShiftValue(summary, first, 'maxIn');
+    const nextOut=summaryShiftValue(summary, last, 'minOut');
     const beforeIn=r.checkIn || '', beforeOut=r.checkOut || '';
     if(nextIn) r.checkIn=nextIn;
     if(nextOut) r.checkOut=nextOut;
@@ -5007,14 +5229,14 @@ async function adminUseCheckSummaryToForm(){
       if(!confirm(`Bagian laporan yang sedang dipilih berbeda dengan Bagian Ringkasan.\n\nLaporan: ${unitNameFromKey(reportUnit)}\nRingkasan: ${meta.unitName}\n\nLanjutkan mengisi form dari ringkasan ${meta.unitName}?`)) return;
     }
     const useS3=isAdminAutoShift3Enabled();
-    const pairs=[['adminAutoS1In','s1','minIn'],['adminAutoS1Out','s1','maxOut'],['adminAutoS2In','s2','minIn'],['adminAutoS2Out','s2','maxOut']];
-    if(useS3){ pairs.push(['adminAutoS3In','s3','minIn'],['adminAutoS3Out','s3','maxOut']); }
+    const pairs=[['adminAutoS1In','s1','maxIn'],['adminAutoS1Out','s1','minOut'],['adminAutoS2In','s2','maxIn'],['adminAutoS2Out','s2','minOut']];
+    if(useS3){ pairs.push(['adminAutoS3In','s3','maxIn'],['adminAutoS3Out','s3','minOut']); }
     pairs.forEach(([id,key,type])=>{ const val=summaryShiftValue(summary,key,type); const el=$(id); if(el && val){ el.value=val; el.dataset.userEdited='1'; } });
     const applied=applySummaryToLoadedReport(summary);
     setAdminCheckTimesSourceInfo(`Ringkasan Import Mesin - ${meta.unitName || unitNameFromKey(meta.unitKey || '')}`);
     const s3Note=useS3 ? '' : '\nShift 3 tidak diterapkan karena checkbox Shift 3 belum aktif.';
     const reportNote=applied.skippedNoReport ? '\nData absensi belum ditampilkan, jadi yang diisi baru form jam Shift 1/2/3. Buka Absensi lalu klik Tampilkan jika ingin menerapkan ke baris pekerja.' : `\n${applied.changed} baris pekerja pada laporan yang sedang dibuka ikut diperbarui.`;
-    alert(`Ringkasan Cek In/Out ${meta.unitName || ''} sudah dipakai ke form.\n\nShift 1/2/3 diisi dari Min Cek In dan Max Cek Out hasil preview mesin khusus bagian ini.`+reportNote+s3Note+'\n\nPeriksa kembali, lalu klik 💾 Simpan Cek In / Cek Out untuk menyimpan.');
+    alert(`Ringkasan Cek In/Out ${meta.unitName || ''} sudah dipakai ke form.\n\nShift 1/2/3 diisi dari Max Cek In dan Min Cek Out hasil preview mesin khusus bagian ini.`+reportNote+s3Note+'\n\nPeriksa kembali, lalu klik 💾 Simpan Cek In / Cek Out untuk menyimpan.');
   }catch(err){ console.error(err); alert('Pakai Ringkasan ke Form Cek In/Out gagal: '+(err && err.message ? err.message : err)); }
   finally{ if(btn){ btn.disabled=false; btn.textContent=old || '↘️ Pakai Ringkasan Bagian ke Form Cek In/Out'; } }
 }
@@ -5369,6 +5591,8 @@ function initAdminTools(){
   ['adminUnitSelect','adminPanelUnitSelect','adminWorkerUnitSelect'].forEach(id=>{ const sel=$(id); if(sel){ sel.innerHTML=optionUnits(false); sel.value=adminManagedUnitKey; } }); const dashSel=$('adminDashUnitSelect'); if(dashSel){ dashSel.innerHTML=optionUnits(true); dashSel.value='ALL'; }
   const reportSel=$('adminReportUnitSelect');
   if(reportSel){ const current=reportSel.value || adminManagedUnitKey; reportSel.innerHTML=optionReportUnits(); const allowedReportKeys=['muatan_breeder',BAHAN_BAKU_GABUNGAN_KEY,SILO_KEY,'oper_oper_bahan_baku',COMMERCIAL_KEY]; reportSel.value=allowedReportKeys.includes(current) ? current : 'muatan_breeder'; }
+  const upahSel=$('adminUpahUnitSelect');
+  if(upahSel){ const current=upahSel.value || (reportSel && reportSel.value) || adminManagedUnitKey; upahSel.innerHTML=optionReportUnits(); const allowedUpahKeys=['muatan_breeder',BAHAN_BAKU_GABUNGAN_KEY,SILO_KEY,'oper_oper_bahan_baku',COMMERCIAL_KEY]; upahSel.value=allowedUpahKeys.includes(current) ? current : 'muatan_breeder'; }
   const checkSummarySel=$('adminCheckSummaryUnitSelect');
   if(checkSummarySel){ const current=checkSummarySel.value || (reportSel && reportSel.value) || adminManagedUnitKey; checkSummarySel.innerHTML=optionCheckSummaryUnits(); checkSummarySel.value=current || 'muatan_breeder'; }
   ['adminCoordUnit'].forEach(id=>{ const sel=$(id); if(sel){ sel.innerHTML=optionUnits(false); } });
@@ -5380,6 +5604,7 @@ function initAdminTools(){
   if($('adminDeleteStart') && !$('adminDeleteStart').value) $('adminDeleteStart').value=today;
   if($('adminDeleteEnd') && !$('adminDeleteEnd').value) $('adminDeleteEnd').value=today;
   if($('adminReportDate') && !$('adminReportDate').value) $('adminReportDate').value=today;
+  if($('adminUpahDate') && !$('adminUpahDate').value) $('adminUpahDate').value=today;
   if($('adminGlobalCheckDate') && !$('adminGlobalCheckDate').value) $('adminGlobalCheckDate').value=today;
   updateGlobalCheckInfo();
   renderCoordinatorSettingForm();
@@ -5973,7 +6198,7 @@ window.addEventListener('beforeunload', e=>{ if(scheduleHasUnsavedChanges()){ e.
 document.addEventListener('focusin', e=>{ if(e.target && e.target.matches('#reportDate')) e.target.dataset.prevValue=e.target.value || state.reportDate || ''; });
 document.addEventListener('input', e=>{ if(e.target && e.target.matches('[data-report-setting]')){ if(hasPermission('manageSettings')) saveReportSettings(); } });
 document.addEventListener('blur', e=>{ if(e.target && e.target.matches('[data-report-setting]')){ if(hasPermission('manageSettings')) saveReportSettings(); } }, true);
-document.addEventListener('click', e=>{ const restoreBackupBtn=e.target.closest('[data-restore-schedule-backup]'); if(restoreBackupBtn){ restoreScheduleBackup(restoreBackupBtn.dataset.restoreScheduleBackup); return; } const refreshHistoryBtn=e.target.closest('#btnRefreshScheduleHistory'); if(refreshHistoryBtn){ renderScheduleHistoryPanel(); return; } const editScheduleBtn=e.target.closest('#btnEditSchedule'); if(editScheduleBtn){ beginEditSchedule(); return; } const cancelScheduleBtn=e.target.closest('#btnCancelSchedule'); if(cancelScheduleBtn){ cancelScheduleChanges(); return; } const sectionBtn=e.target.closest('[data-admin-section]'); if(sectionBtn){ if(!requirePermission('adminPanel','Panel admin hanya untuk admin.')) return; showAdminSection(sectionBtn.dataset.adminSection); if(sectionBtn.dataset.adminSection==='worker-crud') renderAdminWorkerCrud(); if(sectionBtn.dataset.adminSection==='summary') renderAdminDashboard(); if(sectionBtn.dataset.adminSection==='import-data'){ updateGlobalCheckInfo(); renderGlobalCheckImportHistory(); } if(sectionBtn.dataset.adminSection==='loading-dock') renderAdminLoadingDocks(); if(sectionBtn.dataset.adminSection==='sync-status') renderAdminSyncStatus(); return; } const syncBtn=e.target.closest('[data-pending-sync]'); if(syncBtn){ syncOnePendingAttendance(syncBtn.dataset.pendingSync); return; } const pendingDel=e.target.closest('[data-pending-delete]'); if(pendingDel){ deleteOnePendingAttendance(pendingDel.dataset.pendingDelete); return; } const dockDel=e.target.closest('[data-dock-delete]'); if(dockDel){ adminDeleteDock(dockDel.dataset.dockDelete); return; } const editBtn=e.target.closest('[data-admin-worker-edit]'); if(editBtn){ adminFillWorkerForm(editBtn.dataset.adminWorkerEdit); return; } const delBtn=e.target.closest('[data-admin-worker-delete]'); if(delBtn){ adminDeleteWorkerCrud(delBtn.dataset.adminWorkerDelete); return; } const btn=e.target.closest('.tab-btn'); if(btn){ if(isAdmin() && btn.dataset.panel==='panelWorkers') return; document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active')); document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active')); document.querySelectorAll(`.tab-btn[data-panel="${btn.dataset.panel}"]`).forEach(b=>b.classList.add('active')); $(btn.dataset.panel).classList.add('active'); renderReport(); if(btn.dataset.panel==='panelAdmin') renderAdminDashboard(); } });
+document.addEventListener('click', e=>{ const restoreBackupBtn=e.target.closest('[data-restore-schedule-backup]'); if(restoreBackupBtn){ restoreScheduleBackup(restoreBackupBtn.dataset.restoreScheduleBackup); return; } const refreshHistoryBtn=e.target.closest('#btnRefreshScheduleHistory'); if(refreshHistoryBtn){ renderScheduleHistoryPanel(); return; } const editScheduleBtn=e.target.closest('#btnEditSchedule'); if(editScheduleBtn){ beginEditSchedule(); return; } const cancelScheduleBtn=e.target.closest('#btnCancelSchedule'); if(cancelScheduleBtn){ cancelScheduleChanges(); return; } const sectionBtn=e.target.closest('[data-admin-section]'); if(sectionBtn){ if(!requirePermission('adminPanel','Panel admin hanya untuk admin.')) return; showAdminSection(sectionBtn.dataset.adminSection); if(sectionBtn.dataset.adminSection==='worker-crud') renderAdminWorkerCrud(); if(sectionBtn.dataset.adminSection==='summary') renderAdminDashboard(); if(sectionBtn.dataset.adminSection==='import-data'){ updateGlobalCheckInfo(); renderGlobalCheckImportHistory(); } if(sectionBtn.dataset.adminSection==='loading-dock') renderAdminLoadingDocks(); if(sectionBtn.dataset.adminSection==='sync-status') renderAdminSyncStatus(); return; } const syncBtn=e.target.closest('[data-pending-sync]'); if(syncBtn){ syncOnePendingAttendance(syncBtn.dataset.pendingSync); return; } const pendingDel=e.target.closest('[data-pending-delete]'); if(pendingDel){ deleteOnePendingAttendance(pendingDel.dataset.pendingDelete); return; } const dockDel=e.target.closest('[data-dock-delete]'); if(dockDel){ adminDeleteDock(dockDel.dataset.dockDelete); return; } const editBtn=e.target.closest('[data-admin-worker-edit]'); if(editBtn){ adminFillWorkerForm(editBtn.dataset.adminWorkerEdit); return; } const delBtn=e.target.closest('[data-admin-worker-delete]'); if(delBtn){ adminDeleteWorkerCrud(delBtn.dataset.adminWorkerDelete); return; } const btn=e.target.closest('.tab-btn'); if(btn){ if(isAdmin() && btn.dataset.panel==='panelWorkers') return; document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active')); document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active')); document.querySelectorAll(`.tab-btn[data-panel="${btn.dataset.panel}"]`).forEach(b=>b.classList.add('active')); $(btn.dataset.panel).classList.add('active'); renderReport(); if(btn.dataset.panel==='panelAdmin') renderAdminDashboard(); if(btn.dataset.panel==='panelUpah') renderAdminUpah(); } });
 document.addEventListener('change', async e=>{
   if(e.target.matches('input[data-shift]') && !hasPermission('inputAttendance')){ e.target.checked=!e.target.checked; requirePermission('inputAttendance','Akses ditolak. Role ini tidak boleh mengubah input absensi.'); return; }
   if(e.target.matches('input[data-shift]')){
@@ -6046,7 +6271,7 @@ syncAdminAttendanceOptionCheckboxes(); refreshAdminAttendanceOptionsFromFirestor
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
 document.addEventListener('input', e=>{ if(e && e.target && e.target.matches && e.target.matches('[data-check-nip]')) setAdminCheckTimesSourceInfo('Manual'); });
 let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu install belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }
