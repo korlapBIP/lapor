@@ -301,6 +301,64 @@
             collections
           };
         },
+        async restoreDatabaseSnapshot(snapshot, options){
+          const safeSnapshot=snapshot && typeof snapshot==='object' ? snapshot : {};
+          const collections=safeSnapshot.collections && typeof safeSnapshot.collections==='object' ? safeSnapshot.collections : {};
+          const opt=options && typeof options==='object' ? options : {};
+          const allowed=new Set(Array.isArray(opt.collections) ? opt.collections : []);
+          if(!allowed.size) throw new Error('Collection restore belum dipilih.');
+          const pathMap={ coordinators:coordinatorPath, app_data:appDataPath, attendance:attendancePath, master_data:masterDataPath, attendance_imports:attendanceImportsPath };
+          const counts={};
+          const writeRows=[];
+          Object.keys(pathMap).forEach(name=>{
+            if(!allowed.has(name)) return;
+            const rows=Array.isArray(collections[name]) ? collections[name] : [];
+            rows.forEach((row,idx)=>{
+              if(!row || typeof row!=='object') return;
+              let doc={...row};
+              let id=String(doc.id || doc.attendanceDocId || doc.unitKey || '').trim();
+              if(name==='attendance'){
+                doc=normalizeAttendancePayload(doc);
+                id=String(doc.id || doc.attendanceDocId || attendanceDocIdFromPayload(doc)).trim();
+              }
+              if(!id) id='restore_'+idx+'_'+Date.now();
+              delete doc.createdAt;
+              delete doc.updatedAt;
+              delete doc.savedAt;
+              delete doc.importedAt;
+              delete doc.exportedAt;
+              doc.id=id;
+              doc.restoredAtLocal=serverTimeFallback();
+              if(opt.restoredBy){
+                doc.restoredBy={ username:String(opt.restoredBy.username || opt.restoredBy.nip || '').trim(), nip:String(opt.restoredBy.nip || opt.restoredBy.username || '').trim(), name:String(opt.restoredBy.name || '').trim(), role:String(opt.restoredBy.role || '').trim(), unit:String(opt.restoredBy.unit || '').trim() };
+              }
+              const cleanDoc=cleanForFirestore(doc);
+              cleanDoc.restoredAt=fs.serverTimestamp();
+              writeRows.push({ collection:name, path:pathMap[name], id, doc:cleanDoc });
+            });
+          });
+          let committed=0;
+          for(let i=0;i<writeRows.length;i+=400){
+            const batch=fs.writeBatch(db);
+            const chunk=writeRows.slice(i,i+400);
+            chunk.forEach(item=>{ batch.set(fs.doc(db, item.path, item.id), item.doc, { merge:true }); counts[item.collection]=(counts[item.collection] || 0)+1; });
+            await batch.commit();
+            committed += chunk.length;
+          }
+          await fs.addDoc(fs.collection(db, backupExportsPath), {
+            type:'database_restore',
+            status:'success',
+            sourceApp:String(safeSnapshot.app || ''),
+            sourceVersion:String(safeSnapshot.appVersion || ''),
+            restoredCollections:Array.from(allowed),
+            counts:cleanForFirestore(counts),
+            restoredBy:opt.restoredBy ? { username:opt.restoredBy.username || opt.restoredBy.nip || '', nip:opt.restoredBy.nip || opt.restoredBy.username || '', name:opt.restoredBy.name || '', role:opt.restoredBy.role || '', unit:opt.restoredBy.unit || '' } : null,
+            restoredAt:fs.serverTimestamp(),
+            restoredAtLocal:serverTimeFallback(),
+            appVersion:'v162'
+          }).catch(()=>{});
+          return { committed, counts };
+        },
         async loadCoordinatorAccounts(){
           const qs=await fs.getDocs(fs.collection(db, coordinatorPath));
           const rows=[];
