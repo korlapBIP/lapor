@@ -24,7 +24,7 @@
     body{padding:14px 10px 92px}button,input,select{font:inherit}button{border:0;cursor:pointer}.wrap{max-width:1180px;margin:0 auto}
     .app-splash{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at top left,#d5e4ff 0,#edf4ff 28%,#f5f8fe 62%,#e8f0ff 100%);z-index:9999;transition:opacity .45s ease,visibility .45s ease;overflow:hidden}.app-splash.hide{opacity:0;visibility:hidden}.app-splash-orb{position:absolute;border-radius:50%;filter:blur(8px);opacity:.72;animation:floatOrb 7s ease-in-out infinite}.app-splash-orb.a{width:220px;height:220px;left:-50px;top:-40px;background:rgba(37,88,217,.18)}.app-splash-orb.b{width:190px;height:190px;right:-35px;top:90px;background:rgba(16,185,129,.12);animation-delay:-2s}.app-splash-orb.c{width:160px;height:160px;right:12%;bottom:-40px;background:rgba(245,158,11,.12);animation-delay:-4s}.app-splash-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;min-width:min(90vw,390px);padding:34px 28px 28px;border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.9));border:1px solid rgba(188,202,221,.75);box-shadow:0 28px 68px rgba(20,38,72,.18)}.app-splash-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(37,88,217,.08);color:#2558d9;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.app-splash-logo-shell{position:relative;width:142px;height:142px;display:flex;align-items:center;justify-content:center}.app-splash-logo-ring{position:absolute;inset:0;border-radius:40px;background:conic-gradient(from 0deg,#2558d9,#65a2ff,#7dd3fc,#2558d9);filter:drop-shadow(0 14px 22px rgba(37,88,217,.22));animation:spin 6s linear infinite}.app-splash-logo-ring::after{content:'';position:absolute;inset:10px;border-radius:34px;background:rgba(255,255,255,.98)}.app-splash-logo{position:relative;z-index:1;width:96px;height:96px;object-fit:contain;border-radius:28px;background:#fff;padding:8px;box-shadow:0 12px 22px rgba(37,88,217,.12)}.app-splash-title{font-size:27px;font-weight:900;color:#20355b;text-align:center}.app-splash-sub{max-width:310px;font-size:13px;font-weight:800;color:#64748b;text-align:center;line-height:1.65}.app-splash-progress{width:min(82%,290px);height:10px;border-radius:999px;background:#dce8ff;overflow:hidden;box-shadow:inset 0 1px 2px rgba(20,38,72,.08)}.app-splash-progress span{display:block;width:42%;height:100%;border-radius:999px;background:linear-gradient(90deg,#2558d9,#65a2ff,#8bc5ff);animation:progressMove 1.5s ease-in-out infinite}.app-splash-foot{font-size:12px;font-weight:900;color:#8292aa;letter-spacing:.12em;text-transform:uppercase;text-align:center}
     .hero{background:linear-gradient(135deg,#11285f 0%,#2558d9 58%,#65a2ff 100%);color:#fff;border-radius:30px;padding:22px 18px;box-shadow:0 22px 48px rgba(37,88,217,.25);position:relative;overflow:hidden;margin-bottom:14px}.hero:after,.hero:before{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.09)}.hero:after{right:-45px;top:-45px;width:180px;height:180px}.hero:before{right:70px;bottom:-65px;width:150px;height:150px}.hero-brand{display:flex;align-items:center;gap:14px;position:relative;z-index:1}.hero-logo{width:64px;height:64px;border-radius:18px;background:rgba(255,255,255,.96);padding:8px;box-shadow:0 12px 28px rgba(12,28,69,.22);object-fit:contain;flex:0 0 auto}.hero small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.74);font-weight:900}.hero h1{margin:3px 0 0;font-size:22px;font-weight:900;letter-spacing:.2px}.hero p{margin:8px 0 0;color:rgba(255,255,255,.90);font-size:13px;line-height:1.55;position:relative;z-index:1}.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;position:relative;z-index:1}.badge{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);padding:8px 11px;border-radius:999px;font-size:12px;font-weight:900;color:inherit}.badge.light{background:#eef5ff;color:#2558d9;border-color:#d9e7ff}.badge.green{background:#e8f8ee;color:#15803d;border-color:#c5efd4}.badge.orange{background:#fff4df;color:#b45309;border-color:#f7dcaa}.app-inline-install{display:none}.app-inline-install.show{display:inline-flex}
-    .tabs{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.96);border-top:1px solid var(--line);padding:9px 12px calc(9px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1fr;gap:10px;box-shadow:0 -12px 30px rgba(20,38,72,.10)}.tab-btn{height:52px;border-radius:18px;background:#f4f7fb;color:#42526c;font-weight:900;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid #e4edf8}.tab-btn.active{background:linear-gradient(135deg,var(--primary),#65a2ff);color:#fff;box-shadow:0 10px 24px rgba(37,88,217,.25);border-color:transparent}
+    .tabs{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.96);border-top:1px solid var(--line);padding:9px 12px calc(9px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:10px;box-shadow:0 -12px 30px rgba(20,38,72,.10)}.tab-btn{height:52px;border-radius:18px;background:#f4f7fb;color:#42526c;font-weight:900;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid #e4edf8}.tab-btn.active{background:linear-gradient(135deg,var(--primary),#65a2ff);color:#fff;box-shadow:0 10px 24px rgba(37,88,217,.25);border-color:transparent}
     .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 14px}.stat{background:rgba(255,255,255,.96);border:1px solid rgba(188,202,221,.66);border-radius:22px;padding:13px;box-shadow:0 10px 26px rgba(20,38,72,.07)}.stat .label{font-size:10px;color:#71829b;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.stat .num{font-size:24px;font-weight:950;margin-top:4px;line-height:1}.stat .desc{font-size:11px;color:#728198;margin-top:3px;font-weight:750}.panel{display:none}.panel.active{display:block}
     .frame{border-radius:28px;padding:15px;border:1px solid rgba(188,202,221,.55);box-shadow:var(--shadow);position:relative;overflow:hidden;margin-bottom:14px}.frame:before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--frame-accent)}.frame.worker{--frame-accent:var(--worker-accent);background:linear-gradient(135deg,#f7fbff 0%,var(--worker-bg) 100%)}.frame.data{--frame-accent:var(--data-accent);background:linear-gradient(135deg,#fbfffc 0%,var(--data-bg) 100%)}.frame.report-frame{--frame-accent:var(--report-accent);background:linear-gradient(135deg,#fffdf8 0%,var(--report-bg) 100%)}.frame-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin:8px 4px 14px}.frame-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--frame-accent)}.frame-head h2{margin:3px 0 5px;font-size:20px;font-weight:900}.frame-head p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}.frame-number{width:42px;height:42px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--frame-accent);font-weight:900;box-shadow:0 10px 24px rgba(20,38,72,.09);border:1px solid rgba(188,202,221,.55)}
     .card{background:var(--panel);border:1px solid rgba(188,202,221,.66);border-radius:22px;box-shadow:0 10px 26px rgba(20,38,72,.08);overflow:hidden;margin-bottom:12px}.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 15px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#f9fbfe)}.card-head h3{margin:0;font-size:16px;font-weight:900}.card-head span{font-size:12px;color:var(--muted);font-weight:800}.card-body{padding:15px}.grid-form{display:grid;grid-template-columns:88px 1fr;gap:10px}.field label{display:block;color:#3d4f68;font-size:12px;font-weight:900;margin-bottom:6px}input,select{width:100%;min-height:48px;border:1px solid #d5e0ee;border-radius:16px;background:#fff;padding:10px 12px;color:var(--ink);outline:none}input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(37,88,217,.12)}.span-2{grid-column:span 2}.actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.btn{min-height:48px;border-radius:16px;font-weight:950;padding:10px 12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center}.primary{background:linear-gradient(135deg,var(--primary),#65a2ff);color:#fff}.success{background:#e8f8ee;color:#15803d}.warning{background:#fff4df;color:#b45309}.danger{background:#ffe8e4;color:#b42318}.secondary{background:#f4f7fb;color:#42526c;border:1px solid #e4edf8}.dark{background:#172033;color:#fff}.full{grid-column:1/-1}.note{margin-top:12px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:10px 12px;border-radius:16px;font-size:12px;line-height:1.45;font-weight:750}
@@ -33,7 +33,7 @@
     .install-sheet{position:fixed;left:50%;bottom:82px;transform:translateX(-50%) translateY(18px);width:min(94vw,460px);z-index:80;opacity:0;pointer-events:none;transition:.28s ease}.install-sheet.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}.install-sheet-card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.98));border:1px solid rgba(188,202,221,.8);box-shadow:0 22px 48px rgba(20,38,72,.16);border-radius:24px;padding:18px 18px 16px}.install-sheet-top{display:flex;gap:14px;align-items:center}.install-sheet-logo{width:56px;height:56px;object-fit:contain;border-radius:18px;background:#fff;padding:6px;box-shadow:0 10px 18px rgba(37,88,217,.12);flex:0 0 auto}.install-sheet-text small{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#2558d9;margin-bottom:4px}.install-sheet-text strong{display:block;font-size:18px;line-height:1.2;color:#20355b}.install-sheet-text p{margin:6px 0 0;color:#64748b;font-size:12px;line-height:1.55;font-weight:700}.install-sheet-actions{display:flex;gap:10px;margin-top:13px}.install-sheet-actions .btn{flex:1}.install-sheet-close{position:absolute;right:14px;top:14px;width:32px;height:32px;border-radius:12px;border:1px solid #d7e3f7;background:#fff;color:#50647f;font-weight:900;cursor:pointer}
     @keyframes spin{to{transform:rotate(360deg)}}@keyframes progressMove{0%{transform:translateX(-70%)}50%{transform:translateX(90%)}100%{transform:translateX(230%)}}@keyframes floatOrb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.05)}}
 
-    .login-view{min-height:calc(100vh - 30px);display:flex;align-items:center;justify-content:center;padding:18px 0 34px}.auth-ok .login-view{display:none!important}.auth-pending .wrap,.auth-pending .tabs,.auth-pending .install-sheet{display:none!important}.login-shell{width:min(100%,460px);position:relative}.login-card{border-radius:32px;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.96));border:1px solid rgba(188,202,221,.72);box-shadow:0 28px 70px rgba(20,38,72,.16);overflow:hidden}.login-top{position:relative;overflow:hidden;background:linear-gradient(135deg,#11285f 0%,#2558d9 58%,#65a2ff 100%);padding:24px 20px 22px;color:#fff}.login-top:before,.login-top:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.10)}.login-top:before{width:170px;height:170px;right:-48px;top:-42px}.login-top:after{width:130px;height:130px;right:54px;bottom:-68px}.login-brand{position:relative;z-index:1;display:flex;align-items:center;gap:14px}.login-logo{width:68px;height:68px;border-radius:20px;background:#fff;padding:8px;object-fit:contain;box-shadow:0 14px 28px rgba(12,28,69,.24)}.login-brand small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:950;color:rgba(255,255,255,.78)}.login-brand h1{margin:3px 0 0;font-size:22px;font-weight:950}.login-body{padding:18px}.login-note{margin:0 0 14px;padding:12px 13px;border-radius:18px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;font-size:12px;font-weight:850;line-height:1.5}.login-form{display:grid;gap:12px}.password-wrap{position:relative}.password-wrap input{padding-right:54px}.mini-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:42px;height:36px;border-radius:12px;background:#eef5ff;color:#2558d9;font-weight:950}.login-error{display:none;margin-top:2px;padding:11px 12px;border-radius:16px;background:#ffe8e4;color:#b42318;border:1px solid #ffc8c0;font-size:12px;font-weight:850}.login-error.show{display:block}.demo-box{margin-top:14px;border:1px dashed #bfd0ea;border-radius:20px;background:#fbfdff;padding:13px}.demo-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px;color:#20355b;font-weight:950;font-size:13px}.demo-list{display:grid;gap:8px}.demo-user{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:#fff;border:1px solid #e1eaf6;border-radius:16px;padding:10px 11px}.demo-user strong{display:block;font-size:12px;color:#20355b}.demo-user span{display:block;font-size:11px;color:#65758b;font-weight:800;margin-top:2px}.demo-user code{font-family:Consolas,monospace;font-size:11px;background:#eef5ff;color:#2558d9;padding:6px 7px;border-radius:10px;font-weight:900}.user-strip{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;padding:11px 13px;border-radius:20px;background:rgba(255,255,255,.94);border:1px solid rgba(188,202,221,.66);box-shadow:0 10px 26px rgba(20,38,72,.07)}.user-strip-left{display:flex;align-items:center;gap:10px;min-width:0}.user-avatar{width:42px;height:42px;border-radius:15px;background:linear-gradient(135deg,#2558d9,#65a2ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:950;box-shadow:0 10px 18px rgba(37,88,217,.18);flex:0 0 auto}.user-name{font-weight:950;color:#20355b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.user-unit{font-size:12px;color:#65758b;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.logout-btn{min-height:40px;border-radius:14px;background:#ffe8e4;color:#b42318;padding:8px 12px;font-size:12px;font-weight:950;flex:0 0 auto}.hero-user{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.25)}.admin-only{display:none!important}.auth-admin .admin-only{display:block!important}.auth-admin .panel.admin-only{display:none!important}.auth-admin .panel.admin-only.active{display:block!important}.admin-import-grid{display:grid;grid-template-columns:1fr;gap:10px}.admin-import-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.import-help{margin-top:12px;border-radius:16px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;padding:11px 12px;font-size:12px;font-weight:800;line-height:1.55}.import-file-name{margin-top:8px;color:#64748b;font-size:12px;font-weight:800}.machine-preview-box{margin-top:12px;border:1px solid #dfe8f5;background:#fff;border-radius:18px;overflow:hidden}.machine-preview-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 12px;background:#f8fafc;border-bottom:1px solid #e5edf7;font-size:12px;font-weight:950;color:#20355b}.machine-preview-table-wrap{width:100%;overflow:auto}.machine-preview-table{width:100%;border-collapse:collapse;font-size:12px;min-width:900px}.machine-preview-table th,.machine-preview-table td{border:1px solid #e5edf7;padding:7px 8px;text-align:left;white-space:nowrap}.machine-preview-table th{background:#eef5ff;color:#2558d9;font-weight:950}.machine-status{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:950}.machine-status.ok{background:#dcfce7;color:#166534}.machine-status.warn{background:#fff7ed;color:#9a3412}.machine-status.err{background:#fee2e2;color:#991b1b}.machine-status.muted{background:#f1f5f9;color:#475569}.auth-admin .tabs{grid-template-columns:repeat(2,1fr)}.auth-admin .tab-worker{display:none!important}.auth-admin #panelWorkers{display:none!important}.auth-admin .coordinator-only{display:none!important}.role-readonly .input-only,.role-readonly #panelWorkers,.role-readonly .tab-worker,.role-payroll .input-only,.role-payroll #panelWorkers,.role-payroll .tab-worker{display:none!important}.role-readonly [data-role-write],.role-payroll [data-role-write]{display:none!important}.permission-note{margin-top:12px;border:1px solid #f8d98b;background:#fff8df;color:#7a4b00;border-radius:16px;padding:11px 12px;font-size:12px;font-weight:850;line-height:1.5}.admin-panel-grid{display:grid;grid-template-columns:1fr;gap:12px}.admin-mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.admin-mini{border:1px solid #dfe8f5;background:#fff;border-radius:18px;padding:12px;box-shadow:0 8px 20px rgba(20,38,72,.06)}.admin-mini .label{font-size:10px;color:#71829b;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.admin-mini .value{font-size:22px;font-weight:950;margin-top:4px;color:#20355b}.admin-danger-box{border:1px solid #ffd0c8;background:#fff7f5;border-radius:20px;padding:12px}.admin-safe-box{border:1px solid #d9e7ff;background:#fbfdff;border-radius:20px;padding:12px}.admin-log{margin-top:12px;border-radius:16px;background:#0f172a;color:#e5edf8;padding:12px;font-size:12px;line-height:1.55;white-space:pre-wrap;max-height:180px;overflow:auto}.admin-actions-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.admin-actions-row.three{grid-template-columns:1fr 1fr 1fr}.admin-checkline{display:flex;align-items:center;gap:10px;margin-top:10px;padding:12px;border:1px solid #dfe8f5;border-radius:16px;background:#fff;font-size:13px;font-weight:900;color:#20355b}.admin-checkline input{width:20px;height:20px;accent-color:#2558d9}
+    .login-view{min-height:calc(100vh - 30px);display:flex;align-items:center;justify-content:center;padding:18px 0 34px}.auth-ok .login-view{display:none!important}.auth-pending .wrap,.auth-pending .tabs,.auth-pending .install-sheet{display:none!important}.login-shell{width:min(100%,460px);position:relative}.login-card{border-radius:32px;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.96));border:1px solid rgba(188,202,221,.72);box-shadow:0 28px 70px rgba(20,38,72,.16);overflow:hidden}.login-top{position:relative;overflow:hidden;background:linear-gradient(135deg,#11285f 0%,#2558d9 58%,#65a2ff 100%);padding:24px 20px 22px;color:#fff}.login-top:before,.login-top:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.10)}.login-top:before{width:170px;height:170px;right:-48px;top:-42px}.login-top:after{width:130px;height:130px;right:54px;bottom:-68px}.login-brand{position:relative;z-index:1;display:flex;align-items:center;gap:14px}.login-logo{width:68px;height:68px;border-radius:20px;background:#fff;padding:8px;object-fit:contain;box-shadow:0 14px 28px rgba(12,28,69,.24)}.login-brand small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:950;color:rgba(255,255,255,.78)}.login-brand h1{margin:3px 0 0;font-size:22px;font-weight:950}.login-body{padding:18px}.login-note{margin:0 0 14px;padding:12px 13px;border-radius:18px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;font-size:12px;font-weight:850;line-height:1.5}.login-form{display:grid;gap:12px}.password-wrap{position:relative}.password-wrap input{padding-right:54px}.mini-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:42px;height:36px;border-radius:12px;background:#eef5ff;color:#2558d9;font-weight:950}.login-error{display:none;margin-top:2px;padding:11px 12px;border-radius:16px;background:#ffe8e4;color:#b42318;border:1px solid #ffc8c0;font-size:12px;font-weight:850}.login-error.show{display:block}.demo-box{margin-top:14px;border:1px dashed #bfd0ea;border-radius:20px;background:#fbfdff;padding:13px}.demo-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px;color:#20355b;font-weight:950;font-size:13px}.demo-list{display:grid;gap:8px}.demo-user{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:#fff;border:1px solid #e1eaf6;border-radius:16px;padding:10px 11px}.demo-user strong{display:block;font-size:12px;color:#20355b}.demo-user span{display:block;font-size:11px;color:#65758b;font-weight:800;margin-top:2px}.demo-user code{font-family:Consolas,monospace;font-size:11px;background:#eef5ff;color:#2558d9;padding:6px 7px;border-radius:10px;font-weight:900}.user-strip{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;padding:11px 13px;border-radius:20px;background:rgba(255,255,255,.94);border:1px solid rgba(188,202,221,.66);box-shadow:0 10px 26px rgba(20,38,72,.07)}.user-strip-left{display:flex;align-items:center;gap:10px;min-width:0}.user-avatar{width:42px;height:42px;border-radius:15px;background:linear-gradient(135deg,#2558d9,#65a2ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:950;box-shadow:0 10px 18px rgba(37,88,217,.18);flex:0 0 auto}.user-name{font-weight:950;color:#20355b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.user-unit{font-size:12px;color:#65758b;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.logout-btn{min-height:40px;border-radius:14px;background:#ffe8e4;color:#b42318;padding:8px 12px;font-size:12px;font-weight:950;flex:0 0 auto}.hero-user{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.25)}.admin-only{display:none!important}.auth-admin .admin-only{display:block!important}.auth-admin .panel.admin-only{display:none!important}.auth-admin .panel.admin-only.active{display:block!important}.admin-import-grid{display:grid;grid-template-columns:1fr;gap:10px}.admin-import-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.import-help{margin-top:12px;border-radius:16px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;padding:11px 12px;font-size:12px;font-weight:800;line-height:1.55}.import-help:empty{display:none!important}.import-file-name{margin-top:8px;color:#64748b;font-size:12px;font-weight:800}.machine-preview-box{margin-top:12px;border:1px solid #dfe8f5;background:#fff;border-radius:18px;overflow:hidden}.machine-preview-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 12px;background:#f8fafc;border-bottom:1px solid #e5edf7;font-size:12px;font-weight:950;color:#20355b}.machine-preview-table-wrap{width:100%;overflow:auto}.machine-preview-table{width:100%;border-collapse:collapse;font-size:12px;min-width:900px}.machine-preview-table th,.machine-preview-table td{border:1px solid #e5edf7;padding:7px 8px;text-align:left;white-space:nowrap}.machine-preview-table th{background:#eef5ff;color:#2558d9;font-weight:950}.machine-status{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:950}.machine-status.ok{background:#dcfce7;color:#166534}.machine-status.warn{background:#fff7ed;color:#9a3412}.machine-status.err{background:#fee2e2;color:#991b1b}.machine-status.muted{background:#f1f5f9;color:#475569}.auth-admin .tabs{grid-template-columns:repeat(2,1fr)}.auth-admin .tab-worker{display:none!important}.auth-admin #panelWorkers{display:none!important}.auth-admin .coordinator-only{display:none!important}.role-readonly .input-only,.role-readonly #panelWorkers,.role-readonly .tab-worker,.role-payroll .input-only,.role-payroll #panelWorkers,.role-payroll .tab-worker{display:none!important}.role-readonly [data-role-write],.role-payroll [data-role-write]{display:none!important}.permission-note{margin-top:12px;border:1px solid #f8d98b;background:#fff8df;color:#7a4b00;border-radius:16px;padding:11px 12px;font-size:12px;font-weight:850;line-height:1.5}.admin-panel-grid{display:grid;grid-template-columns:1fr;gap:12px}.admin-mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.admin-mini{border:1px solid #dfe8f5;background:#fff;border-radius:18px;padding:12px;box-shadow:0 8px 20px rgba(20,38,72,.06)}.admin-mini .label{font-size:10px;color:#71829b;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.admin-mini .value{font-size:22px;font-weight:950;margin-top:4px;color:#20355b}.admin-danger-box{border:1px solid #ffd0c8;background:#fff7f5;border-radius:20px;padding:12px}.admin-safe-box{border:1px solid #d9e7ff;background:#fbfdff;border-radius:20px;padding:12px}.admin-log{margin-top:12px;border-radius:16px;background:#0f172a;color:#e5edf8;padding:12px;font-size:12px;line-height:1.55;white-space:pre-wrap;max-height:180px;overflow:auto}.admin-actions-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.admin-actions-row.three{grid-template-columns:1fr 1fr 1fr}.admin-checkline{display:flex;align-items:center;gap:10px;margin-top:10px;padding:12px;border:1px solid #dfe8f5;border-radius:16px;background:#fff;font-size:13px;font-weight:900;color:#20355b}.admin-checkline input{width:20px;height:20px;accent-color:#2558d9}
 
 
     .admin-admin-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;margin-bottom:12px}.admin-section-btn{min-height:44px;border-radius:16px;background:#f4f7fb;color:#42526c;border:1px solid #dfe8f5;font-weight:950;padding:9px 10px}.admin-section-btn.active{background:linear-gradient(135deg,var(--primary),#65a2ff);color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(37,88,217,.20)}.admin-section-card{display:none}.admin-section-card.active{display:block;grid-column:1/-1}.admin-frame-grid{display:grid;grid-template-columns:1fr;gap:12px}.admin-sub-frame{border:1px solid #dfe8f5;background:#fbfdff;border-radius:20px;padding:12px}.admin-sub-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}.admin-sub-title small{display:inline-flex;align-items:center;justify-content:center;min-width:64px;padding:6px 9px;border-radius:999px;background:#eef5ff;color:#2558d9;font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:.08em}.admin-sub-title h4{margin:0;font-size:15px;color:#20355b;font-weight:950}.admin-worker-crud{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}.admin-worker-form{display:grid;grid-template-columns:1fr;gap:10px}.admin-worker-tools{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-worker-list{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff}.admin-worker-row{display:grid;grid-template-columns:80px 1fr auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.admin-worker-row:last-child{border-bottom:0}.admin-worker-row .nip{font-weight:950;color:#2558d9}.admin-worker-row .name{font-weight:900;color:#20355b}.admin-worker-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:2px}.admin-worker-row .row-actions{display:flex;gap:6px}.admin-worker-row .row-actions button{min-height:34px;border-radius:12px;padding:7px 9px;font-size:12px}.empty-admin-list{padding:14px;text-align:center;color:#64748b;font-weight:850;font-size:12px}.admin-worker-count{font-size:12px;color:#64748b;font-weight:900;margin-top:8px}.commercial-tools{display:none;grid-template-columns:1fr;gap:10px;margin-top:10px}.commercial-tools.show{display:grid}.commercial-summary{border:1px solid #dfe8f5;border-radius:16px;background:#fbfdff;padding:10px;font-size:12px;color:#42526c;font-weight:850}.commercial-summary b{color:#20355b}.commercial-matrix{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff}.commercial-matrix-head,.commercial-matrix-row{display:grid;grid-template-columns:1.2fr 1fr 90px 90px;gap:8px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.commercial-matrix-head{background:#f4f7fb;color:#20355b;font-weight:950;font-size:12px}.commercial-matrix-row:last-child{border-bottom:0}.commercial-matrix-row .dock-name{font-weight:950;color:#2558d9}.commercial-matrix-row .regu-name{font-weight:900;color:#20355b}.commercial-matrix-row label{display:flex;align-items:center;justify-content:center;gap:6px;font-weight:950;color:#334155}.commercial-matrix-row input[type="checkbox"]{width:18px;height:18px;accent-color:#2558d9}.commercial-regu-select{width:100%;min-height:40px;border:1px solid #dfe8f5;border-radius:12px;background:#fff;padding:8px 10px;font-weight:900;color:#20355b}.commercial-regu-select option[disabled]{color:#94a3b8}.commercial-matrix-row select:invalid{color:#64748b}@media(max-width:640px){.commercial-matrix-head,.commercial-matrix-row{grid-template-columns:54px minmax(96px,1fr) 56px 56px;gap:5px;padding:10px 7px}.commercial-matrix-head{font-size:10px}.commercial-matrix-row .dock-name{font-size:16px;line-height:1.1;white-space:normal}.commercial-regu-select{min-height:42px;border-radius:14px;padding:6px 20px 6px 6px;font-size:13px;min-width:0}.commercial-matrix-row label{font-size:16px;gap:4px}.commercial-matrix-row input[type="checkbox"]{width:20px;height:20px}}.commercial-worker-hidden-note{margin-top:10px;border:1px dashed #cbd5e1;border-radius:16px;background:#f8fafc;padding:12px;text-align:center;color:#64748b;font-weight:850;font-size:12px}.dock-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.dock-row:last-child{border-bottom:0}.dock-row .name{font-weight:950;color:#20355b}.dock-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:2px}.dock-list{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff;margin-top:12px}.sync-status-box{border:1px solid #dfe8f5;border-radius:20px;background:#fbfdff;padding:12px;margin-bottom:12px}.sync-status-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}.sync-status-title h4{margin:0;color:#20355b;font-size:15px;font-weight:950}.sync-chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:950;background:#eef5ff;color:#2558d9}.sync-chip.ok{background:#dcfce7;color:#166534}.sync-chip.warn{background:#fff7ed;color:#9a3412}.sync-chip.err{background:#fee2e2;color:#991b1b}.sync-pending-list{border:1px solid #dfe8f5;border-radius:18px;background:#fff;overflow:hidden}.sync-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:11px 12px;border-bottom:1px solid #edf2f8}.sync-row:last-child{border-bottom:0}.sync-row .main{font-weight:950;color:#20355b}.sync-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:3px;line-height:1.45}.sync-row .row-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.sync-row .row-actions button{min-height:34px;border-radius:12px;padding:7px 9px;font-size:12px}.sync-cache-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.sync-cache-card{border:1px solid #dfe8f5;border-radius:16px;background:#fff;padding:10px}.sync-cache-card .label{font-size:11px;color:#64748b;font-weight:900}.sync-cache-card .value{font-size:20px;color:#20355b;font-weight:950;margin-top:4px}.usage-meter{margin-top:8px;height:9px;border-radius:999px;background:#eef2f7;overflow:hidden}.usage-meter-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#22c55e,#f59e0b)}.usage-detail{font-size:11px;color:#64748b;font-weight:800;margin-top:6px;line-height:1.45}.usage-table-wrap{width:100%;overflow:auto;margin-top:10px}.usage-table{width:100%;border-collapse:collapse;font-size:12px;min-width:620px}.usage-table th,.usage-table td{border:1px solid #e5edf7;padding:8px;text-align:left}.usage-table th{background:#f8fafc;color:#20355b}.usage-warn{color:#b45309;font-weight:950}.usage-ok{color:#15803d;font-weight:950}@media(max-width:640px){.sync-row{grid-template-columns:1fr}.sync-row .row-actions{justify-content:stretch}.sync-row .row-actions button{flex:1}}
@@ -1001,6 +1001,89 @@
 }
 .upah-excel-table tfoot td,.upah-excel-table tfoot th{background:#f8fafc!important;font-weight:950}
 @media(max-width:720px){.upah-page{padding:10px}.upah-hero{flex-direction:column}.upah-filter-row,.upah-tonase-box,.upah-final-row{grid-template-columns:1fr}.upah-action-row .btn,.upah-calc-actions .btn{width:100%;max-width:none}}
+
+
+/* v157 - Import jadwal Bagging bulanan dan laporan berbasis jadwal. */
+.bagging-schedule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.bagging-schedule-box{border:1px solid #e2e8f0;border-radius:14px;padding:12px;background:#f8fafc}
+.bagging-schedule-box h4{margin:0 0 8px;font-size:14px;color:#0f172a}
+.bagging-schedule-wrap{display:grid;grid-template-columns:1fr;gap:8px;margin:0 0 10px}
+.bagging-schedule-summary{border:1px solid #cbd5e1;background:linear-gradient(135deg,#ffffff,#f8fbff);border-radius:12px;padding:8px 10px;margin:0;font-size:12px;line-height:1.28;color:#0f172a;break-inside:avoid;page-break-inside:avoid;box-shadow:0 8px 18px rgba(15,23,42,.05);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+.bagging-schedule-summary:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(37,99,235,.10);border-color:#93c5fd}
+.bagging-schedule-summary .title{display:flex;align-items:center;gap:6px;font-weight:950;text-transform:uppercase;margin-bottom:7px;font-size:12px;letter-spacing:.02em;color:#1e3a8a}
+.bagging-schedule-summary .title::before{content:'📌';font-size:13px;line-height:1}
+.bagging-schedule-summary .warn{font-weight:900;color:#b45309;background:#fffbeb;border:1px solid #fde68a;border-radius:999px;padding:5px 9px;display:inline-flex;align-items:center;gap:5px}
+.bagging-schedule-summary .items{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.bagging-schedule-summary .item{display:inline-flex;align-items:center;gap:5px;margin:0;font-weight:900;background:#eff6ff;border:1px solid #bfdbfe;border-radius:999px;padding:5px 9px;color:#0f172a;box-shadow:inset 0 0 0 1px rgba(255,255,255,.65)}
+.bagging-schedule-summary .item .regu{color:#1d4ed8;font-weight:950}
+.bagging-schedule-summary .item .shift{background:#dbeafe;border-radius:999px;padding:2px 6px;color:#0f172a;font-weight:950}
+.bagging-empty-section{border:1px dashed #94a3b8;border-radius:8px;padding:9px;text-align:center;color:#64748b;font-weight:700;background:#fff;margin:4px 0 8px}
+.bagging-regu-title .shift-label{font-weight:800;font-size:.9em}
+@media(max-width:900px){.bagging-schedule-grid{grid-template-columns:1fr}}
+@media print{.bagging-schedule-wrap{display:grid!important;grid-template-columns:1fr!important;gap:5px!important;margin-bottom:8px!important}.bagging-schedule-summary{border:1px solid #000!important;background:#fff!important;color:#000!important;font-size:10px!important;line-height:1.2!important;padding:5px 7px!important;margin:0!important;box-shadow:none!important;transform:none!important}.bagging-schedule-summary .title{font-size:10px!important;color:#000!important;margin-bottom:4px!important}.bagging-schedule-summary .title::before{content:''!important}.bagging-schedule-summary .items{gap:4px 6px!important}.bagging-schedule-summary .item{border:1px solid #000!important;background:#fff!important;color:#000!important;padding:2px 6px!important;box-shadow:none!important}.bagging-schedule-summary .item .regu,.bagging-schedule-summary .item .shift{color:#000!important;background:#fff!important;padding:0!important}.bagging-empty-section{border:1px dashed #000;color:#000;background:#fff;font-size:9px;padding:5px}.bagging-schedule-summary .warn{color:#000!important;background:#fff!important;border:1px solid #000!important;padding:2px 6px!important}}
+
+/* v154 - Rapikan kontrol Bagging dan paksa cetak A4 Portrait */
+.bagging-control-card{border:1px solid #bfdbfe;background:linear-gradient(135deg,#ffffff,#eef6ff)}
+.bagging-control-card .card-head h3{margin:0}
+.bagging-report-info{margin-top:10px;font-size:12px;color:#475569;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:12px;padding:8px 10px;font-weight:800}.bagging-report-info:empty{display:none!important}
+.bagging-print-sheet{margin-top:16px;display:none}
+.bagging-print-sheet.ready{display:block}
+.bagging-print-title{text-align:center;line-height:1.15;margin-bottom:10px;color:#0f172a}
+.bagging-print-title .main{font-size:15px;font-weight:950;text-transform:uppercase;letter-spacing:.02em}
+.bagging-print-title .company{font-size:12px;font-weight:900;margin-top:2px}
+.bagging-print-title .date{font-size:12px;font-weight:850;margin-top:2px}
+.bagging-two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.bagging-section-title{text-align:center;font-weight:950;font-size:12px;margin:6px 0 6px;text-transform:uppercase;color:#0f172a}
+.bagging-regu-title{font-weight:950;font-size:11px;margin:8px 0 0;padding:3px 6px;border:1px solid #111827;border-bottom:0;background:#f8fafc;text-transform:uppercase;color:#0f172a}
+.bagging-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:10px;background:#fff;color:#0f172a}
+.bagging-table th,.bagging-table td{border:1px solid #111827;padding:3px 4px;line-height:1.15;vertical-align:middle;text-align:center}
+.bagging-table th{font-weight:950;background:#f1f5f9}
+.bagging-table td.name{text-align:left;font-weight:750;word-break:break-word;overflow-wrap:anywhere;white-space:normal}
+.bagging-table th:nth-child(1),.bagging-table td:nth-child(1){width:24px}
+.bagging-table th:nth-child(2),.bagging-table td:nth-child(2){width:44px}
+.bagging-table th:nth-child(4),.bagging-table td:nth-child(4),.bagging-table th:nth-child(5),.bagging-table td:nth-child(5){width:54px}
+.bagging-table th.duration-col,.bagging-table td.duration-col{width:50px}
+.bagging-time-edit{display:block;min-height:15px;padding:1px 2px;border:1px dashed transparent;border-radius:4px;background:#fff}
+.bagging-time-edit:focus{outline:2px solid #93c5fd;border-color:#2563eb;background:#eff6ff}
+.bagging-duration-option{display:flex;align-items:center;gap:7px;min-height:48px;padding:11px 10px;border:1px solid #dbeafe;border-radius:12px;background:#fff;font-size:12px;font-weight:850;color:#0f172a}
+.bagging-print-note{margin-top:8px;font-size:10px;color:#475569;text-align:left}
+/* Kontrol Bagging dibuat khusus agar Import berada di atas dan Absensi rapi dua baris. */
+.bagging-import-card .grid-form{display:grid;grid-template-columns:105px 86px minmax(145px,1fr) 90px;gap:8px;align-items:end}
+.bagging-import-card .field{min-width:0}
+.bagging-import-card select,.bagging-import-card input[type="number"],.bagging-import-card input[type="file"]{width:100%;min-width:0;box-sizing:border-box}
+.bagging-import-card input[type="number"]{padding-left:10px;padding-right:8px}
+.bagging-import-card input[type="file"]{font-size:12px;padding:9px 8px;overflow:hidden}
+.bagging-import-card .btn.full{grid-column:auto;width:90px;min-height:40px;padding:7px 8px;white-space:normal;line-height:1.05;font-size:11px;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center}
+.bagging-absensi-actions{display:flex;flex-direction:column;gap:10px;max-width:430px}
+.bagging-absensi-row{display:flex;align-items:end;gap:10px;flex-wrap:wrap}
+.bagging-date-field{width:160px;flex:0 0 160px}
+.bagging-load-field{width:190px;flex:0 0 190px}
+.bagging-absensi-row-bottom{align-items:center}
+.bagging-absensi-row-bottom .btn{width:120px;min-height:48px}
+.bagging-duration-option{width:220px;min-height:48px;box-sizing:border-box;margin:0}
+.bagging-duration-option input[type="checkbox"]{width:auto!important;min-width:0!important;min-height:0!important;height:16px!important;margin:0;flex:0 0 auto;padding:0!important}
+.bagging-control-card input[type="date"]{min-height:48px;padding:10px 10px}
+@media(max-width:900px){.bagging-two-col{grid-template-columns:1fr}.bagging-table{font-size:9px}}
+@media(max-width:760px){.bagging-import-card .grid-form{grid-template-columns:1fr}.bagging-import-card .btn.full{grid-column:1/-1}.bagging-absensi-actions{max-width:none}.bagging-absensi-row{display:grid;grid-template-columns:1fr}.bagging-date-field,.bagging-load-field,.bagging-duration-option,.bagging-absensi-row-bottom .btn{width:100%;flex:auto}}
+@media print{
+  body.print-bagging-only *{visibility:hidden!important}
+  body.print-bagging-only .bagging-print-sheet,body.print-bagging-only .bagging-print-sheet *{visibility:visible!important}
+  body.print-bagging-only .panel{display:none!important}
+  body.print-bagging-only #panelBaggingOff{display:block!important}
+  body.print-bagging-only .bagging-report-frame{display:block!important}
+  body.print-bagging-only .bagging-print-sheet{display:block!important;position:absolute!important;left:0!important;top:0!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important;background:#fff!important}
+  body.print-bagging-only .bagging-print-sheet .no-print{display:none!important;visibility:hidden!important}
+  body.print-bagging-only .bagging-two-col{display:grid!important;grid-template-columns:1fr 1fr!important;gap:16px!important;align-items:start!important}
+  body.print-bagging-only .bagging-print-title{margin-bottom:8px!important}
+  body.print-bagging-only .bagging-print-title .main{font-size:15px!important}
+  body.print-bagging-only .bagging-print-title .company,body.print-bagging-only .bagging-print-title .date{font-size:12px!important}
+  body.print-bagging-only .bagging-section-title{font-size:12px!important;margin:6px 0!important}
+  body.print-bagging-only .bagging-regu-title{font-size:11px!important;margin-top:8px!important;padding:3px 6px!important}
+  body.print-bagging-only .bagging-table{font-size:10px!important;page-break-inside:avoid;break-inside:avoid}
+  body.print-bagging-only .bagging-table th,body.print-bagging-only .bagging-table td{padding:3px 4px!important;line-height:1.15!important}
+  body.print-bagging-only .bagging-print-note{display:none!important}
+}
+
 </style>
 </head>
 <body class="auth-pending">
@@ -1034,7 +1117,7 @@
     <div class="hero-brand"><img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo"><div><small>BiP Productivity App</small><h1 id="appUnitTitle">Absensi Muatan Breeder</h1></div></div>
     <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Install Android</button></div>
   </section>
-  <nav class="tabs no-print" aria-label="Navigasi aplikasi"><button class="tab-btn admin-only" data-panel="panelAdmin">🛠 Admin</button><button class="tab-btn" data-panel="panelReport">📝 Absensi</button><button class="tab-btn admin-only" data-panel="panelUpah">💰 Upah</button><button class="tab-btn active tab-worker coordinator-only" data-panel="panelWorkers">✅ Jadwal</button></nav>
+  <nav class="tabs no-print" aria-label="Navigasi aplikasi"><button class="tab-btn admin-only" data-panel="panelAdmin">🛠 Admin</button><button class="tab-btn" data-panel="panelReport">📝 Absensi</button><button class="tab-btn admin-only" data-panel="panelBaggingOff">🧾 Bagging</button><button class="tab-btn admin-only" data-panel="panelUpah">💰 Upah</button><button class="tab-btn active tab-worker coordinator-only" data-panel="panelWorkers">✅ Jadwal</button></nav>
   <section id="panelWorkers" class="panel active">
     <section class="frame worker no-print" id="legacyWorkerMasterFrame" style="display:none!important" aria-hidden="true"><div class="frame-head"><div><div class="frame-kicker">Frame Lama</div><h2>Daftar Pekerja</h2></div><div class="frame-number">-</div></div>
       <div class="card"><div class="card-head"><h3>Add / Edit / Hapus</h3><span>Master data pekerja</span></div><div class="card-body">
@@ -1099,9 +1182,58 @@
         </div>
         <div class="import-help" id="adminAttendanceInfo">Cek In / Cek Out bisa diisi manual, otomatis, atau mengambil Ringkasan Preview Mesin berdasarkan Bagian dari menu Admin &gt; Import Data.</div>
       </div></div>
+
       <div class="attendance-list no-print" id="mobileReportList"></div>
       <div class="card print-sheet report-preview"><div class="card-head no-print"><h3>Tabel Hasil Input</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span><strong id="selectedCountBadge">0</strong> pekerja dipilih</span><button type="button" class="btn small" id="btnToggleReportPreview">Tampilkan</button></div></div><div id="reportPreviewBody" style="display:none;"><div class="print-title"><div class="main" id="reportMainTitle">ABSENSI KEGIATAN MUATAN BREEDER</div><div class="company" id="reportCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="reportDateText">HARI - TANGGAL</div><div class="coordinator" id="reportCoordinatorText"></div></div><div class="table-wrap"><table class="report-table" id="reportTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><th>CEK IN</th><th>CEK OUT</th></tr></thead><tbody id="reportBody"></tbody><tfoot class="report-summary"><tr><td class="summary-empty" colspan="3"></td><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><td class="summary-empty" colspan="2"></td></tr><tr><td class="left-label" colspan="3">JUMLAH PEKERJA</td><td id="sumS1">0</td><td id="sumS2">0</td><td id="sumS3">0</td><td class="summary-empty" colspan="2"></td></tr><tr><td class="summary-empty" colspan="3"></td><td class="total" colspan="3"><span id="sumTotal">0</span> Orang</td><td class="summary-empty" colspan="2"></td></tr></tfoot></table></div><div class="report-footer" id="reportFooter"><div class="signature-grid"><div><div class="signature-title editable-report" data-report-setting="signBip" contenteditable="true">B I P</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signGudang" contenteditable="true">Bagian Gudang</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signKasie" contenteditable="true">Kasie Muatan Breeder</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signPga" contenteditable="true">Bagian P&amp;GA</div><div class="signature-line"></div></div></div><div class="note-area"><div class="note-title">NOTE :</div><div class="editable-report" data-report-setting="note" contenteditable="true"></div><table class="worktime-table"><tr><th colspan="3" class="worktime-main">ABSENSI SIDIK JARI<br><span class="editable-report" data-report-setting="workTitle" contenteditable="true">JAM KERJA CEK IN dan CEK OUT</span></th></tr><tr><th>JADWAL</th><th colspan="2">JAM KERJA</th></tr><tr><th>KERJA</th><th>CEK IN</th><th>CEK OUT</th></tr><tr><td class="editable-report" data-report-setting="shiftPagiLabel" contenteditable="true">SHIFT 1</td><td class="editable-report" data-report-setting="shiftPagiIn" contenteditable="true">07:00</td><td class="editable-report" data-report-setting="shiftPagiOut" contenteditable="true">17:00</td></tr><tr><td class="editable-report" data-report-setting="shiftSiangLabel" contenteditable="true">SHIFT 2</td><td class="editable-report" data-report-setting="shiftSiangIn" contenteditable="true">17:00</td><td class="editable-report" data-report-setting="shiftSiangOut" contenteditable="true">23:00</td></tr><tr><td class="editable-report" data-report-setting="shiftMalamLabel" contenteditable="true">SHIFT 3</td><td class="editable-report" data-report-setting="shiftMalamIn" contenteditable="true">23:00</td><td class="editable-report" data-report-setting="shiftMalamOut" contenteditable="true">07:00</td></tr></table><div class="note-save-row no-print"><button type="button" class="btn primary" id="btnSaveReportFormat">💾 Simpan NOTE / Jam Kerja</button></div></div></div><div class="bottom-print-actions no-print"><button type="button" class="btn dark" id="btnBottomPrintAttendance">👁 Preview</button></div></div></div>
       <div class="control-report no-print coordinator-only"><div class="control-info"><div class="control-icon">📄</div><div><h3>Download Laporan Absensi</h3></div></div><div class="control-actions"><button class="btn primary full" id="btnDownloadPdf">download PDF</button></div></div>
+    </section>
+  </section>
+
+  <section id="panelBaggingOff" class="panel admin-only">
+    <section class="frame report-frame bagging-report-frame">
+      <div class="frame-head no-print"><div><div class="frame-kicker">Laporan Khusus</div><h2>Bagging Off Buhler &amp; Breeder</h2></div><div class="frame-number">BO</div></div>
+      <div class="card admin-only no-print bagging-control-card bagging-import-card" id="baggingScheduleImportCard"><div class="card-head"><h3>Import Jadwal Bagging Bulanan</h3><span>Excel: baris 1 tanggal, isi 1=Shift 1, 2=Shift 2</span></div><div class="card-body">
+        <div class="bagging-schedule-grid">
+          <div class="bagging-schedule-box">
+            <h4>Jadwal Bagging Off Buhler</h4>
+            <div class="grid-form">
+              <div class="field"><label for="baggingScheduleBuhlerMonth">Bulan</label><select id="baggingScheduleBuhlerMonth"></select></div>
+              <div class="field"><label for="baggingScheduleBuhlerYear">Tahun</label><input id="baggingScheduleBuhlerYear" type="number" min="2020" max="2100" step="1"></div>
+              <div class="field span-2"><label for="baggingScheduleBuhlerFile">File Excel Jadwal Buhler</label><input id="baggingScheduleBuhlerFile" type="file" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
+              <div class="field"><label>&nbsp;</label><button type="button" class="btn success full" id="btnImportBaggingScheduleBuhler">📥 Import Buhler</button></div>
+            </div>
+            <div class="import-help" id="baggingScheduleBuhlerInfo"></div>
+          </div>
+          <div class="bagging-schedule-box">
+            <h4>Jadwal Bagging Off Breeder</h4>
+            <div class="grid-form">
+              <div class="field"><label for="baggingScheduleBreederMonth">Bulan</label><select id="baggingScheduleBreederMonth"></select></div>
+              <div class="field"><label for="baggingScheduleBreederYear">Tahun</label><input id="baggingScheduleBreederYear" type="number" min="2020" max="2100" step="1"></div>
+              <div class="field span-2"><label for="baggingScheduleBreederFile">File Excel Jadwal Breeder</label><input id="baggingScheduleBreederFile" type="file" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
+              <div class="field"><label>&nbsp;</label><button type="button" class="btn success full" id="btnImportBaggingScheduleBreeder">📥 Import Breeder</button></div>
+            </div>
+            <div class="import-help" id="baggingScheduleBreederInfo"></div>
+          </div>
+        </div>
+      </div></div>
+      <div class="card admin-only no-print bagging-control-card bagging-absensi-card" id="baggingOffControlCard"><div class="card-head"><h3>Absensi Bagging Off Buhler &amp; Breeder</h3><span>v161 • teks info dirapikan</span></div><div class="card-body">
+        <div class="bagging-absensi-actions">
+          <div class="bagging-absensi-row bagging-absensi-row-top">
+            <div class="field bagging-date-field"><label for="baggingOffDate">Tanggal Laporan</label><input id="baggingOffDate" type="date"></div>
+            <div class="field bagging-load-field"><label>&nbsp;</label><button type="button" class="btn primary full" id="btnBaggingOffLoad">🔍 Tampilkan Laporan</button></div>
+          </div>
+          <div class="bagging-absensi-row bagging-absensi-row-bottom">
+            <label class="bagging-duration-option"><input id="baggingOffShowDuration" type="checkbox"> <span>Tampilkan Durasi</span></label>
+            <button type="button" class="btn dark" id="btnBaggingOffPrint">🖨️ Cetak</button>
+          </div>
+        </div>
+        <div class="bagging-report-info" id="baggingOffInfo"></div>
+      </div></div>
+      <div class="card print-sheet bagging-print-sheet report-preview" id="baggingOffPrintSheet"><div class="card-head no-print"><h3>Laporan Bagging Off Buhler &amp; Breeder</h3></div><div class="card-body" id="baggingOffReportBody">
+        <div class="bagging-print-title"><div class="main">ABSENSI KEGIATAN BAGGING OFF BUHLER DAN BREEDER - TAP JAHIT</div><div class="company">PT. BUDI INTI PERKASA</div><div class="date" id="baggingOffDateText">HARI - TANGGAL</div></div>
+        <div class="empty" style="text-align:center;color:#64748b;padding:20px">Pilih tanggal lalu klik Tampilkan Laporan.</div>
+      </div></div>
+
     </section>
   </section>
 
@@ -1349,6 +1481,51 @@ const GLOBAL_CHECK_TIMES_KEY = 'absensi_breeder_global_check_times_v1';
 const IMPORT_HISTORY_CACHE_KEY = 'absensi_bip_import_check_history_v1';
 const AUTO_SHIFT3_ENABLED_KEY = 'absensi_bip_auto_shift3_enabled_v1';
 const SHOW_DURATION_REPORT_KEY = 'absensi_bip_show_duration_report_v1';
+const BAGGING_OFF_SCHEDULE_LOCAL_PREFIX = 'absensi_bip_bagging_schedule_v157';
+
+const BAGGING_OFF_MASTER = [
+  {jenis:'BUHLER', regu:'A', nip:'155', nama:'Rian Hanafi'},
+  {jenis:'BUHLER', regu:'A', nip:'1310', nama:'Gangsar Dwi Cahyo'},
+  {jenis:'BUHLER', regu:'A', nip:'154', nama:'Wahyudi'},
+  {jenis:'BUHLER', regu:'A', nip:'173', nama:'Bayu Dwi A P'},
+  {jenis:'BUHLER', regu:'A', nip:'148', nama:'Yangki Friandicca H.H'},
+  {jenis:'BUHLER', regu:'A', nip:'172', nama:'Agus Sulaiman'},
+  {jenis:'BUHLER', regu:'A', nip:'157', nama:'M Ali Mashuri'},
+  {jenis:'BUHLER', regu:'A', nip:'210', nama:'Bagus Dwi K'},
+  {jenis:'BUHLER', regu:'A', nip:'1307', nama:'Dimas Tegar Pamungkas'},
+  {jenis:'BUHLER', regu:'A', nip:'1305', nama:'Rakhul Adi Rafdila'},
+  {jenis:'BUHLER', regu:'B', nip:'146', nama:'Ainur Rokim'},
+  {jenis:'BUHLER', regu:'B', nip:'1308', nama:'M Farrel Maulana'},
+  {jenis:'BUHLER', regu:'B', nip:'4034', nama:'Masdiro'},
+  {jenis:'BUHLER', regu:'B', nip:'161', nama:'Samsul Abidin'},
+  {jenis:'BUHLER', regu:'B', nip:'162', nama:'Deni Kurniawan'},
+  {jenis:'BUHLER', regu:'B', nip:'149', nama:'M Yudi Santoso'},
+  {jenis:'BUHLER', regu:'B', nip:'153', nama:'Moch Taat Isworo'},
+  {jenis:'BUHLER', regu:'B', nip:'168', nama:'M Fery Halim A'},
+  {jenis:'BUHLER', regu:'B', nip:'203', nama:'Moch Soeb'},
+  {jenis:'BUHLER', regu:'B', nip:'249', nama:'Moh Mashulin Romli'},
+  {jenis:'BUHLER', regu:'C', nip:'156', nama:'Predi Hari W'},
+  {jenis:'BUHLER', regu:'C', nip:'150', nama:'Ngusman'},
+  {jenis:'BUHLER', regu:'C', nip:'169', nama:'Moch Anjar Fidianto'},
+  {jenis:'BUHLER', regu:'C', nip:'1306', nama:'Mohammad Zanuar Akbar'},
+  {jenis:'BUHLER', regu:'C', nip:'206', nama:'Ripan Efendi'},
+  {jenis:'BUHLER', regu:'C', nip:'202', nama:'M Abin W I'},
+  {jenis:'BUHLER', regu:'C', nip:'205', nama:'Moch Afifuddin'},
+  {jenis:'BUHLER', regu:'C', nip:'207', nama:'Mahfud Aminulloh'},
+  {jenis:'BUHLER', regu:'C', nip:'209', nama:'M Nanda Setyabudi'},
+  {jenis:'BUHLER', regu:'C', nip:'240', nama:'Muhammad Arif'},
+  {jenis:'BREEDER', regu:'A', nip:'232', nama:'Sudarsono'},
+  {jenis:'BREEDER', regu:'A', nip:'233', nama:'Dedi Kurniawan'},
+  {jenis:'BREEDER', regu:'A', nip:'236', nama:'Moch Choirun Najib'},
+  {jenis:'BREEDER', regu:'A', nip:'237', nama:'Hery Efendi'},
+  {jenis:'BREEDER', regu:'A', nip:'242', nama:'Mukh Aris R'},
+  {jenis:'BREEDER', regu:'B', nip:'230', nama:'Agus Irawan'},
+  {jenis:'BREEDER', regu:'B', nip:'186', nama:'Imba Alfero Setiawan'},
+  {jenis:'BREEDER', regu:'B', nip:'226', nama:'Ishomuddin'},
+  {jenis:'BREEDER', regu:'B', nip:'234', nama:'Eko Yuliat Mojo'},
+  {jenis:'BREEDER', regu:'B', nip:'238', nama:'Moch Nizhar Putra'}
+];
+
 const COMMERCIAL_KEY = 'muatan_commercial';
 const STAPEL_TF_KEY = 'stapel_tf';
 const MALLETI_TF_KEY = 'malleti_tf';
@@ -3590,6 +3767,390 @@ function renderReportTable(unitName, dateValue, rows, emptyMsg){
   ['sumS3'].forEach(id=>{ if($(id)) $(id).textContent=s3; });
   ['sumTotal','selectedCountBadge'].forEach(id=>{ if($(id)) $(id).textContent=total; });
 }
+
+
+const BAGGING_OFF_MONTH_NAMES=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+function baggingScheduleJenisKey(jenis){ const raw=String(jenis||'').trim().toUpperCase(); return raw==='BREEDER' ? 'BREEDER' : 'BUHLER'; }
+function baggingScheduleJenisSlug(jenis){ return baggingScheduleJenisKey(jenis).toLowerCase(); }
+function baggingScheduleDocId(jenis, year, month){ return `bagging_off_schedule_${baggingScheduleJenisSlug(jenis)}_${String(year).padStart(4,'0')}_${String(month).padStart(2,'0')}`; }
+function baggingScheduleLocalKey(jenis, year, month){ return `${BAGGING_OFF_SCHEDULE_LOCAL_PREFIX}_${baggingScheduleJenisSlug(jenis)}_${String(year).padStart(4,'0')}_${String(month).padStart(2,'0')}`; }
+function daysInMonth(year, month){ return new Date(Number(year), Number(month), 0).getDate(); }
+function datePartsISO(dateValue){ const raw=String(dateValue||todayISO()).slice(0,10); const [y,m,d]=raw.split('-').map(Number); return {date:raw, year:y, month:m, day:d}; }
+function normalizeBaggingScheduleRegu(value){ const raw=String(value||'').trim().toUpperCase().replace(/^REGU\s+/,''); return raw ? raw[0] : ''; }
+function normalizeBaggingScheduleShift(value){ if(value===null || value===undefined) return 0; const raw=String(value).trim(); if(!raw) return 0; if(raw==='1' || raw==='1.0') return 1; if(raw==='2' || raw==='2.0') return 2; return 0; }
+function monthOptionsHtml(selected){ return BAGGING_OFF_MONTH_NAMES.map((name,i)=>`<option value="${i+1}" ${Number(selected)===i+1?'selected':''}>${name}</option>`).join(''); }
+function initBaggingScheduleImportControls(){
+  const now=new Date(); const m=now.getMonth()+1; const y=now.getFullYear();
+  ['Buhler','Breeder'].forEach(label=>{
+    const monthEl=$(`baggingSchedule${label}Month`); const yearEl=$(`baggingSchedule${label}Year`);
+    if(monthEl && !monthEl.options.length) monthEl.innerHTML=monthOptionsHtml(m);
+    if(yearEl && !yearEl.value) yearEl.value=y;
+    const fileEl=$(`baggingSchedule${label}File`); const infoEl=$(`baggingSchedule${label}Info`);
+    if(fileEl && !fileEl.dataset.boundScheduleImport){
+      fileEl.dataset.boundScheduleImport='1';
+      fileEl.addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if(infoEl) infoEl.textContent=file ? `File dipilih: ${file.name}` : ''; });
+    }
+  });
+}
+async function readBaggingScheduleWorkbook(file){
+  if(!window.XLSX) throw new Error('Library Excel belum dimuat. Pastikan internet aktif lalu coba lagi.');
+  if(!file) throw new Error('File Excel belum dipilih.');
+  const buf=await file.arrayBuffer();
+  const wb=window.XLSX.read(buf,{type:'array', cellDates:false});
+  const sheetName=wb.SheetNames && wb.SheetNames[0];
+  if(!sheetName) throw new Error('Sheet Excel tidak ditemukan.');
+  const ws=wb.Sheets[sheetName];
+  const rows=window.XLSX.utils.sheet_to_json(ws,{header:1, raw:false, defval:''});
+  return {sheetName, rows};
+}
+function parseBaggingScheduleRows(excelRows, jenis, year, month){
+  const maxDay=daysInMonth(year, month);
+  if(!Array.isArray(excelRows) || !excelRows.length) throw new Error('Isi Excel kosong.');
+  const header=excelRows[0] || [];
+  const dayColumns=[];
+  for(let c=1;c<header.length;c++){
+    const raw=String(header[c]||'').trim();
+    const day=Number(raw.replace(/\.0$/,''));
+    if(Number.isInteger(day) && day>=1 && day<=31) dayColumns.push({col:c, day});
+  }
+  if(!dayColumns.length) throw new Error('Baris 1 tidak berisi tanggal 1 sampai 31 mulai kolom B.');
+  const entries=[]; const warnings=[]; const regusFound=[];
+  for(let r=1;r<excelRows.length;r++){
+    const row=excelRows[r] || [];
+    const regu=normalizeBaggingScheduleRegu(row[0]);
+    if(!regu) continue;
+    regusFound.push(regu);
+    dayColumns.forEach(dc=>{
+      if(dc.day>maxDay) return;
+      const shift=normalizeBaggingScheduleShift(row[dc.col]);
+      const raw=String(row[dc.col]||'').trim();
+      if(raw && !shift) warnings.push(`Regu ${regu} tanggal ${dc.day}: isi "${raw}" diabaikan, hanya boleh 1 atau 2.`);
+      if(shift){
+        const date=`${String(year).padStart(4,'0')}-${String(month).padStart(2,'0')}-${String(dc.day).padStart(2,'0')}`;
+        entries.push({ jenis:baggingScheduleJenisKey(jenis), year:Number(year), month:Number(month), day:dc.day, date, regu, shift });
+      }
+    });
+  }
+  if(!regusFound.length) throw new Error('Baris regu tidak ditemukan. Kolom A harus berisi A/B/C atau Regu A/Regu B.');
+  return {entries, warnings, regusFound:[...new Set(regusFound)]};
+}
+async function saveBaggingSchedulePayload(jenis, year, month, payload){
+  return saveMasterDataFirestoreFirst(baggingScheduleDocId(jenis,year,month), baggingScheduleLocalKey(jenis,year,month), payload);
+}
+async function loadBaggingSchedulePayload(jenis, year, month){
+  const res=await loadMasterDataPrimary(baggingScheduleDocId(jenis,year,month), baggingScheduleLocalKey(jenis,year,month), null);
+  const data=res && res.data ? unwrapCacheEnvelope(res.data) : null;
+  if(data && Array.isArray(data.entries)) return {...data, __source:res.source};
+  return null;
+}
+async function importBaggingSchedule(jenis){
+  if(!isAdmin()){ alert('Akses ditolak. Import jadwal hanya untuk admin.'); return; }
+  const label=baggingScheduleJenisKey(jenis)==='BREEDER' ? 'Breeder' : 'Buhler';
+  const month=Number($(`baggingSchedule${label}Month`) && $(`baggingSchedule${label}Month`).value);
+  const year=Number($(`baggingSchedule${label}Year`) && $(`baggingSchedule${label}Year`).value);
+  const fileEl=$(`baggingSchedule${label}File`); const file=fileEl && fileEl.files && fileEl.files[0];
+  const infoEl=$(`baggingSchedule${label}Info`); const btn=$(`btnImportBaggingSchedule${label}`); const old=btn ? btn.textContent : '';
+  if(!month || !year){ alert('Pilih bulan dan tahun terlebih dahulu.'); return; }
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Mengimport...'; }
+    const wb=await readBaggingScheduleWorkbook(file);
+    const parsed=parseBaggingScheduleRows(wb.rows, jenis, year, month);
+    const payload={
+      type:'bagging_off_schedule',
+      jenis:baggingScheduleJenisKey(jenis),
+      year:Number(year), month:Number(month),
+      sheetName:wb.sheetName,
+      sourceFile:file ? file.name : '', sourceSize:file ? file.size : 0,
+      entries:parsed.entries,
+      regusFound:parsed.regusFound,
+      warnings:parsed.warnings,
+      importedAtLocal:new Date().toISOString(),
+      importedBy:currentUser ? {username:currentUser.username||'', nip:currentUser.nip||'', name:currentUser.name||''} : null
+    };
+    const saved=await saveBaggingSchedulePayload(jenis, year, month, payload);
+    const msg=`Import jadwal ${label} ${BAGGING_OFF_MONTH_NAMES[month-1]} ${year} selesai. ${parsed.entries.length} jadwal shift tersimpan${saved && saved.online ? ' online' : ' di cache lokal/offline'}.` + (parsed.warnings.length ? ` ${parsed.warnings.length} catatan diabaikan.` : '');
+    if(infoEl) infoEl.textContent=msg;
+    alert(msg);
+    auditLog('import_bagging_schedule','bagging',{message:msg, jenis:baggingScheduleJenisKey(jenis), year, month, total:parsed.entries.length}, null, payload).catch(()=>{});
+    const reportDate=$('baggingOffDate') && $('baggingOffDate').value;
+    if(reportDate){ const p=datePartsISO(reportDate); if(p.year===year && p.month===month) loadBaggingOffReport(); }
+  }catch(err){
+    console.error(err); const msg='Gagal import jadwal '+label+': '+(err && err.message ? err.message : err); if(infoEl) infoEl.textContent=msg; alert(msg);
+  }finally{ if(btn){ btn.disabled=false; btn.textContent=old || `📥 Import ${label}`; } }
+}
+async function loadBaggingOffScheduleForDate(dateValue){
+  const p=datePartsISO(dateValue);
+  const out={};
+  for(const jenis of ['BUHLER','BREEDER']){
+    const payload=await loadBaggingSchedulePayload(jenis, p.year, p.month);
+    const entries=payload && Array.isArray(payload.entries) ? payload.entries.filter(e=>String(e.date||'').slice(0,10)===p.date) : [];
+    out[jenis]={ jenis, payload, imported:!!payload, entries, source:payload && payload.__source ? payload.__source : '' };
+  }
+  return out;
+}
+function baggingScheduleSummaryHtml(schedules){
+  function block(jenis){
+    const title=jenis==='BUHLER' ? 'Jadwal Bagging Off Buhler' : 'Jadwal Bagging Off Breeder';
+    const s=schedules && schedules[jenis];
+    if(!s || !s.imported) return `<div class="bagging-schedule-summary"><div class="title">${title}</div><div class="warn">Jadwal bulan ini belum diimport.</div></div>`;
+    if(!s.entries.length) return `<div class="bagging-schedule-summary"><div class="title">${title}</div><div class="warn">Tidak ada regu terjadwal pada tanggal ini.</div></div>`;
+    const items=s.entries.slice().sort((a,b)=>String(a.regu).localeCompare(String(b.regu),'id',{numeric:true})).map(e=>`<span class="item"><span class="regu">Regu ${safeText(e.regu)}</span><span class="shift">Shift ${safeText(e.shift)}</span></span>`).join('');
+    return `<div class="bagging-schedule-summary"><div class="title">${title}</div><div class="items">${items}</div></div>`;
+  }
+  return `<div class="bagging-schedule-wrap">${block('BUHLER')}${block('BREEDER')}</div>`;
+}
+function scheduledEntriesForJenisRegu(schedules, jenis, regu){
+  const s=schedules && schedules[jenis];
+  if(!s || !s.imported) return null;
+  return (s.entries||[]).filter(e=>String(e.regu||'').toUpperCase()===String(regu||'').toUpperCase());
+}
+
+const BAGGING_OFF_SHOW_DURATION_KEY='bagging_off_show_duration_v155';
+function getBaggingOffShowDuration(){
+  const cb=$('baggingOffShowDuration');
+  if(cb) return !!cb.checked;
+  try{ return localStorage.getItem(BAGGING_OFF_SHOW_DURATION_KEY)==='1'; }catch(err){ return false; }
+}
+function setBaggingOffShowDuration(value){
+  const checked=!!value;
+  if($('baggingOffShowDuration')) $('baggingOffShowDuration').checked=checked;
+  try{ localStorage.setItem(BAGGING_OFF_SHOW_DURATION_KEY, checked ? '1' : '0'); }catch(err){}
+}
+function initBaggingOffDurationOption(){
+  const cb=$('baggingOffShowDuration');
+  if(!cb) return;
+  let saved=false;
+  try{ saved=localStorage.getItem(BAGGING_OFF_SHOW_DURATION_KEY)==='1'; }catch(err){ saved=false; }
+  cb.checked=saved;
+  cb.addEventListener('change', ()=>{
+    setBaggingOffShowDuration(cb.checked);
+    const date=($('baggingOffDate') && $('baggingOffDate').value) || (($('adminReportDate') && $('adminReportDate').value) || todayISO());
+    const sheet=$('baggingOffPrintSheet');
+    if(sheet && sheet.classList.contains('ready')) loadBaggingOffReport();
+  });
+}
+function baggingOffNipSort(a,b){
+  const na=Number(a && a.nip), nb=Number(b && b.nip);
+  if(Number.isFinite(na) && Number.isFinite(nb) && na!==nb) return na-nb;
+  return String((a&&a.nip)||'').localeCompare(String((b&&b.nip)||''),'id',{numeric:true});
+}
+function baggingOffGroupRows(jenis, regu, checkMap, schedules){
+  const scheduled=scheduledEntriesForJenisRegu(schedules, jenis, regu);
+  if(scheduled===null || !scheduled.length) return [];
+  const shiftNo=Number(scheduled[0].shift || 0);
+  const completedMap=autoFillBaggingOffMap(checkMap || {}, jenis, regu);
+  return BAGGING_OFF_MASTER.filter(r=>r.jenis===jenis && r.regu===regu).sort(baggingOffNipSort).map(r=>{
+    const data=(completedMap && completedMap[String(r.nip)]) || {};
+    const checkIn=normalizeTimeToHMS(data.checkIn || data.cekIn || '');
+    const checkOut=normalizeTimeToHMS(data.checkOut || data.cekOut || '');
+    return {...r, scheduledShift:shiftNo, checkIn, checkOut, durasi:durationHHMMSS(checkIn, checkOut)};
+  });
+}
+function autoFillSeedNumber(text){
+  const raw=String(text||'');
+  let h=2166136261;
+  for(let i=0;i<raw.length;i++){ h^=raw.charCodeAt(i); h=Math.imul(h,16777619); }
+  return h>>>0;
+}
+function autoFillTimeFromPool(pool, seedText){
+  const values=(pool||[]).map(v=>normalizeTimeToHMS(v||'')).filter(Boolean);
+  if(!values.length) return '';
+  const seed=autoFillSeedNumber(seedText);
+  const base=values[seed % values.length];
+  const sec=parseAttendanceTimeToSeconds(base);
+  if(sec===null) return base;
+  const jitter=(seed % 241)-120;
+  return formatSecondsToHMS(sec+jitter);
+}
+function autoFillBaggingOffMap(checkMap, jenisFilter, reguFilter){
+  const out={};
+  Object.keys(checkMap||{}).forEach(nip=>{ out[String(nip)]={...(checkMap[nip]||{})}; });
+  const master=Array.isArray(BAGGING_OFF_MASTER) ? BAGGING_OFF_MASTER : [];
+  const sameRows=master.filter(r=>(!jenisFilter || r.jenis===jenisFilter) && (!reguFilter || r.regu===reguFilter));
+  const allRows=master.slice();
+  function pool(rows, kind){
+    return rows.map(r=>{
+      const d=out[String(r.nip)] || {};
+      return normalizeTimeToHMS(kind==='in' ? (d.checkIn || d.cekIn || '') : (d.checkOut || d.cekOut || ''));
+    }).filter(Boolean);
+  }
+  const sameIn=pool(sameRows,'in'), sameOut=pool(sameRows,'out'), allIn=pool(allRows,'in'), allOut=pool(allRows,'out');
+  sameRows.forEach(r=>{
+    const nip=String(r.nip||'').trim();
+    if(!nip) return;
+    if(!out[nip]) out[nip]={};
+    const currentIn=normalizeTimeToHMS(out[nip].checkIn || out[nip].cekIn || '');
+    const currentOut=normalizeTimeToHMS(out[nip].checkOut || out[nip].cekOut || '');
+    if(!currentIn && (sameIn.length || allIn.length)) out[nip].checkIn=autoFillTimeFromPool(sameIn.length?sameIn:allIn, nip+'|bagging|in|'+(r.jenis||'')+'|'+(r.regu||''));
+    else out[nip].checkIn=currentIn;
+    if(!currentOut && (sameOut.length || allOut.length)) out[nip].checkOut=autoFillTimeFromPool(sameOut.length?sameOut:allOut, nip+'|bagging|out|'+(r.jenis||'')+'|'+(r.regu||''));
+    else out[nip].checkOut=currentOut;
+  });
+  return out;
+}
+function baggingEditableTimeCell(nip, kind, value){
+  const label=kind==='in' ? 'Cek In' : 'Cek Out';
+  return `<span class="bagging-time-edit" contenteditable="true" data-bagging-time="${kind}" data-bagging-nip="${safeText(nip)}" title="Klik untuk ubah ${label}">${safeText(value || '')}</span>`;
+}
+function renderBaggingOffTable(jenis, regu, rows){
+  const showDuration=getBaggingOffShowDuration();
+  const shiftNo=rows && rows.length ? Number(rows[0].scheduledShift || 0) : 0;
+  const durationHead=showDuration ? '<th class="duration-col">DURASI</th>' : '';
+  const body=rows.map((r,i)=>`<tr data-bagging-row="${safeText(r.nip)}"><td>${i+1}</td><td>${safeText(r.nip)}</td><td class="name">${safeText(r.nama)}</td><td>${baggingEditableTimeCell(r.nip,'in',r.checkIn)}</td><td>${baggingEditableTimeCell(r.nip,'out',r.checkOut)}</td>${showDuration ? `<td class="duration-col" data-bagging-duration="${safeText(r.nip)}">${safeText(r.durasi)}</td>` : ''}</tr>`).join('');
+  return `<div class="bagging-regu-title">REGU ${safeText(regu)} ${shiftNo ? `<span class="shift-label">- SHIFT ${safeText(shiftNo)}</span>` : ''}</div><table class="bagging-table" data-show-duration="${showDuration?'1':'0'}"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>CEK IN</th><th>CEK OUT</th>${durationHead}</tr></thead><tbody>${body}</tbody></table>`;
+}
+function renderBaggingOffSection(jenis, checkMap, schedules){
+  const title=jenis==='BUHLER' ? 'BAGGING OFF BUHLER' : 'BAGGING OFF BREEDER';
+  const scheduleState=schedules && schedules[jenis];
+  if(!scheduleState || !scheduleState.imported) return `<div class="bagging-column"><div class="bagging-section-title">${title}</div><div class="bagging-empty-section">Jadwal bulan ini belum diimport.</div></div>`;
+  const regus=[...new Set((scheduleState.entries||[]).map(e=>e.regu))].sort();
+  if(!regus.length) return `<div class="bagging-column"><div class="bagging-section-title">${title}</div><div class="bagging-empty-section">Tidak ada regu terjadwal pada tanggal ini.</div></div>`;
+  return `<div class="bagging-column"><div class="bagging-section-title">${title}</div>${regus.map(regu=>renderBaggingOffTable(jenis, regu, baggingOffGroupRows(jenis, regu, checkMap, schedules))).join('')}</div>`;
+}
+function collectBaggingOffEditedCheckMap(){
+  const map={};
+  document.querySelectorAll('[data-bagging-nip][data-bagging-time]').forEach(el=>{
+    const nip=String(el.getAttribute('data-bagging-nip')||'').trim();
+    const kind=String(el.getAttribute('data-bagging-time')||'').trim();
+    if(!nip) return;
+    if(!map[nip]) map[nip]={};
+    const raw=(el.textContent || '').trim();
+    const val=normalizeTimeToHMS(raw) || raw;
+    if(kind==='in') map[nip].checkIn=val;
+    if(kind==='out') map[nip].checkOut=val;
+  });
+  return map;
+}
+function updateBaggingOffEditedDuration(nip){
+  if(!nip) return;
+  const inEl=document.querySelector(`[data-bagging-nip="${CSS.escape(String(nip))}"][data-bagging-time="in"]`);
+  const outEl=document.querySelector(`[data-bagging-nip="${CSS.escape(String(nip))}"][data-bagging-time="out"]`);
+  const durEl=document.querySelector(`[data-bagging-duration="${CSS.escape(String(nip))}"]`);
+  if(!durEl) return;
+  const checkIn=normalizeTimeToHMS((inEl && inEl.textContent || '').trim());
+  const checkOut=normalizeTimeToHMS((outEl && outEl.textContent || '').trim());
+  durEl.textContent=durationHHMMSS(checkIn, checkOut);
+}
+function setupBaggingOffEditableTimes(){
+  const body=$('baggingOffReportBody');
+  if(!body) return;
+  body.querySelectorAll('[data-bagging-nip][data-bagging-time]').forEach(el=>{
+    el.addEventListener('input', ()=>updateBaggingOffEditedDuration(el.getAttribute('data-bagging-nip')));
+    el.addEventListener('blur', ()=>{
+      const val=normalizeTimeToHMS((el.textContent || '').trim()) || (el.textContent || '').trim();
+      el.textContent=val;
+      updateBaggingOffEditedDuration(el.getAttribute('data-bagging-nip'));
+    });
+  });
+}
+function renderBaggingOffReport(dateValue, checkMap, schedules){
+  const date=dateValue || todayISO();
+  const map=checkMap || {};
+  const scheduleCtx=schedules || {BUHLER:{imported:false,entries:[]},BREEDER:{imported:false,entries:[]}};
+  const scheduledKeys=new Set();
+  ['BUHLER','BREEDER'].forEach(jenis=>{ ((scheduleCtx[jenis] && scheduleCtx[jenis].entries) || []).forEach(e=>{ BAGGING_OFF_MASTER.filter(r=>r.jenis===jenis && String(r.regu).toUpperCase()===String(e.regu).toUpperCase()).forEach(r=>scheduledKeys.add(String(r.nip))); }); });
+  const matched=[...scheduledKeys].filter(nip=>map[nip] && (map[nip].checkIn || map[nip].cekIn || map[nip].checkOut || map[nip].cekOut)).length;
+  if($('baggingOffDateText')) $('baggingOffDateText').textContent=formatLongDate(date);
+  const body=$('baggingOffReportBody');
+  if(body){
+    body.innerHTML=`<div class="bagging-print-title"><div class="main">ABSENSI KEGIATAN BAGGING OFF BUHLER DAN BREEDER - TAP JAHIT</div><div class="company">PT. BUDI INTI PERKASA</div><div class="date">${safeText(formatLongDate(date))}</div></div>${baggingScheduleSummaryHtml(scheduleCtx)}<div class="bagging-two-col">${renderBaggingOffSection('BUHLER', map, scheduleCtx)}${renderBaggingOffSection('BREEDER', map, scheduleCtx)}</div>`;
+    setupBaggingOffEditableTimes();
+  }
+  if($('baggingOffPrintSheet')) $('baggingOffPrintSheet').classList.add('ready');
+  if($('baggingOffInfo')) $('baggingOffInfo').textContent='';
+}
+async function loadBaggingOffReport(){
+  if(!hasPermission('viewReports')){ alert('Akses ditolak. Role ini tidak boleh melihat laporan.'); return; }
+  const date=($('baggingOffDate') && $('baggingOffDate').value) || (($('adminReportDate') && $('adminReportDate').value) || todayISO());
+  const btn=$('btnBaggingOffLoad'); const old=btn ? btn.textContent : '';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Memuat...'; }
+    const map=await loadGlobalCheckTimesForDate(date, true);
+    const schedules=await loadBaggingOffScheduleForDate(date);
+    renderBaggingOffReport(date, map, schedules);
+  }catch(err){
+    console.error(err);
+    alert('Gagal memuat laporan Bagging Off: '+(err && err.message ? err.message : err));
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=old || '🔍 Tampilkan Laporan'; }
+  }
+}
+function buildBaggingOffPrintDocument(reportHtml){
+  return `<!doctype html><html><head><meta charset="utf-8"><title>Laporan Bagging Off Buhler & Breeder</title><style>
+    /* v160 - Info jadwal Bagging dibuat interaktif dan ukuran tulisan dikembalikan normal. */
+    @page{size:A4 portrait;margin:7mm 6mm 7mm 6mm}
+    *{box-sizing:border-box}
+    html,body{margin:0!important;padding:0!important;background:#fff!important;color:#000!important;font-family:Arial,Helvetica,sans-serif!important}
+    body{width:100%;font-size:10px;line-height:1.15;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .bagging-print-title{text-align:center;line-height:1.12;margin:0 0 8px 0;color:#000;break-after:avoid;page-break-after:avoid}
+    .bagging-print-title .main{font-size:15px;font-weight:950;text-transform:uppercase;letter-spacing:.02em}
+    .bagging-print-title .company{font-size:12px;font-weight:900;margin-top:2px}
+    .bagging-print-title .date{font-size:12px;font-weight:850;margin-top:2px}
+    .bagging-schedule-wrap{display:grid;grid-template-columns:1fr;gap:5px;margin:0 0 8px 0}
+    .bagging-schedule-summary{border:1px solid #000;background:#fff;color:#000;font-size:10px;line-height:1.2;padding:5px 7px;margin:0;break-inside:avoid;page-break-inside:avoid;border-radius:7px}
+    .bagging-schedule-summary .title{font-weight:950;text-transform:uppercase;margin-bottom:4px;font-size:10px;color:#000}
+    .bagging-schedule-summary .warn{font-weight:900;color:#000;border:1px solid #000;border-radius:999px;padding:2px 6px;display:inline-block}
+    .bagging-schedule-summary .items{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
+    .bagging-schedule-summary .item{display:inline-flex;align-items:center;gap:4px;margin:0;font-weight:900;border:1px solid #000;border-radius:999px;padding:2px 6px;color:#000;background:#fff}
+    .bagging-schedule-summary .item .shift{font-weight:950}
+    .bagging-empty-section{border:1px dashed #000;color:#000;background:#fff;font-size:10px;padding:6px;text-align:center;margin:5px 0 9px;font-weight:800}
+    .bagging-regu-title .shift-label{font-weight:850;font-size:.9em}
+    .bagging-two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:5mm;align-items:start;width:100%;break-inside:avoid;page-break-inside:avoid}
+    .bagging-column{min-width:0;break-inside:avoid;page-break-inside:avoid}
+    .bagging-section-title{text-align:center;font-weight:950;font-size:12px;margin:6px 0 6px;text-transform:uppercase;color:#000;break-after:avoid;page-break-after:avoid}
+    .bagging-regu-title{font-weight:950;font-size:11px;margin:8px 0 0;padding:3px 6px;border:1px solid #000;border-bottom:0;background:#f5f5f5;text-transform:uppercase;color:#000;break-after:avoid;page-break-after:avoid}
+    .bagging-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:10px;background:#fff;color:#000;margin:0;break-inside:avoid;page-break-inside:avoid}
+    .bagging-table th,.bagging-table td{border:1px solid #000;padding:3px 4px;line-height:1.15;vertical-align:middle;text-align:center;min-height:15px;overflow:visible}
+    .bagging-table th{font-weight:950;background:#f5f5f5}
+    .bagging-table td.name{text-align:left;font-weight:750;white-space:normal!important;word-break:break-word;overflow-wrap:anywhere;font-size:9.5px}
+    .bagging-table th:nth-child(1),.bagging-table td:nth-child(1){width:24px}
+    .bagging-table th:nth-child(2),.bagging-table td:nth-child(2){width:42px}
+    .bagging-table th:nth-child(4),.bagging-table td:nth-child(4),.bagging-table th:nth-child(5),.bagging-table td:nth-child(5){width:54px}
+    .bagging-table th.duration-col,.bagging-table td.duration-col{width:50px}
+    .bagging-time-edit{display:inline!important;border:0!important;padding:0!important;background:transparent!important;min-height:0!important}
+    .bagging-print-note{display:none!important}
+  </style></head><body>${reportHtml}</body></html>`;
+}
+function printHtmlInHiddenFrame(html){
+  let frame=document.getElementById('baggingOffPrintFrame');
+  if(!frame){
+    frame=document.createElement('iframe');
+    frame.id='baggingOffPrintFrame';
+    frame.setAttribute('aria-hidden','true');
+    frame.style.position='fixed';
+    frame.style.right='0';
+    frame.style.bottom='0';
+    frame.style.width='0';
+    frame.style.height='0';
+    frame.style.border='0';
+    frame.style.opacity='0';
+    document.body.appendChild(frame);
+  }
+  const doc=frame.contentWindow.document;
+  doc.open();
+  doc.write(html);
+  doc.close();
+  setTimeout(()=>{
+    frame.contentWindow.focus();
+    frame.contentWindow.print();
+  },150);
+}
+function printBaggingOffReport(){
+  if(!hasPermission('printReports')){ alert('Akses ditolak. Role ini tidak boleh mencetak laporan.'); return; }
+  const sheet=$('baggingOffPrintSheet');
+  const body=$('baggingOffReportBody');
+  if(!sheet || !sheet.classList.contains('ready') || !body){
+    alert('Tampilkan laporan Bagging Off terlebih dahulu.');
+    return;
+  }
+  body.querySelectorAll('[data-bagging-nip][data-bagging-time]').forEach(el=>{
+    const val=normalizeTimeToHMS((el.textContent || '').trim()) || (el.textContent || '').trim();
+    el.textContent=val;
+    updateBaggingOffEditedDuration(el.getAttribute('data-bagging-nip'));
+  });
+  printHtmlInHiddenFrame(buildBaggingOffPrintDocument(body.innerHTML));
+}
+
 function renderAdminReport(){
   const unitKeyValue=$('adminReportUnitSelect') ? $('adminReportUnitSelect').value : adminManagedUnitKey;
   const dateValue=$('adminReportDate') ? $('adminReportDate').value : todayISO();
@@ -5205,7 +5766,7 @@ function printAdminAttendance(){
     alert('Gagal menyiapkan halaman print: ' + (err && err.message ? err.message : err));
   }
 }
-window.addEventListener('afterprint', ()=>document.body.classList.remove('print-report-only'));
+window.addEventListener('afterprint', ()=>{ document.body.classList.remove('print-report-only'); document.body.classList.remove('print-bagging-only'); });
 function getGlobalCheckStore(){ try{ const raw=localStorage.getItem(GLOBAL_CHECK_TIMES_KEY); const data=raw?JSON.parse(raw):{}; return data && typeof data==='object' ? data : {}; }catch(err){ return {}; } }
 function setGlobalCheckStore(store){ try{ localStorage.setItem(GLOBAL_CHECK_TIMES_KEY, JSON.stringify(store || {})); }catch(err){ console.warn('Cache Cek In/Out global lokal gagal disimpan.', err); } }
 function getGlobalCheckTimesForDate(dateValue){ const store=getGlobalCheckStore(); return (dateValue && store[dateValue] && typeof store[dateValue]==='object') ? store[dateValue] : {}; }
@@ -5470,6 +6031,56 @@ function statusClassMachine(status){
 let lastMachineImportPreviewResult=null;
 function machineImportAllowedStatus(status){ return ['Cocok','Cek In tidak ditemukan','Cek Out tidak ditemukan'].includes(String(status||'')); }
 function validMachinePreviewRows(rows){ return (rows||[]).filter(r=>r && machineImportAllowedStatus(r.status) && String(r.nip||'').trim() && (normalizeTimeToHMS(r.checkIn||'') || normalizeTimeToHMS(r.checkOut||''))); }
+
+function baggingOffMachineRowsFromScans(scansByNip, dateValue, scheduledNips){
+  const rows=[];
+  const master=Array.isArray(BAGGING_OFF_MASTER) ? BAGGING_OFF_MASTER : [];
+  master.forEach(m=>{
+    const originalNip=String(m.nip||'').trim();
+    const nip=normalizeNipForMatch(originalNip);
+    if(!nip) return;
+    if(scheduledNips && scheduledNips.has(nip)) return;
+    // v156: jendela Bagging Off diperpanjang sampai 36 jam supaya Cek Out Shift 2/3
+    // yang lewat tengah malam, misalnya 12/05 07:00:45 untuk laporan 11/05, tetap terbaca.
+    const scans=(scansByNip[nip]||[])
+      .map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)}))
+      .filter(scan=>scan.abs>=0 && scan.abs<=36*3600)
+      .sort((a,b)=>a.abs-b.abs);
+    if(!scans.length) return;
+    const ins=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs);
+    const firstIn=ins[0] || null;
+    const outs=scans.filter(scan=>String(scan.loc)==='2' && (!firstIn || scan.abs>=firstIn.abs)).sort((a,b)=>b.abs-a.abs);
+    const lastOut=outs[0] || null;
+    if(!firstIn && !lastOut) return;
+    let status='Cocok';
+    if(!firstIn) status='Cek In tidak ditemukan';
+    else if(!lastOut) status='Cek Out tidak ditemukan';
+    rows.push({
+      date:dateValue,
+      unitKey:'bagging_off',
+      unitName:'Bagging Off Buhler & Breeder',
+      sourceUnitKey:'bagging_off',
+      activityKey:'bagging_off',
+      activityLabel:'Bagging Off',
+      s1:false,
+      s2:false,
+      s3:false,
+      nip:originalNip || nip,
+      matchNip:nip,
+      name:m.nama || '',
+      kegiatan:(m.jenis==='BUHLER' ? 'Bagging Off Buhler' : 'Bagging Off Breeder') + ' Regu ' + (m.regu || ''),
+      shift:'Bagging Off',
+      checkIn:firstIn ? normalizeTimeToHMS(firstIn.time) : '',
+      checkOut:lastOut ? normalizeTimeToHMS(lastOut.time) : '',
+      duration:(firstIn && lastOut) ? formatDurationAbsHMS(firstIn.abs, lastOut.abs) : '',
+      status,
+      source:'bagging_off_master'
+    });
+    if(scheduledNips) scheduledNips.add(nip);
+  });
+  return rows;
+}
+
 let lastCheckInOutSummaryResult=null;
 function setAdminCheckTimesSourceInfo(message){
   const text=message || 'Manual / belum ada pengisian otomatis.';
@@ -5806,6 +6417,9 @@ async function buildMachineImportPreviewFromFile(file, dateValue){
       });
     });
   }
+  const baggingRows=baggingOffMachineRowsFromScans(scansByNip, dateValue, scheduledNips);
+  baggingRows.forEach(row=>preview.push(row));
+  totalSchedules+=baggingRows.length;
   Object.keys(scansByNip).sort((a,b)=>(parseInt(a,10)||999999)-(parseInt(b,10)||999999)).forEach(nip=>{
     if(scheduledNips.has(normalizeNipForMatch(nip))) return;
     const scans=scansByNip[nip].map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)})).filter(scan=>scan.date===dateValue || dateDiffDays(scan.date,dateValue)===1);
@@ -5822,6 +6436,62 @@ async function buildMachineImportPreviewFromFile(file, dateValue){
   const validImport=validMachinePreviewRows(preview).length;
   const warn=preview.filter(r=>r.status!=='Cocok').length;
   return { rows:preview, parsed, totalSchedules, ok, noIn, noOut, validImport, warn, dateValue, summary:`Global semua kegiatan • Jadwal ${totalSchedules} • Scan ${parsed.scans.length} • Cocok ${ok} • In kosong ${noIn} • Out kosong ${noOut} • Siap import ${validImport} • Perlu cek ${warn}` };
+}
+function cloneRowsForAutoFill(rows){ return (rows||[]).map(r=>({...r})); }
+function autoFillMissingImportCheckTimes(rows, options){
+  const opts=options || {};
+  const targetRows=opts.mutate ? (rows||[]) : cloneRowsForAutoFill(rows);
+  function norm(row, kind){ return normalizeTimeToHMS(kind==='in' ? (row && row.checkIn || '') : (row && row.checkOut || '')); }
+  function groupKey(row, level){
+    if(level==='sameActivity') return [row.date||'', row.sourceUnitKey||row.unitKey||'', row.activityKey||'', row.kegiatan||row.activityLabel||'', row.shift||''].join('|');
+    if(level==='sameUnitShift') return [row.date||'', row.sourceUnitKey||row.unitKey||'', row.shift||''].join('|');
+    if(level==='sameDateShift') return [row.date||'', row.shift||''].join('|');
+    return [row.date||''].join('|');
+  }
+  function poolFor(row, kind){
+    const levels=['sameActivity','sameUnitShift','sameDateShift','sameDate'];
+    for(const level of levels){
+      const key=groupKey(row, level);
+      const values=targetRows.filter(r=>r!==row && groupKey(r,level)===key).map(r=>norm(r,kind)).filter(Boolean);
+      if(values.length) return values;
+    }
+    return targetRows.map(r=>norm(r,kind)).filter(Boolean);
+  }
+  let filledIn=0, filledOut=0;
+  targetRows.forEach((row, idx)=>{
+    if(!row || !String(row.nip||'').trim()) return;
+    const beforeIn=norm(row,'in');
+    const beforeOut=norm(row,'out');
+    if(!beforeIn && beforeOut){
+      const val=autoFillTimeFromPool(poolFor(row,'in'), (row.nip||'')+'|import|in|'+idx+'|'+(row.date||''));
+      if(val){ row.checkIn=val; row.autoFilledCheckIn=true; filledIn++; }
+    }else if(beforeIn){ row.checkIn=beforeIn; }
+    if(!beforeOut && beforeIn){
+      const val=autoFillTimeFromPool(poolFor(row,'out'), (row.nip||'')+'|import|out|'+idx+'|'+(row.date||''));
+      if(val){ row.checkOut=val; row.autoFilledCheckOut=true; filledOut++; }
+    }else if(beforeOut){ row.checkOut=beforeOut; }
+    if(row.autoFilledCheckIn || row.autoFilledCheckOut){
+      row.status='Cocok';
+      const note=[];
+      if(row.autoFilledCheckIn) note.push('Cek In otomatis dari NIP lain');
+      if(row.autoFilledCheckOut) note.push('Cek Out otomatis dari NIP lain');
+      row.autoFillNote=note.join(', ');
+      row.duration=(normalizeTimeToHMS(row.checkIn||'') && normalizeTimeToHMS(row.checkOut||'')) ? durationHHMMSS(row.checkIn,row.checkOut) : (row.duration||'');
+    }
+  });
+  return {rows:targetRows, filledIn, filledOut, totalFilled:filledIn+filledOut};
+}
+function autoFillMissingGlobalCheckMap(rawMap){
+  const rows=Object.keys(rawMap||{}).map(nip=>({nip, date:'', checkIn:rawMap[nip]&&rawMap[nip].checkIn, checkOut:rawMap[nip]&&rawMap[nip].checkOut}));
+  const res=autoFillMissingImportCheckTimes(rows, {mutate:true});
+  const map={...(rawMap||{})};
+  rows.forEach(r=>{
+    if(!map[r.nip]) map[r.nip]={};
+    if(r.checkIn) map[r.nip].checkIn=normalizeTimeToHMS(r.checkIn);
+    if(r.checkOut) map[r.nip].checkOut=normalizeTimeToHMS(r.checkOut);
+    if(r.autoFilledCheckIn || r.autoFilledCheckOut) map[r.nip].autoFillNote=r.autoFillNote || 'Otomatis dari data NIP lain';
+  });
+  return {map, filledIn:res.filledIn, filledOut:res.filledOut, totalFilled:res.totalFilled};
 }
 async function adminPreviewMachineImport(){
   if(!requirePermission('importData','Preview import mesin absensi hanya untuk admin.')) return;
@@ -5860,6 +6530,8 @@ async function adminImportMachinePreviewToCheckTimes(){
       lastMachineImportPreviewResult={...result, fileName:file.name || '', fileSize:file.size || 0, fileType:file.type || '', generatedAtLocal:new Date().toISOString()};
       renderMachineImportPreview(result);
     }
+    const autoFill=autoFillMissingImportCheckTimes(result.rows, {mutate:true});
+    if(autoFill.totalFilled){ renderMachineImportPreview(result); }
     const validRows=validMachinePreviewRows(result.rows);
     const skippedRows=(result.rows||[]).length-validRows.length;
     const byDate={};
@@ -5877,7 +6549,7 @@ async function adminImportMachinePreviewToCheckTimes(){
       action:'import_machine_preview', status:'success', fileName:file.name || '', fileSize:file.size || 0, fileType:file.type || '', fallbackDate:dateValue,
       dates:Object.keys(byDate), dateCounts, importedRows:validRows.length, skippedRows, duplicateRows:duplicates.length,
       totalRows:(result.rows||[]).length, appliedRows:0,
-      note:'Import hasil Preview Data Mesin ke Cek In/Out. Status valid: Cocok, Cek In tidak ditemukan, Cek Out tidak ditemukan. Format jam HH:MM:SS.'
+      note:`Import hasil Preview Data Mesin ke Cek In/Out. Jam kosong otomatis diisi acak berdasarkan data Cek In/Cek Out NIP lain jika tersedia. Auto In: ${autoFill.filledIn}, Auto Out: ${autoFill.filledOut}. Format jam HH:MM:SS.`
     };
     if(!validRows.length){
       historyPayload.status='failed'; historyPayload.errorMessage='Tidak ada baris preview dengan status valid yang bisa diimpor.';
@@ -5890,6 +6562,8 @@ async function adminImportMachinePreviewToCheckTimes(){
 Tanggal: ${dateValue}
 Siap import: ${validRows.length} NIP
 Dilewati: ${skippedRows}
+Auto isi Cek In kosong: ${autoFill.filledIn}
+Auto isi Cek Out kosong: ${autoFill.filledOut}
 
 Jam akan disimpan dalam format HH:MM:SS.`)) return;
     for(const d of Object.keys(byDate)){
@@ -5902,11 +6576,13 @@ Jam akan disimpan dalam format HH:MM:SS.`)) return;
     historyPayload.appliedRows=applied;
     await recordCheckImportHistory(historyPayload);
     await renderGlobalCheckImportHistory(false);
-    await updateGlobalCheckInfo(`Import hasil preview mesin selesai. ${validRows.length} NIP valid disimpan. ${applied} pekerja diterapkan ke laporan yang sedang dibuka.`);
-    adminLog(`Import hasil Preview Data Mesin selesai. Tanggal: ${Object.keys(byDate).join(', ')}. Valid: ${validRows.length}. Dilewati: ${skippedRows}. Riwayat import tersimpan.`);
+    await updateGlobalCheckInfo(`Import hasil preview mesin selesai. ${validRows.length} NIP valid disimpan. Auto isi kosong: ${autoFill.totalFilled}. ${applied} pekerja diterapkan ke laporan yang sedang dibuka.`);
+    adminLog(`Import hasil Preview Data Mesin selesai. Tanggal: ${Object.keys(byDate).join(', ')}. Valid: ${validRows.length}. Auto isi kosong: ${autoFill.totalFilled}. Dilewati: ${skippedRows}. Riwayat import tersimpan.`);
     alert(`Import hasil Preview Data Mesin selesai.
 
 ${validRows.length} NIP valid disimpan.
+Auto isi Cek In kosong: ${autoFill.filledIn}
+Auto isi Cek Out kosong: ${autoFill.filledOut}
 ${applied} pekerja diterapkan ke laporan yang sedang dibuka.
 Riwayat import tersimpan.`);
   }catch(err){
@@ -5929,11 +6605,17 @@ async function adminImportGlobalCheckTimes(){
     if(btn){ btn.disabled=true; btn.textContent='Mengimpor...'; }
     const rows=await readImportRows(file);
     const parsed=checkMapFromImportRows(rows, fallbackDate);
+    let rekapAutoFillTotal=0, rekapAutoFillIn=0, rekapAutoFillOut=0;
+    Object.keys(parsed.byDate||{}).forEach(dateKey=>{
+      const res=autoFillMissingGlobalCheckMap(parsed.byDate[dateKey]);
+      parsed.byDate[dateKey]=res.map;
+      rekapAutoFillTotal+=res.totalFilled; rekapAutoFillIn+=res.filledIn; rekapAutoFillOut+=res.filledOut;
+    });
     historyPayload={
       action:'import', status:'success', fileName:file.name || '', fileSize:file.size || 0, fileType:file.type || '', fallbackDate,
       dates:Object.keys(parsed.byDate || {}), dateCounts:parsed.dateCounts || {}, importedRows:parsed.imported,
       skippedRows:(parsed.skipped||[]).length, duplicateRows:(parsed.duplicates||[]).length, totalRows:parsed.totalRows || rows.length,
-      appliedRows:0, note:'Import rekap Cek In/Out global'
+      appliedRows:0, note:`Import rekap Cek In/Out global. Jam kosong otomatis diisi acak dari NIP lain jika tersedia. Auto In: ${rekapAutoFillIn}, Auto Out: ${rekapAutoFillOut}.`
     };
     if(!parsed.imported){
       historyPayload.status='failed'; historyPayload.errorMessage='Tidak ada data valid yang bisa diimpor.';
@@ -5950,9 +6632,13 @@ async function adminImportGlobalCheckTimes(){
     historyPayload.appliedRows=applied;
     await recordCheckImportHistory(historyPayload);
     await renderGlobalCheckImportHistory(false);
-    await updateGlobalCheckInfo(`Import selesai. ${parsed.imported} baris valid disimpan. ${applied} pekerja cocok dengan laporan yang sedang dibuka.`);
-    adminLog(`Import Rekap Cek In/Out selesai. ${parsed.imported} baris valid. Tanggal: ${Object.keys(parsed.byDate).join(', ')}. Riwayat import tersimpan.`);
-    alert(`Import Rekap Cek In/Out selesai. ${parsed.imported} baris valid disimpan. ${applied} pekerja cocok dengan laporan yang sedang dibuka. Riwayat import tersimpan.`);
+    await updateGlobalCheckInfo(`Import selesai. ${parsed.imported} baris valid disimpan. Auto isi kosong: ${rekapAutoFillTotal}. ${applied} pekerja cocok dengan laporan yang sedang dibuka.`);
+    adminLog(`Import Rekap Cek In/Out selesai. ${parsed.imported} baris valid. Auto isi kosong: ${rekapAutoFillTotal}. Tanggal: ${Object.keys(parsed.byDate).join(', ')}. Riwayat import tersimpan.`);
+    alert(`Import Rekap Cek In/Out selesai. ${parsed.imported} baris valid disimpan.
+Auto isi Cek In kosong: ${rekapAutoFillIn}
+Auto isi Cek Out kosong: ${rekapAutoFillOut}
+${applied} pekerja cocok dengan laporan yang sedang dibuka.
+Riwayat import tersimpan.`);
   }catch(err){
     console.error(err);
     if(historyPayload){ historyPayload.status='failed'; historyPayload.errorMessage=err && err.message ? err.message : String(err); await recordCheckImportHistory(historyPayload).catch(()=>{}); await renderGlobalCheckImportHistory(false).catch(()=>{}); }
@@ -6701,10 +7387,11 @@ document.addEventListener('change', async e=>{
   if(e.target.matches('#selectFreelance') && e.target.value){ fillForm(e.target.value); }
 });
 syncAdminAttendanceOptionCheckboxes(); refreshAdminAttendanceOptionsFromFirestore().catch(err=>console.warn('Load opsi admin Firestore gagal.', err)); if($('adminAutoUseS3')) $('adminAutoUseS3').addEventListener('change', e=>{ adminAttendanceOptions.autoShift3=!!e.target.checked; saveAdminAttendanceOptionsToFirestore().catch(err=>console.warn('Simpan opsi Shift 3 Firestore gagal.', err)); }); if($('adminShowDurationReport')) $('adminShowDurationReport').addEventListener('change', e=>{ adminAttendanceOptions.showDuration=!!e.target.checked; saveAdminAttendanceOptionsToFirestore().catch(err=>console.warn('Simpan opsi durasi Firestore gagal.', err)); renderReport(); }); ['adminAutoInMinBefore','adminAutoInMaxBefore','adminAutoOutMinAfter','adminAutoOutMaxAfter'].forEach(id=>{ if($(id)) $(id).addEventListener('change', ()=>{ getAdminAutoRandomOptions(); saveAdminAttendanceOptionsToFirestore().catch(err=>console.warn('Simpan aturan acak otomatis gagal.', err)); }); });
+if($('baggingOffDate')) $('baggingOffDate').value = ($('adminReportDate') && $('adminReportDate').value) || todayISO(); initBaggingScheduleImportControls();
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); initBaggingScheduleImportControls(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday);
 document.addEventListener('input', e=>{ if(e && e.target && e.target.matches && e.target.matches('[data-check-nip]')) setAdminCheckTimesSourceInfo('Manual'); });
 let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu install belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }
