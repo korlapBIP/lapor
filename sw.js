@@ -1,4 +1,4 @@
-const CACHE_NAME = 'absensi-bip-v164_clear_report_check_times';
+const CACHE_NAME = 'absensi-bip-v169_bagging_upah_selisih';
 const APP_ASSETS=['./','./index.html','./manifest.json','./firebase-config.js','./firebase-bridge.js','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-master-transparent.png'];
 self.addEventListener('install', event=>{ event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_ASSETS))); self.skipWaiting(); });
 self.addEventListener('activate', event=>{ event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k))))); self.clients.claim(); });

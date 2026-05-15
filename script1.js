@@ -986,6 +986,8 @@
 .upah-result-pill .value{font-size:20px;color:#0f172a;font-weight:950;line-height:1.2;}
 .upah-result-pill .note{margin-top:5px;color:#475569;font-size:12px;font-weight:850;line-height:1.35;}
 @media(max-width:720px){.upah-result-grid{grid-template-columns:1fr}}
+.upah-selisih-note{margin:10px 0 2px;font-weight:950;color:#0f172a;text-align:left;font-size:13px;letter-spacing:.02em;}
+
 .upah-excel-table td{
   border:1px solid #d7dee9!important;
   background:#fff;
@@ -1192,7 +1194,7 @@
   <section id="panelBaggingOff" class="panel admin-only">
     <section class="frame report-frame bagging-report-frame">
       <div class="frame-head no-print"><div><div class="frame-kicker">Laporan Khusus</div><h2>Bagging Off Buhler &amp; Breeder</h2></div><div class="frame-number">BO</div></div>
-      <div class="card admin-only no-print bagging-control-card bagging-import-card" id="baggingScheduleImportCard"><div class="card-head"><h3>Import Jadwal Bagging Bulanan</h3><span>Excel: baris 1 tanggal, isi 1=Shift 1, 2=Shift 2</span></div><div class="card-body">
+      <div class="card admin-only no-print bagging-control-card bagging-import-card" id="baggingScheduleImportCard"><div class="card-head"><h3>Import Jadwal</h3></div><div class="card-body">
         <div class="bagging-schedule-grid">
           <div class="bagging-schedule-box">
             <h4>Jadwal Bagging Off Buhler</h4>
@@ -1216,11 +1218,11 @@
           </div>
         </div>
       </div></div>
-      <div class="card admin-only no-print bagging-control-card bagging-absensi-card" id="baggingOffControlCard"><div class="card-head"><h3>Absensi Bagging Off Buhler &amp; Breeder</h3><span>v161 • teks info dirapikan</span></div><div class="card-body">
+      <div class="card admin-only no-print bagging-control-card bagging-absensi-card" id="baggingOffControlCard"><div class="card-head"><h3>Absensi Bagging Off</h3><span>v161 • teks info dirapikan</span></div><div class="card-body">
         <div class="bagging-absensi-actions">
           <div class="bagging-absensi-row bagging-absensi-row-top">
             <div class="field bagging-date-field"><label for="baggingOffDate">Tanggal Laporan</label><input id="baggingOffDate" type="date"></div>
-            <div class="field bagging-load-field"><label>&nbsp;</label><button type="button" class="btn primary full" id="btnBaggingOffLoad">🔍 Tampilkan Laporan</button></div>
+            <div class="field bagging-load-field"><label>&nbsp;</label><button type="button" class="btn primary full" id="btnBaggingOffLoad">🔍 Tampilkan</button></div>
           </div>
           <div class="bagging-absensi-row bagging-absensi-row-bottom">
             <label class="bagging-duration-option"><input id="baggingOffShowDuration" type="checkbox"> <span>Tampilkan Durasi</span></label>
@@ -1229,9 +1231,9 @@
         </div>
         <div class="bagging-report-info" id="baggingOffInfo"></div>
       </div></div>
-      <div class="card print-sheet bagging-print-sheet report-preview" id="baggingOffPrintSheet"><div class="card-head no-print"><h3>Laporan Bagging Off Buhler &amp; Breeder</h3></div><div class="card-body" id="baggingOffReportBody">
+      <div class="card print-sheet bagging-print-sheet report-preview" id="baggingOffPrintSheet"><div class="card-head no-print"><h3>Laporan Bagging Off</h3></div><div class="card-body" id="baggingOffReportBody">
         <div class="bagging-print-title"><div class="main">ABSENSI KEGIATAN BAGGING OFF BUHLER DAN BREEDER - TAP JAHIT</div><div class="company">PT. BUDI INTI PERKASA</div><div class="date" id="baggingOffDateText">HARI - TANGGAL</div></div>
-        <div class="empty" style="text-align:center;color:#64748b;padding:20px">Pilih tanggal lalu klik Tampilkan Laporan.</div>
+        <div class="empty" style="text-align:center;color:#64748b;padding:20px">Pilih tanggal lalu klik Tampilkan.</div>
       </div></div>
 
     </section>
@@ -1253,7 +1255,7 @@
       </div></div>
       <div class="card upah-card print-sheet report-preview upah-preview"><div class="card-head no-print"><h3>Rules of ⬆️ 1 ⬆️ 2</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span><strong id="upahSelectedCountBadge">0</strong> pekerja</span><button type="button" class="btn small" id="btnToggleUpahRules">Show</button></div></div><div id="upahPreviewBody" style="display:none;"><div class="print-title"><div class="main" id="upahMainTitle">Rules of ⬆️ 1 ⬆️ 2</div><div class="company" id="upahCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="upahDateText">HARI - TANGGAL</div><div class="coordinator" id="upahCoordinatorText"></div></div><div class="table-wrap"><table class="report-table upah-excel-table" id="upahTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th></tr></thead><tbody id="upahBody"><tr><td colspan="6" style="height:42px;color:#65758b">Pilih Bagian / Koordinator dan Tanggal Absensi, lalu klik Tampilkan.</td></tr></tbody><tfoot class="report-summary upah-summary" id="upahFoot"><tr><td class="left-label" colspan="3">TOTAL</td><td id="upahSumS1">0</td><td id="upahSumS2">0</td><td id="upahSumS3">0</td></tr></tfoot></table></div></div></div>
       <div class="upah-calculator-card no-print">
-        <div class="upah-calculator-title"><div>Input Perhitungan Upah</div></div>
+        <div class="upah-calculator-title"><div>Input Tonase</div></div>
         <div class="upah-tonase-box">
           <div class="field"><label for="adminUpahTonaseS1">Tonase Pagi</label><input id="adminUpahTonaseS1" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
           <div class="field"><label for="adminUpahBiayaS1">Biaya lain</label><input id="adminUpahBiayaS1" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
@@ -1265,7 +1267,7 @@
           <div id="upahResultInfoBody"></div>
         </div>
       </div>
-      <div class="card upah-card print-sheet report-preview upah-calc-preview" id="upahCalcCard" style="display:none"><div class="card-head no-print"><h3>Tabel Hasil Perhitungan Upah</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><button type="button" class="btn dark small" id="btnPrintUpahCalc">🖨️ Cetak</button><button type="button" class="btn primary small" id="btnExportUpahExcel">Export to Excel</button></div></div><div class="table-wrap"><table class="report-table upah-excel-table" id="upahCalcTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>GAJI</th><th>LEMBUR</th><th>TOTAL</th><th>KURANG</th><th>TAMBAH</th><th>NETTO</th></tr></thead><tbody id="upahCalcBody"></tbody><tfoot class="report-summary"><tr><td class="left-label" colspan="3">TOTAL</td><td id="upahCalcTotalGaji">0</td><td id="upahCalcTotalLembur">0</td><td id="upahCalcTotalBruto">0</td><td id="upahCalcTotalKurang">0</td><td id="upahCalcTotalTambah">0</td><td id="upahCalcTotalNetto">0</td></tr></tfoot></table></div></div>
+      <div class="card upah-card print-sheet report-preview upah-calc-preview" id="upahCalcCard" style="display:none"><div class="card-head no-print"><h3>Kalkulator Upah</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><button type="button" class="btn dark small" id="btnPrintUpahCalc">🖨️ Cetak</button><button type="button" class="btn primary small" id="btnExportUpahExcel">Export to Excel</button></div></div><div class="table-wrap"><table class="report-table upah-excel-table" id="upahCalcTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>GAJI</th><th>LEMBUR</th><th>TOTAL</th><th>KURANG</th><th>TAMBAH</th><th>NETTO</th></tr></thead><tbody id="upahCalcBody"></tbody><tfoot class="report-summary"><tr><td class="left-label" colspan="3">TOTAL</td><td id="upahCalcTotalGaji">0</td><td id="upahCalcTotalLembur">0</td><td id="upahCalcTotalBruto">0</td><td id="upahCalcTotalKurang">0</td><td id="upahCalcTotalTambah">0</td><td id="upahCalcTotalNetto">0</td></tr></tfoot></table></div><div class="upah-selisih-note" id="upahCalcSelisihNote">NOTE : SELISIH = 0</div></div>
     </section>
   </section>
 
@@ -4255,11 +4257,11 @@ async function loadBaggingOffReport(){
     console.error(err);
     alert('Gagal memuat laporan Bagging Off: '+(err && err.message ? err.message : err));
   }finally{
-    if(btn){ btn.disabled=false; btn.textContent=old || '🔍 Tampilkan Laporan'; }
+    if(btn){ btn.disabled=false; btn.textContent=old || '🔍 Tampilkan'; }
   }
 }
 function buildBaggingOffPrintDocument(reportHtml){
-  return `<!doctype html><html><head><meta charset="utf-8"><title>Laporan Bagging Off Buhler & Breeder</title><style>
+  return `<!doctype html><html><head><meta charset="utf-8"><title>Laporan Bagging Off</title><style>
     /* v160 - Info jadwal Bagging dibuat interaktif dan ukuran tulisan dikembalikan normal. */
     @page{size:A4 portrait;margin:7mm 6mm 7mm 6mm}
     *{box-sizing:border-box}
@@ -4566,7 +4568,10 @@ function applyDefaultUpahAdjustments(row, options){
   const opts=options || {};
   const allowOverwrite=opts.overwrite===true;
   if(isFixedUpahKurangRow(row) && (allowOverwrite || !parseUpahNumber(row.kurang))) row.kurang=20000;
-  if(isFixedUpahTambahRow(row) && (allowOverwrite || !parseUpahNumber(row.tambah))) row.tambah=20000;
+  if(isFixedUpahTambahRow(row)){
+    if(allowOverwrite || !parseUpahNumber(row.tambah)) row.tambah=20000;
+    if(allowOverwrite) row.kurang=0;
+  }
   row.netto=roundUpahNetto(Number(row.total||0)-Number(row.kurang||0)+Number(row.tambah||0));
   return row;
 }
@@ -4596,6 +4601,40 @@ function mergeSavedUpahCalcRows(defaultRows){
     r.netto=roundUpahNetto(Number(r.total||0)-Number(r.kurang||0)+Number(r.tambah||0));
     return r;
   });
+}
+function calculateUpahTotalNettoRows(rows){
+  return (Array.isArray(rows) ? rows : []).reduce((sum,r)=>sum+roundUpahNetto(Number(r.total||0)-Number(r.kurang||0)+Number(r.tambah||0)),0);
+}
+function applyUpahTonaseNettoSelisihAdjustment(rows, totalTonase){
+  const list=Array.isArray(rows) ? rows : [];
+  const target=roundUpahNetto(totalTonase);
+  const sholeh=list.find(r=>isFixedUpahTambahRow(r));
+  if(!sholeh) return {rows:list, selisih:0, mode:'none', target};
+  // Reset adjustment khusus Moch. Sholeh sebelum menghitung selisih, agar tidak dobel saat Calculate diulang.
+  sholeh.tambah=20000;
+  sholeh.kurang=0;
+  list.forEach(r=>{ r.netto=roundUpahNetto(Number(r.total||0)-Number(r.kurang||0)+Number(r.tambah||0)); });
+  const totalNetto=calculateUpahTotalNettoRows(list);
+  const diff=roundUpahNetto(target-totalNetto);
+  const selisih=Math.abs(diff);
+  if(diff>0){
+    sholeh.tambah=20000+selisih;
+    sholeh.kurang=0;
+  }else if(diff<0){
+    sholeh.tambah=20000;
+    sholeh.kurang=selisih;
+  }
+  sholeh.netto=roundUpahNetto(Number(sholeh.total||0)-Number(sholeh.kurang||0)+Number(sholeh.tambah||0));
+  list.forEach(r=>{ r.netto=roundUpahNetto(Number(r.total||0)-Number(r.kurang||0)+Number(r.tambah||0)); });
+  return {rows:list, selisih, mode:diff>0?'tambah':(diff<0?'kurang':'pas'), target};
+}
+function updateUpahCalcSelisihNote(totalTonase, totalNetto){
+  const el=$('upahCalcSelisihNote');
+  if(!el) return;
+  const manualSelisih=Number(window.__lastUpahSelisih||0);
+  const diff=roundUpahNetto(Number(totalTonase||0)-Number(totalNetto||0));
+  const nilai=manualSelisih || Math.abs(diff);
+  el.textContent=`NOTE : SELISIH = ${formatUpahIntegerNumber(nilai)}`;
 }
 function setUpahRulesPreviewVisible(visible){
   const body=$('upahPreviewBody');
@@ -4636,7 +4675,7 @@ function renderUpahTable(unitName, dateValue, rows, emptyMsg, options){
 function roundUpahValue(value){
   const num=Number(value || 0);
   if(!Number.isFinite(num)) return 0;
-  return Math.round((num + Number.EPSILON) * 100) / 100;
+  return Math.round(num);
 }
 function roundUpahNetto(value){
   const num=Number(value || 0);
@@ -4651,8 +4690,8 @@ function renderUpahResultInfo(finalTonase, totalS1, totalS2, nilaiS1Raw, nilaiS2
   body.innerHTML=`
     <div class="upah-result-grid">
       <div class="upah-result-pill"><small>Total Tonase</small><div class="value">${formatUpahNumber(totalFinal)}</div><div class="note">Tonase Pagi + Tonase Siang setelah dikurangi biaya lain.</div></div>
-      <div class="upah-result-pill"><small>Upah Pagi</small><div class="value">${formatUpahDecimalNumber(nilaiS1Rounded)}</div><div class="note">${formatUpahNumber(finalTonase.finalS1)} / ${formatUpahNumber(totalS1)} pekerja = ${formatUpahDecimalNumber(nilaiS1Raw)}</div></div>
-      <div class="upah-result-pill"><small>Upah Siang</small><div class="value">${formatUpahDecimalNumber(nilaiS2Rounded)}</div><div class="note">${formatUpahNumber(finalTonase.finalS2)} / ${formatUpahNumber(totalS2)} pekerja = ${formatUpahDecimalNumber(nilaiS2Raw)}</div></div>
+      <div class="upah-result-pill"><small>Upah Pagi</small><div class="value">${formatUpahIntegerNumber(nilaiS1Rounded)}</div><div class="note">${formatUpahNumber(finalTonase.finalS1)} / ${formatUpahNumber(totalS1)} pekerja = ${formatUpahDecimalNumber(nilaiS1Raw)}</div></div>
+      <div class="upah-result-pill"><small>Upah Siang</small><div class="value">${formatUpahIntegerNumber(nilaiS2Rounded)}</div><div class="note">${formatUpahNumber(finalTonase.finalS2)} / ${formatUpahNumber(totalS2)} pekerja = ${formatUpahDecimalNumber(nilaiS2Raw)}</div></div>
     </div>
   `;
   card.style.display='block';
@@ -4677,6 +4716,10 @@ function calculateAdminUpah(){
     return applyDefaultUpahAdjustments({ no:w.no, nip:String(w.nip || ''), nama:String(w.name || ''), gaji, lembur, total, kurang:0, tambah:0, netto:roundUpahNetto(total) }, {overwrite:true});
   });
   adminUpahCalculationRows=mergeSavedUpahCalcRows(defaultCalcRows);
+  const totalTonaseFinal=roundUpahNetto(Number(finalTonase.finalS1||0)+Number(finalTonase.finalS2||0));
+  const selisihInfo=applyUpahTonaseNettoSelisihAdjustment(adminUpahCalculationRows, totalTonaseFinal);
+  adminUpahCalculationRows=selisihInfo.rows;
+  window.__lastUpahSelisih=Number(selisihInfo.selisih||0);
   const body=$('upahCalcBody');
   if(body){
     body.innerHTML='';
@@ -4684,7 +4727,7 @@ function calculateAdminUpah(){
       const tr=document.createElement('tr');
       const kurangDefault=isFixedUpahKurangRow(row);
       const tambahDefault=isFixedUpahTambahRow(row);
-      tr.innerHTML=`<td>${safeText(row.no)}</td><td>${safeText(row.nip)}</td><td class="name">${safeText(row.nama)}</td><td>${formatUpahDecimalNumber(row.gaji)}</td><td>${formatUpahDecimalNumber(row.lembur)}</td><td>${formatUpahDecimalNumber(row.total)}</td><td contenteditable="true" data-field="kurang" class="upah-adjust-cell ${kurangDefault?'upah-fixed-cell':''}" title="${kurangDefault?'Default 20.000, bisa diubah':''}">${formatUpahIntegerNumber(row.kurang)}</td><td contenteditable="true" data-field="tambah" class="upah-adjust-cell ${tambahDefault?'upah-fixed-cell':''}" title="${tambahDefault?'Default 20.000, bisa diubah':''}">${formatUpahIntegerNumber(row.tambah)}</td><td>${formatUpahIntegerNumber(row.netto)}</td>`;
+      tr.innerHTML=`<td>${safeText(row.no)}</td><td>${safeText(row.nip)}</td><td class="name">${safeText(row.nama)}</td><td>${formatUpahIntegerNumber(row.gaji)}</td><td>${formatUpahIntegerNumber(row.lembur)}</td><td>${formatUpahIntegerNumber(row.total)}</td><td contenteditable="true" data-field="kurang" class="upah-adjust-cell ${kurangDefault?'upah-fixed-cell':''}" title="${kurangDefault?'Default 20.000, bisa diubah':''}">${formatUpahIntegerNumber(row.kurang)}</td><td contenteditable="true" data-field="tambah" class="upah-adjust-cell ${tambahDefault?'Default 20.000 +/− selisih, bisa diubah':''}" title="${tambahDefault?'Default 20.000 +/− selisih, bisa diubah':''}">${formatUpahIntegerNumber(row.tambah)}</td><td>${formatUpahIntegerNumber(row.netto)}</td>`;
       tr.querySelectorAll('td.upah-adjust-cell').forEach(td=>{
         td.addEventListener('input', ()=>{ updateUpahCalcFooterFromTable(); saveUpahCalcRowsToLocal(); });
         td.addEventListener('blur', ()=>{ td.textContent=formatUpahIntegerNumber(parseUpahNumber(td.textContent)); updateUpahCalcFooterFromTable(); saveUpahCalcRowsToLocal(); });
@@ -4719,12 +4762,20 @@ function readUpahCalcRowsFromTable(){
 }
 function updateUpahCalcFooterFromTable(){
   const rows=readUpahCalcRowsFromTable();
-  if($('upahCalcTotalGaji')) $('upahCalcTotalGaji').textContent=formatUpahDecimalNumber(rows.reduce((s,r)=>s+r.gaji,0));
-  if($('upahCalcTotalLembur')) $('upahCalcTotalLembur').textContent=formatUpahDecimalNumber(rows.reduce((s,r)=>s+r.lembur,0));
-  if($('upahCalcTotalBruto')) $('upahCalcTotalBruto').textContent=formatUpahDecimalNumber(rows.reduce((s,r)=>s+r.total,0));
-  if($('upahCalcTotalKurang')) $('upahCalcTotalKurang').textContent=formatUpahIntegerNumber(rows.reduce((s,r)=>s+r.kurang,0));
-  if($('upahCalcTotalTambah')) $('upahCalcTotalTambah').textContent=formatUpahIntegerNumber(rows.reduce((s,r)=>s+r.tambah,0));
-  if($('upahCalcTotalNetto')) $('upahCalcTotalNetto').textContent=formatUpahIntegerNumber(rows.reduce((s,r)=>s+r.netto,0));
+  const totalGaji=rows.reduce((s,r)=>s+r.gaji,0);
+  const totalLembur=rows.reduce((s,r)=>s+r.lembur,0);
+  const totalBruto=rows.reduce((s,r)=>s+r.total,0);
+  const totalKurang=rows.reduce((s,r)=>s+r.kurang,0);
+  const totalTambah=rows.reduce((s,r)=>s+r.tambah,0);
+  const totalNetto=rows.reduce((s,r)=>s+r.netto,0);
+  if($('upahCalcTotalGaji')) $('upahCalcTotalGaji').textContent=formatUpahIntegerNumber(totalGaji);
+  if($('upahCalcTotalLembur')) $('upahCalcTotalLembur').textContent=formatUpahIntegerNumber(totalLembur);
+  if($('upahCalcTotalBruto')) $('upahCalcTotalBruto').textContent=formatUpahIntegerNumber(totalBruto);
+  if($('upahCalcTotalKurang')) $('upahCalcTotalKurang').textContent=formatUpahIntegerNumber(totalKurang);
+  if($('upahCalcTotalTambah')) $('upahCalcTotalTambah').textContent=formatUpahIntegerNumber(totalTambah);
+  if($('upahCalcTotalNetto')) $('upahCalcTotalNetto').textContent=formatUpahIntegerNumber(totalNetto);
+  const finalTonase=updateUpahFinalTonaseDisplay();
+  updateUpahCalcSelisihNote(Number(finalTonase.finalS1||0)+Number(finalTonase.finalS2||0), totalNetto);
 }
 function upahExcelFilename(){
   const unitKeyValue=$('adminUpahUnitSelect') ? $('adminUpahUnitSelect').value : adminManagedUnitKey;
@@ -4745,18 +4796,20 @@ function printAdminUpahCalcTable(){
   const table=$('upahCalcTable');
   const body=$('upahCalcBody');
   if(!table || !body || !body.querySelector('tr')){
-    alert('Belum ada Tabel Hasil Perhitungan Upah yang bisa dicetak. Klik Calculate terlebih dahulu.');
+    alert('Belum ada Kalkulator Upah yang bisa dicetak. Klik Calculate terlebih dahulu.');
     return;
   }
   const cloned=table.cloneNode(true);
   cloned.removeAttribute('id');
   cloned.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));
+  const selisihNoteEl=$('upahCalcSelisihNote');
+  const selisihNote=selisihNoteEl ? selisihNoteEl.outerHTML : '';
   const unitSel=$('adminUpahUnitSelect');
   const dateEl=$('adminUpahDate');
   const unitText=unitSel && unitSel.options && unitSel.selectedIndex>=0 ? unitSel.options[unitSel.selectedIndex].textContent.trim() : '';
   const dateText=dateEl && dateEl.value ? dateEl.value : '';
   const titleInfo=[unitText, dateText].filter(Boolean).join(' • ');
-  const html=`<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Cetak Tabel Hasil Perhitungan Upah</title><style>
+  const html=`<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Cetak Kalkulator Upah</title><style>
     @page{size:A4 landscape;margin:8mm;}
     *{box-sizing:border-box;}
     body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#111;background:#fff;}
@@ -4773,7 +4826,7 @@ function printAdminUpahCalcTable(){
     th:nth-child(7),td:nth-child(7),th:nth-child(8),td:nth-child(8){width:10%;}
     th:nth-child(9),td:nth-child(9){width:13%;}
     @media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact;} table{page-break-inside:auto;} tr{page-break-inside:avoid;page-break-after:auto;}}
-  </style></head><body><h1>Tabel Hasil Perhitungan Upah</h1><div class="subtitle">${escapeHTML(titleInfo)}</div>${cloned.outerHTML}<script>window.addEventListener('load',function(){setTimeout(function(){window.print();},150);});<\/script></body></html>`;
+  </style></head><body><h1>Kalkulator Upah</h1><div class="subtitle">${escapeHTML(titleInfo)}</div>${cloned.outerHTML}${selisihNote}<script>window.addEventListener('load',function(){setTimeout(function(){window.print();},150);});<\/script></body></html>`;
   const win=window.open('', '_blank');
   if(!win){
     alert('Popup print diblokir browser. Izinkan popup untuk aplikasi ini, lalu klik Cetak lagi.');
@@ -4787,14 +4840,37 @@ function exportAdminUpahExcel(){
   const calcRows=readUpahCalcRowsFromTable();
   if(!calcRows.length){ alert('Klik Calculate terlebih dahulu.'); return; }
   if(!window.XLSX){ alert('Library Excel belum dimuat. Pastikan internet aktif lalu coba lagi.'); return; }
-  // Export khusus payroll: hanya kolom NIP dan NETTO. Baris TOTAL tidak diikutsertakan.
-  const rows=calcRows.map(r=>({ NIP:String(r.nip || '').trim(), NETTO:Number(r.netto || 0) }));
+  const rows=calcRows.map(r=>({
+    NO:r.no,
+    NIP:String(r.nip || '').trim(),
+    NAMA:String(r.nama || '').trim(),
+    GAJI:Math.round(Number(r.gaji || 0)),
+    LEMBUR:Math.round(Number(r.lembur || 0)),
+    TOTAL:Math.round(Number(r.total || 0)),
+    KURANG:Math.round(Number(r.kurang || 0)),
+    TAMBAH:Math.round(Number(r.tambah || 0)),
+    NETTO:Math.round(Number(r.netto || 0))
+  }));
+  rows.push({
+    NO:'TOTAL', NIP:'', NAMA:'',
+    GAJI:rows.reduce((s,r)=>s+Number(r.GAJI||0),0),
+    LEMBUR:rows.reduce((s,r)=>s+Number(r.LEMBUR||0),0),
+    TOTAL:rows.reduce((s,r)=>s+Number(r.TOTAL||0),0),
+    KURANG:rows.reduce((s,r)=>s+Number(r.KURANG||0),0),
+    TAMBAH:rows.reduce((s,r)=>s+Number(r.TAMBAH||0),0),
+    NETTO:rows.reduce((s,r)=>s+Number(r.NETTO||0),0)
+  });
+  const finalTonase=updateUpahFinalTonaseDisplay();
+  const totalTonase=Math.round(Number(finalTonase.finalS1||0)+Number(finalTonase.finalS2||0));
+  const totalNetto=rows[rows.length-1].NETTO;
+  rows.push({NO:'NOTE : SELISIH = '+Math.round(Number(window.__lastUpahSelisih||Math.abs(totalTonase-totalNetto)||0)), NIP:'', NAMA:'', GAJI:'', LEMBUR:'', TOTAL:'', KURANG:'', TAMBAH:'', NETTO:''});
   const wb=window.XLSX.utils.book_new();
-  const ws=window.XLSX.utils.json_to_sheet(rows, {header:['NIP','NETTO']});
-  ws['!cols']=[{wch:16},{wch:16}];
+  const ws=window.XLSX.utils.json_to_sheet(rows, {header:['NO','NIP','NAMA','GAJI','LEMBUR','TOTAL','KURANG','TAMBAH','NETTO']});
+  ws['!cols']=[{wch:10},{wch:14},{wch:28},{wch:14},{wch:14},{wch:14},{wch:14},{wch:14},{wch:14}];
   window.XLSX.utils.book_append_sheet(wb, ws, 'Upah');
   window.XLSX.writeFile(wb, upahExcelFilename());
 }
+
 function renderAdminUpah(){
   const unitKeyValue=$('adminUpahUnitSelect') ? $('adminUpahUnitSelect').value : adminManagedUnitKey;
   const dateValue=$('adminUpahDate') ? $('adminUpahDate').value : todayISO();
