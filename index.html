@@ -5842,7 +5842,7 @@ async function saveSchedule(){
     auditLog('save_attendance','attendance',{message: online ? 'Absensi tersimpan online ke Firebase' : 'Absensi tersimpan lokal dan masuk antrean sync', unitKey:payload.unitKey, unitName:payload.unitName, reportDate:payload.reportDate, attendanceDocId:payload.id, totalRows:(payload.workers||[]).length, online}).catch(()=>{});
     notifyAdminEmailOnSave(payload, online).catch(()=>{});
     const emailCfg=adminEmailNotifyConfig();
-    const emailNote=emailCfg.enabled ? (emailCfg.url ? `\nEmail notifikasi admin dikirim ke: ${emailCfg.to}` : '\nEmail notifikasi admin belum aktif: URL Google Apps Script belum diisi.') : '';
+    const emailNote=emailCfg.enabled ? (emailCfg.url ? '' : '\nEmail notifikasi admin belum aktif: URL Google Apps Script belum diisi.') : '';
     alert((online ? 'Jadwal pekerja sudah disimpan online ke Firebase.' : 'Jadwal pekerja tersimpan lokal dan masuk antrian sinkron. Saat Firebase online, data akan dikirim otomatis.') + emailNote + `
 
 Tab Absensi sudah dibuka otomatis untuk tanggal yang baru disimpan.`);
