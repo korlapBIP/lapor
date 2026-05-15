@@ -551,6 +551,42 @@
           });
           return out;
         },
+
+        async pruneAuditLogs(options){
+          const opt=options && typeof options==='object' ? options : {};
+          const retentionDays=Math.max(7, Math.min(Number(opt.retentionDays || 90), 3650));
+          const maxDocs=Math.max(100, Math.min(Number(opt.maxDocs || 1000), 5000));
+          const maxScan=Math.max(maxDocs, Math.min(Number(opt.maxScan || 5000), 10000));
+          const cutoff=new Date();
+          cutoff.setDate(cutoff.getDate()-retentionDays);
+          const cutoffIso=cutoff.toISOString();
+          let qs;
+          try{
+            qs=await fs.getDocs(fs.query(fs.collection(db, auditLogsPath), fs.orderBy('createdAtLocal','desc'), fs.limit(maxScan)));
+          }catch(err){
+            qs=await fs.getDocs(fs.query(fs.collection(db, auditLogsPath), fs.limit(maxScan)));
+          }
+          const rows=[];
+          qs.forEach(snap=>rows.push({ id:snap.id, ...exportValue(snap.data() || {}) }));
+          rows.sort((a,b)=>String(b.createdAtLocal || b.exportedAtLocal || '').localeCompare(String(a.createdAtLocal || a.exportedAtLocal || '')));
+          const keepIds=new Set(rows.slice(0,maxDocs).map(row=>String(row.id || '')));
+          const deleteRows=[];
+          rows.forEach((row,idx)=>{
+            const id=String(row.id || '').trim();
+            if(!id) return;
+            const created=String(row.createdAtLocal || row.createdAt || '').slice(0,24);
+            const tooOld=created && created < cutoffIso;
+            const overMax=idx >= maxDocs || !keepIds.has(id);
+            if(tooOld || overMax) deleteRows.push(row);
+          });
+          let deleted=0;
+          for(let i=0;i<deleteRows.length;i+=400){
+            const batch=fs.writeBatch(db);
+            deleteRows.slice(i,i+400).forEach(row=>{ batch.delete(fs.doc(db, auditLogsPath, String(row.id))); deleted++; });
+            await batch.commit();
+          }
+          return { retentionDays, maxDocs, scanned:rows.length, deleted, remainingEstimate:Math.max(0, rows.length-deleted), cutoffIso, backupRows: opt.backupBeforeDelete === false ? [] : deleteRows };
+        },
         async deleteAttendanceRange(unitKey, startDate, endDate){
           const rows=[];
           const makeDate=(v)=>{

@@ -986,7 +986,7 @@
 .upah-result-pill .value{font-size:20px;color:#0f172a;font-weight:950;line-height:1.2;}
 .upah-result-pill .note{margin-top:5px;color:#475569;font-size:12px;font-weight:850;line-height:1.35;}
 @media(max-width:720px){.upah-result-grid{grid-template-columns:1fr}}
-.upah-selisih-note{margin:10px 0 2px;font-weight:950;color:#0f172a;text-align:left;font-size:13px;letter-spacing:.02em;}
+.upah-selisih-note{margin:10px 0 2px;font-weight:950;color:#0f172a;text-align:left;font-size:12px;letter-spacing:.02em;}
 
 .upah-excel-table td{
   border:1px solid #d7dee9!important;
@@ -1002,6 +1002,20 @@
   box-shadow:inset 0 0 0 2px #2563eb;
 }
 .upah-excel-table tfoot td,.upah-excel-table tfoot th{background:#f8fafc!important;font-weight:950}
+
+/* v173 - Lebar kolom tabel Rules Upah Bahan Baku diperbaiki agar kolom NAMA tidak terlalu lebar dan kolom KEGIATAN lebih lega. */
+#upahTable[data-kegiatan-column="1"]{table-layout:fixed;width:100%;}
+#upahTable[data-kegiatan-column="1"] th,#upahTable[data-kegiatan-column="1"] td{min-width:0!important;box-sizing:border-box;vertical-align:middle;}
+#upahTable[data-kegiatan-column="1"] th:nth-child(1),#upahTable[data-kegiatan-column="1"] td:nth-child(1){width:4%;}
+#upahTable[data-kegiatan-column="1"] th:nth-child(2),#upahTable[data-kegiatan-column="1"] td:nth-child(2){width:7%;}
+#upahTable[data-kegiatan-column="1"] th:nth-child(3),#upahTable[data-kegiatan-column="1"] td:nth-child(3){width:30%;}
+#upahTable[data-kegiatan-column="1"] th:nth-child(4),#upahTable[data-kegiatan-column="1"] td:nth-child(4){width:32%;}
+#upahTable[data-kegiatan-column="1"] th:nth-child(5),#upahTable[data-kegiatan-column="1"] td:nth-child(5),
+#upahTable[data-kegiatan-column="1"] th:nth-child(6),#upahTable[data-kegiatan-column="1"] td:nth-child(6),
+#upahTable[data-kegiatan-column="1"] th:nth-child(7),#upahTable[data-kegiatan-column="1"] td:nth-child(7){width:9%;}
+#upahTable[data-kegiatan-column="1"] td[data-field="kegiatan"]{text-align:left;line-height:1.3;white-space:normal;overflow-wrap:normal;word-break:normal;}
+#upahTable[data-kegiatan-column="1"] th:nth-child(4){white-space:nowrap;}
+
 @media(max-width:720px){.upah-page{padding:10px}.upah-hero{flex-direction:column}.upah-filter-row,.upah-tonase-box,.upah-final-row{grid-template-columns:1fr}.upah-action-row .btn,.upah-calc-actions .btn{width:100%;max-width:none}}
 
 
@@ -1142,7 +1156,7 @@
     </section>
 
     <section class="frame data no-print"><div class="frame-head"><div><div class="frame-kicker">Frame 1</div><h2>Input Jadwal Pekerja</h2></div><div class="frame-number">1</div></div>
-      <div class="card"><div class="card-head"><h3>Pilih Jadwal Shift</h3><span><span id="workerShownCount">0</span> data tampil</span></div><div class="card-body"><div class="field"><label for="reportDate">Tanggal Jadwal</label><input id="reportDate" type="date"></div><div id="scheduleSafetyStatus" class="schedule-safety-status warn">Mode: Tanggal belum dipilih<span class="small">Pilih tanggal dulu sebelum memilih shift dan menyimpan jadwal.</span></div><div class="field" id="activityField" style="display:none;margin-top:10px"><label for="activitySelect">Kegiatan</label><select id="activitySelect"><option value="bongkaran_bahan_baku_pagi">Bongkaran Bahan Baku Pagi - Shift 1</option><option value="silo">Silo - Shift 1, Shift 2 &amp; Shift 3</option><option value="overzak">Overzak - Shift 1, Shift 2 &amp; Shift 3</option></select></div><div class="commercial-tools" id="commercialScheduleTools"><div class="commercial-summary" id="commercialScheduleSummary" style="display:none"></div><div class="commercial-matrix" id="commercialScheduleMatrix"></div></div><div class="search-row"><input id="workerFilter" type="search" placeholder="Cari NIP, nama, PKWT, atau Freelance..."></div><div class="stats inside-stats"><div class="stat"><div class="label">Shift 1</div><div class="num" id="countS1">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 2</div><div class="num" id="countS2">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 3</div><div class="num" id="countS3">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Total</div><div class="num" id="countTotal">0</div><div class="desc">terpilih</div></div></div></div></div>
+      <div class="card"><div class="card-head"><h3>Pilih Jadwal Shift</h3><span><span id="workerShownCount">0</span> data tampil</span></div><div class="card-body"><div class="field"><label for="reportDate">Tanggal Jadwal</label><input id="reportDate" type="date"></div><div id="scheduleSafetyStatus" class="schedule-safety-status warn">Mode: Tanggal belum dipilih<span class="small">Pilih tanggal dulu sebelum memilih shift dan menyimpan jadwal.</span></div><div class="field" id="activityField" style="display:none;margin-top:10px"><label for="activitySelect">Kegiatan</label><select id="activitySelect"><option value="bongkaran_bahan_baku_pagi">Bongkaran Bahan Baku Pagi - Shift 1, Shift 2 &amp; Shift 3</option><option value="silo">Silo - Shift 1, Shift 2 &amp; Shift 3</option><option value="overzak">Overzak - Shift 1, Shift 2 &amp; Shift 3</option></select></div><div class="commercial-tools" id="commercialScheduleTools"><div class="commercial-summary" id="commercialScheduleSummary" style="display:none"></div><div class="commercial-matrix" id="commercialScheduleMatrix"></div></div><div class="search-row"><input id="workerFilter" type="search" placeholder="Cari NIP, nama, PKWT, atau Freelance..."></div><div class="stats inside-stats"><div class="stat"><div class="label">Shift 1</div><div class="num" id="countS1">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 2</div><div class="num" id="countS2">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Shift 3</div><div class="num" id="countS3">0</div><div class="desc">orang</div></div><div class="stat"><div class="label">Total</div><div class="num" id="countTotal">0</div><div class="desc">terpilih</div></div></div></div></div>
       <div class="worker-list" id="workerList"></div>
       <div class="schedule-actions"><button class="btn primary" id="btnSaveSchedule">💾 Simpan</button><button class="btn dark" id="btnEditSchedule" type="button" style="display:none">✏️ Edit Jadwal Tanggal Ini</button><button class="btn danger" id="btnCancelSchedule" type="button" style="display:none">Batal</button><button class="btn danger" id="btnResetShift">Reset</button></div><div id="scheduleHistoryPanel" class="schedule-history-panel"><div class="schedule-history-empty">Pilih tanggal untuk melihat riwayat perubahan dan backup jadwal.</div></div>
     </section>
@@ -1186,7 +1200,7 @@
       </div></div>
 
       <div class="attendance-list no-print" id="mobileReportList"></div>
-      <div class="card print-sheet report-preview"><div class="card-head no-print"><h3>Tabel Hasil Input</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span><strong id="selectedCountBadge">0</strong> pekerja dipilih</span><button type="button" class="btn small" id="btnToggleReportPreview">Tampilkan</button></div></div><div id="reportPreviewBody" style="display:none;"><div class="print-title"><div class="main" id="reportMainTitle">ABSENSI KEGIATAN MUATAN BREEDER</div><div class="company" id="reportCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="reportDateText">HARI - TANGGAL</div><div class="coordinator" id="reportCoordinatorText"></div></div><div class="table-wrap"><table class="report-table" id="reportTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><th>CEK IN</th><th>CEK OUT</th></tr></thead><tbody id="reportBody"></tbody><tfoot class="report-summary"><tr><td class="summary-empty" colspan="3"></td><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><td class="summary-empty" colspan="2"></td></tr><tr><td class="left-label" colspan="3">JUMLAH PEKERJA</td><td id="sumS1">0</td><td id="sumS2">0</td><td id="sumS3">0</td><td class="summary-empty" colspan="2"></td></tr><tr><td class="summary-empty" colspan="3"></td><td class="total" colspan="3"><span id="sumTotal">0</span> Orang</td><td class="summary-empty" colspan="2"></td></tr></tfoot></table></div><div class="report-footer" id="reportFooter"><div class="signature-grid"><div><div class="signature-title editable-report" data-report-setting="signBip" contenteditable="true">B I P</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signGudang" contenteditable="true">Bagian Gudang</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signKasie" contenteditable="true">Kasie Muatan Breeder</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signPga" contenteditable="true">Bagian P&amp;GA</div><div class="signature-line"></div></div></div><div class="note-area"><div class="note-title">NOTE :</div><div class="editable-report" data-report-setting="note" contenteditable="true"></div><table class="worktime-table"><tr><th colspan="3" class="worktime-main">ABSENSI SIDIK JARI<br><span class="editable-report" data-report-setting="workTitle" contenteditable="true">JAM KERJA CEK IN dan CEK OUT</span></th></tr><tr><th>JADWAL</th><th colspan="2">JAM KERJA</th></tr><tr><th>KERJA</th><th>CEK IN</th><th>CEK OUT</th></tr><tr><td class="editable-report" data-report-setting="shiftPagiLabel" contenteditable="true">SHIFT 1</td><td class="editable-report" data-report-setting="shiftPagiIn" contenteditable="true">07:00</td><td class="editable-report" data-report-setting="shiftPagiOut" contenteditable="true">17:00</td></tr><tr><td class="editable-report" data-report-setting="shiftSiangLabel" contenteditable="true">SHIFT 2</td><td class="editable-report" data-report-setting="shiftSiangIn" contenteditable="true">17:00</td><td class="editable-report" data-report-setting="shiftSiangOut" contenteditable="true">23:00</td></tr><tr><td class="editable-report" data-report-setting="shiftMalamLabel" contenteditable="true">SHIFT 3</td><td class="editable-report" data-report-setting="shiftMalamIn" contenteditable="true">23:00</td><td class="editable-report" data-report-setting="shiftMalamOut" contenteditable="true">07:00</td></tr></table><div class="note-save-row no-print"><button type="button" class="btn primary" id="btnSaveReportFormat">💾 Simpan NOTE / Jam Kerja</button></div></div></div><div class="bottom-print-actions no-print"><button type="button" class="btn dark" id="btnBottomPrintAttendance">👁 Preview</button></div></div></div>
+      <div class="card print-sheet report-preview"><div class="card-head no-print"><h3>Tabel Hasil Input</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span><strong id="selectedCountBadge">0</strong> pekerja dipilih</span><button type="button" class="btn small" id="btnToggleReportPreview">Tampilkan</button></div></div><div id="reportPreviewBody" style="display:none;"><div class="print-title"><div class="main" id="reportMainTitle">ABSENSI KEGIATAN MUATAN BREEDER</div><div class="company" id="reportCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="reportDateText">HARI - TANGGAL</div><div class="coordinator" id="reportCoordinatorText" style="display:none"></div></div><div class="table-wrap"><table class="report-table" id="reportTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><th>CEK IN</th><th>CEK OUT</th></tr></thead><tbody id="reportBody"></tbody><tfoot class="report-summary"><tr><td class="summary-empty" colspan="3"></td><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th><td class="summary-empty" colspan="2"></td></tr><tr><td class="left-label" colspan="3">JUMLAH PEKERJA</td><td id="sumS1">0</td><td id="sumS2">0</td><td id="sumS3">0</td><td class="summary-empty" colspan="2"></td></tr><tr><td class="summary-empty" colspan="3"></td><td class="total" colspan="3"><span id="sumTotal">0</span> Orang</td><td class="summary-empty" colspan="2"></td></tr></tfoot></table></div><div class="report-footer" id="reportFooter"><div class="signature-grid"><div><div class="signature-title editable-report" data-report-setting="signBip" contenteditable="true">B I P</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signGudang" contenteditable="true">Bagian Gudang</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signKasie" contenteditable="true">Kasie Muatan Breeder</div><div class="signature-line"></div></div><div><div class="signature-title editable-report" data-report-setting="signPga" contenteditable="true">Bagian P&amp;GA</div><div class="signature-line"></div></div></div><div class="note-area"><div class="note-title">NOTE :</div><div class="editable-report" data-report-setting="note" contenteditable="true"></div><table class="worktime-table"><tr><th colspan="3" class="worktime-main">ABSENSI SIDIK JARI<br><span class="editable-report" data-report-setting="workTitle" contenteditable="true">JAM KERJA CEK IN dan CEK OUT</span></th></tr><tr><th>JADWAL</th><th colspan="2">JAM KERJA</th></tr><tr><th>KERJA</th><th>CEK IN</th><th>CEK OUT</th></tr><tr><td class="editable-report" data-report-setting="shiftPagiLabel" contenteditable="true">SHIFT 1</td><td class="editable-report" data-report-setting="shiftPagiIn" contenteditable="true">07:00</td><td class="editable-report" data-report-setting="shiftPagiOut" contenteditable="true">17:00</td></tr><tr><td class="editable-report" data-report-setting="shiftSiangLabel" contenteditable="true">SHIFT 2</td><td class="editable-report" data-report-setting="shiftSiangIn" contenteditable="true">17:00</td><td class="editable-report" data-report-setting="shiftSiangOut" contenteditable="true">23:00</td></tr><tr><td class="editable-report" data-report-setting="shiftMalamLabel" contenteditable="true">SHIFT 3</td><td class="editable-report" data-report-setting="shiftMalamIn" contenteditable="true">23:00</td><td class="editable-report" data-report-setting="shiftMalamOut" contenteditable="true">07:00</td></tr></table><div class="note-save-row no-print"><button type="button" class="btn primary" id="btnSaveReportFormat">💾 Simpan NOTE / Jam Kerja</button></div></div></div><div class="bottom-print-actions no-print"><button type="button" class="btn dark" id="btnBottomPrintAttendance">👁 Preview</button></div></div></div>
       <div class="control-report no-print coordinator-only"><div class="control-info"><div class="control-icon">📄</div><div><h3>Download Laporan Absensi</h3></div></div><div class="control-actions"><button class="btn primary full" id="btnDownloadPdf">download PDF</button></div></div>
     </section>
   </section>
@@ -1441,6 +1455,16 @@
               <div class="import-help"></div>
               <div class="sync-cache-grid" id="firestoreUsageSummary"><div class="empty-admin-list"></div></div>
               <div class="usage-table-wrap" id="firestoreUsageDetails"></div>
+            </div>
+            <div class="admin-sub-frame">
+              <div class="admin-sub-title"><div><h4>Batasi Audit Logs</h4></div><small>v170</small></div>
+              <div class="grid-form">
+                <div class="field"><label for="adminAuditRetentionDays">Simpan Log Maksimal Hari</label><input id="adminAuditRetentionDays" type="number" min="7" max="3650" value="90"></div>
+                <div class="field"><label for="adminAuditMaxDocs">Simpan Maksimal Dokumen</label><input id="adminAuditMaxDocs" type="number" min="100" max="5000" value="1000"></div>
+              </div>
+              <label class="admin-checkline"><input id="adminAuditBackupBeforeDelete" type="checkbox" checked> Download backup audit log yang akan dihapus sebelum proses hapus</label>
+              <div class="admin-actions-row"><button class="btn danger" id="btnAdminPruneAuditLogs">🧹 Backup & Hapus Audit Logs Lama</button></div>
+              <div class="import-help" id="adminAuditPruneInfo">Rekomendasi: simpan 90 hari terakhir atau maksimal 1.000 dokumen supaya kuota Firestore tetap ringan.</div>
             </div>
           </div>
         </div></div>
@@ -1914,7 +1938,7 @@ function updateCoordinatorActivityUI(){
     select.value=normalizeCommercialInputActivityChoice(commercialInputActivityKey);
   }else if(showBahan){
     const options=[
-      {value:BAHAN_BAKU_PAGI_KEY, text:'Bongkaran Bahan Baku Pagi - Shift 1'},
+      {value:BAHAN_BAKU_PAGI_KEY, text:'Bongkaran Bahan Baku Pagi - Shift 1, Shift 2 & Shift 3'},
       {value:SILO_KEY, text:'Silo - Shift 1, Shift 2 & Shift 3'},
       {value:OVERZAK_KEY, text:'Overzak - Shift 1, Shift 2 & Shift 3'}
     ];
@@ -1935,7 +1959,7 @@ function shiftAllowedForActiveCoordinator(shiftKey, worker){
   return true;
 }
 function isBahanBakuPagiMalamKey(key){ return isBahanBakuPagiKey(key) || isBahanBakuMalamKey(key); }
-function coordinatorAllowedShift(){ return coordinatorCanChooseBahanBakuActivity() && activeUnitKey()===BAHAN_BAKU_PAGI_KEY ? 's1' : ''; }
+function coordinatorAllowedShift(){ return ''; }
 function canUseAllShiftsDespiteSingleShiftRule(worker){ return Boolean(coordinatorCanChooseBahanBakuActivity() && activeUnitKey()===BAHAN_BAKU_PAGI_KEY && isBahanBakuPagiCoordinatorWorker(worker)); }
 function coordinatorSingleShiftMode(){ return Boolean(coordinatorAllowedShift()); }
 function coordinatorAllowedShiftLabel(){ return coordinatorAllowedShift()==='s3' ? 'Shift 3' : (coordinatorAllowedShift()==='s2' ? 'Shift 2' : 'Shift 1'); }
@@ -3699,7 +3723,7 @@ async function renderWorkers(){
     const shift3Html=`<label class="shift-toggle s3 ${s3Disabled?'shift-disabled':''}">S3 <input type="checkbox" data-shift="s3" data-no="${worker.no}" ${worker.s3 && !s3Disabled?'checked':''}${s3Disabled}><span class="checkmark">✓</span></label>`;
     const coordinatorAllShiftException=canUseAllShiftsDespiteSingleShiftRule(worker);
     const malamMode=coordinatorBahanBakuMalamMode();
-    const forceShift1Only=(activeUnitKey()===BAHAN_BAKU_PAGI_KEY && !coordinatorAllShiftException) || (isBahanBakuPagiCoordinatorWorker(worker) && getBahanBakuActivityUnitKeys().includes(activeUnitKey()) && !coordinatorAllShiftException);
+    const forceShift1Only=false;
     const shiftHtml=malamMode ? (shift2Html + shift3Html) : (coordinatorAllShiftException ? (shift1Html + shift2Html + shift3Html) : (forceShift1Only ? shift1Html : (allowed==='s1' ? shift1Html : (allowed==='s2' ? shift2Html : (allowed==='s3' ? shift3Html : shift1Html + shift2Html + shift3Html)))));
     const shiftRowClass=malamMode ? 'shift-row bahan-baku-malam-shift-row' : ((allowed || forceShift1Only) && !coordinatorAllShiftException ? 'shift-row single-shift-row' : 'shift-row');
     div.innerHTML=`<div class="worker-top"><div class="worker-nip">NIP ${safeText(worker.nip || '-')}</div><div class="worker-name">${safeText(worker.name)}</div><div class="worker-status">${type}${reguText}</div></div><div class="${shiftRowClass}">${shiftHtml}</div>`;
@@ -3801,8 +3825,8 @@ function currentReportCoordinatorDisplay(){
   return normalizeCoordinatorDisplayName(currentUser && (currentUser.name || currentUser.username || currentUser.nip));
 }
 function reportCoordinatorLineText(){
-  const name=currentReportCoordinatorDisplay();
-  return name || '';
+  // v171: nama koordinator tidak ditampilkan pada semua laporan kegiatan.
+  return '';
 }
 function updateReportCoordinatorLine(){
   const el=$('reportCoordinatorText');
@@ -4370,6 +4394,25 @@ function renderAdminReport(){
   }
 }
 
+
+function isBahanBakuUpahSelected(){
+  const selectedKey=$('adminUpahUnitSelect') ? $('adminUpahUnitSelect').value : adminManagedUnitKey;
+  return String(selectedKey || '')===BAHAN_BAKU_GABUNGAN_KEY || isBahanBakuPagiMalamKey(selectedKey) || Boolean(adminUpahData && adminUpahData.combinedAttendance && String(adminUpahData.unitKey||'')===BAHAN_BAKU_GABUNGAN_KEY);
+}
+function isOperOperBahanBakuRow(row){
+  const text=[row && row.kegiatan, row && row.activityLabel, row && row.sourceUnitKey, row && row.sourceUnitName, row && row.unitKey, row && row.unit].map(v=>String(v||'').toLowerCase()).join(' ');
+  return text.includes('oper oper') || text.includes('oper2') || text.includes('oper_oper_bahan_baku');
+}
+function upahKegiatanLabel(row){
+  const key=String(row && (row.sourceUnitKey || row.unitKey || '') || '').toLowerCase();
+  const text=String(row && (row.kegiatan || row.activityLabel || row.sourceUnitName || row.unit || '') || '').toLowerCase();
+  if(key.includes('silo') || text.includes('silo')) return 'Silo';
+  if(key.includes('overzak') || text.includes('overzak')) return 'Overzak';
+  if(key.includes('malam') || text.includes('malam')) return 'Bongkaran Bahan Baku Malam';
+  if(key.includes('pagi') || text.includes('pagi')) return 'Bongkaran Bahan Baku Pagi';
+  if(text.includes('bongkaran')) return 'Bongkaran Bahan Baku';
+  return row && row.kegiatan ? String(row.kegiatan) : '';
+}
 function upahCoordinatorDisplay(payload){
   if(!payload) return '';
   if(payload.combinedAttendance) return combinedCoordinatorDisplay(payload);
@@ -4406,16 +4449,20 @@ function readUpahRowsFromTable(){
   const body=$('upahBody');
   if(!body) return Array.isArray(adminUpahRows) ? adminUpahRows : [];
   const rows=[];
+  const hasKegiatan=Boolean($('upahTable') && $('upahTable').dataset && $('upahTable').dataset.kegiatanColumn==='1');
   Array.from(body.querySelectorAll('tr')).forEach((tr,idx)=>{
     const cells=tr.querySelectorAll('td');
-    if(cells.length<6 || cells[0].colSpan>1) return;
+    const minCells=hasKegiatan ? 7 : 6;
+    if(cells.length<minCells || cells[0].colSpan>1) return;
+    const shiftOffset=hasKegiatan ? 1 : 0;
     rows.push({
       no:String(cells[0].textContent || '').trim() || idx,
       nip:String(cells[1].textContent || '').trim(),
       name:String(cells[2].textContent || '').trim(),
-      s1Value:parseUpahNumber(cells[3].textContent),
-      s2Value:parseUpahNumber(cells[4].textContent),
-      s3Value:parseUpahNumber(cells[5].textContent),
+      kegiatan:hasKegiatan ? String(cells[3].textContent || '').trim() : '',
+      s1Value:parseUpahNumber(cells[3+shiftOffset].textContent),
+      s2Value:parseUpahNumber(cells[4+shiftOffset].textContent),
+      s3Value:parseUpahNumber(cells[5+shiftOffset].textContent),
     });
   });
   return rows;
@@ -4436,6 +4483,7 @@ function buildUpahRows(rows){
   const isOperOperBB=isOperOperBahanBakuUpah();
   const normalized=sourceRows.filter(w=>{
     const nip=String(w && w.nip || '').trim();
+    if(isBahanBakuUpahSelected() && isOperOperBahanBakuRow(w)) return false;
     return nip!=='1' && nip.toUpperCase()!=='BIP';
   }).map(w=>{
     const copy={...w};
@@ -4668,8 +4716,24 @@ function renderUpahTable(unitName, dateValue, rows, emptyMsg, options){
   if($('upahMainTitle')) $('upahMainTitle').textContent = `Rules of ⬆️ 1 ⬆️ 2 ${String(unitName||'').replace(/PAGI/gi,'').replace(/MALAM/gi,'').replace(/\//g,'').replace(/\s+/g,' ').trim().toUpperCase()}`;
   if($('upahCompanyText')) $('upahCompanyText').textContent = 'PT. BUDI INTI PERKASA';
   if($('upahDateText')) $('upahDateText').textContent = formatLongDate(dateValue);
+  const showKegiatanColumn=isBahanBakuUpahSelected();
+  const table=$('upahTable');
+  if(table){
+    table.dataset.kegiatanColumn=showKegiatanColumn ? '1' : '0';
+    const thead=table.querySelector('thead');
+    if(thead){
+      thead.innerHTML=showKegiatanColumn
+        ? '<tr><th>NO</th><th>NIP</th><th>NAMA</th><th>KEGIATAN</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th></tr>'
+        : '<tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th></tr>';
+    }
+  }
+  if($('upahFoot')){
+    $('upahFoot').innerHTML=showKegiatanColumn
+      ? '<tr><td class="left-label" colspan="4">TOTAL</td><td id="upahSumS1">0</td><td id="upahSumS2">0</td><td id="upahSumS3">0</td></tr>'
+      : '<tr><td class="left-label" colspan="3">TOTAL</td><td id="upahSumS1">0</td><td id="upahSumS2">0</td><td id="upahSumS3">0</td></tr>';
+  }
   if($('upahCoordinatorText')){
-    const coord=upahCoordinatorDisplay(adminUpahData);
+    const coord=showKegiatanColumn ? '' : upahCoordinatorDisplay(adminUpahData);
     $('upahCoordinatorText').textContent = coord ? `Koordinator: ${coord}` : '';
   }
   const body=$('upahBody');
@@ -4681,11 +4745,12 @@ function renderUpahTable(unitName, dateValue, rows, emptyMsg, options){
   upahRows.forEach((w,i)=>{
     const tr=document.createElement('tr');
     const no=(w && w.isManualUpahRow) ? 0 : i;
-    tr.innerHTML = `<td contenteditable="true" data-field="no">${no}</td><td contenteditable="true" data-field="nip">${safeText(w.nip)}</td><td contenteditable="true" data-field="name" class="name">${safeText(w.name)}</td><td contenteditable="true" data-field="s1">${upahNumberForShift(w,'s1')}</td><td contenteditable="true" data-field="s2">${upahNumberForShift(w,'s2')}</td><td contenteditable="true" data-field="s3">${upahNumberForShift(w,'s3')}</td>`;
+    const kegiatanCell=showKegiatanColumn ? `<td contenteditable="true" data-field="kegiatan">${safeText(w.isManualUpahRow ? '' : upahKegiatanLabel(w))}</td>` : '';
+    tr.innerHTML = `<td contenteditable="true" data-field="no">${no}</td><td contenteditable="true" data-field="nip">${safeText(w.nip)}</td><td contenteditable="true" data-field="name" class="name">${safeText(w.name)}</td>${kegiatanCell}<td contenteditable="true" data-field="s1">${upahNumberForShift(w,'s1')}</td><td contenteditable="true" data-field="s2">${upahNumberForShift(w,'s2')}</td><td contenteditable="true" data-field="s3">${upahNumberForShift(w,'s3')}</td>`;
     tr.addEventListener('input', ()=>{ updateUpahFooterFromTable(); hideUpahCalculation(); });
     body.appendChild(tr);
   });
-  if(!upahRows.length){ body.innerHTML=`<tr><td colspan="6" style="height:42px;color:#65758b">${safeText(emptyMsg || 'Data absensi belum berisi pekerja.')}</td></tr>`; }
+  if(!upahRows.length){ body.innerHTML=`<tr><td colspan="${showKegiatanColumn ? 7 : 6}" style="height:42px;color:#65758b">${safeText(emptyMsg || 'Data absensi belum berisi pekerja.')}</td></tr>`; }
   updateUpahFooterFromTable();
 }
 function roundUpahValue(value){
@@ -4841,8 +4906,9 @@ function printAdminUpahCalcTable(){
     th:nth-child(4),td:nth-child(4),th:nth-child(5),td:nth-child(5),th:nth-child(6),td:nth-child(6){width:11%;}
     th:nth-child(7),td:nth-child(7),th:nth-child(8),td:nth-child(8){width:10%;}
     th:nth-child(9),td:nth-child(9){width:13%;}
+    .upah-selisih-note{margin:6px 0 2px;font-weight:800;color:#111;text-align:left;font-size:8px;letter-spacing:.01em;}
     @media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact;} table{page-break-inside:auto;} tr{page-break-inside:avoid;page-break-after:auto;}}
-  </style></head><body><h1>Kalkulator Upah</h1><div class="subtitle">${escapeHTML(titleInfo)}</div>${cloned.outerHTML}${selisihNote}<script>window.addEventListener('load',function(){setTimeout(function(){window.print();},150);});<\/script></body></html>`;
+  </style></head><body><div class="subtitle">${escapeHTML(titleInfo)}</div>${cloned.outerHTML}${selisihNote}<script>window.addEventListener('load',function(){setTimeout(function(){window.print();},150);});<\/script></body></html>`;
   const win=window.open('', '_blank');
   if(!win){
     alert('Popup print diblokir browser. Izinkan popup untuk aplikasi ini, lalu klik Cetak lagi.');
@@ -4910,7 +4976,7 @@ async function loadAdminUpah(event){
     adminUpahData=null;
     const bridge=await waitFirebase();
     if(String(unitKeyValue || '')===BAHAN_BAKU_GABUNGAN_KEY || isBahanBakuPagiMalamKey(unitKeyValue)){
-      adminUpahData=await loadBahanBakuCombinedAttendance(dateValue, bridge, {force:false});
+      adminUpahData=await loadBahanBakuUpahCombinedAttendance(dateValue, bridge, {force:false});
     }else{
       adminUpahData=await readAttendancePayloadForUnit(unitKeyValue, dateValue, bridge, {force:false});
     }
@@ -5092,8 +5158,7 @@ async function reportImageBlob(onProgress){
     ctx.font=`800 ${layout.dateFont}px Arial`;
     ctx.fillStyle='#334155';
     ctx.fillText(formatLongDate(state.reportDate), cssWidth/2, topPad+108);
-    const coordinatorLine=reportCoordinatorLineText();
-    if(coordinatorLine){ ctx.font=`900 ${Math.max(22, layout.dateFont-2)}px Arial`; ctx.fillText(fitCanvasText(ctx, coordinatorLine.toUpperCase(), cssWidth-120), cssWidth/2, topPad+140); }
+    // v171: nama koordinator tidak ditampilkan pada semua laporan kegiatan.
 
     ctx.fillStyle='#e8f0fe';
     ctx.fillRect(left, tableTop, tableWidth, tableHeadH);
@@ -5347,8 +5412,7 @@ async function reportPdfBlob(onProgress){
   text(pageW/2, topPad+68, layout.subTitleFont, 'PT. BUDI INTI PERKASA', 'F2', 'center');
   setFill(0.2,0.25,0.33);
   text(pageW/2, topPad+100, layout.dateFont, formatLongDate(state.reportDate), 'F2', 'center');
-  const coordinatorLine=reportCoordinatorLineText();
-  if(coordinatorLine) text(pageW/2, topPad+128, Math.max(18, layout.dateFont-3), coordinatorLine.toUpperCase(), 'F2', 'center', pageW-100);
+  // v171: nama koordinator tidak ditampilkan pada semua laporan kegiatan.
 
   const left=marginX;
   const tableTop=topPad+headerBlockH;
@@ -5556,11 +5620,13 @@ function resetShift(){
   if(!assertScheduleDateSelected()) return;
   ensureScheduleEditBaseline();
   if(!isAdmin() && isCommercialKey(activeUnitKey())){
-    if(!confirm('Reset semua pilihan Shift 1, Shift 2, dan Shift 3 untuk jadwal Muatan Commercial?')) return;
-    document.querySelectorAll('[data-commercial-activity-shift],[data-commercial-coordinator-shift],[data-commercial-dock-plan]').forEach(el=>{ el.checked=false; });
-    document.querySelectorAll('[data-commercial-shift]').forEach(el=>{ el.checked=false; el.disabled=true; el.dataset.commercialPlanDisabled='1'; });
-    commercialScheduleRowsCache=(commercialScheduleRowsCache||[]).map(r=>({...r,schedulePlan:'',s1:false,s2:false,s3:false}));
-    Object.keys(commercialActivityRowsCache||{}).forEach(k=>{ commercialActivityRowsCache[k]=(commercialActivityRowsCache[k]||[]).map(r=>({...r,s1:false,s2:false,s3:false})); });
+    // v174: Reset khusus Absensi Muatan Commercial hanya mengosongkan pilihan Regu tiap LD.
+    // Aturan Dasar Jadwal Loading Dock (PAGI/SIANG) dan checkbox Shift 1/2/3 tetap dipertahankan.
+    if(!confirm('Reset pilihan Regu Tiap LD untuk jadwal Muatan Commercial? Aturan Dasar Jadwal Loading Dock dan pilihan Shift tidak akan direset.')) return;
+    document.querySelectorAll('[data-commercial-regu-select]').forEach(sel=>{ sel.value=''; });
+    commercialScheduleRowsCache=(commercialScheduleRowsCache||[]).map(r=>({...r,regu:''}));
+    enforceUniqueCommercialReguSelection();
+    refreshCommercialReguSelectOptions();
     markScheduleDirty(); saveCommercialDraftSelection(); renderReport(); updateCounts(); return;
   }
   const msg=coordinatorSingleShiftMode() ? `Reset semua pilihan ${coordinatorAllowedShiftLabel()}?` : 'Reset semua pilihan Shift 1, Shift 2, dan Shift 3?';
@@ -5634,13 +5700,74 @@ function makeAttendancePayload(){
     const activityWorkers=dedupeAttendanceWorkers(selectedCommercialActivityReportRows().filter(w=>w.activityKey===def.key).map(w=>({nip:w.nip,name:w.name,s1:Boolean(w.s1),s2:Boolean(w.s2),s3:Boolean(w.s3),activityKey:def.key,activityLabel:def.label,sourceUnitKey:activeUnitKey()})));
     return {key:def.key,label:def.label,workers:activityWorkers.map(w=>({rowId:w.rowId,nip:w.nip,name:w.name,s1:Boolean(w.s1),s2:Boolean(w.s2),s3:Boolean(w.s3)}))};
   }) : [];
-  return normalizeAttendancePayload({ id:null, reportDate:state.reportDate || todayISO(), company:'PT. BUDI INTI PERKASA', unit:activeUnitName(), unitKey:activeUnitKey(), loadingDock:'', regu:'', commercialAssignments:commercialRows, commercialActivities, scheduleKey:'', inputBy:currentUser ? {username:String(currentUser.username || currentUser.nip || ''),nip:String(currentUser.nip || ''),name:String(currentUser.name),role:String(currentUser.role || 'koordinator'),unit:currentUser.unit || activeUnitName(),activity:activeUnitName()} : null, workers:workersRaw, savedFrom:'pwa', inputMode: isCommercial ? 'commercial_loading_dock_regu_shift' : (isOverzakKey(activeUnitKey()) ? 'overzak_shift_1_2_3' : (isSiloKey(activeUnitKey()) ? 'silo_shift_1_2_3' : (coordinatorBahanBakuMalamMode() ? 'bongkaran_bahan_baku_malam_shift_2_3' : (coordinatorSingleShiftMode() ? (coordinatorAllowedShift()==='s2' ? 'single_shift_2' : 'single_shift_1') : 'normal')))) });
+  return normalizeAttendancePayload({ id:null, reportDate:state.reportDate || todayISO(), company:'PT. BUDI INTI PERKASA', unit:activeUnitName(), unitKey:activeUnitKey(), loadingDock:'', regu:'', commercialAssignments:commercialRows, commercialActivities, scheduleKey:'', inputBy:currentUser ? {username:String(currentUser.username || currentUser.nip || ''),nip:String(currentUser.nip || ''),name:String(currentUser.name),role:String(currentUser.role || 'koordinator'),unit:currentUser.unit || activeUnitName(),activity:activeUnitName()} : null, workers:workersRaw, savedFrom:'pwa', inputMode: isCommercial ? 'commercial_loading_dock_regu_shift' : (isOverzakKey(activeUnitKey()) ? 'overzak_shift_1_2_3' : (isSiloKey(activeUnitKey()) ? 'silo_shift_1_2_3' : (coordinatorBahanBakuMalamMode() ? 'bongkaran_bahan_baku_malam_shift_2_3' : (activeUnitKey()===BAHAN_BAKU_PAGI_KEY ? 'bongkaran_bahan_baku_pagi_shift_1_2_3' : (coordinatorSingleShiftMode() ? (coordinatorAllowedShift()==='s2' ? 'single_shift_2' : 'single_shift_1') : 'normal'))))) });
 }
 function saveAttendanceLocal(payload){ const data={...normalizeAttendancePayload(payload), savedAtLocal:new Date().toISOString(), onlineStatus:'local_cache'}; safeLocalSetJSON(attendanceStorageKey(data), cacheEnvelope(data, 'pending_or_cache')); return data; }
 function getPendingAttendance(){ try{ const raw=localStorage.getItem(PENDING_ATTENDANCE_KEY); const arr=raw?JSON.parse(raw):[]; return Array.isArray(arr)?arr:[]; }catch(err){ return []; } }
 function setPendingAttendance(rows){ try{ localStorage.setItem(PENDING_ATTENDANCE_KEY, JSON.stringify(rows)); }catch(err){ console.warn('Simpan antrian absensi gagal.', err); } updateSyncBadges(); }
 function queuePendingAttendance(payload, reason){ const normalized=normalizeAttendancePayload(payload); const rows=getPendingAttendance().filter(x=>x && attendanceDocId(x)!==normalized.id); rows.push({...normalized, queuedAtLocal:new Date().toISOString(), lastSyncStatus:'pending', lastSyncError:reason ? String(reason).slice(0,220) : ''}); setPendingAttendance(rows); }
 async function saveAttendanceOnline(payload){ const bridge=window.AbsensiFirebase; if(!(bridge && bridge.enabled && bridge.saveAttendance)) return {online:false, reason:'Firebase belum online'}; const normalized=normalizeAttendancePayload(payload); const result=await bridge.saveAttendance(normalized); clearAdminAttendanceCache(normalized.unitKey, normalized.reportDate); return {online:true, id:(result && result.id) || normalized.id}; }
+
+function adminEmailNotifyConfig(){
+  return {
+    enabled: window.ABSENSI_EMAIL_NOTIFY_ENABLED !== false,
+    to: String(window.ABSENSI_EMAIL_NOTIFY_TO || 'naafi.aoa@gmail.com').trim(),
+    url: String(window.ABSENSI_EMAIL_NOTIFY_WEBAPP_URL || '').trim(),
+    token: String(window.ABSENSI_EMAIL_NOTIFY_TOKEN || '').trim()
+  };
+}
+function adminEmailShiftText(counts){
+  const c=counts || {};
+  return `Shift 1: ${Number(c.shift1 || 0)} | Shift 2: ${Number(c.shift2 || 0)} | Shift 3: ${Number(c.shift3 || 0)} | Total: ${Number(c.total || 0)}`;
+}
+function buildAdminSaveEmailPayload(payload, online){
+  const actor=payload && payload.inputBy ? payload.inputBy : {};
+  const counts=payload && payload.counts ? payload.counts : {shift1:0,shift2:0,shift3:0,total:(payload && payload.workers ? payload.workers.length : 0)};
+  const savedAt=new Date();
+  return {
+    token: adminEmailNotifyConfig().token,
+    to: adminEmailNotifyConfig().to,
+    appName: 'Absensi BIP',
+    eventType: 'save_attendance',
+    subject: `[Absensi BIP] Koordinator klik Simpan - ${(payload && payload.unitName) || (payload && payload.unit) || 'Kegiatan'}`,
+    coordinatorName: actor.name || actor.username || '-',
+    coordinatorNip: actor.nip || actor.username || '-',
+    coordinatorRole: actor.role || 'koordinator',
+    unitName: (payload && (payload.unitName || payload.unit)) || '-',
+    unitKey: (payload && payload.unitKey) || '-',
+    reportDate: (payload && payload.reportDate) || '-',
+    attendanceDocId: (payload && payload.attendanceDocId) || (payload && payload.id) || '-',
+    online: Boolean(online),
+    onlineStatus: online ? 'Online / tersimpan ke Firestore' : 'Lokal / masuk antrean sinkron',
+    counts,
+    shiftSummary: adminEmailShiftText(counts),
+    workerTotal: Number(counts.total || 0),
+    savedAtIso: savedAt.toISOString(),
+    savedAtLocal: savedAt.toLocaleString('id-ID')
+  };
+}
+async function notifyAdminEmailOnSave(payload, online){
+  const cfg=adminEmailNotifyConfig();
+  if(!cfg.enabled) return {sent:false, reason:'disabled'};
+  if(!cfg.url){ console.warn('Email notifikasi admin belum dikirim: URL Google Apps Script belum diisi di firebase-config.js.'); return {sent:false, reason:'missing_webapp_url'}; }
+  const body=buildAdminSaveEmailPayload(payload, online);
+  try{
+    await fetch(cfg.url, {
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(body),
+      keepalive:true
+    });
+    auditLog('email_notify_admin','notification',{message:'Request email notifikasi admin dikirim', unitKey:body.unitKey, unitName:body.unitName, reportDate:body.reportDate, to:cfg.to, attendanceDocId:body.attendanceDocId}).catch(()=>{});
+    return {sent:true};
+  }catch(err){
+    console.warn('Email notifikasi admin gagal dikirim.', err);
+    auditLog('email_notify_admin_failed','notification',{message:'Email notifikasi admin gagal dikirim', unitKey:body.unitKey, unitName:body.unitName, reportDate:body.reportDate, to:cfg.to, error:(err && err.message ? err.message : String(err || '')).slice(0,220)}).catch(()=>{});
+    return {sent:false, reason:err && err.message ? err.message : String(err || '')};
+  }
+}
+
 async function syncPendingAttendanceOnline(targetId){
   const bridge=window.AbsensiFirebase;
   const rows=getPendingAttendance();
@@ -5713,7 +5840,10 @@ async function saveSchedule(){
     await renderAll();
     switchToPanel('panelReport');
     auditLog('save_attendance','attendance',{message: online ? 'Absensi tersimpan online ke Firebase' : 'Absensi tersimpan lokal dan masuk antrean sync', unitKey:payload.unitKey, unitName:payload.unitName, reportDate:payload.reportDate, attendanceDocId:payload.id, totalRows:(payload.workers||[]).length, online}).catch(()=>{});
-    alert((online ? 'Jadwal pekerja sudah disimpan online ke Firebase.' : 'Jadwal pekerja tersimpan lokal dan masuk antrian sinkron. Saat Firebase online, data akan dikirim otomatis.') + `
+    notifyAdminEmailOnSave(payload, online).catch(()=>{});
+    const emailCfg=adminEmailNotifyConfig();
+    const emailNote=emailCfg.enabled ? (emailCfg.url ? `\nEmail notifikasi admin dikirim ke: ${emailCfg.to}` : '\nEmail notifikasi admin belum aktif: URL Google Apps Script belum diisi.') : '';
+    alert((online ? 'Jadwal pekerja sudah disimpan online ke Firebase.' : 'Jadwal pekerja tersimpan lokal dan masuk antrian sinkron. Saat Firebase online, data akan dikirim otomatis.') + emailNote + `
 
 Tab Absensi sudah dibuka otomatis untuk tanggal yang baru disimpan.`);
   } finally { isSavingSchedule=false; if(btn){ btn.textContent=oldText || '💾 Simpan'; } updateScheduleSafetyUI(); }
@@ -5885,6 +6015,41 @@ function buildBahanBakuCombinedPayload(pagiPayload, malamPayload, dateValue, ove
     savedFrom:'combined_admin_view'
   };
 }
+
+function buildBahanBakuUpahCombinedPayload(pagiPayload, siloPayload, overzakPayload, malamPayload, dateValue){
+  const pagiRows=sourceRowsPreserveSelectedShifts(pagiPayload, BAHAN_BAKU_PAGI_KEY).map(r=>({...r,kegiatan:'Bongkaran Bahan Baku Pagi',sourceUnitKey:BAHAN_BAKU_PAGI_KEY,sourceUnitName:unitNameFromKey(BAHAN_BAKU_PAGI_KEY)}));
+  const siloRows=sourceRowsPreserveSelectedShifts(siloPayload, SILO_KEY).map(r=>({...r,kegiatan:'Silo',sourceUnitKey:SILO_KEY,sourceUnitName:SILO_NAME}));
+  const overzakRows=sourceRowsPreserveSelectedShifts(overzakPayload, OVERZAK_KEY).map(r=>({...r,kegiatan:'Overzak',sourceUnitKey:OVERZAK_KEY,sourceUnitName:OVERZAK_NAME}));
+  const malamRows=sourceRowsPreserveSelectedShifts(malamPayload, BAHAN_BAKU_MALAM_KEY, {allowS1:false, allowS2:true, allowS3:true}).map(r=>({...r,kegiatan:'Bongkaran Bahan Baku Malam',sourceUnitKey:BAHAN_BAKU_MALAM_KEY,sourceUnitName:unitNameFromKey(BAHAN_BAKU_MALAM_KEY)}));
+  const rows=mergeRowsByNip([...pagiRows, ...siloRows, ...overzakRows, ...malamRows]).filter(r=>!isOperOperBahanBakuRow(r));
+  return {
+    id:`${BAHAN_BAKU_GABUNGAN_KEY}_upah_${dateValue}`,
+    reportDate:dateValue,
+    company:'PT. BUDI INTI PERKASA',
+    unit:BAHAN_BAKU_GABUNGAN_NAME,
+    unitKey:BAHAN_BAKU_GABUNGAN_KEY,
+    combinedAttendance:true,
+    upahCombined:true,
+    inputBy:{ username:'gabungan_upah', nip:'', name:'Gabungan jadwal Bahan Baku, Silo, Overzak, dan Malam', role:'system', unit:BAHAN_BAKU_GABUNGAN_NAME },
+    counts:{ shift1:rows.filter(r=>r.s1).length, shift2:rows.filter(r=>r.s2).length, shift3:rows.filter(r=>r.s3).length, total:rows.length },
+    workers:rows.map(r=>({nip:r.nip,name:r.name,kegiatan:r.kegiatan||upahKegiatanLabel(r),s1:Boolean(r.s1),s2:Boolean(r.s2),s3:Boolean(r.s3),type:r.type||'',checkIn:r.checkIn||'',checkOut:r.checkOut||'',sourceUnitKey:r.sourceUnitKey||'',sourceUnitName:r.sourceUnitName||''})),
+    savedFrom:'combined_upah_view'
+  };
+}
+async function loadBahanBakuUpahCombinedAttendance(dateValue, bridge, options){
+  const batch=await readAttendancePayloadBatch([
+    {key:'pagi', unitKey:BAHAN_BAKU_PAGI_KEY, reportDate:dateValue},
+    {key:'silo', unitKey:SILO_KEY, reportDate:dateValue},
+    {key:'overzak', unitKey:OVERZAK_KEY, reportDate:dateValue},
+    {key:'malam', unitKey:BAHAN_BAKU_MALAM_KEY, reportDate:dateValue}
+  ], bridge, options || {});
+  const pagiPayload=batch.pagi || null;
+  const siloPayload=batch.silo || null;
+  const overzakPayload=batch.overzak || null;
+  const malamPayload=batch.malam || null;
+  if(!pagiPayload && !siloPayload && !overzakPayload && !malamPayload) return null;
+  return buildBahanBakuUpahCombinedPayload(pagiPayload, siloPayload, overzakPayload, malamPayload, dateValue);
+}
 async function loadBahanBakuCombinedAttendance(dateValue, bridge, options){
   const batch=await readAttendancePayloadBatch([
     {key:'pagi', unitKey:BAHAN_BAKU_PAGI_KEY, reportDate:dateValue},
@@ -6025,7 +6190,7 @@ function printAdminAttendance(){
     unitName: unitNameForPrint || 'Muatan Breeder',
     reportDate: (adminReportData && adminReportData.reportDate) || (($('adminReportDate') && $('adminReportDate').value) || todayISO()),
     dateText: $('reportDateText') ? $('reportDateText').textContent : '',
-    coordinatorLine: $('reportCoordinatorText') ? $('reportCoordinatorText').textContent : reportCoordinatorLineText(),
+    coordinatorLine: '',
     title: $('reportMainTitle') ? $('reportMainTitle').textContent : 'ABSENSI KEGIATAN MUATAN BREEDER',
     company: $('reportCompanyText') ? $('reportCompanyText').textContent : 'PT. BUDI INTI PERKASA',
     showDuration: isDurationReportEnabled(),
@@ -7043,13 +7208,14 @@ async function adminSaveCheckTimes(){
 
 function optionUnits(includeAll=false){ return (includeAll?'<option value="ALL">Semua Bagian</option>':'') + UNITS.map(u=>`<option value="${u.key}">${safeText(u.name)}</option>`).join(''); }
 function optionReportUnits(){ const rows=[{key:'muatan_breeder',name:'Muatan Breeder'},{key:BAHAN_BAKU_GABUNGAN_KEY,name:'Bongkaran Bahan Baku'},{key:SILO_KEY,name:SILO_NAME},{key:'oper_oper_bahan_baku',name:'Oper Oper Bahan Baku'},{key:COMMERCIAL_KEY,name:'Muatan Commercial'}]; return rows.map(u=>`<option value="${u.key}">${safeText(u.name)}</option>`).join(''); }
+function optionUpahUnits(){ const rows=[{key:'muatan_breeder',name:'Muatan Breeder'},{key:BAHAN_BAKU_GABUNGAN_KEY,name:'Bongkaran Bahan Baku'},{key:'oper_oper_bahan_baku',name:'Oper Oper Bahan Baku'},{key:COMMERCIAL_KEY,name:'Muatan Commercial'}]; return rows.map(u=>`<option value="${u.key}">${safeText(u.name)}</option>`).join(''); }
 function optionCheckSummaryUnits(){ const rows=[{key:'muatan_breeder',name:'Muatan Breeder'},{key:BAHAN_BAKU_GABUNGAN_KEY,name:'Bongkaran Bahan Baku - Gabungan'},...UNITS.filter(u=>u.key!=='muatan_breeder')]; return rows.map(u=>`<option value="${u.key}">${safeText(u.name)}</option>`).join(''); }
 function initAdminTools(){
   ['adminUnitSelect','adminPanelUnitSelect','adminWorkerUnitSelect'].forEach(id=>{ const sel=$(id); if(sel){ sel.innerHTML=optionUnits(false); sel.value=adminManagedUnitKey; } }); const dashSel=$('adminDashUnitSelect'); if(dashSel){ dashSel.innerHTML=optionUnits(true); dashSel.value='ALL'; }
   const reportSel=$('adminReportUnitSelect');
   if(reportSel){ const current=reportSel.value || adminManagedUnitKey; reportSel.innerHTML=optionReportUnits(); const allowedReportKeys=['muatan_breeder',BAHAN_BAKU_GABUNGAN_KEY,SILO_KEY,'oper_oper_bahan_baku',COMMERCIAL_KEY]; reportSel.value=allowedReportKeys.includes(current) ? current : 'muatan_breeder'; }
   const upahSel=$('adminUpahUnitSelect');
-  if(upahSel){ const current=upahSel.value || (reportSel && reportSel.value) || adminManagedUnitKey; upahSel.innerHTML=optionReportUnits(); const allowedUpahKeys=['muatan_breeder',BAHAN_BAKU_GABUNGAN_KEY,SILO_KEY,'oper_oper_bahan_baku',COMMERCIAL_KEY]; upahSel.value=allowedUpahKeys.includes(current) ? current : 'muatan_breeder'; }
+  if(upahSel){ const current=upahSel.value || (reportSel && reportSel.value) || adminManagedUnitKey; upahSel.innerHTML=optionUpahUnits(); const allowedUpahKeys=['muatan_breeder',BAHAN_BAKU_GABUNGAN_KEY,'oper_oper_bahan_baku',COMMERCIAL_KEY]; upahSel.value=allowedUpahKeys.includes(current) ? current : 'muatan_breeder'; }
   const checkSummarySel=$('adminCheckSummaryUnitSelect');
   if(checkSummarySel){ const current=checkSummarySel.value || (reportSel && reportSel.value) || adminManagedUnitKey; checkSummarySel.innerHTML=optionCheckSummaryUnits(); checkSummarySel.value=current || 'muatan_breeder'; }
   ['adminCoordUnit'].forEach(id=>{ const sel=$(id); if(sel){ sel.innerHTML=optionUnits(false); } });
@@ -7603,6 +7769,52 @@ const FIRESTORE_USAGE_COLLECTIONS = ['coordinators','active_sessions','app_data'
 function bytesFromText(value){ try{ return new Blob([String(value || '')]).size; }catch(err){ return String(value || '').length; } }
 function formatBytesID(bytes){ const n=Number(bytes || 0); if(n < 1024) return `${n} B`; if(n < 1024*1024) return `${(n/1024).toFixed(1)} KB`; if(n < 1024*1024*1024) return `${(n/1024/1024).toFixed(2)} MB`; return `${(n/1024/1024/1024).toFixed(2)} GB`; }
 function pctOfQuota(value, quota){ if(!quota) return 0; return Math.max(0, Math.min(100, (Number(value || 0) / quota) * 100)); }
+
+function setAuditPruneInfo(message){ if($('adminAuditPruneInfo')) $('adminAuditPruneInfo').textContent=message || ''; }
+function readAuditPruneOptions(){
+  const retentionDays=Math.max(7, Math.min(Number(($('adminAuditRetentionDays') && $('adminAuditRetentionDays').value) || 90), 3650));
+  const maxDocs=Math.max(100, Math.min(Number(($('adminAuditMaxDocs') && $('adminAuditMaxDocs').value) || 1000), 5000));
+  const backupBeforeDelete=$('adminAuditBackupBeforeDelete') ? !!$('adminAuditBackupBeforeDelete').checked : true;
+  if($('adminAuditRetentionDays')) $('adminAuditRetentionDays').value=retentionDays;
+  if($('adminAuditMaxDocs')) $('adminAuditMaxDocs').value=maxDocs;
+  return { retentionDays, maxDocs, backupBeforeDelete, maxScan:5000 };
+}
+function downloadAuditPruneBackup(result, options){
+  const rows=Array.isArray(result && result.backupRows) ? result.backupRows : [];
+  if(!rows.length) return false;
+  const payload={ app:'update_absensi_BIP', type:'audit_logs_prune_backup', appVersion:'v170', exportedAtLocal:new Date().toISOString(), retentionDays:options.retentionDays, maxDocs:options.maxDocs, deletedCount:rows.length, rows };
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download='backup_audit_logs_dihapus_'+todayISO()+'.json';
+  document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  return true;
+}
+async function adminPruneAuditLogs(){
+  if(!requirePermission('deleteData','Batasi audit logs hanya untuk admin.')) return;
+  const bridge=window.AbsensiFirebase || await waitFirebase();
+  if(!(bridge && bridge.enabled && bridge.pruneAuditLogs)){ alert('Firebase belum aktif atau fitur hapus audit logs belum tersedia.'); return; }
+  const options=readAuditPruneOptions();
+  const msg=`Proses batasi audit_logs?\n\nAplikasi akan menyimpan log ${options.retentionDays} hari terakhir dan maksimal ${options.maxDocs} dokumen terbaru. Log yang lebih lama/berlebih akan dihapus dari Firestore.${options.backupBeforeDelete?'\n\nBackup JSON akan didownload sebelum hapus.':''}`;
+  if(!confirm(msg)) return;
+  const btn=$('btnAdminPruneAuditLogs'); const old=btn ? btn.textContent : '';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Memproses...'; }
+    setAuditPruneInfo('Membaca audit_logs dan menyiapkan daftar penghapusan...');
+    const result=await bridge.pruneAuditLogs(options);
+    if(options.backupBeforeDelete) downloadAuditPruneBackup(result, options);
+    setAuditPruneInfo(`Selesai. Dibaca: ${result.scanned || 0} dokumen. Dihapus: ${result.deleted || 0}. Tersisa estimasi: ${result.remainingEstimate || 0}.`);
+    adminLog(`Audit logs dibatasi. Dibaca: ${result.scanned || 0}, dihapus: ${result.deleted || 0}, retention: ${options.retentionDays} hari, max: ${options.maxDocs}.`);
+    await refreshFirestoreUsageEstimate();
+    alert('Proses batasi audit_logs selesai. Data yang dihapus sudah dibackup jika opsi backup aktif.');
+  }catch(err){
+    console.error(err);
+    setAuditPruneInfo('Gagal membatasi audit_logs: '+(err && err.message ? err.message : err));
+    alert('Gagal membatasi audit_logs: '+(err && err.message ? err.message : err));
+  }finally{ if(btn){ btn.disabled=false; btn.textContent=old || '🧹 Backup & Hapus Audit Logs Lama'; } }
+}
+
 function quotaCard(label, valueText, detailText, pct, warnAt=80){ const cls=pct>=warnAt ? 'usage-warn' : 'usage-ok'; return `<div class="sync-cache-card"><div class="label">${safeText(label)}</div><div class="value ${cls}">${safeText(valueText)}</div><div class="usage-meter"><div class="usage-meter-fill" style="width:${Math.min(100, Math.max(0, pct)).toFixed(2)}%"></div></div><div class="usage-detail">${safeText(detailText)}</div></div>`; }
 function firstDateValue(row, keys){ for(const key of keys){ const v=row && row[key]; if(v){ const s=String(v).slice(0,10); if(/^\d{4}-\d{2}-\d{2}$/.test(s)) return s; } } return ''; }
 function isFirestoreDocToday(collectionName, row, today){ const keys=['createdAtLocal','savedAtLocal','updatedAtLocal','importedAtLocal','exportedAtLocal','loginAtLocal']; const direct=firstDateValue(row, keys); if(direct) return direct===today; if(collectionName==='attendance' && String(row && row.reportDate || '').slice(0,10)===today) return true; return false; }
@@ -7838,7 +8050,7 @@ if($('baggingOffDate')) $('baggingOffDate').value = ($('adminReportDate') && $('
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); initBaggingScheduleImportControls(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); initBaggingScheduleImportControls(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminPruneAuditLogs')) $('btnAdminPruneAuditLogs').addEventListener('click', adminPruneAuditLogs); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
 document.addEventListener('input', e=>{ if(e && e.target && e.target.matches && e.target.matches('[data-check-nip]')) setAdminCheckTimesSourceInfo('Manual'); });
 let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu install belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }

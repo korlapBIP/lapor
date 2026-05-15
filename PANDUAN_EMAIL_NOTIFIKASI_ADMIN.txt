@@ -1,0 +1,38 @@
+PANDUAN AKTIVASI EMAIL NOTIFIKASI ADMIN - ABSENSI BIP v175
+
+Email admin penerima:
+naafi.aoa@gmail.com
+
+Mode pengiriman:
+Email dikirim setiap kali koordinator menekan tombol Simpan.
+
+Alur:
+PWA -> Google Apps Script Web App -> Gmail admin
+
+LANGKAH AKTIVASI:
+1. Login Gmail admin: naafi.aoa@gmail.com
+2. Buka https://script.google.com/
+3. Buat project baru.
+4. Hapus kode bawaan.
+5. Buka file di ZIP ini:
+   kode_apps_script_email_notifikasi.gs
+6. Copy seluruh isi file tersebut ke Google Apps Script.
+7. Klik Save.
+8. Klik Deploy > New deployment.
+9. Pilih type: Web app.
+10. Execute as: Me.
+11. Who has access: Anyone.
+12. Klik Deploy dan lakukan Authorization.
+13. Copy Web App URL.
+14. Buka file firebase-config.js pada aplikasi.
+15. Isi baris berikut dengan URL hasil deploy:
+    window.ABSENSI_EMAIL_NOTIFY_WEBAPP_URL = "PASTE_URL_DI_SINI";
+16. Simpan file.
+17. Upload/deploy ulang aplikasi PWA.
+18. Buka aplikasi, tekan Ctrl+F5 / clear cache jika masih memakai cache lama.
+
+CATATAN:
+- Password Gmail tidak dimasukkan ke aplikasi PWA.
+- Pengiriman email dilakukan oleh Google Apps Script dari akun Gmail yang men-deploy script.
+- Jika URL Apps Script belum diisi, aplikasi tetap bisa menyimpan absensi, tetapi email belum dikirim.
+- Karena mode yang dipilih adalah setiap klik Simpan, admin akan menerima email setiap kali tombol Simpan ditekan.

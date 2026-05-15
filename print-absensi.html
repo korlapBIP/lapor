@@ -506,7 +506,6 @@
         <div class="main">${esc(payload.title || 'ABSENSI KEGIATAN MUATAN BREEDER')}</div>
         <div class="company">${esc(payload.company || 'PT. BUDI INTI PERKASA')}</div>
         <div class="date">${esc(normalizeDateText(payload))}</div>
-        ${payload.coordinatorLine ? `<div class="coordinator">${esc(payload.coordinatorLine)}</div>` : ``}
       </section>
       <div class="table-wrap">
         <table class="${tableClass}">
