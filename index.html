@@ -1875,6 +1875,15 @@ function resetInactivityTimer(){
 function unitKey(unit){ return String(unit || 'Muatan Breeder').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'') || 'muatan_breeder'; }
 function isSiloKey(key){ return String(key || '') === SILO_KEY; }
 function isOverzakKey(key){ return String(key || '') === OVERZAK_KEY; }
+function isOperOperBahanBakuKey(key){ return String(key || '') === 'oper_oper_bahan_baku'; }
+function isBahanBakuKegiatanColumnKey(key){
+  const value=String(key || '').toLowerCase();
+  return value===BAHAN_BAKU_GABUNGAN_KEY || isBahanBakuPagiMalamKey(value) || isSiloKey(value) || isOverzakKey(value) || isOperOperBahanBakuKey(value);
+}
+function shouldShowKegiatanColumnForReport(unitKeyValue, payload){
+  if(isBahanBakuKegiatanColumnKey(unitKeyValue)) return true;
+  return Boolean(payload && payload.combinedAttendance && String(payload.unitKey || '')===BAHAN_BAKU_GABUNGAN_KEY);
+}
 function unitNameFromKey(key){ if(String(key || '')===BAHAN_BAKU_GABUNGAN_KEY) return BAHAN_BAKU_GABUNGAN_NAME; if(isSiloKey(key)) return SILO_NAME; if(isOverzakKey(key)) return OVERZAK_NAME; const found=UNITS.find(u=>u.key===key); return found ? found.name : 'Muatan Breeder'; }
 function isCommercialKey(key){ return String(key || '') === COMMERCIAL_KEY; }
 function normalizeRegu(value){ const raw=String(value||'').trim(); if(!raw) return ''; const m=raw.match(/\d+/); if(m) return String(parseInt(m[0],10)).padStart(2,'0'); return raw.toUpperCase(); }
@@ -3919,9 +3928,10 @@ function renderCheckCell(row, type){
   if(isAdmin()) return `<input class="check-input" data-check-${type} data-check-nip="${safeText(row.nip)}" value="${safeText(normalizeTimeToHMS(value))}" placeholder="HH:MM:SS" inputmode="numeric">`;
   return `<span class="check-source">${safeText(value)}</span>`;
 }
-function isBahanBakuCombinedReport(){ const key=getReportUnitKeyForSettings(); return String(key || '')===BAHAN_BAKU_GABUNGAN_KEY || isBahanBakuPagiMalamKey(key) || isOverzakKey(key) || (adminReportData && adminReportData.combinedAttendance); }
+function isBahanBakuCombinedReport(){ const key=getReportUnitKeyForSettings(); return shouldShowKegiatanColumnForReport(key, adminReportData); }
 function bahanBakuKegiatanLabel(row){
   const key=String((row && (row.kegiatan || row.activityLabel || row.sourceUnitKey || row.sourceUnitName)) || '').toLowerCase();
+  if(key.includes('silo')) return 'Silo';
   if(key.includes('overzak')) return 'Overzak';
   if(key.includes('oper2') || key.includes('oper oper') || key.includes('oper_oper')) return 'Oper2 BB';
   return 'Bongkaran';
@@ -5046,7 +5056,7 @@ function waExportReportConfig(rows){
   const unitKey=activeUnitKey();
   const unitLabel=(!isAdmin() && isOverzakKey(unitKey) ? BAHAN_BAKU_GABUNGAN_NAME : activeUnitName());
   const isCommercialRows=isCommercialKey(unitKey) || rows.some(w=>w && (w.ldRegu || w.loadingDock || w.regu));
-  const isBahanBakuRows=!isCommercialRows && (String(unitKey||'')===BAHAN_BAKU_GABUNGAN_KEY || isBahanBakuPagiMalamKey(unitKey) || isOverzakKey(unitKey) || rows.some(w=>w && (w.kegiatan || w.activityLabel || w.sourceUnitKey || w.sourceUnitName)));
+  const isBahanBakuRows=!isCommercialRows && shouldShowKegiatanColumnForReport(unitKey, null);
   const columns=isCommercialRows
     ? [
         {key:'no', label:'NO', width:110, align:'center'},
