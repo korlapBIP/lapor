@@ -1042,7 +1042,9 @@
 .bagging-control-card{border:1px solid #bfdbfe;background:linear-gradient(135deg,#ffffff,#eef6ff)}
 .bagging-control-card .card-head h3{margin:0}
 .bagging-report-info{margin-top:10px;font-size:12px;color:#475569;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:12px;padding:8px 10px;font-weight:800}.bagging-report-info:empty{display:none!important}
-.bagging-print-sheet{margin-top:16px;display:none}
+/* v190 - Tambah Master Regu Pengganti Bagging Off terpisah dan hubungkan ke Ganti Pekerja tanpa riwayat. */
+/* v191 - Rapikan tampilan Master Regu Pengganti Bagging Off. */
+.bagging-print-sheet{margin-top:16px;display:none;width:100%;max-width:none}
 .bagging-print-sheet.ready{display:block}
 .bagging-print-title{text-align:center;line-height:1.15;margin-bottom:10px;color:#0f172a}
 .bagging-print-title .main{font-size:15px;font-weight:950;text-transform:uppercase;letter-spacing:.02em}
@@ -1100,6 +1102,48 @@
   body.print-bagging-only .bagging-print-note{display:none!important}
 }
 
+
+    /* v186: tombol ganti pekerja khusus Admin Absensi BIP - tabel shift laporan. */
+    .admin-replace-col{width:120px!important;text-align:center!important}
+    .admin-replace-worker-btn{min-height:30px;border:0;border-radius:12px;background:#eef5ff;color:#2558d9;font-size:11px;font-weight:950;padding:6px 9px;white-space:nowrap;box-shadow:none;cursor:pointer}
+    .admin-replace-worker-btn:hover{background:#dbeafe}
+    .admin-replace-modal-backdrop{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:9999;display:flex;align-items:center;justify-content:center;padding:18px}
+    .admin-replace-modal{width:min(100%,520px);background:#fff;border-radius:24px;border:1px solid #dbe7f5;box-shadow:0 28px 70px rgba(15,23,42,.24);overflow:hidden}
+    .admin-replace-modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:15px 16px;background:#eef5ff;color:#20355b;font-weight:950}
+    .admin-replace-modal-body{padding:16px;display:grid;gap:12px}
+    .admin-replace-old{border:1px solid #e2e8f0;background:#f8fafc;border-radius:16px;padding:11px 12px;font-size:13px;line-height:1.5}
+    .admin-replace-old b{color:#0f172a}
+    .admin-replace-modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px 16px}
+    .admin-replace-modal select,.admin-replace-modal input{width:100%;min-height:44px;border:1px solid #d8e2ef;border-radius:14px;padding:9px 11px;font-weight:850;background:#fff;color:#172033}
+    .bagging-replace-col{width:92px;text-align:center}
+    .bagging-replaced-note{margin-top:2px;font-size:9px;font-weight:900;color:#2563eb;text-transform:uppercase}
+
+    /* v191 - Rapikan Master Regu Pengganti Bagging Off */
+    .bagging-replacement-master-card .card-body{padding:16px}
+    .bagging-replacement-form{display:grid;grid-template-columns:minmax(220px,1fr) 160px;gap:12px;align-items:end}
+    .bagging-replacement-form .field:nth-of-type(3){grid-column:1/2}
+    .bagging-replacement-form .field:nth-of-type(4){grid-column:2/3}
+    .bagging-replacement-actions{margin-top:14px}
+    .bagging-replacement-table-wrap{width:100%;overflow:auto;margin-top:14px;border:1px solid #dbe7f6;border-radius:18px;background:#fff;box-shadow:0 10px 24px rgba(15,23,42,.06)}
+    .bagging-replacement-table{width:100%;max-width:none;margin:0;table-layout:fixed;border-collapse:separate;border-spacing:0;font-size:13px}
+    .bagging-replacement-table th,.bagging-replacement-table td{border:0;border-bottom:1px solid #e7eef8;padding:11px 12px;vertical-align:middle;white-space:normal;word-break:normal}
+    .bagging-replacement-table th{position:sticky;top:0;z-index:1;background:#f3f7fc;color:#20355b;font-weight:950;font-size:12px;letter-spacing:.02em}
+    .bagging-replacement-table tbody tr:nth-child(even){background:#fbfdff}
+    .bagging-replacement-table tbody tr:hover{background:#eef5ff}
+    .bagging-replacement-table th:nth-child(1),.bagging-replacement-table td:nth-child(1){width:58px;text-align:center}
+    .bagging-replacement-table th:nth-child(2),.bagging-replacement-table td:nth-child(2){width:220px;text-align:left}
+    .bagging-replacement-table th:nth-child(3),.bagging-replacement-table td:nth-child(3){width:120px;text-align:center}
+    .bagging-replacement-table th:nth-child(4),.bagging-replacement-table td:nth-child(4){width:auto;text-align:left}
+    .bagging-replacement-table th:nth-child(5),.bagging-replacement-table td:nth-child(5){width:120px;text-align:center}
+    .bagging-replacement-table th:nth-child(6),.bagging-replacement-table td:nth-child(6){width:180px;text-align:center}
+    .bagging-regu-cell,.bagging-nip-cell,.bagging-name-cell{font-weight:850;color:#172033}
+    .bagging-action-buttons{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:nowrap}
+    .bagging-action-buttons .btn.small{min-height:36px;padding:7px 12px;border-radius:12px;white-space:nowrap}
+    .bagging-status-badge{display:inline-flex;align-items:center;justify-content:center;min-width:76px;min-height:30px;border-radius:999px;padding:5px 10px;font-weight:950;font-size:12px}
+    .bagging-status-badge.active{background:#e8f8ee;color:#15803d}
+    .bagging-status-badge.inactive{background:#f1f5f9;color:#64748b}
+    .bagging-empty-row{height:54px;color:#64748b;font-weight:850;background:#fbfdff}
+    @media(max-width:720px){.bagging-replacement-form{grid-template-columns:1fr}.bagging-replacement-form .field:nth-of-type(3),.bagging-replacement-form .field:nth-of-type(4){grid-column:auto}.bagging-replacement-table{min-width:760px}}
 </style>
 </head>
 <body class="auth-pending">
@@ -1232,6 +1276,18 @@
           </div>
         </div>
       </div></div>
+      <div class="card admin-only no-print bagging-control-card bagging-replacement-master-card" id="baggingReplacementMasterCard"><div class="card-head"><h3>Master Regu Pengganti Bagging Off</h3><span>Terpisah dari master Bagging Off stabil</span></div><div class="card-body">
+        <div class="bagging-replacement-form">
+          <input id="baggingReplacementMasterId" type="hidden">
+          <div class="field"><label for="baggingReplacementRegu">Regu Pengganti</label><input id="baggingReplacementRegu" type="text" placeholder="contoh: Regu Pengganti 01"></div>
+          <div class="field"><label for="baggingReplacementNip">NIP</label><input id="baggingReplacementNip" type="text" inputmode="numeric" placeholder="NIP pekerja"></div>
+          <div class="field"><label for="baggingReplacementName">Nama Pekerja</label><input id="baggingReplacementName" type="text" placeholder="Nama pekerja pengganti"></div>
+          <div class="field"><label for="baggingReplacementActive">Status</label><select id="baggingReplacementActive"><option value="1">Aktif</option><option value="0">Nonaktif</option></select></div>
+        </div>
+        <div class="admin-actions-row three bagging-replacement-actions"><button type="button" class="btn primary" id="btnSaveBaggingReplacementMaster">💾 Simpan Pekerja</button><button type="button" class="btn secondary" id="btnResetBaggingReplacementMaster">↻ Reset Form</button><button type="button" class="btn success" id="btnRefreshBaggingReplacementMaster">🔄 Refresh Master</button></div>
+        <div class="bagging-replacement-table-wrap"><table class="report-table admin-worker-table bagging-replacement-table" id="baggingReplacementMasterTable"><thead><tr><th>NO</th><th>REGU PENGGANTI</th><th>NIP</th><th>NAMA PEKERJA</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody id="baggingReplacementMasterBody"><tr><td colspan="6">Memuat master pengganti...</td></tr></tbody></table></div>
+      </div></div>
+
       <div class="card admin-only no-print bagging-control-card bagging-absensi-card" id="baggingOffControlCard"><div class="card-head"><h3>Absensi Bagging Off</h3><span>v161 • teks info dirapikan</span></div><div class="card-body">
         <div class="bagging-absensi-actions">
           <div class="bagging-absensi-row bagging-absensi-row-top">
@@ -1525,6 +1581,12 @@ const IMPORT_HISTORY_CACHE_KEY = 'absensi_bip_import_check_history_v1';
 const AUTO_SHIFT3_ENABLED_KEY = 'absensi_bip_auto_shift3_enabled_v1';
 const SHOW_DURATION_REPORT_KEY = 'absensi_bip_show_duration_report_v1';
 const BAGGING_OFF_SCHEDULE_LOCAL_PREFIX = 'absensi_bip_bagging_schedule_v157';
+const BAGGING_OFF_REPLACEMENTS_LOCAL_PREFIX = 'absensi_bip_bagging_replacements_v188';
+const BAGGING_OFF_REPLACEMENT_MASTER_LOCAL_KEY = 'absensi_bip_bagging_replacement_master_v190';
+const BAGGING_OFF_REPLACEMENT_MASTER_DOC_ID = 'bagging_off_replacement_master_v190';
+let baggingOffReplacementCache = {};
+let baggingOffLastReportDate = '';
+let baggingOffReplacementMasterCache = [];
 
 const BAGGING_OFF_MASTER = [
   {jenis:'BUHLER', regu:'A', nip:'155', nama:'Rian Hanafi'},
@@ -3170,20 +3232,39 @@ function commercialLdReguLabel(dock, regu){
   const d=normalizeDockName(dock), r=normalizeRegu(regu);
   return d && r ? `LD ${d} - Regu ${r}` : '';
 }
+function commercialReportSortParts(row){
+  const src=row || {};
+  const text=String([src.ldRegu, src.activityLabel, src.kegiatan, src.name, src.sourceUnitName].filter(Boolean).join(' ')).replace(/\s+/g,' ').trim().toLowerCase();
+  let dock=normalizeDockName(src.loadingDock);
+  let regu=normalizeRegu(src.regu);
+  const m=text.match(/ld\s*0*(\d+)\s*-?\s*regu\s*0*(\d+)/i);
+  if(m){ if(!dock) dock=String(m[1]).padStart(2,'0'); if(!regu) regu=String(m[2]).padStart(2,'0'); }
+  const dockNum=parseInt(dock,10);
+  const reguNum=parseInt(regu,10);
+  return { text, dock, regu, dockNum:Number.isFinite(dockNum)?dockNum:9999, reguNum:Number.isFinite(reguNum)?reguNum:9999 };
+}
 function commercialReportSortPriority(row){
-  const label=String((row && (row.ldRegu || row.activityLabel || row.kegiatan)) || '').replace(/\s+/g,' ').trim().toLowerCase();
-  const dock=normalizeDockName(row && row.loadingDock);
-  const regu=normalizeRegu(row && row.regu);
-  if(label.includes('koordinator')) return 0;
-  if((dock==='01' && regu==='01') || label.includes('ld 01 - regu 01') || label.includes('ld 01-regu 01')) return 1;
-  if((dock==='02' && regu==='11') || label.includes('ld 02 - regu 11') || label.includes('ld 02-regu 11')) return 2;
-  if(label.includes('stapel')) return 3;
-  return 4;
+  const p=commercialReportSortParts(row);
+  if(p.text.includes('koordinator')) return 0;
+  if((p.dock==='01' && p.regu==='01') || p.text.includes('ld 01 - regu 01') || p.text.includes('ld 01-regu 01')) return 1;
+  if((p.dock==='02' && p.regu==='11') || p.text.includes('ld 02 - regu 11') || p.text.includes('ld 02-regu 11')) return 2;
+  // v184: untuk laporan Admin Muatan Commercial, seluruh baris LD-Regu lain tetap disusun berdasarkan LD-Regu
+  // sebelum aktivitas TF, supaya tabel Shift 1/Shift 2 dan hasil cetak tidak menampilkan Stapel/Malleti di atas LD-Regu.
+  if(p.dock && p.regu) return 3;
+  if(p.text.includes('stapel')) return 4;
+  if(p.text.includes('malleti') || p.text.includes('mallet')) return 5;
+  return 6;
 }
 function sortCommercialReportRows(rows){
-  return (Array.isArray(rows) ? rows : []).map((row,idx)=>({row,idx,priority:commercialReportSortPriority(row)}))
-    .sort((a,b)=>a.priority-b.priority || a.idx-b.idx)
+  return (Array.isArray(rows) ? rows : []).map((row,idx)=>{
+    const parts=commercialReportSortParts(row);
+    return {row,idx,parts,priority:commercialReportSortPriority(row)};
+  })
+    .sort((a,b)=>a.priority-b.priority || a.parts.dockNum-b.parts.dockNum || a.parts.reguNum-b.parts.reguNum || String(a.parts.text).localeCompare(String(b.parts.text)) || a.idx-b.idx)
     .map((item,i)=>({...item.row, no:i+1}));
+}
+function shouldSortAdminCommercialReportRows(){
+  return isAdmin() && String(getReportUnitKeyForSettings() || '')===COMMERCIAL_KEY;
 }
 function isCommercialTfActivityRow(row){
   const key=String((row && row.activityKey) || '').toLowerCase();
@@ -3774,20 +3855,34 @@ async function renderWorkers(){
   });
   updateCounts();
 }
+function adminCanReplaceWorkerInReport(){
+  return Boolean(isAdmin() && String(getReportUnitKeyForSettings() || '')===COMMERCIAL_KEY && adminReportData && !adminReportData.combinedAttendance);
+}
+function adminReportShiftButton(row, shiftKey){
+  if(!adminCanReplaceWorkerInReport()) return '';
+  return `<button type="button" class="admin-replace-worker-btn" data-admin-replace-worker="1" data-shift="${safeText(shiftKey)}" data-nip="${safeText(row.nip)}" title="Ganti pekerja ini">Ganti Pekerja</button>`;
+}
 function renderMobileReportGeneric(rows, emptyMsg){
   const list=$('mobileReportList'); if(!list) return;
   list.innerHTML='';
   const isCommercialRows=rows.some(w=>w && (w.ldRegu || w.loadingDock || w.regu));
-  const s1=rows.filter(w=>w.s1).sort((a,b)=>(Number(a.no)||0)-(Number(b.no)||0));
-  const s2=rows.filter(w=>w.s2).sort((a,b)=>(Number(a.no)||0)-(Number(b.no)||0));
-  const s3=rows.filter(w=>w.s3).sort((a,b)=>(Number(a.no)||0)-(Number(b.no)||0));
+  const useCommercialAdminSort=adminCanReplaceWorkerInReport() || shouldSortAdminCommercialReportRows();
+  const sortShiftRows=(arr)=> useCommercialAdminSort ? sortCommercialReportRows(arr) : arr.sort((a,b)=>(Number(a.no)||0)-(Number(b.no)||0));
+  const s1=sortShiftRows(rows.filter(w=>w.s1));
+  const s2=sortShiftRows(rows.filter(w=>w.s2));
+  const s3=sortShiftRows(rows.filter(w=>w.s3));
   if(!rows.length){ list.innerHTML=`<div class="empty">${safeText(emptyMsg || 'Belum ada pekerja yang dipilih.')}</div>`; return; }
-  const header=isCommercialRows ? '<tr><th>No</th><th>LD-Regu</th><th>NIP</th><th>Nama Pekerja</th></tr>' : '<tr><th>No</th><th>NIP</th><th>Nama Pekerja</th></tr>';
-  const emptyColspan=isCommercialRows ? 4 : 3;
-  const rowHtml=(w,i)=> isCommercialRows ? `<tr><td>${i+1}</td><td>${safeText(w.ldRegu || commercialLdReguLabel(w.loadingDock,w.regu))}</td><td>${safeText(w.nip)}</td><td>${safeText(w.name)}</td></tr>` : `<tr><td>${i+1}</td><td>${safeText(w.nip)}</td><td>${safeText(w.name)}</td></tr>`;
-  const makeSection=(title, cls, data)=>`<div class="shift-section ${cls}"><div class="shift-section-head"><span>${title}</span><span class="shift-count">${data.length} pekerja</span></div><table class="shift-table"><thead>${header}</thead><tbody>${data.length?data.map(rowHtml).join(''):`<tr><td colspan="${emptyColspan}" style="text-align:center;color:#64748b">Belum ada pekerja.</td></tr>`}</tbody></table></div>`;
-  list.innerHTML=makeSection('Shift 1','s1',s1)+makeSection('Shift 2','s2',s2)+makeSection('Shift 3','s3',s3);
+  const showReplace=adminCanReplaceWorkerInReport() && isCommercialRows;
+  const actionHead=showReplace ? '<th class="admin-replace-col">Aksi</th>' : '';
+  const header=isCommercialRows ? `<tr><th>No</th><th>LD-Regu</th><th>NIP</th><th>Nama Pekerja</th>${actionHead}</tr>` : '<tr><th>No</th><th>NIP</th><th>Nama Pekerja</th></tr>';
+  const emptyColspan=(isCommercialRows ? 4 : 3) + (showReplace ? 1 : 0);
+  const rowHtml=(shiftKey)=>(w,i)=> isCommercialRows
+    ? `<tr><td>${i+1}</td><td>${safeText(w.ldRegu || commercialLdReguLabel(w.loadingDock,w.regu))}</td><td>${safeText(w.nip)}</td><td>${safeText(w.name)}</td>${showReplace?`<td class="admin-replace-col">${adminReportShiftButton(w, shiftKey)}</td>`:''}</tr>`
+    : `<tr><td>${i+1}</td><td>${safeText(w.nip)}</td><td>${safeText(w.name)}</td></tr>`;
+  const makeSection=(title, cls, shiftKey, data)=>`<div class="shift-section ${cls}"><div class="shift-section-head"><span>${title}</span><span class="shift-count">${data.length} pekerja</span></div><table class="shift-table"><thead>${header}</thead><tbody>${data.length?data.map(rowHtml(shiftKey)).join(''):`<tr><td colspan="${emptyColspan}" style="text-align:center;color:#64748b">Belum ada pekerja.</td></tr>`}</tbody></table></div>`;
+  list.innerHTML=makeSection('Shift 1','s1','s1',s1)+makeSection('Shift 2','s2','s2',s2)+makeSection('Shift 3','s3','s3',s3);
 }
+
 /* v104: fungsi mobile report duplikat dibersihkan agar Shift 3 tetap tampil. */
 function renderMobileReport(rows){ renderMobileReportGeneric(rows, coordinatorSingleShiftMode() ? `Belum ada pekerja yang dipilih. Buka menu Jadwal lalu checklist ${coordinatorAllowedShiftLabel()}.` : 'Belum ada pekerja yang dipilih. Buka menu Jadwal lalu checklist Shift 1, Shift 2, atau Shift 3.'); }
 function rowsFromAttendancePayload(payload){
@@ -3985,6 +4080,7 @@ function reportRowHasShift(row, shift){
   });
 }
 function renderReportTable(unitName, dateValue, rows, emptyMsg){
+  if(shouldSortAdminCommercialReportRows()) rows=sortCommercialReportRows(rows);
   if($('reportMainTitle')) $('reportMainTitle').textContent =`ABSENSI KEGIATAN ${String(unitName||'').replace(/PAGI/gi,'').replace(/MALAM/gi,'').replace(/\//g,'').replace(/\s+/g,' ').trim().toUpperCase()}`;
   if($('reportCompanyText')) $('reportCompanyText').textContent = 'PT. BUDI INTI PERKASA';
   if($('reportDateText')) $('reportDateText').textContent = formatLongDate(dateValue);
@@ -4202,21 +4298,331 @@ function initBaggingOffDurationOption(){
     if(sheet && sheet.classList.contains('ready')) loadBaggingOffReport();
   });
 }
+
+function baggingOffReplacementDocId(dateValue){ return 'bagging_off_replacements_' + (dateValue || todayISO()); }
+function baggingOffReplacementLocalKey(dateValue){ return BAGGING_OFF_REPLACEMENTS_LOCAL_PREFIX + '_' + (dateValue || todayISO()); }
+function baggingOffReplacementKey(jenis, regu, originalNip){ return [String(jenis||'').toUpperCase(), String(regu||'').toUpperCase(), String(originalNip||'').trim()].join('|'); }
+
+function baggingOffReplacementMasterLocalKey(){ return BAGGING_OFF_REPLACEMENT_MASTER_LOCAL_KEY; }
+function baggingOffReplacementMasterDocId(){ return BAGGING_OFF_REPLACEMENT_MASTER_DOC_ID; }
+function normalizeBaggingOffReplacementMaster(raw){
+  let rows=[];
+  if(Array.isArray(raw)) rows=raw;
+  else if(raw && Array.isArray(raw.items)) rows=raw.items;
+  else if(raw && Array.isArray(raw.rows)) rows=raw.rows;
+  else if(raw && raw.items && typeof raw.items==='object') rows=Object.values(raw.items);
+  const seen=new Set();
+  return rows.map((r,idx)=>{
+    const nip=String(r && (r.nip || r.NIP || '') || '').trim();
+    const nama=String(r && (r.nama || r.name || r.Nama || '') || '').trim();
+    const regu=String(r && (r.regu || r.replacementRegu || r.reguPengganti || r['Regu Pengganti'] || '') || '').trim();
+    const id=String(r && (r.id || r.key || '') || '').trim() || `R${idx+1}_${nip || Date.now()}`;
+    const activeRaw=(r && (r.active ?? r.aktif ?? r.status)) ?? true;
+    const active=!(activeRaw===false || String(activeRaw).toLowerCase()==='false' || String(activeRaw).toLowerCase()==='nonaktif' || String(activeRaw)==='0');
+    if(!nip || !nama || !regu) return null;
+    const key=nip.toLowerCase();
+    if(seen.has(key)) return null;
+    seen.add(key);
+    return {id,nip,nama,regu,active};
+  }).filter(Boolean).sort((a,b)=>String(a.regu).localeCompare(String(b.regu),'id',{numeric:true}) || baggingOffNipSort(a,b));
+}
+async function loadBaggingOffReplacementMaster(force=false){
+  if(!force && Array.isArray(baggingOffReplacementMasterCache) && baggingOffReplacementMasterCache.length) return baggingOffReplacementMasterCache;
+  let local=[];
+  try{ local=normalizeBaggingOffReplacementMaster(safeLocalGetJSON(baggingOffReplacementMasterLocalKey(), [])); }catch(err){ local=[]; }
+  try{
+    const result=await loadMasterDataPrimary(baggingOffReplacementMasterDocId(), baggingOffReplacementMasterLocalKey(), {items:local});
+    const data=result && Object.prototype.hasOwnProperty.call(result,'data') ? result.data : result;
+    const rows=normalizeBaggingOffReplacementMaster(data || local);
+    baggingOffReplacementMasterCache=rows;
+    safeLocalSetJSON(baggingOffReplacementMasterLocalKey(), {items:rows, updatedAtLocal:new Date().toISOString()});
+    return rows;
+  }catch(err){
+    console.warn('Load Master Regu Pengganti Bagging Off gagal, memakai cache lokal.', err);
+    baggingOffReplacementMasterCache=local;
+    return local;
+  }
+}
+async function saveBaggingOffReplacementMasterRows(rows){
+  const clean=normalizeBaggingOffReplacementMaster(rows || []);
+  baggingOffReplacementMasterCache=clean;
+  const payload={items:clean, updatedAtLocal:new Date().toISOString()};
+  safeLocalSetJSON(baggingOffReplacementMasterLocalKey(), payload);
+  await saveMasterDataPrimary(baggingOffReplacementMasterDocId(), baggingOffReplacementMasterLocalKey(), payload);
+  return clean;
+}
+function clearBaggingOffReplacementMasterForm(){
+  if($('baggingReplacementMasterId')) $('baggingReplacementMasterId').value='';
+  if($('baggingReplacementRegu')) $('baggingReplacementRegu').value='';
+  if($('baggingReplacementNip')) $('baggingReplacementNip').value='';
+  if($('baggingReplacementName')) $('baggingReplacementName').value='';
+  if($('baggingReplacementActive')) $('baggingReplacementActive').value='1';
+  if($('btnSaveBaggingReplacementMaster')) $('btnSaveBaggingReplacementMaster').textContent='💾 Simpan Pekerja';
+}
+function setBaggingOffReplacementMasterInfo(text){ /* info ringkas dinonaktifkan agar tampilan master lebih bersih */ }
+async function renderBaggingOffReplacementMaster(force=false){
+  const body=$('baggingReplacementMasterBody');
+  if(!body) return;
+  body.innerHTML='<tr><td colspan="6">Memuat master pengganti...</td></tr>';
+  try{
+    const rows=await loadBaggingOffReplacementMaster(force);
+    if(!rows.length){ body.innerHTML='<tr><td colspan="6" class="bagging-empty-row">Belum ada data Master Regu Pengganti Bagging Off.</td></tr>'; return; }
+    body.innerHTML=rows.map((r,i)=>`<tr data-bagging-replacement-id="${safeText(r.id)}">
+      <td>${i+1}</td><td class="bagging-regu-cell">${safeText(r.regu)}</td><td class="bagging-nip-cell">${safeText(r.nip)}</td><td class="text-left bagging-name-cell">${safeText(r.nama)}</td><td><span class="bagging-status-badge ${r.active?'active':'inactive'}">${r.active?'Aktif':'Nonaktif'}</span></td>
+      <td><div class="bagging-action-buttons"><button type="button" class="btn small secondary" data-edit-bagging-replacement="${safeText(r.id)}">Edit</button><button type="button" class="btn small danger" data-delete-bagging-replacement="${safeText(r.id)}">Hapus</button></div></td>
+    </tr>`).join('');
+  }catch(err){
+    console.error(err);
+    body.innerHTML='<tr><td colspan="6" class="bagging-empty-row">Gagal memuat master pengganti.</td></tr>';
+  }
+}
+async function saveBaggingOffReplacementMasterFromForm(){
+  if(!requirePermission('manageWorkers','Master Regu Pengganti Bagging Off hanya untuk admin.')) return;
+  const regu=String($('baggingReplacementRegu') && $('baggingReplacementRegu').value || '').trim();
+  const nip=String($('baggingReplacementNip') && $('baggingReplacementNip').value || '').trim();
+  const nama=String($('baggingReplacementName') && $('baggingReplacementName').value || '').trim();
+  const active=String($('baggingReplacementActive') && $('baggingReplacementActive').value || '1')==='1';
+  const editId=String($('baggingReplacementMasterId') && $('baggingReplacementMasterId').value || '').trim();
+  if(!regu || !nip || !nama){ alert('Regu Pengganti, NIP, dan Nama Pekerja wajib diisi.'); return; }
+  const btn=$('btnSaveBaggingReplacementMaster'); const old=btn?btn.textContent:'';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Menyimpan...'; }
+    const rows=await loadBaggingOffReplacementMaster(true);
+    const duplicate=rows.find(r=>String(r.nip)===nip && String(r.id)!==editId);
+    if(duplicate){ alert(`NIP ${nip} sudah ada di Master Regu Pengganti (${duplicate.regu} - ${duplicate.nama}).`); return; }
+    const id=editId || `BRP_${Date.now()}_${nip}`;
+    const next=rows.filter(r=>String(r.id)!==id);
+    next.push({id,regu,nip,nama,active});
+    await saveBaggingOffReplacementMasterRows(next);
+    clearBaggingOffReplacementMasterForm();
+    await renderBaggingOffReplacementMaster(true);
+    adminLog(`Master Regu Pengganti Bagging Off disimpan: ${nip} - ${nama} (${regu}).`);
+  }catch(err){
+    console.error(err);
+    alert('Simpan Master Regu Pengganti Bagging Off gagal: '+(err && err.message ? err.message : err));
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=old || '💾 Simpan Pekerja'; }
+  }
+}
+async function editBaggingOffReplacementMaster(id){
+  const rows=await loadBaggingOffReplacementMaster(true);
+  const row=rows.find(r=>String(r.id)===String(id));
+  if(!row) return;
+  if($('baggingReplacementMasterId')) $('baggingReplacementMasterId').value=row.id;
+  if($('baggingReplacementRegu')) $('baggingReplacementRegu').value=row.regu;
+  if($('baggingReplacementNip')) $('baggingReplacementNip').value=row.nip;
+  if($('baggingReplacementName')) $('baggingReplacementName').value=row.nama;
+  if($('baggingReplacementActive')) $('baggingReplacementActive').value=row.active?'1':'0';
+  if($('btnSaveBaggingReplacementMaster')) $('btnSaveBaggingReplacementMaster').textContent='💾 Update Pekerja';
+  setBaggingOffReplacementMasterInfo(`Mode edit: ${row.nip} - ${row.nama}.`);
+}
+async function deleteBaggingOffReplacementMaster(id){
+  if(!requirePermission('manageWorkers','Master Regu Pengganti Bagging Off hanya untuk admin.')) return;
+  const rows=await loadBaggingOffReplacementMaster(true);
+  const row=rows.find(r=>String(r.id)===String(id));
+  if(!row) return;
+  if(!confirm(`Hapus pekerja pengganti ini?\n\n${row.nip} - ${row.nama}\n${row.regu}`)) return;
+  await saveBaggingOffReplacementMasterRows(rows.filter(r=>String(r.id)!==String(id)));
+  clearBaggingOffReplacementMasterForm();
+  await renderBaggingOffReplacementMaster(true);
+  adminLog(`Master Regu Pengganti Bagging Off dihapus: ${row.nip} - ${row.nama}.`);
+}
+function setupBaggingOffReplacementMasterEvents(){
+  if($('btnSaveBaggingReplacementMaster')) $('btnSaveBaggingReplacementMaster').addEventListener('click', saveBaggingOffReplacementMasterFromForm);
+  if($('btnResetBaggingReplacementMaster')) $('btnResetBaggingReplacementMaster').addEventListener('click', ()=>{ clearBaggingOffReplacementMasterForm(); renderBaggingOffReplacementMaster(false); });
+  if($('btnRefreshBaggingReplacementMaster')) $('btnRefreshBaggingReplacementMaster').addEventListener('click', ()=>renderBaggingOffReplacementMaster(true));
+  const body=$('baggingReplacementMasterBody');
+  if(body) body.addEventListener('click', e=>{
+    const edit=e.target && e.target.getAttribute && e.target.getAttribute('data-edit-bagging-replacement');
+    const del=e.target && e.target.getAttribute && e.target.getAttribute('data-delete-bagging-replacement');
+    if(edit) editBaggingOffReplacementMaster(edit);
+    if(del) deleteBaggingOffReplacementMaster(del);
+  });
+  renderBaggingOffReplacementMaster(false);
+}
+
+function normalizeBaggingOffReplacements(value){
+  const raw=value && value.replacements && typeof value.replacements==='object' ? value.replacements : value;
+  const out={};
+  if(raw && typeof raw==='object'){
+    Object.keys(raw).forEach(key=>{
+      const r=raw[key] || {};
+      const jenis=String(r.jenis || '').toUpperCase();
+      const regu=String(r.regu || '').toUpperCase();
+      const oldNip=String(r.oldNip || r.originalNip || '').trim();
+      const nip=String(r.nip || '').trim();
+      const nama=String(r.nama || r.name || '').trim();
+      if(!jenis || !regu || !oldNip || !nip || !nama) return;
+      out[baggingOffReplacementKey(jenis, regu, oldNip)]={jenis,regu,oldNip,nip,nama};
+    });
+  }
+  return out;
+}
+async function loadBaggingOffReplacementsForDate(dateValue, force=false){
+  const date=dateValue || todayISO();
+  if(!force && baggingOffLastReportDate===date && baggingOffReplacementCache && typeof baggingOffReplacementCache==='object') return baggingOffReplacementCache;
+  let local={};
+  try{ local=normalizeBaggingOffReplacements(safeLocalGetJSON(baggingOffReplacementLocalKey(date), {})); }catch(err){ local={}; }
+  try{
+    const bridge=await waitFirebase();
+    if(bridge && bridge.enabled && bridge.loadMasterData){
+      const remote=await bridge.loadMasterData(baggingOffReplacementDocId(date));
+      const map=normalizeBaggingOffReplacements(remote);
+      baggingOffLastReportDate=date;
+      baggingOffReplacementCache=map;
+      safeLocalSetJSON(baggingOffReplacementLocalKey(date), {reportDate:date, replacements:map});
+      return map;
+    }
+  }catch(err){ console.warn('Load pengganti Bagging Off gagal, memakai cache lokal.', err); }
+  baggingOffLastReportDate=date;
+  baggingOffReplacementCache=local;
+  return local;
+}
+async function saveBaggingOffReplacementsForDate(dateValue, replacements){
+  const date=dateValue || todayISO();
+  const map=normalizeBaggingOffReplacements(replacements || {});
+  const payload={reportDate:date, replacements:map, updatedAtLocal:new Date().toISOString()};
+  safeLocalSetJSON(baggingOffReplacementLocalKey(date), payload);
+  baggingOffLastReportDate=date;
+  baggingOffReplacementCache=map;
+  const bridge=window.AbsensiFirebase && window.AbsensiFirebase.enabled ? window.AbsensiFirebase : await waitFirebase();
+  if(bridge && bridge.enabled && bridge.saveMasterData){
+    await bridge.saveMasterData(baggingOffReplacementDocId(date), payload, currentUser);
+  }
+  return map;
+}
+function baggingOffApplyReplacement(row, replacements){
+  const base={...row, originalNip:String(row && row.nip || '').trim(), originalName:String(row && row.nama || '').trim()};
+  const hit=replacements && replacements[baggingOffReplacementKey(base.jenis, base.regu, base.originalNip)];
+  if(hit){
+    base.replaced=true;
+    base.nip=String(hit.nip||'');
+    base.nama=String(hit.nama||'');
+  }
+  return base;
+}
+function baggingOffActiveRowsForSchedule(schedules, replacements){
+  const rows=[];
+  ['BUHLER','BREEDER'].forEach(jenis=>{
+    const scheduleState=schedules && schedules[jenis];
+    if(!scheduleState || !scheduleState.imported) return;
+    const regus=[...new Set((scheduleState.entries||[]).map(e=>String(e.regu||'').toUpperCase()).filter(Boolean))];
+    regus.forEach(regu=>{
+      BAGGING_OFF_MASTER.filter(r=>r.jenis===jenis && String(r.regu).toUpperCase()===regu).forEach(r=>rows.push(baggingOffApplyReplacement(r, replacements || {})));
+    });
+  });
+  return rows;
+}
+function baggingOffReplacementButton(row){
+  if(!isAdmin()) return '';
+  const date=baggingOffLastReportDate || (($('baggingOffDate') && $('baggingOffDate').value) || todayISO());
+  return `<button type="button" class="admin-replace-worker-btn" data-bagging-replace-worker="1" data-date="${safeText(date)}" data-jenis="${safeText(row.jenis)}" data-regu="${safeText(row.regu)}" data-original-nip="${safeText(row.originalNip || row.nip)}" data-nip="${safeText(row.nip)}" data-name="${safeText(row.nama)}" title="Ganti pekerja Bagging Off">Ganti Pekerja</button>`;
+}
+function closeBaggingOffReplaceWorkerModal(){ const el=document.getElementById('baggingOffReplaceWorkerModal'); if(el) el.remove(); }
+async function openBaggingOffReplaceWorkerModal(info){
+  if(!requirePermission('editCheckTimes','Ganti pekerja Bagging Off hanya untuk admin.')) return;
+  const date=info.date || (($('baggingOffDate') && $('baggingOffDate').value) || todayISO());
+  const jenis=String(info.jenis||'').toUpperCase();
+  const regu=String(info.regu||'').toUpperCase();
+  const originalNip=String(info.originalNip||info.currentNip||'').trim();
+  const currentNip=String(info.currentNip||originalNip).trim();
+  const currentName=String(info.name||'').trim();
+  if(!jenis || !regu || !originalNip || !currentNip){ alert('Data baris Bagging Off tidak lengkap. Klik Tampilkan lalu coba lagi.'); return; }
+  const schedules=await loadBaggingOffScheduleForDate(date);
+  const replacements=await loadBaggingOffReplacementsForDate(date, true);
+  const activeRows=baggingOffActiveRowsForSchedule(schedules, replacements);
+  const activeNips=new Set(activeRows.map(r=>String(r.nip||'')).filter(Boolean));
+  const masterReplacementRows=(await loadBaggingOffReplacementMaster(true)).filter(w=>w.active!==false);
+  const baggingOptions=BAGGING_OFF_MASTER.filter(w=>String(w.nip)!==currentNip && !activeNips.has(String(w.nip))).sort((a,b)=>String(a.jenis).localeCompare(String(b.jenis)) || String(a.regu).localeCompare(String(b.regu),'id',{numeric:true}) || baggingOffNipSort(a,b)).map(w=>({...w, source:'BAGGING', sourceLabel:`${w.jenis} Regu ${w.regu}`}));
+  const replacementOptions=masterReplacementRows.filter(w=>String(w.nip)!==currentNip && !activeNips.has(String(w.nip))).sort((a,b)=>String(a.regu).localeCompare(String(b.regu),'id',{numeric:true}) || baggingOffNipSort(a,b)).map(w=>({jenis:'PENGGANTI', regu:w.regu, nip:w.nip, nama:w.nama, source:'PENGGANTI', sourceLabel:`Regu Pengganti ${w.regu}`}));
+  if(!baggingOptions.length && !replacementOptions.length){ alert('Belum ada pekerja pengganti yang tersedia. Isi Master Regu Pengganti Bagging Off atau pastikan ada pekerja master yang belum terjadwal pada tanggal ini.'); return; }
+  closeBaggingOffReplaceWorkerModal();
+  const wrap=document.createElement('div');
+  wrap.id='baggingOffReplaceWorkerModal';
+  wrap.className='admin-replace-modal-backdrop';
+  wrap.innerHTML=`<div class="admin-replace-modal" role="dialog" aria-modal="true">
+    <div class="admin-replace-modal-head"><span>Ganti Pekerja Bagging Off</span><button type="button" class="btn secondary" id="btnCloseBaggingOffReplaceWorker">Tutup</button></div>
+    <div class="admin-replace-modal-body">
+      <div class="admin-replace-old"><b>Pekerja lama:</b><br>${safeText(currentNip)} - ${safeText(currentName || '-')}<br><b>Bagian:</b> ${safeText(jenis==='BUHLER'?'Bagging Off Buhler':'Bagging Off Breeder')} Regu ${safeText(regu)}<br><b>Tanggal:</b> ${safeText(formatLongDate(date))}</div>
+      <div class="field"><label for="baggingOffReplaceSourceSelect">Sumber Pengganti</label><select id="baggingOffReplaceSourceSelect"><option value="BAGGING">Regu Bagging Off Buhler &amp; Breeder</option><option value="PENGGANTI">Regu Pengganti</option></select></div>
+      <div class="field"><label for="baggingOffReplaceReguSelect">Regu Pengganti</label><select id="baggingOffReplaceReguSelect"></select></div>
+      <div class="field"><label for="baggingOffReplaceWorkerSelect">Pilih pekerja pengganti</label><select id="baggingOffReplaceWorkerSelect"></select></div>
+      <div class="import-help">Penggantian hanya menyimpan pekerja aktif pengganti untuk tanggal ini. Riwayat/log penggantian tidak disimpan.</div>
+    </div>
+    <div class="admin-replace-modal-actions"><button type="button" class="btn secondary" id="btnCancelBaggingOffReplaceWorker">Batal</button><button type="button" class="btn primary" id="btnSaveBaggingOffReplaceWorker">Simpan Ganti Pekerja</button></div>
+  </div>`;
+  document.body.appendChild(wrap);
+  const close=()=>closeBaggingOffReplaceWorkerModal();
+  const sourceEl=$('baggingOffReplaceSourceSelect');
+  const reguEl=$('baggingOffReplaceReguSelect');
+  const workerEl=$('baggingOffReplaceWorkerSelect');
+  function optionsForSource(){ return sourceEl && sourceEl.value==='PENGGANTI' ? replacementOptions : baggingOptions; }
+  function renderReguOptions(){
+    const opts=optionsForSource();
+    const regus=[...new Set(opts.map(w=>String(w.sourceLabel || w.regu || '').trim()).filter(Boolean))];
+    reguEl.innerHTML=regus.length ? regus.map(r=>`<option value="${safeText(r)}">${safeText(r)}</option>`).join('') : '<option value="">Tidak ada pekerja tersedia</option>';
+    renderWorkerOptions();
+  }
+  function renderWorkerOptions(){
+    const opts=optionsForSource();
+    const selectedRegu=reguEl ? reguEl.value : '';
+    const rows=opts.filter(w=>String(w.sourceLabel || w.regu || '')===String(selectedRegu));
+    workerEl.innerHTML=rows.length ? rows.map(w=>`<option value="${safeText(w.source)}|${safeText(w.nip)}">${safeText(w.nip)} - ${safeText(w.nama)} / ${safeText(w.sourceLabel || w.regu || '')}</option>`).join('') : '<option value="">Tidak ada pekerja tersedia</option>';
+  }
+  if(!baggingOptions.length && replacementOptions.length) sourceEl.value='PENGGANTI';
+  renderReguOptions();
+  $('btnCloseBaggingOffReplaceWorker').addEventListener('click', close);
+  $('btnCancelBaggingOffReplaceWorker').addEventListener('click', close);
+  wrap.addEventListener('click', e=>{ if(e.target===wrap) close(); });
+  sourceEl.addEventListener('change', renderReguOptions);
+  reguEl.addEventListener('change', renderWorkerOptions);
+  $('btnSaveBaggingOffReplaceWorker').addEventListener('click', async()=>{
+    const selected=workerEl.value || '';
+    const parts=selected.split('|');
+    const source=parts[0];
+    const nip=parts.slice(1).join('|');
+    const all=[...baggingOptions, ...replacementOptions];
+    const replacement=all.find(w=>String(w.source)===String(source) && String(w.nip)===String(nip));
+    if(!replacement){ alert('Pekerja pengganti belum dipilih.'); return; }
+    await saveBaggingOffReplaceWorker(date, jenis, regu, originalNip, currentNip, currentName, replacement);
+  });
+}
+
+async function saveBaggingOffReplaceWorker(date, jenis, regu, originalNip, currentNip, currentName, replacement){
+  if(!requirePermission('editCheckTimes','Ganti pekerja Bagging Off hanya untuk admin.')) return;
+  const btn=$('btnSaveBaggingOffReplaceWorker'); const oldText=btn ? btn.textContent : '';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Menyimpan...'; }
+    const replacements=await loadBaggingOffReplacementsForDate(date, true);
+    replacements[baggingOffReplacementKey(jenis, regu, originalNip)]={jenis,regu,oldNip:originalNip,nip:String(replacement.nip||''),nama:String(replacement.nama||'')};
+    await saveBaggingOffReplacementsForDate(date, replacements);
+    closeBaggingOffReplaceWorkerModal();
+    await loadBaggingOffReport();
+    adminLog(`Ganti pekerja Bagging Off berhasil. ${currentNip} - ${currentName || '-'} diganti ${replacement.nip} - ${replacement.nama} pada ${jenis} Regu ${regu}. Tanpa simpan riwayat penggantian.`);
+    alert(`Ganti pekerja Bagging Off berhasil disimpan.\n\nPekerja lama: ${currentNip} - ${currentName || '-'}\nPengganti: ${replacement.nip} - ${replacement.nama}\nBagian: ${jenis} Regu ${regu}\n\nRiwayat penggantian tidak disimpan.`);
+  }catch(err){
+    console.error(err);
+    alert('Ganti pekerja Bagging Off gagal disimpan: '+(err && err.message ? err.message : err));
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=oldText || 'Simpan Ganti Pekerja'; }
+  }
+}
 function baggingOffNipSort(a,b){
   const na=Number(a && a.nip), nb=Number(b && b.nip);
   if(Number.isFinite(na) && Number.isFinite(nb) && na!==nb) return na-nb;
   return String((a&&a.nip)||'').localeCompare(String((b&&b.nip)||''),'id',{numeric:true});
 }
-function baggingOffGroupRows(jenis, regu, checkMap, schedules){
+function baggingOffGroupRows(jenis, regu, checkMap, schedules, replacements){
   const scheduled=scheduledEntriesForJenisRegu(schedules, jenis, regu);
   if(scheduled===null || !scheduled.length) return [];
   const shiftNo=Number(scheduled[0].shift || 0);
   const completedMap=autoFillBaggingOffMap(checkMap || {}, jenis, regu);
   return BAGGING_OFF_MASTER.filter(r=>r.jenis===jenis && r.regu===regu).sort(baggingOffNipSort).map(r=>{
-    const data=(completedMap && completedMap[String(r.nip)]) || {};
+    const active=baggingOffApplyReplacement(r, replacements || {});
+    const data=(completedMap && completedMap[String(active.nip)]) || {};
     const checkIn=normalizeTimeToHMS(data.checkIn || data.cekIn || '');
     const checkOut=normalizeTimeToHMS(data.checkOut || data.cekOut || '');
-    return {...r, scheduledShift:shiftNo, checkIn, checkOut, durasi:durationHHMMSS(checkIn, checkOut)};
+    return {...active, scheduledShift:shiftNo, checkIn, checkOut, durasi:durationHHMMSS(checkIn, checkOut)};
   });
 }
 function autoFillSeedNumber(text){
@@ -4269,16 +4675,17 @@ function renderBaggingOffTable(jenis, regu, rows){
   const showDuration=getBaggingOffShowDuration();
   const shiftNo=rows && rows.length ? Number(rows[0].scheduledShift || 0) : 0;
   const durationHead=showDuration ? '<th class="duration-col">DURASI</th>' : '';
-  const body=rows.map((r,i)=>`<tr data-bagging-row="${safeText(r.nip)}"><td>${i+1}</td><td>${safeText(r.nip)}</td><td class="name">${safeText(r.nama)}</td><td>${baggingEditableTimeCell(r.nip,'in',r.checkIn)}</td><td>${baggingEditableTimeCell(r.nip,'out',r.checkOut)}</td>${showDuration ? `<td class="duration-col" data-bagging-duration="${safeText(r.nip)}">${safeText(r.durasi)}</td>` : ''}</tr>`).join('');
-  return `<div class="bagging-regu-title">REGU ${safeText(regu)} ${shiftNo ? `<span class="shift-label">- SHIFT ${safeText(shiftNo)}</span>` : ''}</div><table class="bagging-table" data-show-duration="${showDuration?'1':'0'}"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>CEK IN</th><th>CEK OUT</th>${durationHead}</tr></thead><tbody>${body}</tbody></table>`;
+  const actionHead=isAdmin() ? '<th class="bagging-replace-col">AKSI</th>' : '';
+  const body=rows.map((r,i)=>`<tr data-bagging-row="${safeText(r.nip)}"><td>${i+1}</td><td>${safeText(r.nip)}</td><td class="name">${safeText(r.nama)}${r.replaced?`<div class="bagging-replaced-note">Pengganti</div>`:''}</td><td>${baggingEditableTimeCell(r.nip,'in',r.checkIn)}</td><td>${baggingEditableTimeCell(r.nip,'out',r.checkOut)}</td>${showDuration ? `<td class="duration-col" data-bagging-duration="${safeText(r.nip)}">${safeText(r.durasi)}</td>` : ''}${isAdmin()?`<td class="bagging-replace-col">${baggingOffReplacementButton(r)}</td>`:''}</tr>`).join('');
+  return `<div class="bagging-regu-title">REGU ${safeText(regu)} ${shiftNo ? `<span class="shift-label">- SHIFT ${safeText(shiftNo)}</span>` : ''}</div><table class="bagging-table" data-show-duration="${showDuration?'1':'0'}"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>CEK IN</th><th>CEK OUT</th>${durationHead}${actionHead}</tr></thead><tbody>${body}</tbody></table>`;
 }
-function renderBaggingOffSection(jenis, checkMap, schedules){
+function renderBaggingOffSection(jenis, checkMap, schedules, replacements){
   const title=jenis==='BUHLER' ? 'BAGGING OFF BUHLER' : 'BAGGING OFF BREEDER';
   const scheduleState=schedules && schedules[jenis];
   if(!scheduleState || !scheduleState.imported) return `<div class="bagging-column"><div class="bagging-section-title">${title}</div><div class="bagging-empty-section">Jadwal bulan ini belum diimport.</div></div>`;
   const regus=[...new Set((scheduleState.entries||[]).map(e=>e.regu))].sort();
   if(!regus.length) return `<div class="bagging-column"><div class="bagging-section-title">${title}</div><div class="bagging-empty-section">Tidak ada regu terjadwal pada tanggal ini.</div></div>`;
-  return `<div class="bagging-column"><div class="bagging-section-title">${title}</div>${regus.map(regu=>renderBaggingOffTable(jenis, regu, baggingOffGroupRows(jenis, regu, checkMap, schedules))).join('')}</div>`;
+  return `<div class="bagging-column"><div class="bagging-section-title">${title}</div>${regus.map(regu=>renderBaggingOffTable(jenis, regu, baggingOffGroupRows(jenis, regu, checkMap, schedules, replacements || {}))).join('')}</div>`;
 }
 function collectBaggingOffEditedCheckMap(){
   const map={};
@@ -4316,17 +4723,20 @@ function setupBaggingOffEditableTimes(){
     });
   });
 }
-function renderBaggingOffReport(dateValue, checkMap, schedules){
+function renderBaggingOffReport(dateValue, checkMap, schedules, replacements){
   const date=dateValue || todayISO();
   const map=checkMap || {};
   const scheduleCtx=schedules || {BUHLER:{imported:false,entries:[]},BREEDER:{imported:false,entries:[]}};
+  const replacementCtx=normalizeBaggingOffReplacements(replacements || {});
+  baggingOffLastReportDate=date;
+  baggingOffReplacementCache=replacementCtx;
   const scheduledKeys=new Set();
-  ['BUHLER','BREEDER'].forEach(jenis=>{ ((scheduleCtx[jenis] && scheduleCtx[jenis].entries) || []).forEach(e=>{ BAGGING_OFF_MASTER.filter(r=>r.jenis===jenis && String(r.regu).toUpperCase()===String(e.regu).toUpperCase()).forEach(r=>scheduledKeys.add(String(r.nip))); }); });
+  baggingOffActiveRowsForSchedule(scheduleCtx, replacementCtx).forEach(r=>scheduledKeys.add(String(r.nip)));
   const matched=[...scheduledKeys].filter(nip=>map[nip] && (map[nip].checkIn || map[nip].cekIn || map[nip].checkOut || map[nip].cekOut)).length;
   if($('baggingOffDateText')) $('baggingOffDateText').textContent=formatLongDate(date);
   const body=$('baggingOffReportBody');
   if(body){
-    body.innerHTML=`<div class="bagging-print-title"><div class="main">ABSENSI KEGIATAN BAGGING OFF BUHLER DAN BREEDER - TAP JAHIT</div><div class="company">PT. BUDI INTI PERKASA</div><div class="date">${safeText(formatLongDate(date))}</div></div>${baggingScheduleSummaryHtml(scheduleCtx)}<div class="bagging-two-col">${renderBaggingOffSection('BUHLER', map, scheduleCtx)}${renderBaggingOffSection('BREEDER', map, scheduleCtx)}</div>`;
+    body.innerHTML=`<div class="bagging-print-title"><div class="main">ABSENSI KEGIATAN BAGGING OFF BUHLER DAN BREEDER - TAP JAHIT</div><div class="company">PT. BUDI INTI PERKASA</div><div class="date">${safeText(formatLongDate(date))}</div></div>${baggingScheduleSummaryHtml(scheduleCtx)}<div class="bagging-two-col">${renderBaggingOffSection('BUHLER', map, scheduleCtx, replacementCtx)}${renderBaggingOffSection('BREEDER', map, scheduleCtx, replacementCtx)}</div>`;
     setupBaggingOffEditableTimes();
   }
   if($('baggingOffPrintSheet')) $('baggingOffPrintSheet').classList.add('ready');
@@ -4340,7 +4750,8 @@ async function loadBaggingOffReport(){
     if(btn){ btn.disabled=true; btn.textContent='Memuat...'; }
     const map=await loadGlobalCheckTimesForDate(date, true);
     const schedules=await loadBaggingOffScheduleForDate(date);
-    renderBaggingOffReport(date, map, schedules);
+    const replacements=await loadBaggingOffReplacementsForDate(date, true);
+    renderBaggingOffReport(date, map, schedules, replacements);
   }catch(err){
     console.error(err);
     alert('Gagal memuat laporan Bagging Off: '+(err && err.message ? err.message : err));
@@ -4380,6 +4791,7 @@ function buildBaggingOffPrintDocument(reportHtml){
     .bagging-table th:nth-child(2),.bagging-table td:nth-child(2){width:42px}
     .bagging-table th:nth-child(4),.bagging-table td:nth-child(4),.bagging-table th:nth-child(5),.bagging-table td:nth-child(5){width:54px}
     .bagging-table th.duration-col,.bagging-table td.duration-col{width:50px}
+    .bagging-replace-col,.bagging-replaced-note{display:none!important}
     .bagging-time-edit{display:inline!important;border:0!important;padding:0!important;background:transparent!important;min-height:0!important}
     .bagging-print-note{display:none!important}
   </style></head><body>${reportHtml}</body></html>`;
@@ -6347,7 +6759,10 @@ async function loadAdminAttendance(event){
 function printAdminAttendance(){
   if(!requirePermission('printReports','Akses ditolak. Role ini tidak boleh mencetak laporan.')) return;
   if(!isAdmin()) return;
-  const rows=rowsFromAttendancePayload(adminReportData);
+  let rows=rowsFromAttendancePayload(adminReportData);
+  if(String((adminReportData && adminReportData.unitKey) || (($('adminReportUnitSelect') && $('adminReportUnitSelect').value) || ''))===COMMERCIAL_KEY){
+    rows=sortCommercialReportRows(rows);
+  }
   if(!rows.length){
     alert('Belum ada data absensi yang bisa dicetak. Pilih bagian dan tanggal, lalu klik Tampilkan.');
     return;
@@ -6387,6 +6802,27 @@ function printAdminAttendance(){
   }
 }
 window.addEventListener('afterprint', ()=>{ document.body.classList.remove('print-report-only'); document.body.classList.remove('print-bagging-only'); });
+
+document.addEventListener('click', e=>{
+  const baggingBtn=e.target && e.target.closest ? e.target.closest('[data-bagging-replace-worker]') : null;
+  if(baggingBtn){
+    e.preventDefault();
+    openBaggingOffReplaceWorkerModal({
+      date:baggingBtn.getAttribute('data-date') || '',
+      jenis:baggingBtn.getAttribute('data-jenis') || '',
+      regu:baggingBtn.getAttribute('data-regu') || '',
+      originalNip:baggingBtn.getAttribute('data-original-nip') || '',
+      currentNip:baggingBtn.getAttribute('data-nip') || '',
+      name:baggingBtn.getAttribute('data-name') || ''
+    });
+    return;
+  }
+  const btn=e.target && e.target.closest ? e.target.closest('[data-admin-replace-worker]') : null;
+  if(!btn) return;
+  e.preventDefault();
+  adminOpenReplaceWorkerModal(btn.getAttribute('data-nip') || '', btn.getAttribute('data-shift') || 's1');
+});
+
 function getGlobalCheckStore(){ try{ const raw=localStorage.getItem(GLOBAL_CHECK_TIMES_KEY); const data=raw?JSON.parse(raw):{}; return data && typeof data==='object' ? data : {}; }catch(err){ return {}; } }
 function setGlobalCheckStore(store){ try{ localStorage.setItem(GLOBAL_CHECK_TIMES_KEY, JSON.stringify(store || {})); }catch(err){ console.warn('Cache Cek In/Out global lokal gagal disimpan.', err); } }
 function getGlobalCheckTimesForDate(dateValue){ const store=getGlobalCheckStore(); return (dateValue && store[dateValue] && typeof store[dateValue]==='object') ? store[dateValue] : {}; }
@@ -6440,6 +6876,114 @@ function updateAdminReportDataFromRows(rows){
 }
 function applyCheckTimesToAdminReport(checkMap, options){ if(!isAdmin() || !adminReportData) return 0; const opts=options || {}; const rows=rowsFromAttendancePayload(adminReportData); let changed=0; rows.forEach(row=>{ if(isCommercialTfActivityRow(row)){ row.checkIn=''; row.checkOut=''; return; } const key=String(row.nip||''); const data=checkMap && checkMap[key]; if(!data) return; const importedIn=normalizeTimeToHMS(data.checkIn || data.cekIn || ''); const importedOut=normalizeTimeToHMS(data.checkOut || data.cekOut || ''); if(!importedIn && !importedOut) return; const beforeIn=row.checkIn || ''; const beforeOut=row.checkOut || ''; if(opts.overwrite===false){ if(importedIn && !row.checkIn) row.checkIn=importedIn; if(importedOut && !row.checkOut) row.checkOut=importedOut; }else{ if(importedIn || opts.clearMissing) row.checkIn=importedIn; if(importedOut || opts.clearMissing) row.checkOut=importedOut; } if((row.checkIn||'')!==beforeIn || (row.checkOut||'')!==beforeOut) changed++; }); updateAdminReportDataFromRows(rows); if(opts.render!==false) renderReport(); return changed; }
 function updateAdminReportRowsWithCheckTimes(rows){ updateAdminReportDataFromRows(rows); }
+
+async function loadAdminReplacementWorkersForUnit(unitKeyValue){
+  const key=unitKeyValue || COMMERCIAL_KEY;
+  let loaded=[];
+  const useRows=(data)=>{ if(data && Array.isArray(data.workers) && data.workers.length) loaded=data.workers; };
+  try{ useRows(unwrapCacheEnvelope(safeLocalGetJSON(`${STORAGE_KEY}_${key}`, null))); }catch(err){}
+  try{
+    const bridge=await waitFirebase();
+    if(bridge && bridge.enabled && bridge.loadAppState){
+      const remote=await bridge.loadAppState(key);
+      useRows(remote);
+    }
+  }catch(err){ console.warn('Load master pekerja pengganti gagal, memakai cache lokal.', err); }
+  if((!loaded || !loaded.length) && isCommercialKey(activeUnitKey()) && Array.isArray(state.workers)) loaded=state.workers;
+  const map=new Map();
+  (loaded||[]).map(cleanWorker).filter(w=>w && w.nip && w.name).forEach(w=>{ if(!map.has(String(w.nip))) map.set(String(w.nip), w); });
+  return Array.from(map.values()).sort((a,b)=>commercialReportSortPriority(a)-commercialReportSortPriority(b) || (parseInt(normalizeRegu(a.regu),10)||999)-(parseInt(normalizeRegu(b.regu),10)||999) || (parseInt(a.nip,10)||999999)-(parseInt(b.nip,10)||999999) || String(a.name).localeCompare(String(b.name)));
+}
+function closeAdminReplaceWorkerModal(){ const el=document.getElementById('adminReplaceWorkerModal'); if(el) el.remove(); }
+function adminReportFindRow(nip, shiftKey){
+  const rows=rowsFromAttendancePayload(adminReportData);
+  return rows.find(r=>String(r.nip||'')===String(nip||'') && Boolean(r[shiftKey]));
+}
+async function adminOpenReplaceWorkerModal(nip, shiftKey){
+  if(!adminCanReplaceWorkerInReport()){ alert('Fitur Ganti Pekerja hanya aktif di Admin Absensi BIP - Muatan Commercial.'); return; }
+  const oldRow=adminReportFindRow(nip, shiftKey);
+  if(!oldRow){ alert('Baris pekerja tidak ditemukan. Klik Refresh Data lalu coba lagi.'); return; }
+  const allRows=rowsFromAttendancePayload(adminReportData);
+  const existingNips=new Set(allRows.map(r=>String(r.nip||'')).filter(Boolean));
+  const master=await loadAdminReplacementWorkersForUnit(COMMERCIAL_KEY);
+  const options=master.filter(w=>String(w.nip)!==String(oldRow.nip) && !existingNips.has(String(w.nip)));
+  if(!options.length){ alert('Belum ada pekerja pengganti yang tersedia. Semua pekerja master sudah terjadwal, atau master pekerja Muatan Commercial belum tersedia.'); return; }
+  closeAdminReplaceWorkerModal();
+  const shiftLabel=shiftKey==='s1'?'Shift 1':(shiftKey==='s2'?'Shift 2':'Shift 3');
+  const wrap=document.createElement('div');
+  wrap.id='adminReplaceWorkerModal';
+  wrap.className='admin-replace-modal-backdrop';
+  wrap.innerHTML=`<div class="admin-replace-modal" role="dialog" aria-modal="true">
+    <div class="admin-replace-modal-head"><span>Ganti Pekerja - ${safeText(shiftLabel)}</span><button type="button" class="btn secondary" id="btnCloseAdminReplaceWorker">Tutup</button></div>
+    <div class="admin-replace-modal-body">
+      <div class="admin-replace-old"><b>Pekerja lama:</b><br>${safeText(oldRow.nip)} - ${safeText(oldRow.name)}<br><b>LD-Regu:</b> ${safeText(oldRow.ldRegu || commercialLdReguLabel(oldRow.loadingDock, oldRow.regu) || '-')}</div>
+      <div class="field"><label for="adminReplaceWorkerSelect">Pilih pekerja pengganti</label><select id="adminReplaceWorkerSelect">${options.map(w=>`<option value="${safeText(w.nip)}">${safeText(w.nip)} - ${safeText(w.name)}${w.regu ? ' / Regu '+safeText(w.regu) : ''}</option>`).join('')}</select></div>
+      <div class="import-help">Pekerja lama hanya dilepas dari ${safeText(shiftLabel)}. Jika pekerja lama masih terjadwal di shift lain, data shift lain tetap dipertahankan. Penggantian tidak menyimpan riwayat/log agar data Firestore tetap ringan.</div>
+    </div>
+    <div class="admin-replace-modal-actions"><button type="button" class="btn secondary" id="btnCancelAdminReplaceWorker">Batal</button><button type="button" class="btn primary" id="btnSaveAdminReplaceWorker">Simpan Ganti Pekerja</button></div>
+  </div>`;
+  document.body.appendChild(wrap);
+  const close=()=>closeAdminReplaceWorkerModal();
+  $('btnCloseAdminReplaceWorker').addEventListener('click', close);
+  $('btnCancelAdminReplaceWorker').addEventListener('click', close);
+  wrap.addEventListener('click', e=>{ if(e.target===wrap) close(); });
+  $('btnSaveAdminReplaceWorker').addEventListener('click', async()=>{
+    const newNip=$('adminReplaceWorkerSelect').value;
+    const replacement=options.find(w=>String(w.nip)===String(newNip));
+    if(!replacement){ alert('Pekerja pengganti belum dipilih.'); return; }
+    await adminReplaceWorkerAndSave(oldRow, replacement, shiftKey);
+  });
+}
+async function adminReplaceWorkerAndSave(oldRow, replacement, shiftKey){
+  if(!requirePermission('editCheckTimes','Ganti pekerja hanya untuk admin.')) return;
+  if(!adminCanReplaceWorkerInReport()) return;
+  const rows=rowsFromAttendancePayload(adminReportData).map(r=>({...r}));
+  const oldNip=String(oldRow.nip||'');
+  const newNip=String(replacement.nip||'');
+  if(!oldNip || !newNip || oldNip===newNip){ alert('Data pekerja lama/pengganti tidak valid.'); return; }
+  if(rows.some(r=>String(r.nip||'')===newNip)){ alert('Pekerja pengganti sudah ada di jadwal tanggal ini. Pilih pekerja lain agar tidak dobel.'); return; }
+  const oldIdx=rows.findIndex(r=>String(r.nip||'')===oldNip && Boolean(r[shiftKey]));
+  if(oldIdx<0){ alert('Baris pekerja lama tidak ditemukan.'); return; }
+  const old=rows[oldIdx];
+  old[shiftKey]=false;
+  if(!old.s1 && !old.s2 && !old.s3) rows.splice(oldIdx,1);
+  const replacementRow={
+    ...oldRow,
+    nip:String(replacement.nip||''),
+    name:String(replacement.name||''),
+    type:replacement.type || replacement.status || oldRow.type || '',
+    s1:false,s2:false,s3:false,
+    checkIn:'',checkOut:''
+  };
+  replacementRow[shiftKey]=true;
+  rows.push(replacementRow);
+  updateAdminReportDataFromRows(sortCommercialReportRows(rows));
+  adminReportData.unitKey=COMMERCIAL_KEY;
+  adminReportData.unit=adminReportData.unit || 'Muatan Commercial';
+  adminReportData.reportDate=adminReportData.reportDate || (($('adminReportDate') && $('adminReportDate').value) || todayISO());
+  adminReportData.updatedByAdmin=currentUser ? {username:currentUser.username||'', name:currentUser.name||'', role:currentUser.role||''} : null;
+  adminReportData.updatedAtLocal=new Date().toISOString();
+  const btn=$('btnSaveAdminReplaceWorker'); const oldText=btn ? btn.textContent : '';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Menyimpan...'; }
+    safeLocalSetJSON(`${ATTENDANCE_KEY}_${adminReportData.unitKey}_${adminReportData.reportDate}`, cacheEnvelope(adminReportData, 'pending_or_cache'));
+    const bridge=await waitFirebase();
+    if(bridge && bridge.enabled && bridge.saveAttendance){
+      await bridge.saveAttendance(adminReportData);
+      clearAdminAttendanceCache(adminReportData.unitKey, adminReportData.reportDate);
+    }
+    closeAdminReplaceWorkerModal();
+    renderReport();
+    adminLog(`Ganti pekerja Muatan Commercial berhasil. ${oldRow.nip} - ${oldRow.name} diganti ${replacement.nip} - ${replacement.name} pada ${shiftKey.toUpperCase()}. Tanpa simpan riwayat penggantian.`);
+    alert(`Ganti pekerja berhasil disimpan.\n\nPekerja lama: ${oldRow.nip} - ${oldRow.name}\nPengganti: ${replacement.nip} - ${replacement.name}\nShift: ${shiftKey.toUpperCase()}\n\nRiwayat penggantian tidak disimpan.`);
+  }catch(err){
+    console.error(err);
+    alert('Ganti pekerja gagal disimpan: '+(err && err.message ? err.message : err));
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=oldText || 'Simpan Ganti Pekerja'; }
+  }
+}
+
 function parseWorkTimeToMinutes(value){ const seconds=parseAttendanceTimeToSeconds(value); return seconds===null ? 0 : Math.floor(seconds/60); }
 function formatMinutesToWorkTime(total){ return formatSecondsToHMS((Number(total)||0)*60); }
 function randBetween(min,max){ min=Number(min)||0; max=Number(max)||min; if(max<min){ const t=min; min=max; max=t; } return Math.floor(Math.random()*(max-min+1))+min; }
@@ -8227,7 +8771,7 @@ if($('baggingOffDate')) $('baggingOffDate').value = ($('adminReportDate') && $('
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); initBaggingScheduleImportControls(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminPruneAuditLogs')) $('btnAdminPruneAuditLogs').addEventListener('click', adminPruneAuditLogs); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); initBaggingScheduleImportControls(); setupBaggingOffReplacementMasterEvents(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminPruneAuditLogs')) $('btnAdminPruneAuditLogs').addEventListener('click', adminPruneAuditLogs); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
 document.addEventListener('input', e=>{ if(e && e.target && e.target.matches && e.target.matches('[data-check-nip]')) setAdminCheckTimesSourceInfo('Manual'); });
 let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu install belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }

@@ -248,16 +248,23 @@
     .report-table.bahan-baku.duration-enabled th:nth-child(10),.report-table.bahan-baku.duration-enabled td:nth-child(10){width:12.5%!important}
     .report-table.bahan-baku.duration-enabled .duration-col{width:12.5%!important}
 
-    /* Commercial: NO | LD-Regu | NIP | NAMA PEKERJA | SHIFT 1 | SHIFT 2 | SHIFT 3 | CEK IN | CEK OUT */
+    /* Commercial: NO | LD-Regu | NIP | NAMA PEKERJA | SHIFT 1 | SHIFT 2 | SHIFT 3 | CEK IN | CEK OUT | DURASI
+       FIX v185: khusus hasil cetak Muatan Commercial, LD-Regu dibuat 1 baris dan ukuran teks
+       kolom LD-Regu, NIP, serta NAMA PEKERJA disamakan agar tabel lebih rapi. */
+    .report-table.commercial{font-size:12px!important}
+    .report-table.commercial th,.report-table.commercial td{font-size:12px!important;line-height:1.05!important;padding:2px 3px!important}
     .report-table.commercial th:nth-child(1),.report-table.commercial td:nth-child(1){width:4%!important}
-    .report-table.commercial th:nth-child(2),.report-table.commercial td:nth-child(2){width:10%!important;white-space:normal!important;font-size:12px!important}
-    .report-table.commercial th:nth-child(3),.report-table.commercial td:nth-child(3){width:8%!important}
-    .report-table.commercial th:nth-child(4),.report-table.commercial td:nth-child(4){width:28%!important}
+    .report-table.commercial th:nth-child(2),.report-table.commercial td:nth-child(2){width:15%!important;white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important;font-size:12px!important}
+    .report-table.commercial th:nth-child(3),.report-table.commercial td:nth-child(3){width:7%!important;font-size:12px!important}
+    .report-table.commercial th:nth-child(4),.report-table.commercial td:nth-child(4){width:26%!important;font-size:12px!important}
     .report-table.commercial th:nth-child(5),.report-table.commercial td:nth-child(5),
     .report-table.commercial th:nth-child(6),.report-table.commercial td:nth-child(6),
-    .report-table.commercial th:nth-child(7),.report-table.commercial td:nth-child(7){width:8%!important}
+    .report-table.commercial th:nth-child(7),.report-table.commercial td:nth-child(7){width:6%!important}
     .report-table.commercial th:nth-child(8),.report-table.commercial td:nth-child(8),
-    .report-table.commercial th:nth-child(9),.report-table.commercial td:nth-child(9){width:13%!important}
+    .report-table.commercial th:nth-child(9),.report-table.commercial td:nth-child(9){width:10%!important}
+    .report-table.commercial th:nth-child(10),.report-table.commercial td:nth-child(10){width:10%!important}
+    .report-table.commercial td.name{font-size:12px!important;white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important}
+    .report-table.commercial .check-text,.report-table.commercial .duration-text{font-size:12px!important}
 
   </style>
 </head>
