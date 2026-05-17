@@ -30,7 +30,7 @@
     .card{background:var(--panel);border:1px solid rgba(188,202,221,.66);border-radius:22px;box-shadow:0 10px 26px rgba(20,38,72,.08);overflow:hidden;margin-bottom:12px}.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 15px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#f9fbfe)}.card-head h3{margin:0;font-size:16px;font-weight:900}.card-head span{font-size:12px;color:var(--muted);font-weight:800}.card-body{padding:15px}.grid-form{display:grid;grid-template-columns:88px 1fr;gap:10px}.field label{display:block;color:#3d4f68;font-size:12px;font-weight:900;margin-bottom:6px}input,select{width:100%;min-height:48px;border:1px solid #d5e0ee;border-radius:16px;background:#fff;padding:10px 12px;color:var(--ink);outline:none}input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(37,88,217,.12)}.span-2{grid-column:span 2}.actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.btn{min-height:48px;border-radius:16px;font-weight:950;padding:10px 12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center}.primary{background:linear-gradient(135deg,var(--primary),#65a2ff);color:#fff}.success{background:#e8f8ee;color:#15803d}.warning{background:#fff4df;color:#b45309}.danger{background:#ffe8e4;color:#b42318}.secondary{background:#f4f7fb;color:#42526c;border:1px solid #e4edf8}.dark{background:#172033;color:#fff}.full{grid-column:1/-1}.note{margin-top:12px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:10px 12px;border-radius:16px;font-size:12px;line-height:1.45;font-weight:750}
     .split-grid{display:grid;grid-template-columns:1fr;gap:12px}.type-box{border:1px solid #dfe8f5;background:#f8fbff;border-radius:20px;padding:12px}.type-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}.type-title strong{font-size:13px}.type-title span{font-size:11px;font-weight:900;color:#687892}.search-row{display:grid;grid-template-columns:1fr;gap:10px;align-items:center}.schedule-bar{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;margin-bottom:10px}.worker-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.worker-card{border:1px solid var(--line);border-radius:22px;background:#fff;padding:14px;box-shadow:0 8px 20px rgba(15,23,42,.04)}.worker-card.pkwt{background:linear-gradient(135deg,#eef7ff,#ffffff);border-color:#b9dcff}.worker-card.freelance{background:linear-gradient(135deg,#fff7e8,#ffffff);border-color:#f4d39c}.worker-top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;margin-bottom:12px}.worker-nip{font-size:12px;color:#516179;font-weight:950;background:rgba(255,255,255,.68);border:1px solid rgba(188,202,221,.55);border-radius:999px;padding:7px 9px;white-space:nowrap}.worker-name{font-weight:950;font-size:19px;line-height:1.15;text-align:center}.worker-status{font-size:11px;font-weight:950;border-radius:999px;padding:7px 9px;white-space:nowrap}.worker-card.pkwt .worker-status{background:#dff0ff;color:#1d4ed8}.worker-card.freelance .worker-status{background:#fff0d3;color:#b45309}.shift-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.shift-toggle{position:relative;display:flex;align-items:center;gap:8px;justify-content:space-between;min-height:52px;border-radius:17px;border:1px solid #e5e7eb;background:#f9fafb;padding:9px 10px;font-weight:950;font-size:13px;user-select:none}.shift-toggle input{position:absolute;opacity:0;pointer-events:none}.shift-toggle.shift-disabled{opacity:.55;background:#f1f5f9!important;border-color:#cbd5e1!important;color:#64748b!important;cursor:not-allowed}.shift-toggle.shift-disabled .checkmark{background:#e2e8f0!important;border-color:#cbd5e1!important;color:#e2e8f0!important}.checkmark{width:27px;height:27px;border-radius:10px;border:2px solid #cbd5e1;display:grid;place-items:center;color:#fff;font-weight:950;background:#fff}.shift-toggle.s1 input:checked + .checkmark{background:#2563eb;border-color:#2563eb}.shift-toggle.s1:has(input:checked){background:#eaf2ff;border-color:#a9c8ff;color:#1e3a8a}.shift-toggle.s2 input:checked + .checkmark{background:#ea580c;border-color:#ea580c}.shift-toggle.s2:has(input:checked){background:#fff1e8;border-color:#fdba74;color:#9a3412}.shift-toggle.s3 input:checked + .checkmark{background:#16a34a;border-color:#16a34a}.shift-toggle.s3:has(input:checked){background:#ecfdf5;border-color:#86efac;color:#166534}.empty{padding:18px;text-align:center;color:var(--muted);border:1px dashed #cbd5e1;border-radius:20px;background:#f8fafc;font-size:13px;font-weight:800}.schedule-safety-status{margin-top:10px;border:1px solid #dbeafe;background:#eff6ff;color:#1e3a8a;border-radius:18px;padding:10px 12px;font-size:12px;font-weight:900;line-height:1.35}.schedule-safety-status.warn{border-color:#fed7aa;background:#fff7ed;color:#9a3412}.schedule-safety-status.locked{border-color:#bbf7d0;background:#f0fdf4;color:#166534}.schedule-safety-status .small{display:block;margin-top:3px;font-weight:800;color:#64748b}.schedule-safety-status .status-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.schedule-edit-note{margin-top:8px;padding:8px 10px;border-radius:14px;background:rgba(255,255,255,.7);font-weight:900}.schedule-locked-mask{position:relative}.schedule-locked-mask:after{content:"Jadwal terkunci. Klik Edit Jadwal Tanggal Ini untuk mengubah.";display:block;margin-top:8px;font-size:12px;font-weight:900;color:#9a3412}.schedule-history-panel{margin-top:12px;border:1px solid #e5e7eb;background:#fff;border-radius:20px;padding:12px;box-shadow:0 8px 20px rgba(15,23,42,.04)}.schedule-history-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px}.schedule-history-head strong{font-size:13px}.schedule-history-head span{display:block;margin-top:3px;font-size:11px;font-weight:850;color:#64748b}.schedule-history-list{display:grid;grid-template-columns:1fr;gap:8px}.schedule-history-item{border:1px solid #edf2f7;background:#f8fafc;border-radius:16px;padding:10px;font-size:12px;font-weight:850}.schedule-history-item .meta{color:#475569;line-height:1.35}.schedule-history-item .changes{margin-top:6px;color:#0f172a;font-weight:900}.schedule-history-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.schedule-history-empty{border:1px dashed #cbd5e1;background:#f8fafc;border-radius:16px;padding:12px;color:#64748b;font-size:12px;font-weight:900;text-align:center}.btn:disabled{opacity:.55;cursor:not-allowed}
     .control-report{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px;border-radius:24px;background:linear-gradient(135deg,#ffffff,#fff7e8);border:1px solid #f3d6a2;box-shadow:0 14px 30px rgba(217,119,6,.10);margin-bottom:12px}.control-info{display:flex;align-items:center;gap:12px}.control-icon{width:48px;height:48px;border-radius:18px;background:#fff4df;display:grid;place-items:center;font-size:22px}.control-info h3{margin:0;font-size:16px;font-weight:950}.control-info p{margin:4px 0 0;color:#7c5a23;font-size:12px;font-weight:850}.control-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.attendance-list{display:grid;grid-template-columns:1fr;gap:12px}.shift-section{background:#fff;border:1px solid rgba(188,202,221,.75);border-radius:24px;box-shadow:0 10px 24px rgba(15,23,42,.06);overflow:hidden}.shift-section-head{display:flex;align-items:center;justify-content:space-between;padding:14px 15px;font-weight:950}.shift-section.s1 .shift-section-head{background:#eaf2ff;color:#1e3a8a}.shift-section.s2 .shift-section-head{background:#fff1e8;color:#9a3412}.shift-section.s3 .shift-section-head{background:#ecfdf5;color:#166534}.shift-count{font-size:12px;border-radius:999px;background:rgba(255,255,255,.75);padding:6px 10px}.shift-table{width:100%;border-collapse:separate;border-spacing:0}.shift-table th{font-size:11px;color:#64748b;text-align:left;background:#f8fafc;padding:9px 10px}.shift-table td{padding:10px;border-top:1px solid #edf2f7;font-weight:850}.shift-table td:first-child,.shift-table th:first-child{text-align:center;width:54px}.shift-table td:nth-child(2),.shift-table th:nth-child(2){width:82px}.print-sheet{background:#fff;border-radius:18px;overflow:visible;width:100%;max-width:920px;margin:0 auto}.print-title{text-align:center;line-height:1.2;padding:12px 6px 8px}.print-title .main{font-weight:900;text-transform:uppercase}.print-title .company,.print-title .date{text-transform:uppercase;font-size:13px}.print-title .coordinator{font-size:12px;font-weight:900;color:#172033;margin-top:3px;text-transform:uppercase;letter-spacing:.1px}.table-wrap{width:100%;overflow:auto;display:flex;justify-content:center}.report-table{width:100%;max-width:820px;margin:0 auto;border-collapse:collapse;font-size:12px;table-layout:fixed}.report-table th,.report-table td{border:1px solid #111;padding:5px 6px;text-align:center;white-space:normal;word-break:break-word}.report-table th{background:#f3f4f6}.report-table td.name{text-align:left;min-width:0;width:40%}.report-table th:nth-child(1),.report-table td:nth-child(1){width:46px}.report-table th:nth-child(2),.report-table td:nth-child(2){width:68px}.report-table th:nth-child(4),.report-table td:nth-child(4),.report-table th:nth-child(5),.report-table td:nth-child(5){width:72px}.report-table th:nth-child(6),.report-table td:nth-child(6),.report-table th:nth-child(7),.report-table td:nth-child(7){width:104px}.tick{color:var(--success);font-weight:950;font-size:17px}.summary-table{width:330px;max-width:100%;margin:10px auto 8px;border-collapse:collapse;font-size:12px}.summary-table td,.summary-table th{border:1px solid #111;padding:5px;text-align:center}.summary-table .left-label{font-weight:950}.summary-table .total{font-weight:950;font-size:14px}.check-input{min-height:34px;border-radius:10px;padding:5px 7px;font-size:12px;text-align:center}.check-source{font-size:11px;font-weight:900;color:#64748b}.report-footer{max-width:820px;margin:12px auto 8px;font-size:12px}.signature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center;margin:12px 0 8px}.signature-title{font-weight:950;min-height:22px}.signature-line{border-bottom:1px solid #111;margin:28px auto 0;width:80%}.editable-report{display:inline-block;min-width:60px;padding:2px 4px;border-radius:6px}.auth-admin .editable-report{outline:1px dashed #cbd5e1;background:#f8fafc}.note-area{margin-top:6px}.note-title{font-weight:950;margin-bottom:4px}.worktime-table{border-collapse:collapse;width:300px;max-width:100%;font-size:10px;margin-top:4px}.worktime-table th,.worktime-table td{border:1px solid #111;padding:5px;text-align:center}.worktime-table td.editable-report{display:table-cell;min-width:0;padding:5px;border-radius:0}.worktime-table .worktime-main .editable-report{display:inline;min-width:0;padding:0;border-radius:0}.auth-admin .worktime-table td.editable-report{outline:0;background:#fff}.auth-admin .worktime-table .worktime-main .editable-report{outline:1px dashed #cbd5e1;background:#f8fafc}.worktime-table .worktime-main{font-weight:950;text-transform:uppercase}.bottom-print-actions{display:flex;justify-content:center;margin:14px 0 4px}.note-save-row{display:flex;justify-content:flex-start;margin-top:8px}body:not(.auth-admin) .report-footer,body:not(.auth-admin) .bottom-print-actions{display:none!important}.desktop-print-preview{display:none}.report-preview{display:block;margin:12px auto 0}.schedule-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.inside-stats{margin:12px 0 0}
-    .install-sheet{position:fixed;left:50%;bottom:82px;transform:translateX(-50%) translateY(18px);width:min(94vw,460px);z-index:80;opacity:0;pointer-events:none;transition:.28s ease}.install-sheet.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}.install-sheet-card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.98));border:1px solid rgba(188,202,221,.8);box-shadow:0 22px 48px rgba(20,38,72,.16);border-radius:24px;padding:18px 18px 16px}.install-sheet-top{display:flex;gap:14px;align-items:center}.install-sheet-logo{width:56px;height:56px;object-fit:contain;border-radius:18px;background:#fff;padding:6px;box-shadow:0 10px 18px rgba(37,88,217,.12);flex:0 0 auto}.install-sheet-text small{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#2558d9;margin-bottom:4px}.install-sheet-text strong{display:block;font-size:18px;line-height:1.2;color:#20355b}.install-sheet-text p{margin:6px 0 0;color:#64748b;font-size:12px;line-height:1.55;font-weight:700}.install-sheet-actions{display:flex;gap:10px;margin-top:13px}.install-sheet-actions .btn{flex:1}.install-sheet-close{position:absolute;right:14px;top:14px;width:32px;height:32px;border-radius:12px;border:1px solid #d7e3f7;background:#fff;color:#50647f;font-weight:900;cursor:pointer}
+    .app-update-banner{position:fixed;left:50%;bottom:16px;transform:translateX(-50%) translateY(18px);width:min(94vw,560px);z-index:120;display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #d9e7ff;box-shadow:0 22px 48px rgba(20,38,72,.18);border-radius:20px;padding:12px;opacity:0;pointer-events:none;transition:.25s ease}.app-update-banner.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}.app-update-banner div{flex:1;min-width:0}.app-update-banner strong{display:block;color:#20355b;font-size:13px;font-weight:950}.app-update-banner p{margin:3px 0 0;color:#64748b;font-size:12px;font-weight:800;line-height:1.4}.app-update-banner .btn{min-height:38px;padding:8px 10px;font-size:12px;white-space:nowrap}.install-sheet{position:fixed;left:50%;bottom:82px;transform:translateX(-50%) translateY(18px);width:min(94vw,460px);z-index:80;opacity:0;pointer-events:none;transition:.28s ease}.install-sheet.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}.install-sheet-card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.98));border:1px solid rgba(188,202,221,.8);box-shadow:0 22px 48px rgba(20,38,72,.16);border-radius:24px;padding:18px 18px 16px}.install-sheet-top{display:flex;gap:14px;align-items:center}.install-sheet-logo{width:56px;height:56px;object-fit:contain;border-radius:18px;background:#fff;padding:6px;box-shadow:0 10px 18px rgba(37,88,217,.12);flex:0 0 auto}.install-sheet-text small{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#2558d9;margin-bottom:4px}.install-sheet-text strong{display:block;font-size:18px;line-height:1.2;color:#20355b}.install-sheet-text p{margin:6px 0 0;color:#64748b;font-size:12px;line-height:1.55;font-weight:700}.install-sheet-actions{display:flex;gap:10px;margin-top:13px}.install-sheet-actions .btn{flex:1}.install-sheet-close{position:absolute;right:14px;top:14px;width:32px;height:32px;border-radius:12px;border:1px solid #d7e3f7;background:#fff;color:#50647f;font-weight:900;cursor:pointer}
     @keyframes spin{to{transform:rotate(360deg)}}@keyframes progressMove{0%{transform:translateX(-70%)}50%{transform:translateX(90%)}100%{transform:translateX(230%)}}@keyframes floatOrb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.05)}}
 
     .login-view{min-height:calc(100vh - 30px);display:flex;align-items:center;justify-content:center;padding:18px 0 34px}.auth-ok .login-view{display:none!important}.auth-pending .wrap,.auth-pending .tabs,.auth-pending .install-sheet{display:none!important}.login-shell{width:min(100%,460px);position:relative}.login-card{border-radius:32px;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.96));border:1px solid rgba(188,202,221,.72);box-shadow:0 28px 70px rgba(20,38,72,.16);overflow:hidden}.login-top{position:relative;overflow:hidden;background:linear-gradient(135deg,#11285f 0%,#2558d9 58%,#65a2ff 100%);padding:24px 20px 22px;color:#fff}.login-top:before,.login-top:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.10)}.login-top:before{width:170px;height:170px;right:-48px;top:-42px}.login-top:after{width:130px;height:130px;right:54px;bottom:-68px}.login-brand{position:relative;z-index:1;display:flex;align-items:center;gap:14px}.login-logo{width:68px;height:68px;border-radius:20px;background:#fff;padding:8px;object-fit:contain;box-shadow:0 14px 28px rgba(12,28,69,.24)}.login-brand small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:950;color:rgba(255,255,255,.78)}.login-brand h1{margin:3px 0 0;font-size:22px;font-weight:950}.login-body{padding:18px}.login-note{margin:0 0 14px;padding:12px 13px;border-radius:18px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;font-size:12px;font-weight:850;line-height:1.5}.login-form{display:grid;gap:12px}.password-wrap{position:relative}.password-wrap input{padding-right:54px}.mini-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:42px;height:36px;border-radius:12px;background:#eef5ff;color:#2558d9;font-weight:950}.login-error{display:none;margin-top:2px;padding:11px 12px;border-radius:16px;background:#ffe8e4;color:#b42318;border:1px solid #ffc8c0;font-size:12px;font-weight:850}.login-error.show{display:block}.demo-box{margin-top:14px;border:1px dashed #bfd0ea;border-radius:20px;background:#fbfdff;padding:13px}.demo-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px;color:#20355b;font-weight:950;font-size:13px}.demo-list{display:grid;gap:8px}.demo-user{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:#fff;border:1px solid #e1eaf6;border-radius:16px;padding:10px 11px}.demo-user strong{display:block;font-size:12px;color:#20355b}.demo-user span{display:block;font-size:11px;color:#65758b;font-weight:800;margin-top:2px}.demo-user code{font-family:Consolas,monospace;font-size:11px;background:#eef5ff;color:#2558d9;padding:6px 7px;border-radius:10px;font-weight:900}.user-strip{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;padding:11px 13px;border-radius:20px;background:rgba(255,255,255,.94);border:1px solid rgba(188,202,221,.66);box-shadow:0 10px 26px rgba(20,38,72,.07)}.user-strip-left{display:flex;align-items:center;gap:10px;min-width:0}.user-avatar{width:42px;height:42px;border-radius:15px;background:linear-gradient(135deg,#2558d9,#65a2ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:950;box-shadow:0 10px 18px rgba(37,88,217,.18);flex:0 0 auto}.user-name{font-weight:950;color:#20355b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.user-unit{font-size:12px;color:#65758b;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.logout-btn{min-height:40px;border-radius:14px;background:#ffe8e4;color:#b42318;padding:8px 12px;font-size:12px;font-weight:950;flex:0 0 auto}.hero-user{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.25)}.admin-only{display:none!important}.auth-admin .admin-only{display:block!important}.auth-admin .panel.admin-only{display:none!important}.auth-admin .panel.admin-only.active{display:block!important}.admin-import-grid{display:grid;grid-template-columns:1fr;gap:10px}.admin-import-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.import-help{margin-top:12px;border-radius:16px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;padding:11px 12px;font-size:12px;font-weight:800;line-height:1.55}.import-help:empty{display:none!important}.import-file-name{margin-top:8px;color:#64748b;font-size:12px;font-weight:800}.machine-preview-box{margin-top:12px;border:1px solid #dfe8f5;background:#fff;border-radius:18px;overflow:hidden}.machine-preview-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 12px;background:#f8fafc;border-bottom:1px solid #e5edf7;font-size:12px;font-weight:950;color:#20355b}.machine-preview-table-wrap{width:100%;overflow:auto}.machine-preview-table{width:100%;border-collapse:collapse;font-size:12px;min-width:900px}.machine-preview-table th,.machine-preview-table td{border:1px solid #e5edf7;padding:7px 8px;text-align:left;white-space:nowrap}.machine-preview-table th{background:#eef5ff;color:#2558d9;font-weight:950}.machine-status{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:950}.machine-status.ok{background:#dcfce7;color:#166534}.machine-status.warn{background:#fff7ed;color:#9a3412}.machine-status.err{background:#fee2e2;color:#991b1b}.machine-status.muted{background:#f1f5f9;color:#475569}.auth-admin .tabs{grid-template-columns:repeat(2,1fr)}.auth-admin .tab-worker{display:none!important}.auth-admin #panelWorkers{display:none!important}.auth-admin .coordinator-only{display:none!important}.role-readonly .input-only,.role-readonly #panelWorkers,.role-readonly .tab-worker,.role-payroll .input-only,.role-payroll #panelWorkers,.role-payroll .tab-worker{display:none!important}.role-readonly [data-role-write],.role-payroll [data-role-write]{display:none!important}.permission-note{margin-top:12px;border:1px solid #f8d98b;background:#fff8df;color:#7a4b00;border-radius:16px;padding:11px 12px;font-size:12px;font-weight:850;line-height:1.5}.admin-panel-grid{display:grid;grid-template-columns:1fr;gap:12px}.admin-mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.admin-mini{border:1px solid #dfe8f5;background:#fff;border-radius:18px;padding:12px;box-shadow:0 8px 20px rgba(20,38,72,.06)}.admin-mini .label{font-size:10px;color:#71829b;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.admin-mini .value{font-size:22px;font-weight:950;margin-top:4px;color:#20355b}.admin-danger-box{border:1px solid #ffd0c8;background:#fff7f5;border-radius:20px;padding:12px}.admin-safe-box{border:1px solid #d9e7ff;background:#fbfdff;border-radius:20px;padding:12px}.admin-log{margin-top:12px;border-radius:16px;background:#0f172a;color:#e5edf8;padding:12px;font-size:12px;line-height:1.55;white-space:pre-wrap;max-height:180px;overflow:auto}.admin-actions-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.admin-actions-row.three{grid-template-columns:1fr 1fr 1fr}.admin-checkline{display:flex;align-items:center;gap:10px;margin-top:10px;padding:12px;border:1px solid #dfe8f5;border-radius:16px;background:#fff;font-size:13px;font-weight:900;color:#20355b}.admin-checkline input{width:20px;height:20px;accent-color:#2558d9}
@@ -900,6 +900,19 @@
   gap:14px;
   margin-top:0;
 }
+.upah-do-box{
+  grid-template-columns:repeat(3,minmax(160px,1fr));
+}
+.upah-total-do-box{
+  grid-template-columns:minmax(220px,1fr);
+  max-width:360px;
+  margin-top:14px;
+}
+.upah-total-do-box input[readonly]{
+  background:#eef6ff;
+  color:#0f3b82;
+  font-weight:950;
+}
 .upah-calculator-card{
   margin-top:16px;
   padding:16px;
@@ -972,13 +985,15 @@
 #upahCalcTable th,#upahCalcTable td{min-width:0!important;max-width:none!important;box-sizing:border-box;}
 #upahCalcTable th:nth-child(1),#upahCalcTable td:nth-child(1){width:4%;}
 #upahCalcTable th:nth-child(2),#upahCalcTable td:nth-child(2){width:6%;}
-#upahCalcTable th:nth-child(3),#upahCalcTable td:nth-child(3){width:20%;}
-#upahCalcTable th:nth-child(4),#upahCalcTable td:nth-child(4){width:11%;}
-#upahCalcTable th:nth-child(5),#upahCalcTable td:nth-child(5){width:11%;}
-#upahCalcTable th:nth-child(6),#upahCalcTable td:nth-child(6){width:13%;}
-#upahCalcTable th:nth-child(7),#upahCalcTable td:nth-child(7){width:11%;}
-#upahCalcTable th:nth-child(8),#upahCalcTable td:nth-child(8){width:10%;}
-#upahCalcTable th:nth-child(9),#upahCalcTable td:nth-child(9){width:14%;}
+#upahCalcTable th:nth-child(3),#upahCalcTable td:nth-child(3){width:18%;}
+#upahCalcTable th:nth-child(4),#upahCalcTable td:nth-child(4){width:9%;}
+#upahCalcTable th:nth-child(5),#upahCalcTable td:nth-child(5){width:9%;}
+#upahCalcTable th:nth-child(6),#upahCalcTable td:nth-child(6){width:10%;}
+#upahCalcTable th:nth-child(7),#upahCalcTable td:nth-child(7){width:9%;}
+#upahCalcTable th:nth-child(8),#upahCalcTable td:nth-child(8){width:9%;}
+#upahCalcTable th:nth-child(9),#upahCalcTable td:nth-child(9){width:10%;}
+#upahCalcTable th:nth-child(10),#upahCalcTable td:nth-child(10){width:8%;}
+#upahCalcTable th:nth-child(11),#upahCalcTable td:nth-child(11){width:8%;}
 .upah-excel-table td.upah-fixed-cell{background:#f8fafc!important;color:#0f172a;font-weight:950;}
 .upah-result-grid{display:grid;grid-template-columns:repeat(3,minmax(160px,1fr));gap:12px;}
 .upah-result-pill{border:1px solid #bfdbfe;background:linear-gradient(135deg,#ffffff,#eaf2ff);border-radius:18px;padding:12px 14px;box-shadow:0 10px 20px rgba(15,23,42,.06);}
@@ -1016,7 +1031,7 @@
 #upahTable[data-kegiatan-column="1"] td[data-field="kegiatan"]{text-align:left;line-height:1.3;white-space:normal;overflow-wrap:normal;word-break:normal;}
 #upahTable[data-kegiatan-column="1"] th:nth-child(4){white-space:nowrap;}
 
-@media(max-width:720px){.upah-page{padding:10px}.upah-hero{flex-direction:column}.upah-filter-row,.upah-tonase-box,.upah-final-row{grid-template-columns:1fr}.upah-action-row .btn,.upah-calc-actions .btn{width:100%;max-width:none}}
+@media(max-width:720px){.upah-page{padding:10px}.upah-hero{flex-direction:column}.upah-filter-row,.upah-tonase-box,.upah-do-box,.upah-final-row{grid-template-columns:1fr}.upah-action-row .btn,.upah-calc-actions .btn{width:100%;max-width:none}}
 
 
 /* v157 - Import jadwal Bagging bulanan dan laporan berbasis jadwal. */
@@ -1043,6 +1058,7 @@
 .bagging-control-card .card-head h3{margin:0}
 .bagging-report-info{margin-top:10px;font-size:12px;color:#475569;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:12px;padding:8px 10px;font-weight:800}.bagging-report-info:empty{display:none!important}
 /* v190 - Tambah Master Regu Pengganti Bagging Off terpisah dan hubungkan ke Ganti Pekerja tanpa riwayat. */
+/* v191 - Rapikan tampilan Master Regu Pengganti Bagging Off. */
 .bagging-print-sheet{margin-top:16px;display:none;width:100%;max-width:none}
 .bagging-print-sheet.ready{display:block}
 .bagging-print-title{text-align:center;line-height:1.15;margin-bottom:10px;color:#0f172a}
@@ -1116,6 +1132,33 @@
     .admin-replace-modal select,.admin-replace-modal input{width:100%;min-height:44px;border:1px solid #d8e2ef;border-radius:14px;padding:9px 11px;font-weight:850;background:#fff;color:#172033}
     .bagging-replace-col{width:92px;text-align:center}
     .bagging-replaced-note{margin-top:2px;font-size:9px;font-weight:900;color:#2563eb;text-transform:uppercase}
+
+    /* v191 - Rapikan Master Regu Pengganti Bagging Off */
+    .bagging-replacement-master-card .card-body{padding:16px}
+    .bagging-replacement-form{display:grid;grid-template-columns:minmax(220px,1fr) 160px;gap:12px;align-items:end}
+    .bagging-replacement-form .field:nth-of-type(3){grid-column:1/2}
+    .bagging-replacement-form .field:nth-of-type(4){grid-column:2/3}
+    .bagging-replacement-actions{margin-top:14px}
+    .bagging-replacement-table-wrap{width:100%;overflow:auto;margin-top:14px;border:1px solid #dbe7f6;border-radius:18px;background:#fff;box-shadow:0 10px 24px rgba(15,23,42,.06)}
+    .bagging-replacement-table{width:100%;max-width:none;margin:0;table-layout:fixed;border-collapse:separate;border-spacing:0;font-size:13px}
+    .bagging-replacement-table th,.bagging-replacement-table td{border:0;border-bottom:1px solid #e7eef8;padding:11px 12px;vertical-align:middle;white-space:normal;word-break:normal}
+    .bagging-replacement-table th{position:sticky;top:0;z-index:1;background:#f3f7fc;color:#20355b;font-weight:950;font-size:12px;letter-spacing:.02em}
+    .bagging-replacement-table tbody tr:nth-child(even){background:#fbfdff}
+    .bagging-replacement-table tbody tr:hover{background:#eef5ff}
+    .bagging-replacement-table th:nth-child(1),.bagging-replacement-table td:nth-child(1){width:58px;text-align:center}
+    .bagging-replacement-table th:nth-child(2),.bagging-replacement-table td:nth-child(2){width:220px;text-align:left}
+    .bagging-replacement-table th:nth-child(3),.bagging-replacement-table td:nth-child(3){width:120px;text-align:center}
+    .bagging-replacement-table th:nth-child(4),.bagging-replacement-table td:nth-child(4){width:auto;text-align:left}
+    .bagging-replacement-table th:nth-child(5),.bagging-replacement-table td:nth-child(5){width:120px;text-align:center}
+    .bagging-replacement-table th:nth-child(6),.bagging-replacement-table td:nth-child(6){width:180px;text-align:center}
+    .bagging-regu-cell,.bagging-nip-cell,.bagging-name-cell{font-weight:850;color:#172033}
+    .bagging-action-buttons{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:nowrap}
+    .bagging-action-buttons .btn.small{min-height:36px;padding:7px 12px;border-radius:12px;white-space:nowrap}
+    .bagging-status-badge{display:inline-flex;align-items:center;justify-content:center;min-width:76px;min-height:30px;border-radius:999px;padding:5px 10px;font-weight:950;font-size:12px}
+    .bagging-status-badge.active{background:#e8f8ee;color:#15803d}
+    .bagging-status-badge.inactive{background:#f1f5f9;color:#64748b}
+    .bagging-empty-row{height:54px;color:#64748b;font-weight:850;background:#fbfdff}
+    @media(max-width:720px){.bagging-replacement-form{grid-template-columns:1fr}.bagging-replacement-form .field:nth-of-type(3),.bagging-replacement-form .field:nth-of-type(4){grid-column:auto}.bagging-replacement-table{min-width:760px}}
 </style>
 </head>
 <body class="auth-pending">
@@ -1124,7 +1167,7 @@
   <div class="app-splash-card"><div class="app-splash-kicker">BiP Productivity App</div><div class="app-splash-logo-shell"><div class="app-splash-logo-ring"></div><img src="icons/icon-512.png" alt="Logo" class="app-splash-logo"></div><div class="app-splash-title">Lapor Absensi</div><div class="app-splash-sub">Menyiapkan daftar pekerja, jadwal shift, dan laporan absensi.</div><div class="app-splash-progress"><span></span></div><div class="app-splash-foot">Fast • Mobile • PWA</div></div>
 </div>
 <div class="install-sheet no-print" id="installSheet">
-  <div class="install-sheet-card"><button type="button" class="install-sheet-close" id="btnDismissInstallTop">×</button><div class="install-sheet-top"><img src="icons/icon-512.png" alt="Logo" class="install-sheet-logo"><div class="install-sheet-text"><small>Install Android</small><strong>Absensi Koordinator BIP</strong><p>Pasang ke layar utama agar koordinator dan admin bisa mengelola absensi dari HP atau tablet seperti aplikasi native.</p></div></div><div class="install-sheet-actions"><button class="btn primary" id="btnInstallApp">Install</button><button class="btn secondary" id="btnDismissInstall">Nanti</button></div></div>
+  <div class="install-sheet-card"><button type="button" class="install-sheet-close" id="btnDismissInstallTop">×</button><div class="install-sheet-top"><img src="icons/icon-512.png" alt="Logo" class="install-sheet-logo"><div class="install-sheet-text"><small>Pasang Shortcut Android</small><strong>Absensi Koordinator BIP</strong><p>Pasang ke layar utama. Update aplikasi mengikuti server; jika ada versi baru cukup tekan Update Sekarang atau buka ulang aplikasi.</p></div></div><div class="install-sheet-actions"><button class="btn primary" id="btnInstallApp">Pasang</button><button class="btn secondary" id="btnDismissInstall">Nanti</button></div></div>
 </div>
 <section class="login-view no-print" id="loginView" aria-label="Login aplikasi">
   <div class="login-shell">
@@ -1147,7 +1190,7 @@
   <div class="user-strip no-print" id="userStrip"><div class="user-strip-left"><div class="user-avatar" id="userAvatar">K</div><div><div class="user-name" id="activeUserName">Koordinator</div><div class="user-unit" id="activeUserUnit"></div></div></div><button type="button" class="logout-btn" id="btnLogout">Logout</button></div>
   <section class="hero no-print">
     <div class="hero-brand"><img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo"><div><small>BiP Productivity App</small><h1 id="appUnitTitle">Absensi Muatan Breeder</h1></div></div>
-    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Install Android</button></div>
+    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v200</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
   </section>
   <nav class="tabs no-print" aria-label="Navigasi aplikasi"><button class="tab-btn admin-only" data-panel="panelAdmin">🛠 Admin</button><button class="tab-btn active tab-worker coordinator-only" data-panel="panelWorkers">✅ Jadwal</button><button class="tab-btn" data-panel="panelReport">📝 Absensi</button><button class="tab-btn admin-only" data-panel="panelBaggingOff">🧾 Bagging</button><button class="tab-btn admin-only" data-panel="panelUpah">💰 Upah</button></nav>
   <section id="panelWorkers" class="panel active">
@@ -1249,16 +1292,15 @@
         </div>
       </div></div>
       <div class="card admin-only no-print bagging-control-card bagging-replacement-master-card" id="baggingReplacementMasterCard"><div class="card-head"><h3>Master Regu Pengganti Bagging Off</h3><span>Terpisah dari master Bagging Off stabil</span></div><div class="card-body">
-        <div class="grid-form">
+        <div class="bagging-replacement-form">
           <input id="baggingReplacementMasterId" type="hidden">
           <div class="field"><label for="baggingReplacementRegu">Regu Pengganti</label><input id="baggingReplacementRegu" type="text" placeholder="contoh: Regu Pengganti 01"></div>
           <div class="field"><label for="baggingReplacementNip">NIP</label><input id="baggingReplacementNip" type="text" inputmode="numeric" placeholder="NIP pekerja"></div>
-          <div class="field span-2"><label for="baggingReplacementName">Nama Pekerja</label><input id="baggingReplacementName" type="text" placeholder="Nama pekerja pengganti"></div>
+          <div class="field"><label for="baggingReplacementName">Nama Pekerja</label><input id="baggingReplacementName" type="text" placeholder="Nama pekerja pengganti"></div>
           <div class="field"><label for="baggingReplacementActive">Status</label><select id="baggingReplacementActive"><option value="1">Aktif</option><option value="0">Nonaktif</option></select></div>
         </div>
-        <div class="admin-actions-row three"><button type="button" class="btn primary" id="btnSaveBaggingReplacementMaster">💾 Simpan Pekerja</button><button type="button" class="btn secondary" id="btnResetBaggingReplacementMaster">↻ Reset Form</button><button type="button" class="btn success" id="btnRefreshBaggingReplacementMaster">🔄 Refresh Master</button></div>
-        <div class="import-help" id="baggingReplacementMasterInfo">Master ini hanya untuk sumber pekerja pengganti. Tidak mengubah master Bagging Off Buhler &amp; Breeder.</div>
-        <div class="table-wrap" style="margin-top:10px"><table class="report-table admin-worker-table" id="baggingReplacementMasterTable"><thead><tr><th>NO</th><th>REGU PENGGANTI</th><th>NIP</th><th>NAMA PEKERJA</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody id="baggingReplacementMasterBody"><tr><td colspan="6">Memuat master pengganti...</td></tr></tbody></table></div>
+        <div class="admin-actions-row three bagging-replacement-actions"><button type="button" class="btn primary" id="btnSaveBaggingReplacementMaster">💾 Simpan Pekerja</button><button type="button" class="btn secondary" id="btnResetBaggingReplacementMaster">↻ Reset Form</button><button type="button" class="btn success" id="btnRefreshBaggingReplacementMaster">🔄 Refresh Master</button></div>
+        <div class="bagging-replacement-table-wrap"><table class="report-table admin-worker-table bagging-replacement-table" id="baggingReplacementMasterTable"><thead><tr><th>NO</th><th>REGU PENGGANTI</th><th>NIP</th><th>NAMA PEKERJA</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody id="baggingReplacementMasterBody"><tr><td colspan="6">Memuat master pengganti...</td></tr></tbody></table></div>
       </div></div>
 
       <div class="card admin-only no-print bagging-control-card bagging-absensi-card" id="baggingOffControlCard"><div class="card-head"><h3>Absensi Bagging Off</h3><span>v161 • teks info dirapikan</span></div><div class="card-body">
@@ -1298,11 +1340,25 @@
       </div></div>
       <div class="card upah-card print-sheet report-preview upah-preview"><div class="card-head no-print"><h3>Rules of ⬆️ 1 ⬆️ 2</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span><strong id="upahSelectedCountBadge">0</strong> pekerja</span><button type="button" class="btn small" id="btnToggleUpahRules">Show</button></div></div><div id="upahPreviewBody" style="display:none;"><div class="print-title"><div class="main" id="upahMainTitle">Rules of ⬆️ 1 ⬆️ 2</div><div class="company" id="upahCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="upahDateText">HARI - TANGGAL</div><div class="coordinator" id="upahCoordinatorText"></div></div><div class="table-wrap"><table class="report-table upah-excel-table" id="upahTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th></tr></thead><tbody id="upahBody"><tr><td colspan="6" style="height:42px;color:#65758b">Pilih Bagian / Koordinator dan Tanggal Absensi, lalu klik Tampilkan.</td></tr></tbody><tfoot class="report-summary upah-summary" id="upahFoot"><tr><td class="left-label" colspan="3">TOTAL</td><td id="upahSumS1">0</td><td id="upahSumS2">0</td><td id="upahSumS3">0</td></tr></tfoot></table></div></div></div>
       <div class="upah-calculator-card no-print">
-        <div class="upah-calculator-title"><div>Input Tonase</div></div>
+        <div class="upah-calculator-title" id="upahDoPagiTitle"><div>DO Pagi</div></div>
+        <div class="upah-tonase-box upah-do-box" id="upahDoPagiBox">
+          <div class="field"><label for="adminUpahDoPagiZak">Jumlah Zak</label><input id="adminUpahDoPagiZak" class="upah-ribuan-input upah-do-input" type="text" inputmode="numeric" autocomplete="off" placeholder="0"></div>
+          <div class="field"><label for="adminUpahDoPagiPerZak">Per Zak (kg)</label><input id="adminUpahDoPagiPerZak" class="upah-ribuan-input upah-do-input" type="text" inputmode="decimal" autocomplete="off" value="50"></div>
+          <div class="field"><label for="adminUpahDoPagiTarif">Tarif / kg</label><input id="adminUpahDoPagiTarif" class="upah-ribuan-input upah-do-input" type="text" inputmode="decimal" autocomplete="off" value="11,78"></div>
+        </div>
+        <div class="upah-calculator-title" id="upahDoSiangTitle" style="margin-top:14px"><div>DO Siang</div></div>
+        <div class="upah-tonase-box upah-do-box" id="upahDoSiangBox">
+          <div class="field"><label for="adminUpahDoSiangZak">Jumlah Zak</label><input id="adminUpahDoSiangZak" class="upah-ribuan-input upah-do-input" type="text" inputmode="numeric" autocomplete="off" placeholder="0"></div>
+          <div class="field"><label for="adminUpahDoSiangPerZak">Per Zak (kg)</label><input id="adminUpahDoSiangPerZak" class="upah-ribuan-input upah-do-input" type="text" inputmode="decimal" autocomplete="off" value="50"></div>
+          <div class="field"><label for="adminUpahDoSiangTarif">Tarif / kg</label><input id="adminUpahDoSiangTarif" class="upah-ribuan-input upah-do-input" type="text" inputmode="decimal" autocomplete="off" value="11,78"></div>
+        </div>
+        <div class="upah-tonase-box upah-total-do-box" id="upahTotalDoBox">
+          <div class="field"><label for="adminUpahTotalDo">Total DO</label><input id="adminUpahTotalDo" type="text" readonly value="0"></div>
+        </div>
         <div class="upah-tonase-box">
-          <div class="field"><label for="adminUpahTonaseS1">Tonase Pagi</label><input id="adminUpahTonaseS1" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+          <div class="field"><label for="adminUpahTonaseS1">Tonase Pagi</label><input id="adminUpahTonaseS1" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0" readonly></div>
           <div class="field"><label for="adminUpahBiayaS1">Biaya lain</label><input id="adminUpahBiayaS1" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
-          <div class="field"><label for="adminUpahTonaseS2">Tonase Siang</label><input id="adminUpahTonaseS2" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+          <div class="field"><label for="adminUpahTonaseS2">Tonase Siang</label><input id="adminUpahTonaseS2" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0" readonly></div>
           <div class="field"><label for="adminUpahBiayaS2">Biaya lain</label><input id="adminUpahBiayaS2" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
         </div>
         <div class="upah-calc-actions"><button type="button" class="btn dark" id="btnCalculateUpah">Calculate</button></div>
@@ -1310,7 +1366,7 @@
           <div id="upahResultInfoBody"></div>
         </div>
       </div>
-      <div class="card upah-card print-sheet report-preview upah-calc-preview" id="upahCalcCard" style="display:none"><div class="card-head no-print"><h3>Kalkulator Upah</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><button type="button" class="btn dark small" id="btnPrintUpahCalc">🖨️ Cetak</button><button type="button" class="btn primary small" id="btnExportUpahExcel">Export to Excel</button></div></div><div class="table-wrap"><table class="report-table upah-excel-table" id="upahCalcTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>GAJI</th><th>LEMBUR</th><th>TOTAL</th><th>KURANG</th><th>TAMBAH</th><th>NETTO</th></tr></thead><tbody id="upahCalcBody"></tbody><tfoot class="report-summary"><tr><td class="left-label" colspan="3">TOTAL</td><td id="upahCalcTotalGaji">0</td><td id="upahCalcTotalLembur">0</td><td id="upahCalcTotalBruto">0</td><td id="upahCalcTotalKurang">0</td><td id="upahCalcTotalTambah">0</td><td id="upahCalcTotalNetto">0</td></tr></tfoot></table></div><div class="upah-selisih-note" id="upahCalcSelisihNote">NOTE : SELISIH = 0</div></div>
+      <div class="card upah-card print-sheet report-preview upah-calc-preview" id="upahCalcCard" style="display:none"><div class="card-head no-print"><h3>Kalkulator Upah</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><button type="button" class="btn dark small" id="btnPrintUpahCalc">🖨️ Cetak</button><button type="button" class="btn primary small" id="btnExportUpahExcel">Export to Excel</button></div></div><div class="table-wrap"><table class="report-table upah-excel-table" id="upahCalcTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>GAJI</th><th>LEMBUR</th><th>TOTAL</th><th>KURANG</th><th>TAMBAH</th><th>NETTO</th><th>HASIL01</th><th>HASIL02</th></tr></thead><tbody id="upahCalcBody"></tbody><tfoot class="report-summary"><tr><td class="left-label" colspan="3">TOTAL</td><td id="upahCalcTotalGaji">0</td><td id="upahCalcTotalLembur">0</td><td id="upahCalcTotalBruto">0</td><td id="upahCalcTotalKurang">0</td><td id="upahCalcTotalTambah">0</td><td id="upahCalcTotalNetto">0</td><td id="upahCalcTotalHasil01">0</td><td id="upahCalcTotalHasil02">0</td></tr></tfoot></table></div><div class="upah-selisih-note" id="upahCalcSelisihNote"><div>NOTE : SELISIH = 0</div><div># DO Pagi : 0</div><div># DO Siang : 0</div></div></div>
     </section>
   </section>
 
@@ -1544,7 +1600,29 @@
 <script src="firebase-config.js"></script>
 <script src="firebase-bridge.js"></script>
 <script>
-if ('serviceWorker' in navigator) { window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{})); }
+const APP_VERSION = 'v200';
+const APP_VERSION_LABEL = 'v200';
+const APP_VERSION_FILE = 'version.json';
+let appServiceWorkerRegistration = null;
+let appUpdateWaitingWorker = null;
+function registerAppServiceWorker(){
+  if(!('serviceWorker' in navigator)) return;
+  window.addEventListener('load', async ()=>{
+    try{
+      appServiceWorkerRegistration = await navigator.serviceWorker.register('sw.js?v=' + encodeURIComponent(APP_VERSION));
+      if(appServiceWorkerRegistration.waiting) appUpdateWaitingWorker = appServiceWorkerRegistration.waiting;
+      appServiceWorkerRegistration.addEventListener('updatefound', ()=>{
+        const worker = appServiceWorkerRegistration.installing;
+        if(!worker) return;
+        worker.addEventListener('statechange', ()=>{
+          if(worker.state === 'installed' && navigator.serviceWorker.controller){ appUpdateWaitingWorker = worker; showAppUpdateBanner('Versi baru siap digunakan. Tekan Update Sekarang.'); }
+        });
+      });
+      setTimeout(()=>appServiceWorkerRegistration.update().catch(()=>{}), 1500);
+    }catch(err){ console.warn('Service worker gagal didaftarkan.', err); }
+  });
+}
+registerAppServiceWorker();
 const STORAGE_KEY = 'absensi_muatan_breeder_pwa_v5';
 const ATTENDANCE_KEY = 'absensi_muatan_breeder_attendance_v1';
 const PENDING_ATTENDANCE_KEY = 'absensi_muatan_breeder_pending_attendance_v1';
@@ -1695,6 +1773,55 @@ let adminUpahCalculationRows = [];
 const adminAttendanceCache = new Map();
 const adminAttendanceCacheMeta = { hits:0, misses:0, lastSource:'' };
 const $ = (id) => document.getElementById(id);
+
+function normalizeAppVersion(v){ return String(v || '').trim(); }
+function showAppUpdateBanner(message){
+  let banner=document.getElementById('appUpdateBanner');
+  if(!banner){
+    banner=document.createElement('div');
+    banner.id='appUpdateBanner';
+    banner.className='app-update-banner no-print';
+    banner.innerHTML='<div><strong>Update aplikasi tersedia</strong><p id="appUpdateMessage">Versi baru sudah tersedia di server.</p></div><button type="button" class="btn primary" id="btnAppUpdateNow">Update Sekarang</button><button type="button" class="btn secondary" id="btnAppUpdateLater">Nanti</button>';
+    document.body.appendChild(banner);
+    const btnNow=document.getElementById('btnAppUpdateNow');
+    const btnLater=document.getElementById('btnAppUpdateLater');
+    if(btnNow) btnNow.addEventListener('click', forceAppUpdateNow);
+    if(btnLater) btnLater.addEventListener('click', ()=>banner.classList.remove('show'));
+  }
+  const msg=document.getElementById('appUpdateMessage');
+  if(msg) msg.textContent=message || 'Versi baru sudah tersedia di server.';
+  banner.classList.add('show');
+}
+async function forceAppUpdateNow(){
+  try{
+    if(appUpdateWaitingWorker) appUpdateWaitingWorker.postMessage({type:'SKIP_WAITING'});
+    if('caches' in window){
+      const keys=await caches.keys();
+      await Promise.all(keys.filter(k=>String(k).indexOf('absensi-bip-')===0).map(k=>caches.delete(k)));
+    }
+    if(appServiceWorkerRegistration) await appServiceWorkerRegistration.update().catch(()=>{});
+  }catch(err){ console.warn('Gagal membersihkan cache update.', err); }
+  const url=new URL(window.location.href);
+  url.searchParams.set('app_update', Date.now().toString());
+  window.location.replace(url.toString());
+}
+async function checkAppVersionFromServer(){
+  try{
+    const resp=await fetch(APP_VERSION_FILE + '?t=' + Date.now(), {cache:'no-store'});
+    if(!resp.ok) return;
+    const data=await resp.json();
+    const latest=normalizeAppVersion(data.version || data.appVersion);
+    const current=normalizeAppVersion(APP_VERSION);
+    const badge=document.getElementById('appVersionBadge');
+    if(badge) badge.textContent='Versi: ' + current;
+    if(latest && latest !== current){ showAppUpdateBanner('Versi server ' + latest + ' tersedia. Versi yang sedang dibuka ' + current + '.'); }
+  }catch(err){ console.warn('Cek versi aplikasi gagal.', err); }
+}
+window.addEventListener('load', ()=>{ setTimeout(checkAppVersionFromServer, 1800); setInterval(checkAppVersionFromServer, 10*60*1000); });
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.addEventListener('controllerchange', ()=>{ if(window.__appRefreshingForUpdate) return; window.__appRefreshingForUpdate=true; window.location.reload(); });
+}
+
 function setAuthMode(isLoggedIn){ const logged=Boolean(isLoggedIn); document.body.classList.toggle('auth-ok', logged); document.body.classList.toggle('auth-pending', !logged); document.body.classList.toggle('auth-admin', Boolean(logged && isAdmin())); ['role-admin','role-koordinator','role-payroll','role-viewer'].forEach(c=>document.body.classList.remove(c)); if(logged) document.body.classList.add('role-'+currentRole()); }
 function renderDemoUsers(){ /* daftar akun uji coba sengaja tidak ditampilkan pada halaman login */ }
 function accountUsername(user){ return String((user && user.username) || (user && user.nip) || '').trim(); }
@@ -4332,23 +4459,21 @@ function clearBaggingOffReplacementMasterForm(){
   if($('baggingReplacementActive')) $('baggingReplacementActive').value='1';
   if($('btnSaveBaggingReplacementMaster')) $('btnSaveBaggingReplacementMaster').textContent='💾 Simpan Pekerja';
 }
-function setBaggingOffReplacementMasterInfo(text){ if($('baggingReplacementMasterInfo')) $('baggingReplacementMasterInfo').textContent=text || ''; }
+function setBaggingOffReplacementMasterInfo(text){ /* info ringkas dinonaktifkan agar tampilan master lebih bersih */ }
 async function renderBaggingOffReplacementMaster(force=false){
   const body=$('baggingReplacementMasterBody');
   if(!body) return;
   body.innerHTML='<tr><td colspan="6">Memuat master pengganti...</td></tr>';
   try{
     const rows=await loadBaggingOffReplacementMaster(force);
-    if(!rows.length){ body.innerHTML='<tr><td colspan="6">Belum ada data Master Regu Pengganti Bagging Off.</td></tr>'; setBaggingOffReplacementMasterInfo('Tambahkan pekerja pengganti manual. Master ini terpisah dari master Bagging Off utama.'); return; }
+    if(!rows.length){ body.innerHTML='<tr><td colspan="6" class="bagging-empty-row">Belum ada data Master Regu Pengganti Bagging Off.</td></tr>'; return; }
     body.innerHTML=rows.map((r,i)=>`<tr data-bagging-replacement-id="${safeText(r.id)}">
-      <td>${i+1}</td><td>${safeText(r.regu)}</td><td>${safeText(r.nip)}</td><td class="text-left">${safeText(r.nama)}</td><td>${r.active?'Aktif':'Nonaktif'}</td>
-      <td><button type="button" class="btn small secondary" data-edit-bagging-replacement="${safeText(r.id)}">Edit</button> <button type="button" class="btn small danger" data-delete-bagging-replacement="${safeText(r.id)}">Hapus</button></td>
+      <td>${i+1}</td><td class="bagging-regu-cell">${safeText(r.regu)}</td><td class="bagging-nip-cell">${safeText(r.nip)}</td><td class="text-left bagging-name-cell">${safeText(r.nama)}</td><td><span class="bagging-status-badge ${r.active?'active':'inactive'}">${r.active?'Aktif':'Nonaktif'}</span></td>
+      <td><div class="bagging-action-buttons"><button type="button" class="btn small secondary" data-edit-bagging-replacement="${safeText(r.id)}">Edit</button><button type="button" class="btn small danger" data-delete-bagging-replacement="${safeText(r.id)}">Hapus</button></div></td>
     </tr>`).join('');
-    setBaggingOffReplacementMasterInfo(`Master Regu Pengganti Bagging Off: ${rows.length} pekerja tersimpan. Data ini dipakai sebagai sumber pengganti pada tombol Ganti Pekerja.`);
   }catch(err){
     console.error(err);
-    body.innerHTML='<tr><td colspan="6">Gagal memuat master pengganti.</td></tr>';
-    setBaggingOffReplacementMasterInfo('Gagal memuat master pengganti: '+(err && err.message ? err.message : err));
+    body.innerHTML='<tr><td colspan="6" class="bagging-empty-row">Gagal memuat master pengganti.</td></tr>';
   }
 }
 async function saveBaggingOffReplacementMasterFromForm(){
@@ -4977,8 +5102,9 @@ function formatUpahInputField(el){
     try{ el.setSelectionRange(el.value.length, el.value.length); }catch(err){}
   }
 }
+const UPAH_RIBUAN_INPUT_IDS=['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2','adminUpahDoPagiZak','adminUpahDoPagiPerZak','adminUpahDoPagiTarif','adminUpahDoSiangZak','adminUpahDoSiangPerZak','adminUpahDoSiangTarif'];
 function setupUpahRibuanInputs(){
-  ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2'].forEach(id=>{
+  UPAH_RIBUAN_INPUT_IDS.forEach(id=>{
     const el=$(id);
     if(!el || el.dataset.ribuanReady==='1') return;
     el.dataset.ribuanReady='1';
@@ -4986,6 +5112,47 @@ function setupUpahRibuanInputs(){
     el.addEventListener('blur', ()=>formatUpahInputField(el));
     formatUpahInputField(el);
   });
+}
+function writeUpahAutoTonase(id, value){
+  const el=$(id);
+  if(!el) return;
+  const num=Number(value || 0);
+  el.value = num ? formatUpahNumber(num, {decimals:Number.isInteger(num) ? 0 : 2}) : '';
+}
+function syncUpahCalculatorModeByUnit(){
+  const isBahanBaku=isBahanBakuUpahSelected();
+  ['upahDoPagiTitle','upahDoPagiBox','upahDoSiangTitle','upahDoSiangBox','upahTotalDoBox'].forEach(id=>{
+    const el=$(id);
+    if(el) el.style.display=isBahanBaku ? 'none' : '';
+  });
+  ['adminUpahTonaseS1','adminUpahTonaseS2'].forEach(id=>{
+    const el=$(id);
+    if(el){
+      el.readOnly=!isBahanBaku;
+      el.classList.toggle('upah-manual-tonase', isBahanBaku);
+    }
+  });
+}
+function syncUpahDoTonaseFromInputs(){
+  syncUpahCalculatorModeByUnit();
+  if(isBahanBakuUpahSelected()){
+    const totalDoEl=$('adminUpahTotalDo');
+    if(totalDoEl) totalDoEl.value='0';
+    return;
+  }
+  const pagiZak=readUpahTonase('adminUpahDoPagiZak');
+  const pagiPerZak=readUpahTonase('adminUpahDoPagiPerZak') || 50;
+  const pagiTarif=readUpahTonase('adminUpahDoPagiTarif') || 11.78;
+  const siangZak=readUpahTonase('adminUpahDoSiangZak');
+  const siangPerZak=readUpahTonase('adminUpahDoSiangPerZak') || 50;
+  const siangTarif=readUpahTonase('adminUpahDoSiangTarif') || 11.78;
+  const totalPagi=pagiZak * pagiPerZak * pagiTarif;
+  const totalSiang=siangZak * siangPerZak * siangTarif;
+  writeUpahAutoTonase('adminUpahTonaseS1', totalPagi);
+  writeUpahAutoTonase('adminUpahTonaseS2', totalSiang);
+  const totalDoZak=pagiZak + siangZak;
+  const totalDoEl=$('adminUpahTotalDo');
+  if(totalDoEl) totalDoEl.value=formatUpahNumber(totalDoZak, {decimals:Number.isInteger(totalDoZak) ? 0 : 2});
 }
 function updateUpahFinalTonaseDisplay(){
   const finalS1=Math.max(0, readUpahTonase('adminUpahTonaseS1') - readUpahTonase('adminUpahBiayaS1'));
@@ -5127,13 +5294,24 @@ function applyUpahTonaseNettoSelisihAdjustment(rows, totalTonase){
   list.forEach(r=>{ r.netto=roundUpahNetto(Number(r.total||0)-Number(r.kurang||0)+Number(r.tambah||0)); });
   return {rows:list, selisih, mode:diff>0?'tambah':(diff<0?'kurang':'pas'), target};
 }
+function getUpahDoZakInfo(){
+  return {
+    pagi:readUpahTonase('adminUpahDoPagiZak'),
+    siang:readUpahTonase('adminUpahDoSiangZak')
+  };
+}
 function updateUpahCalcSelisihNote(totalTonase, totalNetto){
   const el=$('upahCalcSelisihNote');
   if(!el) return;
   const manualSelisih=Number(window.__lastUpahSelisih||0);
   const diff=roundUpahNetto(Number(totalTonase||0)-Number(totalNetto||0));
   const nilai=manualSelisih || Math.abs(diff);
-  el.textContent=`NOTE : SELISIH = ${formatUpahIntegerNumber(nilai)}`;
+  if(isBahanBakuUpahSelected()){
+    el.innerHTML=`<div>NOTE : SELISIH = ${formatUpahIntegerNumber(nilai)}</div>`;
+    return;
+  }
+  const doInfo=getUpahDoZakInfo();
+  el.innerHTML=`<div>NOTE : SELISIH = ${formatUpahIntegerNumber(nilai)}</div><div># DO Pagi : ${formatUpahNumber(doInfo.pagi, {decimals:Number.isInteger(doInfo.pagi) ? 0 : 2})}</div><div># DO Siang : ${formatUpahNumber(doInfo.siang, {decimals:Number.isInteger(doInfo.siang) ? 0 : 2})}</div>`;
 }
 function setUpahRulesPreviewVisible(visible){
   const body=$('upahPreviewBody');
@@ -5152,6 +5330,7 @@ function renderUpahTable(unitName, dateValue, rows, emptyMsg, options){
   if($('upahCompanyText')) $('upahCompanyText').textContent = 'PT. BUDI INTI PERKASA';
   if($('upahDateText')) $('upahDateText').textContent = formatLongDate(dateValue);
   const showKegiatanColumn=isBahanBakuUpahSelected();
+  syncUpahCalculatorModeByUnit();
   const table=$('upahTable');
   if(table){
     table.dataset.kegiatanColumn=showKegiatanColumn ? '1' : '0';
@@ -5212,7 +5391,26 @@ function renderUpahResultInfo(finalTonase, totalS1, totalS2, nilaiS1Raw, nilaiS2
   `;
   card.style.display='block';
 }
+function syncUpahCalcTableStructure(showKegiatanColumn){
+  const table=$('upahCalcTable');
+  if(table) table.dataset.kegiatanColumn=showKegiatanColumn ? '1' : '0';
+  const thead=table ? table.querySelector('thead') : null;
+  if(thead){
+    thead.innerHTML=showKegiatanColumn
+      ? '<tr><th>NO</th><th>NIP</th><th>NAMA</th><th>KEGIATAN</th><th>GAJI</th><th>LEMBUR</th><th>TOTAL</th><th>KURANG</th><th>TAMBAH</th><th>NETTO</th><th>HASIL01</th><th>HASIL02</th></tr>'
+      : '<tr><th>NO</th><th>NIP</th><th>NAMA</th><th>GAJI</th><th>LEMBUR</th><th>TOTAL</th><th>KURANG</th><th>TAMBAH</th><th>NETTO</th><th>HASIL01</th><th>HASIL02</th></tr>';
+  }
+  const tfoot=table ? table.querySelector('tfoot') : null;
+  if(tfoot){
+    tfoot.innerHTML=showKegiatanColumn
+      ? '<tr><td class="left-label" colspan="4">TOTAL</td><td id="upahCalcTotalGaji">0</td><td id="upahCalcTotalLembur">0</td><td id="upahCalcTotalBruto">0</td><td id="upahCalcTotalKurang">0</td><td id="upahCalcTotalTambah">0</td><td id="upahCalcTotalNetto">0</td><td id="upahCalcTotalHasil01">0</td><td id="upahCalcTotalHasil02">0</td></tr>'
+      : '<tr><td class="left-label" colspan="3">TOTAL</td><td id="upahCalcTotalGaji">0</td><td id="upahCalcTotalLembur">0</td><td id="upahCalcTotalBruto">0</td><td id="upahCalcTotalKurang">0</td><td id="upahCalcTotalTambah">0</td><td id="upahCalcTotalNetto">0</td><td id="upahCalcTotalHasil01">0</td><td id="upahCalcTotalHasil02">0</td></tr>';
+  }
+}
 function calculateAdminUpah(){
+  syncUpahCalculatorModeByUnit();
+  const showCalcKegiatanColumn=isBahanBakuUpahSelected();
+  syncUpahCalcTableStructure(showCalcKegiatanColumn);
   const readResult=updateUpahFooterFromTable();
   const sourceRows=readResult.rows || [];
   if(!sourceRows.length){ alert('Tampilkan Tabel Upah terlebih dahulu.'); return; }
@@ -5229,7 +5427,7 @@ function calculateAdminUpah(){
     const gaji=roundUpahValue(nilaiS1 * shift1);
     const lembur=roundUpahValue(nilaiS2 * shift2);
     const total=roundUpahValue(gaji+lembur);
-    return applyDefaultUpahAdjustments({ no:w.no, nip:String(w.nip || ''), nama:String(w.name || ''), gaji, lembur, total, kurang:0, tambah:0, netto:roundUpahNetto(total) }, {overwrite:true});
+    return applyDefaultUpahAdjustments({ no:w.no, nip:String(w.nip || ''), nama:String(w.name || ''), kegiatan:String(w.kegiatan || ''), gaji, lembur, total, kurang:0, tambah:0, netto:roundUpahNetto(total) }, {overwrite:true});
   });
   adminUpahCalculationRows=mergeSavedUpahCalcRows(defaultCalcRows);
   const totalTonaseFinal=roundUpahNetto(Number(finalTonase.finalS1||0)+Number(finalTonase.finalS2||0));
@@ -5243,7 +5441,10 @@ function calculateAdminUpah(){
       const tr=document.createElement('tr');
       const kurangDefault=isFixedUpahKurangRow(row);
       const tambahDefault=isFixedUpahTambahRow(row);
-      tr.innerHTML=`<td>${safeText(row.no)}</td><td>${safeText(row.nip)}</td><td class="name">${safeText(row.nama)}</td><td>${formatUpahIntegerNumber(row.gaji)}</td><td>${formatUpahIntegerNumber(row.lembur)}</td><td>${formatUpahIntegerNumber(row.total)}</td><td contenteditable="true" data-field="kurang" class="upah-adjust-cell ${kurangDefault?'upah-fixed-cell':''}" title="${kurangDefault?'Default 20.000, bisa diubah':''}">${formatUpahIntegerNumber(row.kurang)}</td><td contenteditable="true" data-field="tambah" class="upah-adjust-cell ${tambahDefault?'Default 20.000 +/− selisih, bisa diubah':''}" title="${tambahDefault?'Default 20.000 +/− selisih, bisa diubah':''}">${formatUpahIntegerNumber(row.tambah)}</td><td>${formatUpahIntegerNumber(row.netto)}</td>`;
+      const hasil01=roundUpahNetto(Number(row.gaji||0)-Number(row.kurang||0));
+      const hasil02=roundUpahNetto(Number(row.lembur||0)+Number(row.tambah||0));
+      const kegiatanCell=showCalcKegiatanColumn ? `<td>${safeText(row.kegiatan || '')}</td>` : '';
+      tr.innerHTML=`<td>${safeText(row.no)}</td><td>${safeText(row.nip)}</td><td class="name">${safeText(row.nama)}</td>${kegiatanCell}<td>${formatUpahIntegerNumber(row.gaji)}</td><td>${formatUpahIntegerNumber(row.lembur)}</td><td>${formatUpahIntegerNumber(row.total)}</td><td contenteditable="true" data-field="kurang" class="upah-adjust-cell ${kurangDefault?'upah-fixed-cell':''}" title="${kurangDefault?'Default 20.000, bisa diubah':''}">${formatUpahIntegerNumber(row.kurang)}</td><td contenteditable="true" data-field="tambah" class="upah-adjust-cell ${tambahDefault?'Default 20.000 +/− selisih, bisa diubah':''}" title="${tambahDefault?'Default 20.000 +/− selisih, bisa diubah':''}">${formatUpahIntegerNumber(row.tambah)}</td><td>${formatUpahIntegerNumber(row.netto)}</td><td>${formatUpahIntegerNumber(hasil01)}</td><td>${formatUpahIntegerNumber(hasil02)}</td>`;
       tr.querySelectorAll('td.upah-adjust-cell').forEach(td=>{
         td.addEventListener('input', ()=>{ updateUpahCalcFooterFromTable(); saveUpahCalcRowsToLocal(); });
         td.addEventListener('blur', ()=>{ td.textContent=formatUpahIntegerNumber(parseUpahNumber(td.textContent)); updateUpahCalcFooterFromTable(); saveUpahCalcRowsToLocal(); });
@@ -5258,21 +5459,30 @@ function calculateAdminUpah(){
 function readUpahCalcRowsFromTable(){
   const body=$('upahCalcBody');
   if(!body) return [];
+  const hasKegiatan=Boolean($('upahCalcTable') && $('upahCalcTable').dataset && $('upahCalcTable').dataset.kegiatanColumn==='1');
+  const offset=hasKegiatan ? 1 : 0;
   return Array.from(body.querySelectorAll('tr')).map(tr=>{
     const c=tr.querySelectorAll('td');
     const row={
       no:String(c[0]?.textContent || '').trim(),
       nip:String(c[1]?.textContent || '').trim(),
       nama:String(c[2]?.textContent || '').trim(),
-      gaji:parseUpahNumber(c[3]?.textContent),
-      lembur:parseUpahNumber(c[4]?.textContent),
-      total:parseUpahNumber(c[5]?.textContent),
-      kurang:parseUpahNumber(c[6]?.textContent),
-      tambah:parseUpahNumber(c[7]?.textContent),
+      kegiatan:hasKegiatan ? String(c[3]?.textContent || '').trim() : '',
+      gaji:parseUpahNumber(c[3+offset]?.textContent),
+      lembur:parseUpahNumber(c[4+offset]?.textContent),
+      total:parseUpahNumber(c[5+offset]?.textContent),
+      kurang:parseUpahNumber(c[6+offset]?.textContent),
+      tambah:parseUpahNumber(c[7+offset]?.textContent),
       netto:0,
+      hasil01:0,
+      hasil02:0,
     };
     row.netto=roundUpahNetto(Number(row.total||0)-Number(row.kurang||0)+Number(row.tambah||0));
-    if(c[8]) c[8].textContent=formatUpahIntegerNumber(row.netto);
+    row.hasil01=roundUpahNetto(Number(row.gaji||0)-Number(row.kurang||0));
+    row.hasil02=roundUpahNetto(Number(row.lembur||0)+Number(row.tambah||0));
+    if(c[8+offset]) c[8+offset].textContent=formatUpahIntegerNumber(row.netto);
+    if(c[9+offset]) c[9+offset].textContent=formatUpahIntegerNumber(row.hasil01);
+    if(c[10+offset]) c[10+offset].textContent=formatUpahIntegerNumber(row.hasil02);
     return row;
   });
 }
@@ -5284,12 +5494,16 @@ function updateUpahCalcFooterFromTable(){
   const totalKurang=rows.reduce((s,r)=>s+r.kurang,0);
   const totalTambah=rows.reduce((s,r)=>s+r.tambah,0);
   const totalNetto=rows.reduce((s,r)=>s+r.netto,0);
+  const totalHasil01=rows.reduce((s,r)=>s+r.hasil01,0);
+  const totalHasil02=rows.reduce((s,r)=>s+r.hasil02,0);
   if($('upahCalcTotalGaji')) $('upahCalcTotalGaji').textContent=formatUpahIntegerNumber(totalGaji);
   if($('upahCalcTotalLembur')) $('upahCalcTotalLembur').textContent=formatUpahIntegerNumber(totalLembur);
   if($('upahCalcTotalBruto')) $('upahCalcTotalBruto').textContent=formatUpahIntegerNumber(totalBruto);
   if($('upahCalcTotalKurang')) $('upahCalcTotalKurang').textContent=formatUpahIntegerNumber(totalKurang);
   if($('upahCalcTotalTambah')) $('upahCalcTotalTambah').textContent=formatUpahIntegerNumber(totalTambah);
   if($('upahCalcTotalNetto')) $('upahCalcTotalNetto').textContent=formatUpahIntegerNumber(totalNetto);
+  if($('upahCalcTotalHasil01')) $('upahCalcTotalHasil01').textContent=formatUpahIntegerNumber(totalHasil01);
+  if($('upahCalcTotalHasil02')) $('upahCalcTotalHasil02').textContent=formatUpahIntegerNumber(totalHasil02);
   const finalTonase=updateUpahFinalTonaseDisplay();
   updateUpahCalcSelisihNote(Number(finalTonase.finalS1||0)+Number(finalTonase.finalS2||0), totalNetto);
 }
@@ -5318,6 +5532,13 @@ function printAdminUpahCalcTable(){
   const cloned=table.cloneNode(true);
   cloned.removeAttribute('id');
   cloned.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));
+  cloned.querySelectorAll('tr').forEach(tr=>{
+    const cells=tr.querySelectorAll('th,td');
+    for(let i=0;i<2;i+=1){
+      const cell=cells[cells.length-1-i];
+      if(cell) cell.remove();
+    }
+  });
   const selisihNoteEl=$('upahCalcSelisihNote');
   const selisihNote=selisihNoteEl ? selisihNoteEl.outerHTML : '';
   const unitSel=$('adminUpahUnitSelect');
@@ -5357,33 +5578,27 @@ function exportAdminUpahExcel(){
   const calcRows=readUpahCalcRowsFromTable();
   if(!calcRows.length){ alert('Klik Calculate terlebih dahulu.'); return; }
   if(!window.XLSX){ alert('Library Excel belum dimuat. Pastikan internet aktif lalu coba lagi.'); return; }
+  function upahExportNipValue(value){
+    const raw=String(value || '').trim();
+    if(!raw) return '';
+    const numericText=raw.replace(/[^0-9.-]/g,'');
+    if(numericText && /^-?\d+(?:\.\d+)?$/.test(numericText)){
+      const numericValue=Number(numericText);
+      if(Number.isFinite(numericValue)) return numericValue;
+    }
+    return raw;
+  }
   const rows=calcRows.map(r=>({
-    NO:r.no,
-    NIP:String(r.nip || '').trim(),
+    NO:Number(r.no || 0),
+    NIP:upahExportNipValue(r.nip),
     NAMA:String(r.nama || '').trim(),
-    GAJI:Math.round(Number(r.gaji || 0)),
-    LEMBUR:Math.round(Number(r.lembur || 0)),
-    TOTAL:Math.round(Number(r.total || 0)),
-    KURANG:Math.round(Number(r.kurang || 0)),
-    TAMBAH:Math.round(Number(r.tambah || 0)),
-    NETTO:Math.round(Number(r.netto || 0))
+    NETTO:Math.round(Number(r.netto || 0)),
+    HASIL01:Math.round(Number(r.hasil01 || 0)),
+    HASIL02:Math.round(Number(r.hasil02 || 0))
   }));
-  rows.push({
-    NO:'TOTAL', NIP:'', NAMA:'',
-    GAJI:rows.reduce((s,r)=>s+Number(r.GAJI||0),0),
-    LEMBUR:rows.reduce((s,r)=>s+Number(r.LEMBUR||0),0),
-    TOTAL:rows.reduce((s,r)=>s+Number(r.TOTAL||0),0),
-    KURANG:rows.reduce((s,r)=>s+Number(r.KURANG||0),0),
-    TAMBAH:rows.reduce((s,r)=>s+Number(r.TAMBAH||0),0),
-    NETTO:rows.reduce((s,r)=>s+Number(r.NETTO||0),0)
-  });
-  const finalTonase=updateUpahFinalTonaseDisplay();
-  const totalTonase=Math.round(Number(finalTonase.finalS1||0)+Number(finalTonase.finalS2||0));
-  const totalNetto=rows[rows.length-1].NETTO;
-  rows.push({NO:'NOTE : SELISIH = '+Math.round(Number(window.__lastUpahSelisih||Math.abs(totalTonase-totalNetto)||0)), NIP:'', NAMA:'', GAJI:'', LEMBUR:'', TOTAL:'', KURANG:'', TAMBAH:'', NETTO:''});
   const wb=window.XLSX.utils.book_new();
-  const ws=window.XLSX.utils.json_to_sheet(rows, {header:['NO','NIP','NAMA','GAJI','LEMBUR','TOTAL','KURANG','TAMBAH','NETTO']});
-  ws['!cols']=[{wch:10},{wch:14},{wch:28},{wch:14},{wch:14},{wch:14},{wch:14},{wch:14},{wch:14}];
+  const ws=window.XLSX.utils.json_to_sheet(rows, {header:['NO','NIP','NAMA','NETTO','HASIL01','HASIL02']});
+  ws['!cols']=[{wch:10},{wch:14},{wch:28},{wch:14},{wch:14},{wch:14}];
   window.XLSX.utils.book_append_sheet(wb, ws, 'Upah');
   window.XLSX.writeFile(wb, upahExcelFilename());
 }
@@ -8746,9 +8961,9 @@ if($('baggingOffDate')) $('baggingOffDate').value = ($('adminReportDate') && $('
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); initBaggingScheduleImportControls(); setupBaggingOffReplacementMasterEvents(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminPruneAuditLogs')) $('btnAdminPruneAuditLogs').addEventListener('click', adminPruneAuditLogs); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahDoPagiZak','adminUpahDoPagiPerZak','adminUpahDoPagiTarif','adminUpahDoSiangZak','adminUpahDoSiangPerZak','adminUpahDoSiangTarif'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); initBaggingScheduleImportControls(); setupBaggingOffReplacementMasterEvents(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminPruneAuditLogs')) $('btnAdminPruneAuditLogs').addEventListener('click', adminPruneAuditLogs); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
 document.addEventListener('input', e=>{ if(e && e.target && e.target.matches && e.target.matches('[data-check-nip]')) setAdminCheckTimesSourceInfo('Manual'); });
-let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu install belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
+let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu pasang shortcut belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen / Tambahkan ke layar utama jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }
 window.addEventListener('load', ()=>{ setTimeout(hideSplash,650); });
 setTimeout(hideSplash,3500);

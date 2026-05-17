@@ -20,6 +20,6 @@ window.ABSENSI_FIREBASE_CONFIG = {
 */
 window.ABSENSI_EMAIL_NOTIFY_ENABLED = true;
 window.ABSENSI_EMAIL_NOTIFY_TO = "naafi.aoa@gmail.com";
-window.ABSENSI_EMAIL_NOTIFY_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbycwBlmsZ609sIoM1XpgastLJZ0XElTY4QbqZf9tsit9S4IVTittAFPcdUpK1Y8NIf2XQ/exec";
+window.ABSENSI_EMAIL_NOTIFY_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbycwBlmsZ609sIoM1XpgastLJZ0XElTY4QbqZf9tsit9S4IVTittAFPcdUpK1Y8NIf2XQ/exec"; // isi dengan URL Web App Google Apps Script setelah deploy
 window.ABSENSI_EMAIL_NOTIFY_TOKEN = "BIP_EMAIL_NOTIFY_TOKEN_2026";
 

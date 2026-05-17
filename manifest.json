@@ -1,7 +1,7 @@
 {
   "name": "Absensi Jadwal BIP",
   "short_name": "Absensi BIP",
-  "description": "Aplikasi PWA Absensi Kegiatan Muatan Breeder untuk input jadwal shift pekerja.",
+  "description": "Aplikasi PWA Absensi BIP dengan shortcut Android dan sistem update mengikuti server.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
