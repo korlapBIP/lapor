@@ -954,6 +954,18 @@
 .upah-result-info-card h3{margin:0 0 10px;font-size:17px;color:#102a55}
 .upah-result-info-card .line{margin:6px 0;line-height:1.45}
 .upah-result-info-card .strong{font-weight:950;color:#0f172a}
+.upah-bahan-baku-info{margin-top:14px;border:1px solid #c7d2fe;background:linear-gradient(135deg,#f8fbff,#eef4ff);border-radius:18px;padding:14px 16px;box-shadow:0 10px 22px rgba(15,23,42,.06);font-weight:850;color:#0f172a}
+.upah-bahan-baku-info h4{margin:0 0 10px;font-size:15px;color:#0f172a}
+.upah-bahan-baku-info-grid{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:12px}
+.upah-bahan-baku-info-box{border:1px solid #dbeafe;background:#fff;border-radius:14px;padding:10px 12px}
+.upah-bahan-baku-info-box .title{font-size:13px;font-weight:950;margin-bottom:6px;color:#1e3a8a}
+.upah-bahan-baku-info-box .line{display:flex;justify-content:space-between;gap:10px;border-top:1px dashed #e2e8f0;padding:5px 0;font-size:13px}
+.upah-bahan-baku-info-box .line:first-of-type{border-top:0}
+.upah-bahan-baku-tonase-card{display:none;margin-top:14px;border:1px solid #bfdbfe;background:#eff6ff;border-radius:18px;padding:14px 16px;box-shadow:0 10px 22px rgba(15,23,42,.06)}
+.upah-bahan-baku-tonase-card h4{margin:0 0 10px;font-size:15px;color:#0f172a}
+.upah-bahan-baku-tonase-grid{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:12px;align-items:end}
+.upah-bahan-baku-total-tonase input{font-weight:950;background:#e2e8f0}
+@media(max-width:900px){.upah-bahan-baku-info-grid,.upah-bahan-baku-tonase-grid{grid-template-columns:1fr}}
 .upah-calc-actions{display:flex;justify-content:flex-start;margin-top:14px}
 .upah-calc-actions .btn{min-width:220px}
 .upah-calc-print-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:12px}
@@ -979,21 +991,29 @@
 }
 .upah-calc-preview .upah-excel-table{table-layout:fixed;}
 .upah-calc-preview .upah-excel-table th{overflow:hidden;white-space:nowrap;}
-/* Tabel hasil upah disesuaikan agar pas di dalam tab, tanpa scroll horizontal. */
-.upah-calc-preview .table-wrap{overflow-x:hidden;display:block;}
-.upah-calc-preview .upah-excel-table{width:100%;min-width:0;}
-#upahCalcTable th,#upahCalcTable td{min-width:0!important;max-width:none!important;box-sizing:border-box;}
-#upahCalcTable th:nth-child(1),#upahCalcTable td:nth-child(1){width:4%;}
-#upahCalcTable th:nth-child(2),#upahCalcTable td:nth-child(2){width:6%;}
-#upahCalcTable th:nth-child(3),#upahCalcTable td:nth-child(3){width:18%;}
-#upahCalcTable th:nth-child(4),#upahCalcTable td:nth-child(4){width:9%;}
-#upahCalcTable th:nth-child(5),#upahCalcTable td:nth-child(5){width:9%;}
-#upahCalcTable th:nth-child(6),#upahCalcTable td:nth-child(6){width:10%;}
-#upahCalcTable th:nth-child(7),#upahCalcTable td:nth-child(7){width:9%;}
-#upahCalcTable th:nth-child(8),#upahCalcTable td:nth-child(8){width:9%;}
-#upahCalcTable th:nth-child(9),#upahCalcTable td:nth-child(9){width:10%;}
-#upahCalcTable th:nth-child(10),#upahCalcTable td:nth-child(10){width:8%;}
-#upahCalcTable th:nth-child(11),#upahCalcTable td:nth-child(11){width:8%;}
+/* v208 - Tabel Kalkulator Upah dibuat lebih ringkas agar semua kolom NO sampai HASIL02 tampil rapi. */
+.upah-calc-preview .table-wrap{overflow-x:hidden;display:block;width:100%;}
+.upah-calc-preview .upah-excel-table{width:100%;min-width:0;table-layout:fixed;}
+#upahCalcTable{font-size:10px;line-height:1.15;}
+#upahCalcTable th,#upahCalcTable td{min-width:0!important;max-width:none!important;box-sizing:border-box;font-size:10px!important;line-height:1.15!important;padding:3px 3px!important;overflow:hidden;text-overflow:ellipsis;white-space:normal;word-break:break-word;}
+#upahCalcTable th{font-size:9.5px!important;padding:4px 2px!important;}
+#upahCalcTable td.name{text-align:left!important;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(1),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(1){width:3.5%;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(2),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(2){width:6%;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(3),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(3){width:17%;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(4),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(4){width:8.5%;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(5),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(5){width:8%;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(6),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(6){width:8%;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(7),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(7){width:8%;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(8),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(8){width:8%;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(9),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(9){width:8%;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(10),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(10){width:8%;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(11),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(11){width:8.5%;}
+#upahCalcTable[data-kegiatan-column="1"] th:nth-child(12),#upahCalcTable[data-kegiatan-column="1"] td:nth-child(12){width:8.5%;}
+#upahCalcTable:not([data-kegiatan-column="1"]) th:nth-child(1),#upahCalcTable:not([data-kegiatan-column="1"]) td:nth-child(1){width:4%;}
+#upahCalcTable:not([data-kegiatan-column="1"]) th:nth-child(2),#upahCalcTable:not([data-kegiatan-column="1"]) td:nth-child(2){width:7%;}
+#upahCalcTable:not([data-kegiatan-column="1"]) th:nth-child(3),#upahCalcTable:not([data-kegiatan-column="1"]) td:nth-child(3){width:20%;}
+#upahCalcTable:not([data-kegiatan-column="1"]) th:nth-child(n+4),#upahCalcTable:not([data-kegiatan-column="1"]) td:nth-child(n+4){width:8.625%;}
 .upah-excel-table td.upah-fixed-cell{background:#f8fafc!important;color:#0f172a;font-weight:950;}
 .upah-result-grid{display:grid;grid-template-columns:repeat(3,minmax(160px,1fr));gap:12px;}
 .upah-result-pill{border:1px solid #bfdbfe;background:linear-gradient(135deg,#ffffff,#eaf2ff);border-radius:18px;padding:12px 14px;box-shadow:0 10px 20px rgba(15,23,42,.06);}
@@ -1133,6 +1153,41 @@
     .bagging-replace-col{width:92px;text-align:center}
     .bagging-replaced-note{margin-top:2px;font-size:9px;font-weight:900;color:#2563eb;text-transform:uppercase}
 
+
+
+    /* v203 - Show/Hide panel kontrol Bagging default Hide */
+    .bagging-collapsible-head{display:flex!important;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .bagging-collapsible-head .bagging-head-title{display:flex;flex-direction:column;gap:2px;min-width:0}
+    .bagging-toggle-btn{min-height:36px;border:1px solid #dbe7f6;background:#f8fbff;color:#20355b;border-radius:999px;padding:7px 13px;font-size:12px;font-weight:950;cursor:pointer;white-space:nowrap;box-shadow:0 6px 14px rgba(15,23,42,.05)}
+    .bagging-toggle-btn:hover{background:#eef5ff;border-color:#bfd3ee}
+    .bagging-toggle-btn[aria-expanded="true"]{background:#20355b;color:#fff;border-color:#20355b}
+    .bagging-collapsible-body.is-hidden{display:none!important}
+    .bagging-section-closed-note{display:block;margin:0;padding:11px 16px;border-top:1px solid #e7eef8;background:#f8fbff;color:#64748b;font-size:12px;font-weight:900;line-height:1.35}
+    .bagging-section-closed-note.is-hidden{display:none!important}
+
+    /* v202 - Master Bagging Off Buhler/Breeder */
+    .bagging-main-master-card .card-body{padding:16px}
+    .bagging-master-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .bagging-master-tab{border:1px solid #dbe7f6;background:#f8fbff;color:#20355b;border-radius:999px;padding:9px 14px;font-weight:950;cursor:pointer}
+    .bagging-master-tab.active{background:#20355b;color:#fff;border-color:#20355b}
+    .bagging-main-master-form{display:grid;grid-template-columns:160px 120px 150px minmax(220px,1fr) 130px;gap:12px;align-items:end}
+    .bagging-main-master-actions{margin-top:14px}
+    .bagging-main-master-tools{display:grid;grid-template-columns:minmax(180px,220px) minmax(180px,220px) 1fr;gap:12px;align-items:end;margin-top:8px}
+    .bagging-main-master-table-wrap{width:100%;overflow:auto;margin-top:14px;border:1px solid #dbe7f6;border-radius:18px;background:#fff;box-shadow:0 10px 24px rgba(15,23,42,.06)}
+    .bagging-main-master-table{width:100%;max-width:none;margin:0;table-layout:fixed;border-collapse:separate;border-spacing:0;font-size:13px}
+    .bagging-main-master-table th,.bagging-main-master-table td{border:0;border-bottom:1px solid #e7eef8;padding:11px 12px;vertical-align:middle;white-space:normal}
+    .bagging-main-master-table th{position:sticky;top:0;z-index:1;background:#f3f7fc;color:#20355b;font-weight:950;font-size:12px;letter-spacing:.02em}
+    .bagging-main-master-table tbody tr:nth-child(even){background:#fbfdff}
+    .bagging-main-master-table tbody tr:hover{background:#eef5ff}
+    .bagging-main-master-table th:nth-child(1),.bagging-main-master-table td:nth-child(1){width:58px;text-align:center}
+    .bagging-main-master-table th:nth-child(2),.bagging-main-master-table td:nth-child(2){width:110px;text-align:center}
+    .bagging-main-master-table th:nth-child(3),.bagging-main-master-table td:nth-child(3){width:90px;text-align:center}
+    .bagging-main-master-table th:nth-child(4),.bagging-main-master-table td:nth-child(4){width:120px;text-align:center}
+    .bagging-main-master-table th:nth-child(5),.bagging-main-master-table td:nth-child(5){width:auto;text-align:left}
+    .bagging-main-master-table th:nth-child(6),.bagging-main-master-table td:nth-child(6){width:120px;text-align:center}
+    .bagging-main-master-table th:nth-child(7),.bagging-main-master-table td:nth-child(7){width:180px;text-align:center}
+    @media(max-width:900px){.bagging-main-master-form,.bagging-main-master-tools{grid-template-columns:1fr}.bagging-main-master-table{min-width:860px}}
+
     /* v191 - Rapikan Master Regu Pengganti Bagging Off */
     .bagging-replacement-master-card .card-body{padding:16px}
     .bagging-replacement-form{display:grid;grid-template-columns:minmax(220px,1fr) 160px;gap:12px;align-items:end}
@@ -1190,7 +1245,7 @@
   <div class="user-strip no-print" id="userStrip"><div class="user-strip-left"><div class="user-avatar" id="userAvatar">K</div><div><div class="user-name" id="activeUserName">Koordinator</div><div class="user-unit" id="activeUserUnit"></div></div></div><button type="button" class="logout-btn" id="btnLogout">Logout</button></div>
   <section class="hero no-print">
     <div class="hero-brand"><img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo"><div><small>BiP Productivity App</small><h1 id="appUnitTitle">Absensi Muatan Breeder</h1></div></div>
-    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v200</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
+    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v210</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
   </section>
   <nav class="tabs no-print" aria-label="Navigasi aplikasi"><button class="tab-btn admin-only" data-panel="panelAdmin">🛠 Admin</button><button class="tab-btn active tab-worker coordinator-only" data-panel="panelWorkers">✅ Jadwal</button><button class="tab-btn" data-panel="panelReport">📝 Absensi</button><button class="tab-btn admin-only" data-panel="panelBaggingOff">🧾 Bagging</button><button class="tab-btn admin-only" data-panel="panelUpah">💰 Upah</button></nav>
   <section id="panelWorkers" class="panel active">
@@ -1267,7 +1322,7 @@
   <section id="panelBaggingOff" class="panel admin-only">
     <section class="frame report-frame bagging-report-frame">
       <div class="frame-head no-print"><div><div class="frame-kicker">Laporan Khusus</div><h2>Bagging Off Buhler &amp; Breeder</h2></div><div class="frame-number">BO</div></div>
-      <div class="card admin-only no-print bagging-control-card bagging-import-card" id="baggingScheduleImportCard"><div class="card-head"><h3>Import Jadwal</h3></div><div class="card-body">
+      <div class="card admin-only no-print bagging-control-card bagging-import-card" id="baggingScheduleImportCard"><div class="card-head bagging-collapsible-head"><div class="bagging-head-title"><h3>Import Jadwal</h3></div><button type="button" class="bagging-toggle-btn" data-bagging-toggle="baggingScheduleImportBody" aria-controls="baggingScheduleImportBody" aria-expanded="false">Tampilkan</button></div><div class="bagging-section-closed-note" data-bagging-note-for="baggingScheduleImportBody">Import Jadwal disembunyikan. Klik Tampilkan untuk membuka.</div><div class="card-body bagging-collapsible-body is-hidden" id="baggingScheduleImportBody">
         <div class="bagging-schedule-grid">
           <div class="bagging-schedule-box">
             <h4>Jadwal Bagging Off Buhler</h4>
@@ -1291,7 +1346,30 @@
           </div>
         </div>
       </div></div>
-      <div class="card admin-only no-print bagging-control-card bagging-replacement-master-card" id="baggingReplacementMasterCard"><div class="card-head"><h3>Master Regu Pengganti Bagging Off</h3><span>Terpisah dari master Bagging Off stabil</span></div><div class="card-body">
+      <div class="card admin-only no-print bagging-control-card bagging-main-master-card" id="baggingMainMasterCard"><div class="card-head bagging-collapsible-head"><div class="bagging-head-title"><h3>Master Bagging Off Buhler/Breeder</h3><span>Edit data regu asli yang tampil pada laporan Bagging Off</span></div><button type="button" class="bagging-toggle-btn" data-bagging-toggle="baggingMainMasterBodyPanel" aria-controls="baggingMainMasterBodyPanel" aria-expanded="false">Tampilkan</button></div><div class="bagging-section-closed-note" data-bagging-note-for="baggingMainMasterBodyPanel">Master Bagging Off Buhler/Breeder disembunyikan. Klik Tampilkan untuk membuka.</div><div class="card-body bagging-collapsible-body is-hidden" id="baggingMainMasterBodyPanel">
+        <div class="bagging-master-tabs" role="tablist" aria-label="Master Bagging Off Buhler Breeder">
+          <button type="button" class="bagging-master-tab active" data-bagging-main-tab="BUHLER">Bagging Off Buhler</button>
+          <button type="button" class="bagging-master-tab" data-bagging-main-tab="BREEDER">Bagging Off Breeder</button>
+        </div>
+        <div class="bagging-main-master-form">
+          <input id="baggingMainMasterId" type="hidden">
+          <div class="field"><label for="baggingMainMasterJenis">Jenis</label><select id="baggingMainMasterJenis"><option value="BUHLER">Buhler</option><option value="BREEDER">Breeder</option></select></div>
+          <div class="field"><label for="baggingMainMasterRegu">Regu</label><select id="baggingMainMasterRegu"><option value="A">Regu A</option><option value="B">Regu B</option><option value="C">Regu C</option></select></div>
+          <div class="field"><label for="baggingMainMasterNip">NIP</label><input id="baggingMainMasterNip" type="text" inputmode="numeric" placeholder="NIP pekerja"></div>
+          <div class="field"><label for="baggingMainMasterName">Nama Pekerja</label><input id="baggingMainMasterName" type="text" placeholder="Nama pekerja"></div>
+          <div class="field"><label for="baggingMainMasterActive">Status</label><select id="baggingMainMasterActive"><option value="1">Aktif</option><option value="0">Nonaktif</option></select></div>
+        </div>
+        <div class="admin-actions-row three bagging-main-master-actions"><button type="button" class="btn primary" id="btnSaveBaggingMainMaster">💾 Simpan Pekerja</button><button type="button" class="btn secondary" id="btnResetBaggingMainMasterForm">↻ Reset Form</button><button type="button" class="btn success" id="btnRefreshBaggingMainMaster">🔄 Refresh Master</button></div>
+        <div class="bagging-main-master-tools">
+          <div class="field"><label for="baggingMainMasterFilterJenis">Filter Jenis</label><select id="baggingMainMasterFilterJenis"><option value="BUHLER">Buhler</option><option value="BREEDER">Breeder</option><option value="ALL">Semua</option></select></div>
+          <div class="field"><label for="baggingMainMasterFilterRegu">Filter Regu</label><select id="baggingMainMasterFilterRegu"><option value="ALL">Semua Regu</option><option value="A">Regu A</option><option value="B">Regu B</option><option value="C">Regu C</option></select></div>
+          <div class="field"><label for="baggingMainMasterSearch">Cari NIP / Nama</label><input id="baggingMainMasterSearch" type="text" placeholder="Ketik untuk mencari..."></div>
+        </div>
+        <div class="import-help" id="baggingMainMasterInfo">Master ini tersimpan terpisah dari master pengganti. Data aktif dipakai untuk tabel Bagging Off dan pilihan Ganti Pekerja.</div>
+        <div class="bagging-main-master-table-wrap"><table class="report-table admin-worker-table bagging-main-master-table" id="baggingMainMasterTable"><thead><tr><th>NO</th><th>JENIS</th><th>REGU</th><th>NIP</th><th>NAMA PEKERJA</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody id="baggingMainMasterBody"><tr><td colspan="7">Memuat master Bagging Off...</td></tr></tbody></table></div>
+      </div></div>
+
+      <div class="card admin-only no-print bagging-control-card bagging-replacement-master-card" id="baggingReplacementMasterCard"><div class="card-head bagging-collapsible-head"><div class="bagging-head-title"><h3>Master Regu Pengganti Bagging Off</h3><span>Terpisah dari master Bagging Off stabil</span></div><button type="button" class="bagging-toggle-btn" data-bagging-toggle="baggingReplacementMasterBodyPanel" aria-controls="baggingReplacementMasterBodyPanel" aria-expanded="false">Tampilkan</button></div><div class="bagging-section-closed-note" data-bagging-note-for="baggingReplacementMasterBodyPanel">Master Regu Pengganti Bagging Off disembunyikan. Klik Tampilkan untuk membuka.</div><div class="card-body bagging-collapsible-body is-hidden" id="baggingReplacementMasterBodyPanel">
         <div class="bagging-replacement-form">
           <input id="baggingReplacementMasterId" type="hidden">
           <div class="field"><label for="baggingReplacementRegu">Regu Pengganti</label><input id="baggingReplacementRegu" type="text" placeholder="contoh: Regu Pengganti 01"></div>
@@ -1327,7 +1405,7 @@
   <section id="panelUpah" class="panel admin-only">
     <section class="upah-page">
       <div class="upah-hero no-print">
-        <div><h2>Kalkulator Upah Kegiatan</h2></div>
+        <div><h2>🧮 Kalkulator Upah Kegiatan Interaktif</h2></div>
       </div>
       <div class="card upah-card admin-only no-print" id="adminUpahCard"><div class="card-body">
         <div class="upah-control-stack">
@@ -1338,7 +1416,7 @@
           <div class="upah-action-row"><button type="button" class="btn primary" id="btnAdminLoadUpah">🔍 Tampilkan</button></div>
         </div>
       </div></div>
-      <div class="card upah-card print-sheet report-preview upah-preview"><div class="card-head no-print"><h3>Rules of ⬆️ 1 ⬆️ 2</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span><strong id="upahSelectedCountBadge">0</strong> pekerja</span><button type="button" class="btn small" id="btnToggleUpahRules">Show</button></div></div><div id="upahPreviewBody" style="display:none;"><div class="print-title"><div class="main" id="upahMainTitle">Rules of ⬆️ 1 ⬆️ 2</div><div class="company" id="upahCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="upahDateText">HARI - TANGGAL</div><div class="coordinator" id="upahCoordinatorText"></div></div><div class="table-wrap"><table class="report-table upah-excel-table" id="upahTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th></tr></thead><tbody id="upahBody"><tr><td colspan="6" style="height:42px;color:#65758b">Pilih Bagian / Koordinator dan Tanggal Absensi, lalu klik Tampilkan.</td></tr></tbody><tfoot class="report-summary upah-summary" id="upahFoot"><tr><td class="left-label" colspan="3">TOTAL</td><td id="upahSumS1">0</td><td id="upahSumS2">0</td><td id="upahSumS3">0</td></tr></tfoot></table></div></div></div>
+      <div class="card upah-card print-sheet report-preview upah-preview"><div class="card-head no-print"><h3>Rules of ⬆️ 1 ⬆️ 2</h3><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span><strong id="upahSelectedCountBadge">0</strong> pekerja</span><button type="button" class="btn small" id="btnToggleUpahRules">Show</button></div></div><div id="upahPreviewBody" style="display:none;"><div class="print-title"><div class="main" id="upahMainTitle">Rules of ⬆️ 1 ⬆️ 2</div><div class="company" id="upahCompanyText">PT. BUDI INTI PERKASA</div><div class="date" id="upahDateText">HARI - TANGGAL</div><div class="coordinator" id="upahCoordinatorText"></div></div><div class="table-wrap"><table class="report-table upah-excel-table" id="upahTable"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>SHIFT 1</th><th>SHIFT 2</th><th>SHIFT 3</th></tr></thead><tbody id="upahBody"><tr><td colspan="6" style="height:42px;color:#65758b">Pilih Bagian / Koordinator dan Tanggal Absensi, lalu klik Tampilkan.</td></tr></tbody><tfoot class="report-summary upah-summary" id="upahFoot"><tr><td class="left-label" colspan="3">TOTAL</td><td id="upahSumS1">0</td><td id="upahSumS2">0</td><td id="upahSumS3">0</td></tr></tfoot></table></div><div class="upah-bahan-baku-info" id="upahBahanBakuInteractiveInfo" style="display:none"></div></div></div>
       <div class="upah-calculator-card no-print">
         <div class="upah-calculator-title" id="upahDoPagiTitle"><div>DO Pagi</div></div>
         <div class="upah-tonase-box upah-do-box" id="upahDoPagiBox">
@@ -1355,7 +1433,25 @@
         <div class="upah-tonase-box upah-total-do-box" id="upahTotalDoBox">
           <div class="field"><label for="adminUpahTotalDo">Total DO</label><input id="adminUpahTotalDo" type="text" readonly value="0"></div>
         </div>
-        <div class="upah-tonase-box">
+        <div class="upah-bahan-baku-tonase-card" id="upahBahanBakuTonasePagiCard">
+          <h4>Tonase Pagi</h4>
+          <div class="upah-bahan-baku-tonase-grid">
+            <div class="field"><label for="adminUpahTonaseBbPagi">Bongkaran</label><input id="adminUpahTonaseBbPagi" class="upah-ribuan-input upah-bb-tonase-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+            <div class="field"><label for="adminUpahTonaseSiloPagi">Silo</label><input id="adminUpahTonaseSiloPagi" class="upah-ribuan-input upah-bb-tonase-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+            <div class="field"><label for="adminUpahTonaseOverzakPagi">Overzak</label><input id="adminUpahTonaseOverzakPagi" class="upah-ribuan-input upah-bb-tonase-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+            <div class="field upah-bahan-baku-total-tonase"><label for="adminUpahTotalTonasePagi">Total</label><input id="adminUpahTotalTonasePagi" type="text" readonly value="0"></div>
+          </div>
+        </div>
+        <div class="upah-bahan-baku-tonase-card" id="upahBahanBakuTonaseMalamCard">
+          <h4>Tonase Malam</h4>
+          <div class="upah-bahan-baku-tonase-grid">
+            <div class="field"><label for="adminUpahTonaseBbMalam">Bongkaran</label><input id="adminUpahTonaseBbMalam" class="upah-ribuan-input upah-bb-tonase-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+            <div class="field"><label for="adminUpahTonaseSiloMalam">Silo</label><input id="adminUpahTonaseSiloMalam" class="upah-ribuan-input upah-bb-tonase-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+            <div class="field"><label for="adminUpahTonaseOverzakMalam">Overzak</label><input id="adminUpahTonaseOverzakMalam" class="upah-ribuan-input upah-bb-tonase-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+            <div class="field"><label for="adminUpahSubsidiOverzak">Subsidi Overzak</label><input id="adminUpahSubsidiOverzak" class="upah-ribuan-input upah-bb-tonase-input" type="text" inputmode="decimal" autocomplete="off" value="300.000"></div>
+          </div>
+        </div>
+        <div class="upah-tonase-box" id="upahGenericTonaseBox">
           <div class="field"><label for="adminUpahTonaseS1">Tonase Pagi</label><input id="adminUpahTonaseS1" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0" readonly></div>
           <div class="field"><label for="adminUpahBiayaS1">Biaya lain</label><input id="adminUpahBiayaS1" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0"></div>
           <div class="field"><label for="adminUpahTonaseS2">Tonase Siang</label><input id="adminUpahTonaseS2" class="upah-ribuan-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0" readonly></div>
@@ -1600,8 +1696,8 @@
 <script src="firebase-config.js"></script>
 <script src="firebase-bridge.js"></script>
 <script>
-const APP_VERSION = 'v200';
-const APP_VERSION_LABEL = 'v200';
+const APP_VERSION = 'v210';
+const APP_VERSION_LABEL = 'v210';
 const APP_VERSION_FILE = 'version.json';
 let appServiceWorkerRegistration = null;
 let appUpdateWaitingWorker = null;
@@ -1635,9 +1731,13 @@ const BAGGING_OFF_SCHEDULE_LOCAL_PREFIX = 'absensi_bip_bagging_schedule_v157';
 const BAGGING_OFF_REPLACEMENTS_LOCAL_PREFIX = 'absensi_bip_bagging_replacements_v188';
 const BAGGING_OFF_REPLACEMENT_MASTER_LOCAL_KEY = 'absensi_bip_bagging_replacement_master_v190';
 const BAGGING_OFF_REPLACEMENT_MASTER_DOC_ID = 'bagging_off_replacement_master_v190';
+const BAGGING_OFF_MAIN_MASTER_LOCAL_KEY = 'absensi_bip_bagging_main_master_v202';
+const BAGGING_OFF_MAIN_MASTER_DOC_ID = 'bagging_off_main_master_v202';
 let baggingOffReplacementCache = {};
 let baggingOffLastReportDate = '';
 let baggingOffReplacementMasterCache = [];
+let baggingOffMainMasterCache = [];
+let baggingOffMainMasterLoaded = false;
 
 const BAGGING_OFF_MASTER = [
   {jenis:'BUHLER', regu:'A', nip:'155', nama:'Rian Hanafi'},
@@ -4385,6 +4485,32 @@ function setBaggingOffShowDuration(value){
   if($('baggingOffShowDuration')) $('baggingOffShowDuration').checked=checked;
   try{ localStorage.setItem(BAGGING_OFF_SHOW_DURATION_KEY, checked ? '1' : '0'); }catch(err){}
 }
+
+function setBaggingCollapsibleVisible(bodyId, visible){
+  const body=$(bodyId);
+  if(!body) return;
+  const btn=document.querySelector(`[data-bagging-toggle="${bodyId}"]`);
+  const note=document.querySelector(`[data-bagging-note-for="${bodyId}"]`);
+  body.classList.toggle('is-hidden', !visible);
+  if(note) note.classList.toggle('is-hidden', visible);
+  if(btn){
+    btn.setAttribute('aria-expanded', visible ? 'true' : 'false');
+    btn.textContent = visible ? 'Sembunyikan' : 'Tampilkan';
+    btn.title = visible ? 'Sembunyikan bagian ini' : 'Tampilkan bagian ini';
+  }
+}
+function setupBaggingCollapsibleCards(){
+  document.querySelectorAll('[data-bagging-toggle]').forEach(btn=>{
+    const bodyId=btn.getAttribute('data-bagging-toggle');
+    setBaggingCollapsibleVisible(bodyId, false);
+    btn.addEventListener('click', ()=>{
+      const body=$(bodyId);
+      const visible=body ? body.classList.contains('is-hidden') : false;
+      setBaggingCollapsibleVisible(bodyId, visible);
+    });
+  });
+}
+
 function initBaggingOffDurationOption(){
   const cb=$('baggingOffShowDuration');
   if(!cb) return;
@@ -4402,6 +4528,190 @@ function initBaggingOffDurationOption(){
 function baggingOffReplacementDocId(dateValue){ return 'bagging_off_replacements_' + (dateValue || todayISO()); }
 function baggingOffReplacementLocalKey(dateValue){ return BAGGING_OFF_REPLACEMENTS_LOCAL_PREFIX + '_' + (dateValue || todayISO()); }
 function baggingOffReplacementKey(jenis, regu, originalNip){ return [String(jenis||'').toUpperCase(), String(regu||'').toUpperCase(), String(originalNip||'').trim()].join('|'); }
+
+
+function baggingOffMainMasterLocalKey(){ return BAGGING_OFF_MAIN_MASTER_LOCAL_KEY; }
+function baggingOffMainMasterDocId(){ return BAGGING_OFF_MAIN_MASTER_DOC_ID; }
+function baggingOffDefaultMasterRows(){
+  return (Array.isArray(BAGGING_OFF_MASTER) ? BAGGING_OFF_MASTER : []).map((r,idx)=>({
+    id:String(r.id || `BOM_${String(r.jenis||'').toUpperCase()}_${String(r.regu||'').toUpperCase()}_${String(r.nip||'').trim() || idx}`),
+    jenis:String(r.jenis || '').toUpperCase(),
+    regu:String(r.regu || '').toUpperCase(),
+    nip:String(r.nip || '').trim(),
+    nama:String(r.nama || '').trim(),
+    active:r.active===false ? false : true
+  }));
+}
+function normalizeBaggingOffMainMaster(raw){
+  let rows=[];
+  if(Array.isArray(raw)) rows=raw;
+  else if(raw && Array.isArray(raw.items)) rows=raw.items;
+  else if(raw && Array.isArray(raw.rows)) rows=raw.rows;
+  else if(raw && raw.items && typeof raw.items==='object') rows=Object.values(raw.items);
+  const seen=new Set();
+  return rows.map((r,idx)=>{
+    const jenis=String(r && (r.jenis || r.type || r.Jenis || '') || '').trim().toUpperCase();
+    const regu=String(r && (r.regu || r.Regu || '') || '').trim().toUpperCase();
+    const nip=String(r && (r.nip || r.NIP || '') || '').trim();
+    const nama=String(r && (r.nama || r.name || r.Nama || '') || '').trim();
+    const id=String(r && (r.id || r.key || '') || '').trim() || `BOM_${jenis}_${regu}_${nip || idx+1}`;
+    const activeRaw=(r && (r.active ?? r.aktif ?? r.status)) ?? true;
+    const active=!(activeRaw===false || String(activeRaw).toLowerCase()==='false' || String(activeRaw).toLowerCase()==='nonaktif' || String(activeRaw)==='0');
+    if(!['BUHLER','BREEDER'].includes(jenis) || !regu || !nip || !nama) return null;
+    const key=[jenis,regu,nip].join('|').toLowerCase();
+    if(seen.has(key)) return null;
+    seen.add(key);
+    return {id,jenis,regu,nip,nama,active};
+  }).filter(Boolean).sort((a,b)=>String(a.jenis).localeCompare(String(b.jenis),'id') || String(a.regu).localeCompare(String(b.regu),'id',{numeric:true}) || baggingOffNipSort(a,b));
+}
+function applyBaggingOffMainMasterRows(rows){
+  const clean=normalizeBaggingOffMainMaster(rows || []);
+  BAGGING_OFF_MASTER.splice(0, BAGGING_OFF_MASTER.length, ...clean.filter(r=>r.active!==false).map(r=>({jenis:r.jenis,regu:r.regu,nip:r.nip,nama:r.nama,id:r.id,active:r.active})));
+  baggingOffMainMasterCache=clean;
+  baggingOffMainMasterLoaded=true;
+  return clean;
+}
+async function loadBaggingOffMainMaster(force=false){
+  if(!force && baggingOffMainMasterLoaded && Array.isArray(baggingOffMainMasterCache) && baggingOffMainMasterCache.length) return baggingOffMainMasterCache;
+  const defaults=baggingOffDefaultMasterRows();
+  let local=[];
+  try{ local=normalizeBaggingOffMainMaster(safeLocalGetJSON(baggingOffMainMasterLocalKey(), [])); }catch(err){ local=[]; }
+  try{
+    const result=await loadMasterDataPrimary(baggingOffMainMasterDocId(), baggingOffMainMasterLocalKey(), {items:local.length?local:defaults});
+    const data=result && Object.prototype.hasOwnProperty.call(result,'data') ? result.data : result;
+    const rows=normalizeBaggingOffMainMaster(data || local || defaults);
+    return applyBaggingOffMainMasterRows(rows.length ? rows : defaults);
+  }catch(err){
+    console.warn('Load Master Bagging Off Buhler/Breeder gagal, memakai cache lokal/default.', err);
+    return applyBaggingOffMainMasterRows(local.length ? local : defaults);
+  }
+}
+async function saveBaggingOffMainMasterRows(rows){
+  const clean=applyBaggingOffMainMasterRows(rows || []);
+  const payload={items:clean, updatedAtLocal:new Date().toISOString()};
+  safeLocalSetJSON(baggingOffMainMasterLocalKey(), payload);
+  await saveMasterDataPrimary(baggingOffMainMasterDocId(), baggingOffMainMasterLocalKey(), payload);
+  return clean;
+}
+function clearBaggingOffMainMasterForm(){
+  if($('baggingMainMasterId')) $('baggingMainMasterId').value='';
+  const activeTab=document.querySelector('.bagging-master-tab.active');
+  const jenis=(activeTab && activeTab.getAttribute('data-bagging-main-tab')) || ($('baggingMainMasterFilterJenis') && $('baggingMainMasterFilterJenis').value) || 'BUHLER';
+  if($('baggingMainMasterJenis')) $('baggingMainMasterJenis').value=jenis==='ALL'?'BUHLER':jenis;
+  if($('baggingMainMasterRegu')) $('baggingMainMasterRegu').value='A';
+  if($('baggingMainMasterNip')) $('baggingMainMasterNip').value='';
+  if($('baggingMainMasterName')) $('baggingMainMasterName').value='';
+  if($('baggingMainMasterActive')) $('baggingMainMasterActive').value='1';
+  if($('btnSaveBaggingMainMaster')) $('btnSaveBaggingMainMaster').textContent='💾 Simpan Pekerja';
+}
+function setBaggingOffMainMasterInfo(text){ if($('baggingMainMasterInfo')) $('baggingMainMasterInfo').textContent=text || 'Master ini tersimpan terpisah dari master pengganti. Data aktif dipakai untuk tabel Bagging Off dan pilihan Ganti Pekerja.'; }
+async function renderBaggingOffMainMaster(force=false){
+  const body=$('baggingMainMasterBody');
+  if(!body) return;
+  body.innerHTML='<tr><td colspan="7">Memuat master Bagging Off...</td></tr>';
+  try{
+    const rows=await loadBaggingOffMainMaster(force);
+    const jenisFilter=String($('baggingMainMasterFilterJenis') && $('baggingMainMasterFilterJenis').value || 'BUHLER').toUpperCase();
+    const reguFilter=String($('baggingMainMasterFilterRegu') && $('baggingMainMasterFilterRegu').value || 'ALL').toUpperCase();
+    const q=String($('baggingMainMasterSearch') && $('baggingMainMasterSearch').value || '').trim().toLowerCase();
+    const filtered=rows.filter(r=>(jenisFilter==='ALL' || r.jenis===jenisFilter) && (reguFilter==='ALL' || r.regu===reguFilter) && (!q || String(r.nip).toLowerCase().includes(q) || String(r.nama).toLowerCase().includes(q)));
+    if(!filtered.length){ body.innerHTML='<tr><td colspan="7" class="bagging-empty-row">Belum ada data Master Bagging Off sesuai filter.</td></tr>'; return; }
+    body.innerHTML=filtered.map((r,i)=>`<tr data-bagging-main-id="${safeText(r.id)}">
+      <td>${i+1}</td><td class="bagging-regu-cell">${safeText(r.jenis==='BUHLER'?'Buhler':'Breeder')}</td><td class="bagging-regu-cell">${safeText(r.regu)}</td><td class="bagging-nip-cell">${safeText(r.nip)}</td><td class="text-left bagging-name-cell">${safeText(r.nama)}</td><td><span class="bagging-status-badge ${r.active?'active':'inactive'}">${r.active?'Aktif':'Nonaktif'}</span></td>
+      <td><div class="bagging-action-buttons"><button type="button" class="btn small secondary" data-edit-bagging-main="${safeText(r.id)}">Edit</button><button type="button" class="btn small danger" data-delete-bagging-main="${safeText(r.id)}">Hapus</button></div></td>
+    </tr>`).join('');
+    setBaggingOffMainMasterInfo(`${filtered.length} pekerja ditampilkan. Total master: ${rows.length} pekerja.`);
+  }catch(err){
+    console.error(err);
+    body.innerHTML='<tr><td colspan="7" class="bagging-empty-row">Gagal memuat Master Bagging Off.</td></tr>';
+  }
+}
+async function saveBaggingOffMainMasterFromForm(){
+  if(!requirePermission('manageWorkers','Master Bagging Off Buhler/Breeder hanya untuk admin.')) return;
+  const jenis=String($('baggingMainMasterJenis') && $('baggingMainMasterJenis').value || '').trim().toUpperCase();
+  const regu=String($('baggingMainMasterRegu') && $('baggingMainMasterRegu').value || '').trim().toUpperCase();
+  const nip=String($('baggingMainMasterNip') && $('baggingMainMasterNip').value || '').trim();
+  const nama=String($('baggingMainMasterName') && $('baggingMainMasterName').value || '').trim();
+  const active=String($('baggingMainMasterActive') && $('baggingMainMasterActive').value || '1')==='1';
+  const editId=String($('baggingMainMasterId') && $('baggingMainMasterId').value || '').trim();
+  if(!['BUHLER','BREEDER'].includes(jenis) || !regu || !nip || !nama){ alert('Jenis, Regu, NIP, dan Nama Pekerja wajib diisi.'); return; }
+  const btn=$('btnSaveBaggingMainMaster'); const old=btn?btn.textContent:'';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Menyimpan...'; }
+    const rows=await loadBaggingOffMainMaster(true);
+    const duplicate=rows.find(r=>r.jenis===jenis && r.regu===regu && String(r.nip)===nip && String(r.id)!==editId);
+    if(duplicate){ alert(`NIP ${nip} sudah ada di ${jenis} Regu ${regu} (${duplicate.nama}).`); return; }
+    const id=editId || `BOM_${jenis}_${regu}_${Date.now()}_${nip}`;
+    const next=rows.filter(r=>String(r.id)!==id);
+    next.push({id,jenis,regu,nip,nama,active});
+    await saveBaggingOffMainMasterRows(next);
+    if($('baggingMainMasterFilterJenis')) $('baggingMainMasterFilterJenis').value=jenis;
+    if($('baggingMainMasterFilterRegu')) $('baggingMainMasterFilterRegu').value=regu;
+    document.querySelectorAll('[data-bagging-main-tab]').forEach(btnTab=>btnTab.classList.toggle('active', btnTab.getAttribute('data-bagging-main-tab')===jenis));
+    clearBaggingOffMainMasterForm();
+    await renderBaggingOffMainMaster(false);
+    adminLog(`Master Bagging Off ${jenis} Regu ${regu} disimpan: ${nip} - ${nama}.`);
+  }catch(err){
+    console.error(err);
+    alert('Simpan Master Bagging Off gagal: '+(err && err.message ? err.message : err));
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=old || '💾 Simpan Pekerja'; }
+  }
+}
+async function editBaggingOffMainMaster(id){
+  const rows=await loadBaggingOffMainMaster(true);
+  const row=rows.find(r=>String(r.id)===String(id));
+  if(!row) return;
+  if($('baggingMainMasterId')) $('baggingMainMasterId').value=row.id;
+  if($('baggingMainMasterJenis')) $('baggingMainMasterJenis').value=row.jenis;
+  if($('baggingMainMasterRegu')) $('baggingMainMasterRegu').value=row.regu;
+  if($('baggingMainMasterNip')) $('baggingMainMasterNip').value=row.nip;
+  if($('baggingMainMasterName')) $('baggingMainMasterName').value=row.nama;
+  if($('baggingMainMasterActive')) $('baggingMainMasterActive').value=row.active?'1':'0';
+  if($('btnSaveBaggingMainMaster')) $('btnSaveBaggingMainMaster').textContent='💾 Update Pekerja';
+  setBaggingOffMainMasterInfo(`Mode edit: ${row.jenis} Regu ${row.regu} - ${row.nip} - ${row.nama}.`);
+}
+async function deleteBaggingOffMainMaster(id){
+  if(!requirePermission('manageWorkers','Master Bagging Off Buhler/Breeder hanya untuk admin.')) return;
+  const rows=await loadBaggingOffMainMaster(true);
+  const row=rows.find(r=>String(r.id)===String(id));
+  if(!row) return;
+  if(!confirm(`Hapus pekerja dari Master Bagging Off?\n\n${row.jenis} Regu ${row.regu}\n${row.nip} - ${row.nama}`)) return;
+  await saveBaggingOffMainMasterRows(rows.filter(r=>String(r.id)!==String(id)));
+  clearBaggingOffMainMasterForm();
+  await renderBaggingOffMainMaster(false);
+  adminLog(`Master Bagging Off dihapus: ${row.jenis} Regu ${row.regu} - ${row.nip} - ${row.nama}.`);
+}
+function setupBaggingOffMainMasterEvents(){
+  document.querySelectorAll('[data-bagging-main-tab]').forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      const jenis=String(tab.getAttribute('data-bagging-main-tab') || 'BUHLER').toUpperCase();
+      document.querySelectorAll('[data-bagging-main-tab]').forEach(t=>t.classList.toggle('active', t===tab));
+      if($('baggingMainMasterFilterJenis')) $('baggingMainMasterFilterJenis').value=jenis;
+      if($('baggingMainMasterJenis')) $('baggingMainMasterJenis').value=jenis;
+      renderBaggingOffMainMaster(false);
+    });
+  });
+  if($('baggingMainMasterFilterJenis')) $('baggingMainMasterFilterJenis').addEventListener('change', e=>{
+    const jenis=String(e.target.value || 'BUHLER').toUpperCase();
+    document.querySelectorAll('[data-bagging-main-tab]').forEach(t=>t.classList.toggle('active', t.getAttribute('data-bagging-main-tab')===jenis));
+    if(jenis!=='ALL' && $('baggingMainMasterJenis')) $('baggingMainMasterJenis').value=jenis;
+    renderBaggingOffMainMaster(false);
+  });
+  if($('baggingMainMasterFilterRegu')) $('baggingMainMasterFilterRegu').addEventListener('change', ()=>renderBaggingOffMainMaster(false));
+  if($('baggingMainMasterSearch')) $('baggingMainMasterSearch').addEventListener('input', ()=>renderBaggingOffMainMaster(false));
+  if($('btnSaveBaggingMainMaster')) $('btnSaveBaggingMainMaster').addEventListener('click', saveBaggingOffMainMasterFromForm);
+  if($('btnResetBaggingMainMasterForm')) $('btnResetBaggingMainMasterForm').addEventListener('click', ()=>{ clearBaggingOffMainMasterForm(); renderBaggingOffMainMaster(false); });
+  if($('btnRefreshBaggingMainMaster')) $('btnRefreshBaggingMainMaster').addEventListener('click', ()=>renderBaggingOffMainMaster(true));
+  const body=$('baggingMainMasterBody');
+  if(body) body.addEventListener('click', e=>{
+    const edit=e.target && e.target.getAttribute && e.target.getAttribute('data-edit-bagging-main');
+    const del=e.target && e.target.getAttribute && e.target.getAttribute('data-delete-bagging-main');
+    if(edit) editBaggingOffMainMaster(edit);
+    if(del) deleteBaggingOffMainMaster(del);
+  });
+  renderBaggingOffMainMaster(false);
+}
 
 function baggingOffReplacementMasterLocalKey(){ return BAGGING_OFF_REPLACEMENT_MASTER_LOCAL_KEY; }
 function baggingOffReplacementMasterDocId(){ return BAGGING_OFF_REPLACEMENT_MASTER_DOC_ID; }
@@ -4955,6 +5265,101 @@ function renderAdminReport(){
 }
 
 
+function isBahanBakuGabunganUpahSelected(){
+  const selectedKey=$('adminUpahUnitSelect') ? $('adminUpahUnitSelect').value : adminManagedUnitKey;
+  return String(selectedKey || '')===BAHAN_BAKU_GABUNGAN_KEY || Boolean(adminUpahData && adminUpahData.combinedAttendance && String(adminUpahData.unitKey||'')===BAHAN_BAKU_GABUNGAN_KEY);
+}
+const BAHAN_BAKU_MALAM_WORKER_COUNTS={bb:31,silo:10,overzak:4};
+function isOperationalManualUpahRow(row){
+  const nip=String(row && row.nip || '').replace(/\./g,'').trim();
+  const name=String(row && row.name || row && row.nama || '').trim().toLowerCase();
+  return nip==='10000' || name==='operational';
+}
+function isBipManualUpahRow(row){
+  const nip=String(row && row.nip || '').trim().toUpperCase();
+  const name=String(row && row.name || row && row.nama || '').trim().toUpperCase();
+  return nip==='1' || nip==='BIP' || name==='BIP';
+}
+function isYudiEfendiUpahRow(row){
+  const nip=String(row && row.nip || '').trim();
+  const name=String(row && row.name || row && row.nama || '').trim().toLowerCase();
+  return nip==='91' || name==='yudi efendi';
+}
+function syncBahanBakuTonasePagiFields(){
+  const isBB=isBahanBakuGabunganUpahSelected();
+  const pagiCard=$('upahBahanBakuTonasePagiCard');
+  const malamCard=$('upahBahanBakuTonaseMalamCard');
+  if(pagiCard) pagiCard.style.display=isBB ? 'block' : 'none';
+  if(malamCard) malamCard.style.display=isBB ? 'block' : 'none';
+  const totalPagi=readUpahTonase('adminUpahTonaseBbPagi') + readUpahTonase('adminUpahTonaseSiloPagi') + readUpahTonase('adminUpahTonaseOverzakPagi');
+  const totalEl=$('adminUpahTotalTonasePagi');
+  if(totalEl) totalEl.value=formatUpahNumber(totalPagi, {decimals:Number.isInteger(totalPagi) ? 0 : 2});
+  if(isBB){
+    writeUpahAutoTonase('adminUpahTonaseS1', totalPagi);
+    const totalMalam=readUpahTonase('adminUpahTonaseBbMalam') + readUpahTonase('adminUpahTonaseSiloMalam') + readUpahTonase('adminUpahTonaseOverzakMalam');
+    writeUpahAutoTonase('adminUpahTonaseS2', totalMalam);
+  }
+  return totalPagi;
+}
+function countBahanBakuWorkersForInfo(rows){
+  const info={bbPagi:0,siloPagi:0,overzakPagi:0,nonKegiatanPagi:0,totalPekerjaPagi:0,bbMalam:0,siloMalam:0,overzakMalam:0};
+  (Array.isArray(rows)?rows:[]).forEach(r=>{
+    const kegiatan=String(r && r.kegiatan || '').trim().toLowerCase();
+    const s1=parseUpahNumber(r && r.s1Value);
+    const s2=parseUpahNumber(r && r.s2Value);
+    const isBip=isBipManualUpahRow(r);
+    const isOperational=isOperationalManualUpahRow(r);
+    const isYudi=isYudiEfendiUpahRow(r);
+    const isSilo=kegiatan.includes('silo');
+    const isOverzak=kegiatan.includes('overzak');
+    const isMalam=kegiatan.includes('malam');
+    const isBongkaran=kegiatan.includes('bongkaran') || kegiatan.includes('bahan baku');
+    if(s1>0){
+      if(isBip || isOperational || !kegiatan) info.nonKegiatanPagi += s1;
+      else if(isSilo) info.siloPagi += s1;
+      else if(isOverzak) info.overzakPagi += s1;
+      else if(!isMalam) info.bbPagi += s1;
+    }
+    if(s2>0){
+      if(isBip) info.bbMalam += s2;
+      else if(isSilo) info.siloMalam += s2;
+      else if(isYudi) info.siloMalam += s2;
+      else if(isOverzak) info.overzakMalam += s2;
+      else if(isMalam || isBongkaran) info.bbMalam += s2;
+    }
+  });
+  info.totalPekerjaPagi=info.bbPagi+info.siloPagi+info.overzakPagi+info.nonKegiatanPagi;
+  return info;
+}
+function renderBahanBakuInteractiveInfo(rows){
+  const el=$('upahBahanBakuInteractiveInfo');
+  if(!el) return;
+  if(!isBahanBakuGabunganUpahSelected()){
+    el.style.display='none';
+    el.innerHTML='';
+    return;
+  }
+  const info=countBahanBakuWorkersForInfo(rows || readUpahRowsFromTable());
+  el.innerHTML=`
+    <h4>Informasi Jumlah Pekerja</h4>
+    <div class="upah-bahan-baku-info-grid">
+      <div class="upah-bahan-baku-info-box">
+        <div class="title">Pekerja Pagi</div>
+        <div class="line"><span>BB Pagi</span><strong>${info.bbPagi}</strong></div>
+        <div class="line"><span>Silo Pagi</span><strong>${info.siloPagi}</strong></div>
+        <div class="line"><span>Overzak Pagi</span><strong>${info.overzakPagi}</strong></div>
+        <div class="line"><span>Non Kegiatan</span><strong>${info.nonKegiatanPagi}</strong></div>
+        <div class="line"><span>Total Pekerja</span><strong>${info.totalPekerjaPagi}</strong></div>
+      </div>
+      <div class="upah-bahan-baku-info-box">
+        <div class="title">Pekerja Malam</div>
+        <div class="line"><span>BB Malam</span><strong>${BAHAN_BAKU_MALAM_WORKER_COUNTS.bb}</strong></div>
+        <div class="line"><span>Silo Malam</span><strong>${BAHAN_BAKU_MALAM_WORKER_COUNTS.silo}</strong></div>
+        <div class="line"><span>Overzak Malam</span><strong>${BAHAN_BAKU_MALAM_WORKER_COUNTS.overzak}</strong></div>
+      </div>
+    </div>`;
+  el.style.display='block';
+}
 function isBahanBakuUpahSelected(){
   const selectedKey=$('adminUpahUnitSelect') ? $('adminUpahUnitSelect').value : adminManagedUnitKey;
   return String(selectedKey || '')===BAHAN_BAKU_GABUNGAN_KEY || isBahanBakuPagiMalamKey(selectedKey) || Boolean(adminUpahData && adminUpahData.combinedAttendance && String(adminUpahData.unitKey||'')===BAHAN_BAKU_GABUNGAN_KEY);
@@ -4968,8 +5373,8 @@ function upahKegiatanLabel(row){
   const text=String(row && (row.kegiatan || row.activityLabel || row.sourceUnitName || row.unit || '') || '').toLowerCase();
   if(key.includes('silo') || text.includes('silo')) return 'Silo';
   if(key.includes('overzak') || text.includes('overzak')) return 'Overzak';
-  if(key.includes('malam') || text.includes('malam')) return 'Bongkaran Bahan Baku Malam';
-  if(key.includes('pagi') || text.includes('pagi')) return 'Bongkaran Bahan Baku Pagi';
+  if(key.includes('malam') || text.includes('malam')) return 'BB Malam';
+  if(key.includes('pagi') || text.includes('pagi')) return 'BB Pagi';
   if(text.includes('bongkaran')) return 'Bongkaran Bahan Baku';
   return row && row.kegiatan ? String(row.kegiatan) : '';
 }
@@ -4988,6 +5393,10 @@ function isOperOperBahanBakuUpah(){
 function upahNumberForShift(row, shift){
   if(!row || !row[shift]) return '';
   const nip=String(row.nip || '').trim();
+  if(isBahanBakuGabunganUpahSelected() && isOperationalManualUpahRow(row)){
+    if(shift==='s1') return '2';
+    if(shift==='s2') return '';
+  }
   if(shift==='s1' && isOperOperBahanBakuUpah() && nip==='2') return '2';
   if(shift==='s1' && !isOperOperBahanBakuUpah() && nip==='133') return '2';
   return '1';
@@ -5064,6 +5473,10 @@ function buildUpahRows(rows){
   const manualBipRow=isOperOperBB
     ? { no:0, nip:'BIP', name:'BIP', s1:true, s2:false, s3:false, isManualUpahRow:true }
     : { no:0, nip:'1', name:'BIP', s1:true, s2:true, s3:false, isManualUpahRow:true };
+  if(isBahanBakuGabunganUpahSelected() && !isOperOperBB){
+    const manualOperationalRow={ no:0, nip:'10.000', name:'Operational', s1:true, s2:false, s3:false, isManualUpahRow:true, isOperationalManualRow:true };
+    return [manualBipRow, manualOperationalRow, ...normalized];
+  }
   return [manualBipRow, ...normalized];
 }
 function formatUpahNumber(value, options){
@@ -5102,7 +5515,7 @@ function formatUpahInputField(el){
     try{ el.setSelectionRange(el.value.length, el.value.length); }catch(err){}
   }
 }
-const UPAH_RIBUAN_INPUT_IDS=['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2','adminUpahDoPagiZak','adminUpahDoPagiPerZak','adminUpahDoPagiTarif','adminUpahDoSiangZak','adminUpahDoSiangPerZak','adminUpahDoSiangTarif'];
+const UPAH_RIBUAN_INPUT_IDS=['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2','adminUpahTonaseBbPagi','adminUpahTonaseSiloPagi','adminUpahTonaseOverzakPagi','adminUpahTonaseBbMalam','adminUpahTonaseSiloMalam','adminUpahTonaseOverzakMalam','adminUpahSubsidiOverzak','adminUpahSubsidiOverzak','adminUpahDoPagiZak','adminUpahDoPagiPerZak','adminUpahDoPagiTarif','adminUpahDoSiangZak','adminUpahDoSiangPerZak','adminUpahDoSiangTarif'];
 function setupUpahRibuanInputs(){
   UPAH_RIBUAN_INPUT_IDS.forEach(id=>{
     const el=$(id);
@@ -5119,23 +5532,36 @@ function writeUpahAutoTonase(id, value){
   const num=Number(value || 0);
   el.value = num ? formatUpahNumber(num, {decimals:Number.isInteger(num) ? 0 : 2}) : '';
 }
+function isManualUpahTonaseMode(){
+  return isBahanBakuUpahSelected() || isOperOperBahanBakuUpah();
+}
 function syncUpahCalculatorModeByUnit(){
-  const isBahanBaku=isBahanBakuUpahSelected();
+  const manualTonase=isManualUpahTonaseMode();
   ['upahDoPagiTitle','upahDoPagiBox','upahDoSiangTitle','upahDoSiangBox','upahTotalDoBox'].forEach(id=>{
     const el=$(id);
-    if(el) el.style.display=isBahanBaku ? 'none' : '';
+    if(el) el.style.display=manualTonase ? 'none' : '';
   });
-  ['adminUpahTonaseS1','adminUpahTonaseS2'].forEach(id=>{
-    const el=$(id);
-    if(el){
-      el.readOnly=!isBahanBaku;
-      el.classList.toggle('upah-manual-tonase', isBahanBaku);
-    }
-  });
+  const bahanBakuGabungan=isBahanBakuGabunganUpahSelected();
+  const genericTonaseBox=$('upahGenericTonaseBox');
+  if(genericTonaseBox) genericTonaseBox.style.display=bahanBakuGabungan ? 'none' : '';
+  if(bahanBakuGabungan){
+    ['adminUpahBiayaS1','adminUpahBiayaS2'].forEach(id=>{ const el=$(id); if(el) el.value=''; });
+  }
+  const tonaseS1=$('adminUpahTonaseS1');
+  if(tonaseS1){
+    tonaseS1.readOnly=!manualTonase || bahanBakuGabungan;
+    tonaseS1.classList.toggle('upah-manual-tonase', manualTonase && !bahanBakuGabungan);
+  }
+  const tonaseS2=$('adminUpahTonaseS2');
+  if(tonaseS2){
+    tonaseS2.readOnly=!manualTonase;
+    tonaseS2.classList.toggle('upah-manual-tonase', manualTonase);
+  }
+  syncBahanBakuTonasePagiFields();
 }
 function syncUpahDoTonaseFromInputs(){
   syncUpahCalculatorModeByUnit();
-  if(isBahanBakuUpahSelected()){
+  if(isManualUpahTonaseMode()){
     const totalDoEl=$('adminUpahTotalDo');
     if(totalDoEl) totalDoEl.value='0';
     return;
@@ -5155,6 +5581,7 @@ function syncUpahDoTonaseFromInputs(){
   if(totalDoEl) totalDoEl.value=formatUpahNumber(totalDoZak, {decimals:Number.isInteger(totalDoZak) ? 0 : 2});
 }
 function updateUpahFinalTonaseDisplay(){
+  if(isBahanBakuGabunganUpahSelected()) syncBahanBakuTonasePagiFields();
   const finalS1=Math.max(0, readUpahTonase('adminUpahTonaseS1') - readUpahTonase('adminUpahBiayaS1'));
   const finalS2=Math.max(0, readUpahTonase('adminUpahTonaseS2') - readUpahTonase('adminUpahBiayaS2'));
   return {finalS1, finalS2};
@@ -5225,6 +5652,9 @@ function enableUpahCalcColumnResize(){
 function isFixedUpahKurangRow(row){
   return String(row && row.nip || '').trim()==='1' && String(row && row.nama || '').trim().toUpperCase()==='BIP';
 }
+function isFixedOperationalUpahKurangRow(row){
+  return isOperationalManualUpahRow({nip:row && row.nip, name:row && row.nama});
+}
 function isFixedUpahTambahRow(row){
   const nip=String(row && row.nip || '').trim();
   const nama=String(row && row.nama || '').trim().toUpperCase();
@@ -5233,7 +5663,8 @@ function isFixedUpahTambahRow(row){
 function applyDefaultUpahAdjustments(row, options){
   const opts=options || {};
   const allowOverwrite=opts.overwrite===true;
-  if(isFixedUpahKurangRow(row) && (allowOverwrite || !parseUpahNumber(row.kurang))) row.kurang=20000;
+  if(isFixedUpahKurangRow(row)) row.kurang=0;
+  if(isFixedOperationalUpahKurangRow(row)) row.kurang=300000;
   if(isFixedUpahTambahRow(row)){
     if(allowOverwrite || !parseUpahNumber(row.tambah)) row.tambah=20000;
     if(allowOverwrite) row.kurang=0;
@@ -5261,9 +5692,11 @@ function mergeSavedUpahCalcRows(defaultRows){
   return baseRows.map(r=>{
     const saved=savedMap.get(upahCalcAdjustmentKey(r));
     if(saved){
-      r.kurang=saved.kurang;
+      if(!isFixedUpahKurangRow(r) && !isFixedOperationalUpahKurangRow(r)) r.kurang=saved.kurang;
       r.tambah=saved.tambah;
     }
+    if(isFixedUpahKurangRow(r)) r.kurang=0;
+    if(isFixedOperationalUpahKurangRow(r)) r.kurang=300000;
     r.netto=roundUpahNetto(Number(r.total||0)-Number(r.kurang||0)+Number(r.tambah||0));
     return r;
   });
@@ -5274,23 +5707,26 @@ function calculateUpahTotalNettoRows(rows){
 function applyUpahTonaseNettoSelisihAdjustment(rows, totalTonase){
   const list=Array.isArray(rows) ? rows : [];
   const target=roundUpahNetto(totalTonase);
-  const sholeh=list.find(r=>isFixedUpahTambahRow(r));
-  if(!sholeh) return {rows:list, selisih:0, mode:'none', target};
-  // Reset adjustment khusus Moch. Sholeh sebelum menghitung selisih, agar tidak dobel saat Calculate diulang.
-  sholeh.tambah=20000;
-  sholeh.kurang=0;
+  const operational=list.find(r=>isFixedOperationalUpahKurangRow(r));
+  if(!operational) return {rows:list, selisih:0, mode:'none', target};
+  // v210: selisih Total Tonase vs Total NETTO dibebankan ke baris Operational.
+  // Reset dulu agar calculate berulang tidak menumpuk nilai KURANG/TAMBAH.
+  operational.kurang=0;
+  operational.tambah=0;
   list.forEach(r=>{ r.netto=roundUpahNetto(Number(r.total||0)-Number(r.kurang||0)+Number(r.tambah||0)); });
   const totalNetto=calculateUpahTotalNettoRows(list);
   const diff=roundUpahNetto(target-totalNetto);
   const selisih=Math.abs(diff);
   if(diff>0){
-    sholeh.tambah=20000+selisih;
-    sholeh.kurang=0;
+    // Total NETTO lebih kecil dari Total Tonase: selisih masuk TAMBAH Operational.
+    operational.tambah=selisih;
+    operational.kurang=0;
   }else if(diff<0){
-    sholeh.tambah=20000;
-    sholeh.kurang=selisih;
+    // Total NETTO lebih besar dari Total Tonase: selisih masuk KURANG Operational.
+    operational.kurang=selisih;
+    operational.tambah=0;
   }
-  sholeh.netto=roundUpahNetto(Number(sholeh.total||0)-Number(sholeh.kurang||0)+Number(sholeh.tambah||0));
+  operational.netto=roundUpahNetto(Number(operational.total||0)-Number(operational.kurang||0)+Number(operational.tambah||0));
   list.forEach(r=>{ r.netto=roundUpahNetto(Number(r.total||0)-Number(r.kurang||0)+Number(r.tambah||0)); });
   return {rows:list, selisih, mode:diff>0?'tambah':(diff<0?'kurang':'pas'), target};
 }
@@ -5306,7 +5742,7 @@ function updateUpahCalcSelisihNote(totalTonase, totalNetto){
   const manualSelisih=Number(window.__lastUpahSelisih||0);
   const diff=roundUpahNetto(Number(totalTonase||0)-Number(totalNetto||0));
   const nilai=manualSelisih || Math.abs(diff);
-  if(isBahanBakuUpahSelected()){
+  if(isManualUpahTonaseMode()){
     el.innerHTML=`<div>NOTE : SELISIH = ${formatUpahIntegerNumber(nilai)}</div>`;
     return;
   }
@@ -5361,11 +5797,12 @@ function renderUpahTable(unitName, dateValue, rows, emptyMsg, options){
     const no=(w && w.isManualUpahRow) ? 0 : i;
     const kegiatanCell=showKegiatanColumn ? `<td contenteditable="true" data-field="kegiatan">${safeText(w.isManualUpahRow ? '' : upahKegiatanLabel(w))}</td>` : '';
     tr.innerHTML = `<td contenteditable="true" data-field="no">${no}</td><td contenteditable="true" data-field="nip">${safeText(w.nip)}</td><td contenteditable="true" data-field="name" class="name">${safeText(w.name)}</td>${kegiatanCell}<td contenteditable="true" data-field="s1">${upahNumberForShift(w,'s1')}</td><td contenteditable="true" data-field="s2">${upahNumberForShift(w,'s2')}</td><td contenteditable="true" data-field="s3">${upahNumberForShift(w,'s3')}</td>`;
-    tr.addEventListener('input', ()=>{ updateUpahFooterFromTable(); hideUpahCalculation(); });
+    tr.addEventListener('input', ()=>{ const footerResult=updateUpahFooterFromTable(); renderBahanBakuInteractiveInfo(footerResult.rows); hideUpahCalculation(); });
     body.appendChild(tr);
   });
   if(!upahRows.length){ body.innerHTML=`<tr><td colspan="${showKegiatanColumn ? 7 : 6}" style="height:42px;color:#65758b">${safeText(emptyMsg || 'Data absensi belum berisi pekerja.')}</td></tr>`; }
-  updateUpahFooterFromTable();
+  const footerResult=updateUpahFooterFromTable();
+  renderBahanBakuInteractiveInfo(footerResult.rows);
 }
 function roundUpahValue(value){
   const num=Number(value || 0);
@@ -5407,6 +5844,44 @@ function syncUpahCalcTableStructure(showKegiatanColumn){
       : '<tr><td class="left-label" colspan="3">TOTAL</td><td id="upahCalcTotalGaji">0</td><td id="upahCalcTotalLembur">0</td><td id="upahCalcTotalBruto">0</td><td id="upahCalcTotalKurang">0</td><td id="upahCalcTotalTambah">0</td><td id="upahCalcTotalNetto">0</td><td id="upahCalcTotalHasil01">0</td><td id="upahCalcTotalHasil02">0</td></tr>';
   }
 }
+function bahanBakuMalamCategoryForUpahRow(row){
+  const kegiatan=String(row && row.kegiatan || '').toLowerCase();
+  const nip=String(row && row.nip || '').trim();
+  const nama=String(row && (row.name || row.nama) || '').trim().toLowerCase();
+  if(kegiatan.includes('overzak')) return 'overzak';
+  if(kegiatan.includes('silo') || nip==='91' || nama==='yudi efendi') return 'silo';
+  return 'bb';
+}
+function bahanBakuMalamUpahRawByCategory(category){
+  const key=String(category || 'bb');
+  if(key==='silo') return BAHAN_BAKU_MALAM_WORKER_COUNTS.silo ? readUpahTonase('adminUpahTonaseSiloMalam') / BAHAN_BAKU_MALAM_WORKER_COUNTS.silo : 0;
+  if(key==='overzak'){
+    const tonaseOverzak=readUpahTonase('adminUpahTonaseOverzakMalam');
+    const subsidiOverzak=readUpahTonase('adminUpahSubsidiOverzak');
+    return BAHAN_BAKU_MALAM_WORKER_COUNTS.overzak ? (tonaseOverzak + subsidiOverzak) / BAHAN_BAKU_MALAM_WORKER_COUNTS.overzak : 0;
+  }
+  return BAHAN_BAKU_MALAM_WORKER_COUNTS.bb ? readUpahTonase('adminUpahTonaseBbMalam') / BAHAN_BAKU_MALAM_WORKER_COUNTS.bb : 0;
+}
+function renderBahanBakuUpahResultInfo(finalTonase, totalS1, nilaiS1Raw, nilaiS1Rounded){
+  const card=$('upahResultInfoCard');
+  const body=$('upahResultInfoBody');
+  if(!card || !body) return;
+  const bbRaw=bahanBakuMalamUpahRawByCategory('bb');
+  const siloRaw=bahanBakuMalamUpahRawByCategory('silo');
+  const overzakRaw=bahanBakuMalamUpahRawByCategory('overzak');
+  const subsidiOverzak=readUpahTonase('adminUpahSubsidiOverzak');
+  const totalFinal=Number(finalTonase.finalS1||0)+Number(finalTonase.finalS2||0);
+  body.innerHTML=`
+    <div class="upah-result-grid">
+      <div class="upah-result-pill"><small>Total Tonase</small><div class="value">${formatUpahNumber(totalFinal)}</div><div class="note">Total Tonase Pagi + Tonase Malam.</div></div>
+      <div class="upah-result-pill"><small>Upah Pagi</small><div class="value">${formatUpahIntegerNumber(nilaiS1Rounded)}</div><div class="note">${formatUpahNumber(finalTonase.finalS1)} / ${formatUpahNumber(totalS1)} pekerja = ${formatUpahDecimalNumber(nilaiS1Raw)}</div></div>
+      <div class="upah-result-pill"><small>Upah BB Malam</small><div class="value">${formatUpahIntegerNumber(roundUpahValue(bbRaw))}</div><div class="note">${formatUpahNumber(readUpahTonase('adminUpahTonaseBbMalam'))} / ${BAHAN_BAKU_MALAM_WORKER_COUNTS.bb} pekerja</div></div>
+      <div class="upah-result-pill"><small>Upah Silo Malam</small><div class="value">${formatUpahIntegerNumber(roundUpahValue(siloRaw))}</div><div class="note">${formatUpahNumber(readUpahTonase('adminUpahTonaseSiloMalam'))} / ${BAHAN_BAKU_MALAM_WORKER_COUNTS.silo} pekerja</div></div>
+      <div class="upah-result-pill"><small>Upah Overzak Malam</small><div class="value">${formatUpahIntegerNumber(roundUpahValue(overzakRaw))}</div><div class="note">(${formatUpahNumber(readUpahTonase('adminUpahTonaseOverzakMalam'))} + subsidi ${formatUpahNumber(subsidiOverzak)}) / ${BAHAN_BAKU_MALAM_WORKER_COUNTS.overzak} pekerja</div></div>
+    </div>
+  `;
+  card.style.display='block';
+}
 function calculateAdminUpah(){
   syncUpahCalculatorModeByUnit();
   const showCalcKegiatanColumn=isBahanBakuUpahSelected();
@@ -5421,13 +5896,18 @@ function calculateAdminUpah(){
   const nilaiS2Raw=totalS2 ? finalTonase.finalS2 / totalS2 : 0;
   const nilaiS1=roundUpahValue(nilaiS1Raw);
   const nilaiS2=roundUpahValue(nilaiS2Raw);
+  const isBahanBakuGabunganCalc=isBahanBakuGabunganUpahSelected();
   const defaultCalcRows=sourceRows.map((w)=>{
     const shift1=parseUpahNumber(w.s1Value);
     const shift2=parseUpahNumber(w.s2Value);
     const gaji=roundUpahValue(nilaiS1 * shift1);
-    const lembur=roundUpahValue(nilaiS2 * shift2);
+    let lembur=roundUpahValue(nilaiS2 * shift2);
+    if(isBahanBakuGabunganCalc){
+      const malamCategory=bahanBakuMalamCategoryForUpahRow(w);
+      lembur=roundUpahValue(bahanBakuMalamUpahRawByCategory(malamCategory) * shift2);
+    }
     const total=roundUpahValue(gaji+lembur);
-    return applyDefaultUpahAdjustments({ no:w.no, nip:String(w.nip || ''), nama:String(w.name || ''), kegiatan:String(w.kegiatan || ''), gaji, lembur, total, kurang:0, tambah:0, netto:roundUpahNetto(total) }, {overwrite:true});
+    return applyDefaultUpahAdjustments({ no:w.no, nip:String(w.nip || ''), nama:String(w.name || ''), kegiatan:upahKegiatanLabel(w), gaji, lembur, total, kurang:0, tambah:0, netto:roundUpahNetto(total) }, {overwrite:true});
   });
   adminUpahCalculationRows=mergeSavedUpahCalcRows(defaultCalcRows);
   const totalTonaseFinal=roundUpahNetto(Number(finalTonase.finalS1||0)+Number(finalTonase.finalS2||0));
@@ -5439,12 +5919,13 @@ function calculateAdminUpah(){
     body.innerHTML='';
     adminUpahCalculationRows.forEach(row=>{
       const tr=document.createElement('tr');
-      const kurangDefault=isFixedUpahKurangRow(row);
+      const kurangDefault=isFixedUpahKurangRow(row) || isFixedOperationalUpahKurangRow(row);
+      const kurangTitle=isFixedOperationalUpahKurangRow(row) ? 'Default 300.000, bisa diubah' : (isFixedUpahKurangRow(row) ? 'Default 0, bisa diubah' : '');
       const tambahDefault=isFixedUpahTambahRow(row);
       const hasil01=roundUpahNetto(Number(row.gaji||0)-Number(row.kurang||0));
       const hasil02=roundUpahNetto(Number(row.lembur||0)+Number(row.tambah||0));
       const kegiatanCell=showCalcKegiatanColumn ? `<td>${safeText(row.kegiatan || '')}</td>` : '';
-      tr.innerHTML=`<td>${safeText(row.no)}</td><td>${safeText(row.nip)}</td><td class="name">${safeText(row.nama)}</td>${kegiatanCell}<td>${formatUpahIntegerNumber(row.gaji)}</td><td>${formatUpahIntegerNumber(row.lembur)}</td><td>${formatUpahIntegerNumber(row.total)}</td><td contenteditable="true" data-field="kurang" class="upah-adjust-cell ${kurangDefault?'upah-fixed-cell':''}" title="${kurangDefault?'Default 20.000, bisa diubah':''}">${formatUpahIntegerNumber(row.kurang)}</td><td contenteditable="true" data-field="tambah" class="upah-adjust-cell ${tambahDefault?'Default 20.000 +/− selisih, bisa diubah':''}" title="${tambahDefault?'Default 20.000 +/− selisih, bisa diubah':''}">${formatUpahIntegerNumber(row.tambah)}</td><td>${formatUpahIntegerNumber(row.netto)}</td><td>${formatUpahIntegerNumber(hasil01)}</td><td>${formatUpahIntegerNumber(hasil02)}</td>`;
+      tr.innerHTML=`<td>${safeText(row.no)}</td><td>${safeText(row.nip)}</td><td class="name">${safeText(row.nama)}</td>${kegiatanCell}<td>${formatUpahIntegerNumber(row.gaji)}</td><td>${formatUpahIntegerNumber(row.lembur)}</td><td>${formatUpahIntegerNumber(row.total)}</td><td contenteditable="true" data-field="kurang" class="upah-adjust-cell ${kurangDefault?'upah-fixed-cell':''}" title="${kurangTitle}">${formatUpahIntegerNumber(row.kurang)}</td><td contenteditable="true" data-field="tambah" class="upah-adjust-cell ${tambahDefault?'upah-fixed-cell':''}" title="${tambahDefault?'Default 20.000 +/− selisih, bisa diubah':''}">${formatUpahIntegerNumber(row.tambah)}</td><td>${formatUpahIntegerNumber(row.netto)}</td><td>${formatUpahIntegerNumber(hasil01)}</td><td>${formatUpahIntegerNumber(hasil02)}</td>`;
       tr.querySelectorAll('td.upah-adjust-cell').forEach(td=>{
         td.addEventListener('input', ()=>{ updateUpahCalcFooterFromTable(); saveUpahCalcRowsToLocal(); });
         td.addEventListener('blur', ()=>{ td.textContent=formatUpahIntegerNumber(parseUpahNumber(td.textContent)); updateUpahCalcFooterFromTable(); saveUpahCalcRowsToLocal(); });
@@ -5452,7 +5933,8 @@ function calculateAdminUpah(){
       body.appendChild(tr);
     });
   }
-  renderUpahResultInfo(finalTonase, totalS1, totalS2, nilaiS1Raw, nilaiS2Raw, nilaiS1, nilaiS2);
+  if(isBahanBakuGabunganUpahSelected()) renderBahanBakuUpahResultInfo(finalTonase, totalS1, nilaiS1Raw, nilaiS1);
+  else renderUpahResultInfo(finalTonase, totalS1, totalS2, nilaiS1Raw, nilaiS2Raw, nilaiS1, nilaiS2);
   updateUpahCalcFooterFromTable();
   if($('upahCalcCard')) $('upahCalcCard').style.display='block';
 }
@@ -5532,13 +6014,17 @@ function printAdminUpahCalcTable(){
   const cloned=table.cloneNode(true);
   cloned.removeAttribute('id');
   cloned.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));
-  cloned.querySelectorAll('tr').forEach(tr=>{
-    const cells=tr.querySelectorAll('th,td');
-    for(let i=0;i<2;i+=1){
-      const cell=cells[cells.length-1-i];
-      if(cell) cell.remove();
-    }
-  });
+  const clonedFoot=cloned.querySelector('tfoot');
+  const clonedBody=cloned.querySelector('tbody');
+  if(clonedFoot && clonedBody){
+    Array.from(clonedFoot.querySelectorAll('tr')).forEach(tr=>{
+      tr.classList.add('upah-print-total-row');
+      clonedBody.appendChild(tr);
+    });
+    clonedFoot.remove();
+  }
+  /* v210: TOTAL cetak dipindah ke body supaya hanya muncul di lembar terakhir. */
+  /* v208: cetak tetap menampilkan semua kolom sampai HASIL02. */
   const selisihNoteEl=$('upahCalcSelisihNote');
   const selisihNote=selisihNoteEl ? selisihNoteEl.outerHTML : '';
   const unitSel=$('adminUpahUnitSelect');
@@ -5552,18 +6038,19 @@ function printAdminUpahCalcTable(){
     body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#111;background:#fff;}
     h1{font-size:15px;text-align:center;margin:0 0 3px;text-transform:uppercase;}
     .subtitle{text-align:center;font-size:10px;font-weight:700;margin:0 0 8px;}
-    table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:9px;}
-    th,td{border:1px solid #111;padding:3px 4px;text-align:center;line-height:1.12;white-space:normal;word-break:break-word;overflow-wrap:anywhere;}
-    th{background:#f3f4f6;font-weight:800;}
+    table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:7.8px;}
+    th,td{border:1px solid #111;padding:2px 2px;text-align:center;line-height:1.08;white-space:normal;word-break:break-word;overflow-wrap:anywhere;}
+    th{background:#f3f4f6;font-weight:800;font-size:7.5px;}
+    td:nth-child(3){text-align:left;}
     tfoot td{font-weight:800;background:#fafafa;}
-    th:nth-child(1),td:nth-child(1){width:4%;}
-    th:nth-child(2),td:nth-child(2){width:7%;}
-    th:nth-child(3),td:nth-child(3){width:23%;text-align:left;}
-    th:nth-child(4),td:nth-child(4),th:nth-child(5),td:nth-child(5),th:nth-child(6),td:nth-child(6){width:11%;}
-    th:nth-child(7),td:nth-child(7),th:nth-child(8),td:nth-child(8){width:10%;}
-    th:nth-child(9),td:nth-child(9){width:13%;}
+    th:nth-child(1),td:nth-child(1){width:3.5%;}
+    th:nth-child(2),td:nth-child(2){width:6%;}
+    th:nth-child(3),td:nth-child(3){width:17%;}
+    th:nth-child(4),td:nth-child(4){width:8.5%;}
+    th:nth-child(5),td:nth-child(5),th:nth-child(6),td:nth-child(6),th:nth-child(7),td:nth-child(7),th:nth-child(8),td:nth-child(8),th:nth-child(9),td:nth-child(9),th:nth-child(10),td:nth-child(10){width:8%;}
+    th:nth-child(11),td:nth-child(11),th:nth-child(12),td:nth-child(12){width:8.5%;}
     .upah-selisih-note{margin:6px 0 2px;font-weight:800;color:#111;text-align:left;font-size:8px;letter-spacing:.01em;}
-    @media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact;} table{page-break-inside:auto;} tr{page-break-inside:avoid;page-break-after:auto;}}
+    @media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact;} table{page-break-inside:auto;} tfoot{display:table-row-group;} tr{page-break-inside:avoid;page-break-after:auto;}}
   </style></head><body><div class="subtitle">${escapeHTML(titleInfo)}</div>${cloned.outerHTML}${selisihNote}<script>window.addEventListener('load',function(){setTimeout(function(){window.print();},150);});<\/script></body></html>`;
   const win=window.open('', '_blank');
   if(!win){
@@ -5581,7 +6068,9 @@ function exportAdminUpahExcel(){
   function upahExportNipValue(value){
     const raw=String(value || '').trim();
     if(!raw) return '';
-    const numericText=raw.replace(/[^0-9.-]/g,'');
+    let numericText=raw.replace(/\s+/g,'');
+    if(/^\d{1,3}(?:\.\d{3})+$/.test(numericText)) numericText=numericText.replace(/\./g,'');
+    else numericText=numericText.replace(/[^0-9.-]/g,'');
     if(numericText && /^-?\d+(?:\.\d+)?$/.test(numericText)){
       const numericValue=Number(numericText);
       if(Number.isFinite(numericValue)) return numericValue;
@@ -5598,6 +6087,12 @@ function exportAdminUpahExcel(){
   }));
   const wb=window.XLSX.utils.book_new();
   const ws=window.XLSX.utils.json_to_sheet(rows, {header:['NO','NIP','NAMA','NETTO','HASIL01','HASIL02']});
+  const range=window.XLSX.utils.decode_range(ws['!ref'] || 'A1:A1');
+  for(let rowIndex=1; rowIndex<=range.e.r; rowIndex++){
+    const cellAddress=window.XLSX.utils.encode_cell({r:rowIndex,c:1});
+    const cell=ws[cellAddress];
+    if(cell && typeof cell.v==='number' && Number.isFinite(cell.v)){ cell.t='n'; cell.z='0'; }
+  }
   ws['!cols']=[{wch:10},{wch:14},{wch:28},{wch:14},{wch:14},{wch:14}];
   window.XLSX.utils.book_append_sheet(wb, ws, 'Upah');
   window.XLSX.writeFile(wb, upahExcelFilename());
@@ -8961,7 +9456,7 @@ if($('baggingOffDate')) $('baggingOffDate').value = ($('adminReportDate') && $('
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahDoPagiZak','adminUpahDoPagiPerZak','adminUpahDoPagiTarif','adminUpahDoSiangZak','adminUpahDoSiangPerZak','adminUpahDoSiangTarif'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); initBaggingScheduleImportControls(); setupBaggingOffReplacementMasterEvents(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminPruneAuditLogs')) $('btnAdminPruneAuditLogs').addEventListener('click', adminPruneAuditLogs); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahDoPagiZak','adminUpahDoPagiPerZak','adminUpahDoPagiTarif','adminUpahDoSiangZak','adminUpahDoSiangPerZak','adminUpahDoSiangTarif'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2','adminUpahTonaseBbPagi','adminUpahTonaseSiloPagi','adminUpahTonaseOverzakPagi','adminUpahTonaseBbMalam','adminUpahTonaseSiloMalam','adminUpahTonaseOverzakMalam','adminUpahSubsidiOverzak'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); setupBaggingCollapsibleCards(); initBaggingScheduleImportControls(); setupBaggingOffMainMasterEvents(); setupBaggingOffReplacementMasterEvents(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminPruneAuditLogs')) $('btnAdminPruneAuditLogs').addEventListener('click', adminPruneAuditLogs); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
 document.addEventListener('input', e=>{ if(e && e.target && e.target.matches && e.target.matches('[data-check-nip]')) setAdminCheckTimesSourceInfo('Manual'); });
 let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu pasang shortcut belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen / Tambahkan ke layar utama jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }

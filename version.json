@@ -1,5 +1,6 @@
 {
-  "version": "v200",
-  "name": "update_absensi_BIP",
-  "release": "Sistem PWA update/refresh aman"
+  "version": "v210",
+  "name": "update_absensi_BIP_v210_bongkaran_bb_cetak_export",
+  "release": "Bongkaran Bahan Baku Cetak Landscape dan Export NIP Number",
+  "description": "Judul kalkulator dibuat interaktif, label tonase malam disesuaikan, catatan rumus dipersingkat, cetak kalkulator otomatis landscape dengan TOTAL hanya di akhir, dan export NIP sebagai Number."
 }
