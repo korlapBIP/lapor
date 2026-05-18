@@ -1,6 +1,6 @@
 {
-  "version": "v214",
-  "name": "update_absensi_BIP_v214_laporan_khusus_bagging_off_teks_durasi",
-  "release": "Rapikan teks Laporan Khusus Bagging Off Buhler & Breeder dan default Tampilkan Durasi aktif",
-  "description": "Khusus Laporan Khusus Bagging Off Buhler & Breeder: menghapus teks info yang diminta pada kartu import/master/absensi, tanpa menghapus fitur lama. Checkbox Tampilkan Durasi dibuat aktif secara default saat belum ada preferensi tersimpan."
+  "version": "v215",
+  "name": "update_absensi_BIP_v215_fix_update_loop_version_sync",
+  "release": "Fix popup update berulang setelah update",
+  "description": "Memperbaiki sinkronisasi versi aplikasi agar APP_VERSION, badge versi, service worker, dan version.json sama-sama v215. Perbaikan ini menghentikan popup update berulang setelah paket v214 dipasang."
 }
