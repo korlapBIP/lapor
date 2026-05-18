@@ -1322,7 +1322,7 @@
   <section id="panelBaggingOff" class="panel admin-only">
     <section class="frame report-frame bagging-report-frame">
       <div class="frame-head no-print"><div><div class="frame-kicker">Laporan Khusus</div><h2>Bagging Off Buhler &amp; Breeder</h2></div><div class="frame-number">BO</div></div>
-      <div class="card admin-only no-print bagging-control-card bagging-import-card" id="baggingScheduleImportCard"><div class="card-head bagging-collapsible-head"><div class="bagging-head-title"><h3>Import Jadwal</h3></div><button type="button" class="bagging-toggle-btn" data-bagging-toggle="baggingScheduleImportBody" aria-controls="baggingScheduleImportBody" aria-expanded="false">Tampilkan</button></div><div class="bagging-section-closed-note" data-bagging-note-for="baggingScheduleImportBody">Import Jadwal disembunyikan. Klik Tampilkan untuk membuka.</div><div class="card-body bagging-collapsible-body is-hidden" id="baggingScheduleImportBody">
+      <div class="card admin-only no-print bagging-control-card bagging-import-card" id="baggingScheduleImportCard"><div class="card-head bagging-collapsible-head"><div class="bagging-head-title"><h3>Import Jadwal</h3></div><button type="button" class="bagging-toggle-btn" data-bagging-toggle="baggingScheduleImportBody" aria-controls="baggingScheduleImportBody" aria-expanded="false">Tampilkan</button></div><div class="card-body bagging-collapsible-body is-hidden" id="baggingScheduleImportBody">
         <div class="bagging-schedule-grid">
           <div class="bagging-schedule-box">
             <h4>Jadwal Bagging Off Buhler</h4>
@@ -1346,7 +1346,7 @@
           </div>
         </div>
       </div></div>
-      <div class="card admin-only no-print bagging-control-card bagging-main-master-card" id="baggingMainMasterCard"><div class="card-head bagging-collapsible-head"><div class="bagging-head-title"><h3>Master Bagging Off Buhler/Breeder</h3><span>Edit data regu asli yang tampil pada laporan Bagging Off</span></div><button type="button" class="bagging-toggle-btn" data-bagging-toggle="baggingMainMasterBodyPanel" aria-controls="baggingMainMasterBodyPanel" aria-expanded="false">Tampilkan</button></div><div class="bagging-section-closed-note" data-bagging-note-for="baggingMainMasterBodyPanel">Master Bagging Off Buhler/Breeder disembunyikan. Klik Tampilkan untuk membuka.</div><div class="card-body bagging-collapsible-body is-hidden" id="baggingMainMasterBodyPanel">
+      <div class="card admin-only no-print bagging-control-card bagging-main-master-card" id="baggingMainMasterCard"><div class="card-head bagging-collapsible-head"><div class="bagging-head-title"><h3>Master Bagging Off Buhler/Breeder</h3></div><button type="button" class="bagging-toggle-btn" data-bagging-toggle="baggingMainMasterBodyPanel" aria-controls="baggingMainMasterBodyPanel" aria-expanded="false">Tampilkan</button></div><div class="card-body bagging-collapsible-body is-hidden" id="baggingMainMasterBodyPanel">
         <div class="bagging-master-tabs" role="tablist" aria-label="Master Bagging Off Buhler Breeder">
           <button type="button" class="bagging-master-tab active" data-bagging-main-tab="BUHLER">Bagging Off Buhler</button>
           <button type="button" class="bagging-master-tab" data-bagging-main-tab="BREEDER">Bagging Off Breeder</button>
@@ -1369,7 +1369,7 @@
         <div class="bagging-main-master-table-wrap"><table class="report-table admin-worker-table bagging-main-master-table" id="baggingMainMasterTable"><thead><tr><th>NO</th><th>JENIS</th><th>REGU</th><th>NIP</th><th>NAMA PEKERJA</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody id="baggingMainMasterBody"><tr><td colspan="7">Memuat master Bagging Off...</td></tr></tbody></table></div>
       </div></div>
 
-      <div class="card admin-only no-print bagging-control-card bagging-replacement-master-card" id="baggingReplacementMasterCard"><div class="card-head bagging-collapsible-head"><div class="bagging-head-title"><h3>Master Regu Pengganti Bagging Off</h3><span>Terpisah dari master Bagging Off stabil</span></div><button type="button" class="bagging-toggle-btn" data-bagging-toggle="baggingReplacementMasterBodyPanel" aria-controls="baggingReplacementMasterBodyPanel" aria-expanded="false">Tampilkan</button></div><div class="bagging-section-closed-note" data-bagging-note-for="baggingReplacementMasterBodyPanel">Master Regu Pengganti Bagging Off disembunyikan. Klik Tampilkan untuk membuka.</div><div class="card-body bagging-collapsible-body is-hidden" id="baggingReplacementMasterBodyPanel">
+      <div class="card admin-only no-print bagging-control-card bagging-replacement-master-card" id="baggingReplacementMasterCard"><div class="card-head bagging-collapsible-head"><div class="bagging-head-title"><h3>Master Regu Pengganti Bagging Off</h3></div><button type="button" class="bagging-toggle-btn" data-bagging-toggle="baggingReplacementMasterBodyPanel" aria-controls="baggingReplacementMasterBodyPanel" aria-expanded="false">Tampilkan</button></div><div class="card-body bagging-collapsible-body is-hidden" id="baggingReplacementMasterBodyPanel">
         <div class="bagging-replacement-form">
           <input id="baggingReplacementMasterId" type="hidden">
           <div class="field"><label for="baggingReplacementRegu">Regu Pengganti</label><input id="baggingReplacementRegu" type="text" placeholder="contoh: Regu Pengganti 01"></div>
@@ -1381,14 +1381,14 @@
         <div class="bagging-replacement-table-wrap"><table class="report-table admin-worker-table bagging-replacement-table" id="baggingReplacementMasterTable"><thead><tr><th>NO</th><th>REGU PENGGANTI</th><th>NIP</th><th>NAMA PEKERJA</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody id="baggingReplacementMasterBody"><tr><td colspan="6">Memuat master pengganti...</td></tr></tbody></table></div>
       </div></div>
 
-      <div class="card admin-only no-print bagging-control-card bagging-absensi-card" id="baggingOffControlCard"><div class="card-head"><h3>Absensi Bagging Off</h3><span>v161 • teks info dirapikan</span></div><div class="card-body">
+      <div class="card admin-only no-print bagging-control-card bagging-absensi-card" id="baggingOffControlCard"><div class="card-head"><h3>Absensi Bagging Off</h3></div><div class="card-body">
         <div class="bagging-absensi-actions">
           <div class="bagging-absensi-row bagging-absensi-row-top">
             <div class="field bagging-date-field"><label for="baggingOffDate">Tanggal Laporan</label><input id="baggingOffDate" type="date"></div>
             <div class="field bagging-load-field"><label>&nbsp;</label><button type="button" class="btn primary full" id="btnBaggingOffLoad">🔍 Tampilkan</button></div>
           </div>
           <div class="bagging-absensi-row bagging-absensi-row-bottom">
-            <label class="bagging-duration-option"><input id="baggingOffShowDuration" type="checkbox"> <span>Tampilkan Durasi</span></label>
+            <label class="bagging-duration-option"><input id="baggingOffShowDuration" type="checkbox" checked> <span>Tampilkan Durasi</span></label>
             <button type="button" class="btn dark" id="btnBaggingOffPrint">🖨️ Cetak</button>
           </div>
         </div>
@@ -4478,7 +4478,10 @@ const BAGGING_OFF_SHOW_DURATION_KEY='bagging_off_show_duration_v155';
 function getBaggingOffShowDuration(){
   const cb=$('baggingOffShowDuration');
   if(cb) return !!cb.checked;
-  try{ return localStorage.getItem(BAGGING_OFF_SHOW_DURATION_KEY)==='1'; }catch(err){ return false; }
+  try{
+    const saved=localStorage.getItem(BAGGING_OFF_SHOW_DURATION_KEY);
+    return saved === null ? true : saved === '1';
+  }catch(err){ return true; }
 }
 function setBaggingOffShowDuration(value){
   const checked=!!value;
@@ -4514,8 +4517,11 @@ function setupBaggingCollapsibleCards(){
 function initBaggingOffDurationOption(){
   const cb=$('baggingOffShowDuration');
   if(!cb) return;
-  let saved=false;
-  try{ saved=localStorage.getItem(BAGGING_OFF_SHOW_DURATION_KEY)==='1'; }catch(err){ saved=false; }
+  let saved=true;
+  try{
+    const raw=localStorage.getItem(BAGGING_OFF_SHOW_DURATION_KEY);
+    saved = raw === null ? true : raw === '1';
+  }catch(err){ saved=true; }
   cb.checked=saved;
   cb.addEventListener('change', ()=>{
     setBaggingOffShowDuration(cb.checked);
@@ -5703,8 +5709,8 @@ function mergeSavedUpahCalcRows(defaultRows){
   return baseRows.map(r=>{
     const saved=savedMap.get(upahCalcAdjustmentKey(r));
     if(saved){
-      if(!isFixedUpahKurangRow(r) && !isFixedOperationalUpahKurangRow(r)) r.kurang=saved.kurang;
-      r.tambah=saved.tambah;
+      if(!isFixedUpahKurangRow(r) && !isFixedOperationalUpahKurangRow(r) && !(isMuatanBreederUpahSelected() && isFixedUpahTambahRow(r))) r.kurang=saved.kurang;
+      if(!(isMuatanBreederUpahSelected() && isFixedUpahTambahRow(r))) r.tambah=saved.tambah;
     }
     if(isFixedUpahKurangRow(r)) r.kurang=defaultBipUpahKurangValue();
     if(isFixedOperationalUpahKurangRow(r)) r.kurang=300000;
@@ -5718,9 +5724,33 @@ function calculateUpahTotalNettoRows(rows){
 function applyUpahTonaseNettoSelisihAdjustment(rows, totalTonase){
   const list=Array.isArray(rows) ? rows : [];
   const target=roundUpahNetto(totalTonase);
+
+  if(isMuatanBreederUpahSelected()){
+    const sholeh=list.find(r=>isFixedUpahTambahRow(r));
+    if(!sholeh) return {rows:list, selisih:0, mode:'none', target};
+
+    // Khusus Muatan Breeder: SELISIH dihitung dari Total Tonase dibanding TOTAL (bruto),
+    // bukan dibanding NETTO. Nilai TAMBAH default Moch. Sholeh 20.000 tetap dipertahankan.
+    const baseTambah=20000;
+    const totalBruto=list.reduce((sum,r)=>sum+roundUpahNetto(Number(r.total||0)),0);
+    const diff=roundUpahNetto(target-totalBruto);
+    const selisih=Math.abs(diff);
+
+    sholeh.tambah=baseTambah;
+    sholeh.kurang=0;
+    if(diff>0){
+      sholeh.tambah=roundUpahNetto(baseTambah+selisih);
+    }else if(diff<0){
+      sholeh.kurang=selisih;
+    }
+
+    list.forEach(r=>{ r.netto=roundUpahNetto(Number(r.total||0)-Number(r.kurang||0)+Number(r.tambah||0)); });
+    return {rows:list, selisih, mode:diff>0?'tambah':(diff<0?'kurang':'pas'), target, basis:'total'};
+  }
+
   const operational=list.find(r=>isFixedOperationalUpahKurangRow(r));
   if(!operational) return {rows:list, selisih:0, mode:'none', target};
-  // v210: selisih Total Tonase vs Total NETTO dibebankan ke baris Operational.
+  // Unit selain Muatan Breeder tetap memakai aturan lama: selisih Total Tonase vs Total NETTO dibebankan ke baris Operational.
   // Reset dulu agar calculate berulang tidak menumpuk nilai KURANG/TAMBAH.
   operational.kurang=0;
   operational.tambah=0;
@@ -5747,18 +5777,23 @@ function getUpahDoZakInfo(){
     siang:readUpahTonase('adminUpahDoSiangZak')
   };
 }
+function upahCalcSignatureNoteHtml(){
+  const dateValue=$('adminUpahDate') ? $('adminUpahDate').value : todayISO();
+  return `<div class="upah-calc-company-note" style="margin-top:10px;font-weight:700;">PT Budi Inti Perkasa</div><div class="upah-calc-date-note">${safeText(formatLongDate(dateValue))}</div><div class="upah-calc-sign-note" style="margin-top:34px;display:flex;gap:90px;align-items:center;"><span>__________________</span><span>__________________</span></div>`;
+}
 function updateUpahCalcSelisihNote(totalTonase, totalNetto){
   const el=$('upahCalcSelisihNote');
   if(!el) return;
   const manualSelisih=Number(window.__lastUpahSelisih||0);
   const diff=roundUpahNetto(Number(totalTonase||0)-Number(totalNetto||0));
   const nilai=manualSelisih || Math.abs(diff);
+  const signHtml=upahCalcSignatureNoteHtml();
   if(isManualUpahTonaseMode()){
-    el.innerHTML=`<div>NOTE : SELISIH = ${formatUpahIntegerNumber(nilai)}</div>`;
+    el.innerHTML=`<div>NOTE : SELISIH = ${formatUpahIntegerNumber(nilai)}</div>${signHtml}`;
     return;
   }
   const doInfo=getUpahDoZakInfo();
-  el.innerHTML=`<div>NOTE : SELISIH = ${formatUpahIntegerNumber(nilai)}</div><div># DO Pagi : ${formatUpahNumber(doInfo.pagi, {decimals:Number.isInteger(doInfo.pagi) ? 0 : 2})}</div><div># DO Siang : ${formatUpahNumber(doInfo.siang, {decimals:Number.isInteger(doInfo.siang) ? 0 : 2})}</div>`;
+  el.innerHTML=`<div>NOTE : SELISIH = ${formatUpahIntegerNumber(nilai)}</div><div># DO Pagi : ${formatUpahNumber(doInfo.pagi, {decimals:Number.isInteger(doInfo.pagi) ? 0 : 2})}</div><div># DO Siang : ${formatUpahNumber(doInfo.siang, {decimals:Number.isInteger(doInfo.siang) ? 0 : 2})}</div>${signHtml}`;
 }
 function setUpahRulesPreviewVisible(visible){
   const body=$('upahPreviewBody');

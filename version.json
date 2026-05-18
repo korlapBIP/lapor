@@ -1,6 +1,6 @@
 {
-  "version": "v211",
-  "name": "update_absensi_BIP_v211_koordinator_bip_kurang_bip_20000",
-  "release": "Title Absensi Koordinator BIP dan KURANG BIP Muatan Breeder 20000",
-  "description": "Judul utama Absensi Muatan Breeder diganti menjadi Absensi Koordinator BIP. Khusus Kalkulator Upah pilihan Muatan Breeder, baris NIP 1 Nama BIP kolom KURANG otomatis 20.000 tanpa mengubah modul stabil lain."
+  "version": "v214",
+  "name": "update_absensi_BIP_v214_laporan_khusus_bagging_off_teks_durasi",
+  "release": "Rapikan teks Laporan Khusus Bagging Off Buhler & Breeder dan default Tampilkan Durasi aktif",
+  "description": "Khusus Laporan Khusus Bagging Off Buhler & Breeder: menghapus teks info yang diminta pada kartu import/master/absensi, tanpa menghapus fitur lama. Checkbox Tampilkan Durasi dibuat aktif secara default saat belum ada preferensi tersimpan."
 }
