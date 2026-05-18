@@ -1244,7 +1244,7 @@
 <div class="wrap">
   <div class="user-strip no-print" id="userStrip"><div class="user-strip-left"><div class="user-avatar" id="userAvatar">K</div><div><div class="user-name" id="activeUserName">Koordinator</div><div class="user-unit" id="activeUserUnit"></div></div></div><button type="button" class="logout-btn" id="btnLogout">Logout</button></div>
   <section class="hero no-print">
-    <div class="hero-brand"><img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo"><div><small>BiP Productivity App</small><h1 id="appUnitTitle">Absensi Muatan Breeder</h1></div></div>
+    <div class="hero-brand"><img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo"><div><small>BiP Productivity App</small><h1 id="appUnitTitle">Absensi Koordinator BIP</h1></div></div>
     <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v210</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
   </section>
   <nav class="tabs no-print" aria-label="Navigasi aplikasi"><button class="tab-btn admin-only" data-panel="panelAdmin">🛠 Admin</button><button class="tab-btn active tab-worker coordinator-only" data-panel="panelWorkers">✅ Jadwal</button><button class="tab-btn" data-panel="panelReport">📝 Absensi</button><button class="tab-btn admin-only" data-panel="panelBaggingOff">🧾 Bagging</button><button class="tab-btn admin-only" data-panel="panelUpah">💰 Upah</button></nav>
@@ -2203,7 +2203,7 @@ function currentCoordinatorUnitKey(){ if(coordinatorCanChooseBahanBakuActivity()
 function activeUnitName(){ return isAdmin() ? unitNameFromKey(adminManagedUnitKey) : unitNameFromKey(currentCoordinatorUnitKey()); }
 function adminGlobalTitle(){ return 'Admin Absensi BIP'; }
 function adminGlobalLabel(){ return 'Global Semua Bagian'; }
-function currentAbsensiTitle(){ return isAdmin() ? adminGlobalTitle() : `Absensi ${activeUnitName()}`; }
+function currentAbsensiTitle(){ if(isAdmin()) return adminGlobalTitle(); return activeUnitKey()==='muatan_breeder' ? 'Absensi Koordinator BIP' : `Absensi ${activeUnitName()}`; }
 function activeUnitKey(){ return isAdmin() ? adminManagedUnitKey : currentCoordinatorUnitKey(); }
 function isCommercialInputActivityKey(value){ return [COMMERCIAL_KEY, STAPEL_TF_KEY, MALLETI_TF_KEY].includes(String(value || '')); }
 function normalizeCommercialInputActivityChoice(value){ return isCommercialInputActivityKey(value) ? String(value) : COMMERCIAL_KEY; }
@@ -5649,8 +5649,19 @@ function enableUpahCalcColumnResize(){
     th.title='Geser sisi kanan judul kolom untuk mengubah ukuran kolom. Ukuran akan tersimpan otomatis.';
   });
 }
+function isMuatanBreederUpahSelected(){
+  const selectedKey=$('adminUpahUnitSelect') ? $('adminUpahUnitSelect').value : adminManagedUnitKey;
+  const dataKey=adminUpahData && (adminUpahData.unitKey || adminUpahData.key || adminUpahData.sourceUnitKey || '');
+  const dataUnit=adminUpahData && (adminUpahData.unit || adminUpahData.sourceUnitName || '');
+  return String(selectedKey || '').toLowerCase()==='muatan_breeder'
+    || String(dataKey || '').toLowerCase()==='muatan_breeder'
+    || String(dataUnit || '').trim().toLowerCase()==='muatan breeder';
+}
 function isFixedUpahKurangRow(row){
   return String(row && row.nip || '').trim()==='1' && String(row && row.nama || '').trim().toUpperCase()==='BIP';
+}
+function defaultBipUpahKurangValue(){
+  return isMuatanBreederUpahSelected() ? 20000 : 0;
 }
 function isFixedOperationalUpahKurangRow(row){
   return isOperationalManualUpahRow({nip:row && row.nip, name:row && row.nama});
@@ -5663,11 +5674,11 @@ function isFixedUpahTambahRow(row){
 function applyDefaultUpahAdjustments(row, options){
   const opts=options || {};
   const allowOverwrite=opts.overwrite===true;
-  if(isFixedUpahKurangRow(row)) row.kurang=0;
+  if(isFixedUpahKurangRow(row)) row.kurang=defaultBipUpahKurangValue();
   if(isFixedOperationalUpahKurangRow(row)) row.kurang=300000;
   if(isFixedUpahTambahRow(row)){
     if(allowOverwrite || !parseUpahNumber(row.tambah)) row.tambah=20000;
-    if(allowOverwrite) row.kurang=0;
+    if(allowOverwrite && !isFixedUpahKurangRow(row)) row.kurang=0;
   }
   row.netto=roundUpahNetto(Number(row.total||0)-Number(row.kurang||0)+Number(row.tambah||0));
   return row;
@@ -5695,7 +5706,7 @@ function mergeSavedUpahCalcRows(defaultRows){
       if(!isFixedUpahKurangRow(r) && !isFixedOperationalUpahKurangRow(r)) r.kurang=saved.kurang;
       r.tambah=saved.tambah;
     }
-    if(isFixedUpahKurangRow(r)) r.kurang=0;
+    if(isFixedUpahKurangRow(r)) r.kurang=defaultBipUpahKurangValue();
     if(isFixedOperationalUpahKurangRow(r)) r.kurang=300000;
     r.netto=roundUpahNetto(Number(r.total||0)-Number(r.kurang||0)+Number(r.tambah||0));
     return r;
@@ -5920,7 +5931,7 @@ function calculateAdminUpah(){
     adminUpahCalculationRows.forEach(row=>{
       const tr=document.createElement('tr');
       const kurangDefault=isFixedUpahKurangRow(row) || isFixedOperationalUpahKurangRow(row);
-      const kurangTitle=isFixedOperationalUpahKurangRow(row) ? 'Default 300.000, bisa diubah' : (isFixedUpahKurangRow(row) ? 'Default 0, bisa diubah' : '');
+      const kurangTitle=isFixedOperationalUpahKurangRow(row) ? 'Default 300.000, bisa diubah' : (isFixedUpahKurangRow(row) ? `Default ${formatUpahIntegerNumber(defaultBipUpahKurangValue())}, bisa diubah` : '');
       const tambahDefault=isFixedUpahTambahRow(row);
       const hasil01=roundUpahNetto(Number(row.gaji||0)-Number(row.kurang||0));
       const hasil02=roundUpahNetto(Number(row.lembur||0)+Number(row.tambah||0));

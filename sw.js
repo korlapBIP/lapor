@@ -1,4 +1,4 @@
-const CACHE_NAME = 'absensi-bip-v207-bongkaran-bb-lanjutan';
+const CACHE_NAME = 'absensi-bip-v211-koordinator-bip-kurang-bip-20000';
 const APP_SHELL = ['./','./index.html','./manifest.json','./version.json','./firebase-config.js','./firebase-bridge.js','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-master-transparent.png'];
 self.addEventListener('install', event=>{
   event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)).catch(()=>{}));

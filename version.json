@@ -1,6 +1,6 @@
 {
-  "version": "v210",
-  "name": "update_absensi_BIP_v210_bongkaran_bb_cetak_export",
-  "release": "Bongkaran Bahan Baku Cetak Landscape dan Export NIP Number",
-  "description": "Judul kalkulator dibuat interaktif, label tonase malam disesuaikan, catatan rumus dipersingkat, cetak kalkulator otomatis landscape dengan TOTAL hanya di akhir, dan export NIP sebagai Number."
+  "version": "v211",
+  "name": "update_absensi_BIP_v211_koordinator_bip_kurang_bip_20000",
+  "release": "Title Absensi Koordinator BIP dan KURANG BIP Muatan Breeder 20000",
+  "description": "Judul utama Absensi Muatan Breeder diganti menjadi Absensi Koordinator BIP. Khusus Kalkulator Upah pilihan Muatan Breeder, baris NIP 1 Nama BIP kolom KURANG otomatis 20.000 tanpa mengubah modul stabil lain."
 }
