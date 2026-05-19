@@ -1055,9 +1055,25 @@
 
 
 /* v157 - Import jadwal Bagging bulanan dan laporan berbasis jadwal. */
-.bagging-schedule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.bagging-schedule-box{border:1px solid #e2e8f0;border-radius:14px;padding:12px;background:#f8fafc}
-.bagging-schedule-box h4{margin:0 0 8px;font-size:14px;color:#0f172a}
+.bagging-schedule-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.bagging-schedule-box{border:1px solid #bfdbfe;border-radius:18px;padding:16px;background:linear-gradient(135deg,#ffffff,#f8fbff);box-shadow:0 10px 24px rgba(15,23,42,.06)}
+.bagging-schedule-box h4{margin:0 0 12px;font-size:16px;color:#0f172a;font-weight:950}
+.bagging-schedule-form{display:grid;grid-template-columns:minmax(140px,180px) minmax(120px,150px) minmax(260px,1fr);gap:12px;align-items:end}
+.bagging-schedule-actions{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));gap:10px;margin-top:14px}
+.bagging-schedule-actions .btn{min-height:44px;white-space:normal;line-height:1.12;padding:10px 12px}
+.bagging-schedule-status-btn{margin-top:0}
+.bagging-schedule-status{border:1px solid #cbd5e1;background:#fff;border-radius:12px;padding:9px 10px;margin-top:8px;font-size:12px;line-height:1.35;color:#0f172a}
+.bagging-schedule-status .ok{font-weight:950;color:#166534}
+.bagging-schedule-status .warn{font-weight:950;color:#b45309}
+.bagging-schedule-status .meta{margin-top:5px;color:#475569;font-weight:800}
+.bagging-schedule-status .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.bagging-schedule-status .chip{display:inline-flex;border:1px solid #bfdbfe;background:#eff6ff;border-radius:999px;padding:3px 7px;font-weight:900}
+.bagging-schedule-status .schedule-table-title{margin-top:8px;font-weight:950;color:#0f172a}
+.bagging-schedule-status .schedule-table-wrap{margin-top:6px;overflow:auto;border:1px solid #dbe7f5;border-radius:10px;background:#fff}
+.bagging-schedule-status table.schedule-table{width:100%;border-collapse:collapse;min-width:360px;font-size:12px}
+.bagging-schedule-status .schedule-table th,.bagging-schedule-status .schedule-table td{border:1px solid #dbe7f5;padding:5px 7px;text-align:center;font-weight:850}
+.bagging-schedule-status .schedule-table th{background:#eff6ff;color:#173b72}
+.bagging-schedule-status .schedule-table td:first-child{font-weight:950;background:#f8fafc;color:#0f172a}
 .bagging-schedule-wrap{display:grid;grid-template-columns:1fr;gap:8px;margin:0 0 10px}
 .bagging-schedule-summary{border:1px solid #cbd5e1;background:linear-gradient(135deg,#ffffff,#f8fbff);border-radius:12px;padding:8px 10px;margin:0;font-size:12px;line-height:1.28;color:#0f172a;break-inside:avoid;page-break-inside:avoid;box-shadow:0 8px 18px rgba(15,23,42,.05);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
 .bagging-schedule-summary:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(37,99,235,.10);border-color:#93c5fd}
@@ -1070,7 +1086,8 @@
 .bagging-schedule-summary .item .shift{background:#dbeafe;border-radius:999px;padding:2px 6px;color:#0f172a;font-weight:950}
 .bagging-empty-section{border:1px dashed #94a3b8;border-radius:8px;padding:9px;text-align:center;color:#64748b;font-weight:700;background:#fff;margin:4px 0 8px}
 .bagging-regu-title .shift-label{font-weight:800;font-size:.9em}
-@media(max-width:900px){.bagging-schedule-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.bagging-schedule-form{grid-template-columns:1fr}.bagging-schedule-actions{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.bagging-schedule-actions{grid-template-columns:1fr}}
 @media print{.bagging-schedule-wrap{display:grid!important;grid-template-columns:1fr!important;gap:5px!important;margin-bottom:8px!important}.bagging-schedule-summary{border:1px solid #000!important;background:#fff!important;color:#000!important;font-size:10px!important;line-height:1.2!important;padding:5px 7px!important;margin:0!important;box-shadow:none!important;transform:none!important}.bagging-schedule-summary .title{font-size:10px!important;color:#000!important;margin-bottom:4px!important}.bagging-schedule-summary .title::before{content:''!important}.bagging-schedule-summary .items{gap:4px 6px!important}.bagging-schedule-summary .item{border:1px solid #000!important;background:#fff!important;color:#000!important;padding:2px 6px!important;box-shadow:none!important}.bagging-schedule-summary .item .regu,.bagging-schedule-summary .item .shift{color:#000!important;background:#fff!important;padding:0!important}.bagging-empty-section{border:1px dashed #000;color:#000;background:#fff;font-size:9px;padding:5px}.bagging-schedule-summary .warn{color:#000!important;background:#fff!important;border:1px solid #000!important;padding:2px 6px!important}}
 
 /* v154 - Rapikan kontrol Bagging dan paksa cetak A4 Portrait */
@@ -1245,7 +1262,7 @@
   <div class="user-strip no-print" id="userStrip"><div class="user-strip-left"><div class="user-avatar" id="userAvatar">K</div><div><div class="user-name" id="activeUserName">Koordinator</div><div class="user-unit" id="activeUserUnit"></div></div></div><button type="button" class="logout-btn" id="btnLogout">Logout</button></div>
   <section class="hero no-print">
     <div class="hero-brand"><img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo"><div><small>BiP Productivity App</small><h1 id="appUnitTitle">Absensi Koordinator BIP</h1></div></div>
-    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v215</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
+    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v220</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
   </section>
   <nav class="tabs no-print" aria-label="Navigasi aplikasi"><button class="tab-btn admin-only" data-panel="panelAdmin">🛠 Admin</button><button class="tab-btn active tab-worker coordinator-only" data-panel="panelWorkers">✅ Jadwal</button><button class="tab-btn" data-panel="panelReport">📝 Absensi</button><button class="tab-btn admin-only" data-panel="panelBaggingOff">🧾 Bagging</button><button class="tab-btn admin-only" data-panel="panelUpah">💰 Upah</button></nav>
   <section id="panelWorkers" class="panel active">
@@ -1326,21 +1343,33 @@
         <div class="bagging-schedule-grid">
           <div class="bagging-schedule-box">
             <h4>Jadwal Bagging Off Buhler</h4>
-            <div class="grid-form">
+            <div class="bagging-schedule-form">
               <div class="field"><label for="baggingScheduleBuhlerMonth">Bulan</label><select id="baggingScheduleBuhlerMonth"></select></div>
               <div class="field"><label for="baggingScheduleBuhlerYear">Tahun</label><input id="baggingScheduleBuhlerYear" type="number" min="2020" max="2100" step="1"></div>
-              <div class="field span-2"><label for="baggingScheduleBuhlerFile">File Excel Jadwal Buhler</label><input id="baggingScheduleBuhlerFile" type="file" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
-              <div class="field"><label>&nbsp;</label><button type="button" class="btn success full" id="btnImportBaggingScheduleBuhler">📥 Import Buhler</button></div>
+              <div class="field"><label for="baggingScheduleBuhlerFile">File Excel Jadwal Buhler</label><input id="baggingScheduleBuhlerFile" type="file" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
+            </div>
+            <div class="bagging-schedule-actions">
+              <button type="button" class="btn success full" id="btnImportBaggingScheduleBuhler">📥 Import</button>
+              <button type="button" class="btn primary full bagging-schedule-status-btn" id="btnPredictBaggingScheduleBuhler">🔁 Prediksi</button>
+              <button type="button" class="btn secondary full bagging-schedule-status-btn" id="btnCheckBaggingScheduleBuhler">🔎 Cek</button>
+              <button type="button" class="btn dark full bagging-schedule-status-btn" id="btnPrintBaggingScheduleBuhler">🖨️ Cetak</button>
+              <button type="button" class="btn danger full bagging-schedule-status-btn" id="btnDeleteBaggingScheduleBuhler">🗑️ Hapus</button>
             </div>
             <div class="import-help" id="baggingScheduleBuhlerInfo"></div>
           </div>
           <div class="bagging-schedule-box">
             <h4>Jadwal Bagging Off Breeder</h4>
-            <div class="grid-form">
+            <div class="bagging-schedule-form">
               <div class="field"><label for="baggingScheduleBreederMonth">Bulan</label><select id="baggingScheduleBreederMonth"></select></div>
               <div class="field"><label for="baggingScheduleBreederYear">Tahun</label><input id="baggingScheduleBreederYear" type="number" min="2020" max="2100" step="1"></div>
-              <div class="field span-2"><label for="baggingScheduleBreederFile">File Excel Jadwal Breeder</label><input id="baggingScheduleBreederFile" type="file" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
-              <div class="field"><label>&nbsp;</label><button type="button" class="btn success full" id="btnImportBaggingScheduleBreeder">📥 Import Breeder</button></div>
+              <div class="field"><label for="baggingScheduleBreederFile">File Excel Jadwal Breeder</label><input id="baggingScheduleBreederFile" type="file" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
+            </div>
+            <div class="bagging-schedule-actions">
+              <button type="button" class="btn success full" id="btnImportBaggingScheduleBreeder">📥 Import</button>
+              <button type="button" class="btn primary full bagging-schedule-status-btn" id="btnPredictBaggingScheduleBreeder">🔁 Prediksi</button>
+              <button type="button" class="btn secondary full bagging-schedule-status-btn" id="btnCheckBaggingScheduleBreeder">🔎 Cek</button>
+              <button type="button" class="btn dark full bagging-schedule-status-btn" id="btnPrintBaggingScheduleBreeder">🖨️ Cetak</button>
+              <button type="button" class="btn danger full bagging-schedule-status-btn" id="btnDeleteBaggingScheduleBreeder">🗑️ Hapus</button>
             </div>
             <div class="import-help" id="baggingScheduleBreederInfo"></div>
           </div>
@@ -1696,8 +1725,8 @@
 <script src="firebase-config.js"></script>
 <script src="firebase-bridge.js"></script>
 <script>
-const APP_VERSION = 'v215';
-const APP_VERSION_LABEL = 'v215';
+const APP_VERSION = 'v220';
+const APP_VERSION_LABEL = 'v220';
 const APP_VERSION_FILE = 'version.json';
 let appServiceWorkerRegistration = null;
 let appUpdateWaitingWorker = null;
@@ -4355,6 +4384,13 @@ function initBaggingScheduleImportControls(){
     if(monthEl && !monthEl.options.length) monthEl.innerHTML=monthOptionsHtml(m);
     if(yearEl && !yearEl.value) yearEl.value=y;
     const fileEl=$(`baggingSchedule${label}File`); const infoEl=$(`baggingSchedule${label}Info`);
+    if(infoEl && !infoEl.innerHTML) infoEl.innerHTML='';
+    [monthEl, yearEl].forEach(el=>{
+      if(el && !el.dataset.boundScheduleStatus){
+        el.dataset.boundScheduleStatus='1';
+        el.addEventListener('change', ()=>{ if(infoEl) infoEl.innerHTML=''; });
+      }
+    });
     if(fileEl && !fileEl.dataset.boundScheduleImport){
       fileEl.dataset.boundScheduleImport='1';
       fileEl.addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if(infoEl) infoEl.textContent=file ? `File dipilih: ${file.name}` : ''; });
@@ -4406,11 +4442,279 @@ function parseBaggingScheduleRows(excelRows, jenis, year, month){
 async function saveBaggingSchedulePayload(jenis, year, month, payload){
   return saveMasterDataFirestoreFirst(baggingScheduleDocId(jenis,year,month), baggingScheduleLocalKey(jenis,year,month), payload);
 }
+async function deleteMasterDataPrimary(docId, localKey){
+  const bridge=window.AbsensiFirebase || await waitFirebase();
+  try{ localStorage.removeItem(localKey); }catch(err){ console.warn('Hapus cache lokal gagal:', localKey, err); }
+  if(bridge && bridge.enabled && bridge.deleteMasterData){
+    await bridge.deleteMasterData(docId);
+    return { online:true };
+  }
+  return { online:false };
+}
+async function deleteBaggingSchedulePayload(jenis, year, month){
+  return deleteMasterDataPrimary(baggingScheduleDocId(jenis,year,month), baggingScheduleLocalKey(jenis,year,month));
+}
 async function loadBaggingSchedulePayload(jenis, year, month){
   const res=await loadMasterDataPrimary(baggingScheduleDocId(jenis,year,month), baggingScheduleLocalKey(jenis,year,month), null);
   const data=res && res.data ? unwrapCacheEnvelope(res.data) : null;
   if(data && Array.isArray(data.entries)) return {...data, __source:res.source};
   return null;
+}
+
+function baggingScheduleDateObj(year, month, day){ return new Date(Number(year), Number(month)-1, Number(day)); }
+function baggingScheduleDateISO(year, month, day){ return `${String(year).padStart(4,'0')}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`; }
+function baggingScheduleMonthAdd(year, month, delta){ const d=new Date(Number(year), Number(month)-1+Number(delta||0), 1); return {year:d.getFullYear(), month:d.getMonth()+1}; }
+function baggingScheduleDateDiffDays(a, b){ const ms=24*60*60*1000; const utcA=Date.UTC(a.getFullYear(),a.getMonth(),a.getDate()); const utcB=Date.UTC(b.getFullYear(),b.getMonth(),b.getDate()); return Math.round((utcA-utcB)/ms); }
+function baggingScheduleDailyEntries(entries, day){
+  return (entries||[]).filter(e=>Number(e.day)===Number(day) && e.shift).map(e=>({regu:String(e.regu||'').toUpperCase(), shift:Number(e.shift)})).filter(e=>e.regu && e.shift).sort((a,b)=>a.regu.localeCompare(b.regu,'id',{numeric:true}));
+}
+function baggingScheduleDailySignature(entries, day){
+  const list=baggingScheduleDailyEntries(entries, day);
+  return list.length ? list.map(e=>`${e.regu}:${e.shift}`).join('|') : '-';
+}
+function detectBaggingScheduleCycle(payload){
+  const entries=payload && Array.isArray(payload.entries) ? payload.entries : [];
+  const year=Number(payload && payload.year), month=Number(payload && payload.month);
+  const maxDay=daysInMonth(year, month);
+  if(!entries.length || !year || !month) throw new Error('Data dasar prediksi tidak lengkap.');
+  const sigs=[];
+  for(let day=1; day<=maxDay; day++) sigs.push(baggingScheduleDailySignature(entries, day));
+  const maxCycle=Math.min(16, maxDay);
+  for(let len=1; len<=maxCycle; len++){
+    let match=true, checked=0;
+    for(let i=0; i+len<sigs.length; i++){
+      if(sigs[i]!==sigs[i+len]){ match=false; break; }
+      checked++;
+    }
+    if(match && checked>=len) return {cycleLength:len, signatures:sigs, confident:true};
+  }
+  return {cycleLength:maxDay, signatures:sigs, confident:false};
+}
+async function findBaggingSchedulePredictionSource(jenis, targetYear, targetMonth){
+  for(let back=1; back<=48; back++){
+    const p=baggingScheduleMonthAdd(targetYear, targetMonth, -back);
+    const payload=await loadBaggingSchedulePayload(jenis, p.year, p.month);
+    if(payload && Array.isArray(payload.entries) && payload.entries.length) return payload;
+  }
+  return null;
+}
+function buildPredictedBaggingSchedulePayload(jenis, targetYear, targetMonth, sourcePayload){
+  if(!sourcePayload || !Array.isArray(sourcePayload.entries) || !sourcePayload.entries.length) throw new Error('Jadwal dasar prediksi tidak ditemukan.');
+  const jenisKey=baggingScheduleJenisKey(jenis);
+  const sourceYear=Number(sourcePayload.year), sourceMonth=Number(sourcePayload.month);
+  const cycle=detectBaggingScheduleCycle(sourcePayload);
+  const sourceStart=baggingScheduleDateObj(sourceYear, sourceMonth, 1);
+  const targetDays=daysInMonth(targetYear, targetMonth);
+  const entries=[];
+  for(let day=1; day<=targetDays; day++){
+    const targetDate=baggingScheduleDateObj(targetYear, targetMonth, day);
+    const diff=baggingScheduleDateDiffDays(targetDate, sourceStart);
+    const sourceCycleDay=((diff % cycle.cycleLength)+cycle.cycleLength)%cycle.cycleLength + 1;
+    const daily=baggingScheduleDailyEntries(sourcePayload.entries, sourceCycleDay);
+    daily.forEach(item=>{
+      entries.push({jenis:jenisKey, year:Number(targetYear), month:Number(targetMonth), day, date:baggingScheduleDateISO(targetYear, targetMonth, day), regu:item.regu, shift:item.shift, predicted:true, predictedFromDay:sourceCycleDay});
+    });
+  }
+  const regusFound=[...new Set(entries.map(e=>e.regu).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'id',{numeric:true}));
+  return {
+    type:'bagging_off_schedule', jenis:jenisKey, year:Number(targetYear), month:Number(targetMonth),
+    sheetName:'Prediksi Otomatis', sourceFile:'Prediksi dari pola jadwal tersimpan', sourceSize:0,
+    entries, regusFound, warnings:cycle.confident ? [] : ['Pola tidak terdeteksi sebagai siklus pendek; aplikasi memakai urutan bulan sumber penuh sebagai dasar prediksi.'],
+    predicted:true, predictionCycleLength:cycle.cycleLength,
+    predictedFrom:{jenis:baggingScheduleJenisKey(sourcePayload.jenis||jenis), year:sourceYear, month:sourceMonth, docId:baggingScheduleDocId(jenis, sourceYear, sourceMonth), sourceFile:sourcePayload.sourceFile||'', sheetName:sourcePayload.sheetName||'', predicted:!!sourcePayload.predicted},
+    importedAtLocal:new Date().toISOString(),
+    importedBy:currentUser ? {username:currentUser.username||'', nip:currentUser.nip||'', name:currentUser.name||''} : null
+  };
+}
+async function predictBaggingSchedule(jenis){
+  if(!isAdmin()){ alert('Akses ditolak. Prediksi jadwal hanya untuk admin.'); return; }
+  const label=baggingScheduleJenisKey(jenis)==='BREEDER' ? 'Breeder' : 'Buhler';
+  const month=Number($(`baggingSchedule${label}Month`) && $(`baggingSchedule${label}Month`).value);
+  const year=Number($(`baggingSchedule${label}Year`) && $(`baggingSchedule${label}Year`).value);
+  const infoEl=$(`baggingSchedule${label}Info`); const btn=$(`btnPredictBaggingSchedule${label}`); const old=btn ? btn.textContent : '';
+  if(!month || !year){ alert('Pilih bulan dan tahun terlebih dahulu.'); return; }
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Memprediksi...'; }
+    if(infoEl) infoEl.textContent='Mencari jadwal terakhir untuk dasar prediksi...';
+    const existing=await loadBaggingSchedulePayload(jenis, year, month);
+    if(existing && Array.isArray(existing.entries) && existing.entries.length){
+      const lanjut=confirm(`Jadwal ${label} ${BAGGING_OFF_MONTH_NAMES[month-1]} ${year} sudah ada.\n\nBuat ulang prediksi dan timpa jadwal bulan ini?`);
+      if(!lanjut){ if(infoEl) infoEl.textContent='Prediksi dibatalkan. Jadwal bulan ini tetap memakai data yang sudah tersimpan.'; return; }
+    }
+    const source=await findBaggingSchedulePredictionSource(jenis, year, month);
+    if(!source){ throw new Error('Belum ada jadwal bulan sebelumnya yang bisa dijadikan dasar prediksi. Import Excel jadwal terlebih dahulu.'); }
+    const payload=buildPredictedBaggingSchedulePayload(jenis, year, month, source);
+    const saved=await saveBaggingSchedulePayload(jenis, year, month, payload);
+    const srcMonth=BAGGING_OFF_MONTH_NAMES[Number(source.month)-1] || source.month;
+    const msg=`Prediksi jadwal ${label} ${BAGGING_OFF_MONTH_NAMES[month-1]} ${year} selesai. Dasar pola: ${srcMonth} ${source.year}. Siklus: ${payload.predictionCycleLength} hari. ${payload.entries.length} jadwal shift tersimpan${saved && saved.online ? ' online' : ' di cache lokal/offline'}.`;
+    if(infoEl) infoEl.textContent=msg;
+    refreshBaggingScheduleStatus(jenis).catch(()=>{});
+    alert(msg);
+    auditLog('predict_bagging_schedule','bagging',{message:msg, jenis:baggingScheduleJenisKey(jenis), year, month, total:payload.entries.length, predictedFrom:payload.predictedFrom}, null, payload).catch(()=>{});
+    const reportDate=$('baggingOffDate') && $('baggingOffDate').value;
+    if(reportDate){ const p=datePartsISO(reportDate); if(p.year===year && p.month===month) loadBaggingOffReport(); }
+  }catch(err){
+    console.error(err); const msg='Gagal membuat prediksi jadwal '+label+': '+(err && err.message ? err.message : err); if(infoEl) infoEl.textContent=msg; alert(msg);
+  }finally{ if(btn){ btn.disabled=false; btn.textContent=old || `🔁 Prediksi`; } }
+}
+function baggingScheduleSourceLabel(source){
+  const raw=String(source||'').toLowerCase();
+  if(raw.includes('firestore') || raw.includes('online')) return 'Database online';
+  if(raw.includes('local') || raw.includes('cache')) return 'Cache lokal perangkat ini';
+  return source ? safeText(source) : 'Sumber tidak diketahui';
+}
+function baggingScheduleImportedAtLabel(value){
+  if(!value) return '-';
+  const d=new Date(value);
+  if(Number.isNaN(d.getTime())) return safeText(value);
+  return d.toLocaleString('id-ID',{day:'2-digit',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'});
+}
+function baggingScheduleStatusHtml(jenis, year, month, payload){
+  const label=baggingScheduleJenisKey(jenis)==='BREEDER' ? 'Breeder' : 'Buhler';
+  const bulan=BAGGING_OFF_MONTH_NAMES[Number(month)-1] || String(month||'');
+  if(!payload || !Array.isArray(payload.entries)){
+    return `<div class="bagging-schedule-status"><div class="warn">Belum ada jadwal Bagging Off ${safeText(label)} untuk ${safeText(bulan)} ${safeText(year)}.</div><div class="meta">Artinya belum ditemukan di database online maupun cache lokal perangkat ini. Import file Excel terlebih dahulu, lalu klik Cek Status Jadwal lagi.</div></div>`;
+  }
+  const entries=payload.entries || [];
+  const regus=[...new Set(entries.map(e=>String(e.regu||'').toUpperCase()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'id',{numeric:true}));
+  const days=[...new Set(entries.map(e=>Number(e.day)).filter(Boolean))].sort((a,b)=>a-b);
+  const shift1=entries.filter(e=>Number(e.shift)===1).length;
+  const shift2=entries.filter(e=>Number(e.shift)===2).length;
+  const file=payload.sourceFile ? safeText(payload.sourceFile) : '-';
+  const sheet=payload.sheetName ? safeText(payload.sheetName) : '-';
+  const source=baggingScheduleSourceLabel(payload.__source);
+  const importedAt=baggingScheduleImportedAtLabel(payload.importedAtLocal || payload.importedAt || payload.updatedAt);
+  const importedBy=payload.importedBy && (payload.importedBy.name || payload.importedBy.username || payload.importedBy.nip)
+    ? `${safeText(payload.importedBy.name || payload.importedBy.username || '')}${payload.importedBy.nip ? ' / NIP '+safeText(payload.importedBy.nip) : ''}`
+    : '-';
+  const mode=payload.predicted ? 'Prediksi otomatis' : 'Import Excel';
+  const chips=[`Mode: ${mode}`, `Total ${entries.length} jadwal`, `Regu ${regus.length ? regus.join(', ') : '-'}`, `Tanggal ${days.length ? days[0]+'-'+days[days.length-1] : '-'}`, `Shift 1: ${shift1}`, `Shift 2: ${shift2}`]
+    .map(t=>`<span class="chip">${safeText(t)}</span>`).join('');
+  const tableDays=[];
+  for(let d=1; d<=daysInMonth(year, month); d++) tableDays.push(d);
+  const reguCols=['A','B','C'];
+  const rows=tableDays.map(day=>{
+    const cells=reguCols.map(regu=>{
+      const found=entries.find(e=>Number(e.day)===Number(day) && String(e.regu||'').toUpperCase()===regu);
+      return `<td>${found && found.shift ? 'Shift '+safeText(found.shift) : '-'}</td>`;
+    }).join('');
+    return `<tr><td>${day}</td>${cells}</tr>`;
+  }).join('');
+  const tableTitle=payload.predicted ? 'Tabel Jadwal Hasil Prediksi' : 'Tabel Jadwal Hasil Import';
+  const predMeta=payload.predicted && payload.predictedFrom ? `<br>Dasar prediksi: ${safeText(BAGGING_OFF_MONTH_NAMES[Number(payload.predictedFrom.month)-1] || payload.predictedFrom.month)} ${safeText(payload.predictedFrom.year)}<br>Siklus pola: ${safeText(payload.predictionCycleLength || '-')} hari` : '';
+  const tableHtml=`<div class="schedule-table-title">${tableTitle}</div><div class="schedule-table-wrap"><table class="schedule-table"><thead><tr><th>Tanggal</th><th>Regu A</th><th>Regu B</th><th>Regu C</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  return `<div class="bagging-schedule-status"><div class="ok">Jadwal Bagging Off ${safeText(label)} ${safeText(bulan)} ${safeText(year)} sudah tersimpan.</div><div class="chips">${chips}</div><div class="meta">Sumber: ${safeText(source)}<br>File: ${file}<br>Sheet: ${sheet}<br>Diimport: ${safeText(importedAt)}<br>Oleh: ${importedBy}${predMeta}</div>${tableHtml}</div>`;
+}
+
+function buildBaggingSchedulePrintRows(year, month, payload){
+  const entries=(payload && Array.isArray(payload.entries)) ? payload.entries : [];
+  const reguCols=['A','B','C'];
+  const rows=[];
+  for(let day=1; day<=daysInMonth(year, month); day++){
+    const cells=reguCols.map(regu=>{
+      const found=entries.find(e=>Number(e.day)===Number(day) && String(e.regu||'').toUpperCase()===regu);
+      return found && found.shift ? 'Shift '+safeText(found.shift) : '-';
+    });
+    rows.push(`<tr><td>${day}</td><td>${cells[0]}</td><td>${cells[1]}</td><td>${cells[2]}</td></tr>`);
+  }
+  return rows.join('');
+}
+function buildBaggingSchedulePrintHtml(jenis, year, month, payload){
+  const label=baggingScheduleJenisKey(jenis)==='BREEDER' ? 'Breeder' : 'Buhler';
+  const bulan=BAGGING_OFF_MONTH_NAMES[Number(month)-1] || String(month||'');
+  const mode=payload && payload.predicted ? 'Tabel Jadwal Hasil Prediksi' : 'Tabel Jadwal Hasil Import';
+  const rows=buildBaggingSchedulePrintRows(year, month, payload);
+  const title=`Jadwal Bagging Off ${label} ${bulan} ${year}`;
+  return `<!doctype html><html><head><meta charset="utf-8"><title>${title}</title><style>
+    *{box-sizing:border-box} body{font-family:Arial,Helvetica,sans-serif;margin:18px;color:#0f172a;background:#fff;font-size:12px}
+    .print-sheet{max-width:760px;margin:0 auto}.head{text-align:center;margin-bottom:10px}.head h1{font-size:20px;margin:0 0 4px;font-weight:900}.head .sub{font-size:12px;font-weight:700;color:#334155}
+    .table-title{font-size:14px;font-weight:900;margin:8px 0 6px;color:#0f172a}
+    table{width:100%;border-collapse:collapse;font-size:12px} th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:center;font-weight:800} th{background:#eff6ff;color:#173b72} td:first-child{font-weight:900;background:#f8fafc}
+    @media print{body{margin:8mm}.no-print{display:none!important}.print-sheet{max-width:none}.head h1{font-size:18px} th,td{padding:5px 6px}}
+  </style></head><body><div class="print-sheet"><div class="head"><h1>${title}</h1><div class="sub">PT Budi Inti Perkasa</div></div><div class="table-title">${mode}</div><table><thead><tr><th>Tanggal</th><th>Regu A</th><th>Regu B</th><th>Regu C</th></tr></thead><tbody>${rows}</tbody></table><script>window.addEventListener('load',function(){setTimeout(function(){window.print();},250);});<\/script></div></body></html>`;
+}
+async function printBaggingSchedule(jenis){
+  if(!isAdmin()){ alert('Akses ditolak. Cetak jadwal hanya untuk admin.'); return; }
+  const label=baggingScheduleJenisKey(jenis)==='BREEDER' ? 'Breeder' : 'Buhler';
+  const month=Number($(`baggingSchedule${label}Month`) && $(`baggingSchedule${label}Month`).value);
+  const year=Number($(`baggingSchedule${label}Year`) && $(`baggingSchedule${label}Year`).value);
+  if(!month || !year){ alert('Pilih bulan dan tahun terlebih dahulu.'); return; }
+  const btn=$(`btnPrintBaggingSchedule${label}`); const old=btn ? btn.textContent : '';
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Menyiapkan cetak...'; }
+    const payload=await loadBaggingSchedulePayload(jenis, year, month);
+    if(!payload || !Array.isArray(payload.entries) || !payload.entries.length){
+      alert(`Belum ada jadwal Bagging Off ${label} untuk ${BAGGING_OFF_MONTH_NAMES[month-1]} ${year}. Klik Cek Status Jadwal atau buat/import jadwal terlebih dahulu.`);
+      return;
+    }
+    const html=buildBaggingSchedulePrintHtml(jenis, year, month, payload);
+    const win=window.open('', '_blank', 'width=900,height=700');
+    if(!win){ alert('Popup cetak diblokir browser. Izinkan popup untuk aplikasi ini lalu coba lagi.'); return; }
+    win.document.open(); win.document.write(html); win.document.close();
+    auditLog('print_bagging_schedule','bagging',{message:`Cetak jadwal Bagging Off ${label} ${BAGGING_OFF_MONTH_NAMES[month-1]} ${year}`, jenis:baggingScheduleJenisKey(jenis), year, month}, payload, null).catch(()=>{});
+  }catch(err){
+    console.error(err); alert('Gagal menyiapkan cetak jadwal '+label+': '+(err && err.message ? err.message : err));
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=old || `🖨️ Cetak`; }
+  }
+}
+
+async function deleteBaggingSchedule(jenis){
+  if(!isAdmin()){ alert('Akses ditolak. Hapus jadwal hanya untuk admin.'); return; }
+  const label=baggingScheduleJenisKey(jenis)==='BREEDER' ? 'Breeder' : 'Buhler';
+  const month=Number($(`baggingSchedule${label}Month`) && $(`baggingSchedule${label}Month`).value);
+  const year=Number($(`baggingSchedule${label}Year`) && $(`baggingSchedule${label}Year`).value);
+  const infoEl=$(`baggingSchedule${label}Info`);
+  const btn=$(`btnDeleteBaggingSchedule${label}`);
+  const old=btn ? btn.textContent : '';
+  if(!month || !year){ alert('Pilih bulan dan tahun terlebih dahulu.'); return; }
+  const bulan=BAGGING_OFF_MONTH_NAMES[month-1] || month;
+  let existing=null;
+  try{ existing=await loadBaggingSchedulePayload(jenis, year, month); }catch(err){ existing=null; }
+  const ada=existing && Array.isArray(existing.entries) && existing.entries.length;
+  const pesan=ada
+    ? `Hapus jadwal Bagging Off ${label} ${bulan} ${year}?\n\nData jadwal bulan ini akan dihapus dari database online jika tersedia dan cache lokal perangkat ini. Jadwal yang sudah dihapus tidak bisa dipakai lagi sebagai dasar prediksi.`
+    : `Jadwal Bagging Off ${label} ${bulan} ${year} tidak ditemukan. Tetap bersihkan cache lokal bulan ini?`;
+  if(!confirm(pesan)) return;
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Menghapus...'; }
+    const before=existing ? JSON.parse(JSON.stringify(existing)) : null;
+    const result=await deleteBaggingSchedulePayload(jenis, year, month);
+    const msg=`Jadwal Bagging Off ${label} ${bulan} ${year} sudah dihapus${result && result.online ? ' dari database online dan cache lokal' : ' dari cache lokal perangkat ini'}.`;
+    if(infoEl) infoEl.innerHTML=baggingScheduleStatusHtml(jenis, year, month, null);
+    alert(msg);
+    auditLog('delete_bagging_schedule','bagging',{message:msg, jenis:baggingScheduleJenisKey(jenis), year, month, online:!!(result && result.online)}, before, null).catch(()=>{});
+    const reportDate=$('baggingOffDate') && $('baggingOffDate').value;
+    if(reportDate){ const p=datePartsISO(reportDate); if(p.year===year && p.month===month) loadBaggingOffReport(); }
+  }catch(err){
+    console.error(err);
+    const msg='Gagal menghapus jadwal '+label+': '+(err && err.message ? err.message : err);
+    if(infoEl) infoEl.textContent=msg;
+    alert(msg);
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=old || '🗑️ Hapus'; }
+  }
+}
+
+async function refreshBaggingScheduleStatus(jenis){
+  const label=baggingScheduleJenisKey(jenis)==='BREEDER' ? 'Breeder' : 'Buhler';
+  const month=Number($(`baggingSchedule${label}Month`) && $(`baggingSchedule${label}Month`).value);
+  const year=Number($(`baggingSchedule${label}Year`) && $(`baggingSchedule${label}Year`).value);
+  const infoEl=$(`baggingSchedule${label}Info`);
+  const btn=$(`btnCheckBaggingSchedule${label}`);
+  const old=btn ? btn.textContent : '';
+  if(!month || !year){ if(infoEl) infoEl.textContent='Pilih bulan dan tahun terlebih dahulu.'; return; }
+  try{
+    if(btn){ btn.disabled=true; btn.textContent='Mengecek...'; }
+    if(infoEl) infoEl.textContent='Mengecek status jadwal...';
+    const payload=await loadBaggingSchedulePayload(jenis, year, month);
+    if(infoEl) infoEl.innerHTML=baggingScheduleStatusHtml(jenis, year, month, payload);
+  }catch(err){
+    console.error(err);
+    if(infoEl) infoEl.innerHTML=`<div class="bagging-schedule-status"><div class="warn">Gagal mengecek status jadwal ${safeText(label)}.</div><div class="meta">${safeText(err && err.message ? err.message : err)}</div></div>`;
+  }finally{
+    if(btn){ btn.disabled=false; btn.textContent=old || '🔎 Cek'; }
+  }
 }
 async function importBaggingSchedule(jenis){
   if(!isAdmin()){ alert('Akses ditolak. Import jadwal hanya untuk admin.'); return; }
@@ -4439,13 +4743,14 @@ async function importBaggingSchedule(jenis){
     const saved=await saveBaggingSchedulePayload(jenis, year, month, payload);
     const msg=`Import jadwal ${label} ${BAGGING_OFF_MONTH_NAMES[month-1]} ${year} selesai. ${parsed.entries.length} jadwal shift tersimpan${saved && saved.online ? ' online' : ' di cache lokal/offline'}.` + (parsed.warnings.length ? ` ${parsed.warnings.length} catatan diabaikan.` : '');
     if(infoEl) infoEl.textContent=msg;
+    refreshBaggingScheduleStatus(jenis).catch(()=>{});
     alert(msg);
     auditLog('import_bagging_schedule','bagging',{message:msg, jenis:baggingScheduleJenisKey(jenis), year, month, total:parsed.entries.length}, null, payload).catch(()=>{});
     const reportDate=$('baggingOffDate') && $('baggingOffDate').value;
     if(reportDate){ const p=datePartsISO(reportDate); if(p.year===year && p.month===month) loadBaggingOffReport(); }
   }catch(err){
     console.error(err); const msg='Gagal import jadwal '+label+': '+(err && err.message ? err.message : err); if(infoEl) infoEl.textContent=msg; alert(msg);
-  }finally{ if(btn){ btn.disabled=false; btn.textContent=old || `📥 Import ${label}`; } }
+  }finally{ if(btn){ btn.disabled=false; btn.textContent=old || `📥 Import`; } }
 }
 async function loadBaggingOffScheduleForDate(dateValue){
   const p=datePartsISO(dateValue);
@@ -9502,7 +9807,7 @@ if($('baggingOffDate')) $('baggingOffDate').value = ($('adminReportDate') && $('
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahDoPagiZak','adminUpahDoPagiPerZak','adminUpahDoPagiTarif','adminUpahDoSiangZak','adminUpahDoSiangPerZak','adminUpahDoSiangTarif'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2','adminUpahTonaseBbPagi','adminUpahTonaseSiloPagi','adminUpahTonaseOverzakPagi','adminUpahTonaseBbMalam','adminUpahTonaseSiloMalam','adminUpahTonaseOverzakMalam','adminUpahSubsidiOverzak'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); setupBaggingCollapsibleCards(); initBaggingScheduleImportControls(); setupBaggingOffMainMasterEvents(); setupBaggingOffReplacementMasterEvents(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminPruneAuditLogs')) $('btnAdminPruneAuditLogs').addEventListener('click', adminPruneAuditLogs); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahDoPagiZak','adminUpahDoPagiPerZak','adminUpahDoPagiTarif','adminUpahDoSiangZak','adminUpahDoSiangPerZak','adminUpahDoSiangTarif'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2','adminUpahTonaseBbPagi','adminUpahTonaseSiloPagi','adminUpahTonaseOverzakPagi','adminUpahTonaseBbMalam','adminUpahTonaseSiloMalam','adminUpahTonaseOverzakMalam','adminUpahSubsidiOverzak'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); setupBaggingCollapsibleCards(); initBaggingScheduleImportControls(); setupBaggingOffMainMasterEvents(); setupBaggingOffReplacementMasterEvents(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnPredictBaggingScheduleBuhler')) $('btnPredictBaggingScheduleBuhler').addEventListener('click', ()=>predictBaggingSchedule('BUHLER')); if($('btnPredictBaggingScheduleBreeder')) $('btnPredictBaggingScheduleBreeder').addEventListener('click', ()=>predictBaggingSchedule('BREEDER')); if($('btnCheckBaggingScheduleBuhler')) $('btnCheckBaggingScheduleBuhler').addEventListener('click', ()=>refreshBaggingScheduleStatus('BUHLER')); if($('btnCheckBaggingScheduleBreeder')) $('btnCheckBaggingScheduleBreeder').addEventListener('click', ()=>refreshBaggingScheduleStatus('BREEDER')); if($('btnPrintBaggingScheduleBuhler')) $('btnPrintBaggingScheduleBuhler').addEventListener('click', ()=>printBaggingSchedule('BUHLER')); if($('btnPrintBaggingScheduleBreeder')) $('btnPrintBaggingScheduleBreeder').addEventListener('click', ()=>printBaggingSchedule('BREEDER')); if($('btnDeleteBaggingScheduleBuhler')) $('btnDeleteBaggingScheduleBuhler').addEventListener('click', ()=>deleteBaggingSchedule('BUHLER')); if($('btnDeleteBaggingScheduleBreeder')) $('btnDeleteBaggingScheduleBreeder').addEventListener('click', ()=>deleteBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminPruneAuditLogs')) $('btnAdminPruneAuditLogs').addEventListener('click', adminPruneAuditLogs); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
 document.addEventListener('input', e=>{ if(e && e.target && e.target.matches && e.target.matches('[data-check-nip]')) setAdminCheckTimesSourceInfo('Manual'); });
 let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu pasang shortcut belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen / Tambahkan ke layar utama jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }

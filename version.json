@@ -1,6 +1,6 @@
 {
-  "version": "v215",
-  "name": "update_absensi_BIP_v215_fix_update_loop_version_sync",
-  "release": "Fix popup update berulang setelah update",
-  "description": "Memperbaiki sinkronisasi versi aplikasi agar APP_VERSION, badge versi, service worker, dan version.json sama-sama v215. Perbaikan ini menghentikan popup update berulang setelah paket v214 dipasang."
+  "version": "v220",
+  "name": "update_absensi_BIP_v220_hapus_jadwal_bagging_off",
+  "updated": "2026-05-19",
+  "notes": "Ringkas tombol Import Jadwal Bagging Off, tambah tombol hapus jadwal Buhler/Breeder, dan hapus teks bantuan di bawah tombol."
 }

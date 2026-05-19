@@ -437,6 +437,12 @@
           }, { merge:true });
           return { id: cleanDoc };
         },
+        async deleteMasterData(docId){
+          const cleanDoc=String(docId || '').trim();
+          if(!cleanDoc) throw new Error('ID master data kosong.');
+          await fs.deleteDoc(fs.doc(db, masterDataPath, cleanDoc));
+          return { id: cleanDoc, deleted:true };
+        },
 
         async saveCheckImportHistory(entry, user){
           const safe=entry && typeof entry==='object' ? entry : {};
