@@ -1,6 +1,6 @@
 {
-  "version": "v220",
-  "name": "update_absensi_BIP_v220_hapus_jadwal_bagging_off",
-  "updated": "2026-05-19",
-  "notes": "Ringkas tombol Import Jadwal Bagging Off, tambah tombol hapus jadwal Buhler/Breeder, dan hapus teks bantuan di bawah tombol."
+  "version": "v222",
+  "name": "update_absensi_BIP_v222_fix_popup_update_loop",
+  "updated": "2026-05-20",
+  "notes": "Perbaikan mekanisme popup update/cache agar tidak loop: versi internal disamakan, cache absensi-bip dibersihkan, service worker lama di-unregister saat Update Sekarang, dan banner ditutup otomatis jika versi server sama dengan versi aplikasi yang sedang dibuka. Perbaikan v221 Commercial tetap dipertahankan."
 }

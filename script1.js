@@ -1258,7 +1258,7 @@
   <div class="user-strip no-print" id="userStrip"><div class="user-strip-left"><div class="user-avatar" id="userAvatar">K</div><div><div class="user-name" id="activeUserName">Koordinator</div><div class="user-unit" id="activeUserUnit"></div></div></div><button type="button" class="logout-btn" id="btnLogout">Logout</button></div>
   <section class="hero no-print">
     <div class="hero-brand"><img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo"><div><small>BiP Productivity App</small><h1 id="appUnitTitle">Absensi Koordinator BIP</h1></div></div>
-    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v218</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
+    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v222</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
   </section>
   <nav class="tabs no-print" aria-label="Navigasi aplikasi"><button class="tab-btn admin-only" data-panel="panelAdmin">🛠 Admin</button><button class="tab-btn active tab-worker coordinator-only" data-panel="panelWorkers">✅ Jadwal</button><button class="tab-btn" data-panel="panelReport">📝 Absensi</button><button class="tab-btn admin-only" data-panel="panelBaggingOff">🧾 Bagging</button><button class="tab-btn admin-only" data-panel="panelUpah">💰 Upah</button></nav>
   <section id="panelWorkers" class="panel active">
@@ -1709,8 +1709,8 @@
 <script src="firebase-config.js"></script>
 <script src="firebase-bridge.js"></script>
 <script>
-const APP_VERSION = 'v218';
-const APP_VERSION_LABEL = 'v218';
+const APP_VERSION = 'v222';
+const APP_VERSION_LABEL = 'v222';
 const APP_VERSION_FILE = 'version.json';
 let appServiceWorkerRegistration = null;
 let appUpdateWaitingWorker = null;
@@ -1899,23 +1899,36 @@ function showAppUpdateBanner(message){
     const btnNow=document.getElementById('btnAppUpdateNow');
     const btnLater=document.getElementById('btnAppUpdateLater');
     if(btnNow) btnNow.addEventListener('click', forceAppUpdateNow);
-    if(btnLater) btnLater.addEventListener('click', ()=>banner.classList.remove('show'));
+    if(btnLater) btnLater.addEventListener('click', ()=>{ localStorage.setItem('absensi_bip_update_later_version', normalizeAppVersion(APP_VERSION)); banner.classList.remove('show'); });
   }
   const msg=document.getElementById('appUpdateMessage');
   if(msg) msg.textContent=message || 'Versi baru sudah tersedia di server.';
   banner.classList.add('show');
 }
+function hideAppUpdateBanner(){
+  const banner=document.getElementById('appUpdateBanner');
+  if(banner) banner.classList.remove('show');
+}
 async function forceAppUpdateNow(){
+  if(window.__appForceUpdateRunning) return;
+  window.__appForceUpdateRunning=true;
+  hideAppUpdateBanner();
+  const btnNow=document.getElementById('btnAppUpdateNow');
+  if(btnNow){ btnNow.disabled=true; btnNow.textContent='Memuat ulang...'; }
   try{
     if(appUpdateWaitingWorker) appUpdateWaitingWorker.postMessage({type:'SKIP_WAITING'});
     if('caches' in window){
       const keys=await caches.keys();
       await Promise.all(keys.filter(k=>String(k).indexOf('absensi-bip-')===0).map(k=>caches.delete(k)));
     }
-    if(appServiceWorkerRegistration) await appServiceWorkerRegistration.update().catch(()=>{});
+    if('serviceWorker' in navigator){
+      const regs=await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map(reg=>reg.unregister().catch(()=>false)));
+    }
+    localStorage.setItem('absensi_bip_last_loaded_version', normalizeAppVersion(APP_VERSION));
   }catch(err){ console.warn('Gagal membersihkan cache update.', err); }
   const url=new URL(window.location.href);
-  url.searchParams.set('app_update', Date.now().toString());
+  url.searchParams.set('app_update', normalizeAppVersion(APP_VERSION) + '_' + Date.now().toString());
   window.location.replace(url.toString());
 }
 async function checkAppVersionFromServer(){
@@ -1927,7 +1940,14 @@ async function checkAppVersionFromServer(){
     const current=normalizeAppVersion(APP_VERSION);
     const badge=document.getElementById('appVersionBadge');
     if(badge) badge.textContent='Versi: ' + current;
-    if(latest && latest !== current){ showAppUpdateBanner('Versi server ' + latest + ' tersedia. Versi yang sedang dibuka ' + current + '.'); }
+    if(!latest || latest === current){
+      hideAppUpdateBanner();
+      localStorage.setItem('absensi_bip_last_loaded_version', current);
+      return;
+    }
+    const laterVersion=localStorage.getItem('absensi_bip_update_later_version') || '';
+    if(laterVersion === latest) return;
+    showAppUpdateBanner('Versi server ' + latest + ' tersedia. Versi yang sedang dibuka ' + current + '.');
   }catch(err){ console.warn('Cek versi aplikasi gagal.', err); }
 }
 window.addEventListener('load', ()=>{ setTimeout(checkAppVersionFromServer, 1800); setInterval(checkAppVersionFromServer, 10*60*1000); });
