@@ -1,6 +1,6 @@
 {
-  "version": "v222",
-  "name": "update_absensi_BIP_v222_fix_popup_update_loop",
-  "updated": "2026-05-20",
-  "notes": "Perbaikan mekanisme popup update/cache agar tidak loop: versi internal disamakan, cache absensi-bip dibersihkan, service worker lama di-unregister saat Update Sekarang, dan banner ditutup otomatis jika versi server sama dengan versi aplikasi yang sedang dibuka. Perbaikan v221 Commercial tetap dipertahankan."
+  "version": "v227",
+  "name": "update_absensi_BIP_v227_fix_isi_otomatis_tidak_timpa_mesin",
+  "updated": "2026-05-23",
+  "notes": "Perbaikan fitur Isi Otomatis Cek In/Cek Out agar tidak menimpa data asli hasil Import Preview Mesin / import global. Sebelum isi otomatis, aplikasi memuat ulang data Cek In/Out global tanggal laporan dan melindungi jam yang sudah ada; isi otomatis hanya mengisi field yang masih kosong."
 }

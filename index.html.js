@@ -1055,13 +1055,10 @@
 
 
 /* v157 - Import jadwal Bagging bulanan dan laporan berbasis jadwal. */
-.bagging-schedule-grid{display:grid;grid-template-columns:1fr;gap:16px}
-.bagging-schedule-box{border:1px solid #bfdbfe;border-radius:18px;padding:16px;background:linear-gradient(135deg,#ffffff,#f8fbff);box-shadow:0 10px 24px rgba(15,23,42,.06)}
-.bagging-schedule-box h4{margin:0 0 12px;font-size:16px;color:#0f172a;font-weight:950}
-.bagging-schedule-form{display:grid;grid-template-columns:minmax(140px,180px) minmax(120px,150px) minmax(260px,1fr);gap:12px;align-items:end}
-.bagging-schedule-actions{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));gap:10px;margin-top:14px}
-.bagging-schedule-actions .btn{min-height:44px;white-space:normal;line-height:1.12;padding:10px 12px}
-.bagging-schedule-status-btn{margin-top:0}
+.bagging-schedule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.bagging-schedule-box{border:1px solid #e2e8f0;border-radius:14px;padding:12px;background:#f8fafc}
+.bagging-schedule-box h4{margin:0 0 8px;font-size:14px;color:#0f172a}
+.bagging-schedule-status-btn{margin-top:8px}
 .bagging-schedule-status{border:1px solid #cbd5e1;background:#fff;border-radius:12px;padding:9px 10px;margin-top:8px;font-size:12px;line-height:1.35;color:#0f172a}
 .bagging-schedule-status .ok{font-weight:950;color:#166534}
 .bagging-schedule-status .warn{font-weight:950;color:#b45309}
@@ -1086,8 +1083,7 @@
 .bagging-schedule-summary .item .shift{background:#dbeafe;border-radius:999px;padding:2px 6px;color:#0f172a;font-weight:950}
 .bagging-empty-section{border:1px dashed #94a3b8;border-radius:8px;padding:9px;text-align:center;color:#64748b;font-weight:700;background:#fff;margin:4px 0 8px}
 .bagging-regu-title .shift-label{font-weight:800;font-size:.9em}
-@media(max-width:900px){.bagging-schedule-form{grid-template-columns:1fr}.bagging-schedule-actions{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.bagging-schedule-actions{grid-template-columns:1fr}}
+@media(max-width:900px){.bagging-schedule-grid{grid-template-columns:1fr}}
 @media print{.bagging-schedule-wrap{display:grid!important;grid-template-columns:1fr!important;gap:5px!important;margin-bottom:8px!important}.bagging-schedule-summary{border:1px solid #000!important;background:#fff!important;color:#000!important;font-size:10px!important;line-height:1.2!important;padding:5px 7px!important;margin:0!important;box-shadow:none!important;transform:none!important}.bagging-schedule-summary .title{font-size:10px!important;color:#000!important;margin-bottom:4px!important}.bagging-schedule-summary .title::before{content:''!important}.bagging-schedule-summary .items{gap:4px 6px!important}.bagging-schedule-summary .item{border:1px solid #000!important;background:#fff!important;color:#000!important;padding:2px 6px!important;box-shadow:none!important}.bagging-schedule-summary .item .regu,.bagging-schedule-summary .item .shift{color:#000!important;background:#fff!important;padding:0!important}.bagging-empty-section{border:1px dashed #000;color:#000;background:#fff;font-size:9px;padding:5px}.bagging-schedule-summary .warn{color:#000!important;background:#fff!important;border:1px solid #000!important;padding:2px 6px!important}}
 
 /* v154 - Rapikan kontrol Bagging dan paksa cetak A4 Portrait */
@@ -1262,7 +1258,7 @@
   <div class="user-strip no-print" id="userStrip"><div class="user-strip-left"><div class="user-avatar" id="userAvatar">K</div><div><div class="user-name" id="activeUserName">Koordinator</div><div class="user-unit" id="activeUserUnit"></div></div></div><button type="button" class="logout-btn" id="btnLogout">Logout</button></div>
   <section class="hero no-print">
     <div class="hero-brand"><img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo"><div><small>BiP Productivity App</small><h1 id="appUnitTitle">Absensi Koordinator BIP</h1></div></div>
-    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v222</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
+    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v223</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
   </section>
   <nav class="tabs no-print" aria-label="Navigasi aplikasi"><button class="tab-btn admin-only" data-panel="panelAdmin">🛠 Admin</button><button class="tab-btn active tab-worker coordinator-only" data-panel="panelWorkers">✅ Jadwal</button><button class="tab-btn" data-panel="panelReport">📝 Absensi</button><button class="tab-btn admin-only" data-panel="panelBaggingOff">🧾 Bagging</button><button class="tab-btn admin-only" data-panel="panelUpah">💰 Upah</button></nav>
   <section id="panelWorkers" class="panel active">
@@ -1343,33 +1339,21 @@
         <div class="bagging-schedule-grid">
           <div class="bagging-schedule-box">
             <h4>Jadwal Bagging Off Buhler</h4>
-            <div class="bagging-schedule-form">
+            <div class="grid-form">
               <div class="field"><label for="baggingScheduleBuhlerMonth">Bulan</label><select id="baggingScheduleBuhlerMonth"></select></div>
               <div class="field"><label for="baggingScheduleBuhlerYear">Tahun</label><input id="baggingScheduleBuhlerYear" type="number" min="2020" max="2100" step="1"></div>
-              <div class="field"><label for="baggingScheduleBuhlerFile">File Excel Jadwal Buhler</label><input id="baggingScheduleBuhlerFile" type="file" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
-            </div>
-            <div class="bagging-schedule-actions">
-              <button type="button" class="btn success full" id="btnImportBaggingScheduleBuhler">📥 Import</button>
-              <button type="button" class="btn primary full bagging-schedule-status-btn" id="btnPredictBaggingScheduleBuhler">🔁 Prediksi</button>
-              <button type="button" class="btn secondary full bagging-schedule-status-btn" id="btnCheckBaggingScheduleBuhler">🔎 Cek</button>
-              <button type="button" class="btn dark full bagging-schedule-status-btn" id="btnPrintBaggingScheduleBuhler">🖨️ Cetak</button>
-              <button type="button" class="btn danger full bagging-schedule-status-btn" id="btnDeleteBaggingScheduleBuhler">🗑️ Hapus</button>
+              <div class="field span-2"><label for="baggingScheduleBuhlerFile">File Excel Jadwal Buhler</label><input id="baggingScheduleBuhlerFile" type="file" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
+              <div class="field"><label>&nbsp;</label><button type="button" class="btn success full" id="btnImportBaggingScheduleBuhler">📥 Import</button><button type="button" class="btn primary full bagging-schedule-status-btn" id="btnPredictBaggingScheduleBuhler">🔁 Prediksi</button><button type="button" class="btn secondary full bagging-schedule-status-btn" id="btnCheckBaggingScheduleBuhler">🔎 Cek</button><button type="button" class="btn dark full bagging-schedule-status-btn" id="btnPrintBaggingScheduleBuhler">🖨️ Cetak</button><button type="button" class="btn danger full bagging-schedule-status-btn" id="btnDeleteBaggingScheduleBuhler">🗑️ Hapus</button></div>
             </div>
             <div class="import-help" id="baggingScheduleBuhlerInfo"></div>
           </div>
           <div class="bagging-schedule-box">
             <h4>Jadwal Bagging Off Breeder</h4>
-            <div class="bagging-schedule-form">
+            <div class="grid-form">
               <div class="field"><label for="baggingScheduleBreederMonth">Bulan</label><select id="baggingScheduleBreederMonth"></select></div>
               <div class="field"><label for="baggingScheduleBreederYear">Tahun</label><input id="baggingScheduleBreederYear" type="number" min="2020" max="2100" step="1"></div>
-              <div class="field"><label for="baggingScheduleBreederFile">File Excel Jadwal Breeder</label><input id="baggingScheduleBreederFile" type="file" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
-            </div>
-            <div class="bagging-schedule-actions">
-              <button type="button" class="btn success full" id="btnImportBaggingScheduleBreeder">📥 Import</button>
-              <button type="button" class="btn primary full bagging-schedule-status-btn" id="btnPredictBaggingScheduleBreeder">🔁 Prediksi</button>
-              <button type="button" class="btn secondary full bagging-schedule-status-btn" id="btnCheckBaggingScheduleBreeder">🔎 Cek</button>
-              <button type="button" class="btn dark full bagging-schedule-status-btn" id="btnPrintBaggingScheduleBreeder">🖨️ Cetak</button>
-              <button type="button" class="btn danger full bagging-schedule-status-btn" id="btnDeleteBaggingScheduleBreeder">🗑️ Hapus</button>
+              <div class="field span-2"><label for="baggingScheduleBreederFile">File Excel Jadwal Breeder</label><input id="baggingScheduleBreederFile" type="file" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
+              <div class="field"><label>&nbsp;</label><button type="button" class="btn success full" id="btnImportBaggingScheduleBreeder">📥 Import</button><button type="button" class="btn primary full bagging-schedule-status-btn" id="btnPredictBaggingScheduleBreeder">🔁 Prediksi</button><button type="button" class="btn secondary full bagging-schedule-status-btn" id="btnCheckBaggingScheduleBreeder">🔎 Cek</button><button type="button" class="btn dark full bagging-schedule-status-btn" id="btnPrintBaggingScheduleBreeder">🖨️ Cetak</button><button type="button" class="btn danger full bagging-schedule-status-btn" id="btnDeleteBaggingScheduleBreeder">🗑️ Hapus</button></div>
             </div>
             <div class="import-help" id="baggingScheduleBreederInfo"></div>
           </div>
@@ -1725,8 +1709,8 @@
 <script src="firebase-config.js"></script>
 <script src="firebase-bridge.js"></script>
 <script>
-const APP_VERSION = 'v222';
-const APP_VERSION_LABEL = 'v222';
+const APP_VERSION = 'v227';
+const APP_VERSION_LABEL = 'v227';
 const APP_VERSION_FILE = 'version.json';
 let appServiceWorkerRegistration = null;
 let appUpdateWaitingWorker = null;
@@ -1820,7 +1804,6 @@ const COMMERCIAL_ACTIVITY_DEFS = [
 ];
 const LOADING_DOCKS_KEY = 'absensi_bip_loading_docks_commercial_v1';
 const COMMERCIAL_DRAFT_KEY = 'absensi_bip_commercial_draft_v1';
-const COMMERCIAL_LAST_DATE_KEY = 'absensi_bip_commercial_last_schedule_date_v1';
 let commercialScheduleRowsCache = [];
 let commercialActivityRowsCache = {};
 let commercialCoordinatorRowsCache = [];
@@ -2827,7 +2810,7 @@ async function loadState(options){
     syncPendingAttendanceOnline().catch(err=>console.warn('Sinkron antrian absensi gagal.', err));
     return;
   }
-  const targetDate=(!isAdmin() && isCommercialKey(unitKeyValue)) ? (requestedDate || readCommercialLastScheduleDate() || todayISO()) : (requestedDate || state.reportDate || todayISO());
+  const targetDate=requestedDate || state.reportDate || todayISO();
   const defaultState={ company:'PT. BUDI INTI PERKASA', reportDate: targetDate, workers: defaultWorkersForUnit(unitKeyValue), allowEmptyWorkers:false };
   state=defaultState;
   const applyLoadedState=(source, sourceLabel)=>{
@@ -2837,7 +2820,7 @@ async function loadState(options){
     const workers=source.workers.map(cleanWorker).map(w=> exactDate ? w : ({...w, s1:false, s2:false, s3:false, checkIn:'', checkOut:''}));
     state={
       company:'PT. BUDI INTI PERKASA',
-      reportDate:(!isAdmin() && isCommercialKey(unitKeyValue)) ? targetDate : (requestedDate || sourceDate || targetDate),
+      reportDate:requestedDate || sourceDate || targetDate,
       workers,
       allowEmptyWorkers:Boolean(source.allowEmptyWorkers && workers.length===0)
     };
@@ -3477,29 +3460,6 @@ function commercialReguList(){ return Array.from(new Set((state.workers||[]).map
 function commercialSelection(){ return { dock:'', regu:'' }; }
 function commercialScheduleKey(){ return ''; }
 function commercialDraftStorageKey(){ const date=state.reportDate || todayISO(); return `${COMMERCIAL_DRAFT_KEY}_${date}_matrix`; }
-function readCommercialLastScheduleDate(){
-  try{
-    const value=String(localStorage.getItem(COMMERCIAL_LAST_DATE_KEY) || '').trim();
-    return /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : '';
-  }catch(err){ return ''; }
-}
-function saveCommercialLastScheduleDate(dateValue){
-  const value=String(dateValue || '').trim();
-  if(!/^\d{4}-\d{2}-\d{2}$/.test(value)) return;
-  try{ localStorage.setItem(COMMERCIAL_LAST_DATE_KEY, value); }catch(err){}
-}
-function commercialDraftHasContent(data){
-  const saved=data || {};
-  if(Array.isArray(saved.rows) && saved.rows.some(r=>normalizeRegu(r.regu) || normalizeCommercialDockPlan(r.schedulePlan || r.plan || r.jadwal || r.shiftPlan) || r.s1 || r.s2 || r.s3)) return true;
-  if(Array.isArray(saved.coordinators) && saved.coordinators.some(r=>r.s1 || r.s2 || r.s3)) return true;
-  const acts=saved.activities && typeof saved.activities==='object' ? saved.activities : {};
-  return Object.keys(acts).some(k=>Array.isArray(acts[k]) && acts[k].some(r=>r.s1 || r.s2 || r.s3));
-}
-function writeCommercialDraftLocal(payload){
-  if(!payload || !payload.reportDate) return false;
-  saveCommercialLastScheduleDate(payload.reportDate);
-  return safeLocalSetJSON(`${COMMERCIAL_DRAFT_KEY}_${payload.reportDate}_matrix`, cacheEnvelope(payload, 'pending_or_cache'));
-}
 function commercialAssignmentId(dock, regu){ return `LD${normalizeDockName(dock)}-R${normalizeRegu(regu)}`; }
 function commercialLdReguLabel(dock, regu){
   const d=normalizeDockName(dock), r=normalizeRegu(regu);
@@ -3835,8 +3795,6 @@ function saveCommercialDraftSelection(){
     activities[def.key]=getCommercialActivityRows().filter(w=>w.activityKey===def.key && (w.s1 || w.s2 || w.s3)).map(w=>({nip:String(w.nip||''), s1:Boolean(w.s1), s2:Boolean(w.s2), s3:Boolean(w.s3)}));
   });
   const payload={reportDate:state.reportDate||todayISO(), rows, coordinators, activities, updatedAt:new Date().toISOString()};
-  // v221: draft Commercial wajib tersimpan lokal dulu secara sinkron agar tidak hilang saat aplikasi diminimize/ditutup sebelum tombol Simpan ditekan.
-  writeCommercialDraftLocal(payload);
   saveMasterDataFirestoreFirst(commercialDraftDocId(), commercialDraftStorageKey(), payload).catch(err=>console.warn('Simpan draft Commercial Firestore gagal.', err));
 }
 function applyCommercialDraftSelection(){
@@ -4630,9 +4588,7 @@ function baggingScheduleStatusHtml(jenis, year, month, payload){
   const sheet=payload.sheetName ? safeText(payload.sheetName) : '-';
   const source=baggingScheduleSourceLabel(payload.__source);
   const importedAt=baggingScheduleImportedAtLabel(payload.importedAtLocal || payload.importedAt || payload.updatedAt);
-  const importedBy=payload.importedBy && (payload.importedBy.name || payload.importedBy.username || payload.importedBy.nip)
-    ? `${safeText(payload.importedBy.name || payload.importedBy.username || '')}${payload.importedBy.nip ? ' / NIP '+safeText(payload.importedBy.nip) : ''}`
-    : '-';
+  // v223 - Status Cek Jadwal Bagging Off tidak lagi menampilkan baris Oleh/NIP admin.
   const mode=payload.predicted ? 'Prediksi otomatis' : 'Import Excel';
   const chips=[`Mode: ${mode}`, `Total ${entries.length} jadwal`, `Regu ${regus.length ? regus.join(', ') : '-'}`, `Tanggal ${days.length ? days[0]+'-'+days[days.length-1] : '-'}`, `Shift 1: ${shift1}`, `Shift 2: ${shift2}`]
     .map(t=>`<span class="chip">${safeText(t)}</span>`).join('');
@@ -4649,7 +4605,7 @@ function baggingScheduleStatusHtml(jenis, year, month, payload){
   const tableTitle=payload.predicted ? 'Tabel Jadwal Hasil Prediksi' : 'Tabel Jadwal Hasil Import';
   const predMeta=payload.predicted && payload.predictedFrom ? `<br>Dasar prediksi: ${safeText(BAGGING_OFF_MONTH_NAMES[Number(payload.predictedFrom.month)-1] || payload.predictedFrom.month)} ${safeText(payload.predictedFrom.year)}<br>Siklus pola: ${safeText(payload.predictionCycleLength || '-')} hari` : '';
   const tableHtml=`<div class="schedule-table-title">${tableTitle}</div><div class="schedule-table-wrap"><table class="schedule-table"><thead><tr><th>Tanggal</th><th>Regu A</th><th>Regu B</th><th>Regu C</th></tr></thead><tbody>${rows}</tbody></table></div>`;
-  return `<div class="bagging-schedule-status"><div class="ok">Jadwal Bagging Off ${safeText(label)} ${safeText(bulan)} ${safeText(year)} sudah tersimpan.</div><div class="chips">${chips}</div><div class="meta">Sumber: ${safeText(source)}<br>File: ${file}<br>Sheet: ${sheet}<br>Diimport: ${safeText(importedAt)}<br>Oleh: ${importedBy}${predMeta}</div>${tableHtml}</div>`;
+  return `<div class="bagging-schedule-status"><div class="ok">Jadwal Bagging Off ${safeText(label)} ${safeText(bulan)} ${safeText(year)} sudah tersimpan.</div><div class="chips">${chips}</div><div class="meta">Sumber: ${safeText(source)}<br>File: ${file}<br>Sheet: ${sheet}<br>Diimport: ${safeText(importedAt)}${predMeta}</div>${tableHtml}</div>`;
 }
 
 function buildBaggingSchedulePrintRows(year, month, payload){
@@ -4669,15 +4625,20 @@ function buildBaggingSchedulePrintHtml(jenis, year, month, payload){
   const label=baggingScheduleJenisKey(jenis)==='BREEDER' ? 'Breeder' : 'Buhler';
   const bulan=BAGGING_OFF_MONTH_NAMES[Number(month)-1] || String(month||'');
   const mode=payload && payload.predicted ? 'Tabel Jadwal Hasil Prediksi' : 'Tabel Jadwal Hasil Import';
+  const file=payload && payload.sourceFile ? safeText(payload.sourceFile) : '-';
+  const sheet=payload && payload.sheetName ? safeText(payload.sheetName) : '-';
+  const importedAt=baggingScheduleImportedAtLabel(payload && (payload.importedAtLocal || payload.importedAt || payload.updatedAt));
+  const predMeta=payload && payload.predicted && payload.predictedFrom ? `Dasar prediksi: ${safeText(BAGGING_OFF_MONTH_NAMES[Number(payload.predictedFrom.month)-1] || payload.predictedFrom.month)} ${safeText(payload.predictedFrom.year)} | Siklus pola: ${safeText(payload.predictionCycleLength || '-')} hari` : '';
   const rows=buildBaggingSchedulePrintRows(year, month, payload);
   const title=`Jadwal Bagging Off ${label} ${bulan} ${year}`;
   return `<!doctype html><html><head><meta charset="utf-8"><title>${title}</title><style>
     *{box-sizing:border-box} body{font-family:Arial,Helvetica,sans-serif;margin:18px;color:#0f172a;background:#fff;font-size:12px}
-    .print-sheet{max-width:760px;margin:0 auto}.head{text-align:center;margin-bottom:10px}.head h1{font-size:20px;margin:0 0 4px;font-weight:900}.head .sub{font-size:12px;font-weight:700;color:#334155}
-    .table-title{font-size:14px;font-weight:900;margin:8px 0 6px;color:#0f172a}
+    .print-sheet{max-width:760px;margin:0 auto}.head{text-align:center;margin-bottom:12px}.head h1{font-size:20px;margin:0 0 4px;font-weight:900}.head .sub{font-size:12px;font-weight:700;color:#334155}
+    .meta{margin:8px 0 12px;font-weight:700;line-height:1.45;color:#334155}.table-title{font-size:14px;font-weight:900;margin:8px 0 6px;color:#0f172a}
     table{width:100%;border-collapse:collapse;font-size:12px} th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:center;font-weight:800} th{background:#eff6ff;color:#173b72} td:first-child{font-weight:900;background:#f8fafc}
+    .footer{display:flex;justify-content:space-between;margin-top:42px;font-weight:800}.sign{text-align:center;width:44%}.line{border-bottom:1px solid #111;height:48px;margin-bottom:6px}
     @media print{body{margin:8mm}.no-print{display:none!important}.print-sheet{max-width:none}.head h1{font-size:18px} th,td{padding:5px 6px}}
-  </style></head><body><div class="print-sheet"><div class="head"><h1>${title}</h1><div class="sub">PT Budi Inti Perkasa</div></div><div class="table-title">${mode}</div><table><thead><tr><th>Tanggal</th><th>Regu A</th><th>Regu B</th><th>Regu C</th></tr></thead><tbody>${rows}</tbody></table><script>window.addEventListener('load',function(){setTimeout(function(){window.print();},250);});<\/script></div></body></html>`;
+  </style></head><body><div class="print-sheet"><div class="head"><h1>${title}</h1><div class="sub">PT Budi Inti Perkasa</div></div><div class="meta">Mode: ${safeText(payload && payload.predicted ? 'Prediksi otomatis' : 'Import Excel')}<br>File: ${file}<br>Sheet: ${sheet}<br>Waktu simpan/import: ${safeText(importedAt)}${predMeta ? '<br>'+predMeta : ''}</div><div class="table-title">${mode}</div><table><thead><tr><th>Tanggal</th><th>Regu A</th><th>Regu B</th><th>Regu C</th></tr></thead><tbody>${rows}</tbody></table><div class="footer"><div class="sign"><div class="line"></div>Mengetahui</div><div class="sign"><div class="line"></div>Dibuat oleh</div></div><script>window.addEventListener('load',function(){setTimeout(function(){window.print();},250);});<\/script></div></body></html>`;
 }
 async function printBaggingSchedule(jenis){
   if(!isAdmin()){ alert('Akses ditolak. Cetak jadwal hanya untuk admin.'); return; }
@@ -5385,11 +5346,14 @@ function baggingOffGroupRows(jenis, regu, checkMap, schedules, replacements){
   const shiftNo=Number(scheduled[0].shift || 0);
   const completedMap=autoFillBaggingOffMap(checkMap || {}, jenis, regu);
   return BAGGING_OFF_MASTER.filter(r=>r.jenis===jenis && r.regu===regu).sort(baggingOffNipSort).map(r=>{
+    const originalNip=String(r && r.nip || '').trim();
     const active=baggingOffApplyReplacement(r, replacements || {});
-    const data=(completedMap && completedMap[String(active.nip)]) || {};
+    // v223 - Saat Ganti Pekerja, hanya NIP dan NAMA yang berubah.
+    // CEK IN/CEK OUT/DURASI tetap mengikuti data pekerja lama/originalNip.
+    const data=(completedMap && completedMap[originalNip]) || {};
     const checkIn=normalizeTimeToHMS(data.checkIn || data.cekIn || '');
     const checkOut=normalizeTimeToHMS(data.checkOut || data.cekOut || '');
-    return {...active, scheduledShift:shiftNo, checkIn, checkOut, durasi:durationHHMMSS(checkIn, checkOut)};
+    return {...active, attendanceNip:originalNip, scheduledShift:shiftNo, checkIn, checkOut, durasi:durationHHMMSS(checkIn, checkOut)};
   });
 }
 function autoFillSeedNumber(text){
@@ -5443,7 +5407,10 @@ function renderBaggingOffTable(jenis, regu, rows){
   const shiftNo=rows && rows.length ? Number(rows[0].scheduledShift || 0) : 0;
   const durationHead=showDuration ? '<th class="duration-col">DURASI</th>' : '';
   const actionHead=isAdmin() ? '<th class="bagging-replace-col">AKSI</th>' : '';
-  const body=rows.map((r,i)=>`<tr data-bagging-row="${safeText(r.nip)}"><td>${i+1}</td><td>${safeText(r.nip)}</td><td class="name">${safeText(r.nama)}${r.replaced?`<div class="bagging-replaced-note">Pengganti</div>`:''}</td><td>${baggingEditableTimeCell(r.nip,'in',r.checkIn)}</td><td>${baggingEditableTimeCell(r.nip,'out',r.checkOut)}</td>${showDuration ? `<td class="duration-col" data-bagging-duration="${safeText(r.nip)}">${safeText(r.durasi)}</td>` : ''}${isAdmin()?`<td class="bagging-replace-col">${baggingOffReplacementButton(r)}</td>`:''}</tr>`).join('');
+  const body=rows.map((r,i)=>{
+    const timeNip=String(r.attendanceNip || r.originalNip || r.nip || '').trim();
+    return `<tr data-bagging-row="${safeText(r.nip)}" data-bagging-time-nip="${safeText(timeNip)}"><td>${i+1}</td><td>${safeText(r.nip)}</td><td class="name">${safeText(r.nama)}${r.replaced?`<div class="bagging-replaced-note">Pengganti</div>`:''}</td><td>${baggingEditableTimeCell(timeNip,'in',r.checkIn)}</td><td>${baggingEditableTimeCell(timeNip,'out',r.checkOut)}</td>${showDuration ? `<td class="duration-col" data-bagging-duration="${safeText(timeNip)}">${safeText(r.durasi)}</td>` : ''}${isAdmin()?`<td class="bagging-replace-col">${baggingOffReplacementButton(r)}</td>`:''}</tr>`;
+  }).join('');
   return `<div class="bagging-regu-title">REGU ${safeText(regu)} ${shiftNo ? `<span class="shift-label">- SHIFT ${safeText(shiftNo)}</span>` : ''}</div><table class="bagging-table" data-show-duration="${showDuration?'1':'0'}"><thead><tr><th>NO</th><th>NIP</th><th>NAMA</th><th>CEK IN</th><th>CEK OUT</th>${durationHead}${actionHead}</tr></thead><tbody>${body}</tbody></table>`;
 }
 function renderBaggingOffSection(jenis, checkMap, schedules, replacements){
@@ -8078,7 +8045,7 @@ function adminAutoBaseTime(inputId, fallback){
   if(el && normalized) el.value=normalized;
   return normalized || normalizeTimeToHMS(fallback);
 }
-function adminApplyAutoCheckTimes(){
+async function adminApplyAutoCheckTimes(){
   if(!requirePermission('editCheckTimes','Isi otomatis cek in/out hanya untuk admin.')) return;
   if(!isAdmin()) return;
   if(!adminReportData){ alert('Tampilkan data absensi terlebih dahulu.'); return; }
@@ -8089,6 +8056,17 @@ function adminApplyAutoCheckTimes(){
   const s3In=adminAutoBaseTime('adminAutoS3In','23:00:00');
   const s3Out=adminAutoBaseTime('adminAutoS3Out','07:00:00');
   const rows=rowsFromAttendancePayload(adminReportData);
+
+  // v227: lindungi jam asli hasil Import Preview Mesin / import global.
+  // Sebelum mengisi otomatis, ambil ulang data Cek In/Out global tanggal laporan
+  // dan paksa nilainya tetap dipakai untuk NIP yang sudah punya data mesin.
+  const reportDate=(adminReportData && adminReportData.reportDate) || (($('adminReportDate') && $('adminReportDate').value) || '');
+  let protectedMap={};
+  if(reportDate){
+    try{ protectedMap=await loadGlobalCheckTimesForDate(reportDate, true) || {}; }
+    catch(err){ console.warn('Load data Cek In/Out global sebelum isi otomatis gagal, lanjut memakai data laporan yang tampil.', err); protectedMap={}; }
+  }
+
   const useS3=isAdminAutoShift3Enabled();
   const randomOpts=getAdminAutoRandomOptions();
   adminAttendanceOptions.autoInMinBefore=randomOpts.inMin;
@@ -8100,9 +8078,19 @@ function adminApplyAutoCheckTimes(){
   const cekInMaxBefore=randomOpts.inMax;
   const cekOutMinAfter=randomOpts.outMin;
   const cekOutMaxAfter=randomOpts.outMax;
-  let filledIn=0, filledOut=0, skippedExisting=0, skippedNoShift=0, skippedTf=0;
+  let filledIn=0, filledOut=0, skippedExisting=0, skippedNoShift=0, skippedTf=0, protectedMachine=0;
   rows.forEach(r=>{
     if(isCommercialTfActivityRow(r)){ skippedTf++; return; }
+    const nip=String(r.nip||'');
+    const protectedRow=protectedMap && protectedMap[nip] ? protectedMap[nip] : null;
+    const protectedIn=normalizeTimeToHMS(protectedRow && (protectedRow.checkIn || protectedRow.cekIn || ''));
+    const protectedOut=normalizeTimeToHMS(protectedRow && (protectedRow.checkOut || protectedRow.cekOut || ''));
+
+    // Data dari mesin/import global lebih tinggi prioritasnya daripada isi otomatis.
+    // Ini mencegah klik "Isi Otomatis" menimpa hasil "Import Hasil Preview Mesin ke Cek In/Out".
+    if(protectedIn){ if(normalizeTimeToHMS(r.checkIn||'')!==protectedIn) r.checkIn=protectedIn; protectedMachine++; }
+    if(protectedOut){ if(normalizeTimeToHMS(r.checkOut||'')!==protectedOut) r.checkOut=protectedOut; protectedMachine++; }
+
     const autoS1=!!r.s1;
     const autoS2=!!r.s2;
     const autoS3=useS3 && !!r.s3;
@@ -8120,8 +8108,8 @@ function adminApplyAutoCheckTimes(){
   });
   updateAdminReportRowsWithCheckTimes(rows);
   renderReport();
-  setAdminCheckTimesSourceInfo('Isi Otomatis Berdasarkan Aturan Menit - hanya mengisi field kosong');
-  alert(`Isi Otomatis selesai. Field yang sudah berisi data tidak ditimpa. Terisi: Cek In ${filledIn}, Cek Out ${filledOut}. Dilewati karena sudah ada isi: ${skippedExisting}. Cek In dibuat ${cekInMinBefore}-${cekInMaxBefore} menit sebelum jam dasar, Cek Out dibuat ${cekOutMinAfter}-${cekOutMaxAfter} menit sesudah jam dasar, lengkap sampai detik. Kegiatan Stapel (TF) dan Malleti (TF) tidak diisi otomatis. Klik Simpan Cek In / Cek Out untuk menyimpan ke database.`);
+  setAdminCheckTimesSourceInfo('Isi Otomatis Berdasarkan Aturan Menit - tidak menimpa data mesin/import');
+  alert(`Isi Otomatis selesai. Data Cek In/Cek Out asli dari mesin/import tidak ditimpa. Terisi otomatis: Cek In ${filledIn}, Cek Out ${filledOut}. Dilewati karena sudah ada isi: ${skippedExisting}. Dilindungi dari data mesin/import: ${protectedMachine}. Cek In dibuat ${cekInMinBefore}-${cekInMaxBefore} menit sebelum jam dasar, Cek Out dibuat ${cekOutMinAfter}-${cekOutMaxAfter} menit sesudah jam dasar, lengkap sampai detik. Kegiatan Stapel (TF) dan Malleti (TF) tidak diisi otomatis. Klik Simpan Cek In / Cek Out untuk menyimpan ke database.`);
 }
 
 function parseISODateUTC(dateValue){
@@ -8221,6 +8209,47 @@ function shiftWindowSecondsForShift(shiftKey, dateValue, settings){
   if(b<=a) b+=86400;
   return {start:a-(4*3600), end:b+(8*3600)};
 }
+function isMuatanCommercialCoreRow(row, unitKeyValue){
+  const key=String((row && (row.sourceUnitKey || row.unitKey)) || unitKeyValue || '');
+  if(key!==COMMERCIAL_KEY) return false;
+  if(isCommercialTfActivityRow(row)) return false;
+  const activityKey=String(row && row.activityKey || '');
+  if(activityKey && activityKey!==COMMERCIAL_KEY) return false;
+  return true;
+}
+function isCommercialShift2SpecialRow(row, unitKeyValue){
+  if(!isMuatanCommercialCoreRow(row, unitKeyValue)) return false;
+  const active=activeShiftKeysForScheduleRow(row);
+  if(active.length) return active.length===1 && active[0]==='s2';
+  const label=String(row && row.shift || '').toLowerCase().replace(/\s+/g,' ').trim();
+  return /^shift\s*2$/.test(label);
+}
+function commercialShift2SpecialMachineCheck(scansByNip, nip, dateValue){
+  // Aturan khusus hanya Muatan Commercial Shift 2:
+  // jam mulai kerja 12:30, Cek In dicari sekitar 12:30 pada tanggal jadwal,
+  // sedangkan Cek Out boleh sampai pagi hari berikutnya.
+  const startWork=(12*3600)+(30*60);
+  const inStart=startWork-(4*3600);
+  const inEnd=startWork+(4*3600);
+  const outStart=startWork;
+  const outEnd=(24*3600)+(10*3600);
+  const scans=(scansByNip[nip]||[]).map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)}));
+  const ins=scans.filter(scan=>String(scan.loc)==='1' && scan.abs>=inStart && scan.abs<=inEnd).sort((a,b)=>a.abs-b.abs);
+  const firstIn=ins[0] || null;
+  const minOutAbs=firstIn ? Math.max(firstIn.abs, outStart) : outStart;
+  const outs=scans.filter(scan=>String(scan.loc)==='2' && scan.abs>=minOutAbs && scan.abs<=outEnd).sort((a,b)=>b.abs-a.abs);
+  const lastOut=outs[0] || null;
+  const scanCount=scans.filter(scan=>(String(scan.loc)==='1' && scan.abs>=inStart && scan.abs<=inEnd) || (String(scan.loc)==='2' && scan.abs>=outStart && scan.abs<=outEnd)).length;
+  return {
+    checkIn:firstIn ? normalizeTimeToHMS(firstIn.time) : '',
+    checkOut:lastOut ? normalizeTimeToHMS(lastOut.time) : '',
+    inAbs:firstIn ? firstIn.abs : null,
+    outAbs:lastOut ? lastOut.abs : null,
+    scanCount,
+    firstIn,
+    lastOut
+  };
+}
 function activeShiftKeysForScheduleRow(row){
   const keys=[];
   if(row && row.s1) keys.push('s1');
@@ -8228,7 +8257,10 @@ function activeShiftKeysForScheduleRow(row){
   if(row && row.s3) keys.push('s3');
   return keys;
 }
-function machineCheckForShift(scansByNip, nip, shiftKey, dateValue, settings){
+function machineCheckForShift(scansByNip, nip, shiftKey, dateValue, settings, row, unitKeyValue){
+  if(shiftKey==='s2' && isCommercialShift2SpecialRow(row, unitKeyValue)){
+    return commercialShift2SpecialMachineCheck(scansByNip, nip, dateValue);
+  }
   const win=shiftWindowSecondsForShift(shiftKey, dateValue, settings);
   const scans=(scansByNip[nip]||[])
     .map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)}))
@@ -8242,7 +8274,9 @@ function machineCheckForShift(scansByNip, nip, shiftKey, dateValue, settings){
     checkOut:lastOut ? normalizeTimeToHMS(lastOut.time) : '',
     inAbs:firstIn ? firstIn.abs : null,
     outAbs:lastOut ? lastOut.abs : null,
-    scanCount:scans.length
+    scanCount:scans.length,
+    firstIn,
+    lastOut
   };
 }
 function displaySummaryTime(value){
@@ -8373,14 +8407,37 @@ function machineSummaryPick(values, mode){
   if(!rows.length) return '';
   return (mode==='max' ? rows[rows.length-1] : rows[0]).time;
 }
+function checkSummaryShiftAllowedForSelected(row, selectedUnitKey, shiftKey){
+  const key=String(selectedUnitKey || '');
+  if(key===COMMERCIAL_KEY && shiftKey==='s2'){
+    // Aturan khusus hanya untuk Ringkasan Muatan Commercial Shift 2:
+    // jangan mengambil Koordinator/Stapel/Malleti/kegiatan lain.
+    const rowActivity=String(row && row.activityKey || '');
+    const rowKegiatan=String(row && (row.kegiatan || row.activityLabel || '') || '').toLowerCase();
+    return isMuatanCommercialCoreRow(row, COMMERCIAL_KEY) && (
+      !rowActivity ||
+      rowActivity===COMMERCIAL_KEY ||
+      rowKegiatan==='muatan commercial' ||
+      rowKegiatan.includes('muatan commercial')
+    );
+  }
+  return true;
+}
 function checkSummaryRowMatchesSelected(row, selectedUnitKey){
   const key=String(selectedUnitKey || '');
   const rowUnit=String(row && row.unitKey || '');
   const rowSource=String(row && row.sourceUnitKey || '');
   const rowActivity=String(row && row.activityKey || '');
-  const rowKegiatan=String(row && row.kegiatan || row && row.activityLabel || '').toLowerCase();
+  const rowKegiatan=String(row && (row.kegiatan || row.activityLabel || '') || '').toLowerCase();
   if(key===BAHAN_BAKU_GABUNGAN_KEY){
     return [BAHAN_BAKU_PAGI_KEY, BAHAN_BAKU_MALAM_KEY, OVERZAK_KEY, 'oper_oper_bahan_baku', BAHAN_BAKU_GABUNGAN_KEY].includes(rowUnit) || [BAHAN_BAKU_PAGI_KEY, BAHAN_BAKU_MALAM_KEY, OVERZAK_KEY, 'oper_oper_bahan_baku'].includes(rowSource);
+  }
+  if(key===COMMERCIAL_KEY){
+    // v226: filter ringkasan Muatan Commercial dibuat per shift.
+    // Shift 1 boleh memakai sumber unit Muatan Commercial yang relevan
+    // (termasuk baris Koordinator), sedangkan pembatasan khusus
+    // "hanya Muatan Commercial inti" diterapkan nanti hanya untuk Shift 2.
+    return rowUnit===key || rowSource===key;
   }
   if(key===STAPEL_TF_KEY) return rowActivity===STAPEL_TF_KEY || rowKegiatan.includes('stapel');
   if(key===MALLETI_TF_KEY) return rowActivity===MALLETI_TF_KEY || rowKegiatan.includes('malleti') || rowKegiatan.includes('mallet');
@@ -8411,6 +8468,7 @@ function buildCheckInOutSummaryFromPreview(rows, opts={}){
     if(status==='Cek Out tidak ditemukan') summary._meta.noOutRows+=1;
     if(status!=='Tidak ada data mesin' && status!=='NIP tidak ada di jadwal') summary._meta.foundMachineRows+=1;
     keys.forEach(key=>{
+      if(!checkSummaryShiftAllowedForSelected(row, selectedUnitKey, key)) return;
       const bucket=summary[key];
       bucket.scheduledRows+=1;
       const inRaw=machineSummaryValueFromShift(row, key, 'in');
@@ -8546,16 +8604,23 @@ function allSchedulePreviewUnitKeys(){
   // jadi tidak dihitung ulang sebagai baris terpisah pada preview global.
   return ['muatan_breeder', BAHAN_BAKU_GABUNGAN_KEY, SILO_KEY, COMMERCIAL_KEY];
 }
-function machinePreviewCountsForRows(scheduleRows, dateValue, settings, scansByNip){
+function machinePreviewCountsForRows(scheduleRows, dateValue, settings, scansByNip, unitKeyValue){
   const counts={scheduled:0, ok:0, noData:0, noIn:0, noOut:0};
   (scheduleRows||[]).forEach(row=>{
     if(!row || !row.nip || !(row.s1 || row.s2 || row.s3)) return;
     counts.scheduled+=1;
-    const nip=String(row.nip||'');
-    const win=shiftWindowSeconds(row, dateValue, settings);
-    const scans=(scansByNip[nip]||[]).map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)})).filter(scan=>scan.abs>=win.start && scan.abs<=win.end);
-    const firstIn=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs)[0] || null;
-    const lastOut=scans.filter(scan=>String(scan.loc)==='2').sort((a,b)=>b.abs-a.abs)[0] || null;
+    const nip=normalizeNipForMatch(row.nip);
+    let firstIn=null, lastOut=null;
+    if(isCommercialShift2SpecialRow(row, unitKeyValue)){
+      const special=commercialShift2SpecialMachineCheck(scansByNip, nip, dateValue);
+      firstIn=special.firstIn || null;
+      lastOut=special.lastOut || null;
+    }else{
+      const win=shiftWindowSeconds(row, dateValue, settings);
+      const scans=(scansByNip[nip]||[]).map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)})).filter(scan=>scan.abs>=win.start && scan.abs<=win.end);
+      firstIn=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs)[0] || null;
+      lastOut=scans.filter(scan=>String(scan.loc)==='2').sort((a,b)=>b.abs-a.abs)[0] || null;
+    }
     if(firstIn && lastOut) counts.ok+=1;
     else if(!firstIn && !lastOut) counts.noData+=1;
     else if(!firstIn) counts.noIn+=1;
@@ -8596,7 +8661,7 @@ async function adminPreviewAllSchedules(){
       scheduleRows.forEach(r=>scheduledNipSet.add(normalizeNipForMatch(r.nip)));
       const unitName=(payload && payload.unit) || unitNameFromKey(unitKeyValue);
       const settings=getReportSettings(unitKeyValue, unitName);
-      const counts=machinePreviewCountsForRows(scheduleRows, dateValue, settings, scansByNip);
+      const counts=machinePreviewCountsForRows(scheduleRows, dateValue, settings, scansByNip, unitKeyValue);
       totalScheduled+=counts.scheduled; totalOk+=counts.ok; totalNoData+=counts.noData; totalNoIn+=counts.noIn; totalNoOut+=counts.noOut;
       const nipsInUnit=new Set(scheduleRows.map(r=>normalizeNipForMatch(r.nip)).filter(Boolean));
       const scanNips=Object.keys(scansByNip).filter(nip=>nipsInUnit.has(normalizeNipForMatch(nip))).length;
@@ -8629,13 +8694,20 @@ async function buildMachineImportPreviewFromFile(file, dateValue){
       const nip=normalizeNipForMatch(originalNip);
       scheduledNips.add(nip);
       const perShiftChecks={};
-      activeShiftKeysForScheduleRow(row).forEach(shiftKey=>{ perShiftChecks[shiftKey]=machineCheckForShift(scansByNip, nip, shiftKey, dateValue, settings); });
-      const win=shiftWindowSeconds(row, dateValue, settings);
-      const scans=(scansByNip[nip]||[]).map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)})).filter(scan=>scan.abs>=win.start && scan.abs<=win.end);
-      const ins=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs);
-      const outs=scans.filter(scan=>String(scan.loc)==='2').sort((a,b)=>b.abs-a.abs);
-      const firstIn=ins[0] || null;
-      const lastOut=outs[0] || null;
+      activeShiftKeysForScheduleRow(row).forEach(shiftKey=>{ perShiftChecks[shiftKey]=machineCheckForShift(scansByNip, nip, shiftKey, dateValue, settings, row, unitKeyValue); });
+      let firstIn=null, lastOut=null;
+      if(isCommercialShift2SpecialRow(row, unitKeyValue)){
+        const special=commercialShift2SpecialMachineCheck(scansByNip, nip, dateValue);
+        firstIn=special.firstIn || null;
+        lastOut=special.lastOut || null;
+      }else{
+        const win=shiftWindowSeconds(row, dateValue, settings);
+        const scans=(scansByNip[nip]||[]).map(scan=>({...scan, abs:machineScanAbsSeconds(scan, dateValue)})).filter(scan=>scan.abs>=win.start && scan.abs<=win.end);
+        const ins=scans.filter(scan=>String(scan.loc)==='1').sort((a,b)=>a.abs-b.abs);
+        const outs=scans.filter(scan=>String(scan.loc)==='2').sort((a,b)=>b.abs-a.abs);
+        firstIn=ins[0] || null;
+        lastOut=outs[0] || null;
+      }
       let status='Cocok';
       if(!firstIn && !lastOut) status='Tidak ada data mesin';
       else if(!firstIn) status='Cek In tidak ditemukan';
@@ -9776,13 +9848,6 @@ function exportExcel(){
   document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
 }
 window.addEventListener('beforeunload', e=>{ if(scheduleHasUnsavedChanges()){ e.preventDefault(); e.returnValue=''; } });
-function persistCommercialDraftBeforePagePause(){
-  if(!isAdmin() && isCommercialKey(activeUnitKey())){
-    try{ saveCommercialDraftSelection(); }catch(err){ console.warn('Draft Commercial gagal diamankan sebelum page pause.', err); }
-  }
-}
-window.addEventListener('pagehide', persistCommercialDraftBeforePagePause);
-document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='hidden') persistCommercialDraftBeforePagePause(); });
 document.addEventListener('focusin', e=>{ if(e.target && e.target.matches('#reportDate')) e.target.dataset.prevValue=e.target.value || state.reportDate || ''; });
 document.addEventListener('input', e=>{ if(e.target && e.target.matches('[data-report-setting]')){ if(hasPermission('manageSettings')) saveReportSettings(); } });
 document.addEventListener('blur', e=>{ if(e.target && e.target.matches('[data-report-setting]')){ if(hasPermission('manageSettings')) saveReportSettings(); } }, true);
@@ -9815,7 +9880,7 @@ document.addEventListener('change', async e=>{
       updateCounts();
     }
   }
-  if(e.target.matches('#reportDate')){ if(!hasPermission('inputAttendance') && !hasPermission('viewReports')) return; const previous=e.target.dataset.prevValue || state.reportDate || ''; if(!confirmLeaveUnsavedScheduleChanges()){ e.target.value=previous; return; } clearCoordinatorSavedAttendancePreview(); clearCoordinatorBahanBakuPagiCombinedReportCache(); scheduleEditSession.dirty=false; state.reportDate=e.target.value || ''; if(isCommercialKey(activeUnitKey()) && !isAdmin()) saveCommercialLastScheduleDate(state.reportDate); resetScheduleActiveDateStatus(); if(!(isCommercialKey(activeUnitKey()) && !isAdmin())) await saveState(); await refreshBahanBakuActivityConflictCache({force:true}); renderAll(); await refreshScheduleActiveDateStatus(state.reportDate, {force:true}); }
+  if(e.target.matches('#reportDate')){ if(!hasPermission('inputAttendance') && !hasPermission('viewReports')) return; const previous=e.target.dataset.prevValue || state.reportDate || ''; if(!confirmLeaveUnsavedScheduleChanges()){ e.target.value=previous; return; } clearCoordinatorSavedAttendancePreview(); clearCoordinatorBahanBakuPagiCombinedReportCache(); scheduleEditSession.dirty=false; state.reportDate=e.target.value || ''; resetScheduleActiveDateStatus(); if(isCommercialKey(activeUnitKey()) && !isAdmin()) applyCommercialDraftSelection(); await saveState(); await refreshBahanBakuActivityConflictCache({force:true}); renderAll(); await refreshScheduleActiveDateStatus(state.reportDate, {force:true}); }
   if(e.target.matches('#activitySelect')){
     if(coordinatorCanChooseCommercialActivity()){
       changeCommercialInputActivity(e.target.value).catch(err=>{ console.error(err); alert('Gagal mengganti kegiatan Commercial: ' + (err && err.message ? err.message : err)); });
