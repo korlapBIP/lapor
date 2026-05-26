@@ -33,7 +33,7 @@
     .app-update-banner{position:fixed;left:50%;bottom:16px;transform:translateX(-50%) translateY(18px);width:min(94vw,560px);z-index:120;display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #d9e7ff;box-shadow:0 22px 48px rgba(20,38,72,.18);border-radius:20px;padding:12px;opacity:0;pointer-events:none;transition:.25s ease}.app-update-banner.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}.app-update-banner div{flex:1;min-width:0}.app-update-banner strong{display:block;color:#20355b;font-size:13px;font-weight:950}.app-update-banner p{margin:3px 0 0;color:#64748b;font-size:12px;font-weight:800;line-height:1.4}.app-update-banner .btn{min-height:38px;padding:8px 10px;font-size:12px;white-space:nowrap}.install-sheet{position:fixed;left:50%;bottom:82px;transform:translateX(-50%) translateY(18px);width:min(94vw,460px);z-index:80;opacity:0;pointer-events:none;transition:.28s ease}.install-sheet.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}.install-sheet-card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.98));border:1px solid rgba(188,202,221,.8);box-shadow:0 22px 48px rgba(20,38,72,.16);border-radius:24px;padding:18px 18px 16px}.install-sheet-top{display:flex;gap:14px;align-items:center}.install-sheet-logo{width:56px;height:56px;object-fit:contain;border-radius:18px;background:#fff;padding:6px;box-shadow:0 10px 18px rgba(37,88,217,.12);flex:0 0 auto}.install-sheet-text small{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#2558d9;margin-bottom:4px}.install-sheet-text strong{display:block;font-size:18px;line-height:1.2;color:#20355b}.install-sheet-text p{margin:6px 0 0;color:#64748b;font-size:12px;line-height:1.55;font-weight:700}.install-sheet-actions{display:flex;gap:10px;margin-top:13px}.install-sheet-actions .btn{flex:1}.install-sheet-close{position:absolute;right:14px;top:14px;width:32px;height:32px;border-radius:12px;border:1px solid #d7e3f7;background:#fff;color:#50647f;font-weight:900;cursor:pointer}
     @keyframes spin{to{transform:rotate(360deg)}}@keyframes progressMove{0%{transform:translateX(-70%)}50%{transform:translateX(90%)}100%{transform:translateX(230%)}}@keyframes floatOrb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.05)}}
 
-    .login-view{min-height:calc(100vh - 30px);display:flex;align-items:center;justify-content:center;padding:18px 0 34px}.auth-ok .login-view{display:none!important}.auth-pending .wrap,.auth-pending .tabs,.auth-pending .install-sheet{display:none!important}.login-shell{width:min(100%,460px);position:relative}.login-card{border-radius:32px;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.96));border:1px solid rgba(188,202,221,.72);box-shadow:0 28px 70px rgba(20,38,72,.16);overflow:hidden}.login-top{position:relative;overflow:hidden;background:linear-gradient(135deg,#11285f 0%,#2558d9 58%,#65a2ff 100%);padding:24px 20px 22px;color:#fff}.login-top:before,.login-top:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.10)}.login-top:before{width:170px;height:170px;right:-48px;top:-42px}.login-top:after{width:130px;height:130px;right:54px;bottom:-68px}.login-brand{position:relative;z-index:1;display:flex;align-items:center;gap:14px}.login-logo{width:68px;height:68px;border-radius:20px;background:#fff;padding:8px;object-fit:contain;box-shadow:0 14px 28px rgba(12,28,69,.24)}.login-brand small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:950;color:rgba(255,255,255,.78)}.login-brand h1{margin:3px 0 0;font-size:22px;font-weight:950}.login-body{padding:18px}.login-note{margin:0 0 14px;padding:12px 13px;border-radius:18px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;font-size:12px;font-weight:850;line-height:1.5}.login-form{display:grid;gap:12px}.password-wrap{position:relative}.password-wrap input{padding-right:54px}.mini-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:42px;height:36px;border-radius:12px;background:#eef5ff;color:#2558d9;font-weight:950}.login-error{display:none;margin-top:2px;padding:11px 12px;border-radius:16px;background:#ffe8e4;color:#b42318;border:1px solid #ffc8c0;font-size:12px;font-weight:850}.login-error.show{display:block}.demo-box{margin-top:14px;border:1px dashed #bfd0ea;border-radius:20px;background:#fbfdff;padding:13px}.demo-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px;color:#20355b;font-weight:950;font-size:13px}.demo-list{display:grid;gap:8px}.demo-user{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:#fff;border:1px solid #e1eaf6;border-radius:16px;padding:10px 11px}.demo-user strong{display:block;font-size:12px;color:#20355b}.demo-user span{display:block;font-size:11px;color:#65758b;font-weight:800;margin-top:2px}.demo-user code{font-family:Consolas,monospace;font-size:11px;background:#eef5ff;color:#2558d9;padding:6px 7px;border-radius:10px;font-weight:900}.user-strip{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;padding:11px 13px;border-radius:20px;background:rgba(255,255,255,.94);border:1px solid rgba(188,202,221,.66);box-shadow:0 10px 26px rgba(20,38,72,.07)}.user-strip-left{display:flex;align-items:center;gap:10px;min-width:0}.user-avatar{width:42px;height:42px;border-radius:15px;background:linear-gradient(135deg,#2558d9,#65a2ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:950;box-shadow:0 10px 18px rgba(37,88,217,.18);flex:0 0 auto}.user-name{font-weight:950;color:#20355b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.user-unit{font-size:12px;color:#65758b;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.logout-btn{min-height:40px;border-radius:14px;background:#ffe8e4;color:#b42318;padding:8px 12px;font-size:12px;font-weight:950;flex:0 0 auto}.hero-user{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.25)}.admin-only{display:none!important}.auth-admin .admin-only{display:block!important}.auth-admin .panel.admin-only{display:none!important}.auth-admin .panel.admin-only.active{display:block!important}.admin-import-grid{display:grid;grid-template-columns:1fr;gap:10px}.admin-import-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.import-help{margin-top:12px;border-radius:16px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;padding:11px 12px;font-size:12px;font-weight:800;line-height:1.55}.import-help:empty{display:none!important}.import-file-name{margin-top:8px;color:#64748b;font-size:12px;font-weight:800}.machine-preview-box{margin-top:12px;border:1px solid #dfe8f5;background:#fff;border-radius:18px;overflow:hidden}.machine-preview-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 12px;background:#f8fafc;border-bottom:1px solid #e5edf7;font-size:12px;font-weight:950;color:#20355b}.machine-preview-table-wrap{width:100%;overflow:auto}.machine-preview-table{width:100%;border-collapse:collapse;font-size:12px;min-width:900px}.machine-preview-table th,.machine-preview-table td{border:1px solid #e5edf7;padding:7px 8px;text-align:left;white-space:nowrap}.machine-preview-table th{background:#eef5ff;color:#2558d9;font-weight:950}.machine-status{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:950}.machine-status.ok{background:#dcfce7;color:#166534}.machine-status.warn{background:#fff7ed;color:#9a3412}.machine-status.err{background:#fee2e2;color:#991b1b}.machine-status.muted{background:#f1f5f9;color:#475569}.auth-admin .tabs{grid-template-columns:repeat(2,1fr)}.auth-admin .tab-worker{display:none!important}.auth-admin #panelWorkers{display:none!important}.auth-admin .coordinator-only{display:none!important}.role-readonly .input-only,.role-readonly #panelWorkers,.role-readonly .tab-worker,.role-payroll .input-only,.role-payroll #panelWorkers,.role-payroll .tab-worker{display:none!important}.role-readonly [data-role-write],.role-payroll [data-role-write]{display:none!important}.permission-note{margin-top:12px;border:1px solid #f8d98b;background:#fff8df;color:#7a4b00;border-radius:16px;padding:11px 12px;font-size:12px;font-weight:850;line-height:1.5}.admin-panel-grid{display:grid;grid-template-columns:1fr;gap:12px}.admin-mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.admin-mini{border:1px solid #dfe8f5;background:#fff;border-radius:18px;padding:12px;box-shadow:0 8px 20px rgba(20,38,72,.06)}.admin-mini .label{font-size:10px;color:#71829b;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.admin-mini .value{font-size:22px;font-weight:950;margin-top:4px;color:#20355b}.admin-danger-box{border:1px solid #ffd0c8;background:#fff7f5;border-radius:20px;padding:12px}.admin-safe-box{border:1px solid #d9e7ff;background:#fbfdff;border-radius:20px;padding:12px}.admin-log{margin-top:12px;border-radius:16px;background:#0f172a;color:#e5edf8;padding:12px;font-size:12px;line-height:1.55;white-space:pre-wrap;max-height:180px;overflow:auto}.admin-actions-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.admin-actions-row.three{grid-template-columns:1fr 1fr 1fr}.admin-checkline{display:flex;align-items:center;gap:10px;margin-top:10px;padding:12px;border:1px solid #dfe8f5;border-radius:16px;background:#fff;font-size:13px;font-weight:900;color:#20355b}.admin-checkline input{width:20px;height:20px;accent-color:#2558d9}
+    .login-view{min-height:calc(100vh - 30px);display:flex;align-items:center;justify-content:center;padding:18px 0 34px}.auth-ok .login-view{display:none!important}.auth-pending .wrap,.auth-pending .tabs,.auth-pending .install-sheet{display:none!important}.login-shell{width:min(100%,460px);position:relative}.login-card{border-radius:32px;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.96));border:1px solid rgba(188,202,221,.72);box-shadow:0 28px 70px rgba(20,38,72,.16);overflow:hidden}.login-top{position:relative;overflow:hidden;background:linear-gradient(135deg,#11285f 0%,#2558d9 58%,#65a2ff 100%);padding:24px 20px 22px;color:#fff}.login-top:before,.login-top:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.10)}.login-top:before{width:170px;height:170px;right:-48px;top:-42px}.login-top:after{width:130px;height:130px;right:54px;bottom:-68px}.login-brand{position:relative;z-index:1;display:flex;align-items:center;gap:14px}.login-logo{width:68px;height:68px;border-radius:20px;background:#fff;padding:8px;object-fit:contain;box-shadow:0 14px 28px rgba(12,28,69,.24)}.login-brand small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:950;color:rgba(255,255,255,.78)}.login-brand h1{margin:3px 0 0;font-size:22px;font-weight:950}.login-body{padding:18px}.login-note{margin:0 0 14px;padding:12px 13px;border-radius:18px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;font-size:12px;font-weight:850;line-height:1.5}.login-form{display:grid;gap:12px}.password-wrap{position:relative}.password-wrap input{padding-right:54px}.mini-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:42px;height:36px;border-radius:12px;background:#eef5ff;color:#2558d9;font-weight:950}.login-error{display:none;margin-top:2px;padding:11px 12px;border-radius:16px;background:#ffe8e4;color:#b42318;border:1px solid #ffc8c0;font-size:12px;font-weight:850}.login-error.show{display:block}.demo-box{margin-top:14px;border:1px dashed #bfd0ea;border-radius:20px;background:#fbfdff;padding:13px}.demo-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px;color:#20355b;font-weight:950;font-size:13px}.demo-list{display:grid;gap:8px}.demo-user{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:#fff;border:1px solid #e1eaf6;border-radius:16px;padding:10px 11px}.demo-user strong{display:block;font-size:12px;color:#20355b}.demo-user span{display:block;font-size:11px;color:#65758b;font-weight:800;margin-top:2px}.demo-user code{font-family:Consolas,monospace;font-size:11px;background:#eef5ff;color:#2558d9;padding:6px 7px;border-radius:10px;font-weight:900}.user-strip{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;padding:11px 13px;border-radius:20px;background:rgba(255,255,255,.94);border:1px solid rgba(188,202,221,.66);box-shadow:0 10px 26px rgba(20,38,72,.07)}.user-strip-left{display:flex;align-items:center;gap:10px;min-width:0}.user-avatar{width:42px;height:42px;border-radius:15px;background:linear-gradient(135deg,#2558d9,#65a2ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:950;box-shadow:0 10px 18px rgba(37,88,217,.18);flex:0 0 auto}.user-name{font-weight:950;color:#20355b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.user-unit{font-size:12px;color:#65758b;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.logout-btn{min-height:40px;border-radius:14px;background:#ffe8e4;color:#b42318;padding:8px 12px;font-size:12px;font-weight:950;flex:0 0 auto}.hero-user{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.25)}.admin-only{display:none!important}.auth-admin .admin-only{display:block!important}.auth-admin .panel.admin-only{display:none!important}.auth-admin .panel.admin-only.active{display:block!important}.admin-import-grid{display:grid;grid-template-columns:1fr;gap:10px}.admin-import-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.import-help{margin-top:12px;border-radius:16px;background:#eef5ff;border:1px solid #d9e7ff;color:#2558d9;padding:11px 12px;font-size:12px;font-weight:800;line-height:1.55}.import-help:empty{display:none!important}.import-file-name{margin-top:8px;color:#64748b;font-size:12px;font-weight:800}.machine-preview-box{margin-top:12px;border:1px solid #dfe8f5;background:#fff;border-radius:18px;overflow:hidden}.machine-preview-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 12px;background:#f8fafc;border-bottom:1px solid #e5edf7;font-size:12px;font-weight:950;color:#20355b}.machine-preview-table-wrap{width:100%;overflow:auto}.machine-preview-table{width:100%;border-collapse:collapse;font-size:12px;min-width:900px}.machine-preview-table th,.machine-preview-table td{border:1px solid #e5edf7;padding:7px 8px;text-align:left;white-space:nowrap}.machine-preview-table th{background:#eef5ff;color:#2558d9;font-weight:950}.machine-status{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:950}.machine-status.ok{background:#dcfce7;color:#166534}.machine-status.warn{background:#fff7ed;color:#9a3412}.machine-status.err{background:#fee2e2;color:#991b1b}.machine-status.muted{background:#f1f5f9;color:#475569}.check-summary-time-cell{display:grid;gap:6px;min-width:150px}.check-summary-auto{display:flex;align-items:center;justify-content:space-between;gap:8px;border-radius:12px;background:#f8fafc;border:1px solid #e5edf7;padding:6px 8px}.check-summary-auto span{font-size:10px;color:#64748b;font-weight:900;text-transform:uppercase;letter-spacing:.05em}.check-summary-auto b{font-size:12px;color:#20355b}.check-summary-manual-input{width:100%;min-height:34px;border-radius:12px;border:1px solid #bfd0ea;background:#fff;padding:7px 9px;font-size:12px;font-weight:900;color:#20355b}.check-summary-manual-input:focus{outline:none;border-color:#2558d9;box-shadow:0 0 0 3px rgba(37,88,217,.12)}.auth-admin .tabs{grid-template-columns:repeat(2,1fr)}.auth-admin .tab-worker{display:none!important}.auth-admin #panelWorkers{display:none!important}.auth-admin .coordinator-only{display:none!important}.role-readonly .input-only,.role-readonly #panelWorkers,.role-readonly .tab-worker,.role-payroll .input-only,.role-payroll #panelWorkers,.role-payroll .tab-worker{display:none!important}.role-readonly [data-role-write],.role-payroll [data-role-write]{display:none!important}.permission-note{margin-top:12px;border:1px solid #f8d98b;background:#fff8df;color:#7a4b00;border-radius:16px;padding:11px 12px;font-size:12px;font-weight:850;line-height:1.5}.admin-panel-grid{display:grid;grid-template-columns:1fr;gap:12px}.admin-mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.admin-mini{border:1px solid #dfe8f5;background:#fff;border-radius:18px;padding:12px;box-shadow:0 8px 20px rgba(20,38,72,.06)}.admin-mini .label{font-size:10px;color:#71829b;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.admin-mini .value{font-size:22px;font-weight:950;margin-top:4px;color:#20355b}.admin-danger-box{border:1px solid #ffd0c8;background:#fff7f5;border-radius:20px;padding:12px}.admin-safe-box{border:1px solid #d9e7ff;background:#fbfdff;border-radius:20px;padding:12px}.admin-log{margin-top:12px;border-radius:16px;background:#0f172a;color:#e5edf8;padding:12px;font-size:12px;line-height:1.55;white-space:pre-wrap;max-height:180px;overflow:auto}.admin-actions-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.admin-actions-row.three{grid-template-columns:1fr 1fr 1fr}.admin-checkline{display:flex;align-items:center;gap:10px;margin-top:10px;padding:12px;border:1px solid #dfe8f5;border-radius:16px;background:#fff;font-size:13px;font-weight:900;color:#20355b}.admin-checkline input{width:20px;height:20px;accent-color:#2558d9}
 
 
     .admin-admin-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;margin-bottom:12px}.admin-section-btn{min-height:44px;border-radius:16px;background:#f4f7fb;color:#42526c;border:1px solid #dfe8f5;font-weight:950;padding:9px 10px}.admin-section-btn.active{background:linear-gradient(135deg,var(--primary),#65a2ff);color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(37,88,217,.20)}.admin-section-card{display:none}.admin-section-card.active{display:block;grid-column:1/-1}.admin-frame-grid{display:grid;grid-template-columns:1fr;gap:12px}.admin-sub-frame{border:1px solid #dfe8f5;background:#fbfdff;border-radius:20px;padding:12px}.admin-sub-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}.admin-sub-title small{display:inline-flex;align-items:center;justify-content:center;min-width:64px;padding:6px 9px;border-radius:999px;background:#eef5ff;color:#2558d9;font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:.08em}.admin-sub-title h4{margin:0;font-size:15px;color:#20355b;font-weight:950}.admin-worker-crud{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}.admin-worker-form{display:grid;grid-template-columns:1fr;gap:10px}.admin-worker-tools{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-worker-list{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff}.admin-worker-row{display:grid;grid-template-columns:80px 1fr auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.admin-worker-row:last-child{border-bottom:0}.admin-worker-row .nip{font-weight:950;color:#2558d9}.admin-worker-row .name{font-weight:900;color:#20355b}.admin-worker-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:2px}.admin-worker-row .row-actions{display:flex;gap:6px}.admin-worker-row .row-actions button{min-height:34px;border-radius:12px;padding:7px 9px;font-size:12px}.empty-admin-list{padding:14px;text-align:center;color:#64748b;font-weight:850;font-size:12px}.admin-worker-count{font-size:12px;color:#64748b;font-weight:900;margin-top:8px}.commercial-tools{display:none;grid-template-columns:1fr;gap:10px;margin-top:10px}.commercial-tools.show{display:grid}.commercial-summary{border:1px solid #dfe8f5;border-radius:16px;background:#fbfdff;padding:10px;font-size:12px;color:#42526c;font-weight:850}.commercial-summary b{color:#20355b}.commercial-matrix{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff}.commercial-matrix-head,.commercial-matrix-row{display:grid;grid-template-columns:1.2fr 1fr 90px 90px;gap:8px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.commercial-matrix-head{background:#f4f7fb;color:#20355b;font-weight:950;font-size:12px}.commercial-matrix-row:last-child{border-bottom:0}.commercial-matrix-row .dock-name{font-weight:950;color:#2558d9}.commercial-matrix-row .regu-name{font-weight:900;color:#20355b}.commercial-matrix-row label{display:flex;align-items:center;justify-content:center;gap:6px;font-weight:950;color:#334155}.commercial-matrix-row input[type="checkbox"]{width:18px;height:18px;accent-color:#2558d9}.commercial-regu-select{width:100%;min-height:40px;border:1px solid #dfe8f5;border-radius:12px;background:#fff;padding:8px 10px;font-weight:900;color:#20355b}.commercial-regu-select option[disabled]{color:#94a3b8}.commercial-matrix-row select:invalid{color:#64748b}@media(max-width:640px){.commercial-matrix-head,.commercial-matrix-row{grid-template-columns:54px minmax(96px,1fr) 56px 56px;gap:5px;padding:10px 7px}.commercial-matrix-head{font-size:10px}.commercial-matrix-row .dock-name{font-size:16px;line-height:1.1;white-space:normal}.commercial-regu-select{min-height:42px;border-radius:14px;padding:6px 20px 6px 6px;font-size:13px;min-width:0}.commercial-matrix-row label{font-size:16px;gap:4px}.commercial-matrix-row input[type="checkbox"]{width:20px;height:20px}}.commercial-worker-hidden-note{margin-top:10px;border:1px dashed #cbd5e1;border-radius:16px;background:#f8fafc;padding:12px;text-align:center;color:#64748b;font-weight:850;font-size:12px}.dock-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #edf2f8}.dock-row:last-child{border-bottom:0}.dock-row .name{font-weight:950;color:#20355b}.dock-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:2px}.dock-list{border:1px solid #dfe8f5;border-radius:18px;overflow:hidden;background:#fff;margin-top:12px}.sync-status-box{border:1px solid #dfe8f5;border-radius:20px;background:#fbfdff;padding:12px;margin-bottom:12px}.sync-status-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}.sync-status-title h4{margin:0;color:#20355b;font-size:15px;font-weight:950}.sync-chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:950;background:#eef5ff;color:#2558d9}.sync-chip.ok{background:#dcfce7;color:#166534}.sync-chip.warn{background:#fff7ed;color:#9a3412}.sync-chip.err{background:#fee2e2;color:#991b1b}.sync-pending-list{border:1px solid #dfe8f5;border-radius:18px;background:#fff;overflow:hidden}.sync-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:11px 12px;border-bottom:1px solid #edf2f8}.sync-row:last-child{border-bottom:0}.sync-row .main{font-weight:950;color:#20355b}.sync-row .meta{font-size:11px;color:#64748b;font-weight:800;margin-top:3px;line-height:1.45}.sync-row .row-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.sync-row .row-actions button{min-height:34px;border-radius:12px;padding:7px 9px;font-size:12px}.sync-cache-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.sync-cache-card{border:1px solid #dfe8f5;border-radius:16px;background:#fff;padding:10px}.sync-cache-card .label{font-size:11px;color:#64748b;font-weight:900}.sync-cache-card .value{font-size:20px;color:#20355b;font-weight:950;margin-top:4px}.usage-meter{margin-top:8px;height:9px;border-radius:999px;background:#eef2f7;overflow:hidden}.usage-meter-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#22c55e,#f59e0b)}.usage-detail{font-size:11px;color:#64748b;font-weight:800;margin-top:6px;line-height:1.45}.usage-table-wrap{width:100%;overflow:auto;margin-top:10px}.usage-table{width:100%;border-collapse:collapse;font-size:12px;min-width:620px}.usage-table th,.usage-table td{border:1px solid #e5edf7;padding:8px;text-align:left}.usage-table th{background:#f8fafc;color:#20355b}.usage-warn{color:#b45309;font-weight:950}.usage-ok{color:#15803d;font-weight:950}@media(max-width:640px){.sync-row{grid-template-columns:1fr}.sync-row .row-actions{justify-content:stretch}.sync-row .row-actions button{flex:1}}
@@ -751,9 +751,69 @@
     /* v97: Import Data disusun vertikal permanen agar Frame 1 di atas dan Frame 2 di bawah */
     .admin-section-card[data-admin-panel="import-data"] .admin-frame-grid{
       grid-template-columns:1fr !important;
+      gap:18px;
     }
     .admin-section-card[data-admin-panel="import-data"] .admin-sub-frame + .admin-sub-frame{
-      margin-top:14px;
+      margin-top:0;
+    }
+    /* v228: Bedakan visual Frame Import Pekerja dan Frame Import Cek In/Out tanpa mengubah fungsi lama */
+    .admin-section-card[data-admin-panel="import-data"] .admin-sub-frame.import-worker-frame,
+    .admin-section-card[data-admin-panel="import-data"] .admin-sub-frame.import-check-frame{
+      position:relative;
+      border-width:2px;
+      border-radius:24px;
+      padding:16px;
+      box-shadow:0 12px 28px rgba(15,23,42,.07);
+    }
+    .admin-section-card[data-admin-panel="import-data"] .admin-sub-frame.import-worker-frame{
+      border-color:#b8dcff;
+      background:linear-gradient(180deg,#f3f9ff 0%,#ffffff 58%);
+    }
+    .admin-section-card[data-admin-panel="import-data"] .admin-sub-frame.import-check-frame{
+      border-color:#c9e7c7;
+      background:linear-gradient(180deg,#f3fff5 0%,#ffffff 58%);
+    }
+    .admin-section-card[data-admin-panel="import-data"] .admin-sub-frame.import-worker-frame:before,
+    .admin-section-card[data-admin-panel="import-data"] .admin-sub-frame.import-check-frame:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:7px;
+      border-radius:24px 0 0 24px;
+    }
+    .admin-section-card[data-admin-panel="import-data"] .admin-sub-frame.import-worker-frame:before{
+      background:linear-gradient(180deg,#2563eb,#60a5fa);
+    }
+    .admin-section-card[data-admin-panel="import-data"] .admin-sub-frame.import-check-frame:before{
+      background:linear-gradient(180deg,#16a34a,#86efac);
+    }
+    .admin-section-card[data-admin-panel="import-data"] .import-frame-caption{
+      margin:-4px 0 12px 0;
+      padding:9px 12px;
+      border-radius:16px;
+      font-size:12px;
+      line-height:1.45;
+      font-weight:850;
+    }
+    .admin-section-card[data-admin-panel="import-data"] .import-worker-frame .import-frame-caption{
+      background:#eaf4ff;
+      color:#1d4ed8;
+      border:1px solid #bfdbfe;
+    }
+    .admin-section-card[data-admin-panel="import-data"] .import-check-frame .import-frame-caption{
+      background:#ecfdf3;
+      color:#15803d;
+      border:1px solid #bbf7d0;
+    }
+    .admin-section-card[data-admin-panel="import-data"] .import-worker-frame .admin-sub-title small{
+      background:#dbeafe;
+      color:#1d4ed8;
+    }
+    .admin-section-card[data-admin-panel="import-data"] .import-check-frame .admin-sub-title small{
+      background:#dcfce7;
+      color:#15803d;
     }
     @media (max-width:760px){
       .admin-section-card[data-admin-panel="import-data"] .grid-form,
@@ -1535,8 +1595,9 @@
 
         <div class="card admin-section-card" data-admin-panel="import-data"><div class="card-head"><h3>Import Data</h3><span>Pekerja & Cek In/Out</span></div><div class="card-body">
           <div class="admin-frame-grid">
-            <div class="admin-sub-frame">
+            <div class="admin-sub-frame import-worker-frame">
               <div class="admin-sub-title"><div><h4>Menu Import Data Pekerja</h4></div><small>Frame 1</small></div>
+              <div class="import-frame-caption">Khusus import master data pekerja. Area ini dipisahkan dari proses Cek In/Out agar tidak tertukar saat administrasi.</div>
               <div class="admin-import-grid">
                 <div class="field"><label for="adminPanelUnitSelect">Target Bagian Default</label><select id="adminPanelUnitSelect"></select></div>
                 <div class="field"><label for="adminPanelImportFile">File Excel / CSV</label><input id="adminPanelImportFile" type="file" accept=".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv"></div>
@@ -1544,8 +1605,9 @@
               <div class="import-file-name" id="adminPanelImportFileName">Belum ada file dipilih.</div>
               <div class="admin-actions-row"><button class="btn success" id="btnAdminPanelImportWorkers">📥 Import Pekerja</button><button class="btn secondary" id="btnAdminTemplate">⬇ Template</button></div>
             </div>
-            <div class="admin-sub-frame">
+            <div class="admin-sub-frame import-check-frame">
               <div class="admin-sub-title"><div><h4>Menu Import Cek In/Out</h4></div><small>Frame 2</small></div>
+              <div class="import-frame-caption">Khusus import data mesin absensi dan pengisian Cek In/Out. Semua tombol lama tetap berada di frame ini.</div>
               <div class="grid-form admin-check-import-top-grid">
                 <div class="field"><label for="adminGlobalCheckDate">Tanggal Data Mesin / Jadwal</label><input id="adminGlobalCheckDate" type="date"></div>
                 <div class="field"><label for="adminGlobalCheckFile">File Excel / CSV</label><input id="adminGlobalCheckFile" type="file" accept=".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv"></div>
@@ -1709,8 +1771,8 @@
 <script src="firebase-config.js"></script>
 <script src="firebase-bridge.js"></script>
 <script>
-const APP_VERSION = 'v227';
-const APP_VERSION_LABEL = 'v227';
+const APP_VERSION = 'v230';
+const APP_VERSION_LABEL = 'v230';
 const APP_VERSION_FILE = 'version.json';
 let appServiceWorkerRegistration = null;
 let appUpdateWaitingWorker = null;
@@ -8501,14 +8563,48 @@ function renderCheckInOutSummary(summary){
   if(!data){ box.style.display='none'; return; }
   box.style.display='block';
   const meta=data._meta || {};
+  const manualCell=(key,type,autoValue)=>{
+    const inputId=`adminCheckSummaryManual_${key}_${type}`;
+    const label=type==='maxIn' ? 'Manual Max Cek In' : 'Manual Min Cek Out';
+    const autoText=displaySummaryTime(autoValue);
+    return `<div class="check-summary-time-cell"><div class="check-summary-auto"><span>Otomatis</span><b>${safeText(autoText)}</b></div><input type="text" class="check-summary-manual-input" id="${inputId}" data-shift="${safeText(key)}" data-type="${safeText(type)}" placeholder="isi manual bila perlu" inputmode="numeric" title="${safeText(label)} manual, format 07.05.00 atau 07:05:00"></div>`;
+  };
   const body=['s1','s2','s3'].map(key=>{
     const r=data[key] || {};
     const cls=String(r.status||'').startsWith('Normal') ? 'ok' : (r.validRows ? 'warn' : 'muted');
     const ket=!r.scheduledRows ? 'Tidak ada jadwal shift ini' : `Sumber Cek In Cek Out dari pekerja yang masuk ${String(r.label||key).toLowerCase()} saja${r.status && !String(r.status).startsWith('Normal') ? ' • '+r.status : ''}`;
-    return `<tr><td>${safeText(r.label||key)}</td><td>${safeText(displaySummaryTime(r.maxIn))}</td><td>${safeText(displaySummaryTime(r.minOut))}</td><td><span class="machine-status ${cls}">${safeText(ket)}</span></td></tr>`;
+    return `<tr><td>${safeText(r.label||key)}</td><td>${manualCell(key,'maxIn',r.maxIn)}</td><td>${manualCell(key,'minOut',r.minOut)}</td><td><span class="machine-status ${cls}">${safeText(ket)}</span></td></tr>`;
   }).join('');
   const titleUnit=meta.unitName || unitNameFromKey(meta.unitKey || getSelectedCheckSummaryUnitKey());
-  box.innerHTML=`<div class="machine-preview-head"><span>📊 Ringkasan Cek In/Out dari Preview Mesin - ${safeText(titleUnit)}</span><span>Max Cek In dan Min Cek Out per shift</span></div><div class="machine-preview-table-wrap"><table class="machine-preview-table"><thead><tr><th>Shift</th><th>Max Cek In</th><th>Min Cek Out</th><th>Keterangan</th></tr></thead><tbody>${body}</tbody></table></div>`;
+  box.innerHTML=`<div class="machine-preview-head"><span>📊 Ringkasan Cek In/Out dari Preview Mesin - ${safeText(titleUnit)}</span><span>Max Cek In dan Min Cek Out per shift</span></div><div class="machine-preview-table-wrap"><table class="machine-preview-table"><thead><tr><th>Shift</th><th>Max Cek In</th><th>Min Cek Out</th><th>Keterangan</th></tr></thead><tbody>${body}</tbody></table></div><div class="all-schedule-preview-note">Nilai <b>Otomatis</b> tetap menjadi prioritas dari Preview Import Data Mesin. Kolom manual boleh diisi jika data mesin kosong/kurang tepat. Saat tombol <b>↘️ Pakai Ringkasan Bagian ke Form Cek In/Out</b> ditekan, nilai manual yang terisi akan dipakai sebagai pengganti nilai otomatis untuk shift tersebut.</div>`;
+}
+function readManualCheckSummaryOverrides(summary, opts={}){
+  const data=summary || lastCheckInOutSummaryResult;
+  if(!data) return {ok:false, changed:0, invalid:[]};
+  const invalid=[];
+  let changed=0;
+  ['s1','s2','s3'].forEach(key=>{
+    const row=data[key] || (data[key]={});
+    [['maxIn','manualMaxIn'],['minOut','manualMinOut']].forEach(([type,manualKey])=>{
+      const el=$(`adminCheckSummaryManual_${key}_${type}`);
+      if(!el) return;
+      const raw=String(el.value || '').trim();
+      row[manualKey]='';
+      if(!raw) return;
+      const hms=normalizeTimeToHMS(raw);
+      const seconds=parseAttendanceTimeToSeconds(hms);
+      if(!hms || seconds===null){
+        invalid.push(`${row.label || key} ${type==='maxIn' ? 'Max Cek In' : 'Min Cek Out'}: ${raw}`);
+        return;
+      }
+      row[manualKey]=hms;
+      changed+=1;
+    });
+  });
+  if(invalid.length && opts.alertInvalid){
+    alert('Format jam manual belum valid. Gunakan format seperti 07.05.00 atau 07:05:00.\n\nPeriksa:\n- '+invalid.join('\n- '));
+  }
+  return {ok:invalid.length===0, changed, invalid};
 }
 async function ensureMachinePreviewSummary(){
   const input=$('adminGlobalCheckFile');
@@ -8536,7 +8632,7 @@ async function adminCheckInOutSummary(){
   catch(err){ console.error(err); alert('Cek Ringkasan Cek In/Out gagal: '+(err && err.message ? err.message : err)); }
   finally{ if(btn){ btn.disabled=false; btn.textContent=old || '📊 Cek Ringkasan Cek In/Out Berdasarkan Bagian'; } }
 }
-function summaryShiftValue(summary, key, type){ const row=summary && summary[key] || {}; return normalizeTimeToHMS(row[type] || ''); }
+function summaryShiftValue(summary, key, type){ const row=summary && summary[key] || {}; const manualKey=type==='maxIn' ? 'manualMaxIn' : (type==='minOut' ? 'manualMinOut' : ''); return normalizeTimeToHMS((manualKey && row[manualKey]) || row[type] || ''); }
 function applySummaryToLoadedReport(summary){
   if(!adminReportData) return {changed:0, skippedNoReport:true, skippedS3:0};
   const useS3=isAdminAutoShift3Enabled();
@@ -8570,6 +8666,8 @@ async function adminUseCheckSummaryToForm(){
     if(btn){ btn.disabled=true; btn.textContent='Menerapkan...'; }
     const summary=lastCheckInOutSummaryResult || await ensureMachinePreviewSummary();
     if(!summary) return;
+    const manualOverrides=readManualCheckSummaryOverrides(summary, {alertInvalid:true});
+    if(!manualOverrides.ok) return;
     const meta=summary._meta || {};
     if(meta.noSchedule){ alert(`Ringkasan belum bisa dipakai karena jadwal ${meta.unitName || 'bagian ini'} belum ditemukan.`); return; }
     const reportUnit=(($('adminReportUnitSelect') && $('adminReportUnitSelect').value) || '');
@@ -8584,7 +8682,8 @@ async function adminUseCheckSummaryToForm(){
     setAdminCheckTimesSourceInfo(`Ringkasan Import Mesin - ${meta.unitName || unitNameFromKey(meta.unitKey || '')}`);
     const s3Note=useS3 ? '' : '\nShift 3 tidak diterapkan karena checkbox Shift 3 belum aktif.';
     const reportNote=applied.skippedNoReport ? '\nData absensi belum ditampilkan, jadi yang diisi baru form jam Shift 1/2/3. Buka Absensi lalu klik Tampilkan jika ingin menerapkan ke baris pekerja.' : `\n${applied.changed} baris pekerja pada laporan yang sedang dibuka ikut diperbarui.`;
-    alert(`Ringkasan Cek In/Out ${meta.unitName || ''} sudah dipakai ke form.\n\nShift 1/2/3 diisi dari Max Cek In dan Min Cek Out hasil preview mesin khusus bagian ini.`+reportNote+s3Note+'\n\nPeriksa kembali, lalu klik 💾 Simpan Cek In / Cek Out untuk menyimpan.');
+    const manualNote=manualOverrides.changed ? `\n${manualOverrides.changed} nilai manual dipakai sebagai pengganti nilai otomatis.` : '\nTidak ada input manual, semua memakai nilai otomatis dari preview mesin.';
+    alert(`Ringkasan Cek In/Out ${meta.unitName || ''} sudah dipakai ke form.\n\nShift 1/2/3 diisi dari Max Cek In dan Min Cek Out hasil preview mesin khusus bagian ini.`+manualNote+reportNote+s3Note+'\n\nPeriksa kembali, lalu klik 💾 Simpan Cek In / Cek Out untuk menyimpan.');
   }catch(err){ console.error(err); alert('Pakai Ringkasan ke Form Cek In/Out gagal: '+(err && err.message ? err.message : err)); }
   finally{ if(btn){ btn.disabled=false; btn.textContent=old || '↘️ Pakai Ringkasan Bagian ke Form Cek In/Out'; } }
 }

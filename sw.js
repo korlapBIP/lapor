@@ -1,4 +1,4 @@
-const CACHE_NAME = 'absensi-bip-v227_auto_check_preserve_machine';
+const CACHE_NAME = 'absensi-bip-v230_fix_update_checker';
 const APP_SHELL = ['./','./index.html','./manifest.json','./version.json','./firebase-config.js','./firebase-bridge.js','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-master-transparent.png'];
 self.addEventListener('install', event=>{
   event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)).catch(()=>{}));
