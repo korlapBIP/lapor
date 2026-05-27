@@ -1,6 +1,6 @@
 {
-  "version": "v230",
-  "name": "update_absensi_BIP_v230_fix_notifikasi_update_berulang",
-  "updated": "2026-05-26",
-  "notes": "Memperbaiki notifikasi update yang terus muncul setelah aplikasi diperbarui. APP_VERSION dan cache service worker diselaraskan ke versi terbaru agar versi server dan versi yang dibuka sama. Fitur lama, termasuk manual Ringkasan Cek In/Out, tetap dipertahankan."
+  "version": "v233",
+  "name": "update_absensi_BIP_v233_filter_final_preview_mesin",
+  "releasedAt": "2026-05-27T00:00:00.000Z",
+  "notes": "Fix filter final Preview Import Data Mesin. Bagging Off Breeder/Buhler tidak lagi ikut muncul saat filter Muatan Breeder dipilih. Filter Bagging Off Buhler & Breeder tetap dapat menampilkan data Bagging Off khusus. Perubahan dibatasi pada logika filter preview/import mesin dan versi aplikasi disinkronkan ke v233."
 }

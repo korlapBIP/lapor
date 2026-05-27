@@ -1318,7 +1318,7 @@
   <div class="user-strip no-print" id="userStrip"><div class="user-strip-left"><div class="user-avatar" id="userAvatar">K</div><div><div class="user-name" id="activeUserName">Koordinator</div><div class="user-unit" id="activeUserUnit"></div></div></div><button type="button" class="logout-btn" id="btnLogout">Logout</button></div>
   <section class="hero no-print">
     <div class="hero-brand"><img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo"><div><small>BiP Productivity App</small><h1 id="appUnitTitle">Absensi Koordinator BIP</h1></div></div>
-    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v223</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
+    <div class="hero-badges"><span class="badge">👥 PKWT & Freelance</span><span class="badge">✅ Jadwal Shift</span><span class="badge">📲 Share WA</span><span class="badge hero-user" id="activeUserBadge">👤 Belum login</span><span class="firebase-status local" id="firebaseStatus">💾 Data Lokal</span><span class="badge light" id="appVersionBadge">Versi: v233</span><button type="button" class="badge app-inline-install" id="btnInlineInstall">Pasang Shortcut Android</button></div>
   </section>
   <nav class="tabs no-print" aria-label="Navigasi aplikasi"><button class="tab-btn admin-only" data-panel="panelAdmin">🛠 Admin</button><button class="tab-btn active tab-worker coordinator-only" data-panel="panelWorkers">✅ Jadwal</button><button class="tab-btn" data-panel="panelReport">📝 Absensi</button><button class="tab-btn admin-only" data-panel="panelBaggingOff">🧾 Bagging</button><button class="tab-btn admin-only" data-panel="panelUpah">💰 Upah</button></nav>
   <section id="panelWorkers" class="panel active">
@@ -1611,6 +1611,7 @@
               <div class="grid-form admin-check-import-top-grid">
                 <div class="field"><label for="adminGlobalCheckDate">Tanggal Data Mesin / Jadwal</label><input id="adminGlobalCheckDate" type="date"></div>
                 <div class="field"><label for="adminGlobalCheckFile">File Excel / CSV</label><input id="adminGlobalCheckFile" type="file" accept=".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv"></div>
+                <div class="field span-2"><label for="adminMachinePreviewActivityFilter">Filter Kegiatan Preview / Import</label><select id="adminMachinePreviewActivityFilter"></select></div>
               </div>
               <div class="import-file-name" id="adminGlobalCheckFileName">Belum ada file dipilih.</div>
               <div class="admin-actions-row single"><button class="btn primary" id="btnAdminPreviewAllSchedules">📋 Preview Jadwal Semua Kegiatan</button></div>
@@ -1771,9 +1772,10 @@
 <script src="firebase-config.js"></script>
 <script src="firebase-bridge.js"></script>
 <script>
-const APP_VERSION = 'v230';
-const APP_VERSION_LABEL = 'v230';
+const APP_VERSION = 'v233';
+const APP_VERSION_LABEL = 'v233';
 const APP_VERSION_FILE = 'version.json';
+let appLatestServerVersion = APP_VERSION;
 let appServiceWorkerRegistration = null;
 let appUpdateWaitingWorker = null;
 function registerAppServiceWorker(){
@@ -1950,6 +1952,29 @@ const adminAttendanceCacheMeta = { hits:0, misses:0, lastSource:'' };
 const $ = (id) => document.getElementById(id);
 
 function normalizeAppVersion(v){ return String(v || '').trim(); }
+function getLatestKnownAppVersion(){ return normalizeAppVersion(appLatestServerVersion || APP_VERSION); }
+async function refreshLatestAppVersionFromServer(){
+  try{
+    const resp=await fetch(APP_VERSION_FILE + '?t=' + Date.now(), {cache:'no-store'});
+    if(resp && resp.ok){
+      const data=await resp.json();
+      const latest=normalizeAppVersion(data.version || data.appVersion);
+      if(latest) appLatestServerVersion = latest;
+    }
+  }catch(err){ console.warn('Gagal membaca versi terbaru sebelum update.', err); }
+  return getLatestKnownAppVersion();
+}
+function syncAppUpdateUrlMarker(version){
+  try{
+    const target=normalizeAppVersion(version || APP_VERSION);
+    const url=new URL(window.location.href);
+    const marker=url.searchParams.get('app_update') || '';
+    if(!marker.startsWith(target + '_')){
+      url.searchParams.set('app_update', target + '_' + Date.now().toString());
+      window.history.replaceState(null, '', url.toString());
+    }
+  }catch(err){}
+}
 function showAppUpdateBanner(message){
   let banner=document.getElementById('appUpdateBanner');
   if(!banner){
@@ -1961,7 +1986,7 @@ function showAppUpdateBanner(message){
     const btnNow=document.getElementById('btnAppUpdateNow');
     const btnLater=document.getElementById('btnAppUpdateLater');
     if(btnNow) btnNow.addEventListener('click', forceAppUpdateNow);
-    if(btnLater) btnLater.addEventListener('click', ()=>{ localStorage.setItem('absensi_bip_update_later_version', normalizeAppVersion(APP_VERSION)); banner.classList.remove('show'); });
+    if(btnLater) btnLater.addEventListener('click', ()=>{ localStorage.setItem('absensi_bip_update_later_version', getLatestKnownAppVersion()); banner.classList.remove('show'); });
   }
   const msg=document.getElementById('appUpdateMessage');
   if(msg) msg.textContent=message || 'Versi baru sudah tersedia di server.';
@@ -1977,6 +2002,8 @@ async function forceAppUpdateNow(){
   hideAppUpdateBanner();
   const btnNow=document.getElementById('btnAppUpdateNow');
   if(btnNow){ btnNow.disabled=true; btnNow.textContent='Memuat ulang...'; }
+  let targetVersion=getLatestKnownAppVersion();
+  try{ targetVersion=await refreshLatestAppVersionFromServer(); }catch(err){}
   try{
     if(appUpdateWaitingWorker) appUpdateWaitingWorker.postMessage({type:'SKIP_WAITING'});
     if('caches' in window){
@@ -1987,10 +2014,12 @@ async function forceAppUpdateNow(){
       const regs=await navigator.serviceWorker.getRegistrations();
       await Promise.all(regs.map(reg=>reg.unregister().catch(()=>false)));
     }
-    localStorage.setItem('absensi_bip_last_loaded_version', normalizeAppVersion(APP_VERSION));
+    localStorage.removeItem('absensi_bip_update_later_version');
+    localStorage.setItem('absensi_bip_last_loaded_version', targetVersion);
   }catch(err){ console.warn('Gagal membersihkan cache update.', err); }
   const url=new URL(window.location.href);
-  url.searchParams.set('app_update', normalizeAppVersion(APP_VERSION) + '_' + Date.now().toString());
+  url.searchParams.set('app_update', targetVersion + '_' + Date.now().toString());
+  url.searchParams.set('reload_ts', Date.now().toString());
   window.location.replace(url.toString());
 }
 async function checkAppVersionFromServer(){
@@ -1999,12 +2028,15 @@ async function checkAppVersionFromServer(){
     if(!resp.ok) return;
     const data=await resp.json();
     const latest=normalizeAppVersion(data.version || data.appVersion);
+    if(latest) appLatestServerVersion = latest;
     const current=normalizeAppVersion(APP_VERSION);
     const badge=document.getElementById('appVersionBadge');
     if(badge) badge.textContent='Versi: ' + current;
     if(!latest || latest === current){
       hideAppUpdateBanner();
+      localStorage.removeItem('absensi_bip_update_later_version');
       localStorage.setItem('absensi_bip_last_loaded_version', current);
+      syncAppUpdateUrlMarker(current);
       return;
     }
     const laterVersion=localStorage.getItem('absensi_bip_update_later_version') || '';
@@ -2012,7 +2044,7 @@ async function checkAppVersionFromServer(){
     showAppUpdateBanner('Versi server ' + latest + ' tersedia. Versi yang sedang dibuka ' + current + '.');
   }catch(err){ console.warn('Cek versi aplikasi gagal.', err); }
 }
-window.addEventListener('load', ()=>{ setTimeout(checkAppVersionFromServer, 1800); setInterval(checkAppVersionFromServer, 10*60*1000); });
+window.addEventListener('load', ()=>{ syncAppUpdateUrlMarker(APP_VERSION); setTimeout(checkAppVersionFromServer, 1800); setInterval(checkAppVersionFromServer, 10*60*1000); });
 if('serviceWorker' in navigator){
   navigator.serviceWorker.addEventListener('controllerchange', ()=>{ if(window.__appRefreshingForUpdate) return; window.__appRefreshingForUpdate=true; window.location.reload(); });
 }
@@ -8690,18 +8722,78 @@ async function adminUseCheckSummaryToForm(){
 function renderMachineImportPreview(result){
   const box=$('adminMachinePreviewBox');
   if(!box) return;
+  if(!result){ box.style.display='none'; return; }
   const rows=result && Array.isArray(result.rows) ? result.rows : [];
   const summary=result && result.summary ? result.summary : '';
+  const filterLabel=result && result.filterLabel ? result.filterLabel : 'Semua Kegiatan';
   const validCount=validMachinePreviewRows(rows).length;
   box.style.display='block';
-  const body=rows.length ? rows.map(r=>`<tr><td>${safeText(r.date)}</td><td>${safeText(r.nip)}</td><td>${safeText(r.name)}</td><td>${safeText(r.kegiatan)}</td><td>${safeText(r.shift)}</td><td>${safeText(r.checkIn)}</td><td>${safeText(r.checkOut)}</td><td>${safeText(r.duration)}</td><td><span class="machine-status ${statusClassMachine(r.status)}">${safeText(r.status)}</span></td></tr>`).join('') : '<tr><td colspan="9" style="text-align:center;color:#64748b">Belum ada data preview.</td></tr>';
-  box.innerHTML=`<div class="machine-preview-head"><span>Preview Import Data Mesin Absensi</span><span>${safeText(summary)} • Siap import ${validCount}</span></div><div class="machine-preview-table-wrap"><table class="machine-preview-table"><thead><tr><th>Tanggal</th><th>NIP</th><th>Nama</th><th>Kegiatan</th><th>Shift</th><th>Cek In Mesin</th><th>Cek Out Mesin</th><th>Durasi</th><th>Status</th></tr></thead><tbody>${body}</tbody></table></div><div class="all-schedule-preview-note">Status yang boleh diimpor: <b>Cocok</b>, <b>Cek In tidak ditemukan</b>, dan <b>Cek Out tidak ditemukan</b>. Jam disimpan format <b>HH:MM:SS</b>.</div>`;
+  const body=rows.length ? rows.map(r=>`<tr><td>${safeText(r.date)}</td><td>${safeText(r.nip)}</td><td>${safeText(r.name)}</td><td>${safeText(r.kegiatan)}</td><td>${safeText(r.shift)}</td><td>${safeText(r.checkIn)}</td><td>${safeText(r.checkOut)}</td><td>${safeText(r.duration)}</td><td><span class="machine-status ${statusClassMachine(r.status)}">${safeText(r.status)}</span></td></tr>`).join('') : '<tr><td colspan="9" style="text-align:center;color:#64748b">Belum ada data preview untuk filter kegiatan ini.</td></tr>';
+  box.innerHTML=`<div class="machine-preview-head"><span>Preview Import Data Mesin Absensi</span><span>Filter: ${safeText(filterLabel)} • ${safeText(summary)} • Siap import ${validCount}</span></div><div class="machine-preview-table-wrap"><table class="machine-preview-table"><thead><tr><th>Tanggal</th><th>NIP</th><th>Nama</th><th>Kegiatan</th><th>Shift</th><th>Cek In Mesin</th><th>Cek Out Mesin</th><th>Durasi</th><th>Status</th></tr></thead><tbody>${body}</tbody></table></div><div class="all-schedule-preview-note">Status yang boleh diimpor: <b>Cocok</b>, <b>Cek In tidak ditemukan</b>, dan <b>Cek Out tidak ditemukan</b>. Filter kegiatan ini ikut dipakai saat tombol <b>Import Hasil Preview Mesin ke Cek In/Out</b> ditekan. Jam disimpan format <b>HH:MM:SS</b>.</div>`;
 }
 
 function allSchedulePreviewUnitKeys(){
   // v104: Oper Oper Bahan Baku sudah menjadi bagian laporan gabungan Bongkaran Bahan Baku,
   // jadi tidak dihitung ulang sebagai baris terpisah pada preview global.
   return ['muatan_breeder', BAHAN_BAKU_GABUNGAN_KEY, SILO_KEY, COMMERCIAL_KEY];
+}
+function machinePreviewActivityFilterOptions(){
+  return [
+    {key:'ALL', name:'Semua Kegiatan'},
+    {key:'muatan_breeder', name:'Muatan Breeder'},
+    {key:BAHAN_BAKU_GABUNGAN_KEY, name:'Bongkaran Bahan Baku - Gabungan'},
+    {key:SILO_KEY, name:'Silo'},
+    {key:COMMERCIAL_KEY, name:'Muatan Commercial'},
+    {key:'bagging_off', name:'Bagging Off Buhler & Breeder'}
+  ];
+}
+function optionMachinePreviewActivityFilter(){
+  return machinePreviewActivityFilterOptions().map(opt=>`<option value="${safeText(opt.key)}">${safeText(opt.name)}</option>`).join('');
+}
+function getSelectedMachinePreviewActivityFilter(){
+  const sel=$('adminMachinePreviewActivityFilter');
+  return sel && sel.value ? sel.value : 'ALL';
+}
+function machinePreviewActivityFilterLabel(filterKey){
+  const found=machinePreviewActivityFilterOptions().find(opt=>String(opt.key)===String(filterKey));
+  return found ? found.name : 'Semua Kegiatan';
+}
+function machinePreviewRowMatchesActivityFilter(row, filterKey){
+  const key=String(filterKey || 'ALL');
+  if(key==='ALL') return true;
+  if(!row) return false;
+  const status=String(row.status || '');
+  if(status==='NIP tidak ada di jadwal') return false;
+  const rowUnit=String(row.unitKey || '');
+  const rowSource=String(row.sourceUnitKey || '');
+  const rowActivity=String(row.activityKey || '');
+  const rowKegiatan=String(row.kegiatan || row.activityLabel || '').toLowerCase().replace(/\s+/g,' ').trim();
+  const isBaggingOffRow=rowUnit==='bagging_off' || rowSource==='bagging_off' || rowActivity==='bagging_off' || rowKegiatan.includes('bagging off');
+  // v233: Filter final dibuat ketat agar Bagging Off Breeder tidak ikut lolos saat filter Muatan Breeder.
+  // Bagging Off hanya tampil pada filter Semua Kegiatan atau Bagging Off Buhler & Breeder.
+  if(key==='bagging_off') return isBaggingOffRow;
+  if(isBaggingOffRow) return false;
+  if(key===BAHAN_BAKU_GABUNGAN_KEY){
+    return [BAHAN_BAKU_GABUNGAN_KEY, BAHAN_BAKU_PAGI_KEY, BAHAN_BAKU_MALAM_KEY, OVERZAK_KEY, 'oper_oper_bahan_baku'].includes(rowUnit) || [BAHAN_BAKU_GABUNGAN_KEY, BAHAN_BAKU_PAGI_KEY, BAHAN_BAKU_MALAM_KEY, OVERZAK_KEY, 'oper_oper_bahan_baku'].includes(rowSource) || rowKegiatan.includes('bahan baku') || rowKegiatan.includes('overzak') || rowKegiatan.includes('oper');
+  }
+  if(key===SILO_KEY) return rowUnit===SILO_KEY || rowSource===SILO_KEY || rowActivity===SILO_KEY || rowKegiatan.includes('silo');
+  if(key===COMMERCIAL_KEY) return rowUnit===COMMERCIAL_KEY || rowSource===COMMERCIAL_KEY || rowActivity===COMMERCIAL_KEY || rowKegiatan.includes('commercial') || rowKegiatan.includes('komersial');
+  if(key==='muatan_breeder') return rowUnit==='muatan_breeder' || rowSource==='muatan_breeder' || rowActivity==='muatan_breeder' || /^muatan\s+breeder(\b|$)/.test(rowKegiatan);
+  return rowUnit===key || rowSource===key || rowActivity===key;
+}
+function applyMachinePreviewActivityFilter(result, filterKey){
+  const key=String(filterKey || 'ALL');
+  const label=machinePreviewActivityFilterLabel(key);
+  if(!result || !Array.isArray(result.rows)) return result;
+  if(key==='ALL') return {...result, filterKey:key, filterLabel:label};
+  const rows=result.rows.filter(row=>machinePreviewRowMatchesActivityFilter(row, key));
+  const ok=rows.filter(r=>r.status==='Cocok').length;
+  const noIn=rows.filter(r=>r.status==='Cek In tidak ditemukan').length;
+  const noOut=rows.filter(r=>r.status==='Cek Out tidak ditemukan').length;
+  const validImport=validMachinePreviewRows(rows).length;
+  const warn=rows.filter(r=>r.status!=='Cocok').length;
+  const totalSchedules=rows.filter(r=>String(r.status || '')!=='NIP tidak ada di jadwal').length;
+  return {...result, rows, totalSchedules, ok, noIn, noOut, validImport, warn, filterKey:key, filterLabel:label, summary:`${label} • Jadwal ${totalSchedules} • Scan ${result.parsed && result.parsed.scans ? result.parsed.scans.length : 0} • Cocok ${ok} • In kosong ${noIn} • Out kosong ${noOut} • Siap import ${validImport} • Perlu cek ${warn}`};
 }
 function machinePreviewCountsForRows(scheduleRows, dateValue, settings, scansByNip, unitKeyValue){
   const counts={scheduled:0, ok:0, noData:0, noIn:0, noOut:0};
@@ -8774,7 +8866,8 @@ async function adminPreviewAllSchedules(){
     alert('Preview jadwal semua kegiatan gagal: '+(err && err.message ? err.message : err));
   }finally{ if(btn){ btn.disabled=false; btn.textContent=old || '📋 Preview Jadwal Semua Kegiatan'; } }
 }
-async function buildMachineImportPreviewFromFile(file, dateValue){
+async function buildMachineImportPreviewFromFile(file, dateValue, options={}){
+  const filterKey=options && options.filterKey ? options.filterKey : 'ALL';
   const rows=await readImportRows(file);
   const parsed=parseMachineImportRows(rows, dateValue);
   const scansByNip={};
@@ -8852,7 +8945,8 @@ async function buildMachineImportPreviewFromFile(file, dateValue){
   const noOut=preview.filter(r=>r.status==='Cek Out tidak ditemukan').length;
   const validImport=validMachinePreviewRows(preview).length;
   const warn=preview.filter(r=>r.status!=='Cocok').length;
-  return { rows:preview, parsed, totalSchedules, ok, noIn, noOut, validImport, warn, dateValue, summary:`Global semua kegiatan • Jadwal ${totalSchedules} • Scan ${parsed.scans.length} • Cocok ${ok} • In kosong ${noIn} • Out kosong ${noOut} • Siap import ${validImport} • Perlu cek ${warn}` };
+  const fullResult={ rows:preview, parsed, totalSchedules, ok, noIn, noOut, validImport, warn, dateValue, filterKey:'ALL', filterLabel:'Semua Kegiatan', summary:`Global semua kegiatan • Jadwal ${totalSchedules} • Scan ${parsed.scans.length} • Cocok ${ok} • In kosong ${noIn} • Out kosong ${noOut} • Siap import ${validImport} • Perlu cek ${warn}` };
+  return applyMachinePreviewActivityFilter(fullResult, filterKey);
 }
 function cloneRowsForAutoFill(rows){ return (rows||[]).map(r=>({...r})); }
 function autoFillMissingImportCheckTimes(rows, options){
@@ -8919,12 +9013,13 @@ async function adminPreviewMachineImport(){
   const btn=$('btnAdminPreviewMachineImport'); const old=btn?btn.textContent:'';
   try{
     if(btn){ btn.disabled=true; btn.textContent='Preview global...'; }
-    const result=await buildMachineImportPreviewFromFile(file, dateValue);
+    const filterKey=getSelectedMachinePreviewActivityFilter();
+    const result=await buildMachineImportPreviewFromFile(file, dateValue, {filterKey});
     lastMachineImportPreviewResult={...result, fileName:file.name || '', fileSize:file.size || 0, fileType:file.type || '', generatedAtLocal:new Date().toISOString()};
     lastCheckInOutSummaryResult=null;
     renderCheckInOutSummary(null);
     renderMachineImportPreview(result);
-    adminLog(`Preview import mesin absensi global selesai. Tanggal: ${dateValue}. Scan terbaca: ${result.parsed.scans.length}. Jadwal: ${result.totalSchedules}. Cocok: ${result.ok}. Siap import: ${result.validImport}. Data belum disimpan ke laporan.`);
+    adminLog(`Preview import mesin absensi selesai. Filter: ${result.filterLabel || 'Semua Kegiatan'}. Tanggal: ${dateValue}. Scan terbaca: ${result.parsed.scans.length}. Jadwal: ${result.totalSchedules}. Cocok: ${result.ok}. Siap import: ${result.validImport}. Data belum disimpan ke laporan.`);
   }catch(err){
     console.error(err);
     alert('Preview import data mesin gagal: '+(err && err.message ? err.message : err));
@@ -8941,9 +9036,10 @@ async function adminImportMachinePreviewToCheckTimes(){
   let historyPayload=null;
   try{
     if(btn){ btn.disabled=true; btn.textContent='Mengimpor hasil preview...'; }
+    const filterKey=getSelectedMachinePreviewActivityFilter();
     let result=lastMachineImportPreviewResult;
-    if(!result || result.dateValue!==dateValue || result.fileName!==(file.name||'')){
-      result=await buildMachineImportPreviewFromFile(file, dateValue);
+    if(!result || result.dateValue!==dateValue || result.fileName!==(file.name||'') || String(result.filterKey || 'ALL')!==String(filterKey)){
+      result=await buildMachineImportPreviewFromFile(file, dateValue, {filterKey});
       lastMachineImportPreviewResult={...result, fileName:file.name || '', fileSize:file.size || 0, fileType:file.type || '', generatedAtLocal:new Date().toISOString()};
       renderMachineImportPreview(result);
     }
@@ -8964,9 +9060,10 @@ async function adminImportMachinePreviewToCheckTimes(){
     Object.keys(byDate).forEach(d=>{ dateCounts[d]=Object.keys(byDate[d]||{}).length; });
     historyPayload={
       action:'import_machine_preview', status:'success', fileName:file.name || '', fileSize:file.size || 0, fileType:file.type || '', fallbackDate:dateValue,
+      filterKey:result.filterKey || 'ALL', filterLabel:result.filterLabel || 'Semua Kegiatan',
       dates:Object.keys(byDate), dateCounts, importedRows:validRows.length, skippedRows, duplicateRows:duplicates.length,
       totalRows:(result.rows||[]).length, appliedRows:0,
-      note:`Import hasil Preview Data Mesin ke Cek In/Out. Jam kosong otomatis diisi acak berdasarkan data Cek In/Cek Out NIP lain jika tersedia. Auto In: ${autoFill.filledIn}, Auto Out: ${autoFill.filledOut}. Format jam HH:MM:SS.`
+      note:`Import hasil Preview Data Mesin ke Cek In/Out. Filter kegiatan: ${result.filterLabel || 'Semua Kegiatan'}. Jam kosong otomatis diisi acak berdasarkan data Cek In/Cek Out NIP lain jika tersedia. Auto In: ${autoFill.filledIn}, Auto Out: ${autoFill.filledOut}. Format jam HH:MM:SS.`
     };
     if(!validRows.length){
       historyPayload.status='failed'; historyPayload.errorMessage='Tidak ada baris preview dengan status valid yang bisa diimpor.';
@@ -8977,6 +9074,7 @@ async function adminImportMachinePreviewToCheckTimes(){
     if(!confirm(`Import hasil Preview Data Mesin ke Cek In/Out?
 
 Tanggal: ${dateValue}
+Filter kegiatan: ${result.filterLabel || 'Semua Kegiatan'}
 Siap import: ${validRows.length} NIP
 Dilewati: ${skippedRows}
 Auto isi Cek In kosong: ${autoFill.filledIn}
@@ -8993,10 +9091,11 @@ Jam akan disimpan dalam format HH:MM:SS.`)) return;
     historyPayload.appliedRows=applied;
     await recordCheckImportHistory(historyPayload);
     await renderGlobalCheckImportHistory(false);
-    await updateGlobalCheckInfo(`Import hasil preview mesin selesai. ${validRows.length} NIP valid disimpan. Auto isi kosong: ${autoFill.totalFilled}. ${applied} pekerja diterapkan ke laporan yang sedang dibuka.`);
-    adminLog(`Import hasil Preview Data Mesin selesai. Tanggal: ${Object.keys(byDate).join(', ')}. Valid: ${validRows.length}. Auto isi kosong: ${autoFill.totalFilled}. Dilewati: ${skippedRows}. Riwayat import tersimpan.`);
+    await updateGlobalCheckInfo(`Import hasil preview mesin selesai. Filter: ${result.filterLabel || 'Semua Kegiatan'}. ${validRows.length} NIP valid disimpan. Auto isi kosong: ${autoFill.totalFilled}. ${applied} pekerja diterapkan ke laporan yang sedang dibuka.`);
+    adminLog(`Import hasil Preview Data Mesin selesai. Filter: ${result.filterLabel || 'Semua Kegiatan'}. Tanggal: ${Object.keys(byDate).join(', ')}. Valid: ${validRows.length}. Auto isi kosong: ${autoFill.totalFilled}. Dilewati: ${skippedRows}. Riwayat import tersimpan.`);
     alert(`Import hasil Preview Data Mesin selesai.
 
+Filter kegiatan: ${result.filterLabel || 'Semua Kegiatan'}
 ${validRows.length} NIP valid disimpan.
 Auto isi Cek In kosong: ${autoFill.filledIn}
 Auto isi Cek Out kosong: ${autoFill.filledOut}
@@ -9192,6 +9291,8 @@ function initAdminTools(){
   if(upahSel){ const current=upahSel.value || (reportSel && reportSel.value) || adminManagedUnitKey; upahSel.innerHTML=optionUpahUnits(); const allowedUpahKeys=['muatan_breeder',BAHAN_BAKU_GABUNGAN_KEY,'oper_oper_bahan_baku',COMMERCIAL_KEY]; upahSel.value=allowedUpahKeys.includes(current) ? current : 'muatan_breeder'; }
   const checkSummarySel=$('adminCheckSummaryUnitSelect');
   if(checkSummarySel){ const current=checkSummarySel.value || (reportSel && reportSel.value) || adminManagedUnitKey; checkSummarySel.innerHTML=optionCheckSummaryUnits(); checkSummarySel.value=current || 'muatan_breeder'; }
+  const machineFilterSel=$('adminMachinePreviewActivityFilter');
+  if(machineFilterSel){ const current=machineFilterSel.value || 'ALL'; machineFilterSel.innerHTML=optionMachinePreviewActivityFilter(); machineFilterSel.value=current || 'ALL'; }
   ['adminCoordUnit'].forEach(id=>{ const sel=$(id); if(sel){ sel.innerHTML=optionUnits(false); } });
   ['adminClearWorkersUnit'].forEach(id=>{ const sel=$(id); if(sel){ sel.innerHTML=optionUnits(true); sel.value=adminManagedUnitKey; } });
   const deleteAttendanceSel=$('adminDeleteAttendanceUnit');
@@ -10024,7 +10125,7 @@ if($('baggingOffDate')) $('baggingOffDate').value = ($('adminReportDate') && $('
 if($('loginForm')) $('loginForm').addEventListener('submit', async e=>{ e.preventDefault(); const ok=await loginLocal($('loginNip').value, $('loginPassword').value); if(!ok){ $('loginError').classList.add('show'); $('loginPassword').focus(); } });
 if($('btnTogglePassword')) $('btnTogglePassword').addEventListener('click', ()=>{ const input=$('loginPassword'); input.type=input.type==='password'?'text':'password'; });
 if($('btnLogout')) $('btnLogout').addEventListener('click', logoutLocal);
-$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahDoPagiZak','adminUpahDoPagiPerZak','adminUpahDoPagiTarif','adminUpahDoSiangZak','adminUpahDoSiangPerZak','adminUpahDoSiangTarif'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2','adminUpahTonaseBbPagi','adminUpahTonaseSiloPagi','adminUpahTonaseOverzakPagi','adminUpahTonaseBbMalam','adminUpahTonaseSiloMalam','adminUpahTonaseOverzakMalam','adminUpahSubsidiOverzak'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); setupBaggingCollapsibleCards(); initBaggingScheduleImportControls(); setupBaggingOffMainMasterEvents(); setupBaggingOffReplacementMasterEvents(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnPredictBaggingScheduleBuhler')) $('btnPredictBaggingScheduleBuhler').addEventListener('click', ()=>predictBaggingSchedule('BUHLER')); if($('btnPredictBaggingScheduleBreeder')) $('btnPredictBaggingScheduleBreeder').addEventListener('click', ()=>predictBaggingSchedule('BREEDER')); if($('btnCheckBaggingScheduleBuhler')) $('btnCheckBaggingScheduleBuhler').addEventListener('click', ()=>refreshBaggingScheduleStatus('BUHLER')); if($('btnCheckBaggingScheduleBreeder')) $('btnCheckBaggingScheduleBreeder').addEventListener('click', ()=>refreshBaggingScheduleStatus('BREEDER')); if($('btnPrintBaggingScheduleBuhler')) $('btnPrintBaggingScheduleBuhler').addEventListener('click', ()=>printBaggingSchedule('BUHLER')); if($('btnPrintBaggingScheduleBreeder')) $('btnPrintBaggingScheduleBreeder').addEventListener('click', ()=>printBaggingSchedule('BREEDER')); if($('btnDeleteBaggingScheduleBuhler')) $('btnDeleteBaggingScheduleBuhler').addEventListener('click', ()=>deleteBaggingSchedule('BUHLER')); if($('btnDeleteBaggingScheduleBreeder')) $('btnDeleteBaggingScheduleBreeder').addEventListener('click', ()=>deleteBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminPruneAuditLogs')) $('btnAdminPruneAuditLogs').addEventListener('click', adminPruneAuditLogs); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
+$('btnAddWorker').addEventListener('click', addWorker); $('btnUpdateWorker').addEventListener('click', updateWorker); $('btnDeleteWorker').addEventListener('click', deleteWorker); $('btnClearForm').addEventListener('click', clearForm); $('btnResetShift').addEventListener('click', resetShift); $('btnSaveSchedule').addEventListener('click', saveSchedule); $('workerFilter').addEventListener('input', renderWorkers); if($('btnDownloadPdf')) $('btnDownloadPdf').addEventListener('click', downloadReportPdf); if($('btnToggleReportPreview')) $('btnToggleReportPreview').addEventListener('click', toggleReportPreview); setReportPreviewVisible(false); syncReportPreviewDefaultForRole(); if($('adminUnitSelect')) $('adminUnitSelect').addEventListener('change', async e=>{ adminManagedUnitKey=e.target.value || 'muatan_breeder'; updateAuthUI(); await loadState(); renderAll(); }); if($('importWorkerFile')) $('importWorkerFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('importFileName')) $('importFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnImportWorkers')) $('btnImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('legacy')); if($('btnDownloadTemplate')) $('btnDownloadTemplate').addEventListener('click', downloadImportTemplate); if($('adminDashUnitSelect')) $('adminDashUnitSelect').addEventListener('change', renderAdminDashboard); if($('adminReportUnitSelect')) $('adminReportUnitSelect').addEventListener('change', ()=>{ adminReportData=null; syncCheckSummaryUnitFromReport(); lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); renderReport(); }); if($('adminReportDate')) $('adminReportDate').addEventListener('change', ()=>{ adminReportData=null; renderReport(); }); if($('adminUpahUnitSelect')) $('adminUpahUnitSelect').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('adminUpahDate')) $('adminUpahDate').addEventListener('change', ()=>{ adminUpahData=null; syncUpahCalculatorModeByUnit(); renderAdminUpah(); }); if($('btnAdminLoadUpah')) $('btnAdminLoadUpah').addEventListener('click', loadAdminUpah); setupUpahRibuanInputs(); ['adminUpahDoPagiZak','adminUpahDoPagiPerZak','adminUpahDoPagiTarif','adminUpahDoSiangZak','adminUpahDoSiangPerZak','adminUpahDoSiangTarif'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); ['adminUpahTonaseS1','adminUpahTonaseS2','adminUpahBiayaS1','adminUpahBiayaS2','adminUpahTonaseBbPagi','adminUpahTonaseSiloPagi','adminUpahTonaseOverzakPagi','adminUpahTonaseBbMalam','adminUpahTonaseSiloMalam','adminUpahTonaseOverzakMalam','adminUpahSubsidiOverzak'].forEach(id=>{ if($(id)) $(id).addEventListener('input', ()=>{ updateUpahFinalTonaseDisplay(); hideUpahCalculation(); }); }); syncUpahDoTonaseFromInputs(); updateUpahFinalTonaseDisplay(); if($('btnCalculateUpah')) $('btnCalculateUpah').addEventListener('click', calculateAdminUpah); if($('btnToggleUpahRules')) $('btnToggleUpahRules').addEventListener('click', toggleUpahRulesPreview); setUpahRulesPreviewVisible(false); if($('btnExportUpahExcel')) $('btnExportUpahExcel').addEventListener('click', exportAdminUpahExcel); if($('btnPrintUpahCalc')) $('btnPrintUpahCalc').addEventListener('click', printAdminUpahCalcTable); if($('btnAdminLoadAttendance')) $('btnAdminLoadAttendance').addEventListener('click', loadAdminAttendance); if($('btnAdminRefreshAttendance')) $('btnAdminRefreshAttendance').addEventListener('click', loadAdminAttendance); if($('btnBottomPrintAttendance')) $('btnBottomPrintAttendance').addEventListener('click', printAdminAttendance); initBaggingOffDurationOption(); setupBaggingCollapsibleCards(); initBaggingScheduleImportControls(); setupBaggingOffMainMasterEvents(); setupBaggingOffReplacementMasterEvents(); if($('btnBaggingOffLoad')) $('btnBaggingOffLoad').addEventListener('click', loadBaggingOffReport); if($('btnBaggingOffPrint')) $('btnBaggingOffPrint').addEventListener('click', printBaggingOffReport); if($('btnImportBaggingScheduleBuhler')) $('btnImportBaggingScheduleBuhler').addEventListener('click', ()=>importBaggingSchedule('BUHLER')); if($('btnImportBaggingScheduleBreeder')) $('btnImportBaggingScheduleBreeder').addEventListener('click', ()=>importBaggingSchedule('BREEDER')); if($('btnPredictBaggingScheduleBuhler')) $('btnPredictBaggingScheduleBuhler').addEventListener('click', ()=>predictBaggingSchedule('BUHLER')); if($('btnPredictBaggingScheduleBreeder')) $('btnPredictBaggingScheduleBreeder').addEventListener('click', ()=>predictBaggingSchedule('BREEDER')); if($('btnCheckBaggingScheduleBuhler')) $('btnCheckBaggingScheduleBuhler').addEventListener('click', ()=>refreshBaggingScheduleStatus('BUHLER')); if($('btnCheckBaggingScheduleBreeder')) $('btnCheckBaggingScheduleBreeder').addEventListener('click', ()=>refreshBaggingScheduleStatus('BREEDER')); if($('btnPrintBaggingScheduleBuhler')) $('btnPrintBaggingScheduleBuhler').addEventListener('click', ()=>printBaggingSchedule('BUHLER')); if($('btnPrintBaggingScheduleBreeder')) $('btnPrintBaggingScheduleBreeder').addEventListener('click', ()=>printBaggingSchedule('BREEDER')); if($('btnDeleteBaggingScheduleBuhler')) $('btnDeleteBaggingScheduleBuhler').addEventListener('click', ()=>deleteBaggingSchedule('BUHLER')); if($('btnDeleteBaggingScheduleBreeder')) $('btnDeleteBaggingScheduleBreeder').addEventListener('click', ()=>deleteBaggingSchedule('BREEDER')); if($('btnAdminSaveCheckTimes')) $('btnAdminSaveCheckTimes').addEventListener('click', adminSaveCheckTimes); ['adminAutoS1In','adminAutoS1Out','adminAutoS2In','adminAutoS2Out','adminAutoS3In','adminAutoS3Out'].forEach(id=>{ if($(id)) $(id).addEventListener('input', e=>{ e.target.dataset.userEdited='1'; setAdminCheckTimesSourceInfo('Manual'); }); }); if($('btnAdminApplyAutoCheckTimes')) $('btnAdminApplyAutoCheckTimes').addEventListener('click', adminApplyAutoCheckTimes); if($('btnAdminCheckInOutSummary')) $('btnAdminCheckInOutSummary').addEventListener('click', adminCheckInOutSummary); if($('btnAdminUseCheckSummary')) $('btnAdminUseCheckSummary').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminUseCheckSummaryReport')) $('btnAdminUseCheckSummaryReport').addEventListener('click', adminUseCheckSummaryToForm); if($('btnAdminRefresh')) $('btnAdminRefresh').addEventListener('click', renderAdminDashboard); if($('btnAdminSyncPending')) $('btnAdminSyncPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminDashboard(); await renderAdminSyncStatus(false); adminLog(`Sinkron data pending selesai diproses. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminRefreshSyncStatus')) $('btnAdminRefreshSyncStatus').addEventListener('click', ()=>renderAdminSyncStatus()); if($('btnAdminRefreshFirestoreUsage')) $('btnAdminRefreshFirestoreUsage').addEventListener('click', refreshFirestoreUsageEstimate); if($('btnAdminPruneAuditLogs')) $('btnAdminPruneAuditLogs').addEventListener('click', adminPruneAuditLogs); if($('btnAdminSyncAllPending')) $('btnAdminSyncAllPending').addEventListener('click', async()=>{ const res=await syncPendingAttendanceOnline(); await renderAdminSyncStatus(false); adminLog(`Sync semua pending selesai. Berhasil: ${res && res.success !== undefined ? res.success : 0}, gagal: ${res && res.failed !== undefined ? res.failed : 0}.`); }); if($('btnAdminPanelImportWorkers')) $('btnAdminPanelImportWorkers').addEventListener('click', ()=>importWorkersFromExcel('panel')); if($('adminPanelImportFile')) $('adminPanelImportFile').addEventListener('change', e=>{ const file=e.target.files && e.target.files[0]; if($('adminPanelImportFileName')) $('adminPanelImportFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('btnAdminTemplate')) $('btnAdminTemplate').addEventListener('click', downloadImportTemplate); if($('adminGlobalCheckFile')) $('adminGlobalCheckFile').addEventListener('change', e=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); const file=e.target.files && e.target.files[0]; if($('adminGlobalCheckFileName')) $('adminGlobalCheckFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; }); if($('adminGlobalCheckDate')) $('adminGlobalCheckDate').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); updateGlobalCheckInfo(); }); if($('adminCheckSummaryUnitSelect')) $('adminCheckSummaryUnitSelect').addEventListener('change', ()=>{ lastCheckInOutSummaryResult=null; renderCheckInOutSummary(null); }); if($('adminMachinePreviewActivityFilter')) $('adminMachinePreviewActivityFilter').addEventListener('change', ()=>{ lastMachineImportPreviewResult=null; renderMachineImportPreview(null); updateGlobalCheckInfo('Filter kegiatan preview/import diubah. Klik 🔎 Preview Import Data Mesin untuk melihat hasil sesuai filter baru.'); }); if($('btnAdminPreviewMachineImport')) $('btnAdminPreviewMachineImport').addEventListener('click', adminPreviewMachineImport); if($('btnAdminPreviewAllSchedules')) $('btnAdminPreviewAllSchedules').addEventListener('click', adminPreviewAllSchedules); if($('btnAdminImportMachinePreview')) $('btnAdminImportMachinePreview').addEventListener('click', adminImportMachinePreviewToCheckTimes); if($('btnAdminImportGlobalCheckTimes')) $('btnAdminImportGlobalCheckTimes').addEventListener('click', adminImportGlobalCheckTimes); if($('btnAdminClearGlobalCheckTimes')) $('btnAdminClearGlobalCheckTimes').addEventListener('click', adminClearGlobalCheckTimes); if($('btnAdminClearReportCheckTimes')) $('btnAdminClearReportCheckTimes').addEventListener('click', adminClearReportCheckTimes); if($('btnAdminRefreshCheckImportHistory')) $('btnAdminRefreshCheckImportHistory').addEventListener('click', ()=>renderGlobalCheckImportHistory(true)); if($('btnAdminClearCheckImportHistory')) $('btnAdminClearCheckImportHistory').addEventListener('click', clearGlobalCheckImportHistory); if($('btnSaveReportFormat')) $('btnSaveReportFormat').addEventListener('click', adminSaveReportFormat); if($('adminCoordinatorSelect')) $('adminCoordinatorSelect').addEventListener('change', renderCoordinatorSettingForm); if($('btnAdminResetCoordinatorForm')) $('btnAdminResetCoordinatorForm').addEventListener('click', renderCoordinatorSettingForm); if($('btnAdminSaveCoordinator')) $('btnAdminSaveCoordinator').addEventListener('click', saveCoordinatorSetting); if($('btnAdminDeleteCoordinator')) $('btnAdminDeleteCoordinator').addEventListener('click', deleteCoordinatorSetting); if($('btnAdminResetAdminAccountForm')) $('btnAdminResetAdminAccountForm').addEventListener('click', renderAdminAccountForm); if($('btnAdminSaveAdminAccount')) $('btnAdminSaveAdminAccount').addEventListener('click', saveAdminAccountSetting); if($('btnAdminClearWorkers')) $('btnAdminClearWorkers').addEventListener('click', adminClearWorkers); if($('btnAdminDeleteAttendance')) $('btnAdminDeleteAttendance').addEventListener('click', adminDeleteAttendance); if($('adminWorkerUnitSelect')) $('adminWorkerUnitSelect').addEventListener('change', ()=>{ adminWorkerClearForm(); renderAdminWorkerCrud(); }); if($('adminWorkerStatus')) $('adminWorkerStatus').addEventListener('change', renderAdminWorkerCrud); if($('adminWorkerSearch')) $('adminWorkerSearch').addEventListener('input', renderAdminWorkerCrud); if($('btnAdminSaveWorker')) $('btnAdminSaveWorker').addEventListener('click', adminSaveWorkerCrud); if($('btnAdminResetWorkerForm')) $('btnAdminResetWorkerForm').addEventListener('click', adminWorkerClearForm); if($('adminWorkerCrudRegu')) $('adminWorkerCrudRegu').addEventListener('change', e=>{ e.target.value=normalizeRegu(e.target.value); renderAdminWorkerCrud(); }); if($('btnAdminAddDock')) $('btnAdminAddDock').addEventListener('click', adminAddDock); if($('btnAdminResetDock')) $('btnAdminResetDock').addEventListener('click', adminResetDocks); if($('btnAdminPreviewBackup')) $('btnAdminPreviewBackup').addEventListener('click', adminPreviewBackup); if($('btnAdminExportBackupJson')) $('btnAdminExportBackupJson').addEventListener('click', adminExportBackupJson); if($('btnAdminExportBackupExcel')) $('btnAdminExportBackupExcel').addEventListener('click', adminExportBackupExcel); if($('btnAdminBackupToday')) $('btnAdminBackupToday').addEventListener('click', adminBackupToday); if($('adminRestoreBackupFile')) $('adminRestoreBackupFile').addEventListener('change', e=>{ adminRestoreSnapshotCache=null; const file=e.target.files && e.target.files[0]; if($('adminRestoreFileName')) $('adminRestoreFileName').textContent=file ? `File dipilih: ${file.name}` : 'Belum ada file dipilih.'; renderRestoreSummary(null); setRestoreInfo(file ? 'File dipilih. Klik Preview Restore untuk validasi isi backup.' : ''); }); if($('btnAdminPreviewRestore')) $('btnAdminPreviewRestore').addEventListener('click', adminPreviewRestore); if($('btnAdminRunRestore')) $('btnAdminRunRestore').addEventListener('click', adminRunRestore);
 document.addEventListener('input', e=>{ if(e && e.target && e.target.matches && e.target.matches('[data-check-nip]')) setAdminCheckTimesSourceInfo('Manual'); });
 let deferredPrompt=null; const installSheet=$('installSheet'); function showInstall(){ if(deferredPrompt) { installSheet.classList.add('show'); $('btnInlineInstall').classList.add('show'); }} window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; setTimeout(showInstall,700); }); async function installApp(){ if(!deferredPrompt){ alert('Menu pasang shortcut belum tersedia. Buka dari Chrome/Edge Android lalu pilih Add to Home Screen / Tambahkan ke layar utama jika tombol belum muncul.'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installSheet.classList.remove('show'); $('btnInlineInstall').classList.remove('show'); } $('btnInstallApp').addEventListener('click', installApp); $('btnInlineInstall').addEventListener('click', installApp); $('btnDismissInstall').addEventListener('click', ()=>installSheet.classList.remove('show')); $('btnDismissInstallTop').addEventListener('click', ()=>installSheet.classList.remove('show'));
 function hideSplash(){ const splash=$('appSplash'); if(splash) splash.classList.add('hide'); }
